@@ -1,0 +1,24 @@
+{
+  "case": "no_clip_fp16",
+  "variant": "no_clip",
+  "command": [
+    "/usr/src/tensorrt/bin/trtexec",
+    "--onnx=/home/nvidia/rampq/gate05_firstconv_clip_intervention_20261019/gate05_firstconv_clip_intervention_20261019/model_firstconv_no_clip.onnx",
+    "--saveEngine=/home/nvidia/rampq/gate05_firstconv_clip_intervention_20261019/gate05_firstconv_clip_intervention_20261019/results/probe_20261017T002333/no_clip_fp16/model.engine",
+    "--noTF32",
+    "--inputIOFormats=fp32:chw",
+    "--outputIOFormats=fp32:chw,fp32:chw",
+    "--avgTiming=1",
+    "--memPoolSize=workspace:1024",
+    "--profilingVerbosity=detailed",
+    "--buildOnly",
+    "--fp16",
+    "--int8",
+    "--precisionConstraints=prefer",
+    "--layerPrecisions=/model.0/conv/Conv:int8"
+  ],
+  "max_build_seconds": 300,
+  "spec_sha256": "70981237cdc7175c4a87a57729f55627af2ce981bffe5697d704dabea487f5ae",
+  "onnx_sha256": "57e809fdd0bfca25d07646b45f45557612583bf595dd6747dc46f4690b97fa1f",
+  "diagnostic_only": true
+}

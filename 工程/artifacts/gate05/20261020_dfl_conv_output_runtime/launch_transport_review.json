@@ -1,0 +1,86 @@
+{
+  "schema": "rampq.gate05.dfl_conv_output_transport_static_review/v1",
+  "reviewed_client_at": "2026-10-20T22:26:32.521645+08:00",
+  "status": "STATIC_TRANSPORT_REVIEW_PASSED",
+  "check_count": 17,
+  "checks": [
+    {
+      "name": "mature_launcher_exact_except_added_priorSoftmax_taskscan",
+      "passed": true
+    },
+    {
+      "name": "mature_collector_normalized_exact",
+      "passed": true
+    },
+    {
+      "name": "Python38_AST:launch_native.py",
+      "passed": true
+    },
+    {
+      "name": "Python38_AST:collect_native.py",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:atexit.register(cleanup_unconfirmed_launch)",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:guard_module.terminate_owned(owned, failure, save_failure)",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:monitor.send_signal(signal.SIGINT)",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:start_new_session=True",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:'--max-seconds', '900'",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:guard_status['owned_group_fully_empty']",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:'jetson_dfl_softmax_cut_probe.py'",
+      "passed": true
+    },
+    {
+      "name": "retained_launcher_requirement:8f6a55f640915b84d7300d1595ebb895092ccf0374e40a27b6aaf812f406e09b",
+      "passed": true
+    },
+    {
+      "name": "retained_collector_requirement:guard['owned_group_fully_empty']",
+      "passed": true
+    },
+    {
+      "name": "retained_collector_requirement:child['direct_python_api_child_terminated']",
+      "passed": true
+    },
+    {
+      "name": "retained_collector_requirement:assert not any(p['live_non_zombie']",
+      "passed": true
+    },
+    {
+      "name": "retained_collector_requirement:all_child_exit_verification.json",
+      "passed": true
+    },
+    {
+      "name": "retained_collector_requirement:'--archive', str(archive)",
+      "passed": true
+    }
+  ],
+  "launch_blockers": [],
+  "launch_script_sha256": "733dfd72eb9a3676997c6427f146598ae12ae997634abbc57f914b55f58ac320",
+  "collector_script_sha256": "6619aef7a855e1e4cac21dda84846b1350e08777d0ead0067a4bb76975913e03",
+  "mature_template_stage": "20261020_dfl_softmax_cut",
+  "changes_beyond_stage_and_protocol_identity": [
+    "Add prior jetson_dfl_softmax_cut_probe.py to parallel-task scan"
+  ],
+  "source_copied_guard_and_cleanup_unchanged": true,
+  "new_launch_or_native_or_SSH_by_reviewer": false,
+  "limits": "Read-only source audit. Root must still verify sealed input/review hashes, boardboot/idle/memory and observed guard identity before accepting launch."
+}

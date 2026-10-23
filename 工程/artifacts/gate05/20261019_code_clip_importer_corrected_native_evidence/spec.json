@@ -1,0 +1,56 @@
+{
+  "schema": "rampq.gate05.code_clip_signed_probe/v1",
+  "prepared_client_at": "2026-10-19T18:21:39.080317+08:00",
+  "diagnostic_only": true,
+  "input_file": "synthetic_signed_input.npy",
+  "input_file_sha256": "2fed31a77b4eed4a58f0e3a8d3f9d64587e4a01afa3aec5c64f7dc90965b1005",
+  "input_binding": {
+    "name": "images",
+    "input": true,
+    "shape": [
+      1,
+      1,
+      1,
+      1811
+    ],
+    "dtype": "DataType.FLOAT"
+  },
+  "output_bindings_in_order": [
+    {
+      "name": "rampq_model_0_conv_a_dq",
+      "input": false,
+      "shape": [
+        1,
+        1,
+        1,
+        1811
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "variants": {
+    "clip": {
+      "model_file": "model_clip.onnx",
+      "model_sha256": "57293185b99da47e633c5e068cdbb1c4054a3f1ef2c1810545b803daddfc1560",
+      "expected_output_npz_keys": {
+        "rampq_model_0_conv_a_dq": "clip_dequantized"
+      }
+    },
+    "code_clip": {
+      "model_file": "model_code_clip.onnx",
+      "model_sha256": "5231cb86184a340a48c2a5144a1584b9cf2e52b0e66ea12976c0b85b6522f113",
+      "expected_output_npz_keys": {
+        "rampq_model_0_conv_a_dq": "code_clip_dequantized"
+      }
+    }
+  },
+  "cpu_expected_outputs_file": "cpu_expected_outputs.npz",
+  "cpu_expected_outputs_sha256": "67d67b4e852a412681432260ea4fb1703b06fd983a6e361c32bec615e0e43027",
+  "selected_clip_node_name": "rampq_model_0_conv_Clip",
+  "source_graph_sha256": "45cfc01a0f7c779ca41c910f04fb2df11b70aad1413204ba3407a02e7b18a419",
+  "changes": "Synthetic shape. Paired rewrite moves Clip after ActivationQ, uses INT8 [-127,127] bounds; original scale/zero/DQ unchanged.",
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "original_tolerances_changed": false,
+  "dataset_evaluation_run": false,
+  "limits": "Signed synthetic operator diagnostic only; not a complete model repair or accuracy test."
+}

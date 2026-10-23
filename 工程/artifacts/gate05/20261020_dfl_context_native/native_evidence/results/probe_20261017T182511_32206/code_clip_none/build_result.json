@@ -1,0 +1,38 @@
+{
+  "case": "code_clip_none",
+  "phase": "COMPLETE",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "build_seconds_not_benchmark": 52.21165119999205,
+  "status": "DFL_CONTEXT_ENGINE_SAVED",
+  "engine_sha256": "a0b23d8fce8a25bbf6ca5de9bf638dabbc9be11db23e56ad16cb2efc3ce2a33e",
+  "engine_bytes": 31119,
+  "bindings": [
+    {
+      "name": "/model.23/dfl/Transpose_output_0",
+      "input": true,
+      "shape": [
+        1,
+        16,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.23/dfl/Reshape_1_output_0",
+      "input": false,
+      "shape": [
+        1,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "model_sha256_after": "a8a30c71a20d6b6dd3d031d23ce8dc8672cc62abe6c3eb8725b324fd2e600092",
+  "builder_request_sha256": "4d25f198bd83d89d426f93f48629456da8344553b07aaec56a23710cc2fcba22",
+  "diagnostic_only": true,
+  "numerical_pass_claim": false
+}

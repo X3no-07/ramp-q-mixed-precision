@@ -1,0 +1,199 @@
+{
+  "schema": "rampq.gate05.supplemental_independent_source_review/v1",
+  "status": "SOURCE_TRACE_REAUDIT_PASSED_IDENTICAL_TO_ARCHIVED_AUDIT",
+  "reviewed_client_at_utc": "2026-10-19T11:26:36.303722+00:00",
+  "source_reaudit_exit_code": 0,
+  "runtime": {
+    "executable": "C:\\Users\\lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "onnx": "1.22.0",
+    "numpy": "2.5.3",
+    "pythonpath": "C:\\Users\\lenovo\\Desktop\\\u89c6\u89c9\u8fb9\u7f18\u7814\u7a76\\05_\u6c34\u4e0b\u5c0f\u76ee\u6807\u68c0\u6d4b_\u5de5\u7a0b\\\u68c0\u6d4b\u5de5\u7a0b\\.venv\\Lib\\site-packages",
+    "cuda_visible_devices": "",
+    "bytecode_writes_disabled": true
+  },
+  "auditor_help_checked_first": true,
+  "checks": {
+    "original_independent_review_bytes_preserved": true,
+    "raw_tree_bytes_preserved": true,
+    "source_reaudit_json_semantically_identical_to_original_audit": true,
+    "source_reaudit_bytes_identical_to_original_audit": true,
+    "six_int8_82_fp16_and_six_named_tactics": true,
+    "source_and_native_audit_pass": true,
+    "new_code_clip_topology": true,
+    "original_failed_guard_retained": true,
+    "native_format_tactic_fusion_criteria_unchanged": true,
+    "actual_graph_six_unique_int8_code_clip_traces_match_spec": true
+  },
+  "failures": [],
+  "source_reaudit": {
+    "path": "C:\\Users\\lenovo\\Desktop\\\u89c6\u89c9\u8fb9\u7f18\u7814\u7a76\\07_\u8fb9\u7f18\u5c0f\u76ee\u6807\u68c0\u6d4b\u6df7\u5408\u7cbe\u5ea6\u91cf\u5316_\u5de5\u7a0b\\artifacts\\gate05\\20261019_corrected_qonly_native\\source_reaudit.json",
+    "bytes": 104877,
+    "sha256": "63776e092be4a09c0610890dcad6bf1149a645925028f7498fbf6100dcf1d7ff"
+  },
+  "original_native_precision_audit": {
+    "path": "C:\\Users\\lenovo\\Desktop\\\u89c6\u89c9\u8fb9\u7f18\u7814\u7a76\\07_\u8fb9\u7f18\u5c0f\u76ee\u6807\u68c0\u6d4b\u6df7\u5408\u7cbe\u5ea6\u91cf\u5316_\u5de5\u7a0b\\artifacts\\gate05\\20261019_corrected_qonly_native\\post_smoke_evidence\\results\\build_20261016T170532_870381Z\\precision_audit.json",
+    "bytes": 104877,
+    "sha256": "63776e092be4a09c0610890dcad6bf1149a645925028f7498fbf6100dcf1d7ff"
+  },
+  "original_independent_review": {
+    "path": "C:\\Users\\lenovo\\Desktop\\\u89c6\u89c9\u8fb9\u7f18\u7814\u7a76\\07_\u8fb9\u7f18\u5c0f\u76ee\u6807\u68c0\u6d4b\u6df7\u5408\u7cbe\u5ea6\u91cf\u5316_\u5de5\u7a0b\\artifacts\\gate05\\20261019_corrected_qonly_native\\independent_final_review.json",
+    "bytes": 44698,
+    "sha256": "ac67fb1049da01b1eee833a96d562151423be210af152d88b987983fb54a97f7"
+  },
+  "source_identity": {
+    "model.onnx": {
+      "bytes": 10628781,
+      "sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356"
+    },
+    "spec.json": {
+      "bytes": 30633,
+      "sha256": "aeddbe15cdf0509da74d2b4d7e714d6b29e74bdc4d0e30c3e2380d3204e841dc"
+    },
+    "module_map.json": {
+      "bytes": 282017,
+      "sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0"
+    },
+    "semantic_rewrite_audit.json": {
+      "bytes": 144331,
+      "sha256": "23a3874e6118ff8b2aaa56514bbb876559507a21fc620e48974b6db021f57edb"
+    },
+    "preflight.json": {
+      "bytes": 2058,
+      "sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21"
+    }
+  },
+  "auditor_identity": {
+    "corrected_auditor_file": "audit_gate05_corrected_precision_candidate.py",
+    "corrected_auditor_sha256": "5f7ead2636ee8baa5f5372902798d5d41c530cf274b7e83f44a142cc9574aa0a",
+    "base_auditor_file": "audit_gate05_precision_candidate.py",
+    "base_auditor_sha256": "40420902d6fb3fd5d6b6278d64bbaa4b44c839bdae69da73dbaeb3e15cf66f6a",
+    "native_formats_tactics_and_fusion_criteria": "UNCHANGED_BASE_IMPLEMENTATION",
+    "overridden_source_functions": [
+      "activation_trace",
+      "check_graph_requests"
+    ]
+  },
+  "six_actual_source_activation_traces": [
+    {
+      "source_conv": "/model.0/conv/Conv",
+      "source_activation": "images",
+      "q_node": "rampq_model_0_conv_ActivationQ",
+      "code_clip_node": "rampq_model_0_conv_Clip",
+      "dq_node": "rampq_model_0_conv_ActivationDQ",
+      "activation_scale_float32": 0.007874015718698502,
+      "activation_zero_int8": 0,
+      "clip_scalar_dtype": "int8",
+      "code_clip_bounds": [
+        -127,
+        127
+      ],
+      "q_dq_scale_zero_names_equal": true
+    },
+    {
+      "source_conv": "/model.1/conv/Conv",
+      "source_activation": "/model.0/act/Mul_output_0",
+      "q_node": "rampq_model_1_conv_ActivationQ",
+      "code_clip_node": "rampq_model_1_conv_Clip",
+      "dq_node": "rampq_model_1_conv_ActivationDQ",
+      "activation_scale_float32": 0.7481081485748291,
+      "activation_zero_int8": 0,
+      "clip_scalar_dtype": "int8",
+      "code_clip_bounds": [
+        -127,
+        127
+      ],
+      "q_dq_scale_zero_names_equal": true
+    },
+    {
+      "source_conv": "/model.2/cv1/conv/Conv",
+      "source_activation": "/model.1/act/Mul_output_0",
+      "q_node": "rampq_model_2_cv1_conv_ActivationQ",
+      "code_clip_node": "rampq_model_2_cv1_conv_Clip",
+      "dq_node": "rampq_model_2_cv1_conv_ActivationDQ",
+      "activation_scale_float32": 1.5619523525238037,
+      "activation_zero_int8": 0,
+      "clip_scalar_dtype": "int8",
+      "code_clip_bounds": [
+        -127,
+        127
+      ],
+      "q_dq_scale_zero_names_equal": true
+    },
+    {
+      "source_conv": "/model.2/m.0/cv1/conv/Conv",
+      "source_activation": "/model.2/Split_output_1",
+      "q_node": "rampq_model_2_m_0_cv1_conv_ActivationQ",
+      "code_clip_node": "rampq_model_2_m_0_cv1_conv_Clip",
+      "dq_node": "rampq_model_2_m_0_cv1_conv_ActivationDQ",
+      "activation_scale_float32": 0.4710804522037506,
+      "activation_zero_int8": 0,
+      "clip_scalar_dtype": "int8",
+      "code_clip_bounds": [
+        -127,
+        127
+      ],
+      "q_dq_scale_zero_names_equal": true
+    },
+    {
+      "source_conv": "/model.2/m.0/cv2/conv/Conv",
+      "source_activation": "/model.2/m.0/cv1/act/Mul_output_0",
+      "q_node": "rampq_model_2_m_0_cv2_conv_ActivationQ",
+      "code_clip_node": "rampq_model_2_m_0_cv2_conv_Clip",
+      "dq_node": "rampq_model_2_m_0_cv2_conv_ActivationDQ",
+      "activation_scale_float32": 0.029559876769781113,
+      "activation_zero_int8": 0,
+      "clip_scalar_dtype": "int8",
+      "code_clip_bounds": [
+        -127,
+        127
+      ],
+      "q_dq_scale_zero_names_equal": true
+    },
+    {
+      "source_conv": "/model.2/cv2/conv/Conv",
+      "source_activation": "/model.2/Concat_output_0",
+      "q_node": "rampq_model_2_cv2_conv_ActivationQ",
+      "code_clip_node": "rampq_model_2_cv2_conv_Clip",
+      "dq_node": "rampq_model_2_cv2_conv_ActivationDQ",
+      "activation_scale_float32": 0.8816881775856018,
+      "activation_zero_int8": 0,
+      "clip_scalar_dtype": "int8",
+      "code_clip_bounds": [
+        -127,
+        127
+      ],
+      "q_dq_scale_zero_names_equal": true
+    }
+  ],
+  "resolved_previous_limitation": "The prior independent review did not execute an ONNX source parser. This supplement now reran the corrected full source/native auditor with the supplied CPU runtime; its output is byte-identical to the archived audit. The original review remains unchanged.",
+  "full_model_first_conv_conclusion_unchanged": {
+    "source_conv": "/model.0/conv/Conv",
+    "requested_precision": "INT8",
+    "engine_layer": "model.0.conv.weight + rampq_model_0_conv_WeightQ + /model.0/conv/Conv + PWN(/model.0/act/Sigmoid, /model.0/act/Mul)",
+    "input_formats": [
+      "Row major Int8 format"
+    ],
+    "weights": {
+      "Type": "Int8",
+      "Count": 432
+    },
+    "output_formats": [
+      "Thirty-two wide channel vectorized row major Int8 format"
+    ],
+    "activation": "SWISH",
+    "tactic_name": "ampere_first_layer_filter3x3_imma_fwd_swish",
+    "tactic_value": "0x9760d209ec71dd70"
+  },
+  "int8_output_format_counts_unchanged": {
+    "INT8": 3,
+    "FP32": 2,
+    "FP16": 1
+  },
+  "raw_tree_modified": false,
+  "ssh_used": false,
+  "gpu_used": false,
+  "inference_run": false,
+  "nms_or_label_matching_run": false,
+  "scope": "CPU source parsing, ONNX checker, source quantizer trace and archived native inspector audit only. Original failed full-model numerical guard and all prior causal/accuracy/performance limits remain unchanged."
+}

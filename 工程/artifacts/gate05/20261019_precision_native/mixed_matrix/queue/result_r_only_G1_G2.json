@@ -1,0 +1,174 @@
+{
+  "configuration": "r_only_G1_G2",
+  "monitor_pid": 15286,
+  "monitor_returncode": 0,
+  "monitor_run": "/home/nvidia/rampq/gate05_frozen_build_queue_20261019/monitor_r_only_G1_G2",
+  "terminal_monitor_status": {
+    "monitor_pid": 15286,
+    "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+    "board_time": "2026-10-17T03:36:21+0800",
+    "root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019",
+    "max_seconds": 1800,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019/jetson_build_precision_candidate.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 15292,
+    "status": "BUILD_SCRIPT_FAILED",
+    "reason": null,
+    "build_returncode": 1,
+    "elapsed_seconds": 19.1,
+    "final_resources": {
+      "MemAvailable_kib": 5237596,
+      "SwapTotal_kib": 3756928,
+      "SwapFree_kib": 3746944,
+      "temperatures_c": {
+        "CV0-therm": 47.031,
+        "CPU-therm": 49.0,
+        "SOC2-therm": 48.25,
+        "SOC0-therm": 48.5,
+        "CV1-therm": 47.031,
+        "GPU-therm": 47.281,
+        "tj-therm": 50.218,
+        "SOC1-therm": 50.218,
+        "CV2-therm": 47.812
+      }
+    }
+  },
+  "initial_resources": {
+    "available_kib": 5244832,
+    "temperatures_c": {
+      "CV0-therm": 47.187,
+      "CPU-therm": 49.218,
+      "SOC2-therm": 48.5,
+      "SOC0-therm": 48.25,
+      "CV1-therm": 47.031,
+      "GPU-therm": 47.531,
+      "tj-therm": 50.343,
+      "SOC1-therm": 50.125,
+      "CV2-therm": 47.718
+    }
+  },
+  "final_resources": {
+    "available_kib": 5244336,
+    "temperatures_c": {
+      "CV0-therm": 47.031,
+      "CPU-therm": 49.093,
+      "SOC2-therm": 48.406,
+      "SOC0-therm": 48.312,
+      "CV1-therm": 47.031,
+      "GPU-therm": 47.062,
+      "tj-therm": 50.125,
+      "SOC1-therm": 50.125,
+      "CV2-therm": 47.656
+    }
+  },
+  "native_precision_audit": "NOT_RUN",
+  "fixed_image_execution": "NOT_RUN",
+  "latest_build_sha256": "08404be88bf425ae9b688567fdcac3d3c7209e50fa5553763785a44a0f97cc50",
+  "latest_build": {
+    "configuration": "r_only_G1_G2",
+    "onnx_sha256": "25f7afbd9c860ea86bc56ac6e803fb832231a10bec84eab95520532a0faa6225",
+    "spec_sha256": "db44dba09e252b881bdac5545694f333772a9422911e548eaebc08321bdf313e",
+    "manifest_sha256": "c7853f869b3dc1faec1ac33b077a03510547969ff210253a5cd856883ec48c2e",
+    "diagnostic_only": true,
+    "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+    "expected_binding_contract": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "primary_output_name": "output0",
+    "graph_audit_sha256": "ef3d5b74da5c0389506c37592b197af4570265c938d26f8e3c78584436e7c887",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+    "elapsed_seconds": 16.07609372799925,
+    "error": "AssertionError: trtexec build failed; return code 1",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019/jetson_build_precision_candidate.py\", line 163, in main\n    assert code == 0 and (run / 'model.engine').is_file(), 'trtexec build failed; return code ' + str(code)\nAssertionError: trtexec build failed; return code 1\n",
+    "single_image_inference": "NOT_RUN",
+    "dataset_evaluation": "NOT_RUN",
+    "run_dir": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019/results/build_20261016T193622_484093Z"
+  },
+  "build_result_path": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019/results/build_20261016T193622_484093Z/build_result.json",
+  "build_result_sha256": "21c233d86053d29670583283a34ae02945103048637d84eb29c7c68eb317ce22",
+  "build_result": {
+    "configuration": "r_only_G1_G2",
+    "onnx_sha256": "25f7afbd9c860ea86bc56ac6e803fb832231a10bec84eab95520532a0faa6225",
+    "spec_sha256": "db44dba09e252b881bdac5545694f333772a9422911e548eaebc08321bdf313e",
+    "manifest_sha256": "c7853f869b3dc1faec1ac33b077a03510547969ff210253a5cd856883ec48c2e",
+    "diagnostic_only": true,
+    "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+    "expected_binding_contract": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "primary_output_name": "output0",
+    "graph_audit_sha256": "ef3d5b74da5c0389506c37592b197af4570265c938d26f8e3c78584436e7c887",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+    "elapsed_seconds": 16.07609372799925,
+    "error": "AssertionError: trtexec build failed; return code 1",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019/jetson_build_precision_candidate.py\", line 163, in main\n    assert code == 0 and (run / 'model.engine').is_file(), 'trtexec build failed; return code ' + str(code)\nAssertionError: trtexec build failed; return code 1\n",
+    "single_image_inference": "NOT_RUN",
+    "dataset_evaluation": "NOT_RUN"
+  }
+}

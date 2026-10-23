@@ -1,0 +1,29 @@
+{
+  "status": "UNCHANGED_NATIVE_CRITERIA_REGRESSION_PASSED",
+  "scope": "Auditor regression on saved historical native engine layers only. Not a new corrected candidate native audit; no execution or numerical proof.",
+  "historical_engine_layers_sha256": "17c34c5271ef397b2ba4e91d32bf8c8503d0370545bfd94737dad3e1d88fcf5a",
+  "original_graph_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+  "new_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "unchanged_summary": {
+    "requested_conv_formats_complete": true,
+    "verified_int8_format_convs": 88,
+    "verified_fp16_format_convs": 0,
+    "strict_int8_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+    "named_integer_tactic_source_convs": 81,
+    "source_convs_without_tactic_name": 7,
+    "errors": [],
+    "unmapped_engine_convs": []
+  },
+  "seven_historical_named_integer_tactic_gaps_retained": [
+    "/model.10/m/m.0/attn/pe/conv/Conv",
+    "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+    "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+    "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+    "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+    "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+    "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv"
+  ],
+  "base_auditor_sha256": "40420902d6fb3fd5d6b6278d64bbaa4b44c839bdae69da73dbaeb3e15cf66f6a",
+  "corrected_auditor_sha256": "4a8078effd58b214874cd25ba1d0ec1f9c0e684ab39f5df707ef46556ac9912e",
+  "native_execution_run": false
+}

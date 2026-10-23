@@ -1,0 +1,644 @@
+{
+  "image_id": "train/0000142_00458_d_0000025",
+  "image_sha256": "c51be692d5ac688347de508cf42373a42893bc2ac605118be4ed59a726188a4e",
+  "array_file": "raw/0000142_00458_d_0000025.npz",
+  "reg_max": 16,
+  "nc": 10,
+  "nl": 3,
+  "normalized_fp32_input_sha256": "2cb58afa0723467b74b911a87fc796449af18819d256ed0b74730074ec8131b6",
+  "preprocessed_uint8_sha256": "d63d91e57d333f27d7368539485dac8fd180f3805b69c5776e2674c1c49c5261",
+  "letterbox_params": {
+    "orig_shape": [
+      1080,
+      1920
+    ],
+    "new_shape": [
+      640,
+      640
+    ],
+    "ratio": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "new_unpad": [
+      640,
+      360
+    ],
+    "top": 140,
+    "bottom": 140,
+    "left": 0,
+    "right": 0
+  },
+  "feature_shapes": {
+    "fp32": [
+      [
+        1,
+        64,
+        80,
+        80
+      ],
+      [
+        1,
+        128,
+        40,
+        40
+      ],
+      [
+        1,
+        256,
+        20,
+        20
+      ]
+    ],
+    "fp16": [
+      [
+        1,
+        64,
+        80,
+        80
+      ],
+      [
+        1,
+        128,
+        40,
+        40
+      ],
+      [
+        1,
+        256,
+        20,
+        20
+      ]
+    ]
+  },
+  "feature_cast": "Each captured feature is explicitly cast to the receiving head arithmetic dtype; FP32 decoding casts head logits and geometry to FP32.",
+  "historical_byte_equal": {
+    "fp32": true,
+    "fp16": true
+  },
+  "reference_decode_capture_exact": {
+    "fp32": true,
+    "fp16": true
+  },
+  "reference_unified_decode_exact": {
+    "fp32": true,
+    "fp16": true
+  },
+  "native_head_logits_exact": {
+    "fp32": true,
+    "fp16": true
+  },
+  "runtime_geometry_equal_after_float_lift": true,
+  "features_unchanged_after_intervention": {
+    "fp32": true,
+    "fp16": true
+  },
+  "feature_sha256_before": {
+    "fp32": [
+      "348e57e34ebb17f3cd78e88fb361d93ea9949276a01f57d72dedce372b47215c",
+      "8e807dcec77ec77e6b618a7e7b17a3ae2e25661998e9341575fbcb52087575e8",
+      "74cfd9357f16f7754c88b95070dd6ee63f7702697d1f59ed059d3446c16bb037"
+    ],
+    "fp16": [
+      "0386170ef10d4190b48d4aff99695e6fc9f96bb89550b49693ce08c7ee8c052e",
+      "9783c8270dec7bc9ab93b27566e6c58ae526808cbab4d4f074bebe972b876125",
+      "d02d1e4eee4d76f9cd1c939d7010bb5dd99a93fb19a2766429dde86cc44f8f19"
+    ]
+  },
+  "feature_sha256_after": {
+    "fp32": [
+      "348e57e34ebb17f3cd78e88fb361d93ea9949276a01f57d72dedce372b47215c",
+      "8e807dcec77ec77e6b618a7e7b17a3ae2e25661998e9341575fbcb52087575e8",
+      "74cfd9357f16f7754c88b95070dd6ee63f7702697d1f59ed059d3446c16bb037"
+    ],
+    "fp16": [
+      "0386170ef10d4190b48d4aff99695e6fc9f96bb89550b49693ce08c7ee8c052e",
+      "9783c8270dec7bc9ab93b27566e6c58ae526808cbab4d4f074bebe972b876125",
+      "d02d1e4eee4d76f9cd1c939d7010bb5dd99a93fb19a2766429dde86cc44f8f19"
+    ]
+  },
+  "head_state_unchanged_after_intervention": {
+    "fp32": true,
+    "fp16": true
+  },
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 35,
+        "max_absolute_error": 2.53668212890625,
+        "max_error_over_tolerance": 2.8456215558177904
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0028153061866760254,
+        "max_error_over_tolerance": 0.4890086573985862
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8353,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2116,
+        "candidate_union_total": 2117,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "native_heads_both_decode_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 37,
+        "max_absolute_error": 2.5506744384765625,
+        "max_error_over_tolerance": 2.8613179717286497
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.002865508198738098,
+        "max_error_over_tolerance": 0.4977285680901357
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8353,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2116,
+        "candidate_union_total": 2117,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "same_fp32_features_head_fp32_vs_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 0,
+        "max_absolute_error": 0.1182861328125,
+        "max_error_over_tolerance": 0.13431160654186858
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0017895102500915527,
+        "max_error_over_tolerance": 0.19944774111644323
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8358,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2112,
+        "candidate_union_total": 2116,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": true,
+      "status": "PASS"
+    },
+    "same_fp16_features_head_fp32_vs_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 0,
+        "max_absolute_error": 0.100860595703125,
+        "max_error_over_tolerance": 0.10476881971437706
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.001980721950531006,
+        "max_error_over_tolerance": 0.20695854628269686
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8363,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2116,
+        "candidate_union_total": 2117,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": true,
+      "status": "PASS"
+    },
+    "same_fp32_head_features_fp32_vs_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 37,
+        "max_absolute_error": 2.54571533203125,
+        "max_error_over_tolerance": 2.8557549017493375
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0025890469551086426,
+        "max_error_over_tolerance": 0.368735842163823
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8368,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2117,
+        "candidate_union_total": 2117,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "same_fp16_head_features_fp32_vs_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 39,
+        "max_absolute_error": 2.5455474853515625,
+        "max_error_over_tolerance": 2.855648732525039
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0035913437604904175,
+        "max_error_over_tolerance": 0.6253805175946436
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8364,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2114,
+        "candidate_union_total": 2117,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_fp32_features_fp16_head": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 0,
+        "max_absolute_error": 0.1182861328125,
+        "max_error_over_tolerance": 0.13431160654186858
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0017895102500915527,
+        "max_error_over_tolerance": 0.19944774111644323
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8358,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2112,
+        "candidate_union_total": 2116,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": true,
+      "status": "PASS"
+    },
+    "reference_fp32_vs_fp16_features_fp32_head": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 37,
+        "max_absolute_error": 2.54571533203125,
+        "max_error_over_tolerance": 2.8557549017493375
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0025890469551086426,
+        "max_error_over_tolerance": 0.368735842163823
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8368,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 2117,
+        "candidate_union_total": 2117,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    }
+  },
+  "logit_differences": {
+    "native_heads_both_decode_fp32": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 537568,
+        "max_absolute_error": 0.13042831420898438,
+        "mean_absolute_error": 0.0024332484194123285
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 83986,
+        "max_absolute_error": 0.045726776123046875,
+        "mean_absolute_error": 0.003804683600153242
+      }
+    },
+    "same_fp32_features_head_fp32_vs_fp16": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 537548,
+        "max_absolute_error": 0.016544342041015625,
+        "mean_absolute_error": 0.0007418733835670753
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 83985,
+        "max_absolute_error": 0.02327251434326172,
+        "mean_absolute_error": 0.0023809218917574203
+      }
+    },
+    "same_fp16_features_head_fp32_vs_fp16": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 537557,
+        "max_absolute_error": 0.015043258666992188,
+        "mean_absolute_error": 0.0007258392859945334
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 83991,
+        "max_absolute_error": 0.018581390380859375,
+        "mean_absolute_error": 0.0023806207321939014
+      }
+    },
+    "same_fp32_head_features_fp32_vs_fp16": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 537567,
+        "max_absolute_error": 0.12954473495483398,
+        "mean_absolute_error": 0.002236526333354483
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 83988,
+        "max_absolute_error": 0.04272651672363281,
+        "mean_absolute_error": 0.002820561599163782
+      }
+    },
+    "same_fp16_head_features_fp32_vs_fp16": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 322344,
+        "max_absolute_error": 0.12890625,
+        "mean_absolute_error": 0.002324282881759462
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 32623,
+        "max_absolute_error": 0.046875,
+        "mean_absolute_error": 0.003300874255952381
+      }
+    },
+    "reference_fp32_vs_fp32_features_fp16_head": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 537548,
+        "max_absolute_error": 0.016544342041015625,
+        "mean_absolute_error": 0.0007418733835670753
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 83985,
+        "max_absolute_error": 0.02327251434326172,
+        "mean_absolute_error": 0.0023809218917574203
+      }
+    },
+    "reference_fp32_vs_fp16_features_fp32_head": {
+      "box_logits": {
+        "elements": 537600,
+        "unequal_elements": 537567,
+        "max_absolute_error": 0.12954473495483398,
+        "mean_absolute_error": 0.002236526333354483
+      },
+      "class_logits": {
+        "elements": 84000,
+        "unequal_elements": 83988,
+        "max_absolute_error": 0.04272651672363281,
+        "mean_absolute_error": 0.002820561599163782
+      }
+    }
+  },
+  "old_guard_replaced": false,
+  "tolerances_changed": false
+}

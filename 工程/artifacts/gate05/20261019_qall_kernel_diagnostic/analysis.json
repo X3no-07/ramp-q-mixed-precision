@@ -1,0 +1,882 @@
+{
+  "schema": "rampq.gate05.depthwise_runtime_kernel_correlation/v1",
+  "client_at": "2026-10-19T12:36:44.700297+08:00",
+  "status": "ALL_SEVEN_RUNTIME_KERNEL_IDENTITIES_EXACTLY_CORRELATED",
+  "sqlite_sha256": "678b6a886207a0c89148df89117d0d30c86a24bc0689d4e5de4553df49747f29",
+  "engine_sha256": "e5c9cae835bddc60bfe744d8d5af8c41c112133911936d8a85e8eddf58ebf9e5",
+  "source_receipt_sha256": "5e435059fe98055dee044c66f0c8ca73f6ff223ece98fe007bf45bc91f369b0c",
+  "verified_source_receipt_files": 53,
+  "capture_nvtx_range": {
+    "sqlite_rowid": 2,
+    "start": 7075046752,
+    "end": 7111012672,
+    "eventType": 59,
+    "rangeId": null,
+    "category": null,
+    "color": null,
+    "text": "RAMPQ_QDQ_FIXED_IMAGE",
+    "globalTid": 281565473019154,
+    "endGlobalTid": null,
+    "textId": null,
+    "domainId": 0,
+    "uint64Value": null,
+    "int64Value": null,
+    "doubleValue": null,
+    "uint32Value": null,
+    "int32Value": null,
+    "floatValue": null,
+    "jsonTextId": null,
+    "jsonText": null,
+    "resolved_text": "RAMPQ_QDQ_FIXED_IMAGE",
+    "resolved_json": null
+  },
+  "sqlite_metadata": {
+    "sqlite_version": "3.53.1",
+    "tables_and_schema": [
+      {
+        "name": "StringIds",
+        "sql": "CREATE TABLE StringIds (\n    -- Consolidation of repetitive string values.\n\n    id                          INTEGER   NOT NULL   PRIMARY KEY,      -- ID reference value.\n    value                       TEXT      NOT NULL                     -- String value.\n)"
+      },
+      {
+        "name": "PROCESSES",
+        "sql": "CREATE TABLE PROCESSES (\n    -- Names and identifiers of processes captured in the report.\n\n    globalPid                   INTEGER,                               -- Serialized GlobalId.\n    pid                         INTEGER,                               -- The process ID.\n    name                        TEXT                                   -- The process name.\n)"
+      },
+      {
+        "name": "CUPTI_ACTIVITY_KIND_RUNTIME",
+        "sql": "CREATE TABLE CUPTI_ACTIVITY_KIND_RUNTIME (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER   NOT NULL,                    -- Event end timestamp (ns).\n    eventClass                  INTEGER   NOT NULL,                    -- REFERENCES ENUM_NSYS_EVENT_CLASS(id)\n    globalTid                   INTEGER,                               -- Serialized GlobalId.\n    correlationId               INTEGER,                               -- ID used to identify events that this function call has triggered.\n    nameId                      INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Function name\n    returnValue                 INTEGER   NOT NULL,                    -- Return value of the function call.\n    callchainId                 INTEGER                                -- REFERENCES CUDA_CALLCHAINS(id)\n)"
+      },
+      {
+        "name": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "sql": "CREATE TABLE CUPTI_ACTIVITY_KIND_KERNEL (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER   NOT NULL,                    -- Event end timestamp (ns).\n    deviceId                    INTEGER   NOT NULL,                    -- Device ID.\n    contextId                   INTEGER   NOT NULL,                    -- Context ID.\n    streamId                    INTEGER   NOT NULL,                    -- Stream ID.\n    correlationId               INTEGER,                               -- REFERENCES CUPTI_ACTIVITY_KIND_RUNTIME(correlationId)\n    globalPid                   INTEGER,                               -- Serialized GlobalId.\n    demangledName               INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Kernel function name w/ templates\n    shortName                   INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Base kernel function name\n    mangledName                 INTEGER,                               -- REFERENCES StringIds(id) -- Raw C++ mangled kernel function name\n    launchType                  INTEGER,                               -- REFERENCES ENUM_CUDA_KRENEL_LAUNCH_TYPE(id)\n    cacheConfig                 INTEGER,                               -- REFERENCES ENUM_CUDA_FUNC_CACHE_CONFIG(id)\n    registersPerThread          INTEGER   NOT NULL,                    -- Number of registers required for each thread executing the kernel.\n    gridX                       INTEGER   NOT NULL,                    -- X-dimension grid size.\n    gridY                       INTEGER   NOT NULL,                    -- Y-dimension grid size.\n    gridZ                       INTEGER   NOT NULL,                    -- Z-dimension grid size.\n    blockX                      INTEGER   NOT NULL,                    -- X-dimension block size.\n    blockY                      INTEGER   NOT NULL,                    -- Y-dimension block size.\n    blockZ                      INTEGER   NOT NULL,                    -- Z-dimension block size.\n    staticSharedMemory          INTEGER   NOT NULL,                    -- Static shared memory allocated for the kernel (B).\n    dynamicSharedMemory         INTEGER   NOT NULL,                    -- Dynamic shared memory reserved for the kernel (B).\n    localMemoryPerThread        INTEGER   NOT NULL,                    -- Amount of local memory reserved for each thread (B).\n    localMemoryTotal            INTEGER   NOT NULL,                    -- Total amount of local memory reserved for the kernel (B).\n    gridId                      INTEGER   NOT NULL,                    -- Unique grid ID of the kernel assigned at runtime.\n    sharedMemoryExecuted        INTEGER,                               -- Shared memory size set by the driver.\n    graphNodeId                 INTEGER,                               -- REFERENCES CUDA_GRAPH_EVENTS(graphNodeId)\n    sharedMemoryLimitConfig     INTEGER                                -- REFERENCES ENUM_CUDA_SHARED_MEM_LIMIT_CONFIG(id)\n)"
+      },
+      {
+        "name": "NVTX_EVENTS",
+        "sql": "CREATE TABLE NVTX_EVENTS (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER,                               -- Event end timestamp (ns).\n    eventType                   INTEGER   NOT NULL,                    -- REFERENCES ENUM_NSYS_EVENT_TYPE(id)\n    rangeId                     INTEGER,                               -- Correlation ID returned from a nvtxRangeStart call.\n    category                    INTEGER,                               -- User-controlled ID that can be used to group events.\n    color                       INTEGER,                               -- Encoded ARGB color value.\n    text                        TEXT,                                  -- Optional text message for non registered strings.\n    globalTid                   INTEGER,                               -- Serialized GlobalId.\n    endGlobalTid                INTEGER,                               -- Serialized GlobalId.\n    textId                      INTEGER,                               -- REFERENCES StringIds(id) -- Registered NVTX domain\n    domainId                    INTEGER,                               -- User-controlled ID that can be used to group events.\n    uint64Value                 INTEGER,                               -- One of possible payload value union members.\n    int64Value                  INTEGER,                               -- One of possible payload value union members.\n    doubleValue                 REAL,                                  -- One of possible payload value union members.\n    uint32Value                 INTEGER,                               -- One of possible payload value union members.\n    int32Value                  INTEGER,                               -- One of possible payload value union members.\n    floatValue                  REAL,                                  -- One of possible payload value union members.\n    jsonTextId                  INTEGER,                               -- One of possible payload value union members.\n    jsonText                    TEXT                                   -- One of possible payload value union members.\n)"
+      }
+    ],
+    "runtime_api_rows": 2725,
+    "kernel_rows": 284,
+    "nvtx_rows": 275,
+    "kernel_global_process_ids": [
+      281565473013760
+    ],
+    "runtime_duplicate_correlation_ids": []
+  },
+  "target_depthwise_layers": 7,
+  "runtime_kernel_identity_observed_layers": 7,
+  "evidence_layers": {
+    "int8_input_and_weight_formats": {
+      "source_convs": 88,
+      "target_depthwise_layers": 7,
+      "source": "Original actual engine inspector and unchanged precision audit"
+    },
+    "named_integer_tactics": {
+      "source_convs": 81,
+      "target_depthwise_layers": 0,
+      "missing_tactic_name_layers": 7,
+      "strict_audit_status_unchanged": "PRECISION_REVIEW_REQUIRED"
+    },
+    "runtime_kernel_identity": {
+      "target_depthwise_layers_observed": 7,
+      "source": "Exact full layer NVTX name and registered JSON, same-thread CPU API interval, unique correlationId -> GPU kernel event"
+    },
+    "integer_arithmetic_instructions": {
+      "proven_layers": 0,
+      "reason": "Saved trace records kernel function names, launches and timings, without executed arithmetic instruction evidence. No inference from INT8-like spelling."
+    }
+  },
+  "layers": [
+    {
+      "native_layer_name": "model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 1152
+      },
+      "native_input_formats": [
+        "Four wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Row major linear FP32"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0xfffffffffffffffb",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2089,
+            "start": 7089980192,
+            "end": 7089996512,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 3897,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 113,
+              "start": 7099572512,
+              "end": 7099748736,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 3897,
+              "globalPid": 281565473013760,
+              "demangledName": 1043,
+              "shortName": 1044,
+              "mangledName": 990,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 38,
+              "gridX": 50,
+              "gridY": 1,
+              "gridZ": 1,
+              "blockX": 256,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 0,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 118,
+              "sharedMemoryExecuted": 8192,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void cuDepthwise::depthwiseConvINT8GenericKernelF<(int)3, (int)3>(const int *, float *, nvinfer1::rt::ReducedDivisor, int, int, int, nvinfer1::rt::ReducedDivisor, int, int, int, int, int, int, nvinfer1::rt::ReducedDivisor, const int *, const float4 *, const float4 *, float, float, bool, bool, float, int, int, int, int)",
+              "short_name_text": "depthwiseConvINT8GenericKernelF",
+              "mangled_name_text": "_ZN11cuDepthwise31depthwiseConvINT8GenericKernelFILi3ELi3EEEvPKiPfN8nvinfer12rt14ReducedDivisorEiiiS6_iiiiiiS6_S2_PK6float4S9_ffbbfiiii",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 118,
+        "start": 7089970336,
+        "end": 7089998112,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 604,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 605,
+        "jsonText": null,
+        "resolved_text": "model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv",
+        "resolved_json": "{\n  \"Name\": \"model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_10_m_0_attn_pe_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,128,20,20],\n    \"Format/Datatype\": \"Four wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"/model.10/m/m.0/attn/pe/conv/Conv_output_0\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,128,20,20],\n    \"Format/Datatype\": \"Row major linear FP32\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 128,\n  \"Groups\": 128,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 1152},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 128},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"NONE\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0xfffffffffffffffb\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    },
+    {
+      "native_layer_name": "model.23.cv3.0.0.0.conv.weight + rampq_model_23_cv3_0_0_0_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul)",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "native_input_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0x000000000000002b",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2142,
+            "start": 7092947232,
+            "end": 7092969312,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 4479,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 166,
+              "start": 7104143712,
+              "end": 7104258144,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 4479,
+              "globalPid": 281565473013760,
+              "demangledName": 1049,
+              "shortName": 1050,
+              "mangledName": 999,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 40,
+              "gridX": 5,
+              "gridY": 10,
+              "gridZ": 2,
+              "blockX": 64,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 668,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 171,
+              "sharedMemoryExecuted": 32768,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMAReusePRMT<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+              "short_name_text": "kernelFramework",
+              "mangled_name_text": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_29MathModuleDSConvIMMAReusePRMTIS5_EELb1EEEvNS0_12LaunchParamsEi",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 172,
+        "start": 7092925216,
+        "end": 7092969984,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 713,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 714,
+        "jsonText": null,
+        "resolved_text": "model.23.cv3.0.0.0.conv.weight + rampq_model_23_cv3_0_0_0_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul)",
+        "resolved_json": "{\n  \"Name\": \"model.23.cv3.0.0.0.conv.weight + rampq_model_23_cv3_0_0_0_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul)\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_0_0_0_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,80,80],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_0_0_1_conv_clipped\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,80,80],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 64,\n  \"Groups\": 64,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 576},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 64},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"SWISH\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0x000000000000002b\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    },
+    {
+      "native_layer_name": "model.23.cv3.0.1.0.conv.weight + rampq_model_23_cv3_0_1_0_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul)",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "native_input_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0x000000000000002b",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2154,
+            "start": 7093318368,
+            "end": 7093329952,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 4525,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 178,
+              "start": 7105379648,
+              "end": 7105498176,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 4525,
+              "globalPid": 281565473013760,
+              "demangledName": 1049,
+              "shortName": 1050,
+              "mangledName": 999,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 40,
+              "gridX": 5,
+              "gridY": 10,
+              "gridZ": 2,
+              "blockX": 64,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 668,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 183,
+              "sharedMemoryExecuted": 32768,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMAReusePRMT<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+              "short_name_text": "kernelFramework",
+              "mangled_name_text": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_29MathModuleDSConvIMMAReusePRMTIS5_EELb1EEEvNS0_12LaunchParamsEi",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 184,
+        "start": 7093313216,
+        "end": 7093330304,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 737,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 738,
+        "jsonText": null,
+        "resolved_text": "model.23.cv3.0.1.0.conv.weight + rampq_model_23_cv3_0_1_0_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul)",
+        "resolved_json": "{\n  \"Name\": \"model.23.cv3.0.1.0.conv.weight + rampq_model_23_cv3_0_1_0_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul)\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_0_1_0_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,80,80],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_0_1_1_conv_clipped\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,80,80],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 64,\n  \"Groups\": 64,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 576},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 64},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"SWISH\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0x000000000000002b\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    },
+    {
+      "native_layer_name": "model.23.cv3.1.0.0.conv.weight + rampq_model_23_cv3_1_0_0_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul)",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 1152
+      },
+      "native_input_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0x0000000000000021",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2172,
+            "start": 7093822432,
+            "end": 7093834656,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 4580,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 196,
+              "start": 7106844448,
+              "end": 7106921536,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 4580,
+              "globalPid": 281565473013760,
+              "demangledName": 1049,
+              "shortName": 1050,
+              "mangledName": 999,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 40,
+              "gridX": 5,
+              "gridY": 5,
+              "gridZ": 4,
+              "blockX": 32,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 668,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 201,
+              "sharedMemoryExecuted": 32768,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMAReusePRMT<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+              "short_name_text": "kernelFramework",
+              "mangled_name_text": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_29MathModuleDSConvIMMAReusePRMTIS5_EELb1EEEvNS0_12LaunchParamsEi",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 204,
+        "start": 7093816992,
+        "end": 7093835168,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 777,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 778,
+        "jsonText": null,
+        "resolved_text": "model.23.cv3.1.0.0.conv.weight + rampq_model_23_cv3_1_0_0_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul)",
+        "resolved_json": "{\n  \"Name\": \"model.23.cv3.1.0.0.conv.weight + rampq_model_23_cv3_1_0_0_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul)\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_1_0_0_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,128,40,40],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_1_0_1_conv_clipped\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,128,40,40],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 128,\n  \"Groups\": 128,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 1152},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 128},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"SWISH\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0x0000000000000021\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    },
+    {
+      "native_layer_name": "model.23.cv3.1.1.0.conv.weight + rampq_model_23_cv3_1_1_0_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul)",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "native_input_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0x000000000000000b",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2185,
+            "start": 7094199232,
+            "end": 7094217408,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 4627,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 209,
+              "start": 7107551488,
+              "end": 7107599840,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 4627,
+              "globalPid": 281565473013760,
+              "demangledName": 1053,
+              "shortName": 1050,
+              "mangledName": 1005,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 61,
+              "gridX": 3,
+              "gridY": 10,
+              "gridZ": 2,
+              "blockX": 64,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 668,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 214,
+              "sharedMemoryExecuted": 32768,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMA<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+              "short_name_text": "kernelFramework",
+              "mangled_name_text": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_20MathModuleDSConvIMMAIS5_EELb1EEEvNS0_12LaunchParamsEi",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 217,
+        "start": 7094191264,
+        "end": 7094217952,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 803,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 804,
+        "jsonText": null,
+        "resolved_text": "model.23.cv3.1.1.0.conv.weight + rampq_model_23_cv3_1_1_0_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul)",
+        "resolved_json": "{\n  \"Name\": \"model.23.cv3.1.1.0.conv.weight + rampq_model_23_cv3_1_1_0_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul)\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_1_1_0_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,40,40],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_1_1_1_conv_clipped\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,40,40],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 64,\n  \"Groups\": 64,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 576},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 64},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"SWISH\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0x000000000000000b\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    },
+    {
+      "native_layer_name": "model.23.cv3.2.0.0.conv.weight + rampq_model_23_cv3_2_0_0_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul)",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 2304
+      },
+      "native_input_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0xfffffffffffffffc",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2213,
+            "start": 7094904064,
+            "end": 7094923936,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 4714,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 237,
+              "start": 7108671840,
+              "end": 7108719840,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 4714,
+              "globalPid": 281565473013760,
+              "demangledName": 1054,
+              "shortName": 1055,
+              "mangledName": 1007,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 48,
+              "gridX": 25,
+              "gridY": 1,
+              "gridZ": 1,
+              "blockX": 256,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 0,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 242,
+              "sharedMemoryExecuted": 8192,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void cuDepthwise::depthwiseConvINT8SpecializedKernel<(int)3, (int)3, (int)1, (int)1>(const int *, char4 *, nvinfer1::rt::ReducedDivisor, int, int, nvinfer1::rt::ReducedDivisor, int, int, int, nvinfer1::rt::ReducedDivisor, const int *, const float4 *, const float4 *, float, float, bool, bool, float, int, int, int)",
+              "short_name_text": "depthwiseConvINT8SpecializedKernel",
+              "mangled_name_text": "_ZN11cuDepthwise34depthwiseConvINT8SpecializedKernelILi3ELi3ELi1ELi1EEEvPKiP5char4N8nvinfer12rt14ReducedDivisorEiiS7_iiiS7_S2_PK6float4SA_ffbbfiii",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 247,
+        "start": 7094896640,
+        "end": 7094926240,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 863,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 864,
+        "jsonText": null,
+        "resolved_text": "model.23.cv3.2.0.0.conv.weight + rampq_model_23_cv3_2_0_0_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul)",
+        "resolved_json": "{\n  \"Name\": \"model.23.cv3.2.0.0.conv.weight + rampq_model_23_cv3_2_0_0_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul)\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_2_0_0_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,256,20,20],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_2_0_1_conv_clipped\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,256,20,20],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 256,\n  \"Groups\": 256,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 2304},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 256},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"SWISH\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0xfffffffffffffffc\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    },
+    {
+      "native_layer_name": "model.23.cv3.2.1.0.conv.weight + rampq_model_23_cv3_2_1_0_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul)",
+      "native_layer_type": "CudaDepthwiseConvolution",
+      "native_weight_format": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "native_input_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_output_formats": [
+        "Thirty-two wide channel vectorized row major Int8 format"
+      ],
+      "native_tactic_name": null,
+      "native_tactic_value": "0xfffffffffffffffc",
+      "runtime_kernel_identity_observed": true,
+      "integer_arithmetic_instruction_proven": false,
+      "strict_named_tactic_requirement_satisfied_by_trace": false,
+      "status": "EXACT_LAYER_NVTX_RUNTIME_CORRELATION_TO_KERNEL_IDENTITY_OBSERVED",
+      "errors": [],
+      "correlations": [
+        {
+          "runtime_api": {
+            "sqlite_rowid": 2218,
+            "start": 7095034272,
+            "end": 7095044800,
+            "eventClass": 0,
+            "globalTid": 281565473019154,
+            "correlationId": 4724,
+            "nameId": 940,
+            "returnValue": 0,
+            "callchainId": null,
+            "resolved_name": "cudaLaunchKernel_v7000"
+          },
+          "api_on_exact_nvtx_global_thread": true,
+          "api_fully_inside_layer_cpu_interval": true,
+          "correlation_id_unique_in_entire_runtime_table": true,
+          "exactly_one_native_layer_contains_this_api": true,
+          "kernel_rows_with_exact_correlation_id": [
+            {
+              "sqlite_rowid": 242,
+              "start": 7108885152,
+              "end": 7108907616,
+              "deviceId": 0,
+              "contextId": 1,
+              "streamId": 15,
+              "correlationId": 4724,
+              "globalPid": 281565473013760,
+              "demangledName": 1054,
+              "shortName": 1055,
+              "mangledName": 1007,
+              "launchType": 1,
+              "cacheConfig": 1,
+              "registersPerThread": 48,
+              "gridX": 7,
+              "gridY": 1,
+              "gridZ": 1,
+              "blockX": 256,
+              "blockY": 1,
+              "blockZ": 1,
+              "staticSharedMemory": 0,
+              "dynamicSharedMemory": 0,
+              "localMemoryPerThread": 0,
+              "localMemoryTotal": 6422528,
+              "gridId": 247,
+              "sharedMemoryExecuted": 8192,
+              "graphNodeId": null,
+              "sharedMemoryLimitConfig": 0,
+              "demangled_name_text": "void cuDepthwise::depthwiseConvINT8SpecializedKernel<(int)3, (int)3, (int)1, (int)1>(const int *, char4 *, nvinfer1::rt::ReducedDivisor, int, int, nvinfer1::rt::ReducedDivisor, int, int, int, nvinfer1::rt::ReducedDivisor, const int *, const float4 *, const float4 *, float, float, bool, bool, float, int, int, int)",
+              "short_name_text": "depthwiseConvINT8SpecializedKernel",
+              "mangled_name_text": "_ZN11cuDepthwise34depthwiseConvINT8SpecializedKernelILi3ELi3ELi1ELi1EEEvPKiP5char4N8nvinfer12rt14ReducedDivisorEiiS7_iiiS7_S2_PK6float4SA_ffbbfiii",
+              "captured_process_rows": [
+                {
+                  "globalPid": 281565473013760,
+                  "pid": 5394,
+                  "name": "/usr/bin/python3"
+                }
+              ],
+              "arithmetic_instruction_evidence": "NOT_PRESENT; function spelling is not disassembly or executed instruction evidence"
+            }
+          ]
+        }
+      ],
+      "exact_name_completed_nvtx_ranges_in_capture": 1,
+      "nvtx": {
+        "sqlite_rowid": 252,
+        "start": 7095028736,
+        "end": 7095046848,
+        "eventType": 59,
+        "rangeId": null,
+        "category": null,
+        "color": 4294956800,
+        "text": null,
+        "globalTid": 281565473019154,
+        "endGlobalTid": null,
+        "textId": 873,
+        "domainId": 1,
+        "uint64Value": null,
+        "int64Value": null,
+        "doubleValue": null,
+        "uint32Value": null,
+        "int32Value": null,
+        "floatValue": null,
+        "jsonTextId": 874,
+        "jsonText": null,
+        "resolved_text": "model.23.cv3.2.1.0.conv.weight + rampq_model_23_cv3_2_1_0_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul)",
+        "resolved_json": "{\n  \"Name\": \"model.23.cv3.2.1.0.conv.weight + rampq_model_23_cv3_2_1_0_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul)\",\n  \"LayerType\": \"CudaDepthwiseConvolution\",\n  \"Inputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_2_1_0_conv_a_q\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,20,20],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"Outputs\": [\n  {\n    \"Name\": \"rampq_model_23_cv3_2_1_1_conv_clipped\",\n    \"Location\": \"Device\",\n    \"Dimensions\": [1,64,20,20],\n    \"Format/Datatype\": \"Thirty-two wide channel vectorized row major Int8 format\"\n  }],\n  \"ParameterType\": \"Convolution\",\n  \"Kernel\": [3,3],\n  \"PaddingMode\": \"kEXPLICIT_ROUND_DOWN\",\n  \"PrePadding\": [1,1],\n  \"PostPadding\": [1,1],\n  \"Stride\": [1,1],\n  \"Dilation\": [1,1],\n  \"OutMaps\": 64,\n  \"Groups\": 64,\n  \"Weights\": {\"Type\": \"Int8\", \"Count\": 576},\n  \"Bias\": {\"Type\": \"Float\", \"Count\": 64},\n  \"HasSparseWeights\": 0,\n  \"HasDynamicFilter\": 0,\n  \"HasDynamicBias\": 0,\n  \"HasResidual\": 0,\n  \"ConvXAsActInputIdx\": -1,\n  \"BiasAsActInputIdx\": -1,\n  \"ResAsActInputIdx\": -1,\n  \"Activation\": \"SWISH\",\n  \"HasBias\": 1,\n  \"TacticValue\": \"0xfffffffffffffffc\"\n}"
+      },
+      "nvtx_json_matches_full_native_inspector_layer": true,
+      "fully_contained_same_thread_runtime_api_count": 1,
+      "exact_correlated_kernel_count": 1
+    }
+  ],
+  "strict_precision_audit_changed": false,
+  "strict_named_tactic_source_convs_remain": 81,
+  "new_engine_execution_performed": false,
+  "board_access": false,
+  "performance_benchmark_claim": false,
+  "numerical_migration_claim": false,
+  "limits": "Runtime kernel identities are additional diagnostic evidence only. CPU NVTX intervals contain launch APIs; GPU execution is asynchronous and need not overlap those CPU ranges. Exact correlation does not expose arithmetic instructions or fill absent TacticName fields. Strict status remains PRECISION_REVIEW_REQUIRED.",
+  "all_source_files_sha256_unchanged": true
+}

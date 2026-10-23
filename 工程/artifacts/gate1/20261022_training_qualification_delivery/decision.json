@@ -1,0 +1,151 @@
+{
+  "schema": "rampq.gate1.training_and_float_qualification_decision/v1",
+  "as_of_utc": "2026-10-22T10:10:17.792667+00:00",
+  "status": "TRAINING_COMPLETE_FLOAT_DTYPE_QUALIFICATION_FAILED",
+  "training_candidate_complete": true,
+  "completed_training_epochs": 30,
+  "best_training_epoch_one_based": 29,
+  "last_training_epoch_one_based": 30,
+  "training_audit": "PASS_COMPLETED_TRAINING_CANDIDATE_AUDIT_ONLY",
+  "checkpoints": {
+    "best.pt": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\run\\weights\\best.pt",
+      "bytes": 5486993,
+      "sha256": "cddd14b3ebba294e4c3200bfb50fc1db1a9459c425d8e51d583c0881d71cfcfa",
+      "training_epoch_zero_based": 28,
+      "training_epoch_one_based": 29,
+      "epoch_provenance": "on_model_save callback before framework final stripping; final serialized epoch may be -1",
+      "serialized_epoch": -1,
+      "state_tensor_count": 499,
+      "all_state_tensors_finite": true,
+      "inference_executed": false
+    },
+    "last.pt": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\run\\weights\\last.pt",
+      "bytes": 5486993,
+      "sha256": "120e04905d024b78272bde21f55ed1801ed48a5acd7f744892317e1c28c7e49e",
+      "training_epoch_zero_based": 29,
+      "training_epoch_one_based": 30,
+      "epoch_provenance": "on_model_save callback before framework final stripping; final serialized epoch may be -1",
+      "serialized_epoch": -1,
+      "state_tensor_count": 499,
+      "all_state_tensors_finite": true,
+      "inference_executed": false
+    }
+  },
+  "debug_images": 109,
+  "debug_raw_finite_shape_domain": "PASS_ENGINEERING_VALIDITY_ONLY",
+  "same_backend_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "guard_failed_images": 109,
+  "all_anchor_box_elements": 3662400,
+  "all_anchor_box_violations": 10849,
+  "all_anchor_score_elements": 9156000,
+  "all_anchor_score_violations": 0,
+  "saved_output_audit": "PASS_SAVED_OUTPUT_CONSISTENCY_ONLY",
+  "debug_project_matching_main_threshold": 0.25,
+  "debug_project_matching_main": {
+    "fp32": {
+      "eligible_targets": 9059,
+      "hits": 3146,
+      "misses": 5913,
+      "false_positive_detections": 1631,
+      "score_0_absorbed_detections": 0,
+      "category_0_dropped_detections": 3339,
+      "project_target_recall": 0.34727894911138096,
+      "project_detection_precision": 0.658572325727444
+    },
+    "fp16": {
+      "eligible_targets": 9059,
+      "hits": 3143,
+      "misses": 5916,
+      "false_positive_detections": 1636,
+      "score_0_absorbed_detections": 0,
+      "category_0_dropped_detections": 3340,
+      "project_target_recall": 0.3469477867314273,
+      "project_detection_precision": 0.6576689684034317
+    },
+    "paired_targets": {
+      "eligible_targets": 9059,
+      "fp32_hits": 3146,
+      "fp16_hits": 3143,
+      "both_hit": 3136,
+      "fp32_only_hit": 10,
+      "fp16_only_hit": 7,
+      "both_miss": 5906
+    }
+  },
+  "posthoc_diagnostics_do_not_change_guard": true,
+  "accepted_float_baseline_ready": false,
+  "gate1_scientific_pass": false,
+  "official_AP_implemented": false,
+  "official_oracle_verified": false,
+  "selection_detector_inference": false,
+  "holdout_opened_or_listed": false,
+  "old_gate05_numeric_guard": "FAILED_UNCHANGED",
+  "new_quantization_research_started": false,
+  "evidence": [
+    {
+      "path": "artifacts/gate1/20261022_split_refinement/float_training_v2/attempt_receipt.json",
+      "bytes": 29483,
+      "sha256": "1eefc98de40dd7ab7ce10fbd4fa385a52611ad4847124a410ae4b5cae7ca97e1"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/01_training_audit/audit.json",
+      "bytes": 3389,
+      "sha256": "50a1e9b1f896870e820e56ba69dd63fc14c68cd328ea577b0796660054d80997"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/02_float_qualification/manifest.json",
+      "bytes": 74689,
+      "sha256": "77b096b122dc41c5e0ae879d2c50bd10efb52bf021679fae2ed89999ff4368e6"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/02_float_qualification/qualification_receipt.json",
+      "bytes": 4043,
+      "sha256": "8300c185e3e28cc0e0675bd2a1c7f38746e711f30614ef8ccfc8b6e5b7bcc074"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/02_float_qualification/raw_dtype_guard.json",
+      "bytes": 173392,
+      "sha256": "b68a775b2c129fad01a099cd97f8be44c87a328e01d40cd948fab7d50c9a276e"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/02_float_qualification/matching_summary.json",
+      "bytes": 4083,
+      "sha256": "8826bb2e91268759c7db7532d8c6f3314f057f92971362a66d2b6b025c7090f6"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/03_qualification_output_audit/manifest.json",
+      "bytes": 316,
+      "sha256": "79aef38575b84617349a7b1270776bfba8dac06e1f414888c1c05062b7e86f57"
+    },
+    {
+      "path": "artifacts/gate1/20261022_posttraining_checks_v1/03_qualification_output_audit/recomputed_summary.json",
+      "bytes": 32590,
+      "sha256": "9f55fba3c351ba9f91bd9019a4aaa88417520ac63119dafb2f45a08d4bf126f5"
+    },
+    {
+      "path": "artifacts/gate1/20261022_dtype_guard_diagnostics/raw_failure_description.json",
+      "bytes": 30350,
+      "sha256": "18c7741d7d99f4b08f368accbce3aeae156887845f98698471eab3ed447e3480"
+    },
+    {
+      "path": "artifacts/gate1/20261022_dtype_guard_diagnostics/independent_review/raw_array_diagnostics.json",
+      "bytes": 68466,
+      "sha256": "3da0e2057fb915cf62e7ef853491d9463cdcd4c9c1be3e34829bd252fbb22686"
+    }
+  ],
+  "next_bounded_step": "Freeze a separate precision probe on fixed debug images to distinguish upstream network/logit differences from DFL and box decoding arithmetic; do not alter the historical guard or tune thresholds.",
+  "limits": [
+    "The 109 debug images were previously used for engineering work and are not independent Selection or Holdout evidence.",
+    "FP32 reference weights are the saved fp16 EMA checkpoint converted to float; original full-precision training weights are not recovered.",
+    "Both PyTorch models are unfused and use one fixed preprocessing/postprocessing contract; this is not TensorRT or Orin validation.",
+    "Same-backend dtype tolerances are fixed before execution; failure is retained without relaxing thresholds.",
+    "Project ignore-aware target matching is not official VisDrone AP and has not been certified against a MATLAB/Octave oracle.",
+    "Finite output, target hits, or a dtype guard PASS do not automatically accept a scientific float baseline.",
+    "The original Gate0.5 FAILED_UNCHANGED numerical guard is a separate artifact and is never replaced by this check.",
+    "Saved raw outputs cannot localize an intermediate arithmetic cause.",
+    "All-anchor guard failure is retained even when main-confidence retained boxes have no elementwise box violation.",
+    "No scientific method or module ranking, official AP, TensorRT/Orin accuracy or performance claim follows from this delivery."
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "rampq.gate05.dfl_conv_output_source_review/v1",
+  "reviewed_client_at": "2026-10-20T22:23:32.247700+08:00",
+  "status": "SOURCE_OUTPUT_BOUNDARY_PROTOCOL_STATIC_REVIEW_PASSED",
+  "checks": [
+    {
+      "name": "frozen_protocol_sha",
+      "passed": true
+    },
+    {
+      "name": "stage35_checkpoint_identity",
+      "passed": true
+    },
+    {
+      "name": "stage35_next_plan_identity",
+      "passed": true
+    },
+    {
+      "name": "stage35_graph_identity",
+      "passed": true
+    },
+    {
+      "name": "closure_external_input:/model.23/dfl/Softmax_output_0",
+      "passed": true
+    },
+    {
+      "name": "closure_exact_six_nodes",
+      "passed": true
+    },
+    {
+      "name": "closure_exact_seven_initializers",
+      "passed": true
+    },
+    {
+      "name": "exact_two_nodes_removed",
+      "passed": true
+    },
+    {
+      "name": "one_Conv_no_Softmax_or_Reshape",
+      "passed": true
+    },
+    {
+      "name": "terminal_reshape_directly_uses_Conv_output",
+      "passed": true
+    },
+    {
+      "name": "unchanged_input_FLOAT_shape",
+      "passed": true
+    },
+    {
+      "name": "full_failed_source_identity",
+      "passed": true
+    },
+    {
+      "name": "declared_Conv_output_FLOAT_4D",
+      "passed": true
+    },
+    {
+      "name": "probability_file_identity",
+      "passed": true
+    },
+    {
+      "name": "saved_probability_finite_FLOAT_shape",
+      "passed": true
+    },
+    {
+      "name": "saved_3D_reference_file_identity",
+      "passed": true
+    },
+    {
+      "name": "saved_3D_reference_explicit_reshape_preserves_rawbytes",
+      "passed": true
+    },
+    {
+      "name": "CPU_budget_exact_one",
+      "passed": true
+    },
+    {
+      "name": "native_cases_and_budgets",
+      "passed": true
+    },
+    {
+      "name": "no_precision_resets_policy",
+      "passed": true
+    }
+  ],
+  "check_count": 20,
+  "selected_node_names": [
+    "rampq_model_23_dfl_conv_ActivationQ",
+    "rampq_model_23_dfl_conv_Clip",
+    "rampq_model_23_dfl_conv_ActivationDQ",
+    "rampq_model_23_dfl_conv_WeightQ",
+    "rampq_model_23_dfl_conv_WeightDQ",
+    "/model.23/dfl/conv/Conv"
+  ],
+  "selected_initializer_names": [
+    "model.23.dfl.conv.weight",
+    "rampq_model_23_dfl_conv_a_scale",
+    "rampq_model_23_dfl_conv_a_zero",
+    "rampq_model_23_dfl_conv_clip_max",
+    "rampq_model_23_dfl_conv_clip_min",
+    "rampq_model_23_dfl_conv_w_scale",
+    "rampq_model_23_dfl_conv_w_zero"
+  ],
+  "source_old_CPU_raw_array_sha256": "3e4280d6a97b12d4e0c33eeb1e0a462ab3d457cef8eca9ce2ac5554816f45436",
+  "launch_blockers_at_source_review": [],
+  "sealed_bundle_pre_native_review_still_required": true,
+  "CPU_OR_native_graph_execution_by_reviewer": false,
+  "SSH_by_reviewer": false,
+  "scope_limit": "Removing Constant/Reshape also changes native output boundary and format selection; no unique removed-node or full-model cause follows."
+}

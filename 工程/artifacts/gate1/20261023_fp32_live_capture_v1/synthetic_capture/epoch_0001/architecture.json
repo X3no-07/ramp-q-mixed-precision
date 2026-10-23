@@ -1,0 +1,61 @@
+{
+  "reconstruction_class": "ultralytics.nn.tasks.DetectionModel",
+  "cfg": {
+    "nc": 2,
+    "backbone": [
+      [
+        -1,
+        1,
+        "Conv",
+        [
+          8,
+          3,
+          2
+        ]
+      ],
+      [
+        -1,
+        1,
+        "Conv",
+        [
+          16,
+          3,
+          2
+        ]
+      ],
+      [
+        -1,
+        1,
+        "Conv",
+        [
+          32,
+          3,
+          2
+        ]
+      ]
+    ],
+    "head": [
+      [
+        [
+          0,
+          1,
+          2
+        ],
+        1,
+        "Detect",
+        [
+          "nc"
+        ]
+      ]
+    ],
+    "channels": 3
+  },
+  "names": [
+    "synthetic_zero",
+    "synthetic_one"
+  ],
+  "nc": 2,
+  "channels": 3,
+  "live_class": "ultralytics.nn.tasks.DetectionModel",
+  "inference_only_reconstruction": true
+}

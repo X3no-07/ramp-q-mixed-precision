@@ -1,0 +1,936 @@
+{
+  "schema": "rampq.gate05.matched_control_build_request/v1",
+  "configuration": "q_only_G1",
+  "graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+  "tool_identity": {
+    "builder_file": "jetson_build_matched_control.py",
+    "builder_sha256": "4d2ee7d283abf6cd75b6d76e58870f79f11392fa06eaef37936fab6d7bafca34",
+    "helper_relative_path": "jetson_build_precision_candidate.py",
+    "helper_sha256": "d8431345da90482f0d5798e2d6524bf03591ecef653edfad5ef3e28a509eb19f",
+    "native_protocol_sha256": "12ce0b79c1e765f3293cc529f01023e6a58671e8ad688f0884fcf216931a3459",
+    "family_protocol_sha256": "27af69e97a8c4220653294381c69fbf8fa412044bb09e94d7d888d2355cee98c",
+    "spec_sha256": "f0ae1d7218289cd15c45ad6845e881b4b6d75a3ca8e8ea59914d11a9ea7a01e1",
+    "manifest_sha256": "04ae660dcd993c627906c40e6b88d208d4d647654632d3b7015dd465df7136ec",
+    "parent_spec_sha256": "cd6bde58334770339b9259002ce3b2a00563bbba4340c3bc8bfa8e914aa4e67f",
+    "parent_manifest_sha256": "32b4187f6f694e3efc843ec41c3132f48b4bdf34b84bd2399097b2998507b06a",
+    "graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+    "cpu_equivalence_sha256": "acae7989e1c9a3f478a4eeeba8012416f22a5d079b86d59af7ef75030f39556a",
+    "cpu_expected_outputs_sha256": "8c227bc9dc9f948f26320a022f1ea6cfcbc86257637176da35a42d866e9195c1"
+  },
+  "legacy_parent_precision_constraints": "obey",
+  "legacy_source_precision_constraints": "obey",
+  "runtime_precision_constraints": "none",
+  "separate_new_control_not_legacy_attempt": true,
+  "quantized_conv_count": 6,
+  "desired_restored_fp16_conv_count": 82,
+  "preparation_CPU_model_runs": 2,
+  "new_CPU_execution_runs": 0,
+  "single_image_inference": "NOT_RUN",
+  "dataset_evaluation": "NOT_RUN",
+  "actual_precision_audit": "PENDING",
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "numerical_pass_claim": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "desired_FP16_mask_is_not_adoption_proof": true,
+  "max_build_seconds": 7200,
+  "maximum_native_builds": 1,
+  "run_dir": "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_q_only_G1_20261021/results/build_20261018T115833_243760Z",
+  "phase": "PARSING",
+  "status": "FROZEN_MATCHED_CONTROL_NATIVE_REQUEST",
+  "flags": {
+    "raw_config_flags": 3,
+    "get_flag": {
+      "DEBUG": {
+        "supported": true,
+        "enabled": false
+      },
+      "DIRECT_IO": {
+        "supported": true,
+        "enabled": false
+      },
+      "DISABLE_TIMING_CACHE": {
+        "supported": true,
+        "enabled": false
+      },
+      "ENABLE_TACTIC_HEURISTIC": {
+        "supported": true,
+        "enabled": false
+      },
+      "FP16": {
+        "supported": true,
+        "enabled": true
+      },
+      "GPU_FALLBACK": {
+        "supported": true,
+        "enabled": false
+      },
+      "INT8": {
+        "supported": true,
+        "enabled": true
+      },
+      "OBEY_PRECISION_CONSTRAINTS": {
+        "supported": true,
+        "enabled": false
+      },
+      "PREFER_PRECISION_CONSTRAINTS": {
+        "supported": true,
+        "enabled": false
+      },
+      "REFIT": {
+        "supported": true,
+        "enabled": false
+      },
+      "REJECT_EMPTY_ALGORITHMS": {
+        "supported": true,
+        "enabled": false
+      },
+      "SAFETY_SCOPE": {
+        "supported": true,
+        "enabled": false
+      },
+      "SPARSE_WEIGHTS": {
+        "supported": true,
+        "enabled": false
+      },
+      "STRICT_TYPES": {
+        "supported": true,
+        "enabled": false
+      },
+      "TF32": {
+        "supported": true,
+        "enabled": false
+      }
+    }
+  },
+  "command": [
+    "TensorRT Python Builder.build_serialized_network"
+  ],
+  "source_conv_count": 88,
+  "desired_source_requests": [
+    {
+      "module": "model.0.conv",
+      "onnx_node": "/model.0/conv/Conv",
+      "group": "G1",
+      "precision": "INT8",
+      "weight_input": "model.0.conv.weight",
+      "original_activation_input": "images"
+    },
+    {
+      "module": "model.1.conv",
+      "onnx_node": "/model.1/conv/Conv",
+      "group": "G1",
+      "precision": "INT8",
+      "weight_input": "model.1.conv.weight",
+      "original_activation_input": "/model.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.2.cv1.conv",
+      "onnx_node": "/model.2/cv1/conv/Conv",
+      "group": "G1",
+      "precision": "INT8",
+      "weight_input": "model.2.cv1.conv.weight",
+      "original_activation_input": "/model.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.2.m.0.cv1.conv",
+      "onnx_node": "/model.2/m.0/cv1/conv/Conv",
+      "group": "G1",
+      "precision": "INT8",
+      "weight_input": "model.2.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.2/Split_output_1"
+    },
+    {
+      "module": "model.2.m.0.cv2.conv",
+      "onnx_node": "/model.2/m.0/cv2/conv/Conv",
+      "group": "G1",
+      "precision": "INT8",
+      "weight_input": "model.2.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.2/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.2.cv2.conv",
+      "onnx_node": "/model.2/cv2/conv/Conv",
+      "group": "G1",
+      "precision": "INT8",
+      "weight_input": "model.2.cv2.conv.weight",
+      "original_activation_input": "/model.2/Concat_output_0"
+    },
+    {
+      "module": "model.3.conv",
+      "onnx_node": "/model.3/conv/Conv",
+      "group": "G2",
+      "precision": "FP16",
+      "weight_input": "model.3.conv.weight",
+      "original_activation_input": "/model.2/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.4.cv1.conv",
+      "onnx_node": "/model.4/cv1/conv/Conv",
+      "group": "G2",
+      "precision": "FP16",
+      "weight_input": "model.4.cv1.conv.weight",
+      "original_activation_input": "/model.3/act/Mul_output_0"
+    },
+    {
+      "module": "model.4.m.0.cv1.conv",
+      "onnx_node": "/model.4/m.0/cv1/conv/Conv",
+      "group": "G2",
+      "precision": "FP16",
+      "weight_input": "model.4.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.4/Split_output_1"
+    },
+    {
+      "module": "model.4.m.0.cv2.conv",
+      "onnx_node": "/model.4/m.0/cv2/conv/Conv",
+      "group": "G2",
+      "precision": "FP16",
+      "weight_input": "model.4.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.4/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.4.cv2.conv",
+      "onnx_node": "/model.4/cv2/conv/Conv",
+      "group": "G2",
+      "precision": "FP16",
+      "weight_input": "model.4.cv2.conv.weight",
+      "original_activation_input": "/model.4/Concat_output_0"
+    },
+    {
+      "module": "model.5.conv",
+      "onnx_node": "/model.5/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.5.conv.weight",
+      "original_activation_input": "/model.4/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.6.cv1.conv",
+      "onnx_node": "/model.6/cv1/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.cv1.conv.weight",
+      "original_activation_input": "/model.5/act/Mul_output_0"
+    },
+    {
+      "module": "model.6.m.0.cv1.conv",
+      "onnx_node": "/model.6/m.0/cv1/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.6/Split_output_1"
+    },
+    {
+      "module": "model.6.m.0.m.0.cv1.conv",
+      "onnx_node": "/model.6/m.0/m/m.0/cv1/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.6/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.6.m.0.m.0.cv2.conv",
+      "onnx_node": "/model.6/m.0/m/m.0/cv2/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.6/m.0/m/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.6.m.0.m.1.cv1.conv",
+      "onnx_node": "/model.6/m.0/m/m.1/cv1/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.m.1.cv1.conv.weight",
+      "original_activation_input": "/model.6/m.0/m/m.0/Add_output_0"
+    },
+    {
+      "module": "model.6.m.0.m.1.cv2.conv",
+      "onnx_node": "/model.6/m.0/m/m.1/cv2/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.m.1.cv2.conv.weight",
+      "original_activation_input": "/model.6/m.0/m/m.1/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.6.m.0.cv2.conv",
+      "onnx_node": "/model.6/m.0/cv2/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.6/Split_output_1"
+    },
+    {
+      "module": "model.6.m.0.cv3.conv",
+      "onnx_node": "/model.6/m.0/cv3/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.m.0.cv3.conv.weight",
+      "original_activation_input": "/model.6/m.0/Concat_output_0"
+    },
+    {
+      "module": "model.6.cv2.conv",
+      "onnx_node": "/model.6/cv2/conv/Conv",
+      "group": "G3",
+      "precision": "FP16",
+      "weight_input": "model.6.cv2.conv.weight",
+      "original_activation_input": "/model.6/Concat_output_0"
+    },
+    {
+      "module": "model.7.conv",
+      "onnx_node": "/model.7/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.7.conv.weight",
+      "original_activation_input": "/model.6/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.8.cv1.conv",
+      "onnx_node": "/model.8/cv1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.cv1.conv.weight",
+      "original_activation_input": "/model.7/act/Mul_output_0"
+    },
+    {
+      "module": "model.8.m.0.cv1.conv",
+      "onnx_node": "/model.8/m.0/cv1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.8/Split_output_1"
+    },
+    {
+      "module": "model.8.m.0.m.0.cv1.conv",
+      "onnx_node": "/model.8/m.0/m/m.0/cv1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.8/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.8.m.0.m.0.cv2.conv",
+      "onnx_node": "/model.8/m.0/m/m.0/cv2/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.8/m.0/m/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.8.m.0.m.1.cv1.conv",
+      "onnx_node": "/model.8/m.0/m/m.1/cv1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.m.1.cv1.conv.weight",
+      "original_activation_input": "/model.8/m.0/m/m.0/Add_output_0"
+    },
+    {
+      "module": "model.8.m.0.m.1.cv2.conv",
+      "onnx_node": "/model.8/m.0/m/m.1/cv2/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.m.1.cv2.conv.weight",
+      "original_activation_input": "/model.8/m.0/m/m.1/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.8.m.0.cv2.conv",
+      "onnx_node": "/model.8/m.0/cv2/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.8/Split_output_1"
+    },
+    {
+      "module": "model.8.m.0.cv3.conv",
+      "onnx_node": "/model.8/m.0/cv3/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.m.0.cv3.conv.weight",
+      "original_activation_input": "/model.8/m.0/Concat_output_0"
+    },
+    {
+      "module": "model.8.cv2.conv",
+      "onnx_node": "/model.8/cv2/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.8.cv2.conv.weight",
+      "original_activation_input": "/model.8/Concat_output_0"
+    },
+    {
+      "module": "model.9.cv1.conv",
+      "onnx_node": "/model.9/cv1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.9.cv1.conv.weight",
+      "original_activation_input": "/model.8/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.9.cv2.conv",
+      "onnx_node": "/model.9/cv2/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.9.cv2.conv.weight",
+      "original_activation_input": "/model.9/Concat_output_0"
+    },
+    {
+      "module": "model.10.cv1.conv",
+      "onnx_node": "/model.10/cv1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.cv1.conv.weight",
+      "original_activation_input": "/model.9/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.10.m.0.attn.qkv.conv",
+      "onnx_node": "/model.10/m/m.0/attn/qkv/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.m.0.attn.qkv.conv.weight",
+      "original_activation_input": "/model.10/Split_output_1"
+    },
+    {
+      "module": "model.10.m.0.attn.pe.conv",
+      "onnx_node": "/model.10/m/m.0/attn/pe/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.m.0.attn.pe.conv.weight",
+      "original_activation_input": "/model.10/m/m.0/attn/Reshape_2_output_0"
+    },
+    {
+      "module": "model.10.m.0.attn.proj.conv",
+      "onnx_node": "/model.10/m/m.0/attn/proj/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.m.0.attn.proj.conv.weight",
+      "original_activation_input": "/model.10/m/m.0/attn/Add_output_0"
+    },
+    {
+      "module": "model.10.m.0.ffn.0.conv",
+      "onnx_node": "/model.10/m/m.0/ffn/ffn.0/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.m.0.ffn.0.conv.weight",
+      "original_activation_input": "/model.10/m/m.0/Add_output_0"
+    },
+    {
+      "module": "model.10.m.0.ffn.1.conv",
+      "onnx_node": "/model.10/m/m.0/ffn/ffn.1/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.m.0.ffn.1.conv.weight",
+      "original_activation_input": "/model.10/m/m.0/ffn/ffn.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.10.cv2.conv",
+      "onnx_node": "/model.10/cv2/conv/Conv",
+      "group": "G4",
+      "precision": "FP16",
+      "weight_input": "model.10.cv2.conv.weight",
+      "original_activation_input": "/model.10/Concat_output_0"
+    },
+    {
+      "module": "model.13.cv1.conv",
+      "onnx_node": "/model.13/cv1/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.13.cv1.conv.weight",
+      "original_activation_input": "/model.12/Concat_output_0"
+    },
+    {
+      "module": "model.13.m.0.cv1.conv",
+      "onnx_node": "/model.13/m.0/cv1/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.13.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.13/Split_output_1"
+    },
+    {
+      "module": "model.13.m.0.cv2.conv",
+      "onnx_node": "/model.13/m.0/cv2/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.13.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.13/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.13.cv2.conv",
+      "onnx_node": "/model.13/cv2/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.13.cv2.conv.weight",
+      "original_activation_input": "/model.13/Concat_output_0"
+    },
+    {
+      "module": "model.16.cv1.conv",
+      "onnx_node": "/model.16/cv1/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.16.cv1.conv.weight",
+      "original_activation_input": "/model.15/Concat_output_0"
+    },
+    {
+      "module": "model.16.m.0.cv1.conv",
+      "onnx_node": "/model.16/m.0/cv1/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.16.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.16/Split_output_1"
+    },
+    {
+      "module": "model.16.m.0.cv2.conv",
+      "onnx_node": "/model.16/m.0/cv2/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.16.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.16/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.16.cv2.conv",
+      "onnx_node": "/model.16/cv2/conv/Conv",
+      "group": "G5",
+      "precision": "FP16",
+      "weight_input": "model.16.cv2.conv.weight",
+      "original_activation_input": "/model.16/Concat_output_0"
+    },
+    {
+      "module": "model.17.conv",
+      "onnx_node": "/model.17/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.17.conv.weight",
+      "original_activation_input": "/model.16/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.19.cv1.conv",
+      "onnx_node": "/model.19/cv1/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.19.cv1.conv.weight",
+      "original_activation_input": "/model.18/Concat_output_0"
+    },
+    {
+      "module": "model.19.m.0.cv1.conv",
+      "onnx_node": "/model.19/m.0/cv1/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.19.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.19/Split_output_1"
+    },
+    {
+      "module": "model.19.m.0.cv2.conv",
+      "onnx_node": "/model.19/m.0/cv2/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.19.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.19/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.19.cv2.conv",
+      "onnx_node": "/model.19/cv2/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.19.cv2.conv.weight",
+      "original_activation_input": "/model.19/Concat_output_0"
+    },
+    {
+      "module": "model.20.conv",
+      "onnx_node": "/model.20/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.20.conv.weight",
+      "original_activation_input": "/model.19/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.22.cv1.conv",
+      "onnx_node": "/model.22/cv1/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.cv1.conv.weight",
+      "original_activation_input": "/model.21/Concat_output_0"
+    },
+    {
+      "module": "model.22.m.0.cv1.conv",
+      "onnx_node": "/model.22/m.0/cv1/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.22/Split_output_1"
+    },
+    {
+      "module": "model.22.m.0.m.0.cv1.conv",
+      "onnx_node": "/model.22/m.0/m/m.0/cv1/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.m.0.cv1.conv.weight",
+      "original_activation_input": "/model.22/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.22.m.0.m.0.cv2.conv",
+      "onnx_node": "/model.22/m.0/m/m.0/cv2/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.22/m.0/m/m.0/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.22.m.0.m.1.cv1.conv",
+      "onnx_node": "/model.22/m.0/m/m.1/cv1/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.m.1.cv1.conv.weight",
+      "original_activation_input": "/model.22/m.0/m/m.0/Add_output_0"
+    },
+    {
+      "module": "model.22.m.0.m.1.cv2.conv",
+      "onnx_node": "/model.22/m.0/m/m.1/cv2/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.m.1.cv2.conv.weight",
+      "original_activation_input": "/model.22/m.0/m/m.1/cv1/act/Mul_output_0"
+    },
+    {
+      "module": "model.22.m.0.cv2.conv",
+      "onnx_node": "/model.22/m.0/cv2/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.cv2.conv.weight",
+      "original_activation_input": "/model.22/Split_output_1"
+    },
+    {
+      "module": "model.22.m.0.cv3.conv",
+      "onnx_node": "/model.22/m.0/cv3/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.m.0.cv3.conv.weight",
+      "original_activation_input": "/model.22/m.0/Concat_output_0"
+    },
+    {
+      "module": "model.22.cv2.conv",
+      "onnx_node": "/model.22/cv2/conv/Conv",
+      "group": "G6",
+      "precision": "FP16",
+      "weight_input": "model.22.cv2.conv.weight",
+      "original_activation_input": "/model.22/Concat_output_0"
+    },
+    {
+      "module": "model.23.cv2.0.0.conv",
+      "onnx_node": "/model.23/cv2.0/cv2.0.0/conv/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.0.0.conv.weight",
+      "original_activation_input": "/model.16/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.0.1.conv",
+      "onnx_node": "/model.23/cv2.0/cv2.0.1/conv/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.0.1.conv.weight",
+      "original_activation_input": "/model.23/cv2.0/cv2.0.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.0.2",
+      "onnx_node": "/model.23/cv2.0/cv2.0.2/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.0.2.weight",
+      "original_activation_input": "/model.23/cv2.0/cv2.0.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.1.0.conv",
+      "onnx_node": "/model.23/cv2.1/cv2.1.0/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.1.0.conv.weight",
+      "original_activation_input": "/model.19/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.1.1.conv",
+      "onnx_node": "/model.23/cv2.1/cv2.1.1/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.1.1.conv.weight",
+      "original_activation_input": "/model.23/cv2.1/cv2.1.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.1.2",
+      "onnx_node": "/model.23/cv2.1/cv2.1.2/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.1.2.weight",
+      "original_activation_input": "/model.23/cv2.1/cv2.1.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.2.0.conv",
+      "onnx_node": "/model.23/cv2.2/cv2.2.0/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.2.0.conv.weight",
+      "original_activation_input": "/model.22/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.2.1.conv",
+      "onnx_node": "/model.23/cv2.2/cv2.2.1/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.2.1.conv.weight",
+      "original_activation_input": "/model.23/cv2.2/cv2.2.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv2.2.2",
+      "onnx_node": "/model.23/cv2.2/cv2.2.2/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv2.2.2.weight",
+      "original_activation_input": "/model.23/cv2.2/cv2.2.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.0.0.0.conv",
+      "onnx_node": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.0.0.0.conv.weight",
+      "original_activation_input": "/model.16/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.0.0.1.conv",
+      "onnx_node": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.0.0.1.conv.weight",
+      "original_activation_input": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.0.1.0.conv",
+      "onnx_node": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.0.1.0.conv.weight",
+      "original_activation_input": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.0.1.1.conv",
+      "onnx_node": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.0.1.1.conv.weight",
+      "original_activation_input": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.0.2",
+      "onnx_node": "/model.23/cv3.0/cv3.0.2/Conv",
+      "group": "G7",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.0.2.weight",
+      "original_activation_input": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.1.0.0.conv",
+      "onnx_node": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.1.0.0.conv.weight",
+      "original_activation_input": "/model.19/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.1.0.1.conv",
+      "onnx_node": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.1.0.1.conv.weight",
+      "original_activation_input": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.1.1.0.conv",
+      "onnx_node": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.1.1.0.conv.weight",
+      "original_activation_input": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.1.1.1.conv",
+      "onnx_node": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.1.1.1.conv.weight",
+      "original_activation_input": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.1.2",
+      "onnx_node": "/model.23/cv3.1/cv3.1.2/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.1.2.weight",
+      "original_activation_input": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.2.0.0.conv",
+      "onnx_node": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.2.0.0.conv.weight",
+      "original_activation_input": "/model.22/cv2/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.2.0.1.conv",
+      "onnx_node": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.2.0.1.conv.weight",
+      "original_activation_input": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.2.1.0.conv",
+      "onnx_node": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.2.1.0.conv.weight",
+      "original_activation_input": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.2.1.1.conv",
+      "onnx_node": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.2.1.1.conv.weight",
+      "original_activation_input": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.cv3.2.2",
+      "onnx_node": "/model.23/cv3.2/cv3.2.2/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.cv3.2.2.weight",
+      "original_activation_input": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul_output_0"
+    },
+    {
+      "module": "model.23.dfl.conv",
+      "onnx_node": "/model.23/dfl/conv/Conv",
+      "group": "G8",
+      "precision": "FP16",
+      "weight_input": "model.23.dfl.conv.weight",
+      "original_activation_input": "/model.23/dfl/Softmax_output_0"
+    }
+  ],
+  "bindings_in_network_order": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "is_shape_tensor": false,
+      "input": true,
+      "allowed_formats": 1
+    },
+    {
+      "name": "output0",
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "is_shape_tensor": false,
+      "input": false,
+      "allowed_formats": 1
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT",
+      "is_shape_tensor": false,
+      "input": false,
+      "allowed_formats": 1
+    }
+  ],
+  "explicit_clip_importer_corrections": [
+    {
+      "name": "rampq_model_0_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_cv1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_m_0_cv1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_m_0_cv2_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_cv2_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    }
+  ],
+  "explicit_layer_precision_constraint_count": 0,
+  "explicit_layer_output_type_constraint_count": 0,
+  "layer_constraint_reset_count": 0,
+  "parser_constraints_before_after_identical": true,
+  "native_int8_QDQ_defaults_preserved": true,
+  "workspace_bytes_actual": 1073741824,
+  "avg_timing_iterations_actual": 1,
+  "profiling_verbosity_actual": "ProfilingVerbosity.DETAILED",
+  "legacy_parent_spec_sha256": "cd6bde58334770339b9259002ce3b2a00563bbba4340c3bc8bfa8e914aa4e67f",
+  "requirement": "All 88 desired source requests need independent actual format and fusion audit. Quantized inputs/weights need integer evidence; restored requests need actual FP16 adoption. Global flags and masks are not precision proof.",
+  "limits": "One independently frozen matched NONE build using its own graph and saved CPU reference. No manual precision/output requests, automatic inference, accuracy, speed or Gate pass claim."
+}

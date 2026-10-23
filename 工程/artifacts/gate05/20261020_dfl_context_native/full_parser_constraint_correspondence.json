@@ -1,0 +1,97 @@
+{
+  "schema": "rampq.gate05.dfl_saved_full_parser_constraint_correspondence/v1",
+  "client_at": "2026-10-20T12:22:32.637095+08:00",
+  "status": "FOUR_DFL_Q_DQ_CONSTRAINT_SEMANTICS_MATCH_FULL_SOURCE_METADATA",
+  "full_path": "artifacts\\gate05\\20261019_corrected_qall_native\\parser_metadata_evidence\\inventory\\constraints_before_bounds_correction.json",
+  "full_sha256": "fd6cbd0046dec80f5d5a685ff2ab39257a602e8bccb4b04829d9acde7eca84b2",
+  "slice_path": "artifacts\\gate05\\20261020_dfl_context_native\\native_evidence\\results\\probe_20261017T182511_32206\\code_clip_obey\\parsed_constraints_before.json",
+  "slice_sha256": "4eb7584b9c46b78fcf9a0843a3a4e451d57754df633226092847a399523b2c17",
+  "constraint_source_layer_count": 4,
+  "selected_rows": [
+    {
+      "name": "rampq_model_23_dfl_conv_ActivationQ",
+      "precision_is_set": false,
+      "precision": null,
+      "outputs": [
+        {
+          "index": 0,
+          "is_set": true,
+          "dtype": "DataType.INT8",
+          "tensor_name": "rampq_model_23_dfl_conv_a_q_before_code_clip",
+          "tensor_shape": [
+            1,
+            16,
+            4,
+            8400
+          ],
+          "tensor_dtype": "DataType.FLOAT"
+        }
+      ]
+    },
+    {
+      "name": "rampq_model_23_dfl_conv_ActivationDQ",
+      "precision_is_set": true,
+      "precision": "DataType.INT8",
+      "outputs": [
+        {
+          "index": 0,
+          "is_set": false,
+          "dtype": null,
+          "tensor_name": "rampq_model_23_dfl_conv_a_dq",
+          "tensor_shape": [
+            1,
+            16,
+            4,
+            8400
+          ],
+          "tensor_dtype": "DataType.FLOAT"
+        }
+      ]
+    },
+    {
+      "name": "rampq_model_23_dfl_conv_WeightQ",
+      "precision_is_set": false,
+      "precision": null,
+      "outputs": [
+        {
+          "index": 0,
+          "is_set": true,
+          "dtype": "DataType.INT8",
+          "tensor_name": "rampq_model_23_dfl_conv_w_q",
+          "tensor_shape": [
+            1,
+            16,
+            1,
+            1
+          ],
+          "tensor_dtype": "DataType.FLOAT"
+        }
+      ]
+    },
+    {
+      "name": "rampq_model_23_dfl_conv_WeightDQ",
+      "precision_is_set": true,
+      "precision": "DataType.INT8",
+      "outputs": [
+        {
+          "index": 0,
+          "is_set": false,
+          "dtype": null,
+          "tensor_name": "rampq_model_23_dfl_conv_w_dq",
+          "tensor_shape": [
+            1,
+            16,
+            1,
+            1
+          ],
+          "tensor_dtype": "DataType.FLOAT"
+        }
+      ]
+    }
+  ],
+  "normalization": "Full precision_if_set/outputs/get_output_type mapped to slice precision/output_types/requested_output_type. Unset values remain unqueried; set flags/types, output tensor names/shapes/dtypes exact; layer index/metadata wrappers omitted.",
+  "full_or_slice_native_rerun": false,
+  "new_inference": false,
+  "scope": "Saved parser constraints only; does not identify the failing internal node or test full model without OBEY.",
+  "original_complete_model_guard": "FAILED_UNCHANGED"
+}

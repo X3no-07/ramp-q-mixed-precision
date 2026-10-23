@@ -1,0 +1,66 @@
+{
+  "schema": "rampq.gate05.twoconv_context_cpu/v1",
+  "status": "SLICE_CPU_BYTE_EQUIVALENCE_PASSED",
+  "slice_executions": 2,
+  "complete_detector_executions": 0,
+  "executions": {
+    "original": {
+      "model_file": "model_twoconv_original.onnx",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "graph_optimization": "ORT_DISABLE_ALL",
+      "runs": 1,
+      "raw_output_file": "cpu_actual_original.npy",
+      "raw_output_sha256": "7b63eb9ed2172dc89f0c1de5bc17b763ab1e5010888861d9c37a6aada54e05b0",
+      "summary": {
+        "shape": [
+          1,
+          32,
+          160,
+          160
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "min": 0.0,
+        "max": 87.46932983398438,
+        "raw_array_bytes_sha256": "40d65c0d2a887cd192f59e4c6797827012a7515239572ed1fed73d1912282782"
+      }
+    },
+    "code_clip": {
+      "model_file": "model_twoconv_code_clip.onnx",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "graph_optimization": "ORT_DISABLE_ALL",
+      "runs": 1,
+      "raw_output_file": "cpu_actual_code_clip.npy",
+      "raw_output_sha256": "7b63eb9ed2172dc89f0c1de5bc17b763ab1e5010888861d9c37a6aada54e05b0",
+      "summary": {
+        "shape": [
+          1,
+          32,
+          160,
+          160
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "min": 0.0,
+        "max": 87.46932983398438,
+        "raw_array_bytes_sha256": "40d65c0d2a887cd192f59e4c6797827012a7515239572ed1fed73d1912282782"
+      }
+    }
+  },
+  "onnx": "1.22.0",
+  "onnxruntime": "1.29.0",
+  "numpy": "2.5.3",
+  "both_outputs_byte_exact": true,
+  "differing_elements": 0,
+  "max_absolute_difference": 0.0,
+  "source_corrected_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "source_original_graph_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "native_executions": 0,
+  "dataset_evaluation_run": false,
+  "tolerances_changed": false
+}

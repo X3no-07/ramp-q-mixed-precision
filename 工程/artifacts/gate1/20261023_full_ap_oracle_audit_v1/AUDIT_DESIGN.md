@@ -1,0 +1,13 @@
+# Full AP/AR native comparison plan
+
+This directory is new audit work. Its inputs are synthetic JSON fixtures, unmodified pinned official source files, and saved native synthetic MAT/JSON outputs. No image, real annotation, archive, checkpoint, detector, Selection, or Holdout is read or run.
+
+The existing 20-case suite is included completely and in order. For every image, compare filtered GT, filtered predictions and prepared GT with exact matrix shape and zero absolute/relative numerical tolerance. For each of the five matching cases, compare both matcher output matrices for all ten categories, including empty shapes. This is 166 matrices across the frozen suite. Compare all seven scalar AP/AR metrics for each of the eleven aggregate cases (77 values).
+
+The metric comparison is float64, in the official source's percentage units. Finite values use `abs(Python - native) <= 1e-10 + 1e-12 * abs(native)`. Different legal summation/reduction paths in binary64 may round differently; this tiny scalar comparison allowance permits only that numerical effect. It is not a relaxed detection/dtype guard. NaN locations must match exactly, infinities are prohibited, and expected empty evalClass behavior must not be replaced by an invented zero. The original model numerical tolerances and failed verdicts remain unchanged.
+
+No AP/AR internal 10-by-10 or 10-by-10-by-4 table is claimed to have native validation: the saved official wrapper only exports seven final metrics. Python tables may be retained as implementation diagnostics. The comparison establishes agreement only on the declared synthetic inputs and pinned native runtime/source, not general equivalence for every possible input, real-data AP, model acceptance, or Gate1 scientific acceptance.
+
+Before oracle comparison, freeze this plan, its machine-readable policy, all fixture identities and the Python implementation source identities. Synthetic negative tests use fabricated comparison inputs only and never use native metric answers. Any failed comparison is recorded; neither the case set nor tolerances may be changed after reading native outputs to obtain a pass. Source corrections require a new attempt directory and an explicit reason.
+
+Optional extension, only after root approval: twelve predeclared seeded stress cases. The new native wrapper calls the same official `dropObjectsInIgr`, `evalRes`, `calcAccuracy`, and `VOCap` files without editing or replacing them, and saves all seven final metrics plus preprocessing matrices. It does not create a substitute scoring oracle. Stress inputs and wrapper must be frozen before native execution.

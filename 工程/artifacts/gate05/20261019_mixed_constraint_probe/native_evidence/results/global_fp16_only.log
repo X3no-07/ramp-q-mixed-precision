@@ -1,0 +1,121 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8502] # /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx --saveEngine=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/global_fp16_only.engine --int8 --fp16 --noTF32 --memPoolSize=workspace:1024 --avgTiming=1 --profilingVerbosity=detailed --buildOnly --inputIOFormats=fp32:chw --outputIOFormats=fp32:chw
+[10/17/2026-03:42:34] [I] === Model Options ===
+[10/17/2026-03:42:34] [I] Format: ONNX
+[10/17/2026-03:42:34] [I] Model: /home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx
+[10/17/2026-03:42:34] [I] Output:
+[10/17/2026-03:42:34] [I] === Build Options ===
+[10/17/2026-03:42:34] [I] Max batch: explicit batch
+[10/17/2026-03:42:34] [I] Memory Pools: workspace: 1024 MiB, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[10/17/2026-03:42:34] [I] minTiming: 1
+[10/17/2026-03:42:34] [I] avgTiming: 1
+[10/17/2026-03:42:34] [I] Precision: FP32+FP16+INT8
+[10/17/2026-03:42:34] [I] LayerPrecisions: 
+[10/17/2026-03:42:34] [I] Calibration: Dynamic
+[10/17/2026-03:42:34] [I] Refit: Disabled
+[10/17/2026-03:42:34] [I] Sparsity: Disabled
+[10/17/2026-03:42:34] [I] Safe mode: Disabled
+[10/17/2026-03:42:34] [I] DirectIO mode: Disabled
+[10/17/2026-03:42:34] [I] Restricted mode: Disabled
+[10/17/2026-03:42:34] [I] Build only: Enabled
+[10/17/2026-03:42:34] [I] Save engine: /home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/global_fp16_only.engine
+[10/17/2026-03:42:34] [I] Load engine: 
+[10/17/2026-03:42:34] [I] Profiling verbosity: 2
+[10/17/2026-03:42:34] [I] Tactic sources: Using default tactic sources
+[10/17/2026-03:42:34] [I] timingCacheMode: local
+[10/17/2026-03:42:34] [I] timingCacheFile: 
+[10/17/2026-03:42:34] [I] Heuristic: Disabled
+[10/17/2026-03:42:34] [I] Preview Features: Use default preview flags.
+[10/17/2026-03:42:34] [I] Input(s): fp32:chw
+[10/17/2026-03:42:34] [I] Output(s): fp32:chw
+[10/17/2026-03:42:34] [I] Input build shapes: model
+[10/17/2026-03:42:34] [I] Input calibration shapes: model
+[10/17/2026-03:42:34] [I] === System Options ===
+[10/17/2026-03:42:34] [I] Device: 0
+[10/17/2026-03:42:34] [I] DLACore: 
+[10/17/2026-03:42:34] [I] Plugins:
+[10/17/2026-03:42:34] [I] === Inference Options ===
+[10/17/2026-03:42:34] [I] Batch: Explicit
+[10/17/2026-03:42:34] [I] Input inference shapes: model
+[10/17/2026-03:42:34] [I] Iterations: 10
+[10/17/2026-03:42:34] [I] Duration: 3s (+ 200ms warm up)
+[10/17/2026-03:42:34] [I] Sleep time: 0ms
+[10/17/2026-03:42:34] [I] Idle time: 0ms
+[10/17/2026-03:42:34] [I] Streams: 1
+[10/17/2026-03:42:34] [I] ExposeDMA: Disabled
+[10/17/2026-03:42:34] [I] Data transfers: Enabled
+[10/17/2026-03:42:34] [I] Spin-wait: Disabled
+[10/17/2026-03:42:34] [I] Multithreading: Disabled
+[10/17/2026-03:42:34] [I] CUDA Graph: Disabled
+[10/17/2026-03:42:34] [I] Separate profiling: Disabled
+[10/17/2026-03:42:34] [I] Time Deserialize: Disabled
+[10/17/2026-03:42:34] [I] Time Refit: Disabled
+[10/17/2026-03:42:34] [I] NVTX verbosity: 2
+[10/17/2026-03:42:34] [I] Persistent Cache Ratio: 0
+[10/17/2026-03:42:34] [I] Inputs:
+[10/17/2026-03:42:34] [I] === Reporting Options ===
+[10/17/2026-03:42:34] [I] Verbose: Disabled
+[10/17/2026-03:42:34] [I] Averages: 10 inferences
+[10/17/2026-03:42:34] [I] Percentiles: 90,95,99
+[10/17/2026-03:42:34] [I] Dump refittable layers:Disabled
+[10/17/2026-03:42:34] [I] Dump output: Disabled
+[10/17/2026-03:42:34] [I] Profile: Disabled
+[10/17/2026-03:42:34] [I] Export timing to JSON file: 
+[10/17/2026-03:42:34] [I] Export output to JSON file: 
+[10/17/2026-03:42:34] [I] Export profile to JSON file: 
+[10/17/2026-03:42:34] [I] 
+[10/17/2026-03:42:34] [I] === Device Information ===
+[10/17/2026-03:42:34] [I] Selected Device: Orin
+[10/17/2026-03:42:34] [I] Compute Capability: 8.7
+[10/17/2026-03:42:34] [I] SMs: 4
+[10/17/2026-03:42:34] [I] Compute Clock Rate: 0.765 GHz
+[10/17/2026-03:42:34] [I] Device Global Memory: 7337 MiB
+[10/17/2026-03:42:34] [I] Shared Memory per SM: 164 KiB
+[10/17/2026-03:42:34] [I] Memory Bus Width: 64 bits (ECC disabled)
+[10/17/2026-03:42:34] [I] Memory Clock Rate: 0.612 GHz
+[10/17/2026-03:42:34] [I] 
+[10/17/2026-03:42:34] [I] TensorRT version: 8.5.2
+[10/17/2026-03:42:35] [I] [TRT] [MemUsageChange] Init CUDA: CPU +220, GPU +0, now: CPU 249, GPU 3335 (MiB)
+[10/17/2026-03:42:37] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +302, GPU +286, now: CPU 574, GPU 3637 (MiB)
+[10/17/2026-03:42:37] [I] Start parsing network model
+[10/17/2026-03:42:37] [I] [TRT] ----------------------------------------------------------------
+[10/17/2026-03:42:37] [I] [TRT] Input filename:   /home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx
+[10/17/2026-03:42:37] [I] [TRT] ONNX IR version:  0.0.7
+[10/17/2026-03:42:37] [I] [TRT] Opset version:    13
+[10/17/2026-03:42:37] [I] [TRT] Producer name:    pytorch
+[10/17/2026-03:42:37] [I] [TRT] Producer version: 2.10.0
+[10/17/2026-03:42:37] [I] [TRT] Domain:           
+[10/17/2026-03:42:37] [I] [TRT] Model version:    0
+[10/17/2026-03:42:37] [I] [TRT] Doc string:       
+[10/17/2026-03:42:37] [I] [TRT] ----------------------------------------------------------------
+[10/17/2026-03:42:37] [I] Finish parsing network model
+[10/17/2026-03:42:37] [W] [TRT] Calibrator won't be used in explicit precision mode. Use quantization aware training to generate network with Quantize/Dequantize nodes.
+[10/17/2026-03:42:37] [I] [TRT] ---------- Layers Running on DLA ----------
+[10/17/2026-03:42:37] [I] [TRT] ---------- Layers Running on GPU ----------
+[10/17/2026-03:42:37] [I] [TRT] [GpuLayer] CONVOLUTION: /model.2/cv2/conv/Conv + PWN(/model.2/cv2/act/Sigmoid, /model.2/cv2/act/Mul)
+[10/17/2026-03:42:37] [I] [TRT] [GpuLayer] COPY: rampq_model_3_conv_ActivationQ
+[10/17/2026-03:42:37] [I] [TRT] [GpuLayer] POINTWISE: PWN(rampq_model_3_conv_Clip)
+[10/17/2026-03:42:37] [I] [TRT] [GpuLayer] CONVOLUTION: model.3.conv.weight + rampq_model_3_conv_WeightQ + /model.3/conv/Conv
+[10/17/2026-03:42:38] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +534, GPU +503, now: CPU 1108, GPU 4144 (MiB)
+[10/17/2026-03:42:38] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +83, GPU +78, now: CPU 1191, GPU 4222 (MiB)
+[10/17/2026-03:42:38] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[10/17/2026-03:42:44] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size will enable more tactics, please check verbose output for requested sizes.
+[10/17/2026-03:43:38] [I] [TRT] Total Activation Memory: 1082753024
+[10/17/2026-03:43:38] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[10/17/2026-03:43:38] [I] [TRT] Total Host Persistent Memory: 6352
+[10/17/2026-03:43:38] [I] [TRT] Total Device Persistent Memory: 0
+[10/17/2026-03:43:38] [I] [TRT] Total Scratch Memory: 0
+[10/17/2026-03:43:38] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 104 MiB
+[10/17/2026-03:43:38] [I] [TRT] [BlockAssignment] Started assigning block shifts. This will take 4 steps to complete.
+[10/17/2026-03:43:38] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 0.0352ms to assign 2 blocks to 4 nodes requiring 5734400 bytes.
+[10/17/2026-03:43:38] [I] [TRT] Total Activation Memory: 5734400
+[10/17/2026-03:43:38] [W] [TRT] TensorRT encountered issues when converting weights between types and that could affect accuracy.
+[10/17/2026-03:43:38] [W] [TRT] If this is not the desired behavior, please modify the weights or retrain with regularization to adjust the magnitude of the weights.
+[10/17/2026-03:43:38] [W] [TRT] Check verbose logs for the list of affected weights.
+[10/17/2026-03:43:38] [W] [TRT] - 1 weights are affected by this issue: Detected subnormal FP16 values.
+[10/17/2026-03:43:38] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +4, now: CPU 0, GPU 4 (MiB)
+[10/17/2026-03:43:38] [I] Engine built in 63.8435 sec.
+[10/17/2026-03:43:38] [I] [TRT] Loaded engine size: 0 MiB
+[10/17/2026-03:43:38] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +0, now: CPU 0, GPU 0 (MiB)
+[10/17/2026-03:43:38] [I] Engine deserialized in 0.00461357 sec.
+[10/17/2026-03:43:38] [I] Skipped inference phase since --buildOnly is added.
+&&&& PASSED TensorRT.trtexec [TensorRT v8502] # /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx --saveEngine=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/global_fp16_only.engine --int8 --fp16 --noTF32 --memPoolSize=workspace:1024 --avgTiming=1 --profilingVerbosity=detailed --buildOnly --inputIOFormats=fp32:chw --outputIOFormats=fp32:chw

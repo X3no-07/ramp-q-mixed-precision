@@ -1,0 +1,77 @@
+{
+  "schema": "rampq.gate05.int8_audit/v1",
+  "client_date": "2026-10-18",
+  "status": "FULL_INT8_BUILD_FAILED_AT_G4_PE_CONV_ADD",
+  "verified_remote_files": 22,
+  "engine_created": false,
+  "real_int8_full_model_execution": false,
+  "build_seconds": 1605.26,
+  "build_errors": [
+    "[10/16/2026-18:31:09] [E] Error[10]: [optimizer.cpp::computeCosts::3728] Error Code 10: Internal Error (Could not find any implementation for node model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv + /model.10/m/m.0/attn/Add.)",
+    "[10/16/2026-18:31:10] [E] Error[2]: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )",
+    "[10/16/2026-18:31:10] [E] Engine could not be created from network",
+    "[10/16/2026-18:31:10] [E] Building engine failed",
+    "[10/16/2026-18:31:10] [E] Failed to create engine from model or file.",
+    "[10/16/2026-18:31:10] [E] Engine set up failed"
+  ],
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "local_full_model_qdq_parity": "LOCAL_QDQ_PREFLIGHT_FAILED",
+  "local_max_abs_box_difference": 96.57046508789062,
+  "local_max_abs_score_difference": 0.07295918464660645,
+  "build_resource_samples": 800,
+  "build_max_observed_temperature_c": 54.531,
+  "build_min_observed_available_memory_mib": 2467.87109375,
+  "build_max_observed_swap_used_mib": 0.25,
+  "kernel_monitor_log": "-- Logs begin at Tue 2024-06-18 04:29:39 CST. --\n",
+  "dataset_evaluation_run": false,
+  "benchmark_run": false,
+  "full_gate05_status": "INCOMPLETE",
+  "scope": "Full-model build fails for PE depthwise Conv+Add in G4. No full-model INT8 execution, precision coverage, rescue, accuracy, or performance result.",
+  "minimal_repro": [
+    {
+      "variant": "conv_only",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 53.103,
+      "errors": []
+    },
+    {
+      "variant": "conv_add",
+      "returncode": 1,
+      "timeout": false,
+      "seconds": 53.001,
+      "errors": [
+        "[10/16/2026-18:36:13] [E] Error[10]: [optimizer.cpp::computeCosts::3728] Error Code 10: Internal Error (Could not find any implementation for node model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv + /model.10/m/m.0/attn/Add.)",
+        "[10/16/2026-18:36:13] [E] Error[2]: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )",
+        "[10/16/2026-18:36:13] [E] Engine could not be created from network",
+        "[10/16/2026-18:36:13] [E] Building engine failed",
+        "[10/16/2026-18:36:13] [E] Failed to create engine from model or file.",
+        "[10/16/2026-18:36:13] [E] Engine set up failed"
+      ]
+    },
+    {
+      "variant": "conv_add_tap",
+      "returncode": null,
+      "timeout": true,
+      "seconds": 90.256,
+      "errors": []
+    }
+  ],
+  "probe_verified_remote_files": 14,
+  "total_verified_remote_files": 36,
+  "minimal_tap_workaround": {
+    "status": "NODE_BUILD_PASS_FULL_MODEL_UNBUILT",
+    "seconds": 145.51,
+    "first_90_second_trial": "TIMEOUT_INCONCLUSIVE",
+    "retry_budget_seconds": 180,
+    "weights_type": "Int8",
+    "input_formats": [
+      "Four wide channel vectorized row major Int8 format"
+    ],
+    "output_formats": [
+      "Row major linear FP32"
+    ],
+    "tactic_name_available": false,
+    "scope": "INT8 weight/input storage formats and separated Conv/Add in a small engine; no full-model inference"
+  }
+}

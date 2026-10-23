@@ -1,0 +1,26 @@
+{
+  "schema": "rampq.gate05.dfl_weight_bypass_reused_probability/v1",
+  "status": "EXACT_PROBABILITY_FILE_REUSED_WITHOUT_GENERATION",
+  "fixture_file": "dfl_softmax_probabilities.npy",
+  "fixture_sha256": "5a7c5b1c58bd4d956a042dfeab3b11133a072ce7ab8630195f51d8f38a508520",
+  "fixture": {
+    "shape": [
+      1,
+      16,
+      4,
+      8400
+    ],
+    "dtype": "float32",
+    "elements": 537600,
+    "all_finite": true,
+    "min": 2.4000963110581318e-17,
+    "max": 0.9994057416915894,
+    "raw_array_bytes_sha256": "d4c4b21e1d1a2e025d5b3eabaade7e99f3093c0cf7511795f9477a4ffd069ae7"
+  },
+  "source_tensor_name": "/model.23/dfl/Softmax_output_0",
+  "parent_conv_output_spec_sha256": "9e9d31b55e4358d39a08a7869aab77582f094f1d6152599c727196e2b77c3897",
+  "parent_fixture_lineage_file": "parent_fixture_lineage.json",
+  "parent_fixture_lineage_sha256": "3eeb5d356e98b04b42487942c293f2c0713665917e46aa0a4cbfec1f24d4c553",
+  "new_fixture_generation_runs": 0,
+  "meaning": "Prior exact source Softmax CPU probabilities, not native upstream or replacement Gate reference."
+}

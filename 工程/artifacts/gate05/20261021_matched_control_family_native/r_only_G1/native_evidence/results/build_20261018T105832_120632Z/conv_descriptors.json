@@ -1,0 +1,3373 @@
+{
+  "actual_conv_row_count": 88,
+  "descriptors": [
+    {
+      "name": "/model.0/conv/Conv",
+      "inputs": [
+        {
+          "Name": "Reformatted Input Tensor 0 to /model.0/conv/Conv",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            3,
+            640,
+            640
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 4 == 0"
+        }
+      ],
+      "weights": {
+        "Type": "Half",
+        "Count": 432
+      },
+      "outputs": [
+        {
+          "Name": "/model.0/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_image_first_layer_f16f16_f32_f16_nhwckrsc_nhwc_hmma_k16c4r3s3_stride2x2_tile16x64x16_tensor1688",
+      "tactic_value": "0x3b8d062cb7c5119f",
+      "raw_row_index": 0,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "/model.1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "/model.0/act/Mul_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "weights": {
+        "Type": "Half",
+        "Count": 4608
+      },
+      "outputs": [
+        {
+          "Name": "/model.1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x16_stage1_warpsize4x1x1_g1_tensor16x8x16_aligna8_alignc8",
+      "tactic_value": "0xfb0beb2dd64ff6e8",
+      "raw_row_index": 1,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "/model.2/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "/model.1/act/Mul_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "weights": {
+        "Type": "Half",
+        "Count": 1024
+      },
+      "outputs": [
+        {
+          "Name": "/model.2/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x16_stage1_warpsize4x1x1_g1_tensor16x8x16_aligna8_alignc8",
+      "tactic_value": "0xfb0beb2dd64ff6e8",
+      "raw_row_index": 2,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "/model.2/m.0/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "Reformatted Input Tensor 0 to /model.2/m.0/cv1/conv/Conv",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "weights": {
+        "Type": "Half",
+        "Count": 1152
+      },
+      "outputs": [
+        {
+          "Name": "/model.2/m.0/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x16x64_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc4",
+      "tactic_value": "0xa5a46bfbd719d757",
+      "raw_row_index": 3,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "/model.2/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "/model.2/m.0/cv1/act/Mul_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "weights": {
+        "Type": "Half",
+        "Count": 1152
+      },
+      "outputs": [
+        {
+          "Name": "/model.2/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x16x32_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc8",
+      "tactic_value": "0xfbf5ea2d8a6293cd",
+      "raw_row_index": 4,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "/model.2/cv2/conv/Conv + PWN(/model.2/cv2/act/Sigmoid, /model.2/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "/model.2/Concat_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            48,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "weights": {
+        "Type": "Half",
+        "Count": 3072
+      },
+      "outputs": [
+        {
+          "Name": "/model.2/cv2/act/Mul_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            160,
+            160
+          ],
+          "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "ampere_h1688cudnn_256x64_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "tactic_value": "0xa07bcb23e5390c8f",
+      "raw_row_index": 5,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.3.conv.weight + rampq_model_3_conv_WeightQ + /model.3/conv/Conv + PWN(/model.3/act/Sigmoid, /model.3/act/Mul) + PWN(rampq_model_4_cv1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_3_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            160,
+            160
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_4_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 6,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.4.cv1.conv.weight + rampq_model_4_cv1_conv_WeightQ + /model.4/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_4_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "/model.4/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x1cfa820c55616892",
+      "raw_row_index": 7,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.4.m.0.cv1.conv.weight + rampq_model_4_m_0_cv1_conv_WeightQ + /model.4/m.0/cv1/conv/Conv + PWN(/model.4/m.0/cv1/act/Sigmoid, /model.4/m.0/cv1/act/Mul) + PWN(rampq_model_4_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_4_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4608
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_4_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "raw_row_index": 8,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.4.m.0.cv2.conv.weight + rampq_model_4_m_0_cv2_conv_WeightQ + /model.4/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_4_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4608
+      },
+      "outputs": [
+        {
+          "Name": "/model.4/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x39d4f216f0f6dbdb",
+      "raw_row_index": 9,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.4.cv2.conv.weight + rampq_model_4_cv2_conv_WeightQ + /model.4/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_4_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            96,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 12288
+      },
+      "outputs": [
+        {
+          "Name": "/model.4/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 10,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.5.conv.weight + rampq_model_5_conv_WeightQ + /model.5/conv/Conv + PWN(/model.5/act/Sigmoid, /model.5/act/Mul) + PWN(rampq_model_6_cv1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_5_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 147456
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_6_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xa197727afc8dee05",
+      "raw_row_index": 11,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.cv1.conv.weight + rampq_model_6_cv1_conv_WeightQ + /model.6/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16384
+      },
+      "outputs": [
+        {
+          "Name": "/model.6/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 12,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.cv1.conv.weight + rampq_model_6_m_0_cv1_conv_WeightQ + /model.6/m.0/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 2048
+      },
+      "outputs": [
+        {
+          "Name": "/model.6/m.0/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x86d1488f426124e1",
+      "raw_row_index": 13,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.cv2.conv.weight + rampq_model_6_m_0_cv2_conv_WeightQ + /model.6/m.0/cv2/conv/Conv + PWN(/model.6/m.0/cv2/act/Sigmoid, /model.6/m.0/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 2048
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_6_m_0_cv3_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0xcd11ae6379963c47",
+      "raw_row_index": 14,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.m.0.cv1.conv.weight + rampq_model_6_m_0_m_0_cv1_conv_WeightQ + /model.6/m.0/m/m.0/cv1/conv/Conv + PWN(/model.6/m.0/m/m.0/cv1/act/Sigmoid, /model.6/m.0/m/m.0/cv1/act/Mul) + PWN(rampq_model_6_m_0_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 9216
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_6_m_0_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "raw_row_index": 15,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.m.0.cv2.conv.weight + rampq_model_6_m_0_m_0_cv2_conv_WeightQ + /model.6/m.0/m/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 9216
+      },
+      "outputs": [
+        {
+          "Name": "/model.6/m.0/m/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP32 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0xb936321f82fd390c",
+      "raw_row_index": 16,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.m.1.cv1.conv.weight + rampq_model_6_m_0_m_1_cv1_conv_WeightQ + /model.6/m.0/m/m.1/cv1/conv/Conv + PWN(/model.6/m.0/m/m.1/cv1/act/Sigmoid, /model.6/m.0/m/m.1/cv1/act/Mul) + PWN(rampq_model_6_m_0_m_1_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_m_1_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 9216
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_6_m_0_m_1_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "raw_row_index": 17,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.m.1.cv2.conv.weight + rampq_model_6_m_0_m_1_cv2_conv_WeightQ + /model.6/m.0/m/m.1/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_m_1_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 9216
+      },
+      "outputs": [
+        {
+          "Name": "/model.6/m.0/m/m.1/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x39d4f216f0f6dbdb",
+      "raw_row_index": 18,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.m.0.cv3.conv.weight + rampq_model_6_m_0_cv3_conv_WeightQ + /model.6/m.0/cv3/conv/Conv + PWN(/model.6/m.0/cv3/act/Sigmoid, /model.6/m.0/cv3/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_m_0_cv3_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_6_cv2_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0xc1a4243b1f1cfe6d",
+      "raw_row_index": 19,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.6.cv2.conv.weight + rampq_model_6_cv2_conv_WeightQ + /model.6/cv2/conv/Conv + PWN(/model.6/cv2/act/Sigmoid, /model.6/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_6_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            192,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 24576
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_13_cv1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x65a38dbc9e991257",
+      "raw_row_index": 20,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.7.conv.weight + rampq_model_7_conv_WeightQ + /model.7/conv/Conv + PWN(/model.7/act/Sigmoid, /model.7/act/Mul) + PWN(rampq_model_8_cv1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_7_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 294912
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_8_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x256x64_stage4_warpsize2x4x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0x71d6803b42b3138e",
+      "raw_row_index": 21,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.cv1.conv.weight + rampq_model_8_cv1_conv_WeightQ + /model.8/cv1/conv/Conv + PWN(/model.8/cv1/act/Sigmoid, /model.8/cv1/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 65536
+      },
+      "outputs": [
+        {
+          "Name": "/model.8/Split_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x256x64_stage4_warpsize2x4x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x838704902abae3eb",
+      "raw_row_index": 22,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.cv1.conv.weight + rampq_model_8_m_0_cv1_conv_WeightQ + /model.8/m.0/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 8192
+      },
+      "outputs": [
+        {
+          "Name": "/model.8/m.0/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8e1dd2962c589dd4",
+      "raw_row_index": 23,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.cv2.conv.weight + rampq_model_8_m_0_cv2_conv_WeightQ + /model.8/m.0/cv2/conv/Conv + PWN(/model.8/m.0/cv2/act/Sigmoid, /model.8/m.0/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 8192
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_8_m_0_cv3_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x458f02d2b10db57c",
+      "raw_row_index": 24,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.m.0.cv1.conv.weight + rampq_model_8_m_0_m_0_cv1_conv_WeightQ + /model.8/m.0/m/m.0/cv1/conv/Conv + PWN(/model.8/m.0/m/m.0/cv1/act/Sigmoid, /model.8/m.0/m/m.0/cv1/act/Mul) + PWN(rampq_model_8_m_0_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_8_m_0_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 25,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.m.0.cv2.conv.weight + rampq_model_8_m_0_m_0_cv2_conv_WeightQ + /model.8/m.0/m/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "/model.8/m.0/m/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x4133eb8759ee0d6d",
+      "raw_row_index": 26,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.m.1.cv1.conv.weight + rampq_model_8_m_0_m_1_cv1_conv_WeightQ + /model.8/m.0/m/m.1/cv1/conv/Conv + PWN(/model.8/m.0/m/m.1/cv1/act/Sigmoid, /model.8/m.0/m/m.1/cv1/act/Mul) + PWN(rampq_model_8_m_0_m_1_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_m_1_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_8_m_0_m_1_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 27,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.m.1.cv2.conv.weight + rampq_model_8_m_0_m_1_cv2_conv_WeightQ + /model.8/m.0/m/m.1/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_m_1_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "/model.8/m.0/m/m.1/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x4133eb8759ee0d6d",
+      "raw_row_index": 28,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.m.0.cv3.conv.weight + rampq_model_8_m_0_cv3_conv_WeightQ + /model.8/m.0/cv3/conv/Conv + PWN(/model.8/m.0/cv3/act/Sigmoid, /model.8/m.0/cv3/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_m_0_cv3_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16384
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_8_cv2_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x65a38dbc9e991257",
+      "raw_row_index": 29,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.8.cv2.conv.weight + rampq_model_8_cv2_conv_WeightQ + /model.8/cv2/conv/Conv + PWN(/model.8/cv2/act/Sigmoid, /model.8/cv2/act/Mul) + PWN(rampq_model_9_cv1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_8_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            384,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 98304
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_9_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x15f0bde1f6cbbf61",
+      "raw_row_index": 30,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.9.cv1.conv.weight + rampq_model_9_cv1_conv_WeightQ + /model.9/cv1/conv/Conv + PWN(/model.9/cv1/act/Sigmoid, /model.9/cv1/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_9_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 32768
+      },
+      "outputs": [
+        {
+          "Name": "/model.9/m/MaxPool_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x65a38dbc9e991257",
+      "raw_row_index": 31,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.9.cv2.conv.weight + rampq_model_9_cv2_conv_WeightQ + /model.9/cv2/conv/Conv + PWN(/model.9/cv2/act/Sigmoid, /model.9/cv2/act/Mul) + PWN(rampq_model_10_cv1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_9_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            512,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 131072
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_10_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x15f0bde1f6cbbf61",
+      "raw_row_index": 32,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.cv1.conv.weight + rampq_model_10_cv1_conv_WeightQ + /model.10/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 65536
+      },
+      "outputs": [
+        {
+          "Name": "/model.10/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 33,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.m.0.attn.qkv.conv.weight + rampq_model_10_m_0_attn_qkv_conv_WeightQ + /model.10/m/m.0/attn/qkv/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_m_0_attn_qkv_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 32768
+      },
+      "outputs": [
+        {
+          "Name": "/model.10/m/m.0/attn/qkv/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize128x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x733ba2a91a48d431",
+      "raw_row_index": 34,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_m_0_attn_pe_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 1152
+      },
+      "outputs": [
+        {
+          "Name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": null,
+      "tactic_value": "0xfffffffffffffffb",
+      "raw_row_index": 35,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.m.0.attn.proj.conv.weight + rampq_model_10_m_0_attn_proj_conv_WeightQ + /model.10/m/m.0/attn/proj/conv/Conv + /model.10/m/m.0/Add",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_m_0_attn_proj_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        },
+        {
+          "Name": "/model.10/Split_output_1",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16384
+      },
+      "outputs": [
+        {
+          "Name": "/model.10/m/m.0/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x128x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r1s1",
+      "tactic_value": "0x68f52f0a3f1c5b56",
+      "raw_row_index": 36,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.m.0.ffn.0.conv.weight + rampq_model_10_m_0_ffn_0_conv_WeightQ + /model.10/m/m.0/ffn/ffn.0/conv/Conv + PWN(/model.10/m/m.0/ffn/ffn.0/act/Sigmoid, /model.10/m/m.0/ffn/ffn.0/act/Mul) + PWN(rampq_model_10_m_0_ffn_1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_m_0_ffn_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 32768
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_10_m_0_ffn_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x25bf7139bbd93bc8",
+      "raw_row_index": 37,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.m.0.ffn.1.conv.weight + rampq_model_10_m_0_ffn_1_conv_WeightQ + /model.10/m/m.0/ffn/ffn.1/conv/Conv + /model.10/m/m.0/Add_1",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_m_0_ffn_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        },
+        {
+          "Name": "/model.10/m/m.0/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 32768
+      },
+      "outputs": [
+        {
+          "Name": "/model.10/m/m.0/Add_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 38,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.10.cv2.conv.weight + rampq_model_10_cv2_conv_WeightQ + /model.10/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_10_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 65536
+      },
+      "outputs": [
+        {
+          "Name": "/model.10/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 39,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.13.cv1.conv.weight + rampq_model_13_cv1_conv_WeightQ + /model.13/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_13_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            384,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 49152
+      },
+      "outputs": [
+        {
+          "Name": "/model.13/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 40,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.13.m.0.cv1.conv.weight + rampq_model_13_m_0_cv1_conv_WeightQ + /model.13/m.0/cv1/conv/Conv + PWN(/model.13/m.0/cv1/act/Sigmoid, /model.13/m.0/cv1/act/Mul) + PWN(rampq_model_13_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_13_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 18432
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_13_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "raw_row_index": 41,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.13.m.0.cv2.conv.weight + rampq_model_13_m_0_cv2_conv_WeightQ + /model.13/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_13_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 18432
+      },
+      "outputs": [
+        {
+          "Name": "/model.13/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0xe2bc5a4963d23ad0",
+      "raw_row_index": 42,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.13.cv2.conv.weight + rampq_model_13_cv2_conv_WeightQ + /model.13/cv2/conv/Conv + PWN(/model.13/cv2/act/Sigmoid, /model.13/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_13_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            192,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 24576
+      },
+      "outputs": [
+        {
+          "Name": "/model.14/Resize_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x65a38dbc9e991257",
+      "raw_row_index": 43,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.16.cv1.conv.weight + rampq_model_16_cv1_conv_WeightQ + /model.16/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_16_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16384
+      },
+      "outputs": [
+        {
+          "Name": "/model.16/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x1cfa820c55616892",
+      "raw_row_index": 44,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.16.m.0.cv1.conv.weight + rampq_model_16_m_0_cv1_conv_WeightQ + /model.16/m.0/cv1/conv/Conv + PWN(/model.16/m.0/cv1/act/Sigmoid, /model.16/m.0/cv1/act/Mul) + PWN(rampq_model_16_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_16_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4608
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_16_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "raw_row_index": 45,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.16.m.0.cv2.conv.weight + rampq_model_16_m_0_cv2_conv_WeightQ + /model.16/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_16_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4608
+      },
+      "outputs": [
+        {
+          "Name": "/model.16/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x39d4f216f0f6dbdb",
+      "raw_row_index": 46,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.16.cv2.conv.weight + rampq_model_16_cv2_conv_WeightQ + /model.16/cv2/conv/Conv + PWN(/model.16/cv2/act/Sigmoid, /model.16/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_16_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            96,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 6144
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_17_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0xc1a4243b1f1cfe6d",
+      "raw_row_index": 47,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.17.conv.weight + rampq_model_17_conv_WeightQ + /model.17/conv/Conv + PWN(/model.17/act/Sigmoid, /model.17/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_17_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_19_cv1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_swish",
+      "tactic_value": "0x3ac8602b2543f50d",
+      "raw_row_index": 48,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.0.0.conv.weight + rampq_model_23_cv2_0_0_conv_WeightQ + /model.23/cv2.0/cv2.0.0/conv/Conv + PWN(/model.23/cv2.0/cv2.0.0/act/Sigmoid, /model.23/cv2.0/cv2.0.0/act/Mul) + PWN(rampq_model_23_cv2_0_1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_0_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_0_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0x1ba323eb9858b2a9",
+      "raw_row_index": 49,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.0.0.0.conv.weight + rampq_model_23_cv3_0_0_0_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_0_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_0_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": null,
+      "tactic_value": "0x000000000000002b",
+      "raw_row_index": 50,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.0.1.conv.weight + rampq_model_23_cv2_0_1_conv_WeightQ + /model.23/cv2.0/cv2.0.1/conv/Conv + PWN(/model.23/cv2.0/cv2.0.1/act/Sigmoid, /model.23/cv2.0/cv2.0.1/act/Mul) + PWN(rampq_model_23_cv2_0_2_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_0_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_0_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0x1ba323eb9858b2a9",
+      "raw_row_index": 51,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.0.0.1.conv.weight + rampq_model_23_cv3_0_0_1_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul) + PWN(rampq_model_23_cv3_0_1_0_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_0_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x25bf7139bbd93bc8",
+      "raw_row_index": 52,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.19.cv1.conv.weight + rampq_model_19_cv1_conv_WeightQ + /model.19/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_19_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            192,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 24576
+      },
+      "outputs": [
+        {
+          "Name": "/model.19/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8486adb55ae0ca6c",
+      "raw_row_index": 53,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.0.2.weight + rampq_model_23_cv2_0_2_WeightQ + /model.23/cv2.0/cv2.0.2/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_0_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/cv2.0/cv2.0.2/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize128x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x733ba2a91a48d431",
+      "raw_row_index": 54,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.0.1.0.conv.weight + rampq_model_23_cv3_0_1_0_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_1_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": null,
+      "tactic_value": "0x000000000000002b",
+      "raw_row_index": 55,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.19.m.0.cv1.conv.weight + rampq_model_19_m_0_cv1_conv_WeightQ + /model.19/m.0/cv1/conv/Conv + PWN(/model.19/m.0/cv1/act/Sigmoid, /model.19/m.0/cv1/act/Mul) + PWN(rampq_model_19_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_19_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 18432
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_19_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "raw_row_index": 56,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.0.1.1.conv.weight + rampq_model_23_cv3_0_1_1_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul) + PWN(rampq_model_23_cv3_0_2_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_1_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x25bf7139bbd93bc8",
+      "raw_row_index": 57,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.19.m.0.cv2.conv.weight + rampq_model_19_m_0_cv2_conv_WeightQ + /model.19/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_19_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 18432
+      },
+      "outputs": [
+        {
+          "Name": "/model.19/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0xe2bc5a4963d23ad0",
+      "raw_row_index": 58,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.0.2.weight + rampq_model_23_cv3_0_2_WeightQ + /model.23/cv3.0/cv3.0.2/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_0_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            80,
+            80
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 640
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/cv3.0/cv3.0.2/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            10,
+            80,
+            80
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize128x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x733ba2a91a48d431",
+      "raw_row_index": 59,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.19.cv2.conv.weight + rampq_model_19_cv2_conv_WeightQ + /model.19/cv2/conv/Conv + PWN(/model.19/cv2/act/Sigmoid, /model.19/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_19_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            192,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 24576
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_20_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x65a38dbc9e991257",
+      "raw_row_index": 60,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.20.conv.weight + rampq_model_20_conv_WeightQ + /model.20/conv/Conv + PWN(/model.20/act/Sigmoid, /model.20/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_20_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 147456
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_22_cv1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_swish",
+      "tactic_value": "0x01cd56dfbdb5c0ee",
+      "raw_row_index": 61,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.1.0.conv.weight + rampq_model_23_cv2_1_0_conv_WeightQ + /model.23/cv2.1/cv2.1.0/conv/Conv + PWN(/model.23/cv2.1/cv2.1.0/act/Sigmoid, /model.23/cv2.1/cv2.1.0/act/Mul) + PWN(rampq_model_23_cv2_1_1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 73728
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_1_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0x1ba323eb9858b2a9",
+      "raw_row_index": 62,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.1.0.0.conv.weight + rampq_model_23_cv3_1_0_0_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_0_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 1152
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_0_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": null,
+      "tactic_value": "0x0000000000000021",
+      "raw_row_index": 63,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.1.1.conv.weight + rampq_model_23_cv2_1_1_conv_WeightQ + /model.23/cv2.1/cv2.1.1/conv/Conv + PWN(/model.23/cv2.1/cv2.1.1/act/Sigmoid, /model.23/cv2.1/cv2.1.1/act/Mul) + PWN(rampq_model_23_cv2_1_2_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_1_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_1_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 64,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.1.0.1.conv.weight + rampq_model_23_cv3_1_0_1_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul) + PWN(rampq_model_23_cv3_1_1_0_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_0_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 8192
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x0779fa4ac8f9f2ee",
+      "raw_row_index": 65,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.cv1.conv.weight + rampq_model_22_cv1_conv_WeightQ + /model.22/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            384,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 98304
+      },
+      "outputs": [
+        {
+          "Name": "/model.22/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x128x64_stage4_warpsize4x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0xaa30815cbd0f74b7",
+      "raw_row_index": 66,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.1.2.weight + rampq_model_23_cv2_1_2_WeightQ + /model.23/cv2.1/cv2.1.2/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_1_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/cv2.1/cv2.1.2/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize128x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x733ba2a91a48d431",
+      "raw_row_index": 67,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.1.1.0.conv.weight + rampq_model_23_cv3_1_1_0_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_1_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": null,
+      "tactic_value": "0x0000000000000029",
+      "raw_row_index": 68,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.cv1.conv.weight + rampq_model_22_m_0_cv1_conv_WeightQ + /model.22/m.0/cv1/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 8192
+      },
+      "outputs": [
+        {
+          "Name": "/model.22/m.0/cv1/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1",
+      "tactic_value": "0x8e1dd2962c589dd4",
+      "raw_row_index": 69,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.cv2.conv.weight + rampq_model_22_m_0_cv2_conv_WeightQ + /model.22/m.0/cv2/conv/Conv + PWN(/model.22/m.0/cv2/act/Sigmoid, /model.22/m.0/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 8192
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_22_m_0_cv3_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x458f02d2b10db57c",
+      "raw_row_index": 70,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.1.1.1.conv.weight + rampq_model_23_cv3_1_1_1_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul) + PWN(rampq_model_23_cv3_1_2_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_1_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x25bf7139bbd93bc8",
+      "raw_row_index": 71,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.m.0.cv1.conv.weight + rampq_model_22_m_0_m_0_cv1_conv_WeightQ + /model.22/m.0/m/m.0/cv1/conv/Conv + PWN(/model.22/m.0/m/m.0/cv1/act/Sigmoid, /model.22/m.0/m/m.0/cv1/act/Mul) + PWN(rampq_model_22_m_0_m_0_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_m_0_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_22_m_0_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 72,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.1.2.weight + rampq_model_23_cv3_1_2_WeightQ + /model.23/cv3.1/cv3.1.2/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_1_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            40,
+            40
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 640
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/cv3.1/cv3.1.2/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            10,
+            40,
+            40
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize128x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x733ba2a91a48d431",
+      "raw_row_index": 73,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.m.0.cv2.conv.weight + rampq_model_22_m_0_m_0_cv2_conv_WeightQ + /model.22/m.0/m/m.0/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_m_0_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "/model.22/m.0/m/m.0/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x4133eb8759ee0d6d",
+      "raw_row_index": 74,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.m.1.cv1.conv.weight + rampq_model_22_m_0_m_1_cv1_conv_WeightQ + /model.22/m.0/m/m.1/cv1/conv/Conv + PWN(/model.22/m.0/m/m.1/cv1/act/Sigmoid, /model.22/m.0/m/m.1/cv1/act/Mul) + PWN(rampq_model_22_m_0_m_1_cv2_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_m_1_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_22_m_0_m_1_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 75,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.m.1.cv2.conv.weight + rampq_model_22_m_0_m_1_cv2_conv_WeightQ + /model.22/m.0/m/m.1/cv2/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_m_1_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "/model.22/m.0/m/m.1/cv2/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major FP16 format"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f16_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3",
+      "tactic_value": "0x4133eb8759ee0d6d",
+      "raw_row_index": 76,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.m.0.cv3.conv.weight + rampq_model_22_m_0_cv3_conv_WeightQ + /model.22/m.0/cv3/conv/Conv + PWN(/model.22/m.0/cv3/act/Sigmoid, /model.22/m.0/cv3/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_m_0_cv3_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16384
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_22_cv2_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            128,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x65a38dbc9e991257",
+      "raw_row_index": 77,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.22.cv2.conv.weight + rampq_model_22_cv2_conv_WeightQ + /model.22/cv2/conv/Conv + PWN(/model.22/cv2/act/Sigmoid, /model.22/cv2/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_22_cv2_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            384,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 98304
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_2_0_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x256x64_stage4_warpsize2x4x1_g1_tensor16x8x32_simple_t1r1s1_swish",
+      "tactic_value": "0x838704902abae3eb",
+      "raw_row_index": 78,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.2.0.conv.weight + rampq_model_23_cv2_2_0_conv_WeightQ + /model.23/cv2.2/cv2.2.0/conv/Conv + PWN(/model.23/cv2.2/cv2.2.0/act/Sigmoid, /model.23/cv2.2/cv2.2.0/act/Mul) + PWN(rampq_model_23_cv2_2_1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_2_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 147456
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_2_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 79,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.2.0.0.conv.weight + rampq_model_23_cv3_2_0_0_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_0_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 2304
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_0_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": null,
+      "tactic_value": "0xfffffffffffffffc",
+      "raw_row_index": 80,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.2.1.conv.weight + rampq_model_23_cv2_2_1_conv_WeightQ + /model.23/cv2.2/cv2.2.1/conv/Conv + PWN(/model.23/cv2.2/cv2.2.1/act/Sigmoid, /model.23/cv2.2/cv2.2.1/act/Mul) + PWN(rampq_model_23_cv2_2_2_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_2_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 36864
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv2_2_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xfbcd5a1da537e27f",
+      "raw_row_index": 81,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.2.0.1.conv.weight + rampq_model_23_cv3_2_0_1_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul) + PWN(rampq_model_23_cv3_2_1_0_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_0_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            256,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16384
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x0779fa4ac8f9f2ee",
+      "raw_row_index": 82,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv2.2.2.weight + rampq_model_23_cv2_2_2_WeightQ + /model.23/cv2.2/cv2.2.2/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv2_2_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/cv2.2/cv2.2.2/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x5e4f6d7c83746fd6",
+      "raw_row_index": 83,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.2.1.0.conv.weight + rampq_model_23_cv3_2_1_0_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_1_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 576
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_1_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": null,
+      "tactic_value": "0xfffffffffffffffc",
+      "raw_row_index": 84,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.2.1.1.conv.weight + rampq_model_23_cv3_2_1_1_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul) + PWN(rampq_model_23_cv3_2_2_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_1_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4096
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_simple_t1r1s1_linkable",
+      "tactic_value": "0x4862d9a1cd4ec818",
+      "raw_row_index": 85,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_dfl_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            4,
+            8400
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 16
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/dfl/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            1,
+            4,
+            8400
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "ampere_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+      "tactic_value": "0xa4ae2d82115c3e83",
+      "raw_row_index": 86,
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.23.cv3.2.2.weight + rampq_model_23_cv3_2_2_WeightQ + /model.23/cv3.2/cv3.2.2/Conv",
+      "inputs": [
+        {
+          "Name": "rampq_model_23_cv3_2_2_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            64,
+            20,
+            20
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 640
+      },
+      "outputs": [
+        {
+          "Name": "/model.23/cv3.2/cv3.2.2/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            10,
+            20,
+            20
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "activation": "NONE",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8f32_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_tilesize64x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32_t1r1s1_alignc4",
+      "tactic_value": "0x5e4f6d7c83746fd6",
+      "raw_row_index": 87,
+      "actual_precision_requires_independent_review": true
+    }
+  ],
+  "output_int8_not_assumed": true,
+  "actual_precision_audit": "PENDING"
+}

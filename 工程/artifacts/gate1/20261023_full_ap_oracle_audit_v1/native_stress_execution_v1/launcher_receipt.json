@@ -1,0 +1,93 @@
+{
+  "schema": "rampq.gate1.full_ap_stress_launcher/v1",
+  "status": "EXECUTED_12_NATIVE_STRESS_CASES_ONLY",
+  "at_utc": "2026-10-23T07:49:31.654984+00:00",
+  "launcher": {
+    "path": "artifacts/gate1/20261023_full_ap_delivery_v1/launch_stress.py",
+    "bytes": 5450,
+    "sha256": "2192445e1f666956113c4d5bc89d7f1860b7adf7fdd2fbf11d9d1cdd9514a9de"
+  },
+  "inputs": {
+    "inputs_manifest.json": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/inputs_manifest.json",
+      "bytes": 1510,
+      "sha256": "1d77ec04575579a1233e230f30ab65eb0d82537938ae5ce347459d90bae7fb91"
+    },
+    "comparison_policy.json": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/comparison_policy.json",
+      "bytes": 3450,
+      "sha256": "ff75048e986f5ec4bd2e956fca41a2370eb62b525b62b386cf3bd07f192f0b70"
+    },
+    "stress_fixtures.json": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/stress_fixtures.json",
+      "bytes": 326980,
+      "sha256": "279653d1647e8e9c3bd74b44d6cdc9de91ad22d54275bdeeeb00406cbf4fc7b6"
+    },
+    "run_full_ap_stress_oracle.m": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/run_full_ap_stress_oracle.m",
+      "bytes": 4045,
+      "sha256": "8617c5462e7cf86d3cf3ab53e182d3be4cfea915e04477db76ea4316e4ee7a98"
+    }
+  },
+  "official_source_manifest": {
+    "path": "artifacts/gate1/20261022_split_refinement/evaluation_sources/source_manifest.json",
+    "bytes": 5124,
+    "sha256": "1d45d3ecaabf5f3f8a8885436a0a22718a890a17f8ad9d5ec4f9c274c3c079ae"
+  },
+  "official_sources_verified": 11,
+  "runtime_manifest": {
+    "path": "artifacts/gate1/20261023_native_oracle_runtime_v1/runtime_manifest.json",
+    "bytes": 794732,
+    "sha256": "2490915f6f61adfde6fe85a5ba7cd249d77877a4461b7c42e418fe05d656d9e2"
+  },
+  "runtime_files_verified": 2890,
+  "executable": {
+    "path": "artifacts/gate1/20261023_native_oracle_runtime_v1/runtime/octave-11.3.0-w64/mingw64/bin/octave-cli.exe",
+    "bytes": 26112,
+    "sha256": "387ac823fb5b01b3407fb34edda6ab1cdba0c9619841a0f6dee323d05a850f2d"
+  },
+  "mean2": {
+    "path": "artifacts/gate1/20261023_native_oracle_runtime_v1/runtime/octave-11.3.0-w64/mingw64/share/octave/packages/image-2.20.0/mean2.m",
+    "bytes": 1759,
+    "sha256": "a1d766f961fdb245edbf52a7f1a4d20eced94b56fc803a99f7094f0a089f773a"
+  },
+  "runtime_version": "11.3.0",
+  "command": [
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261023_native_oracle_runtime_v1\\runtime\\octave-11.3.0-w64\\mingw64\\bin\\octave-cli.exe",
+    "--no-gui",
+    "--quiet",
+    "--no-history",
+    "--no-init-file",
+    "--no-site-file",
+    "--eval",
+    "addpath('C:/Users/lenovo/Desktop/视觉边缘研究/07_边缘小目标检测混合精度量化_工程/artifacts/gate1/20261023_native_oracle_runtime_v1/runtime/octave-11.3.0-w64/mingw64/share/octave/packages/image-2.20.0','-begin');assert(strcmp(canonicalize_file_name(which('mean2')),canonicalize_file_name('C:/Users/lenovo/Desktop/视觉边缘研究/07_边缘小目标检测混合精度量化_工程/artifacts/gate1/20261023_native_oracle_runtime_v1/runtime/octave-11.3.0-w64/mingw64/share/octave/packages/image-2.20.0/mean2.m')));assert(strcmp(version,'11.3.0'));addpath('C:/Users/lenovo/Desktop/视觉边缘研究/07_边缘小目标检测混合精度量化_工程/artifacts/gate1/20261023_full_ap_oracle_audit_v1','-begin');run_full_ap_stress_oracle('C:/Users/lenovo/Desktop/视觉边缘研究/07_边缘小目标检测混合精度量化_工程/artifacts/gate1/20261023_full_ap_oracle_audit_v1/native_stress_execution_v1');"
+  ],
+  "returncode": 0,
+  "fixture_count": 12,
+  "real_data_read": false,
+  "model_executed": false,
+  "selection_or_holdout_accessed": false,
+  "official_sources_modified": false,
+  "system_configuration_modified": false,
+  "official_AP_arbitrary_input_equivalence_certified": false,
+  "gate1_scientific_pass": false,
+  "native_case_errors": 0,
+  "outputs": {
+    "oracle_results.mat": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/native_stress_execution_v1/oracle_results.mat",
+      "bytes": 10797,
+      "sha256": "6dea92030fb54cd541ed38f73c5d1ecaf1b548279d2bcb1d4a4ce44faa4b4f0b"
+    },
+    "oracle_results.json": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/native_stress_execution_v1/oracle_results.json",
+      "bytes": 56351,
+      "sha256": "c8dcfda8536e3b86b04a803f165728c6fc7d295dcb070896f71aca0dede46fee"
+    },
+    "native_console.txt": {
+      "path": "artifacts/gate1/20261023_full_ap_oracle_audit_v1/native_stress_execution_v1/native_console.txt",
+      "bytes": 5148,
+      "sha256": "7aae2c0fb3c28a67f667546fb25b1c398c80b0aaabd57a1b89c039076d3d873e"
+    }
+  },
+  "finished_utc": "2026-10-23T07:49:36.581425+00:00"
+}

@@ -1,0 +1,164 @@
+{
+  "schema": "rampq.gate1.full_ap_and_restricted_geometry_source_review/v1",
+  "status": "PASS_SOURCE_TRANSLATION_AND_RESTRICTED_GEOMETRY_PREPARATION_SCOPE_ONLY",
+  "at_utc": "2026-10-23T07:55:01.927459+00:00",
+  "issues": [],
+  "existing_synthetic_tests_verified": {
+    "full_AP_mirror": 54,
+    "ignore_geometry": 85
+  },
+  "full_AP_source_review": {
+    "official_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+    "prepared_GT_score_is_already_inverted": true,
+    "cap_first_across_all_classes_before_class_filter_and_stable_score_sort": true,
+    "same_class_GT_ignore_last_positive_priority_and_reusable_ignore_matching": true,
+    "equal_overlap_later_nonignored_GT_tie_preserved": true,
+    "optional_multiple_match_source_behavior_retained": true,
+    "recall_denominator_counts_ignored_GT_rows": true,
+    "ignored_DT_flags_neither_TP_nor_FP": true,
+    "evalClass_repeats_each_class_by_containing_image_frequency": true,
+    "AP_uses_cap500_and_VOC_precision_envelope_integral": true,
+    "AR_caps": [
+      1,
+      10,
+      100,
+      500
+    ],
+    "empty_evalClass_seven_metrics_NaN": true,
+    "stable_ties_are_declared_runtime_policy_not_all_MATLAB_claim": true,
+    "threshold_hex_matches_pure_Octave11_3_probe": true,
+    "input_domain_limited_to_finite_validated_matrices": true,
+    "raw_adapter_uses_only_SHA_pinned_prefilter_not_old_matcher": true,
+    "caller_arrays_copied_no_NMS_or_real_data_IO": true,
+    "native_aggregate_comparison_result_reviewed_here": false,
+    "universal_equivalence_or_scientific_acceptance_certified_here": false
+  },
+  "geometry_source_review": {
+    "restricted_chain": "original -> both actual loader resize axes -> same sampled centered LetterBox -> same sampled flips -> ragged sidecar collation",
+    "new_restricted_training_policy_not_old_30epoch_contract": true,
+    "unsupported_spatial_augmentations_must_be_disabled_or_separately_implemented": true,
+    "valid_publisher_reasons_and_quality_exclusion_are_kept_distinct": true,
+    "nonpositive_or_empty_clipped_publisher_box_rejects_whole_sample": true,
+    "tiny_nonempty_clipped_remnants_are_not_silently_dropped": true,
+    "actual_train4534_compatibility_or_new_quarantine_split_proven": false,
+    "SHA_fields_and_train_prefix_are_structural_metadata_only": true,
+    "actual_file_hash_and_split_membership_verified": false,
+    "positive_priority_remains_downstream_classification_primitive_policy": true,
+    "actual_Dataset_Format_Trainer_TAL_criterion_integration_complete": false,
+    "tests_use_actual_installed_transforms_and_loader_with_in_memory_synthetic_imread_only": true,
+    "base_instance_current_source_only_not_historically_pinned": true,
+    "augment_dataset_match_old_pin": true,
+    "geometry_manifest_already_observed": false
+  },
+  "approved_reporting": [
+    "The prepared AP mirror implements the full pinned aggregation path, but native agreement and its finite fixture/runtime scope must be reviewed separately after source freeze.",
+    "The only native constants used before source freeze are arithmetic threshold values; this review did not inspect native metric answers or feed oracle answers to the implementation.",
+    "Finite input validation deliberately bounds the translation domain; stable sort behavior is a declared chosen-runtime policy, not a proof over every MATLAB version.",
+    "Geometry primitives and85 synthetic tests do not complete real augmentation/loader/assigner/trainer integration.",
+    "The restricted resize-letterbox-flips pipeline is a new policy and cannot reinterpret the old training run.",
+    "Publisher zero-area or completely outside geometry needs explicit future quarantine/data contracts; existing4534 train samples have not been evaluated for compatibility.",
+    "Identity metadata validation does not prove actual file bytes, role membership or provenance.",
+    "No real-data AP, model improvement, scientific baseline or deployment acceptance follows from source review."
+  ],
+  "pending": [
+    "Final report49, statev10 and decision delivery consistency after native comparator audit completes.",
+    "Bind the final geometry preparation manifest after its owner seals it if it is not yet present."
+  ],
+  "review_scope": {
+    "new_full_test_suites_executed": false,
+    "native_runtime_executed_or_repeated": false,
+    "native_metric_answers_read_by_this_review": false,
+    "model_or_weights_loaded": false,
+    "GPU_execution": false,
+    "real_image_or_annotation_loading": false,
+    "Selection_or_Holdout_access": false,
+    "runtime_dependency_hashes_repeated": false,
+    "other_owner_files_modified": false
+  },
+  "sources": {
+    "scripts/gate1_official_ap.py": {
+      "bytes": 17031,
+      "sha256": "a76a3ae45f2859fecc89909f903011b483514ee7113b93b881947fc9dbcbb54c"
+    },
+    "tests/test_gate1_official_ap.py": {
+      "bytes": 13453,
+      "sha256": "055fb6955afcf3869e5b7157e3b4ad1ce5494646df04b7c5823e073f253d63c3"
+    },
+    "scripts/gate1_ignore_geometry.py": {
+      "bytes": 15626,
+      "sha256": "4ecb3eedc4c5597f64e2290d73de4d6a4d40f4cd265e06c0dbb0ca03371dfd56"
+    },
+    "tests/test_gate1_ignore_geometry.py": {
+      "bytes": 15620,
+      "sha256": "675f1627b11af41295b3b8dd475baf697c8dbb4ae00d4822c75a24104bcb1df8"
+    },
+    "artifacts/gate1/20261023_full_ap_preparation_v1/preparation_receipt.json": {
+      "bytes": 3407,
+      "sha256": "eadd74e70e90eac4a629fc72d60cca58545f96a631c7a36fb00d2e5384731f2f"
+    },
+    "artifacts/gate1/20261023_full_ap_preparation_v1/preparation_manifest.json": {
+      "bytes": 1445,
+      "sha256": "27ac8449421b67b6d8a86c5903f3f1e045a9350fa5402ab06b137e5358f2ad1e"
+    },
+    "artifacts/gate1/20261023_full_ap_preparation_v1/DESIGN.md": {
+      "bytes": 5072,
+      "sha256": "9b51476210bbf8a7d6608b770c4e24908103ec2cf699369938e20721a3805172"
+    },
+    "artifacts/gate1/20261023_full_ap_preparation_v1/synthetic_tests.xml": {
+      "bytes": 7094,
+      "sha256": "f42d43f237bb4dc38ad0fb20f284e825f80cb840510baada07967668cbe4c64d"
+    },
+    "artifacts/gate1/20261023_full_ap_delivery_v1/native_constants_probe.json": {
+      "bytes": 1779,
+      "sha256": "2c57e03694b1341b9fc20e69d7c6e9e0765c5df98dfabcb6ea7267cd2fdbe109"
+    },
+    "scripts/gate1_ignore_aware_evaluation.py": {
+      "bytes": 18720,
+      "sha256": "4e45ff26a86a83ff66e997f15e4c4794246c6440c304446972809ff32db09961"
+    },
+    "artifacts/gate1/20261023_ignore_geometry_preparation_v1/source_review.json": {
+      "bytes": 7674,
+      "sha256": "4e49b231b08deba4009ee58e991e68ca5fb17b52231cfecaed877a04d506867c"
+    },
+    "artifacts/gate1/20261023_ignore_geometry_preparation_v1/final_tests_receipt.json": {
+      "bytes": 1764,
+      "sha256": "01f3c9411364424530442abb83f5b9c3bde0c70a50f775afbe1b73881f62549e"
+    },
+    "artifacts/gate1/20261023_ignore_geometry_preparation_v1/final_tests.xml": {
+      "bytes": 12522,
+      "sha256": "8933f413425ca094d6117b8c6bd2035cac2da3d5b6dee345a20ba540a7ae2eac"
+    },
+    "artifacts/gate1/20261023_ignore_geometry_preparation_v1/README.md": {
+      "bytes": 4883,
+      "sha256": "f29ac745d246d767a1f4e12458decc6515e1de79ae93b837a22ddce58025c31e"
+    },
+    "scripts/gate1_ignore_negative_loss.py": {
+      "bytes": 7782,
+      "sha256": "67fa0f7a171d26b1f8d2ebd922333f30bb97ffb94b523a58f6f784ed572b3c1f"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/calcAccuracy.m": {
+      "bytes": 2367,
+      "sha256": "285508f54903acd75eeda346c11c8e53267e72facd648f2e22bce121d4f55d7f"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/VOCap.m": {
+      "bytes": 263,
+      "sha256": "95dd1e02c956124e777caf6f44b50b0986a2a37785bd11982ef775e696c17945"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/evalRes.m": {
+      "bytes": 3843,
+      "sha256": "610f0d078f1af8d7987e360e6e88665c0290587191d5542b469a9792402f539b"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/compOas.m": {
+      "bytes": 1507,
+      "sha256": "3e5c2d473c07bf2ddbe0d902284af98ef7104c609e867b2ed59083d31f3ed2af"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/dropObjectsInIgr.m": {
+      "bytes": 1842,
+      "sha256": "30dee2713d76a537f5c98ec5d0804e17cfd3993d83d8a80a70b90ef9461fa4de"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/createIntImg.m": {
+      "bytes": 375,
+      "sha256": "7ce3de4fc105be4f088cae5d1fcfc8f4383f3d7ffd4a551bf1afe711eff09f72"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema": "rampq.gate0.label_free_output_reconstruction/v1",
+  "status": "FROZEN",
+  "method": "label-free raw detector output reconstruction under each q_only:Gj intervention",
+  "device": "cuda:0",
+  "image_count": 64,
+  "image_list_sha256": "02caf7d8888b72a8ac884eb95aeb76ae9c9dd984baf3b1714a379faf2eaa7069",
+  "calibration_sha256": "cdb38549ba9aa78d32a00203de0ab050aeb7ee7f24e006402d32a5a2b616bb20",
+  "control_preregistration_sha256": "120026dbff929ecd2f9e95df6c46d1cbcc920ffe5317f0bb02cd223199b6ce08",
+  "model_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "primary_score": "mean per-image normalized MSE",
+  "secondary_score": "mean per-image cosine distance (diagnostic only)",
+  "groups": [
+    {
+      "group": "G1",
+      "mean_normalized_mse": 0.006145389577141792,
+      "mean_cosine_distance": 0.0030665154615586495,
+      "mac_share": 0.1031739602404368,
+      "rank": 1
+    },
+    {
+      "group": "G2",
+      "mean_normalized_mse": 0.0008531215084571537,
+      "mean_cosine_distance": 0.0004263818127994527,
+      "mac_share": 0.1265047552696813,
+      "rank": 2
+    },
+    {
+      "group": "G3",
+      "mean_normalized_mse": 0.00025067741634268747,
+      "mean_cosine_distance": 0.00012510974562810265,
+      "mac_share": 0.11820936148150549,
+      "rank": 3
+    },
+    {
+      "group": "G4",
+      "mean_normalized_mse": 0.00020756031887633042,
+      "mean_cosine_distance": 0.00010372881282192173,
+      "mac_share": 0.13287211807974594,
+      "rank": 4
+    },
+    {
+      "group": "G6",
+      "mean_normalized_mse": 0.00010412662901688923,
+      "mean_cosine_distance": 5.199126926379652e-05,
+      "mac_share": 0.12857860371672528,
+      "rank": 5
+    },
+    {
+      "group": "G5",
+      "mean_normalized_mse": 9.222235897243392e-05,
+      "mean_cosine_distance": 4.6069683337089315e-05,
+      "mac_share": 0.12028320992854943,
+      "rank": 6
+    },
+    {
+      "group": "G8",
+      "mean_normalized_mse": 2.7902974356070478e-05,
+      "mean_cosine_distance": 1.3690245284520355e-05,
+      "mac_share": 0.09254548694933654,
+      "rank": 7
+    },
+    {
+      "group": "G7",
+      "mean_normalized_mse": 1.0890438603868395e-05,
+      "mean_cosine_distance": 5.4133030484831285e-06,
+      "mac_share": 0.1778325043340192,
+      "rank": 8
+    }
+  ],
+  "all_same_budget_pair_selection": {
+    "groups": [
+      "G1",
+      "G2"
+    ],
+    "score_sum": 0.006998511085598946,
+    "mac_share": 0.2296787155101181,
+    "candidate_collision": false
+  },
+  "unseen_random_pool_pair_selection": {
+    "groups": [
+      "G1",
+      "G2"
+    ],
+    "score_sum": 0.006998511085598946,
+    "mac_share": 0.2296787155101181
+  },
+  "clarification": "The preregistration phrase 'same budget pool' can be read narrowly as the unseen random pool. Both the literal unseen-pool result and the all-pair diagnostic are reported; neither result is suppressed.",
+  "elapsed_seconds": 5.577275899995584,
+  "labels_read": false,
+  "random_control_results_read": false,
+  "evidence_boundary": "Calibration-set raw-output reconstruction under PyTorch Q/DQ simulation; this is not detection accuracy, TensorRT INT8, Jetson latency, or energy evidence."
+}

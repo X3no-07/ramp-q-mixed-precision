@@ -1,0 +1,203 @@
+WARNING: 'timer' backtrace collection trigger will not be used because sampling is disabled.
+WARNING: 'sched' backtrace collection trigger will not be used because sampling is disabled.
+/home/nvidia/rampq/jetson_precision_candidate_smoke.py:299: DeprecationWarning: Use get_tensor_shape instead.
+  shape = tuple(engine.get_binding_shape(index))
+/home/nvidia/rampq/jetson_precision_candidate_smoke.py:300: DeprecationWarning: Use get_tensor_dtype instead.
+  dtype = engine.get_binding_dtype(index)
+/home/nvidia/rampq/jetson_precision_candidate_smoke.py:301: DeprecationWarning: Use get_tensor_format instead.
+  require(engine.get_binding_format(index) == trt.TensorFormat.LINEAR, 'Nonlinear I/O format unsupported')
+/home/nvidia/rampq/jetson_precision_candidate_smoke.py:304: DeprecationWarning: Use get_tensor_mode instead.
+  is_input = bool(engine.binding_is_input(index))
+/home/nvidia/rampq/jetson_precision_candidate_smoke.py:305: DeprecationWarning: Use get_tensor_name instead.
+  name = engine.get_binding_name(index)
+CANDIDATE_SMOKE_INPUTS_AND_BINDINGS_VERIFIED
+{
+  "schema": "rampq.gate05.precision_candidate_smoke/v1",
+  "status": "DIAGNOSTIC_FIXED_IMAGE_EXECUTION_OK",
+  "configuration": "r_only_G1_G5",
+  "execution_success": true,
+  "diagnostic_only": true,
+  "diagnostic_formats_only_opt_in": true,
+  "precision_audit_status": "REQUESTED_CONV_FORMATS_VERIFIED",
+  "strict_int8_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+  "strict_int8_tactics_verified": false,
+  "all_requested_conv_formats_verified": true,
+  "all_outputs_finite": {
+    "/model.10/m/m.0/attn/pe/conv/Conv_output_0": true,
+    "output0": true
+  },
+  "auxiliary_output_npz_keys": {
+    "/model.10/m/m.0/attn/pe/conv/Conv_output_0": "auxiliary_output_0"
+  },
+  "primary_output_npz_key": "tensorrt",
+  "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+  "lineage": {
+    "build_result_sha256": "9b939478301097542976d3639f8fd5e618b6b2e2f589ce104a705bda5581d2b0",
+    "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+    "bundle_manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+    "precision_audit_sha256": "6377160542f0d2a80a452f91c5568f66c02fd70daeb1455da57205dc854519ac",
+    "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+    "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "failed_preflight_sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+    "diagnostic_scope_sha256": "04b7ffea68bff40e08d1cc52466e19806e0eb2b3d5ebfb94b195bc1b5711189b",
+    "source_manifest_sha256": "b14cb5381e82d19c12531ba7db02f50c6b31a1c96df9645b52da78169d5d2eba"
+  },
+  "image": "000020.jpg",
+  "image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "preprocess": {
+    "imgsz": 640,
+    "batch": 1,
+    "rect": false,
+    "bgr_to_rgb": true,
+    "scale": "float32 / 255.0",
+    "letterbox_auto": false,
+    "stride": 32
+  },
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "primary_output_name": "output0",
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "detections": [],
+  "class_count": 10,
+  "raw_outputs_sha256": "c339d55538fa838263e6238867b3f0cb9c0350e6c8668951597b1303f04ba95b",
+  "shared_graph_control": {
+    "common_preparation_sha256": "8d5c4fc4008cdaab6dc3664dbf52f17d2dbdb309395ccf37d07bf0432d850321",
+    "common_source_fp32_onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+    "common_source_weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+    "common_q_all_pe_tap_reference_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+    "common_output_declaration_sha256": "1f30abe2954219c3ada6feb65f7f917cc4d64f18047c48e506524eaec0e67fb7"
+  },
+  "fp16_comparisons": [
+    {
+      "kind": "matched_fp16_control",
+      "report_sha256": "9bebed0cc10bd0c4772c8b76b05ca8720c766ae78c377925f6fef8f165de3911",
+      "raw_outputs_sha256": "6a70a5294f9290f953b39e47314c2d91b364b96bbaf16ece857ca9ece0eea385",
+      "engine_sha256": "92ce7a8f487cbaf473a281b94daa953120870fa2ad992807d60390dffd1b72fb",
+      "onnx_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+      "detections": [
+        [
+          2.8125,
+          3.0,
+          245.625,
+          284.25,
+          0.6671474575996399,
+          0.0
+        ],
+        [
+          168.84375,
+          195.9375,
+          245.90625,
+          285.5625,
+          0.44360047578811646,
+          2.0
+        ]
+      ],
+      "shared_graph_control": {
+        "common_preparation_sha256": "8d5c4fc4008cdaab6dc3664dbf52f17d2dbdb309395ccf37d07bf0432d850321",
+        "common_source_fp32_onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+        "common_source_weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+        "common_q_all_pe_tap_reference_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+        "common_output_declaration_sha256": "1f30abe2954219c3ada6feb65f7f917cc4d64f18047c48e506524eaec0e67fb7"
+      },
+      "descriptive_only": true,
+      "common_output_contract_verified": true,
+      "shared_source_graph_hash_control_verified": true,
+      "graph_structure_confounded": false,
+      "fusion_and_nonquantized_floating_precision_control_unverified": true,
+      "causal_attribution_allowed": false,
+      "max_abs_box_output_difference": 626.9650268554688,
+      "max_abs_score_output_difference": 0.6671464443206787
+    }
+  ],
+  "comparison_limits": "All comparisons are descriptive. Common graph and output declarations do not establish common fusion or floating precision. A protocol decision is still required before target rescue, causal attribution, or dataset conclusions.",
+  "first_call_ms_not_benchmark": 44.78476800068165,
+  "nvtx_capture_range": "RAMPQ_QDQ_FIXED_IMAGE",
+  "tensorrt": "8.5.2.2",
+  "torch": "2.0.0+nv23.05",
+  "ultralytics": "8.4.50",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "board_time": "2026-10-16T23:42:35+0800",
+  "numerical_migration_status": "ORIGINAL_LOCAL_FULL_MODEL_PYTORCH_ORT_QDQ_PARITY_FAILED_RETAINED",
+  "dataset_evaluation_run": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "causal_attribution_allowed": false,
+  "scope": "One existing fixed Selection image only; build/format/execution evidence only"
+}
+DIAGNOSTIC_FIXED_IMAGE_EXECUTION_OK
+Generating '/tmp/nsys-report-b8bc.qdstrm'
+[1/1] [0%                          ] fixed_image.nsys-rep[1/1] [0%                          ] fixed_image.nsys-rep[1/1] [9%                          ] fixed_image.nsys-rep[1/1] [==19%                       ] fixed_image.nsys-rep[1/1] [==20%                       ] fixed_image.nsys-rep[1/1] [==21%                       ] fixed_image.nsys-rep[1/1] [===================81%      ] fixed_image.nsys-rep[1/1] [====================84%     ] fixed_image.nsys-rep[1/1] [========================100%] fixed_image.nsys-rep[1/1] [========================100%] fixed_image.nsys-rep
+Generated:
+    /home/nvidia/rampq/gate05_extended_profile_r_only_G1_G5_20261019/fixed_image.nsys-rep

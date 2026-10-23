@@ -1,0 +1,91 @@
+{
+  "schema": "rampq.gate05.saved_raw_reference_comparator_author_self_check/v1",
+  "status": "SOURCE_AND_SYNTHETIC_ARRAY_TESTS_PASS_NOT_REAL_DATASET_REVIEW",
+  "review_role": "AUTHOR_SELF_CHECK_NOT_INDEPENDENT",
+  "tool_file": "scripts/compare_gate05_saved_raw_reference.py",
+  "tool_sha256": "e71a663a0248571cb05b93da8f511a1f244abc2e954e70a14e52d3fa0c553d7e",
+  "tool_bytes": 23553,
+  "checks": [
+    {
+      "id": "FROZEN_ACCEPTANCE_RAW_PAIR",
+      "pass": true,
+      "evidence": "Exact user-supplied acceptanceSHA and siblingrawSHA binding; unchanged originalguard enforced."
+    },
+    {
+      "id": "ALL12_STREAMS_NO_SELECTION",
+      "pass": true,
+      "evidence": "Sixfixedconfigs×TRT/ORT; exactfrozen streamorder, no configuration subset/selection option."
+    },
+    {
+      "id": "SHARED_INPUT_IDENTITY",
+      "pass": true,
+      "evidence": "All150sharedNPY files, FLOAT32Cheader/payloadSHAs and frozenmanifest orderedimages/labels/letterbox match every streamrow."
+    },
+    {
+      "id": "RAW_MANIFEST_LINEAGE",
+      "pass": true,
+      "evidence": "EverymanifestSHA/schema150attempted/completed/serialized/state/sourcegraph/engine/runner/sharedinput/authengineeringreceipt checked."
+    },
+    {
+      "id": "ARRAY_IDENTITY_AND_BOUNDARY",
+      "pass": true,
+      "evidence": "Every150NPZperstream filebytes/SHA, exact2keys, main[1,14,8400]/PE[1,128,20,20]Float32C, payloadSHA/actualfinitecounts checked; duplicatefilepath rejected."
+    },
+    {
+      "id": "DESCRIPTIVE_THREE_PARTS",
+      "pass": true,
+      "evidence": "Perimage coords0:4/classes4:14/PE report finite/minmaxmean/numericequal/mismatchcount/byteidentical/maxabs/meanabs/RMS."
+    },
+    {
+      "id": "ELEMENT_WEIGHTED_AGGREGATES",
+      "pass": true,
+      "evidence": "Globalmeans/RMS derived fromabs/squaresums and actualelementcounts, no averageofimageRMS/censoring."
+    },
+    {
+      "id": "NONFINITE_NOT_SILENT_PASS",
+      "pass": true,
+      "evidence": "Actualnonfinitearraystatistics preserved, finitepairmetrics explicit; reporttechnicalineligible andnofinitepairreason, noadhoctolerance."
+    },
+    {
+      "id": "SIGNED_ZERO_DISTINCTION",
+      "pass": true,
+      "evidence": "Synthetic+0/-0 numeric_equaltrue while byte_identicalfalse; rawbytesnotmislabellednumericexact."
+    },
+    {
+      "id": "PROTECTED_INPUTS_RECHECKED",
+      "pass": true,
+      "evidence": "Hashallusedcontract/index/manifest/input/NPZsourcesandtoolbefore/after; freshoutputoutsideprotectedraw/inputpackages."
+    },
+    {
+      "id": "NO_INFERENCE_NMS_MODEL_IMPORTS",
+      "pass": true,
+      "evidence": "OnlyNumPy forarrays; ASTcontainsnoInferenceSession/torch/TRT/NMS/subprocess/SSHimplementation."
+    },
+    {
+      "id": "ORIGINAL_GUARD_UNCHANGED",
+      "pass": true,
+      "evidence": "Noatol/rtolormigrationPASS; sourcePyTorchORTguardFAILED_UNCHANGED andGateINCOMPLETE retained."
+    },
+    {
+      "id": "PYTHON38_AST",
+      "pass": true,
+      "evidence": "Source parses usingPython3.8grammar."
+    },
+    {
+      "id": "SYNTHETIC_TESTS_ONLY",
+      "pass": true,
+      "evidence": "SixNumPy2.5.3selftests passed; realdataset comparisonnotexecuted."
+    }
+  ],
+  "synthetic_self_test_count": 6,
+  "synthetic_self_test_exit_code": 0,
+  "numpy_version_in_self_test": "2.5.3",
+  "real_dataset_outputs_read": false,
+  "model_calls": 0,
+  "NMS_calls": 0,
+  "SSH_operations": 0,
+  "migration_or_accuracy_or_Gate_PASS_claim": false,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "limitation": "Independent static review and the actual saved12stream invocation remain separate. This tool cannot resolve originalPyTorch/exportnumericalguard or identifypureG1arithmeticcause."
+}

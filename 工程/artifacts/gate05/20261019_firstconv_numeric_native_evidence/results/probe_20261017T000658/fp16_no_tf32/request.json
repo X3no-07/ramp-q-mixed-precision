@@ -1,0 +1,24 @@
+{
+  "case": "fp16_no_tf32",
+  "variant": "fp32",
+  "command": [
+    "/usr/src/tensorrt/bin/trtexec",
+    "--onnx=/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/model_firstconv_fp32.onnx",
+    "--saveEngine=/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/results/probe_20261017T000658/fp16_no_tf32/model.engine",
+    "--noTF32",
+    "--inputIOFormats=fp32:chw",
+    "--outputIOFormats=fp32:chw,fp32:chw",
+    "--avgTiming=1",
+    "--memPoolSize=workspace:1024",
+    "--profilingVerbosity=detailed",
+    "--buildOnly",
+    "--fp16",
+    "--precisionConstraints=obey",
+    "--layerPrecisions=/model.0/conv/Conv:fp16",
+    "--layerOutputTypes=/model.0/conv/Conv:fp16"
+  ],
+  "max_build_seconds": 300,
+  "spec_sha256": "6042e2a0ce76322a27bffc4304644a99a83181e51b10d12d8fc14b0097f30051",
+  "onnx_sha256": "85bdbabf1d363f4c67ba94a955fc4f9afcd7e65565337e77211f701ed7416693",
+  "diagnostic_only": true
+}

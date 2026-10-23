@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_build_twoconv_context_probe.py",
+    "--root",
+    "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020",
+    "--case",
+    "code_clip_none",
+    "--output",
+    "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/results/probe_20261017T174203_31163/code_clip_none/model.engine"
+  ],
+  "case": {
+    "id": "code_clip_none",
+    "variant": "code_clip",
+    "precision_constraint_flag": "none",
+    "max_build_seconds": 300,
+    "iterations": 1,
+    "apply_native_clip_attribute_correction": true
+  },
+  "spec_sha256": "e9b48c0319f68e361977d093b25df8ceacb5f1827f8a413e5e7107f751af2a5c",
+  "model_sha256": "5e6dfc0294a97b65810816c1ba80ef679b6d55851b03724be4c8de3e32c6c6fb",
+  "max_child_seconds": 300,
+  "retries": 0
+}

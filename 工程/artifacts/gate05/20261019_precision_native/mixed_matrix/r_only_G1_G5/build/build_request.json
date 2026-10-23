@@ -1,0 +1,80 @@
+{
+  "configuration": "r_only_G1_G5",
+  "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+  "spec_sha256": "e013d721396c513333d136e95f72544f3d6198b86df44988d2363e46c3008053",
+  "manifest_sha256": "7195473e36ad03af3ac51f85e8ea292edc225c57ba47d17a5e6c58093aa4fbfc",
+  "diagnostic_only": true,
+  "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "primary_output_name": "output0",
+  "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+  "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+  "command": [
+    "/usr/src/tensorrt/bin/trtexec",
+    "--onnx=/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019/model.onnx",
+    "--saveEngine=/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019/results/build_20261016T193601_662295Z/model.engine",
+    "--fp16",
+    "--noTF32",
+    "--memPoolSize=workspace:1024",
+    "--profilingVerbosity=detailed",
+    "--buildOnly",
+    "--avgTiming=1",
+    "--precisionConstraints=obey",
+    "--inputIOFormats=fp32:chw",
+    "--outputIOFormats=fp32:chw,fp32:chw",
+    "--int8",
+    "--layerPrecisions=/model.0/conv/Conv:fp16,/model.1/conv/Conv:fp16,/model.2/cv1/conv/Conv:fp16,/model.2/m.0/cv1/conv/Conv:fp16,/model.2/m.0/cv2/conv/Conv:fp16,/model.2/cv2/conv/Conv:fp16,/model.13/cv1/conv/Conv:fp16,/model.13/m.0/cv1/conv/Conv:fp16,/model.13/m.0/cv2/conv/Conv:fp16,/model.13/cv2/conv/Conv:fp16,/model.16/cv1/conv/Conv:fp16,/model.16/m.0/cv1/conv/Conv:fp16,/model.16/m.0/cv2/conv/Conv:fp16,/model.16/cv2/conv/Conv:fp16",
+    "--layerOutputTypes=/model.0/conv/Conv:fp16,/model.1/conv/Conv:fp16,/model.2/cv1/conv/Conv:fp16,/model.2/m.0/cv1/conv/Conv:fp16,/model.2/m.0/cv2/conv/Conv:fp16,/model.2/cv2/conv/Conv:fp16,/model.13/cv1/conv/Conv:fp16,/model.13/m.0/cv1/conv/Conv:fp16,/model.13/m.0/cv2/conv/Conv:fp16,/model.13/cv2/conv/Conv:fp16,/model.16/cv1/conv/Conv:fp16,/model.16/m.0/cv1/conv/Conv:fp16,/model.16/m.0/cv2/conv/Conv:fp16,/model.16/cv2/conv/Conv:fp16"
+  ],
+  "restored_fp16_compute_and_output_constraints": [
+    "/model.0/conv/Conv",
+    "/model.1/conv/Conv",
+    "/model.2/cv1/conv/Conv",
+    "/model.2/m.0/cv1/conv/Conv",
+    "/model.2/m.0/cv2/conv/Conv",
+    "/model.2/cv2/conv/Conv",
+    "/model.13/cv1/conv/Conv",
+    "/model.13/m.0/cv1/conv/Conv",
+    "/model.13/m.0/cv2/conv/Conv",
+    "/model.13/cv2/conv/Conv",
+    "/model.16/cv1/conv/Conv",
+    "/model.16/m.0/cv1/conv/Conv",
+    "/model.16/m.0/cv2/conv/Conv",
+    "/model.16/cv2/conv/Conv"
+  ],
+  "external_io": "Explicit FLOAT linear input and two outputs; reformatting allowed",
+  "limits": "obey requests may fail; actual engine formats/precision must be audited. Failed numerical parity remains failed."
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "rampq.gate05.fixed_image_target_comparison/v1",
+  "status": "DESCRIPTIVE_SAVED_FIXED_IMAGE_MATCHES_ONLY",
+  "image": "000020.jpg",
+  "source_lineage": {
+    "image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+    "label_sha256": "d47ff72143b96da7ab274f4b48ed12833fc4978c002cb421e4e8f9ce2db9fb88",
+    "source_manifest_sha256": "b14cb5381e82d19c12531ba7db02f50c6b31a1c96df9645b52da78169d5d2eba"
+  },
+  "matching_code_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+  "matching_config_sha256": "1b6ed3a841d6cba07c3a92065855e146f5a069f7fb1c7ee643c8a65d541c4f54",
+  "matching": {
+    "class_aware": true,
+    "one_to_one": true,
+    "assignment": "Existing gate0.match_targets: IoU/confidence descending greedy",
+    "primary_conf": 0.25,
+    "match_iou": 0.5
+  },
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "reference": {
+    "report_sha256": "373892670db8607a80d057bd9c92e26b46297e1f39ee779dfac14bf14dbd71b4",
+    "detection_key": "pytorch_fp32_detections",
+    "engine_sha256": null,
+    "weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+    "detection_count": 2
+  },
+  "candidate": {
+    "report_sha256": "373892670db8607a80d057bd9c92e26b46297e1f39ee779dfac14bf14dbd71b4",
+    "detection_key": "tensorrt_detections",
+    "engine_sha256": "64d91db3063ac28c1552a1ba6443ae28ca45d82d988f5cd375b39fc8cc76b85c",
+    "weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+    "detection_count": 2
+  },
+  "target_count": 1,
+  "target_matches": [
+    {
+      "target_id": "000020.jpg:0",
+      "class_id": 0,
+      "reference_match": {
+        "target_id": "000020.jpg:0",
+        "class_id": 0,
+        "x1": 9.0,
+        "y1": 0.0005,
+        "x2": 233.0006,
+        "y2": 332.0001,
+        "area_ratio": 0.03586425,
+        "local_contrast": 0.04565647,
+        "matched": 1,
+        "match_iou": 0.791645,
+        "match_conf": 0.664093,
+        "best_low_iou": 0.791645,
+        "best_low_conf": 0.664093
+      },
+      "candidate_match": {
+        "target_id": "000020.jpg:0",
+        "class_id": 0,
+        "x1": 9.0,
+        "y1": 0.0005,
+        "x2": 233.0006,
+        "y2": 332.0001,
+        "area_ratio": 0.03586425,
+        "local_contrast": 0.04565647,
+        "matched": 1,
+        "match_iou": 0.791398,
+        "match_conf": 0.667147,
+        "best_low_iou": 0.791398,
+        "best_low_conf": 0.667147
+      },
+      "observed_match_state": "matched_to_matched"
+    }
+  ],
+  "fixed_label_class_counts": {
+    "0": 1
+  },
+  "predictions_in_classes_absent_from_fixed_label": {
+    "reference": {
+      "2": 1
+    },
+    "candidate": {
+      "2": 1
+    }
+  },
+  "annotation_boundary": "The existing 000020 label contains one class-0 holothurian target. A saved class-2 scallop prediction is unannotated in this fixed label. These diagnostics do not classify that extra prediction as a false positive or infer dataset annotation completeness.",
+  "observed_match_state_counts": {
+    "matched_to_matched": 1,
+    "matched_to_unmatched": 0,
+    "unmatched_to_matched": 0,
+    "unmatched_to_unmatched": 0
+  },
+  "inference_run": false,
+  "dataset_evaluation_run": false,
+  "accuracy_pass_claim": false,
+  "target_rescue_claim": false,
+  "causal_attribution_allowed": false,
+  "numerical_migration_status": "ORIGINAL_LOCAL_FULL_MODEL_PYTORCH_ORT_QDQ_PARITY_FAILED_RETAINED",
+  "limits": "Only saved detections on existing Selection 000020. Observed match changes are not a recovery or causality conclusion. No dataset criteria are defined or applied; original independent-model parity failure remains unresolved."
+}

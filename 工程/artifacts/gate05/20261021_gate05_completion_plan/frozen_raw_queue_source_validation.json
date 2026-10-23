@@ -1,0 +1,38 @@
+{
+  "schema": "rampq.gate05.frozen_raw_queue_source_validation/v1",
+  "status": "SOURCE_AND_STDLIB_HELPER_CHECKS_PASS_NOT_FULL_PACKAGE_VALIDATION",
+  "queue_file": "scripts/jetson_frozen_raw_serial_queue.py",
+  "queue_sha256": "ee0dee95bfac627c2ddffaad948e14fddb57f726040fc0df89d105bd465c49bc",
+  "queue_bytes": 32273,
+  "wrapper_sha256": "4b3c6c5f11c4793810c272606bb1a288ab701c10a54c51c27ab8bd37a04f4329",
+  "Python38AST": "PASS",
+  "checks": [
+    {
+      "id": "GUARD_EMPTY_JSON_NOT_ACKNOWLEDGED",
+      "pass": true
+    },
+    {
+      "id": "EXITED_GUARD_EMPTY_ACK_REJECTED",
+      "pass": true
+    },
+    {
+      "id": "UNSAFE_WORK_PATH_../escape.json",
+      "pass": true
+    },
+    {
+      "id": "UNSAFE_WORK_PATH_/absolute/file",
+      "pass": true
+    },
+    {
+      "id": "FINITE_RAW_REQUIREMENT_STOPS_NEXT_MEMBER",
+      "pass": true
+    }
+  ],
+  "forbidden_runtime_modules_imported": [],
+  "model_calls": 0,
+  "GPU_calls": 0,
+  "SSH_operations": 0,
+  "child_processes_started_by_helper_checks": 0,
+  "frozen_full_work_plan_check_performed": false,
+  "limitation": "Final plan/work package does not yet exist; real default/check-input-only CLI must be verified against all six frozen work packages before execute."
+}

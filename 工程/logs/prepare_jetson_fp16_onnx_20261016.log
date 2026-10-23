@@ -1,0 +1,94 @@
+Creating new Ultralytics Settings v0.0.8 file  
+View Ultralytics Settings with 'yolo settings' or at 'C:\Users\lenovo\Desktop\\07__\artifacts\jetson_trt_fp16_export_20261016_v1\.ultralytics\Ultralytics\settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart#ultralytics-settings.
+WARNING 'half' is deprecated and will be removed in the future. Use 'quantize' instead.
+Ultralytics 8.4.142  Python-3.12.14 torch-2.10.0+cu128 CPU (Intel Core i9-14900HX)
+WARNING This model has no one-to-one head; using one-to-many outputs.
+ ProTip: Export to OpenVINO format for best performance on Intel hardware. Learn more at https://docs.ultralytics.com/integrations/openvino
+YOLO11n summary (fused): 100 layers, 2,584,102 parameters, 0 gradients, 6.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'C:\Users\lenovo\Desktop\\07__\artifacts\jetson_trt_fp16_export_20261016_v1\model.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (5.2 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.22.0 opset 13...
+[34m[1mONNX:[0m export success  0.7s, saved as 'C:\Users\lenovo\Desktop\\07__\artifacts\jetson_trt_fp16_export_20261016_v1\model.onnx' (10.1 MB)
+
+Export complete (1.0s)
+Results saved to [1mC:\Users\lenovo\Desktop\\07__\artifacts\jetson_trt_fp16_export_20261016_v1\model.onnx[0m
+Predict:         yolo predict task=detect model=C:\Users\lenovo\Desktop\\07__\artifacts\jetson_trt_fp16_export_20261016_v1\model.onnx imgsz=640 
+Validate:        yolo val task=detect model=C:\Users\lenovo\Desktop\\07__\artifacts\jetson_trt_fp16_export_20261016_v1\model.onnx imgsz=640 data=C:\Users\lenovo\Desktop\sucode_underwater_quant_pilot\data\prepared\RUOD-R\ruod_r.yaml  
+Visualize:       https://netron.app
+YOLO11n summary (fused): 100 layers, 2,584,102 parameters, 0 gradients, 6.4 GFLOPs
+{
+  "scope": "Windows CPU one-image ONNX export check only; TensorRT/Jetson not tested here",
+  "versions": {
+    "python": "3.12.14",
+    "torch": "2.10.0+cu128",
+    "ultralytics": "8.4.142",
+    "onnx": "1.22.0",
+    "onnxruntime": "1.29.0",
+    "numpy": "2.5.3"
+  },
+  "source_weights": "C:\\Users\\lenovo\\Desktop\\\u89c6\u89c9\u8fb9\u7f18\u7814\u7a76\\05_\u6c34\u4e0b\u5c0f\u76ee\u6807\u68c0\u6d4b_\u5de5\u7a0b\\\u68c0\u6d4b\u5de5\u7a0b\\runs\\yolo11n_ruod_pilot\\weights\\best.pt",
+  "model_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+  "image": "C:\\Users\\lenovo\\Desktop\\\u89c6\u89c9\u8fb9\u7f18\u7814\u7a76\\05_\u6c34\u4e0b\u5c0f\u76ee\u6807\u68c0\u6d4b_\u5de5\u7a0b\\\u68c0\u6d4b\u5de5\u7a0b\\data\\prepared\\RUOD-R\\images\\val\\000020.jpg",
+  "image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "selection_rule": "first existing Selection entry",
+  "export_settings": {
+    "format": "onnx",
+    "imgsz": 640,
+    "batch": 1,
+    "device": "cpu",
+    "opset": 13,
+    "simplify": false,
+    "dynamic": false,
+    "half": false,
+    "nms": false
+  },
+  "onnx_ir_version": 7,
+  "input": {
+    "name": "images",
+    "shape": [
+      1,
+      3,
+      640,
+      640
+    ],
+    "dtype": "float32"
+  },
+  "output": {
+    "name": "output0",
+    "shape": [
+      1,
+      14,
+      8400
+    ],
+    "dtype": "float32"
+  },
+  "class_names": {
+    "0": "holothurian",
+    "1": "echinus",
+    "2": "scallop",
+    "3": "starfish",
+    "4": "fish",
+    "5": "corals",
+    "6": "diver",
+    "7": "cuttlefish",
+    "8": "turtle",
+    "9": "jellyfish"
+  },
+  "checker": "PASS",
+  "numerical_check": "PASS",
+  "box_tolerance": {
+    "rtol": 0.0001,
+    "atol": 0.02
+  },
+  "score_tolerance": {
+    "rtol": 0.001,
+    "atol": 2e-05
+  },
+  "max_abs_box_difference": 0.003692626953125,
+  "max_abs_score_difference": 1.7881393432617188e-06,
+  "original_source_unchanged": true
+}
+LOCAL_ONNX_EXPORT_CHECK_OK

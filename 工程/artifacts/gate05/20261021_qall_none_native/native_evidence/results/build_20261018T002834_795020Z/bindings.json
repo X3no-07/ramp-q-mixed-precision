@@ -1,0 +1,39 @@
+{
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ]
+}

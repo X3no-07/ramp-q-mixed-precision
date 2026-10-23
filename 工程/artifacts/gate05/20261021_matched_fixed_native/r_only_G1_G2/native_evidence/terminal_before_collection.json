@@ -1,0 +1,71 @@
+{
+  "schema": "rampq.gate05.matched_fixed_terminal_before_collection/v1",
+  "configuration": "r_only_G1_G2",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "monitor_status": {
+    "monitor_pid": 51117,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-18T21:04:55+0800",
+    "root": "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_G2_20261021",
+    "max_seconds": 300,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_G2_20261021/run_fixed.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 51122,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 23.12,
+    "final_resources": {
+      "MemAvailable_kib": 5505144,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3202960,
+      "temperatures_c": {
+        "CV0-therm": 46.062,
+        "CPU-therm": 48.031,
+        "SOC2-therm": 47.625,
+        "SOC0-therm": 47.625,
+        "CV1-therm": 46.156,
+        "GPU-therm": 46.312,
+        "tj-therm": 49.25,
+        "SOC1-therm": 49.25,
+        "CV2-therm": 46.843
+      }
+    }
+  },
+  "supplemental_guard_status": "COMPLETE",
+  "child_guard_status": "COMPLETE",
+  "wrapper_members": [],
+  "escaped_runner_members": [],
+  "five_processes": {
+    "monitor": {
+      "pid": 51117,
+      "process": null
+    },
+    "wrapper": {
+      "pid": 51122,
+      "process": null
+    },
+    "supplemental_guard": {
+      "pid": 51125,
+      "process": null
+    },
+    "profile_runner": {
+      "pid": 51159,
+      "process": null
+    },
+    "profile_child_guard": {
+      "pid": 51167,
+      "process": null
+    }
+  },
+  "completed_engine_calls": 2,
+  "new_CPU_model_calls": 0,
+  "dataset_calls": 0,
+  "protective_intervention": false,
+  "source_protocol_sha256": "7c5d4ba2d4e61c35a1aef5bb08e9a094bae06cc0578e7d377f9218be496c0af8",
+  "raw_outputs_sha256": "1e11d2d72631e5ce08a5d387f99fb4aabce2522478548d56e52ebdbedba49b47",
+  "original_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE"
+}

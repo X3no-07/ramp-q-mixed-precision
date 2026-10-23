@@ -1,0 +1,84 @@
+{
+  "status": "BUILT_AND_DESERIALIZED",
+  "configuration": "q_all",
+  "engine_sha256": "e5c9cae835bddc60bfe744d8d5af8c41c112133911936d8a85e8eddf58ebf9e5",
+  "engine_bytes": 7761909,
+  "onnx_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+  "engine_layers": 272,
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "primary_output_name": "output0",
+  "kernel_selection_avg_timing_override": 1,
+  "elapsed_seconds": 3276.426,
+  "layer_precision_review": "pending",
+  "diagnostic_only": true,
+  "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+  "detection_inference": "not run",
+  "benchmark": "not run"
+}

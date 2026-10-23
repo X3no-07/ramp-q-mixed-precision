@@ -1,0 +1,39 @@
+{
+  "case": "weight_bypass_obey",
+  "phase": "COMPLETE",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "build_seconds_not_benchmark": 54.78753062398755,
+  "status": "DFL_WEIGHT_BYPASS_ENGINE_SAVED",
+  "engine_sha256": "6efe9963f608ee3bc3b7f57b8c9a88c650188434ecc4a8e0093ddc18fa6144e2",
+  "engine_bytes": 30475,
+  "bindings": [
+    {
+      "name": "/model.23/dfl/Softmax_output_0",
+      "input": true,
+      "shape": [
+        1,
+        16,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.23/dfl/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        1,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "model_sha256_after": "020dad7f70c04f495dfe1b6e62e63e925ff6468a6cde0c157b7122a38274eb41",
+  "builder_request_sha256": "dd673578743eca309d41db1c6fa542efaa14305198cfdc93c591a2168dfb7985",
+  "diagnostic_only": true,
+  "numerical_pass_claim": false
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "rampq.gate1.full_ap_preparation/v1",
+  "status": "FROZEN_BEFORE_NATIVE_COMPARISON",
+  "at_utc": "2026-10-23T07:49:08.339113+00:00",
+  "official_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+  "test_count": 54,
+  "test_failures": 0,
+  "source_pins": {
+    "scripts/gate1_official_ap.py": {
+      "bytes": 17031,
+      "sha256": "a76a3ae45f2859fecc89909f903011b483514ee7113b93b881947fc9dbcbb54c"
+    },
+    "tests/test_gate1_official_ap.py": {
+      "bytes": 13453,
+      "sha256": "055fb6955afcf3869e5b7157e3b4ad1ce5494646df04b7c5823e073f253d63c3"
+    },
+    "scripts/gate1_ignore_aware_evaluation.py": {
+      "bytes": 18720,
+      "sha256": "4e45ff26a86a83ff66e997f15e4c4794246c6440c304446972809ff32db09961"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/calcAccuracy.m": {
+      "bytes": 2367,
+      "sha256": "285508f54903acd75eeda346c11c8e53267e72facd648f2e22bce121d4f55d7f"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/VOCap.m": {
+      "bytes": 263,
+      "sha256": "95dd1e02c956124e777caf6f44b50b0986a2a37785bd11982ef775e696c17945"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/evalRes.m": {
+      "bytes": 3843,
+      "sha256": "610f0d078f1af8d7987e360e6e88665c0290587191d5542b469a9792402f539b"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/compOas.m": {
+      "bytes": 1507,
+      "sha256": "3e5c2d473c07bf2ddbe0d902284af98ef7104c609e867b2ed59083d31f3ed2af"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/dropObjectsInIgr.m": {
+      "bytes": 1842,
+      "sha256": "30dee2713d76a537f5c98ec5d0804e17cfd3993d83d8a80a70b90ef9461fa4de"
+    },
+    "artifacts/gate1/20261022_split_refinement/evaluation_sources/official_toolkit/utils/createIntImg.m": {
+      "bytes": 375,
+      "sha256": "7ce3de4fc105be4f088cae5d1fcfc8f4383f3d7ffd4a551bf1afe711eff09f72"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/synthetic_fixtures.json": {
+      "bytes": 18456,
+      "sha256": "cce5893345da5762956009cffdd61b21a41a78e3284d7ab3321e555f7e709afb"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/prepare_synthetic_fixtures.py": {
+      "bytes": 6138,
+      "sha256": "a30e64eccef0b3cb93e40807b0d4ce330066ee5799a58241c8c96bc55e3ca14e"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/run_synthetic_oracle.m": {
+      "bytes": 4782,
+      "sha256": "e676f829196b5720f5f6ddf4ed9c2907ed9e02487121b3d30a2a0d5ae8b02522"
+    },
+    "artifacts/gate1/20261023_full_ap_delivery_v1/native_constants_probe.json": {
+      "bytes": 1779,
+      "sha256": "2c57e03694b1341b9fc20e69d7c6e9e0765c5df98dfabcb6ea7267cd2fdbe109"
+    }
+  },
+  "test_data_role": "synthetic",
+  "native_metric_answers_read_before_freeze": false,
+  "native_matcher_answers_read_before_freeze": false,
+  "native_values_inspected": "threshold float64 constants only, pure arithmetic Octave 11.3.0 probe",
+  "real_data_read": false,
+  "model_executed": false,
+  "GPU_used": false,
+  "old_sealed_evidence_modified": false,
+  "official_AP_equivalence_certified": false,
+  "comparison_status": "NOT_YET_RUN_AFTER_THIS_FREEZE",
+  "scope": "Complete source translation and causal synthetic tests only; independent oracle audit is separate"
+}

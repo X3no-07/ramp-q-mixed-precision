@@ -1,0 +1,33 @@
+{
+  "schema": "rampq.gate1.completed_training_audit_preparation/v1",
+  "status": "SYNTHETICALLY_TESTED_NOT_RUN_ON_UNFINISHED_TRAINING",
+  "script_sha256": "0515a9ee48ed7ea705c522c53254af85b58599c0688636fec5bbd4bb3317ddd7",
+  "tests_sha256": "fcf62f18f37696afba05dcd4b0e7d9f746bff0af96b1d9a95d9b83a201090587",
+  "synthetic_tests": 6,
+  "subtests": 3,
+  "intended_completed_attempt": "artifacts/gate1/20261022_split_refinement/float_training_v2",
+  "intended_contract": "artifacts/gate1/20261022_split_refinement/training_contract_v3",
+  "real_completed_training_audit_executed": false,
+  "acceptance_scope": "Training candidate completion/provenance only; not float qualification, official AP or Gate1 scientific PASS",
+  "fixed_source_defined_behavior": {
+    "training_validation_effective_max_det": 902,
+    "train_raw_positive_labels": 227425,
+    "train_loader_unique_positive_labels": 227422,
+    "training_val_positive_labels": 28007,
+    "loader_duplicate_removals": 3
+  },
+  "future_command": [
+    "..\\05_水下小目标检测_工程\\检测工程\\.venv\\Scripts\\python.exe",
+    "-B",
+    "scripts/audit_gate1_completed_training.py",
+    "--attempt",
+    "artifacts/gate1/20261022_split_refinement/float_training_v2",
+    "--contract",
+    "artifacts/gate1/20261022_split_refinement/training_contract_v3",
+    "--output",
+    "artifacts/gate1/20261022_completed_training_audit_v1"
+  ],
+  "combined_final_synthetic_tests": 26,
+  "combined_final_subtests": 25,
+  "combined_final_tests_sha256": "e7a01939f6fd68daee4c7bde0b4b9225f4db2379f02e916a8762a1350f308cb7"
+}

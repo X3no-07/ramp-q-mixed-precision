@@ -1,0 +1,33 @@
+{
+  "tensorrt": "8.5.2.2",
+  "python": "3.8.10",
+  "machine": "aarch64",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "board_time": "2026-10-17T03:35:40+0800",
+  "power_mode": {
+    "command": [
+      "/usr/sbin/nvpmodel",
+      "-q"
+    ],
+    "returncode": 0,
+    "output": "NV Power Mode: 15W\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\n"
+  },
+  "memory": {
+    "command": [
+      "free",
+      "-m"
+    ],
+    "returncode": 0,
+    "output": "              total        used        free      shared  buff/cache   available\nMem:           7337        2065        3653          24        1618        5053\nSwap:          3668           9        3659\n"
+  },
+  "fan_service": {
+    "command": [
+      "systemctl",
+      "is-active",
+      "nvfancontrol.service"
+    ],
+    "returncode": 0,
+    "output": "active\n"
+  },
+  "jetson_linux": "# R35 (release), REVISION: 3.1, GCID: 32827747, BOARD: t186ref, EABI: aarch64, DATE: Sun Mar 19 15:19:21 UTC 2023\n"
+}

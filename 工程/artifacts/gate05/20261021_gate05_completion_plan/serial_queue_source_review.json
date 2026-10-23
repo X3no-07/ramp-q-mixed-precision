@@ -1,0 +1,149 @@
+{
+  "schema": "rampq.gate05.serial_queue_source_review/v1",
+  "status": "STATIC_QUEUE_AND_FAKE_CLEANUP_PATHS_VERIFIED",
+  "checks": [
+    {
+      "name": "Python38_AST",
+      "passed": true
+    },
+    {
+      "name": "frozen_native_protocol_pin",
+      "passed": true
+    },
+    {
+      "name": "frozen_builder_pin",
+      "passed": true
+    },
+    {
+      "name": "queue_self_pin_required",
+      "passed": true
+    },
+    {
+      "name": "strict_five_order",
+      "passed": true
+    },
+    {
+      "name": "no_inference_or_profile_code",
+      "passed": true
+    },
+    {
+      "name": "plan_zero_inference_five_build",
+      "passed": true
+    },
+    {
+      "name": "permember_pureinput_timeout60",
+      "passed": true
+    },
+    {
+      "name": "real_inputcheck_schema",
+      "passed": true
+    },
+    {
+      "name": "default_noarg_builder",
+      "passed": true
+    },
+    {
+      "name": "monitor_noarg_builder_argv",
+      "passed": true
+    },
+    {
+      "name": "one_attempt_each_no_retry_loop",
+      "passed": true
+    },
+    {
+      "name": "fresh_member_root_results_attempts",
+      "passed": true
+    },
+    {
+      "name": "guard_module_available_before_spawn",
+      "passed": true
+    },
+    {
+      "name": "bounded_early_status12_and_guard8",
+      "passed": true
+    },
+    {
+      "name": "same_wrapper_own_group",
+      "passed": true
+    },
+    {
+      "name": "guard_complete_identity",
+      "passed": true
+    },
+    {
+      "name": "bounded_monitor_wall_exit_grace",
+      "passed": true
+    },
+    {
+      "name": "no_native_budget_extension",
+      "passed": true
+    },
+    {
+      "name": "protective_guard_stops_queue",
+      "passed": true
+    },
+    {
+      "name": "negative_signal_exit_stops",
+      "passed": true
+    },
+    {
+      "name": "ordinary_positive_failure_can_continue",
+      "passed": true
+    },
+    {
+      "name": "prebuild_entry_failure_stops",
+      "passed": true
+    },
+    {
+      "name": "memory_interrupt_exception_stops",
+      "passed": true
+    },
+    {
+      "name": "monitor_protective_and_kernel_stop",
+      "passed": true
+    },
+    {
+      "name": "archive_after_terminal_group_proofs",
+      "passed": true
+    },
+    {
+      "name": "archive_timeout180",
+      "passed": true
+    },
+    {
+      "name": "exception_cleanup_before_record",
+      "passed": true
+    },
+    {
+      "name": "builder_helpers_unchanged",
+      "passed": true
+    },
+    {
+      "name": "fake_early_missing_owned_still_stops_monitor",
+      "passed": true
+    },
+    {
+      "name": "fake_owned_error_does_not_skip_monitor_guard",
+      "passed": true
+    },
+    {
+      "name": "fake_hung_monitor_bounded_escalation",
+      "passed": true
+    }
+  ],
+  "check_count": 32,
+  "blockers": [],
+  "queue_script_sha256": "8664d5fb1297020e942c34efd806de20ca8debf577744e36026337d6faf447ae",
+  "modified_file": "scripts/jetson_matched_control_serial_queue.py only",
+  "changes": [
+    "Cleanup no longer returns when owned group is not yet established; recover only authenticated early group, always signal exact owned monitor child, bounded waits and independent guard cleanup.",
+    "Import pinned guard before spawn; record Popen children immediately.",
+    "Require whole guard/monitor/script/boot identity, actual pureinput schema, and fresh noattempt markers.",
+    "Native7200s unchanged; outer monitor-process exit deadline7200+90s prevents unbounded queue wait.",
+    "Signal, protective guard, kernel, interrupted/resource and prebuild entry failures halt; ordinary positive authenticated builder failures may be archived and remaining independent configurations continue.",
+    "Plan must pin queue_script_sha256."
+  ],
+  "new_real_processes_GPU_CPU_model_or_SSH": 0,
+  "fake_child_tests_only": 3,
+  "plan_not_yet_frozen": "Root must bind final queue hash before launch. No queue or member builder executed in this review."
+}

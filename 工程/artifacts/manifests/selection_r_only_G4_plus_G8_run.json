@@ -1,0 +1,38 @@
+{
+  "schema": "rampq.gate0.run/v1",
+  "phase": "selection_single_intervention",
+  "configuration": "r_only:G4+G8",
+  "device": "cuda:0",
+  "torch": "2.10.0+cu128",
+  "model": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\runs\\yolo11n_ruod_pilot\\weights\\best.pt",
+  "model_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "calibration": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\calibration\\screen.json",
+  "image_list": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\splits\\gate0_selection_images.txt",
+  "holdout_read_for_inference": false,
+  "outputs": {
+    "predictions": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\predictions\\selection_r_only_G4_plus_G8.csv",
+    "summary": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\tables\\selection_r_only_G4_plus_G8_summary.json",
+    "degraded_targets": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\tables\\selection_r_only_G4_plus_G8_targets.csv",
+    "report": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\Gate0_selection_r_only_G4_plus_G8_自动摘要.md"
+  },
+  "summary": {
+    "schema": "rampq.gate0.subset_intervention/v1",
+    "configuration": "r_only:G4+G8",
+    "subset": "selection",
+    "image_count": 350,
+    "target_count": 1920,
+    "fp32_hit_count": 1571,
+    "q_all_added_miss_count": 119,
+    "image_list_sha256": "a78348cb515553aece6e40dc02e21fc6be52df2c26989337f9d9a4638677e759",
+    "baseline_predictions_sha256": "93f7a651201f2fdca747a2cfe1852f32bad5dd7cc2f6683c989ebdd258796388",
+    "intervention_predictions_sha256": "94bcd24fa28f0136c279c8c58592faf279c68d47b5470ee338383bf974077843",
+    "elapsed_seconds": 65.85335109999869,
+    "rescued_count": 13,
+    "rescue_rate": 0.1092436974789916,
+    "unrecovered_count": 106,
+    "collateral_miss_count": 15,
+    "stable_hit_retention": 0.9896694214876033,
+    "rescue_precision": 0.4642857142857143,
+    "net_rescue": -2
+  }
+}

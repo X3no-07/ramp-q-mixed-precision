@@ -1,0 +1,668 @@
+{
+  "schema": "rampq.gate05.restore_extended_independent_layer_audit/v1",
+  "client_at": "2026-10-19T17:31:30.218527+08:00",
+  "status": "ALL_THREE_REQUESTED_FORMATS_INDEPENDENTLY_REVERIFIED_STRICT_TACTICS_INCOMPLETE",
+  "queue_original_files_verified": 41,
+  "total_original_receipt_files_verified": 125,
+  "queue_status": "EXTENDED_RESTORE_QUEUE_FINISHED_AUDIT_AND_SMOKE_PENDING",
+  "queue_elapsed_seconds": 10726.67,
+  "queue_effective_budget_seconds_per_configuration": 7200,
+  "queue_inherited_spec_seconds": 1800,
+  "queue_budget_revision_sha256": "1fad7b07ea01b6213d9b1cec1fcf74114142d795d826f8d399e871b560c3d8c4",
+  "original_plan_sha256": "20a7152736d6e2427c0d8f7833e12b801e71579cd8fcd99cd15e270910fca296",
+  "reserialized_queue_plan_sha256": "7642504df0494ad0170af99a6477d65d52387531f41b263f3d4fda0f15d24417",
+  "queue_and_original_plan_semantically_identical": true,
+  "configurations": [
+    {
+      "configuration": "r_only_G1",
+      "receipt_original_files": 28,
+      "engine_sha256": "112cbe6f6a0edceaf0e05f82a4217951663498177935e5fcacf7863a0d1fdbce",
+      "engine_bytes": 7604908,
+      "monitor_boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "monitor_effective_max_seconds": 7200,
+      "inherited_spec_max_seconds": 1800,
+      "monitor_seconds": 3393.67,
+      "build_seconds": 3391.0933194240006,
+      "actual_layer_recomputation": "EXACT_MATCH_TO_EXISTING_DERIVED_AUDIT",
+      "verified_int8_formats": 82,
+      "verified_fp16_formats": 6,
+      "named_integer_tactics": 75,
+      "missing_tactic_names": 7,
+      "strict_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+      "unmapped_native_convs": [],
+      "source_nodes_and_original_weights_bytes_unchanged_except_frozen_conv_qdq_rewire": true,
+      "fusions": [],
+      "missing_tactic_native_layer_types": [
+        "CudaDepthwiseConvolution"
+      ],
+      "queue_terminal_and_process_empty_record_consistent": true,
+      "new_inference_run": false
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "receipt_original_files": 28,
+      "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+      "engine_bytes": 7755174,
+      "monitor_boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "monitor_effective_max_seconds": 7200,
+      "inherited_spec_max_seconds": 1800,
+      "monitor_seconds": 4062.2,
+      "build_seconds": 4060.405392928,
+      "actual_layer_recomputation": "EXACT_MATCH_TO_EXISTING_DERIVED_AUDIT",
+      "verified_int8_formats": 74,
+      "verified_fp16_formats": 14,
+      "named_integer_tactics": 67,
+      "missing_tactic_names": 7,
+      "strict_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+      "unmapped_native_convs": [],
+      "source_nodes_and_original_weights_bytes_unchanged_except_frozen_conv_qdq_rewire": true,
+      "fusions": [],
+      "missing_tactic_native_layer_types": [
+        "CudaDepthwiseConvolution"
+      ],
+      "queue_terminal_and_process_empty_record_consistent": true,
+      "new_inference_run": false
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "receipt_original_files": 28,
+      "engine_sha256": "8054e6242c63eae17dfaf473944426c77ad3a79c25000bb093476fe31556c40e",
+      "engine_bytes": 7396631,
+      "monitor_boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "monitor_effective_max_seconds": 7200,
+      "inherited_spec_max_seconds": 1800,
+      "monitor_seconds": 3267.34,
+      "build_seconds": 3265.1083237759995,
+      "actual_layer_recomputation": "EXACT_MATCH_TO_EXISTING_DERIVED_AUDIT",
+      "verified_int8_formats": 77,
+      "verified_fp16_formats": 11,
+      "named_integer_tactics": 70,
+      "missing_tactic_names": 7,
+      "strict_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+      "unmapped_native_convs": [],
+      "source_nodes_and_original_weights_bytes_unchanged_except_frozen_conv_qdq_rewire": true,
+      "fusions": [],
+      "missing_tactic_native_layer_types": [
+        "CudaDepthwiseConvolution"
+      ],
+      "queue_terminal_and_process_empty_record_consistent": true,
+      "new_inference_run": false
+    }
+  ],
+  "source_files_sha256": {
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/diagnostic_scope.json": {
+      "sha256": "04b7ffea68bff40e08d1cc52466e19806e0eb2b3d5ebfb94b195bc1b5711189b",
+      "bytes": 1222
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/trtexec_help.txt": {
+      "sha256": "e0c7081d5bfe699a878c75024107aecaa863ad04b9744ee83646677e9ddeedb2",
+      "bytes": 16236
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/launch_r_only_G1.json": {
+      "sha256": "32e1b6c486952cff837fc8ab414518c2cb21b9d2dbe90245cbcc3a51425df7d0",
+      "bytes": 1222
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/kernel.log": {
+      "sha256": "f5b4dcb7b3175aba377ab534dbec1e1c6cfe3bde79c6d874a28ddaadcf6ce921",
+      "bytes": 3755
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/tools/jetson_trt_int8_smoke.py": {
+      "sha256": "54241b152f0e289e9b02808b652b06ab3cf3bda423b0d2555172cc9764e44da9",
+      "bytes": 11152
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/kernel.log": {
+      "sha256": "4e132e333fcb9938b2e34e4bf4c554569321c3a04855dbdda2820546105cb05d",
+      "bytes": 1836
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/root_terminal_process_observation.json": {
+      "sha256": "8d783e6a1d34a86d969eeff00d9919820177b1c2274aa96da323a3d1b8703d89",
+      "bytes": 494
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/end_board_status.json": {
+      "sha256": "cb934216e98e50a3f141cf867fd47180af4fec6d73d3b714a3ada2afea704f1e",
+      "bytes": 4538
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1_G2/spec.json": {
+      "sha256": "0a0e5df085876e5daeb86fe8390f2dcac6493c22680f52ff3764d45570e4e432",
+      "bytes": 27714
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/graph_audit.json": {
+      "sha256": "ef3d5b74da5c0389506c37592b197af4570265c938d26f8e3c78584436e7c887",
+      "bytes": 275959
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/build_console.log": {
+      "sha256": "7412406fe2e1a92032eb373a019dd164daabe597efd1020acf061e2410ceb3dc",
+      "bytes": 9422
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/diagnostic_scope.json": {
+      "sha256": "40964ce5d7b48ff3bba8f7b79462d4ddffdfa0d5c201a586bc823e7257d191c8",
+      "bytes": 1222
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/reference_protocol.json": {
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "bytes": 2187
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/request.json": {
+      "sha256": "115395594ee6aaa32b63425a5b8990d16ae8b484cb2f1f9ee0cdbf89b210189d",
+      "bytes": 953
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/graph_audit.json": {
+      "sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+      "bytes": 268944
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/tools/jetson_trt_int8_smoke.py": {
+      "sha256": "54241b152f0e289e9b02808b652b06ab3cf3bda423b0d2555172cc9764e44da9",
+      "bytes": 11152
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/spec.json": {
+      "sha256": "1bfb1e0bc1df7e5e74bd560c650b17a344413be676383bd4d873ff8453696aee",
+      "bytes": 27710
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/root_terminal_process_observation.json": {
+      "sha256": "8b3e7b75c6934d9d3e8c2c42650875da38a27df6e2a2724bc91223b39e676bad",
+      "bytes": 496
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/kernel.log": {
+      "sha256": "0acaff7ab38e5872cf810ea47d148283ec69d11748d5b80a21a5b94cf767f241",
+      "bytes": 133
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/request.json": {
+      "sha256": "5dc601f2ac20cb531bb1d5d2c6dbd8830ee0141fba222557d734c16d39d5060a",
+      "bytes": 3767
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/spec.json": {
+      "sha256": "0a0e5df085876e5daeb86fe8390f2dcac6493c22680f52ff3764d45570e4e432",
+      "bytes": 27714
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/root_terminal_process_observation.json": {
+      "sha256": "8d783e6a1d34a86d969eeff00d9919820177b1c2274aa96da323a3d1b8703d89",
+      "bytes": 494
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/manifest.json": {
+      "sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+      "bytes": 1420
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/graph_audit.json": {
+      "sha256": "94779f52b63b3d02398434e10916e080a8fb7c67a76648af0b98156fa5e2e78e",
+      "bytes": 285460
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/engine_layers.json": {
+      "sha256": "286dc04b89e63b0b51e0c016c854eaaf629ddca60169bb548a5fd9b3553b8df7",
+      "bytes": 296947
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/tools/jetson_precision_candidate_smoke.py": {
+      "sha256": "e9d808d7007ba75eca9983cd5775d44f293b89d7bd7046854b06bbff1b4b7c08",
+      "bytes": 27008
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/resources.jsonl": {
+      "sha256": "adb658e7571b0b788121c177525b992a3d6b4d68384a3eb1fe42ff9a8107e9c7",
+      "bytes": 642366
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/preflight.json": {
+      "sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+      "bytes": 2058
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/end_board_status.json": {
+      "sha256": "f508bb689cb34de59a81aa0822385b600dabbd1c6923a70f7b230d5bd721fe85",
+      "bytes": 4547
+    },
+    "artifacts/jetson_trt_fp16_20261016_v1/model.onnx": {
+      "sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+      "bytes": 10572183
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1_G2/manifest.json": {
+      "sha256": "08fb7fa8b9d076cb10c8e4def6960bdd0a3a2aabb3e44480bf4ab2e207348547",
+      "bytes": 1420
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/parsed_network_validation.json": {
+      "sha256": "4f7f11cd493ae8f99aca8c8624fdc1a2ded1ed23f86c4f9bd9031ed4037a00f7",
+      "bytes": 32019
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/trtexec_build.log": {
+      "sha256": "faddbc4c1bb23da3545d5585f496628a287fd00170ca3a714b320554bf7bb9e7",
+      "bytes": 54184
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/kernel.log": {
+      "sha256": "0acaff7ab38e5872cf810ea47d148283ec69d11748d5b80a21a5b94cf767f241",
+      "bytes": 133
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/build_console.log": {
+      "sha256": "fd138eef415d59a10167d820726e2c3798417931b39487c89e82b463526e911b",
+      "bytes": 8481
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/tegrastats.log": {
+      "sha256": "84aabdc866abf8ec83201141025b7880e741b4e6b78b1cc49d594fd66b648508",
+      "bytes": 919376
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/trtexec_help.txt": {
+      "sha256": "e0c7081d5bfe699a878c75024107aecaa863ad04b9744ee83646677e9ddeedb2",
+      "bytes": 16236
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/parsed_network_validation.json": {
+      "sha256": "58d34bf34cbf99575744e31cf397befb886576e79e1f6273decc46454de6425b",
+      "bytes": 32019
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/remote_receipt.json": {
+      "sha256": "178a17f520257dd85afd56f87a2c150c4628641f7f578ffc3d020f9264049bd6",
+      "bytes": 6525
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/kernel.log": {
+      "sha256": "f5b4dcb7b3175aba377ab534dbec1e1c6cfe3bde79c6d874a28ddaadcf6ce921",
+      "bytes": 3755
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/result_r_only_G1.json": {
+      "sha256": "8068778d356ae500466ebb29243ee944ec8c94359880b4611671d1bf1714dfba",
+      "bytes": 11841
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/root_terminal_process_observation.json": {
+      "sha256": "8b3e7b75c6934d9d3e8c2c42650875da38a27df6e2a2724bc91223b39e676bad",
+      "bytes": 496
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/console_r_only_G1.log": {
+      "sha256": "d37690c88d5482425c3c08dec0a94efcd75daf7e68aef6deb751c8a7eeb299f8",
+      "bytes": 962
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/native_launch_receipt.json": {
+      "sha256": "853c2045a9c4b8719aceb6aafc10142bcc7c9f169c2d4435564b63a1ee651da3",
+      "bytes": 657
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/tools/jetson_trt_int8_smoke.py": {
+      "sha256": "54241b152f0e289e9b02808b652b06ab3cf3bda423b0d2555172cc9764e44da9",
+      "bytes": 11152
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/status.json": {
+      "sha256": "45c59d271756e53a4c5684a39c5fd0a55e821830f8e4fa17aeef9507a90b8dac",
+      "bytes": 1081
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/tools/audit_gate05_int8_precision.py": {
+      "sha256": "cdbd100589e1e78942b2f95b43e843880d7a40a50b80ed6ccd2909f10d21c487",
+      "bytes": 4551
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/spec.json": {
+      "sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+      "bytes": 27714
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/request.json": {
+      "sha256": "7100e9a036226dde235eac0c4046bab3f13cdeea8941b80525570afd19df5aa5",
+      "bytes": 958
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/status.json": {
+      "sha256": "ccfe6ccbccf10e239afceaace818ac5c0f1d8170b56d7e9917d2b5465304238f",
+      "bytes": 1074
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/remote_receipt.json": {
+      "sha256": "0a1840d1e713fc62c2c417b8532ec1a606b5ed7e3b38db8c4cc1a2bb23d37529",
+      "bytes": 4197
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/model.engine": {
+      "sha256": "112cbe6f6a0edceaf0e05f82a4217951663498177935e5fcacf7863a0d1fdbce",
+      "bytes": 7604908
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1/manifest.json": {
+      "sha256": "e5970f9a1767dff4cfd1d82d61ecf9db970a86a09013339bbddf192b0efb5de7",
+      "bytes": 1417
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/resources.jsonl": {
+      "sha256": "adb658e7571b0b788121c177525b992a3d6b4d68384a3eb1fe42ff9a8107e9c7",
+      "bytes": 642366
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/reference_protocol.json": {
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "bytes": 2187
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/tools/jetson_precision_candidate_smoke.py": {
+      "sha256": "e9d808d7007ba75eca9983cd5775d44f293b89d7bd7046854b06bbff1b4b7c08",
+      "bytes": 27008
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/manifest.json": {
+      "sha256": "e5970f9a1767dff4cfd1d82d61ecf9db970a86a09013339bbddf192b0efb5de7",
+      "bytes": 1417
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/end_board_status.json": {
+      "sha256": "043c25c05832116b1287f06fc8118bfa6425569b7d7ff89b9ad5333cf073cf95",
+      "bytes": 4554
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/resources.jsonl": {
+      "sha256": "82fb1c283efc57d0032afd810e72f52146d6bc960a5ee521ba029bd447bb53c4",
+      "bytes": 536875
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/build_result.json": {
+      "sha256": "9b939478301097542976d3639f8fd5e618b6b2e2f589ce104a705bda5581d2b0",
+      "bytes": 2187
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/request.json": {
+      "sha256": "91cd865395651acb34094873460a8c756e71d7836ffe9a5191a9efd303cf5f2b",
+      "bytes": 954
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/tegrastats.log": {
+      "sha256": "84aabdc866abf8ec83201141025b7880e741b4e6b78b1cc49d594fd66b648508",
+      "bytes": 919376
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/trtexec_build.log": {
+      "sha256": "24910e37b889332be154068c4026c1cf11dcfe8cf95d66ca7cc8b6aabe293143",
+      "bytes": 55084
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/module_map.json": {
+      "sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+      "bytes": 282017
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1_G2/model.onnx": {
+      "sha256": "25f7afbd9c860ea86bc56ac6e803fb832231a10bec84eab95520532a0faa6225",
+      "bytes": 10756029
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/build_result.json": {
+      "sha256": "bcbc36b28798062b097fb130f17af0b691d87620866ced7b20f3f8d308c3f2be",
+      "bytes": 2191
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/trtexec_build.log": {
+      "sha256": "92d3a86f87fbb6fbf6273b46871a45befec19228256bf27797f7cb785824dd99",
+      "bytes": 54313
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1_G5/manifest.json": {
+      "sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+      "bytes": 1420
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/preflight.json": {
+      "sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+      "bytes": 2058
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/parsed_network_validation.json": {
+      "sha256": "1a173de6eb6113d768688d6b8714e8eead97a7591fe57a6d5905c909a799eb6c",
+      "bytes": 32019
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1_G5/spec.json": {
+      "sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+      "bytes": 27714
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/tools/audit_gate05_int8_precision.py": {
+      "sha256": "cdbd100589e1e78942b2f95b43e843880d7a40a50b80ed6ccd2909f10d21c487",
+      "bytes": 4551
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/trtexec_help.txt": {
+      "sha256": "e0c7081d5bfe699a878c75024107aecaa863ad04b9744ee83646677e9ddeedb2",
+      "bytes": 16236
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/preflight.json": {
+      "sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+      "bytes": 2058
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/status.json": {
+      "sha256": "45c59d271756e53a4c5684a39c5fd0a55e821830f8e4fa17aeef9507a90b8dac",
+      "bytes": 1081
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/tools/jetson_precision_candidate_smoke.py": {
+      "sha256": "e9d808d7007ba75eca9983cd5775d44f293b89d7bd7046854b06bbff1b4b7c08",
+      "bytes": 27008
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/build_console.log": {
+      "sha256": "633afc5a4756ee8b394be55f2be3d34cf892dc8630044bac122d55c0ab074bf3",
+      "bytes": 8306
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/console_r_only_G1_G2.log": {
+      "sha256": "bd3f52f3296dd3b1d2dd3d5590831fbdc81dc3c33da1df836bfaeec4125acefb",
+      "bytes": 972
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/plan.json": {
+      "sha256": "7642504df0494ad0170af99a6477d65d52387531f41b263f3d4fda0f15d24417",
+      "bytes": 7583
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/remote_receipt.json": {
+      "sha256": "054074534a3a356fbfa07e83b2c253170354e4f0d1dd815cfc8410d0fbe1f106",
+      "bytes": 4196
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/precision_audit.json": {
+      "sha256": "6377160542f0d2a80a452f91c5568f66c02fd70daeb1455da57205dc854519ac",
+      "bytes": 112527
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/tools/audit_gate05_int8_precision.py": {
+      "sha256": "cdbd100589e1e78942b2f95b43e843880d7a40a50b80ed6ccd2909f10d21c487",
+      "bytes": 4551
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/manifest.json": {
+      "sha256": "08fb7fa8b9d076cb10c8e4def6960bdd0a3a2aabb3e44480bf4ab2e207348547",
+      "bytes": 1420
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/module_map.json": {
+      "sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+      "bytes": 282017
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/model.engine": {
+      "sha256": "8054e6242c63eae17dfaf473944426c77ad3a79c25000bb093476fe31556c40e",
+      "bytes": 7396631
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/build_request.json": {
+      "sha256": "3756e9f5f0ca5eb064f08e70070d65b211a77f1550ca959601e13cc581ea918c",
+      "bytes": 3674
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/root_terminal_process_observation.json": {
+      "sha256": "f7013cf3292f86b13fd4323cc8c5035371c24c84913aa78bd5d98a39ac27568a",
+      "bytes": 496
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/tegrastats.log": {
+      "sha256": "e7e392928d8b97a10dc459e95073ebeb6c3982c80735eec95b6001f41e77d070",
+      "bytes": 1102980
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/jetson_monitored_build.py": {
+      "sha256": "71ebc77843137c93cf2de6558f5234996330fab54dd900e251912b7b1ddae2a1",
+      "bytes": 7025
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/budget_revision.json": {
+      "sha256": "1fad7b07ea01b6213d9b1cec1fcf74114142d795d826f8d399e871b560c3d8c4",
+      "bytes": 5561
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/module_map.json": {
+      "sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+      "bytes": 282017
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/inputs/jetson_build_precision_candidate.py": {
+      "sha256": "d8431345da90482f0d5798e2d6524bf03591ecef653edfad5ef3e28a509eb19f",
+      "bytes": 12418
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/resources.jsonl": {
+      "sha256": "82fb1c283efc57d0032afd810e72f52146d6bc960a5ee521ba029bd447bb53c4",
+      "bytes": 536875
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/environment.json": {
+      "sha256": "64a6ed247d7176fab08371b0f3706ebb4690723ad71eff63a4d91bf20dc1a0a7",
+      "bytes": 1100
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/plan.json": {
+      "sha256": "20a7152736d6e2427c0d8f7833e12b801e71579cd8fcd99cd15e270910fca296",
+      "bytes": 7772
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/console_r_only_G1_G5.log": {
+      "sha256": "a3fd71872fabfdfb41f25c00527f8db7081c04a60180cf131bb707a894d570ac",
+      "bytes": 969
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/jetson_monitored_build.py": {
+      "sha256": "71ebc77843137c93cf2de6558f5234996330fab54dd900e251912b7b1ddae2a1",
+      "bytes": 7025
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/status.json": {
+      "sha256": "383474294351b3837f46e15940cfa07aa936d55ec98dfb9e916f2a5ab5b2641f",
+      "bytes": 1084
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/launch_r_only_G1_G5.json": {
+      "sha256": "e56b554914d7f441a57a1633b1f4946d1049c0b10de84b910b235bd2104ef98a",
+      "bytes": 1247
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/request.json": {
+      "sha256": "91cd865395651acb34094873460a8c756e71d7836ffe9a5191a9efd303cf5f2b",
+      "bytes": 954
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/tegrastats.log": {
+      "sha256": "2fcc7ee1dd8060edcfc97b20b8aaaf640120a03b286d3400a93706e7039a2965",
+      "bytes": 890486
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/reference_protocol.json": {
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "bytes": 2187
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/tegrastats.log": {
+      "sha256": "e7e392928d8b97a10dc459e95073ebeb6c3982c80735eec95b6001f41e77d070",
+      "bytes": 1102980
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/local_check_only_result.json": {
+      "sha256": "381017e39a013217f4838ec6197ff88397f5d4945a33bd7cfd6d81cff82ab288",
+      "bytes": 3093
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/diagnostic_scope.json": {
+      "sha256": "c96a7ef86698429c2f2e6800d6f87fbada34b968047ab79f44a20f9b5e1d0c41",
+      "bytes": 1219
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/engine_layers.json": {
+      "sha256": "d911ff9f8eed3484c38726d55b466bf162a1a2c2888b77aa6965d8e93e86ee01",
+      "bytes": 296750
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/build/model.engine": {
+      "sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+      "bytes": 7755174
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/engine_layers.json": {
+      "sha256": "2b52116fc6830667825362dda8ebeb5bf738d9f0ed2eae3509edf1664c22e9dc",
+      "bytes": 291884
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/build_request.json": {
+      "sha256": "9fac6ab155788ca8c47d76a1ae60f9e078e31ff7afae92c3607f9a1518ded017",
+      "bytes": 3356
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/environment.json": {
+      "sha256": "6fdade4f17730d5ba65915d9828d06d503fc3a4eb1443a9e3c53eb02503043ae",
+      "bytes": 1100
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/build_console.log": {
+      "sha256": "633afc5a4756ee8b394be55f2be3d34cf892dc8630044bac122d55c0ab074bf3",
+      "bytes": 8306
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/build_result.json": {
+      "sha256": "434ad343d9b5ab35b94f80303cd91aeb7e8065c7e3a460fbc6244b55b77b84b3",
+      "bytes": 2188
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/remote_receipt.json": {
+      "sha256": "0b02902008ccaedccf20023a86a95dc8a40f4bcc4a4d4352c7687fdc065f78f3",
+      "bytes": 4198
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/jetson_monitored_build.py": {
+      "sha256": "71ebc77843137c93cf2de6558f5234996330fab54dd900e251912b7b1ddae2a1",
+      "bytes": 7025
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/monitor/status.json": {
+      "sha256": "ccfe6ccbccf10e239afceaace818ac5c0f1d8170b56d7e9917d2b5465304238f",
+      "bytes": 1074
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/environment.json": {
+      "sha256": "72c7b38cfc27805e7ef7ee7b69fca2732d9c7e834b777316c73f1d6dd7254327",
+      "bytes": 1100
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1/spec.json": {
+      "sha256": "1bfb1e0bc1df7e5e74bd560c650b17a344413be676383bd4d873ff8453696aee",
+      "bytes": 27710
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/build/precision_audit.json": {
+      "sha256": "7de3b64691e6b29b42347768adcc6b444de24445dbda1954e02a0b175a8c3859",
+      "bytes": 112982
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/root_terminal_process_observation.json": {
+      "sha256": "f7013cf3292f86b13fd4323cc8c5035371c24c84913aa78bd5d98a39ac27568a",
+      "bytes": 496
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/kernel.log": {
+      "sha256": "4e132e333fcb9938b2e34e4bf4c554569321c3a04855dbdda2820546105cb05d",
+      "bytes": 1836
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/README.md": {
+      "sha256": "e7871478e83bb8246e5b4070cc459dc95549990b15b5706a22cdbec86a18f0de",
+      "bytes": 3217
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence/monitor/build_console.log": {
+      "sha256": "7412406fe2e1a92032eb373a019dd164daabe597efd1020acf061e2410ceb3dc",
+      "bytes": 9422
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1/model.onnx": {
+      "sha256": "4f94499d817be12e1286433276ae5a697e30ba8c66916f014a4c9b5e97076c06",
+      "bytes": 10763370
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/request.json": {
+      "sha256": "115395594ee6aaa32b63425a5b8990d16ae8b484cb2f1f9ee0cdbf89b210189d",
+      "bytes": 953
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/precision_audit.json": {
+      "sha256": "7e7b32d7eff3a3eefebd690ca413f88c3af06a272ba88770efa6821a4206fe1e",
+      "bytes": 113722
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/build/build_request.json": {
+      "sha256": "76ba1987325f19192f4035dde5c5c8ccd5ae3b8713c58ce292177f9b3534aafb",
+      "bytes": 2905
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/result_r_only_G1_G2.json": {
+      "sha256": "c3f3087c6f45b198b7e28e0602b35b8328e726d08c4f5e4a46b642cf76a6a09b",
+      "bytes": 12217
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/jetson_gate05_extended_restore_queue.py": {
+      "sha256": "9c919271966ad165f8fe353724edd08c6e0b8f0861c576f05410cb234fecc5ba",
+      "bytes": 29433
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G5/request.json": {
+      "sha256": "7100e9a036226dde235eac0c4046bab3f13cdeea8941b80525570afd19df5aa5",
+      "bytes": 958
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/tegrastats.log": {
+      "sha256": "2fcc7ee1dd8060edcfc97b20b8aaaf640120a03b286d3400a93706e7039a2965",
+      "bytes": 890486
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/status.json": {
+      "sha256": "383474294351b3837f46e15940cfa07aa936d55ec98dfb9e916f2a5ab5b2641f",
+      "bytes": 1084
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1_G2/resources.jsonl": {
+      "sha256": "0965693f691d0c76015b15bb861642e9bc83dd50ca37d1144929bf7d80104bff",
+      "bytes": 516785
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/original_inputs/input_receipt.json": {
+      "sha256": "48c320f3c3718f822873bac05833b5711b09a8a840482f9f2da4ce2a0ee6da3a",
+      "bytes": 7640
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/status.json": {
+      "sha256": "93455e88730f6804a3a9a1184e92f2d08732e1a2dbbee7fe46180ca22769afb8",
+      "bytes": 45228
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/result_r_only_G1_G5.json": {
+      "sha256": "b334332e4508630c84bd5580a93945462b54474cf4b4884f947c2f86b2812f4d",
+      "bytes": 12410
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/launch_r_only_G1_G2.json": {
+      "sha256": "814a773a9731d1bf662df36c769cea62440f019b3413c3b99a4cb09322c9dd01",
+      "bytes": 1247
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/monitor_r_only_G1/build_console.log": {
+      "sha256": "fd138eef415d59a10167d820726e2c3798417931b39487c89e82b463526e911b",
+      "bytes": 8481
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/monitor/resources.jsonl": {
+      "sha256": "0965693f691d0c76015b15bb861642e9bc83dd50ca37d1144929bf7d80104bff",
+      "bytes": 516785
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence/inputs/jetson_build_precision_candidate.py": {
+      "sha256": "d8431345da90482f0d5798e2d6524bf03591ecef653edfad5ef3e28a509eb19f",
+      "bytes": 12418
+    },
+    "artifacts/gate05/20261019_precision_runtime_bundles_prefer/r_only_G1_G5/model.onnx": {
+      "sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+      "bytes": 10750868
+    },
+    "artifacts/gate05/20261019_restore_extended/queue_evidence/queue/progress.jsonl": {
+      "sha256": "455fa33cf36b3ae9608c8b817bf9cb3e7322eb45ad312fdc507cb47934d5a5c8",
+      "bytes": 69806576
+    },
+    "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence/inputs/jetson_build_precision_candidate.py": {
+      "sha256": "d8431345da90482f0d5798e2d6524bf03591ecef653edfad5ef3e28a509eb19f",
+      "bytes": 12418
+    }
+  },
+  "auditor_script_sha256": "40420902d6fb3fd5d6b6278d64bbaa4b44c839bdae69da73dbaeb3e15cf66f6a",
+  "strict_precision_claim_established": false,
+  "board_access": false,
+  "inference_run": false,
+  "dataset_evaluation_run": false,
+  "limits": "Original terminal/empty-process observations are validated as collected evidence, not a fresh live-board check. All three engines still lack seven named integer tactics. Runtime kernel identity cannot substitute for the absent strict evidence. Source full-model PyTorch/ORT numerical failure remains unchanged."
+}

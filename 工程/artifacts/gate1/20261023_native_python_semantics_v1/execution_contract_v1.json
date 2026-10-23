@@ -1,0 +1,74 @@
+{
+  "schema": "rampq.gate1.native_python_partial_comparison_contract/v1",
+  "predeclared_conditions": {
+    "path": "artifacts/gate1/20261023_native_python_semantics_v1/predeclared_conditions.json",
+    "bytes": 3587,
+    "sha256": "dcde553318db54b14d7f837434e26ae147250d8ef8b8ca1a62c3e36adadea84f"
+  },
+  "case_ids": [
+    "A01_perfect_single_class",
+    "A02_gt_without_predictions",
+    "A03_empty_both",
+    "A04_predictions_without_gt",
+    "A05_same_class_ignore_only",
+    "A06_positive_plus_ignored_denominator",
+    "A07_unequal_class_image_frequency",
+    "A08_input_order_before_cap",
+    "A09_swapped_submission_order",
+    "A10_precision_envelope",
+    "A11_three_gt_one_hit",
+    "R01_exact_half_region",
+    "R02_overlapping_region_union",
+    "R03_border_and_rounding",
+    "R04_zero_height_ignored_region",
+    "M01_score_first_over_iou_first",
+    "M02_tied_score_and_overlap",
+    "M03_ignore_absorbs_multiple_same_class",
+    "M04_raw_outside_coordinates",
+    "M05_others_and_positive_priority"
+  ],
+  "matrix_fields": [
+    "filtered_gt",
+    "filtered_predictions",
+    "prepared_gt",
+    "class_matches.gt_output",
+    "class_matches.dt_output"
+  ],
+  "absolute_tolerance": 0,
+  "relative_tolerance": 0,
+  "comparison_source": {
+    "path": "artifacts/gate1/20261023_native_python_semantics_v1/compare_partial_semantics.py",
+    "bytes": 11974,
+    "sha256": "2a05c69cfd691cd8acbca21a79432b3bd1cc2b183bf3db2f352b83be56ff6097"
+  },
+  "python_source": {
+    "path": "scripts/gate1_ignore_aware_evaluation.py",
+    "bytes": 18720,
+    "sha256": "4e45ff26a86a83ff66e997f15e4c4794246c6440c304446972809ff32db09961"
+  },
+  "fixture": {
+    "path": "artifacts/gate1/20261023_official_evaluator_readiness/synthetic_fixtures.json",
+    "bytes": 18456,
+    "sha256": "cce5893345da5762956009cffdd61b21a41a78e3284d7ab3321e555f7e709afb"
+  },
+  "native_structure_audit": {
+    "path": "artifacts/gate1/20261023_native_oracle_comparison_preparation_v1/native_output_audit_v1.json",
+    "bytes": 23212,
+    "sha256": "7bafc6deecc7ff29e77b26f135fa6ada6c32ac0cc2d71f67215847e052e00288"
+  },
+  "native_mat": {
+    "path": "artifacts/gate1/20261023_native_oracle_runtime_v1/execution_01/oracle_results.mat",
+    "bytes": 4849,
+    "sha256": "31d2f7f2031074065cf3f1c66e49b30e8982e24ef2903f9ae63b7a9bdf73e034"
+  },
+  "auditor_source": {
+    "path": "artifacts/gate1/20261023_native_oracle_comparison_preparation_v1/audit_native_oracle.py",
+    "bytes": 25202,
+    "sha256": "03e7f7063bba83a8e56fe52d778bba6ea7d2e131a7edd0e2bf5e41d4f827321d"
+  },
+  "all_twenty_cases_and_all_matching_categories_required": true,
+  "AP_metrics_compared": false,
+  "full_Python_AP_implemented": false,
+  "official_AP_equivalence_certified": false,
+  "gate1_scientific_pass": false
+}

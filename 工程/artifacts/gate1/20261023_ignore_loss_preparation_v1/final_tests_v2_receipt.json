@@ -1,0 +1,35 @@
+{
+  "schema": "rampq.gate1.ignore_loss_synthetic_test_receipt/v1",
+  "status": "PASS_SYNTHETIC_PRIMITIVE_ONLY",
+  "tests_passed": 55,
+  "failures_and_errors": 0,
+  "observed_pytest_output": "55 passed in 8.62s",
+  "junit_xml": {
+    "bytes": 7484,
+    "sha256": "93c533df1255c5e2d9baa822533c417fb552b5e09f0518e26841484531d29193"
+  },
+  "console": {
+    "bytes": 101,
+    "sha256": "8573f6975569bea85249896492cbce1987e88f99939a70f1c95541546ecc72b3"
+  },
+  "final_sources": {
+    "scripts/gate1_ignore_negative_loss.py": {
+      "bytes": 7782,
+      "sha256": "67fa0f7a171d26b1f8d2ebd922333f30bb97ffb94b523a58f6f784ed572b3c1f"
+    },
+    "tests/test_gate1_ignore_negative_loss.py": {
+      "bytes": 9170,
+      "sha256": "e6b182bf70abeabcb5b2a843b50bf288d7282f1e6d33ffe4aab2346e32516fe4"
+    }
+  },
+  "supported_dtypes": [
+    "torch.float32",
+    "torch.float64"
+  ],
+  "low_precision_and_finite_input_overflow_rejected": true,
+  "initial_44_tests_preserved": true,
+  "real_data_or_weights_used": false,
+  "gpu_used": false,
+  "training_pipeline_integrated": false,
+  "scientific_gate_or_official_AP_passed": false
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "rampq.gate05.dfl_original_checkpoint/v1",
+  "client_at": "2026-10-20T12:44:41.407974+08:00",
+  "status": "DFL_ORIGINAL_LOCAL_FACTORIAL_CHECKPOINT_COMPLETE",
+  "gate05_status": "INCOMPLETE",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "source_convs": 1,
+  "source_nodes": 9,
+  "source_initializers": 7,
+  "new_CPU_or_ORT_or_Torch_executions": 0,
+  "new_fixture_generated": false,
+  "native_build_attempts": 2,
+  "native_build_attempts_each": 1,
+  "successful_native_builds": 1,
+  "failed_native_builds": 1,
+  "original_none_build_seconds": 52.32060847998946,
+  "original_obey_build_seconds": 1.5088661759946262,
+  "original_none_executions": 2,
+  "original_obey_executions": 0,
+  "original_none_repeat_byte_identical": true,
+  "original_Clip_bounds": [
+    -0.9999907612800598,
+    0.9999907612800598
+  ],
+  "original_Clip_attribute_mutation": false,
+  "original_none_input_weight_INT8_with_named_integer_tactic": true,
+  "original_none_conv_output": "FP32",
+  "original_none_cpu_differing_elements": 33566,
+  "output_elements": 33600,
+  "original_none_cpu_max_abs": 11.957853466272354,
+  "original_none_numerical_repair_claim": false,
+  "corrected_none_cpu_max_abs": 1.9073486328125e-06,
+  "both_topology_OBEY_cases_same_filterQDQFormats_signature": true,
+  "code_clip_derivative_required_for_this_local_failure": false,
+  "both_OBEY_cases_no_engine_or_inference": true,
+  "original_vs_corrected_NONE_raw_different_elements": 33566,
+  "same_fixture_saved_CPU_weights_scales_and_named_Q_DQ_requests": true,
+  "only_actual_config_flag_changed": "OBEY_PRECISION_CONSTRAINTS",
+  "four_single_observations_across_two_stages": true,
+  "randomized_or_repeated_factorial_study": false,
+  "topology_and_import_correction_remain_combined_factor": true,
+  "parser_constraints_each": {
+    "parsed_layers": 14,
+    "precision_INT8": 2,
+    "output_type_INT8": 2,
+    "metadata_errors": 0
+  },
+  "monitor_status": "BUILD_SCRIPT_OK",
+  "monitor_status_means_both_builds_passed": false,
+  "monitor_seconds": 69.3,
+  "runner_seconds_not_benchmark": 64.02708412799984,
+  "verified_receipt_files": 84,
+  "independent_native_review_checks": 470,
+  "raw_evidence_unchanged": true,
+  "all_five_owned_tasks_exited_same_boot": true,
+  "guard_intervened": false,
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "full_model_native_retry_performed": false,
+  "full_model_failure_resolved": false,
+  "full_model_without_OBEY_build_proven": false,
+  "named_full_model_failing_node_or_unique_cause_identified": false,
+  "earlier_qonly_success_preserved": true,
+  "prior_sources_archives_and_failed_preflight_unchanged": true,
+  "new_tolerances_defined": false,
+  "dataset_evaluation_run": false,
+  "accuracy_causal_recovery_or_performance_pass": false,
+  "required_work_remaining_for_this_bounded_stage": [],
+  "next_step": "Separately freeze a corrected DFL cut after Softmax: one exact source Softmax CPU run from saved logits creates probability fixture, one 8-node tail CPU run must match saved DFL CPU bytes; then bounded NONE/OBEY. No 72Conv upstream rerun, parser reset, full-model retry or dataset.",
+  "limits": "Both original and corrected DFL cuts fail with OBEY. NONE compilation alone does not fix original numerical error. No full-model flag workaround or unique-root-cause claim.",
+  "protected_identities": {
+    "artifacts/gate05/20261019_corrected_qonly_native/post_smoke_evidence.zip": "5eac1543e5151708585e57923dd82410c9b21aac81cb5cfd1137e057e35ed205",
+    "artifacts/gate05/20261019_corrected_qall_native/build_failed_evidence.zip": "027433baa5b1e18fafb72cf64b70e58e1bd2aa05b295fd8f539ae8317e1c9a99",
+    "artifacts/gate05/20261019_corrected_qall_native/parser_metadata_evidence.zip": "a567b474be0e563448ce96b7b5cc0f1e9bfff1036461b9512efe9b8c1ba32d78",
+    "artifacts/gate05/20261018_int8/input_v1/preflight.json": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+    "artifacts/gate05/20261020_dfl_context_native/checkpoint.json": "28edf81c0be1f72065a8952f84dc31330ba95709d50ed13aafc16a5bb56c602b",
+    "artifacts/gate05/20261020_dfl_context_native/native_evidence.zip": "a53750401ccdbb7c008c14e75cadec80a586a05f2baa32f5e985abdff527bd24",
+    "artifacts/gate05/20261020_dfl_context_probe.zip": "05b9b50e4ddc294151121044facef5e1711ac368c793ca5232c1c1a557c42b9f",
+    "artifacts/gate05/20261020_dfl_original_probe.zip": "6ea5c52c4697339692d3d5e4efac01a46d033e34855a3ed8f60e4aa1d1a22709",
+    "artifacts/gate05/20261020_dfl_original_native/native_evidence.zip": "9f027ada5086843e4b967a6ab4f5a4e1d5f23bc904e30b9913e8e619db7dd96d"
+  },
+  "stage_inventory_files_before_checkpoint": 148,
+  "stage_manifest": {
+    "path": "artifacts/gate05/20261020_dfl_original_native/stage_manifest.json",
+    "bytes": 32891,
+    "sha256": "75a4e0cbb00648444dea2c19d329d6da13c7791cf6d1fa6571f6c6727720f656"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/root_native_audit.json",
+      "bytes": 12428,
+      "sha256": "91a4f2b67125cf2868a2353b44e0bacbef53e82be5e3c613a613e5df8ba7ed6c"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/topology_flag_comparison.json",
+      "bytes": 21952,
+      "sha256": "88fcc89eaec465dc1ed5493834898ba76c16925d0a1364c785482848e01453bb"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/independent_native_review.json",
+      "bytes": 112385,
+      "sha256": "3cda350ad9140c2a9b442f853868e8d527f269b20889f61ec55e36942f7ef7c0"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/independent_failure_signature_and_runtime_review.json",
+      "bytes": 3997,
+      "sha256": "5f0f63da900ff6e9d6041c12cff92cbd0c6b2a0ccfe598ee4e9fb2bc0bf1ce35"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/final_board_observation.json",
+      "bytes": 6426,
+      "sha256": "2752b6b19d8e3b572dd6a3bc7bdda20e20815ec0aed05a71cc1c9872932a3031"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/native_evidence.zip",
+      "bytes": 11644748,
+      "sha256": "9f027ada5086843e4b967a6ab4f5a4e1d5f23bc904e30b9913e8e619db7dd96d"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_original_native/next_control_plan.json",
+      "bytes": 7293,
+      "sha256": "de9e44fcd058cd6d855174af6934f657e5c312ee5284f8463322c0c029160be2"
+    }
+  ]
+}

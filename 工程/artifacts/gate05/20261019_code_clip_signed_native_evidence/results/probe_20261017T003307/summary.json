@@ -1,0 +1,182 @@
+{
+  "status": "SIGNED_CODE_CLIP_PAIRED_DIAGNOSTIC_SAVED",
+  "cases": {
+    "clip": {
+      "status": "ISOLATED_ACTIVATION_BOUNDARY_OUTPUTS_SAVED",
+      "diagnostic_only": true,
+      "case": "clip",
+      "bindings": [
+        {
+          "name": "images",
+          "input": true,
+          "shape": [
+            1,
+            1,
+            1,
+            1811
+          ],
+          "dtype": "DataType.FLOAT"
+        },
+        {
+          "name": "rampq_model_0_conv_a_dq",
+          "input": false,
+          "shape": [
+            1,
+            1,
+            1,
+            1811
+          ],
+          "dtype": "DataType.FLOAT"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          1,
+          1,
+          1811
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": -0.007874015718698502,
+        "max": 0.007874015718698502,
+        "mean": 0.0,
+        "rms": 0.007854425877298411,
+        "raw_bytes_sha256": "d04f349c81004a12789dff6d970e6596751866b1f3633eccf72f7fcaf346ac6e"
+      },
+      "comparison_to_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.9921259842813015,
+        "mean_abs": 0.5702943935957421,
+        "rms_difference": 0.6548599381334727,
+        "abs_percentiles_50_90_99_999": [
+          0.5826771818101406,
+          0.9921259842813015,
+          0.9921259842813015,
+          0.9921259842813015
+        ],
+        "bit_exact": false,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": true,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "engine_sha256": "1e745db4c5e276f81a539813839c0dc3cf7dc86a9c7b8654324cbe13a7025aaf",
+      "raw_outputs_sha256": "ac8be445867135148d4f7cf40028fefb40e8380578d3c8d3650ecc11d07b10a4",
+      "spec_sha256": "04d8470c74e3b5747e3f86e634f40faf186ee903abb7e9a69e0d6d121ff30421",
+      "onnx_sha256": "57293185b99da47e633c5e068cdbb1c4054a3f1ef2c1810545b803daddfc1560",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-17T00:34:02+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "limits": "Only fixed input and isolated slice. Removing Clip is a diagnostic intervention; original model is unchanged."
+    },
+    "code_clip": {
+      "status": "ISOLATED_ACTIVATION_BOUNDARY_OUTPUTS_SAVED",
+      "diagnostic_only": true,
+      "case": "code_clip",
+      "bindings": [
+        {
+          "name": "images",
+          "input": true,
+          "shape": [
+            1,
+            1,
+            1,
+            1811
+          ],
+          "dtype": "DataType.FLOAT"
+        },
+        {
+          "name": "rampq_model_0_conv_a_dq",
+          "input": false,
+          "shape": [
+            1,
+            1,
+            1,
+            1811
+          ],
+          "dtype": "DataType.FLOAT"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          1,
+          1,
+          1811
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "rms": 0.0,
+        "raw_bytes_sha256": "bb44137fee00ee0708fc800155945667ceb3c1a4d04f578b968db11c7c14fe7a"
+      },
+      "comparison_to_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 1.0,
+        "mean_abs": 0.5781292783694001,
+        "rms_difference": 0.6617282256462653,
+        "abs_percentiles_50_90_99_999": [
+          0.5905511975288391,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bit_exact": false,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": true,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "engine_sha256": "834ee1768337239f68e8a6f122b1e325612a655026fd946778818097f5f6e423",
+      "raw_outputs_sha256": "b0ede19cc6cec249426bb9d0a6cace5aa762c7cbf8ef693223f3136158d31c86",
+      "spec_sha256": "04d8470c74e3b5747e3f86e634f40faf186ee903abb7e9a69e0d6d121ff30421",
+      "onnx_sha256": "5231cb86184a340a48c2a5144a1584b9cf2e52b0e66ea12976c0b85b6522f113",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-17T00:34:56+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "limits": "Only fixed input and isolated slice. Removing Clip is a diagnostic intervention; original model is unchanged."
+    }
+  },
+  "native_clip_vs_no_clip": null,
+  "requested_clip_precision": null,
+  "diagnostic_only": true,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false
+}

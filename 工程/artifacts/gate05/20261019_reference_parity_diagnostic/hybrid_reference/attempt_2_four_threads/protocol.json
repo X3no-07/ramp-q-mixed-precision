@@ -1,0 +1,28 @@
+{
+  "schema": "rampq.gate05.hybrid_reference_protocol/v1",
+  "client_at": "2026-10-19T21:07:58.294876+08:00",
+  "input": "Original fixed 000020.jpg only; CPU FP32; no dataset or native execution",
+  "sessions": "88 independent original WeightQ, WeightDQ, Conv subgraphs; all original Conv attributes and initializer bytes retained; activation DQ is explicit input",
+  "controls": "Every independent session must be byte exact with both original tapped full ORT and original all-88 disconnected ORT replay, using full ORT activation DQ inputs",
+  "case_1": "Original PyTorch QDQ activation round/clamp/multiply; ORT original WeightQ/DQ + Conv; original remaining PyTorch model",
+  "case_2": "Case 1 plus temporary unique nn.SiLU instance forwards rebound to ORT Sigmoid then Mul; all other PyTorch arithmetic remains unchanged",
+  "threads": {
+    "torch": 4,
+    "full_ort": 4,
+    "independent_conv_ort": 4,
+    "silu_ort": 1
+  },
+  "guard": {
+    "image": "000020.jpg, first existing Selection image",
+    "box_rtol": 0.005,
+    "box_atol": 0.5,
+    "score_rtol": 0.02,
+    "score_atol": 0.002,
+    "ort_graph_optimizations": "disabled for FP32 Q/DQ comparison"
+  },
+  "tolerances_changed": false,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "deployment_reference_replaced": false,
+  "deployment_graph_change": false,
+  "interpretation": "Operator-backend counterfactuals only. Even passing original numerical slices in a counterfactual does not pass or replace the original full PyTorch/ORT guard."
+}

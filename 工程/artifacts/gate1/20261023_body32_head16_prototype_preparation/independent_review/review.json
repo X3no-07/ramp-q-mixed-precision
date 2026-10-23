@@ -1,0 +1,69 @@
+{
+  "schema": "rampq.gate1.body32_head16_prototype_source_review/v1",
+  "status": "PASS_BOUNDED_DIRECT_PROTOTYPE_REVIEW_ONLY",
+  "created_at_utc": "2026-10-23T02:34:43.311263+00:00",
+  "source_identities": {
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\scripts\\probe_gate1_body32_head16.py": {
+      "bytes": 27679,
+      "sha256": "7974e7ef5e671d644ad2c2ee7ec675debeed686d72935a5e8bb04adc3e968073"
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\scripts\\audit_gate1_body32_head16.py": {
+      "bytes": 22360,
+      "sha256": "d9e1ac819337d01629b429492f1227222d2191d033281f8e0ce655c494952c5d"
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\tests\\test_gate1_body32_head16.py": {
+      "bytes": 13422,
+      "sha256": "514b2072276a58771b8038e5b54b84406b34520aa9f7639a1544a503b3b8c3f3"
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\tests\\test_gate1_body32_head16_audit.py": {
+      "bytes": 13412,
+      "sha256": "eaa01dbf86adc907fbab6bf95f33e1c9ff98d43ca90869ee1635cf4903b19da4"
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\scripts\\audit_gate1_decode_probe.py": {
+      "bytes": 22657,
+      "sha256": "04a7d2256ab0a3d90025b2453ef2bc44b043e8b1493b7866c9acc603838dc1ef"
+    }
+  },
+  "synthetic_cpu_tests_passed": 30,
+  "test_command": [
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_gate1_body32_head16*.py",
+    "-v"
+  ],
+  "guard_name": "GATE1_BODY_FP32_HEAD_TOWERS_FP16_DECODE_FP32_DEBUG_NUMERIC_CHECK",
+  "reviewed_checks": [
+    "Exactly one checkpoint deserialization creates the candidate. The fresh image is independently decoded, letterboxed, normalized and sent into a direct mixed forward before loading reference NPZ array values.",
+    "The original body DAG modules 0..22 execute once each with saved dependencies. Parameters, floating buffers and all observed body output tensors must be FP32.",
+    "Only original Detect cv2/cv3 towers and their floating buffers are FP16; fresh FP32 Detect input features are explicitly cast to FP16. Their box/class output tensors must be FP16.",
+    "Original head.forward and its implicit FP16 decoder are never called. Geometry is made from fresh FP32 body features and FP32 stride. Frozen functional DFL, geometry and sigmoid use explicit FP32, with every returned stage dtype checked.",
+    "The mixed final outputs/logits must be byte-identical to the earlier source-FP32/head-FP16 endpoint; input and feature/cast hashes must match independently saved references after the fresh computation.",
+    "The independently named all-anchor prototype guard retains box rtol .005/atol .5 and score rtol .02/atol .002, relabels geometry branches correctly, and cannot replace historical failed guards.",
+    "The NumPy auditor recomputes full-array fixed guards, exact endpoint/reference bytes, cast statistics, geometry, scope/load/forward reports and approximate FP64 decoding sanity. Original full-model FP16 failure is separately recomputed.",
+    "No NMS, target matching, label parsing, Selection, Holdout, AP, quantization, TensorRT, Orin, latency or energy computation is included."
+  ],
+  "issues_repaired_before_freeze": [
+    "Added explicit floating buffer dtype checks for body, head towers and DFL, plus actual parameter/buffer dtype count provenance.",
+    "Gave the prototype numerical check a distinct name and geometry branch labels.",
+    "Aligned independent receipt/summary/runtime precision and fresh-forward scope metadata checks."
+  ],
+  "conditional_execution": "Only fixed pilot3 first; expand to fixed full109 only after all fresh-forward identity controls and independent saved-output audit pass. Never alter tolerances or choose a checkpoint from the new outputs.",
+  "limits": [
+    "Synthetic CPU tests and reviewed assertions do not prove real GPU internal arithmetic precision.",
+    "Auditor does not load the model or regenerate convolutions; runtime body/head parameter and output precision assertions retain reviewed-runner limits.",
+    "Fresh features are deduplicated into hashes/statistics; their source/reference and FP16 casts are independently compared against earlier saved tensors.",
+    "Reproducing an earlier engineering endpoint is implementation consistency evidence, not an independent effect or generalization experiment.",
+    "No scientific Gate1, all-FP16 deployment, original pre-save FP32 state recovery, accuracy or performance acceptance follows."
+  ],
+  "scientific_gate_pass": false,
+  "accepted_float_baseline_ready": false,
+  "old_guard_replaced": false,
+  "selection_detector_inference": false,
+  "holdout_accessed": false
+}

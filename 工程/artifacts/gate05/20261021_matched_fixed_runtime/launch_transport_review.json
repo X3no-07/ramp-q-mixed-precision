@@ -1,0 +1,169 @@
+{
+  "schema": "rampq.gate05.matched_fixed_transport_static_review/v1",
+  "status": "NO_REMAINING_STATIC_LAUNCH_BLOCKER_AFTER_NEW_TRANSPORT_REPAIRS",
+  "reviewer_role": "STATIC_REVIEW_AND_AUTHORIZED_REPAIR_OF_ROOT_UNSEALED_TRANSPORT; SEALED_TOOLS_UNCHANGED",
+  "launcher_file": "artifacts/gate05/20261021_matched_fixed_runtime/launch_one.py",
+  "launcher_sha256": "a1bc1172e3525bc48315bffb5eb7cf897b7836dfd6bd4d51d2225a16c193bd77",
+  "launcher_bytes": 16621,
+  "checks": [
+    {
+      "id": "ZIP_PINNED",
+      "pass": true,
+      "evidence": "SHA256 checked before extraction; target fresh; ZIP CRC, unique exact one-level root paths, no parent/absolute paths/directories/symlinks."
+    },
+    {
+      "id": "MANIFEST_PINNED",
+      "pass": true,
+      "evidence": "Exact expected manifest SHA, every listed file length/hash, safe basename, and exact root file set verified."
+    },
+    {
+      "id": "PRE_NATIVE_REVIEW",
+      "pass": true,
+      "evidence": "Exact supplied review SHA, nonempty all-pass checks, and selected configuration inclusion required."
+    },
+    {
+      "id": "STAGE_LAUNCH_LOCK",
+      "pass": true,
+      "evidence": "Nonblocking exclusive flock serializes launchers under shared stage."
+    },
+    {
+      "id": "NATIVE_TOOLS_PINNED",
+      "pass": true,
+      "evidence": "Wrapper/immutable monitor/OwnedGroup helper hashes pinned; protocol binding and child guard requirement verified."
+    },
+    {
+      "id": "FROZEN_TWO_CALL_SCOPE",
+      "pass": true,
+      "evidence": "Frozen protocol, same config, 300-second original monitor budget, exactly two calls and no new builds retained."
+    },
+    {
+      "id": "BOOT_PINNED",
+      "pass": true,
+      "evidence": "Actual board boot matches frozen protocol before source check or monitor spawn."
+    },
+    {
+      "id": "QUEUE_TERMINAL",
+      "pass": true,
+      "evidence": "All-five complete/collected status and exact config set required with original boot."
+    },
+    {
+      "id": "QUEUE_PROCESS_NONLIVE",
+      "pass": true,
+      "evidence": "Original queue PID must be absent or nonlive."
+    },
+    {
+      "id": "FIVE_FRESH_GROUP_SNAPSHOTS",
+      "pass": true,
+      "evidence": "Every prior native member requires exact canonical root, current terminal monitor and complete no-intervention guard; fresh authenticated group snapshot must be physically empty."
+    },
+    {
+      "id": "FIVE_SUPERVISORS_NONLIVE",
+      "pass": true,
+      "evidence": "All previous monitor and guard PIDs must be absent or nonlive."
+    },
+    {
+      "id": "GPU_JOB_BUSY_CHECK",
+      "pass": true,
+      "evidence": "Before launch refuses builder, fixed adapter/childguard, dataset runner, native queue, run_fixed and nsys/trtexec processes."
+    },
+    {
+      "id": "RESOURCES",
+      "pass": true,
+      "evidence": "Fresh at least 3GiB available and active nvfancontrol required."
+    },
+    {
+      "id": "BOARD_INPUT_CHECK",
+      "pass": true,
+      "evidence": "Exact sealed adapter argv plus check-input-only run before monitor; nonzero aborts without GPU attempt."
+    },
+    {
+      "id": "ATEXIT_BEFORE_SPAWN",
+      "pass": true,
+      "evidence": "Unconfirmed-launch cleanup registered before monitor Popen; SIGINT/SIGTERM raise into protected cleanup."
+    },
+    {
+      "id": "DETACHED_STDIO",
+      "pass": true,
+      "evidence": "Monitor and group guard use DEVNULL stdin, private sessions and dedicated exclusive log files; launcher file handles closed after Popen."
+    },
+    {
+      "id": "MONITOR_PID_IDENTITY",
+      "pass": true,
+      "evidence": "Actual private monitor PID/PGID/SID/argv/root checked; published boot/root/PID/budget/script identity rechecked before authenticating wrapper group."
+    },
+    {
+      "id": "EARLY_PID_RECOVERY",
+      "pass": true,
+      "evidence": "If exception precedes OwnedGroup assignment, cleanup recovers only exact current monitor status or unambiguous direct private wrapper child matching source argv."
+    },
+    {
+      "id": "INDEPENDENT_CLEANUP_STEPS",
+      "pass": true,
+      "evidence": "Owned wrapper, exact Popen monitor, exact Popen guard and escaped GPU runner cleanup are separate protected blocks; a prior error cannot skip later steps."
+    },
+    {
+      "id": "OWNED_GROUP_SIGNALS_ONLY",
+      "pass": true,
+      "evidence": "All group signalling uses immutable authenticated OwnedGroup; exact owned Popen escalation handles only directly spawned supervisors."
+    },
+    {
+      "id": "GUARD_EMPTY_JSON_RACE",
+      "pass": true,
+      "evidence": "Supplemental guard empty JSON placeholder is polled until complete status; file existence alone never acknowledges readiness."
+    },
+    {
+      "id": "FULL_GUARD_IDENTITY",
+      "pass": true,
+      "evidence": "Guard PID/root/boot/owned group/leader start/whole monitor identity and actual independent guard session argv checked."
+    },
+    {
+      "id": "GUARD_READY",
+      "pass": true,
+      "evidence": "Only live WATCHING or COMPLETE with no intervention and physically empty authenticated wrapper group accepted."
+    },
+    {
+      "id": "ESCAPED_RUNNER_CLEANUP",
+      "pass": true,
+      "evidence": "Separate GPU runner receipt authenticated by protocol/root/boot/adapter/PID=PGID=SID/start ticks before any independent termination."
+    },
+    {
+      "id": "CHILD_GUARD_CLEANUP_OBSERVATION",
+      "pass": true,
+      "evidence": "On failed launch, exact authenticated childguard receipt/process is observed to bounded nonlive state; remaining members/errors are retained."
+    },
+    {
+      "id": "LAUNCH_DURABLE_BEFORE_SUCCESS",
+      "pass": true,
+      "evidence": "Launch success only after complete group/process identity receipt is exclusively written, flushed and fsynced."
+    },
+    {
+      "id": "PRESERVED_FAILURES",
+      "pass": true,
+      "evidence": "Launch failures and each cleanup error are saved; no retry, rebuild, direct inference or source changes are implemented."
+    },
+    {
+      "id": "PYTHON38_AST",
+      "pass": true,
+      "evidence": "Final source parses under Python 3.8 grammar."
+    }
+  ],
+  "fixed_concrete_issues": [
+    "Complete guard receipt wait handles immutable guard initial empty JSON placeholder.",
+    "Separated cleanup steps and authenticated early wrapper recovery avoid skipped monitor/escaped-runner cleanup after exception.",
+    "Fresh same-boot all-five native group and supervisor terminal checks replace reliance on saved queue booleans alone.",
+    "One stage launch lock, explicit busy-job scan, safer exact archive paths and durable final launch identity were added."
+  ],
+  "sealed_first_four_works_unchanged": true,
+  "transport_or_guard_process_tests": 0,
+  "CPU_model_executions": 0,
+  "native_model_executions": 0,
+  "SSH_operations": 0,
+  "dataset_outputs_read": 0,
+  "remaining_preconditions": [
+    "Root must pass exact sealed archive/manifest/pre-native review hashes and execute only after actual native queue terminal.",
+    "This is static source/Python3.8 AST review, not a real board guard/SSH or kernel recovery test.",
+    "Original monitor and child guards remain best effort under kernel hangs; any cleanup-error or nonempty-group evidence requires inspection and no automatic retry."
+  ],
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE"
+}

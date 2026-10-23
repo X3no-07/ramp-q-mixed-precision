@@ -1,0 +1,141 @@
+{
+  "schema": "rampq.gate1.head_precision_probe_summary/v1",
+  "stage": "full109",
+  "images": 109,
+  "historical_bytes_all_equal": true,
+  "reference_decode_captures_all_exact": true,
+  "reference_unified_decode_all_exact": true,
+  "native_head_logits_all_exact": true,
+  "features_and_head_states_unchanged": true,
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 109,
+      "boxes": {
+        "violations": 10849,
+        "max_absolute_error": 10.43951416015625,
+        "max_error_over_tolerance": 9.708852188760341
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.006031900644302368,
+        "max_error_over_tolerance": 0.6683826368440458
+      }
+    },
+    "native_heads_both_decode_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 109,
+      "boxes": {
+        "violations": 8992,
+        "max_absolute_error": 10.375579833984375,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.006042659282684326,
+        "max_error_over_tolerance": 0.6849108671344437
+      }
+    },
+    "same_fp32_features_head_fp32_vs_fp16": {
+      "diagnostic_guard_pass_images": 109,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.26373291015625,
+        "max_error_over_tolerance": 0.1779523919574763
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0040915608406066895,
+        "max_error_over_tolerance": 0.4807440407148357
+      }
+    },
+    "same_fp16_features_head_fp32_vs_fp16": {
+      "diagnostic_guard_pass_images": 109,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.238525390625,
+        "max_error_over_tolerance": 0.17031128572059095
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.004481852054595947,
+        "max_error_over_tolerance": 0.44026897096251827
+      }
+    },
+    "same_fp32_head_features_fp32_vs_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 109,
+      "boxes": {
+        "violations": 8980,
+        "max_absolute_error": 10.370834350585938,
+        "max_error_over_tolerance": 9.746064426388767
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.004985898733139038,
+        "max_error_over_tolerance": 0.5395663508676046
+      }
+    },
+    "same_fp16_head_features_fp32_vs_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 109,
+      "boxes": {
+        "violations": 8989,
+        "max_absolute_error": 10.350204467773438,
+        "max_error_over_tolerance": 9.886013256282665
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.007633835077285767,
+        "max_error_over_tolerance": 0.7331772223150627
+      }
+    },
+    "reference_fp32_vs_fp32_features_fp16_head": {
+      "diagnostic_guard_pass_images": 109,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.26373291015625,
+        "max_error_over_tolerance": 0.1779523919574763
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0040915608406066895,
+        "max_error_over_tolerance": 0.4807440407148357
+      }
+    },
+    "reference_fp32_vs_fp16_features_fp32_head": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 109,
+      "boxes": {
+        "violations": 8980,
+        "max_absolute_error": 10.370834350585938,
+        "max_error_over_tolerance": 9.746064426388767
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.004985898733139038,
+        "max_error_over_tolerance": 0.5395663508676046
+      }
+    }
+  },
+  "raw_tolerances": {
+    "box_rtol": 0.005,
+    "box_atol": 0.5,
+    "score_rtol": 0.02,
+    "score_atol": 0.002
+  },
+  "all_intervention_decode_dtype": "fp32",
+  "original_guard_replaced": false,
+  "scientific_gate_pass": false,
+  "limits": [
+    "Post-hoc arithmetic intervention on reused, train-derived engineering debug images; no independent generalization claim.",
+    "The feature-origin contrast includes upstream network arithmetic; the FP32-to-FP16 cast is part of the head-dtype intervention.",
+    "The head contrast includes final box/class towers and their convolutions, BatchNorm and activations; it does not isolate an individual operation.",
+    "All intervention outputs use explicit FP32 DFL/geometry/sigmoid decoding; this is not an accepted deployment change.",
+    "No NMS, target matching, AP, quantization, TensorRT, Orin, performance or energy evidence.",
+    "A favorable diagnostic contrast never replaces either unchanged failing numerical guard or accepts Gate1."
+  ]
+}

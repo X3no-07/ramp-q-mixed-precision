@@ -1,0 +1,126 @@
+{
+  "schema": "rampq.gate05.shared_input_source_review/v1",
+  "status": "BLOCKED",
+  "check_count": 25,
+  "checks": [
+    {
+      "name": "pinned_source_and_manifest",
+      "passed": true
+    },
+    {
+      "name": "old_letterbox_AST_extracted_not_reimplemented",
+      "passed": true
+    },
+    {
+      "name": "same_cv2_decode_mode",
+      "passed": true
+    },
+    {
+      "name": "same_RGB_CHW_conversion",
+      "passed": true
+    },
+    {
+      "name": "same_FLOAT32_divide255_and_batch",
+      "passed": true
+    },
+    {
+      "name": "same_640_batch1_layout",
+      "passed": true
+    },
+    {
+      "name": "environment_bound_before_image_decode",
+      "passed": true
+    },
+    {
+      "name": "no_model_imports",
+      "passed": true
+    },
+    {
+      "name": "exact15086564_counts",
+      "passed": true
+    },
+    {
+      "name": "per_image_target_counts",
+      "passed": true
+    },
+    {
+      "name": "blank_and_invalid_label_rows_not_silently_counted",
+      "passed": true
+    },
+    {
+      "name": "image_and_label_SHA_each",
+      "passed": true
+    },
+    {
+      "name": "actual_calibration_identity_checked",
+      "passed": true
+    },
+    {
+      "name": "overlap_and_duplicates_checked",
+      "passed": true
+    },
+    {
+      "name": "protected_source_before_after_all",
+      "passed": true
+    },
+    {
+      "name": "decode_mutability_checked",
+      "passed": true
+    },
+    {
+      "name": "no_shadow_source_import",
+      "passed": false
+    },
+    {
+      "name": "fresh_safe_output_no_overwrite",
+      "passed": true
+    },
+    {
+      "name": "zero_models_exact_image_budget",
+      "passed": true
+    },
+    {
+      "name": "closed_zip_exact_inventory_and_SHA",
+      "passed": true
+    },
+    {
+      "name": "source_finally_rechecked_after_zip",
+      "passed": true
+    },
+    {
+      "name": "partial_failure_no_retry",
+      "passed": true
+    },
+    {
+      "name": "actual_preparer_source_only_branch",
+      "passed": true
+    },
+    {
+      "name": "no_numpy_cv2_model_runtime_imports",
+      "passed": true
+    },
+    {
+      "name": "source_only_output_not_created",
+      "passed": true
+    }
+  ],
+  "blockers": [
+    "no_shadow_source_import"
+  ],
+  "preparer_sha256": "daa04e666ba09711d28ac9cb312ef259ae52a6cad4ca32f603d7801f276a9292",
+  "zero_image_decodes_preprocessing_model_native_or_SSH": true,
+  "actual_preparer_check_output": {
+    "status": "INPUT_PREPARATION_SOURCES_VERIFIED_NO_MODEL_OR_PREPROCESS_EXECUTION",
+    "images": 150,
+    "targets": 865
+  },
+  "review_fixture_not_frozen_execution_protocol": "artifacts/gate05/20261021_gate05_completion_plan/shared_input_readonly_check_fixture.json",
+  "source_changes": [
+    "Protected150images/labels+64calibration/code/protocol before/after SHA identities and each decode surrounding checks.",
+    "Strict per-image label inventory against frozen counts; no silent invalid row count.",
+    "Fresh output restricted to a new direct child of Gate0.5 artifact root.",
+    "Closed ZIP exact inventory, member SHA/length and ZIP CRC verified at member EOF; final source reread."
+  ],
+  "unchanged_preprocessing": "Pinned old letterbox AST; original cv2.imread/BGR->RGB->CHW float32 division255->batch1. No mirrored image preprocessing executed.",
+  "environment_scope": "Frozen current OpenCV/Numpy must be recorded; identical code is not a claim of byte equality to untested older library versions."
+}

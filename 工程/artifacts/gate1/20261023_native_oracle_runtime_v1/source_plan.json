@@ -1,0 +1,57 @@
+{
+  "schema": "rampq.gate1.native_oracle_runtime_preparation_plan/v1",
+  "client_date": "2026-10-23",
+  "status": "AUTHORIZED_DOWNLOAD_AND_INSPECT_ONLY",
+  "upstream": {
+    "version": "11.3.0",
+    "architecture": "Windows-64 recommended (32-bit BLAS indices)",
+    "archive": "octave-11.3.0-w64.7z",
+    "archive_bytes_head_observed": 481127074,
+    "sha256": "fd3cf0e885467a15211b8ceded42800432a5462481324d49a896ef257e05d1a0",
+    "archive_url": "https://github.com/gnu-octave/octave/releases/download/release-11-3-0/octave-11.3.0-w64.7z",
+    "signature_url": "https://github.com/gnu-octave/octave/releases/download/release-11-3-0/octave-11.3.0-w64.7z.sig",
+    "signature_sha256": "333a02ab7a7cbfb697e525a0c9b2af2e83b14e3d0a3b82299e5634b7f54042ce",
+    "checksum_source": "https://github.com/gnu-octave/octave/releases/expanded_assets/release-11-3-0",
+    "official_gnu_mirror_archive_url": "https://ftpmirror.gnu.org/octave/windows/octave-11.3.0-w64.7z",
+    "license": "GPL-3.0-or-later; bundled dependencies retain their own licenses",
+    "license_source": "https://octave.org/copyright/"
+  },
+  "primary_sources": [
+    {"url": "https://octave.org/download.html", "supports": "Version, recommended Windows64 archive, installer/7z/ZIP options and GNU mirror/signature links"},
+    {"url": "https://wiki.octave.org/Octave_for_Microsoft_Windows", "supports": "Archive extraction, post-install requirement, bundled packages and explicit package loading, non-ASCII path warning"},
+    {"url": "https://docs.octave.org/latest/JSON-data-encoding_002fdecoding.html", "supports": "Built-in jsonencode/jsondecode; NaN JSON null normalization and vector shape caveats"},
+    {"url": "https://octave.sourceforge.io/image/function/mean2.html", "supports": "mean2 belongs to image package and computes array-wide double mean"},
+    {"url": "https://packages.octave.org/image/", "supports": "Official package metadata, GPL-3.0-or-later, version-specific dependency and checksum listing"}
+  ],
+  "local_tools": {
+    "tar": "C:/Windows/system32/tar.exe",
+    "tar_observed_version": "bsdtar 3.8.9 - libarchive 3.8.9",
+    "seven_zip_on_path_or_standard_directories": false,
+    "gpg_discovered": false,
+    "pgp_signature_verified": false
+  },
+  "space_constraint": {
+    "root_measured_free_bytes_before_download": 4560896000,
+    "required_remaining_reserve_bytes": 1610612736,
+    "exact_expanded_archive_size": null,
+    "action": "List archive and sum expanded regular-file sizes before extracting; report CLI subset plan to root. Do not install or run post-install yet."
+  },
+  "scope": {
+    "real_data_read": false,
+    "model_executed": false,
+    "selection_accessed": false,
+    "holdout_accessed": false,
+    "official_sources_edited": false,
+    "official_oracle_executed": false,
+    "official_AP_equivalence_certified": false,
+    "system_path_modified": false,
+    "registry_modified": false
+  },
+  "risks_and_controls": [
+    "Only release SHA-256 authenticated by official HTTPS metadata is currently available; detached signature is saved but PGP verification is not claimed.",
+    "Official Windows notes discourage non-ASCII paths. If needed use a temporary ASCII SUBST drive pointing into this authorized workspace; never move old sealed sources.",
+    "Bundled image package and mean2 resolution must be checked after extraction. No custom replacement mean2 may be introduced.",
+    "No entire runtime extraction until exact expanded size or selected CLI subset fits with the required free-space reserve.",
+    "Octave compatibility is not MATLAB identity; synthetic native results only become an oracle reference, not AP-equivalence certification or scientific Gate1 acceptance."
+  ]
+}

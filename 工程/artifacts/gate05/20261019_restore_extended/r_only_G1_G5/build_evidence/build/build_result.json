@@ -1,0 +1,91 @@
+{
+  "configuration": "r_only_G1_G5",
+  "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+  "requested_precision_constraints_mode": "prefer",
+  "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+  "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+  "diagnostic_only": true,
+  "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "primary_output_name": "output0",
+  "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+  "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+  "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+  "engine_bytes": 7755174,
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "engine_layers": 274,
+  "status": "BUILT_AND_DESERIALIZED",
+  "elapsed_seconds": 4060.405392928,
+  "actual_precision_audit": "PENDING",
+  "single_image_inference": "NOT_RUN",
+  "dataset_evaluation": "NOT_RUN"
+}

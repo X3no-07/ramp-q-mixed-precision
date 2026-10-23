@@ -1,0 +1,375 @@
+{
+  "schema": "rampq.gate05.saved_prediction_matrix/v1",
+  "contract_sha256": "759506e78383fa262c3cb74735c24c57844d706fdb95bf95bce168d9b143f500",
+  "dataset_manifest_sha256": "c4dac80ad7c59524194a9501f5ff8126cc0517e84f29f4106068c0c4b27a93aa",
+  "streams": [
+    {
+      "configuration": "fp16_control",
+      "backend": "native",
+      "file": "postprocessed_detections/native_fp16_control.jsonl",
+      "sha256": "b19fc81a300e400b81377a154a1e98f13b027fcf0bea0ef04620eebd91711a3f",
+      "graph_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+      "engine_sha256": "20e879a8a2134989927819bf23ee3e8b9978bf7d66899c26c741d124ea67efb0",
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "q_all",
+      "backend": "native",
+      "file": "postprocessed_detections/native_q_all.jsonl",
+      "sha256": "704408d22fa58c1b58c0b89634ff0bb49f0a9e6350ded5d145e798809b46ab7e",
+      "graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+      "engine_sha256": "c3d9e75d61452c69b97097d1320221d5d56d7ad0e2fc1370480cf3e09eb3a41e",
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "r_only_G1",
+      "backend": "native",
+      "file": "postprocessed_detections/native_r_only_G1.jsonl",
+      "sha256": "b6a1c493d3509b7adaa323e14940ef4a30ed6086a8f8cd0c7cf0b38dde610bb1",
+      "graph_sha256": "2aade19ee4d42501f7ba7a2956ea91ebcffec7934e1a21c58d02741a2d92926a",
+      "engine_sha256": "7a5a04ec5243e52ec20a1f34802bce3a785cdcaa71b2569e0a47c4b91b57c357",
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "backend": "native",
+      "file": "postprocessed_detections/native_r_only_G1_G5.jsonl",
+      "sha256": "cc1c94bdfe3742249bf491eb1ab1b54dde6662823644d753830f4de92b4d1043",
+      "graph_sha256": "6ffd47b3e22838791dd33e6124c4871640cb52e6687a47a1ded201e128c28cec",
+      "engine_sha256": "2f240d1debc2f875c9aa5998ebca9c59b3d89e357939360123bc57b4382de811",
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "backend": "native",
+      "file": "postprocessed_detections/native_r_only_G1_G2.jsonl",
+      "sha256": "ab497fba07e9ee5b9598a72f490378a52e7a5efae6bc84e3c5f590e3f19e9f90",
+      "graph_sha256": "193c913150fb22b01174b8cf95d4b8443f14937099942890c7488b4414431d79",
+      "engine_sha256": "5d09f7a132abad2b1108a82c3410bad660a77a4c95ea2e7e96a21eabde65846b",
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "q_only_G1",
+      "backend": "native",
+      "file": "postprocessed_detections/native_q_only_G1.jsonl",
+      "sha256": "8dc5416a52e9af2ed1200ddc24c3073bc6217af1453fa19d825dcfe254c3be6c",
+      "graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+      "engine_sha256": "486845ca9bcc71e9ad6b721329855a1444184e721d64bcb7eb7daae593bd1476",
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "fp16_control",
+      "backend": "ort",
+      "file": "postprocessed_detections/ort_fp16_control.jsonl",
+      "sha256": "26bcbe37a8f9d9187901a1c34af67fb4ee4bebbab33680c323c46a77a22a0b86",
+      "graph_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+      "engine_sha256": null,
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "q_all",
+      "backend": "ort",
+      "file": "postprocessed_detections/ort_q_all.jsonl",
+      "sha256": "3795b108fb15cc96a87639d2e4adcb4662a11e7d8042b2734ec9999138736b7d",
+      "graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+      "engine_sha256": null,
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "r_only_G1",
+      "backend": "ort",
+      "file": "postprocessed_detections/ort_r_only_G1.jsonl",
+      "sha256": "6970fce998da458a86482580d71dbaffba730194edcf86fdf59ca6e7c56eec93",
+      "graph_sha256": "2aade19ee4d42501f7ba7a2956ea91ebcffec7934e1a21c58d02741a2d92926a",
+      "engine_sha256": null,
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "backend": "ort",
+      "file": "postprocessed_detections/ort_r_only_G1_G5.jsonl",
+      "sha256": "78926970dff9853f46bbbf6eb31e8bcbdc3233164856658738ef8d0687518130",
+      "graph_sha256": "6ffd47b3e22838791dd33e6124c4871640cb52e6687a47a1ded201e128c28cec",
+      "engine_sha256": null,
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "backend": "ort",
+      "file": "postprocessed_detections/ort_r_only_G1_G2.jsonl",
+      "sha256": "42c3a5acdd2cb3af04fa33be9f918d34fdb0793e8c74883dd47695af0bd92326",
+      "graph_sha256": "193c913150fb22b01174b8cf95d4b8443f14937099942890c7488b4414431d79",
+      "engine_sha256": null,
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    },
+    {
+      "configuration": "q_only_G1",
+      "backend": "ort",
+      "file": "postprocessed_detections/ort_q_only_G1.jsonl",
+      "sha256": "ee4f8e65709d206841f650f24bced214c7228d406f09a88ff2e0636dceef86a0",
+      "graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+      "engine_sha256": null,
+      "postprocess_settings": {
+        "candidate_confidence": 0.001,
+        "nms_iou": 0.7,
+        "max_det": 1000,
+        "nc": 10,
+        "max_time_img": 2.0,
+        "agnostic": false,
+        "multi_label": false
+      },
+      "postprocess_identity": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      }
+    }
+  ],
+  "engineering_evidence": {
+    "file": "engineering_eligibility.json",
+    "sha256": "c459e9e3fa23304aac73036ef52dcccf92ff80963f7a0ec36dc4ef090051181c"
+  },
+  "source_raw_index_sha256": "4cb84e7c01f2a61b0e070a7c00b11e7e86a2701d19b51fe99635a34705e0d85b",
+  "NMS_calls": 1800,
+  "model_inference_calls": 0,
+  "target_matching_or_scoring_run": false
+}

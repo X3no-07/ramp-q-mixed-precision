@@ -1,0 +1,80 @@
+{
+  "schema": "rampq.gate05.profile_runner_identity/v1",
+  "runner": {
+    "pid": 49980,
+    "state": "R",
+    "ppid": 49970,
+    "pgid": 49980,
+    "sid": 49980,
+    "start_ticks": 18734602,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/jetson_matched_fixed_input_adapter.py",
+      "--work-root",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021",
+      "--protocol",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/protocol.json",
+      "--protocol-sha256",
+      "919f1e5d5b6c782ae1053e214179a54266a7633287239e59df8717b08aea1884",
+      "--engine-sha256",
+      "7a5a04ec5243e52ec20a1f34802bce3a785cdcaa71b2569e0a47c4b91b57c357",
+      "--audit",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/precision_audit.json",
+      "--audit-sha256",
+      "4a0f6e263dea3c1bb52cac3b7a91542bf40128c441139d16e9e1d7c35324b3e7",
+      "--output",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/fixed_outputs",
+      "--root",
+      "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_r_only_G1_20261021",
+      "--build",
+      "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_r_only_G1_20261021/results/build_20261018T105832_120632Z",
+      "--diagnostic-formats-only"
+    ]
+  },
+  "parent_pid_before_prctl": 49970,
+  "PR_SET_PDEATHSIG": "SIGTERM",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "adapter_sha256": "5651c2b55da5af498637fa73f28e79ac6117c50b01e4f2dc7cd08e502327a1d5",
+  "adapter_path": "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/jetson_matched_fixed_input_adapter.py",
+  "protocol_sha256": "919f1e5d5b6c782ae1053e214179a54266a7633287239e59df8717b08aea1884",
+  "work_root": "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021",
+  "monitor_identity": {
+    "root": "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021",
+    "monitor_pid": 49938,
+    "build_pid": 49943,
+    "max_seconds": 300,
+    "build_script": "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/run_fixed.py",
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0"
+  },
+  "monitor_process_identity": {
+    "pid": 49938,
+    "state": "S",
+    "ppid": 1,
+    "pgid": 49938,
+    "sid": 49938,
+    "start_ticks": 18734439,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/jetson_monitored_build.py",
+      "--root",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021",
+      "--run",
+      "/home/nvidia/rampq/gate05_matched_fixed_stage_20261021/gate05_matched_fixed_r_only_G1_20261021/monitor",
+      "--max-seconds",
+      "300",
+      "--build-script",
+      "run_fixed.py"
+    ]
+  },
+  "monitor_status_stamp": {
+    "sha256": "2864ab6ac3035a96ad768693d2097b6ee0dc283c01e284320baac2f3508681f8",
+    "mtime_ns": 1792328147223533000,
+    "mtime_wall_seconds": 1792328147.223533,
+    "elapsed_seconds": 1.01
+  },
+  "written_before_GPU_import": true,
+  "engine_executions_allowed": 2,
+  "new_CPU_model_executions": 0
+}

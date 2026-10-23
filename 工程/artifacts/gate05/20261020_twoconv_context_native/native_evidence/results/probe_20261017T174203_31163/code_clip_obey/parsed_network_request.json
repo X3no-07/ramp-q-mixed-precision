@@ -1,0 +1,155 @@
+{
+  "status": "TWOCONV_CONTEXT_REQUEST_FROZEN",
+  "case": {
+    "id": "code_clip_obey",
+    "variant": "code_clip",
+    "precision_constraint_flag": "obey",
+    "max_build_seconds": 300,
+    "iterations": 1,
+    "apply_native_clip_attribute_correction": true
+  },
+  "spec_sha256": "e9b48c0319f68e361977d093b25df8ceacb5f1827f8a413e5e7107f751af2a5c",
+  "model_sha256": "5e6dfc0294a97b65810816c1ba80ef679b6d55851b03724be4c8de3e32c6c6fb",
+  "script_sha256": "d5e9ba82c8076ff3bd88e8c981049e740c4186f5964fe415a6a9f9504fa3c978",
+  "runner_script_sha256": "b642c2406a524a5385b896724242224240cfa0d0161262131bba53a6f7e30820",
+  "parent_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+  "clip_attributes": [
+    {
+      "name": "rampq_model_0_conv_Clip",
+      "before": {
+        "alpha": 4.336875381378905e-19,
+        "beta": 1.7796490496925177e-43
+      },
+      "explicit_importer_correction": true,
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "explicit_importer_correction": true,
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_cv1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "explicit_importer_correction": true,
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "allowed_formats": 1
+    },
+    {
+      "name": "rampq_model_2_cv1_conv_a_dq",
+      "input": false,
+      "shape": [
+        1,
+        32,
+        160,
+        160
+      ],
+      "dtype": "DataType.FLOAT",
+      "allowed_formats": 1
+    }
+  ],
+  "flags": {
+    "raw_config_flags": 1027,
+    "get_flag": {
+      "DEBUG": {
+        "supported": true,
+        "enabled": false
+      },
+      "DIRECT_IO": {
+        "supported": true,
+        "enabled": false
+      },
+      "DISABLE_TIMING_CACHE": {
+        "supported": true,
+        "enabled": false
+      },
+      "ENABLE_TACTIC_HEURISTIC": {
+        "supported": true,
+        "enabled": false
+      },
+      "FP16": {
+        "supported": true,
+        "enabled": true
+      },
+      "GPU_FALLBACK": {
+        "supported": true,
+        "enabled": false
+      },
+      "INT8": {
+        "supported": true,
+        "enabled": true
+      },
+      "OBEY_PRECISION_CONSTRAINTS": {
+        "supported": true,
+        "enabled": true
+      },
+      "PREFER_PRECISION_CONSTRAINTS": {
+        "supported": true,
+        "enabled": false
+      },
+      "REFIT": {
+        "supported": true,
+        "enabled": false
+      },
+      "REJECT_EMPTY_ALGORITHMS": {
+        "supported": true,
+        "enabled": false
+      },
+      "SAFETY_SCOPE": {
+        "supported": true,
+        "enabled": false
+      },
+      "SPARSE_WEIGHTS": {
+        "supported": true,
+        "enabled": false
+      },
+      "STRICT_TYPES": {
+        "supported": true,
+        "enabled": false
+      },
+      "TF32": {
+        "supported": true,
+        "enabled": false
+      }
+    }
+  },
+  "workspace_bytes_actual": 1073741824,
+  "avg_timing_iterations_actual": 1,
+  "profiling_verbosity_actual": "ProfilingVerbosity.DETAILED",
+  "no_layer_precision_or_output_type_setters_or_resets": true,
+  "parsed_constraints_before_after_identical": true,
+  "tensorrt": "8.5.2.2",
+  "constraint_comparison_scope": "all layer precision and output type requests; metadata retained separately",
+  "diagnostic_only": true,
+  "dataset_evaluation_run": false,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED"
+}

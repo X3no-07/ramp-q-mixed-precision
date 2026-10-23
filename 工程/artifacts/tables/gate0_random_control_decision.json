@@ -1,0 +1,144 @@
+{
+  "schema": "rampq.gate0.random_control_decision/v1",
+  "status": "COMPLETE",
+  "selection_counts": {
+    "images": 350,
+    "targets": 1920,
+    "fp32_hits": 1571,
+    "all_int8_added_misses": 119
+  },
+  "candidate": {
+    "groups": [
+      "G1",
+      "G5"
+    ],
+    "q_degraded": 117,
+    "q_overlap": 100,
+    "q_outside_all_int8": 17,
+    "rescued": 100,
+    "collateral_misses": 8,
+    "net_rescue": 92,
+    "net_rescue_rate": 0.773109243697479,
+    "stable_retention": 0.9944903581267217,
+    "two_sided": 83,
+    "two_sided_rate": 0.6974789915966386,
+    "input_hashes": {
+      "q_predictions": "1e37b92f3e8933dd06bca31658aa301394bbc6d13ca9deb453b3476c37bf41eb",
+      "r_predictions": "e61e524b6f1840c8c0dc24917f2e6bc438ea3d13001daaa8329e0864a3ee23e9"
+    },
+    "mac_share": 0.22345717016898625
+  },
+  "random_controls": [
+    {
+      "groups": [
+        "G4",
+        "G8"
+      ],
+      "q_degraded": 15,
+      "q_overlap": 13,
+      "q_outside_all_int8": 2,
+      "rescued": 13,
+      "collateral_misses": 15,
+      "net_rescue": -2,
+      "net_rescue_rate": -0.01680672268907563,
+      "stable_retention": 0.9896694214876033,
+      "two_sided": 1,
+      "two_sided_rate": 0.008403361344537815,
+      "input_hashes": {
+        "q_predictions": "acb09bc5b6aee1438f8d0fa1ff9f6f0aab76bbff055fe87ecbe33e3d31ac06b9",
+        "r_predictions": "94bcd24fa28f0136c279c8c58592faf279c68d47b5470ee338383bf974077843"
+      },
+      "order": 1,
+      "mac_share": 0.22541760502908248
+    },
+    {
+      "groups": [
+        "G3",
+        "G8"
+      ],
+      "q_degraded": 15,
+      "q_overlap": 11,
+      "q_outside_all_int8": 4,
+      "rescued": 19,
+      "collateral_misses": 12,
+      "net_rescue": 7,
+      "net_rescue_rate": 0.058823529411764705,
+      "stable_retention": 0.9917355371900827,
+      "two_sided": 2,
+      "two_sided_rate": 0.01680672268907563,
+      "input_hashes": {
+        "q_predictions": "d18c4118e63c31d4ddc9949bfc4607d822b40aadcc2397cead1255c84fab41b0",
+        "r_predictions": "eac3d20a4d1d42bc458840dfdeef8bb76768af97288b350deeeafcffe44afb6c"
+      },
+      "order": 2,
+      "mac_share": 0.21075484843084202
+    },
+    {
+      "groups": [
+        "G2",
+        "G8"
+      ],
+      "q_degraded": 15,
+      "q_overlap": 11,
+      "q_outside_all_int8": 4,
+      "rescued": 17,
+      "collateral_misses": 16,
+      "net_rescue": 1,
+      "net_rescue_rate": 0.008403361344537815,
+      "stable_retention": 0.9889807162534435,
+      "two_sided": 1,
+      "two_sided_rate": 0.008403361344537815,
+      "input_hashes": {
+        "q_predictions": "3490f9b16b33d7f7a2432b94512652564a49f9446c258521759b6089cc396325",
+        "r_predictions": "a8698bc0da7bacd79045685b5e38b38af496179d12b65ee80fb5c10f55d87d71"
+      },
+      "order": 3,
+      "mac_share": 0.21905024221901784
+    }
+  ],
+  "random_aggregate": {
+    "mean_net_rescue": 2.0,
+    "mean_net_rescue_rate": 0.01680672268907563,
+    "mean_two_sided": 1.3333333333333333,
+    "mean_two_sided_rate": 0.011204481792717087
+  },
+  "preregistered_tests": {
+    "primary": {
+      "branch": "positive_random_mean_1.20x",
+      "candidate_net_rescue_rate": 0.773109243697479,
+      "required_net_rescue_rate": 0.020168067226890754,
+      "pass": true
+    },
+    "stable_retention_at_least_0_98": true,
+    "two_sided_rate_at_least_random_mean": true,
+    "net_rescue_rate_beats_at_least_two_controls": true,
+    "controls_beaten": 3
+  },
+  "same_budget_random_control_decision": "PASS",
+  "supervised_accuracy_sensitivity_baseline": {
+    "selected_groups": [
+      "G1",
+      "G5"
+    ],
+    "candidate_collision": true,
+    "decision": "COLLISION_NO_METHOD_SEPARATION"
+  },
+  "label_free_output_baseline": {
+    "selected_groups": [
+      "G1",
+      "G2"
+    ],
+    "candidate_collision": false,
+    "detection_pair_evaluated": false,
+    "decision": "PENDING_Q_R_EVALUATION"
+  },
+  "overall_novelty_gate": "PARTIAL_RANDOM_PASS_BASELINE_PENDING",
+  "next_step": "q_only:G1+G2",
+  "input_hashes": {
+    "baseline_predictions": "93f7a651201f2fdca747a2cfe1852f32bad5dd7cc2f6683c989ebdd258796388",
+    "selection_list": "bc363c1226516b88b2be9fa8c0cde9eebcc51b91a8aeb8db8d97df196dcab018",
+    "control_preregistration": "120026dbff929ecd2f9e95df6c46d1cbcc920ffe5317f0bb02cd223199b6ce08",
+    "label_free_ranking": "dc6efa07440b7063228661c22a9721419f4437d9bcd20cc894acc07fb24c6f77"
+  },
+  "evidence_boundary": "Random controls pass only on RUOD-R Selection under PyTorch Q/DQ simulated W8A8. The supervised baseline collides with the candidate, and the selected label-free pair still needs q/r detection evaluation."
+}

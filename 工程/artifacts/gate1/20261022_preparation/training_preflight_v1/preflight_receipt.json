@@ -1,0 +1,741 @@
+{
+  "schema": "rampq.gate1.training_preflight/v1",
+  "runner_sha256": "053a33a4249c3cad7d85115c55f700a0f3a8fa097f62eb164dae6cd776b44e49",
+  "status": "PASS_ENGINEERING_TRAINING_PREFLIGHT_ONLY",
+  "started_at_utc": "2026-10-22T00:59:43.286453+00:00",
+  "scope": "One-epoch engineering check; not a final baseline, Selection result, official VisDrone AP, or Holdout result",
+  "prepared_manifest_sha256": "e657bc24d4cdf16b868bf91111647a933bec95d90385b7fc8ceab483020f8048",
+  "prepared_manifest_rows": 7019,
+  "verified_source_roles_and_hashes": [
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000046_00000_d_0000087.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000046_00000_d_0000087.txt",
+      "role": "debug",
+      "image_sha256": "f62030e0c90415c0255c4bb5c4cb10338dd588963bece8148f20cd25f03ff326",
+      "label_sha256": "f605ce950ef8e1f29b8cebe1b9caed914fc05d62b0b1e23483ede35725492557"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000046_00720_d_0000088.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000046_00720_d_0000088.txt",
+      "role": "debug",
+      "image_sha256": "d524a8eed79de08650c4fdd9b236a558955a5c1e9e1596ea82a217d1f3e16039",
+      "label_sha256": "a2131d03e1992aa6e6407b1ef39da03d5a60d2f4fc41feb1ab94be98c8cf046e"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000122_01200_d_0000119.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000122_01200_d_0000119.txt",
+      "role": "debug",
+      "image_sha256": "248aec06b3f0b274eb189d0f1264c57c81b5973f5711d89f25e2beb54fa0361e",
+      "label_sha256": "8a201047205a5831e40f696c0ddaee0909ffaf22e22657f197e8427629cb0970"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_00058_d_0000023.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_00058_d_0000023.txt",
+      "role": "debug",
+      "image_sha256": "81d3f9b5c5e07d3044d7dd7153be24d9d01c557e5aecbb6cefb094435e8609e2",
+      "label_sha256": "6391214e43ef3a4d0a05c51792c5015c74868d279039b849252e79614c91eb26"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_00258_d_0000024.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_00258_d_0000024.txt",
+      "role": "debug",
+      "image_sha256": "945977c4215e3f47e958821202f9155561a99d22d1bd2fe94037e7b29435107e",
+      "label_sha256": "f08a43cb8577786fd6dab79d247f9feb127e62564948b27e63ccf2b37f9376c8"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_00458_d_0000025.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_00458_d_0000025.txt",
+      "role": "debug",
+      "image_sha256": "c51be692d5ac688347de508cf42373a42893bc2ac605118be4ed59a726188a4e",
+      "label_sha256": "83e40c69c1e5c2e65789dd1af33662051ef5e68aa37d37ccb549b1d5cfcd5b77"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_00858_d_0000027.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_00858_d_0000027.txt",
+      "role": "debug",
+      "image_sha256": "1c5c788a774751dda0603e8fae1c16b545872950c855fada67ec59f414a42964",
+      "label_sha256": "51b4d388c4b33b137431084b48956a9a767d786e57d24f82b78f3b1f3029e4b1"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_01058_d_0000028.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_01058_d_0000028.txt",
+      "role": "debug",
+      "image_sha256": "22ff65e2af6e743dd70227511ab151fa357a7b7294fc65570750256125a8a548",
+      "label_sha256": "35c3eb0c5a482c12e5c2c5a9321f021cd6a7ab16720df827ec24b2e400038ee7"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_01258_d_0000029.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_01258_d_0000029.txt",
+      "role": "debug",
+      "image_sha256": "8dd29d4967ef1245f584de3c008d36e4f29bbee5f8eb50ac51ee7e19c848ba10",
+      "label_sha256": "6699f968a77713d4e1cdae7d9c8da9d94ae45f08f01ada83fe26f77cc2e97ce8"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_01458_d_0000030.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_01458_d_0000030.txt",
+      "role": "debug",
+      "image_sha256": "abdab3da9787d2497eb984d6dd2ceb58830bcfa3a1bc609e8c3f1ddb52250dca",
+      "label_sha256": "d607a94541bf420249223a2c25d8b36c51a615802a90cb5f3937f09a1b9c18bb"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_01658_d_0000031.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_01658_d_0000031.txt",
+      "role": "debug",
+      "image_sha256": "1682df1bebe8cdf4c67bfd1154c5372b9975b75b3611009a4d3c90263b760048",
+      "label_sha256": "b1ae0c3ef7279d0542850f3583a38554a459563347e9a1c33478bae9dcdd3a7b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_02058_d_0000033.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_02058_d_0000033.txt",
+      "role": "debug",
+      "image_sha256": "379ef57f06b6146e83ba1deff92116b9a9f8c577a4c2bf312c33ef4061831396",
+      "label_sha256": "ea905e9d6ff957e154038d979015940992875dfe97a56c24367e0b5f1c2eddbf"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_02258_d_0000034.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_02258_d_0000034.txt",
+      "role": "debug",
+      "image_sha256": "a9a7d83e1b20f970e059d49ba5c260a394b7e5af69243fcd61ff38eb732ac856",
+      "label_sha256": "4d493cbbc573be5392d89d0411afdcf6f6c6d44017b8506c829d6d11ef84176c"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_02458_d_0000035.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_02458_d_0000035.txt",
+      "role": "debug",
+      "image_sha256": "aff7cdca56f3c896233e9c775ac659c8f808af60ff73dd2a93a0643d147f6c2a",
+      "label_sha256": "fcbdec187fb0a9a4b33de01d7f80e7b717bed5384f1e82803d0bb33781f4e550"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_02658_d_0000036.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_02658_d_0000036.txt",
+      "role": "debug",
+      "image_sha256": "d0d5208e7ca59404fefa4f60db183dd6a253f09310f0b4a6b414c75feb961206",
+      "label_sha256": "d551456cf740a2a47b1be0b7b7949c19678fc130bdf6c428b0ad85ff167ec953"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_02858_d_0000037.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_02858_d_0000037.txt",
+      "role": "debug",
+      "image_sha256": "8cbdc3f12bf77aa4052f312d0502759fcd6f67207b8fd5dff4299dad06583cb9",
+      "label_sha256": "6253889f16b0b7f5da5c6f05e0ef6395bc7ae12357da260e16ca7c25a3fefbb6"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_03058_d_0000038.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_03058_d_0000038.txt",
+      "role": "debug",
+      "image_sha256": "77f2a45677cd83dbcc8e04002e73ce16e6328747efb2ae81a8bfa494dc344df7",
+      "label_sha256": "a54b725e5d2ec162d366c4e55c5ab81b3f5da3e4a8008021f2e48ac794948d4b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_03458_d_0000040.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_03458_d_0000040.txt",
+      "role": "debug",
+      "image_sha256": "b274ace0b2a441a14a63b5963e0c0da755f710c8e9051e256faa71805ea34851",
+      "label_sha256": "37a309de8134c21618533a5ab008885610205bd9b4b6189fbf193bb389e48a37"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_03658_d_0000041.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_03658_d_0000041.txt",
+      "role": "debug",
+      "image_sha256": "cde13dd5a3a0f60da29ec3b0e218a136bfd52e64489f3ec53175ef4484850873",
+      "label_sha256": "8872bd45e17328f6e6d73cf6aa94915068e71fff9e03b1eb55264e6c1a442a43"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_04058_d_0000043.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_04058_d_0000043.txt",
+      "role": "debug",
+      "image_sha256": "2bc33fac4b2152935896aa5121ea7906ad4285a15a8a346f277cd3bde6ef158b",
+      "label_sha256": "3ff1b943b58a97fabd8badb0201bc61b35e433d5415ebd31608f06a8a32f9edc"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_04458_d_0000045.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_04458_d_0000045.txt",
+      "role": "debug",
+      "image_sha256": "0fa091bf5d162a60580681be25c04985b4ef6da21c5609344bdb3fcb8bfce82d",
+      "label_sha256": "42ab91341e81bc710c1ee5ce10a227f42bd9e853013202ca57df6d4b886085ba"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_04658_d_0000046.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_04658_d_0000046.txt",
+      "role": "debug",
+      "image_sha256": "04716b20337dd206bae44811a97bb2e95fbce0a0d3d43711d411dabec7c30895",
+      "label_sha256": "31fa3cce3ba90997e7313c53f3a1654196acd8c2677fe8cda76694b35afacc4c"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000142_04858_d_0000047.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000142_04858_d_0000047.txt",
+      "role": "debug",
+      "image_sha256": "629102dbece9e3041df891d0bce05327ee67b45f449818fe00a278dbd8ef506d",
+      "label_sha256": "35c106dd1fdb5a3466b6f181a799afba1b641f0e80c2e3db74f3c719802d8d41"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000170_00001_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000170_00001_d_0000001.txt",
+      "role": "debug",
+      "image_sha256": "2320b2ca1a65aa16c985419e1c8c059cdc8de6c9c189f4b8b0335db78cfbd459",
+      "label_sha256": "d8d99f2000c20038b575e1aeed2cfedd18fd324c866c670687d2e4ec0e71960b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000170_00401_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000170_00401_d_0000001.txt",
+      "role": "debug",
+      "image_sha256": "8eeaa75b3ef6cbe410d6c4544173baef3308c03c4f4e7d7ea6a16cc0c2373fbb",
+      "label_sha256": "83fa42ae737c5744dd5d3d10f81e13ef5cd8483ecba898db94220b5eb477b2be"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000170_00801_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000170_00801_d_0000001.txt",
+      "role": "debug",
+      "image_sha256": "3d2babcc2869b00a3940b452117a74d6900fcfa60b8b6be9288a3c7af9b91021",
+      "label_sha256": "d61f0a6573ebf69756c2d961f5445c28816168ab653e95f712690e3846fee179"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000170_01201_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000170_01201_d_0000001.txt",
+      "role": "debug",
+      "image_sha256": "e1d15ac4258fafd2126854b54f036f390589aa4957e5d2b0349a8d3ff9d19e06",
+      "label_sha256": "ccb7f463cf2fb46b13bae3ff166fdf5c905de57024a1c82ea763ae88f87e7ea6"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000238_00018_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000238_00018_d_0000001.txt",
+      "role": "debug",
+      "image_sha256": "f208adb083ce0251d519194d9da8d8563e8e626f2a383255057d032b39da56df",
+      "label_sha256": "1537335e8aee842abebd2c20d7a29093dbd1e19c03515a514d52b3d6e4ba47b5"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000001.txt",
+      "role": "debug",
+      "image_sha256": "8693c22c519da9ded35ac5939367bf6731375b9f105a236e1df859d025cada1e",
+      "label_sha256": "1da93f8fee53e022eec3443a9b8cce224c0ab6f084d51d6eb302e555e9818f75"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000002.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000002.txt",
+      "role": "debug",
+      "image_sha256": "d9972b87598f7242aeb510452d858fc816c142b4ab16f9d31b3c77cea9de0f6d",
+      "label_sha256": "32ade7414e387a9fc3589975fc962698238dbb3893fbaa2275dcdff7aa809d10"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000003.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000003.txt",
+      "role": "debug",
+      "image_sha256": "8926b567a1ff5341d9ef594dc6f9c9b9c5f9862ac2d6ed835699524208885c3a",
+      "label_sha256": "b4d8e658eb802c1f37772e7ba4e169f50b3c3fde8b63bf18d47e7f68f2140b06"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000004.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000004.txt",
+      "role": "debug",
+      "image_sha256": "37fa6d87fbf40bc25282dbfdd5d342218c924c3783e1ec2e1926bb68968b41fd",
+      "label_sha256": "0a40050e08f37c69bb59eab09fad98234f51da109a9f6c038742df740983b95d"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000005.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000005.txt",
+      "role": "debug",
+      "image_sha256": "00e93bab60e5a2d05fd05d52788b870fa47468926c7869ea2b9ae12e4854cc1f",
+      "label_sha256": "813850fc778ab104d426bc5694faef743a228c48ae3bb594068b32e8e53a11d4"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000006.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000006.txt",
+      "role": "debug",
+      "image_sha256": "7db28535722aa8e53061630ebae00e60c1d8d730b814e574ea77dc7e4de45845",
+      "label_sha256": "9bd287484540ba3daf3a1e40a3fbbb6efe9434868854b8ec8c985ebb0b3e3ef2"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000007.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000007.txt",
+      "role": "debug",
+      "image_sha256": "963fd7015a2ab6892819a82c322f5e22f3877de61cbde2793c63f510fb6d7101",
+      "label_sha256": "26ea4626db86d5fae2c9377d32b0de9bada704ba5a87624185eec7fe16707bd5"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000008.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000008.txt",
+      "role": "debug",
+      "image_sha256": "9f3d7cedd1b7cb0deb8735e575a3623844e170e2daf294ce2f408733b07b94ce",
+      "label_sha256": "276f49fd36b00e45d4cbce53b2de9616f3f2b284a1a9aef0298cec3b2dff9c57"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000009.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000009.txt",
+      "role": "debug",
+      "image_sha256": "3db9074c996bc96b6e6b909d902f398136f12e2f31f5c067a975f1d8a29f7878",
+      "label_sha256": "515a54d0af4d5f7a17b6297c8ed950381e1bc898cdb7ba8548fb2b740b2cb4cc"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000010.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000010.txt",
+      "role": "debug",
+      "image_sha256": "9bfd5324a219b752ab8490ced115d127e076eee999d266fae58c584d758186da",
+      "label_sha256": "7b2d1bc5505e125a1405b9c3c018f11f25d43423a75e1312311298c269559f77"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000011.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000011.txt",
+      "role": "debug",
+      "image_sha256": "f5ae6e2e504b5a9a0639a99b61c31c19532b7a273264d2b321c30d44eb6e6ed0",
+      "label_sha256": "f4498c8992872115dd5cee493daacdf7d7252ed1f444b237bb0cc29dcaf8cc04"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000012.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000012.txt",
+      "role": "debug",
+      "image_sha256": "0bf6c59fb496134a776993a40b0dd14617326855092bec06701f7eb627891084",
+      "label_sha256": "1158e87bab18264bba291f017586ff59d2913084eacfa4cd2773c0d0f1ba18f9"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000013.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000013.txt",
+      "role": "debug",
+      "image_sha256": "716086007f36d266e81b01120fc38bcd1bbda91afe329ae20a0122100f86b3f5",
+      "label_sha256": "3b0a7462b40d67f273313c04bae899f717bcea469c811539305738dd53ad51e4"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000014.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000014.txt",
+      "role": "debug",
+      "image_sha256": "3e20564d5307729d5e31f9c50b368f7dcf1bd764a319b3da106c085f03d5d409",
+      "label_sha256": "662fc931e30ebbd266b3c6200e803980aa5d8f3a0efe55b5cd36570d4a040a8a"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000015.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000015.txt",
+      "role": "debug",
+      "image_sha256": "da6edd8da6b53c4f46b29299efc6a1aaac041b2636d4905eb23dc635a111532c",
+      "label_sha256": "a262ff1d6f41489985d91f836197d7e7d1973467aae457875078748d4f6ae829"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000016.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000016.txt",
+      "role": "debug",
+      "image_sha256": "67c9b3a099c208dcedfa7032a7dca0ac1cf701e82e435609fc9e5b362ce2692a",
+      "label_sha256": "b1d39adc24e059c6437a478d0eeb1376247a6e496a0e8781d41239d7d5fd578e"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000017.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000017.txt",
+      "role": "debug",
+      "image_sha256": "9e4a62f699b2602b2a5b99bcb77b5c77df698dfd94ba2ddb4e7dbd68dd7de0fe",
+      "label_sha256": "386889cdd5902f1cff0dc23920f8189b32d0c50c9a520e2002bb54d68e973a73"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000018.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000018.txt",
+      "role": "debug",
+      "image_sha256": "c83874b4528768ec367542ec4c6e42addf98f0fe6c954a103b639422c2a46aee",
+      "label_sha256": "48c4799ef8a43b96994eff7bb9c041bd66c0dcb51df5f201ebc2b6d14c95357d"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000019.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000019.txt",
+      "role": "debug",
+      "image_sha256": "e292f43880b2f8d9ce02f0cd7c2c86cfe34ae3464fb5f62e0a6d2420ec30e30d",
+      "label_sha256": "95be4873b8fc55ad47dbc622377f7bd2cf6ee2531282f25e81d50c168734034c"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000020.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000020.txt",
+      "role": "debug",
+      "image_sha256": "bae2ac362766c8eb214d967e48d4c9f0b376247b31ce24275be5247bb0f4cbf6",
+      "label_sha256": "c833870b76750e65ba4c8bbe8133d491172ab47e3f2bfbb94b433a0d75cce8d6"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000021.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000021.txt",
+      "role": "debug",
+      "image_sha256": "82b7a2abfbfbb7c7135d6c0e5895efda0ab68b69bc0af9342cfb0ae632252681",
+      "label_sha256": "2392b855de5df6ae3db8d0cc94a1959b9e8a9f9c51feb249280fd566aa7e0463"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000022.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000022.txt",
+      "role": "debug",
+      "image_sha256": "08f9aa45aeee677a5a1435d6f69989fa68e21a18dbf0451e41d65c8e7b5b1a66",
+      "label_sha256": "270169600f03fac6d5934e7f17860a7bb56498585ee37d9ad77074d1c8797676"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000023.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000023.txt",
+      "role": "debug",
+      "image_sha256": "28cc2cb7a25b953723d226d01ac0555615342e4fafba3e5e8cde96e9a93be67f",
+      "label_sha256": "3233e23b0460854462226fca2528a4a2b6c3d683578e92b4ab82f2689bfabf74"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000024.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000024.txt",
+      "role": "debug",
+      "image_sha256": "df8489ab5005fe82eead7103f03890cdbee44193fde47db2737d6fb20f742458",
+      "label_sha256": "0076b734e99a2df5371f8578ac9a4251f17d0437a3128962853261e518741e16"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000025.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000025.txt",
+      "role": "debug",
+      "image_sha256": "1da506b30517505f214b11de28140eb78a0a7c05c021782d86ed5d066d34015c",
+      "label_sha256": "275abd4f0deb1e2342b96cef72da54075c62a99373365a40ad1de969ea683ba4"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000026.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000026.txt",
+      "role": "debug",
+      "image_sha256": "6eab89c15b8fd6ade0582b79a9e75ed5fd67b2131347b35726491fdee0365cb2",
+      "label_sha256": "6284845798c037e707f8a1d75e8f3aa48f94e888774230f01fbab0ba567a6397"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000027.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000027.txt",
+      "role": "debug",
+      "image_sha256": "9507975016650ea1c292158fbb969335a759740254baeeabc0df260fc97d0978",
+      "label_sha256": "c27d27af0b5b904d91575392a0ea4b538ed00ae45ea420280d29a4079bc8f3a0"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000028.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000028.txt",
+      "role": "debug",
+      "image_sha256": "f58c817c5dfee554e23802db74bc1b4baded2f225a3d23ac7f8bff68a874b489",
+      "label_sha256": "9e531ebc0ca1d6d17865a644cc48d397e5812582274747e5e745904bb2190ec4"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000029.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000029.txt",
+      "role": "debug",
+      "image_sha256": "753c8f2d0761b27ef3dc4dad223fa1604f4ba7c5e1f8a2fa5dfc0ee7c94e5424",
+      "label_sha256": "a0e2f0005f8efa24d5f561c3c157991b1fa0f538456b077ba57905793796eb24"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000030.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000030.txt",
+      "role": "debug",
+      "image_sha256": "a49a8c2c21c2d2cf89e418d8ac3c6e6405f06c1bdf7d087bda754ab02a19a345",
+      "label_sha256": "9c1652433963caacc16c77420bcb2a54993e1e6a7066176a816e7d9e31cda7bd"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000031.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000031.txt",
+      "role": "debug",
+      "image_sha256": "df33a01195a97516cf3a93f4dd69fce339fd83d167559d3d4a22634ba9ac076a",
+      "label_sha256": "026e0d82edfedbe95abcef34cc487479f54d2bd2ea8dfc990e9d1d793ab78906"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000032.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000032.txt",
+      "role": "debug",
+      "image_sha256": "c05b126b9044b0b23f1a620653ae7583adba7e335fd8cc0c542e4f4c29c8c174",
+      "label_sha256": "0f3ede746f32391661181bfa6763b1b1dca1ed2a6942c11f3167dc44a84e077b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000033.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000033.txt",
+      "role": "debug",
+      "image_sha256": "d63461c6cc1752dd3cfabd220f51317f19637b1b894a250f26e382a2132c3df4",
+      "label_sha256": "dbcbb7fa974cf56a0f872c0aa7376cc092e57f0dfea84a4de3943e812725361b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000034.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000034.txt",
+      "role": "debug",
+      "image_sha256": "5c89030bb93f838ebd38a20a63fd00c16e49c5ad2ed3d138054aeaf92965d9ac",
+      "label_sha256": "54e491d0548431adc4f4cd521d59e6ede4c6c1aff5e6b1f1f9c2d9395798cf46"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000035.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000035.txt",
+      "role": "debug",
+      "image_sha256": "d47776248c7bcf3ec0dd0cde1d0cffc8493bb7d079026408eeb017ccb173ef17",
+      "label_sha256": "554699809f8dde1b607869c1746141f9e5bcfd334ada3c881ed2107539c3f42b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999990_00000_d_0000036.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999990_00000_d_0000036.txt",
+      "role": "debug",
+      "image_sha256": "ba15d954e303b516b86b92ddecc5f329fd98653c47462f76ad291119156fbdcf",
+      "label_sha256": "bb8278837c53f988a784286b6e9b4da7f3e84bf3fc506c270f62c37f0427c32e"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000016_00420_d_0000068.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000016_00420_d_0000068.txt",
+      "role": "training_val",
+      "image_sha256": "3b1a12c144c0fa6c75a68deae1d0cc2b7db2342ce88209400c2265dc143f7e61",
+      "label_sha256": "621064690703cb55e461fc7f6604773891b3719dc0b271d85a8fd04c9ce32232"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\0000016_01352_d_0000069.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\0000016_01352_d_0000069.txt",
+      "role": "training_val",
+      "image_sha256": "b3804066252ba7958324a3bbdf1f099b576a5510b85889a24d91acce83f4e446",
+      "label_sha256": "4cc648d828b2a63c647e4a8dae201b53cfe159dcaf290ae3b0943b3191922301"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00023_d_0000001.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00023_d_0000001.txt",
+      "role": "training_val",
+      "image_sha256": "7d0dd7c1b6a46eadf4d9af82c36b27b135db71dd8a227e1f28fb42f0a63e8605",
+      "label_sha256": "95b3c400d458e9ff12f9621c94075494c82373d314e232942dc15c3ae2f8f9ba"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00027_d_0000002.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00027_d_0000002.txt",
+      "role": "training_val",
+      "image_sha256": "3a60e0f5f10d536131238caf3ca6a70595cd3a5d26a431513aa0f1583e9106db",
+      "label_sha256": "899c59a6c5afc0d8469467cf6f3e97c7af6a000e1042187be5f561061bf7ca63"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00029_d_0000003.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00029_d_0000003.txt",
+      "role": "training_val",
+      "image_sha256": "842c2a097271e9ac7dce29f1bce1263e8a3aecf48ccafcdd427dc7f904057c50",
+      "label_sha256": "6fda272090fcb1a0354b181984c36b5e397e9852ed3d40d6ec82b043b38cb2e0"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00031_d_0000004.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00031_d_0000004.txt",
+      "role": "training_val",
+      "image_sha256": "1cae5ab6b5edadcf7d0c3e767dee4040f188afe4ca003da7dbdf049b89cdc12e",
+      "label_sha256": "cb608ab7c8022392015256cc63d604fcb244d58cc02e0da2b772586fda1ca0c7"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00033_d_0000005.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00033_d_0000005.txt",
+      "role": "training_val",
+      "image_sha256": "d7b0a24d045eafd46cf1a5e8e500eade3adc0989de4cf21af2038f8c53984c46",
+      "label_sha256": "f443464762a4da35221a42c5b8cee74bf367ab663dc39eeb7d1217b000866593"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00035_d_0000006.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00035_d_0000006.txt",
+      "role": "training_val",
+      "image_sha256": "1d8e8f3e1d72df7f06b795639b40d6c2bb6fdab1cd91d0626fe7eaddcb1b01f6",
+      "label_sha256": "3b2d2424538741be246c8e73f54ca5c4aa9e0ddc3bea6f27f3ffd8221090d9a7"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00037_d_0000007.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00037_d_0000007.txt",
+      "role": "training_val",
+      "image_sha256": "70ec1747accf83a81c6f40c6fa7322ceadabcf02be5f5e35fe1dc884d1d830b3",
+      "label_sha256": "e85c35448ec97e09e574b9b0e248c03e5c16775a83b0a467bb4eba5a830198ae"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00039_d_0000008.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00039_d_0000008.txt",
+      "role": "training_val",
+      "image_sha256": "8fa4bdb01e6a062f84fcfc9e9d904244fb515726c99b4725f943b4af02de7689",
+      "label_sha256": "572501c7f9656bd974ff6a5024ec25cc2e9536557b9358ba42fed7a34fb986ea"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00043_d_0000009.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00043_d_0000009.txt",
+      "role": "training_val",
+      "image_sha256": "d3ba764e8a76ca0210835d0d45d86a610f81122d3988ac5718ba6b2ba98fe86e",
+      "label_sha256": "be7b0b4ea723d50268aa2c16431c857700c2b3e702e8088c45d80ac5fed94b5c"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00047_d_0000010.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00047_d_0000010.txt",
+      "role": "training_val",
+      "image_sha256": "031243f2b68e559d77d504455ea446caf44c85edfc08de17a38f3610746c4b58",
+      "label_sha256": "ae18868b277124dd5824e31e8973ff99765e447fcd7bcae53143b99a5e859d11"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00049_d_0000011.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00049_d_0000011.txt",
+      "role": "training_val",
+      "image_sha256": "d0c5ce3ccff99eac15abb7a3d9ba42c1c91ccf942190519f361ff9f654d520d5",
+      "label_sha256": "bb5f91a189d70db226f5f028d4684df4f7525b62e1a1e738fdfd60bcda773f52"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00051_d_0000012.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00051_d_0000012.txt",
+      "role": "training_val",
+      "image_sha256": "9e6ed761ed2e59493ac82a5cbb350fa5cadc75d610f261e4988ac2b8f5f9b89c",
+      "label_sha256": "12eda5008fac4971f000edfd744052476fedf07938d478ed390f5e99276afcae"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00053_d_0000013.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00053_d_0000013.txt",
+      "role": "training_val",
+      "image_sha256": "725593f6000e75455ea35a92dfa7f5c36093cbbdbd5d4c6ff21f3be9a1f493b7",
+      "label_sha256": "710b77ff7473d01b86372cb5300ef9f9ad3cf6a88e8fa12bd2216c82d80c6188"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00055_d_0000014.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00055_d_0000014.txt",
+      "role": "training_val",
+      "image_sha256": "d4d2339dbb077427bb619d8d00be20e80e077c3930c131dfab4af84dceb4a728",
+      "label_sha256": "2827ee5e412eff3954b5be32194f0c9d9e1a17b0b4c3bcd9385d6674b9946c2b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00057_d_0000015.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00057_d_0000015.txt",
+      "role": "training_val",
+      "image_sha256": "4fecf50a6fe7c9ad4a302053744ce30a6c2cc5e8c00c8f7b00f0a134946286ec",
+      "label_sha256": "d5b23b6b5f2361238b30da5fb3ca3173a695715d79f565979587c8bb03480523"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00059_d_0000016.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00059_d_0000016.txt",
+      "role": "training_val",
+      "image_sha256": "19502ff5e0cb7b890e0ea1ea4b7b290f86b4b58f80a3940c9136490082184763",
+      "label_sha256": "15345ebdb1dc1a63c4af60bd1b4b3ca9eac7ed2ae5c975bb47bcafe58442a1a3"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00061_d_0000017.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00061_d_0000017.txt",
+      "role": "training_val",
+      "image_sha256": "57169ce9203e714408250e6f04787b0bca6429c73de3e450b399be6fb4437b60",
+      "label_sha256": "51303c9a9c4d58dfdc54ec7e0dadae39114eec25f9c31ea722dcd660f69caf1c"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00063_d_0000018.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00063_d_0000018.txt",
+      "role": "training_val",
+      "image_sha256": "d5847c7b719e61a67d12c06f3d57e2834f14d2e68e2db255d11bf284f2244bf4",
+      "label_sha256": "1b92a2a28fe5a8c67a0f56bdd49ba62d730ff188dfeaf6a124997927ab87e89b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00065_d_0000019.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00065_d_0000019.txt",
+      "role": "training_val",
+      "image_sha256": "8ac9c580c52bd2abe051aaef64232ed4220c0b266866e2158b0339fdfa12b5eb",
+      "label_sha256": "1242503832aa02eaea348812c44f2f1f6011fe62b310079ed01c757dd9b0da58"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00067_d_0000020.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00067_d_0000020.txt",
+      "role": "training_val",
+      "image_sha256": "fa9c16a1060ab3f7f487cf9ac181264c9b8805cbc93f8f067dc6dcec87fbcd71",
+      "label_sha256": "86bbe34b3d588f78b3ab1376938912ea06e19006494f857d5841090cbcd515b6"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00069_d_0000021.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00069_d_0000021.txt",
+      "role": "training_val",
+      "image_sha256": "39942bf605ab3e4c5d6770bdf692a0efabc8166c2c2a2fcc629b5c7af3403796",
+      "label_sha256": "5f99895503880eeadd808fe3b68656bb066bf2cf19d2e986ff04c73f6fb60f2c"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00071_d_0000022.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00071_d_0000022.txt",
+      "role": "training_val",
+      "image_sha256": "c28595387ec47720da81e4e4abbe1c682f7f4a8125d8cf10c326caf48f775013",
+      "label_sha256": "3fa60506693addeb2f5de441da2516c7e891943c3ca13941bd1facfa71145d85"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00073_d_0000023.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00073_d_0000023.txt",
+      "role": "training_val",
+      "image_sha256": "44d93ee60de009ffe0fdd3d77fc1399236cd09be275028bb5a3f038ffc99fde5",
+      "label_sha256": "d79b5535837e91eb30b8edbcb70e107090e8d4054c5fc72b3000d903f7406188"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00075_d_0000024.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00075_d_0000024.txt",
+      "role": "training_val",
+      "image_sha256": "5ff1490ea1c6d10b01590e9a760dbbdb23643f46e0a180ddb5a5646444c54794",
+      "label_sha256": "c3e0469b4c9d529a8a13bd8080d1ae912ac6a201b97a1c1abda4d64617a8abfb"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00077_d_0000025.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00077_d_0000025.txt",
+      "role": "training_val",
+      "image_sha256": "6fa30ed8f83a3392f7ca95665f566a8af468824814cc46d42f2a8bf666b991a7",
+      "label_sha256": "0658dd5d84669d89f826f2e7c57ff9c53b05a5588218aa3ee8922d87ad247422"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00079_d_0000026.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00079_d_0000026.txt",
+      "role": "training_val",
+      "image_sha256": "bbf1146de2591ef417057b7db6557cfd2a4cd881bc16b09935306fcc7787b576",
+      "label_sha256": "f1eea630ad8cbb905b4f6eca8805976838f26f81056eec0e3f78dee0000ed504"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00081_d_0000027.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00081_d_0000027.txt",
+      "role": "training_val",
+      "image_sha256": "81210014a4a0b655b65a33ea3c84da545874e70cedadcd44bbc3b694659eb794",
+      "label_sha256": "3729befb9bb49fedc608b01134570b43562dfe5f91484d08b1c2f025200c857b"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00083_d_0000028.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00083_d_0000028.txt",
+      "role": "training_val",
+      "image_sha256": "81c2ff0bb680d70ac28bd2329b78b6cd724a4eaf8e528056b1d7b98f29f32415",
+      "label_sha256": "bcfd655ec08c2b5b6fdc5ef559844561b5dca2d9a07042539f3728265aa89f4e"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00085_d_0000029.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00085_d_0000029.txt",
+      "role": "training_val",
+      "image_sha256": "d5ca9082fcb5deb999b0ee38067ac325a5c169d8ab4435758531b72d96c20d9c",
+      "label_sha256": "ac4076daf85bd34743fc7b4410decade367f1737cea8595f614e821fc518d5e8"
+    },
+    {
+      "image": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\images\\train\\9999999_00087_d_0000030.jpg",
+      "label": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\prepared_v2\\labels\\train\\9999999_00087_d_0000030.txt",
+      "role": "training_val",
+      "image_sha256": "2b05937a52b3b08c8811a0ebd48c50563d47c288944e7c67474720dfe5b4a27f",
+      "label_sha256": "15a6f786ef72438994930670f99ef59112308f2962931caf25d26d36018ff1d5"
+    }
+  ],
+  "preflight_dataset_copy": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\training_preflight_v1\\dataset",
+  "weights_sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+  "training_list_sha256": "914428595c2a3e8cf5119737caf1fd6c697f11b0abe9603e6202b3089dc0eb62",
+  "validation_list_sha256": "9b12cf45eeeebd943d28c6c204bd94de07372e3e5d84ad0be255cb6593969cec",
+  "train_images": 64,
+  "validation_images": 32,
+  "epochs": 1,
+  "amp": false,
+  "batch": 4,
+  "imgsz": 640,
+  "seed": 20261022,
+  "workers": 0,
+  "official_val_or_testdev_access": false,
+  "ignore_policy": "Training labels exclude ignored annotations and retain sidecars. Built-in YOLO validation is ignore-unaware and is an engineering diagnostic only.",
+  "external_automatic_retries": 0,
+  "framework_recovery_policy": "Ultralytics default: first-epoch OOM may reduce batch and retry up to 3 times; framework NaN recovery is also possible. Preserve console and report effective batch; this is not a zero-retry experiment.",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "torch": "2.10.0+cu128",
+  "ultralytics": "8.4.142",
+  "cuda_available": true,
+  "framework_trainer_source_sha256": "4b929f223830328ffed7331508917c6a65eab3408b5628e7c561274cd750e43e",
+  "checkpoint_classes": {
+    "0": "pedestrian",
+    "1": "people",
+    "2": "bicycle",
+    "3": "car",
+    "4": "van",
+    "5": "truck",
+    "6": "tricycle",
+    "7": "awning-tricycle",
+    "8": "bus",
+    "9": "motor"
+  },
+  "trained_source_conv_count": 88,
+  "trained_model_parameters_finite": true,
+  "effective_batch": 4,
+  "save_dir": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\training_preflight_v1\\run",
+  "checkpoints": {
+    "best.pt": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\training_preflight_v1\\run\\weights\\best.pt",
+      "sha256": "19d9abfdbe5fde9ae68512378aeff4d706c59ab7f2b6b597ec8bebbed72355c8",
+      "bytes": 5483281
+    },
+    "last.pt": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\training_preflight_v1\\run\\weights\\last.pt",
+      "sha256": "19d9abfdbe5fde9ae68512378aeff4d706c59ab7f2b6b597ec8bebbed72355c8",
+      "bytes": 5483281
+    }
+  },
+  "diagnostic_metrics": {
+    "metrics/precision(B)": 0.0007716473292203082,
+    "metrics/recall(B)": 0.014579771868628478,
+    "metrics/mAP50(B)": 0.0002325608297848276,
+    "metrics/mAP50-95(B)": 0.00018892638510058986,
+    "fitness": 0.00018892638510058986
+  },
+  "elapsed_seconds": 33.65599999995902,
+  "finished_at_utc": "2026-10-22T01:00:16.931041+00:00"
+}

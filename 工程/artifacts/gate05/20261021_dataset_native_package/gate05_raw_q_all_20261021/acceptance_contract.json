@@ -1,0 +1,811 @@
+{
+  "schema": "rampq.gate05.dataset_acceptance_contract/v1",
+  "client_at": "2026-10-21T17:52:30.991430+08:00",
+  "status": "FROZEN_BEFORE_DATASET_INFERENCE",
+  "author_role": "Root final pre-outcome conditional-deployment adjudication; referenced independent technical checks; previously used holdout is not new independent preregistration.",
+  "model_CPU_native_or_SSH_execution_by_this_draft": false,
+  "original_documents_or_results_modified": false,
+  "overall_gate05_current_status": "INCOMPLETE",
+  "freeze_rule": {
+    "must_freeze_before": "Any new six-configuration 150-image target/output dataset run",
+    "root_must_review_this_draft": true,
+    "all_null_artifact_identities_must_be_bound_or_explicitly_justified_before_execution": true,
+    "separate_manifest_required": "Exact source graph/weights/ranges/module map/build flags/actual precision/float-fusion comparisons and evaluator hashes for all six; runtime arithmetic evidence may be collected in predeclared fixed-input preflight before dataset",
+    "historical_holdout_results_known": true,
+    "outcome_unknown_scope": "New matched native family 150-image target decisions only; this is not fresh independent research preregistration",
+    "no_freeze_timestamp_or_approval_in_this_draft": false,
+    "no_selective_family_or_parameter_revisions_after_dataset_outputs": "Preserve first preregistered outcomes. A separately justified subsequent family is a new diagnostic, cannot replace its result."
+  },
+  "purpose_and_claim": {
+    "question": "On a fixed real Orin deployment family, does a target hit by native FP16 disappear under verified W8A8 q_all and return for the same target under the predeclared G1 FP16 restoration?",
+    "primary_estimand": "Existence of one or more target IDs in (F minus Q) intersect R_G1 on this fixed old Holdout",
+    "primary_group_basis": "Original research route item 9 explicitly names G1; combined G1+G5/G1+G2 are required predeclared secondary summaries, not outcome-selected replacements.",
+    "scope": "Local deployment migration and phenomenon authenticity, conditional on the tested compiler family and original data",
+    "not_claimed": [
+      "robust superiority",
+      "unseen-data generalization",
+      "method novelty",
+      "G1-only causal mechanism",
+      "statistical significance",
+      "positive net benefit from any nonzero rescue",
+      "latency/FPS/power/energy/Pareto advantage",
+      "all-network INT8",
+      "original PyTorch/ORT numeric guard repaired"
+    ],
+    "no_new_effect_size_threshold": "No arbitrary 99-percent agreement, minimum rescue-rate or significance threshold is invented to obtain PASS."
+  },
+  "protected_history": {
+    "original_complete_PyTorch_ORT_guard": "FAILED_UNCHANGED",
+    "protected_preflight_path": "artifacts/gate05/20261018_int8/input_v1/preflight.json",
+    "protected_preflight_sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+    "original_tolerances": {
+      "box_rtol": 0.005,
+      "box_atol": 0.5,
+      "score_rtol": 0.02,
+      "score_atol": 0.002,
+      "changed": false
+    },
+    "failure_explanation_status": "Same-input quantizers and weight codes matched; small Conv floating differences reach activation rounding boundaries and propagate. Saved localization establishes this mechanism at inspected points, not an exhaustive explanation of every downstream difference.",
+    "old_guard_is_not_relabelled": "A new independent full ONNX reference is a distinct deployment/export contract; no old row becomes PASS and no hybrid counterfactual becomes a reference.",
+    "all_prior_build_numeric_and_precision_failures_retained": true,
+    "old_missing_named_integer_tactic_statuses_unchanged": true,
+    "old_single_image_and_slices": "Evidence reusable for provenance/localization only; not new 150-image performance or recovery evidence."
+  },
+  "fixed_data_and_model": {
+    "dataset_manifest_path": "artifacts/gate05/data_v1/manifest.json",
+    "dataset_manifest_sha256": "c4dac80ad7c59524194a9501f5ff8126cc0517e84f29f4106068c0c4b27a93aa",
+    "evaluation_images": 150,
+    "evaluation_targets": 865,
+    "calibration_images": 64,
+    "image_content_overlap": 0,
+    "weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+    "calibration_manifest_sha256": "cdb38549ba9aa78d32a00203de0ab050aeb7ee7f24e006402d32a5a2b616bb20",
+    "canonical_calibration_list_sha256": "02caf7d8888b72a8ac884eb95aeb76ae9c9dd984baf3b1714a379faf2eaa7069",
+    "canonical_holdout_list_sha256": "4061739eb2e3b1812f2daf0b4327a65cf0cb7922eb43b30fc9457db310f976c7",
+    "source_holdout_file_sha256": "f7f4d8dae73a05b91e7974aabce71b263bdb43d1c89d21b2ae0eed6837b4bb40",
+    "order": "Exact manifest.data.evaluation order, all images and all label-file SHA identities; no hard/easy subset selection",
+    "legacy_holdout_scope": "Previously used Gate0 Holdout; diagnostic reuse only, not independent method confirmation",
+    "fixed_smoke_image": "000020.jpg is the original Selection smoke image, not an added 151st Holdout image and not a substitute for the 150-image run",
+    "frozen_calibration_semantics": {
+      "activation": "symmetric per-tensor zero-point0, max(absmax/127,1e-12), narrow codes[-127,127]",
+      "weight": "symmetric per-output-channel axis0 zero-point0, max(per-channel absmax,1e-12)/127",
+      "convolution_output_quantizer_added": false,
+      "recalibration_or_refitting": false
+    },
+    "group_counts": {
+      "G1": 6,
+      "G2": 5,
+      "G3": 10,
+      "G4": 19,
+      "G5": 8,
+      "G6": 15,
+      "G7": 8,
+      "G8": 17
+    },
+    "immutable_across_family": [
+      "trained source weights and biases",
+      "frozen calibration ranges/scales/zero points for the same remaining quantizer",
+      "source Conv identity and G1-G8 assignment",
+      "source nonquantized arithmetic except authenticated export-preserving rewrite",
+      "source image bytes, label bytes and target IDs",
+      "preprocessed RGB FP32 input array bytes per image",
+      "640 input, batch1, bindings and primary-output interpretation",
+      "confidence/NMS/IoU/matching/tie-breaking rules",
+      "common device/runtime/build policy declared before results"
+    ],
+    "forbidden_outcome_adaptation": [
+      "replace images/labels",
+      "select new module combinations",
+      "recalibrate or tune ranges",
+      "alter match/confidence/NMS",
+      "take best of repeated builds or runs",
+      "discard images with no detections or inconvenient targets",
+      "select one reference or precision contract after outcomes"
+    ]
+  },
+  "configurations": [
+    {
+      "name": "fp16_control",
+      "role": "CORE_NATIVE_BASELINE",
+      "quantized_groups": [],
+      "fp16_groups": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G8"
+      ],
+      "expected_int8_source_convs": 0,
+      "expected_fp16_source_convs": 88,
+      "source_graph_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+      "engine_sha256": "20e879a8a2134989927819bf23ee3e8b9978bf7d66899c26c741d124ea67efb0",
+      "build_request_sha256": "1902ad992b1e1f6e3a0f4fa880e60eedb35c2a9f36d9078c1990f1f954e7d0fd",
+      "native_precision_audit_sha256": "2249a7ec0c9feefaeee17d967f83e2b87d852ee8732df8d443777a50c04eb8fd",
+      "float_fusion_comparability_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26",
+      "independent_ORT_reference_graph_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+      "binding_status": "FROZEN_COMPLETE_SELECTED_ENGINE_AND_REFERENCE_IDENTITIES",
+      "actual_build_policy": "NONE_NO_LAYER_SETTERS"
+    },
+    {
+      "name": "q_all",
+      "role": "CORE_DAMAGE_SIDE",
+      "quantized_groups": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G8"
+      ],
+      "fp16_groups": [],
+      "expected_int8_source_convs": 88,
+      "expected_fp16_source_convs": 0,
+      "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+      "engine_sha256": "c3d9e75d61452c69b97097d1320221d5d56d7ad0e2fc1370480cf3e09eb3a41e",
+      "build_request_sha256": "418db74ec178e2a7110cf20039905680c75c0f312209f06874b6b4e62a0c1271",
+      "native_precision_audit_sha256": "52d9f59be4b379817610c1f5d4ef82f73f7aafb23ead8060bfeef59082c9a4a5",
+      "float_fusion_comparability_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26",
+      "independent_ORT_reference_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+      "binding_status": "FROZEN_COMPLETE_SELECTED_ENGINE_AND_REFERENCE_IDENTITIES",
+      "actual_build_policy": "NONE_EXPLICIT_QDQ_NO_LAYER_SETTERS"
+    },
+    {
+      "name": "r_only_G1",
+      "role": "CORE_PRIMARY_RECOVERY",
+      "quantized_groups": [
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G8"
+      ],
+      "fp16_groups": [
+        "G1"
+      ],
+      "expected_int8_source_convs": 82,
+      "expected_fp16_source_convs": 6,
+      "source_graph_sha256": "2aade19ee4d42501f7ba7a2956ea91ebcffec7934e1a21c58d02741a2d92926a",
+      "engine_sha256": "7a5a04ec5243e52ec20a1f34802bce3a785cdcaa71b2569e0a47c4b91b57c357",
+      "build_request_sha256": "7ecd7ee2b7feb4064ad0fcb6bec5b13da4db133d8f64a482762a640d98fbf8a2",
+      "native_precision_audit_sha256": "4a0f6e263dea3c1bb52cac3b7a91542bf40128c441139d16e9e1d7c35324b3e7",
+      "float_fusion_comparability_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26",
+      "independent_ORT_reference_graph_sha256": "2aade19ee4d42501f7ba7a2956ea91ebcffec7934e1a21c58d02741a2d92926a",
+      "binding_status": "FROZEN_COMPLETE_SELECTED_ENGINE_AND_REFERENCE_IDENTITIES",
+      "actual_build_policy": "NONE_NO_LAYER_SETTERS"
+    },
+    {
+      "name": "r_only_G1_G5",
+      "role": "CORE_PREDECLARED_SECONDARY_RECOVERY",
+      "quantized_groups": [
+        "G2",
+        "G3",
+        "G4",
+        "G6",
+        "G7",
+        "G8"
+      ],
+      "fp16_groups": [
+        "G1",
+        "G5"
+      ],
+      "expected_int8_source_convs": 74,
+      "expected_fp16_source_convs": 14,
+      "source_graph_sha256": "6ffd47b3e22838791dd33e6124c4871640cb52e6687a47a1ded201e128c28cec",
+      "engine_sha256": "2f240d1debc2f875c9aa5998ebca9c59b3d89e357939360123bc57b4382de811",
+      "build_request_sha256": "1b211a8f0662031aeb285cf3a0167d0a84816640bc7d128435c2f12d1f9c6b34",
+      "native_precision_audit_sha256": "5da7166f3367b2c3a9a1eb0ffd180b6169c2af0c4f36372df882554017528cfb",
+      "float_fusion_comparability_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26",
+      "independent_ORT_reference_graph_sha256": "6ffd47b3e22838791dd33e6124c4871640cb52e6687a47a1ded201e128c28cec",
+      "binding_status": "FROZEN_COMPLETE_SELECTED_ENGINE_AND_REFERENCE_IDENTITIES",
+      "actual_build_policy": "NONE_NO_LAYER_SETTERS"
+    },
+    {
+      "name": "r_only_G1_G2",
+      "role": "CORE_PREDECLARED_SECONDARY_RECOVERY",
+      "quantized_groups": [
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G8"
+      ],
+      "fp16_groups": [
+        "G1",
+        "G2"
+      ],
+      "expected_int8_source_convs": 77,
+      "expected_fp16_source_convs": 11,
+      "source_graph_sha256": "193c913150fb22b01174b8cf95d4b8443f14937099942890c7488b4414431d79",
+      "engine_sha256": "5d09f7a132abad2b1108a82c3410bad660a77a4c95ea2e7e96a21eabde65846b",
+      "build_request_sha256": "b19cabde95df1ceba0a740682cab628f4e8c546151053229b9823f0c002e65ef",
+      "native_precision_audit_sha256": "e192c13e38431c1649a51db3e2239a2f520631192ea119f13276f28e5b62dee2",
+      "float_fusion_comparability_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26",
+      "independent_ORT_reference_graph_sha256": "193c913150fb22b01174b8cf95d4b8443f14937099942890c7488b4414431d79",
+      "binding_status": "FROZEN_COMPLETE_SELECTED_ENGINE_AND_REFERENCE_IDENTITIES",
+      "actual_build_policy": "NONE_NO_LAYER_SETTERS"
+    },
+    {
+      "name": "q_only_G1",
+      "role": "PREDECLARED_AUXILIARY_WEAK_BIDIRECTIONAL_CONTROL",
+      "quantized_groups": [
+        "G1"
+      ],
+      "fp16_groups": [
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G8"
+      ],
+      "expected_int8_source_convs": 6,
+      "expected_fp16_source_convs": 82,
+      "source_graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+      "engine_sha256": "486845ca9bcc71e9ad6b721329855a1444184e721d64bcb7eb7daae593bd1476",
+      "build_request_sha256": "0f533d7bcb29e6b4dd92eba7edf183cfad25220ebaadb50d1dbb36bbb445b53b",
+      "native_precision_audit_sha256": "63776e092be4a09c0610890dcad6bf1149a645925028f7498fbf6100dcf1d7ff",
+      "float_fusion_comparability_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26",
+      "independent_ORT_reference_graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+      "binding_status": "FROZEN_COMPLETE_SELECTED_ENGINE_AND_REFERENCE_IDENTITIES",
+      "actual_build_policy": "AUX_PREFER_WITH82_FP16_COMPUTE_AND_OUTPUT_REQUESTS"
+    }
+  ],
+  "family_build_and_format_contract": {
+    "recommended_common_policy": "Actual selected primary5 NONE/FP16true/TF32false; INT8false forFP16baseline andtrue forquantized. Auxiliaryqonly exactsameONNX has PREFER+82FP16compute/outputrequests. Complete actual precision checked, all differences disclosed; not identicalflags or purearithmeticcause.",
+    "same_flags_even_if_unused": "Original draft recommendation was not adopted; actual pre-outcome policy is precisely bound to selected identities and root deployment_scope/auxiliaryselection policies.",
+    "code_clip_importer_correction": "For each remaining activation Q->INT8 Clip->DQ, record exact parser before/after alpha,beta and set to -127,+127; source/CPU equivalence and actual request audit required. Do not bypass weight QDQ as W8A8 repair.",
+    "parser_requests": "Preserve intrinsic parsed precision/output requests; no hidden resets or manual per-layer precision/output setters. Record every layer before/after/build and actual get_flag values, not only requested string.",
+    "binding": "Input images FLOAT LINEAR[1,3,640,640], primary output0 FLOAT LINEAR[1,14,8400]; common PE auxiliary declaration if retained must be identical across family and excluded from target inference.",
+    "per_quantized_source_required": [
+      "unique source-to-native weighted operation mapping or verified in-group fusion accounting",
+      "native INT8 activation input provenance and INT8 weight type/count",
+      "correct source group, kernel weights/counts, activation quantizer/ranges",
+      "authenticated integer arithmetic evidence via unchanged named-tactic route or separately labelled new runtime+SASS route"
+    ],
+    "quantized_output_format": "Do not require INT8 Conv output: FP16/FP32 output is permitted and must be recorded exactly under the existing audit rule.",
+    "per_fp16_source_required": "Use existing restored-source audit: trace to original unquantized weight and activation, FP16 weights and actual FP16 convolution input/output formats, source weight-count/fusion checks. If compiler does not realize requested FP16 treatment, the intended configuration is ineligible, not scientific no-recovery.",
+    "all_88_sources_accounted_per_configuration": true,
+    "cross_group_fusion": "Apply original auditor rule; any unassignable mixed-group fusion or missing source identity is an eligibility gap, not omitted from counts.",
+    "builder_success_alone_is_not_precision_or_numeric_pass": true,
+    "input_extraneous_graph_output_or_policy_change": "Requires explicit new identity/comparability review before dataset; not silently interchangeable with historical engines."
+  },
+  "floating_and_fusion_comparability": {
+    "goal": "Make matched treatment claims honest by documenting shared preparation and actual floating computation; same flags/source alone do not prove identical realized arithmetic.",
+    "require_exact_when_applicable": [
+      "source nonquantized node op/attribute/initializer bytes and primary-output indexing",
+      "source weights/bias identities, underlying tensor dimensions and constants",
+      "shared input array bytes and preprocessing transformations",
+      "remaining same quantizer scale/zero-point/axis/bounds",
+      "source Conv group identities and full source coverage",
+      "external bindings/layouts and independent evaluator implementation",
+      "same common builder flags/policy/device/software versions/power-mode request"
+    ],
+    "actual_metadata_required_for_all_six": [
+      "raw detailed inspector layers including LayerType, Name, input/output tensor names/formats/dimensions, weight type/count and any reported compute precision",
+      "source-to-native mapping and all fused source members",
+      "raw tactic names and tactic IDs when supplied; missing names explicitly reported",
+      "nonquantized attention MatMul/Softmax, floating pointwise/activation, decode and shape paths: map relevant source ops to actual realized layers/fusions and record FP16/FP32 differences",
+      "all floating boundaries affected by QDQ insertion/removal, dequantization and output casts"
+    ],
+    "must_match_or_be_bridged": "Final scope follows frozen deployment_scope_interpretation_policy: authenticate unchanged source/ranges, complete weighted precision/fusion mapping and report realized floating differences as conditional deployment effects. Do not claim pureG1 arithmetic control. Original draft strict_float_match analysis remains preserved separately.",
+    "not_reasonable_to_require": [
+      "identical layer count",
+      "identical fused layer names or fusion partitions",
+      "identical tactics for INT8 and FP16 Conv",
+      "identical memory scheduling or summation order",
+      "INT8 Conv output matching FP16 Conv output dtype",
+      "bit-identical native tensors across different quantization treatments"
+    ],
+    "quantization_necessary_changes": "QDQ propagation, boundary reformat/cast, legal quantization-aware fusion and INT8-vs-FP16 weighted kernels can change as part of the deployed treatment. Record and account for these; forcing identical fusion can remove the intervention itself.",
+    "eligibility_labels": {
+      "MATCHED_SOURCE_AND_FLOAT_METADATA_WITH_QUANTIZATION_LINKED_FUSION": "Required for primary authenticity eligibility; shared unrelated float path matched or controlled, remaining documented changes belong to quantization/restoration deployment realization.",
+      "UNCONTROLLED_UNRELATED_FLOAT_PATH_DIFFERENCE": "Not eligible for primary authenticity verdict without a prespecified bridge/control; target counts may be descriptive but primary INCONCLUSIVE.",
+      "MAPPING_OR_FORMAT_UNAVAILABLE": "Engineering INCONCLUSIVE.",
+      "STRONG_G1_ONLY_CAUSAL_IDENTIFICATION": "NOT_ESTABLISHED by this experiment even when the primary existence result passes."
+    },
+    "conditional_interpretation": "A returned target is associated with this audited deployed G1-restoration configuration, including necessary precision/fusion changes. It does not isolate a pure G1 arithmetic effect from every compiler consequence.",
+    "no_post_outcome_control_search": "Any additional bridge is declared from source/metadata before new Holdout outputs. After outcomes, classify the missing control as a limitation; do not search until rescue appears.",
+    "interpretation_policy_sha256": "e3468871a501a77afb81d5a15facf1bda9d706adcadd65c0367e95569d759e46",
+    "auxiliary_selection_policy_sha256": "c3225af0f08c420688a63997d76855c47284e325175594f119c058b7f87414b6",
+    "actual_complete_audit_sha256": "37028ea938457bf7ab1fc88193332dc0f66ad0399e215bcb942677c5d37d8e26"
+  },
+  "independent_reference_contract": {
+    "ORT_role": "Complete standalone exported-graph semantic reference, evaluated from original preprocessed image input for each configuration. Not a replacement PASS for the old PyTorch guard and not native arithmetic ground truth.",
+    "provider_and_policy_to_bind": "CPUExecutionProvider, FLOAT32 input, ORT_DISABLE_ALL, four threads; bind ORT/ONNX versions and graph/hash. These match existing full rewrite diagnostic unless a separately justified common policy is frozen.",
+    "complete_reference_for_six": "One complete corresponding ONNX graph per native configuration; no native intermediate cache, Conv/SiLU injection, shortened DFL fixture, mixed-backend stitched forward or candidate-dependent target selection.",
+    "reuse": "Existing fixed000020 full original/code-Clip byte equality and source/static hash proof may be reused for that exact graph/input. It does not supply 150-image outputs, nor automatically prove every new restoration graph.",
+    "per_config_semantics": "Statically authenticate allowed treatment changes, source weights/bias, frozen scales and group map. Authenticate the rewrite Q+codeClip[-127,127]+DQ versus floatClip+Q+DQ semantics; any sampled existing CPU byte equality remains explicitly input-bounded.",
+    "two_distinct_comparisons": [
+      "original PyTorch FP32/QDQ vs exported ORT: historical simulation/export/backend sensitivity and unchanged failed guard",
+      "independent corresponding full ORT vs native TensorRT: deployed precision/backend/computation differences, raw and target-level descriptive reports"
+    ],
+    "no_numeric_tolerance_relaxation": "No large all-position atol/rtol is introduced to bless CPU/native differences. Original tolerance check, if repeated descriptively, remains labelled with its original threshold and result; this new contract does not assert raw numeric equivalence.",
+    "mandatory_discrepancy_outputs": [
+      "per image/config output shape/dtype/finite counts, raw hashes, coordinate/class-score max/mean/RMS absolute differences and exact mismatch count",
+      "same evaluator native-vs-ORT matched target sets with full gains/losses and marginal IoU/confidence values",
+      "native/ORT no-detection images and score/box ranges without censoring",
+      "FP32 full source export/ORT baseline vs native FP16 matched-target differences reported separately; backend and precision are confounded unless a native FP32 control exists"
+    ],
+    "numeric_validity_rules": {
+      "technical_ineligible": [
+        "nonfinite outputs",
+        "wrong tensor indexing/layout/dtype/shape or box coordinate transform",
+        "unauthenticated source/weight/range or incorrect Clip/importer semantics",
+        "precision/mapping/integer-evidence requirement unproven",
+        "independent full reference missing/corrupt or input provenance mismatch",
+        "proven implementation contract violation or unexplained nonquantized-path mismatch that prevents intended treatment identification"
+      ],
+      "not_automatically_ineligible": [
+        "finite quantized result having fewer detections",
+        "large CPU/native raw disagreement alone",
+        "quantized target not returning",
+        "negative net recovery"
+      ],
+      "interpretation": "Do not turn an unfavorable valid quantized outcome into an engineering exclusion. Conversely, a documented implementation/mapping mismatch cannot be declared scientific failure of recovery or numerical PASS.",
+      "gross_collapse": "Always report full score/box and per-target discrepancy diagnostics. If contract integrity is established and no technical violation is found under the frozen checks, collapse is a valid unfavorable deployed result; if its cause prevents identifying the promised W8A8/FP16 treatment, primary INCONCLUSIVE with exact unresolved evidence. No ad hoc output threshold or error-tolerance increase."
+    },
+    "original_PyTorch_FP32_role": "If same 150-image source-FP32 results exist with exact hashes/settings, reuse and label as historical. Otherwise bind a separate complete source-FP32 reference before execution. Do not mix its hit denominator into native F-minus-Q; no seventh native engine is silently added.",
+    "reference_output_count_recommendation": "Six full ORT graphs x150 images=900 complete reference forwards; exact already authenticated saved outputs may be reused per matching identity. Bind budgets before freeze; no run is triggered by this draft."
+  },
+  "integer_arithmetic_evidence": {
+    "old_branch": "Original named integer tactic regex/proxy audit and its prior missing-seven statuses remain immutable.",
+    "new_branch_label": "RUNTIME_AUTHENTICATED_KERNEL_PLUS_STATIC_SIGNED_INT8_MAC_EVIDENCE",
+    "accept_either_branch_per_actual_quantized_operation": "Original verified integer tactic metadata OR the separately labelled authenticated runtime/SASS chain; do not rewrite old tactic result to named-tactic PASS.",
+    "runtime_SASS_chain_required": [
+      "source Conv mapping to actual weighted layer with INT8 input/weights and correct source/group/weight counts",
+      "NVTX source/operation interval and exact CUDA API/kernel correlation from the same profiled process/run, with attribution not ambiguous under fusion",
+      "device identity and compute capability SM87 for that run",
+      "same-process /proc maps or equivalent loaded CUDA module identity plus exact library/cubin bytes/hash; path existence alone insufficient",
+      "exact mangled launched kernel symbol -> selected SM87 SASS body from that authenticated binary",
+      "signed8 dot/MAC operand provenance and integer accumulation for the weighted operation, distinguishing address IMAD and postprocessing FFMA; actual assembly and dataflow rationale retained"
+    ],
+    "static43_review_use": "Existing four exact libnvinfer SM87 function bodies have IDP.4A.S8.S8 and integer-result conversion chains. This proves those static bodies contain signed integer dot arithmetic, not that the new engine ran them.",
+    "not_required_or_claimed": [
+      "kernel function name containing IMMA",
+      "Tensor Core execution solely from a function name",
+      "per-instruction hardware trace as a blanket requirement",
+      "all GPU instructions integer",
+      "no legitimate FP32 epilogue"
+    ],
+    "branch_ambiguity": "A runtime symbol that cannot be tied to the actual weighted source computation, loaded binary or relevant signed-MAC path stays UNVERIFIED/INCONCLUSIVE; never use unrelated library instruction hits.",
+    "restored_FP16_evidence": "Actual restored-source format/mapping audit; do not demand integer arithmetic for a source intentionally restored to FP16.",
+    "coverage": "Apply to every required quantized source/actual fused weighted operation in each of the five quantized configurations; same authenticated operation/binary body may be reused only with each configuration runtime identity/correlation proved.",
+    "selected_configuration_evidence": {
+      "fp16_control": [],
+      "q_all": [
+        {
+          "file": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261021_qall_none_fixed_native\\independent_runtime_sass_review.json",
+          "sha256": "17bcb6b5f7ffda2b17b86c965288882ef890ca8e8daf216c0358dd3857907d8a",
+          "role": "OWN_RUNTIME_AUTHENTICATED_SM87_SIGNED8_MAC_SUPPLEMENT",
+          "review_role": "Independent agent reader; G1G5/G1G2 executed saved-only by root using identical authenticated reader."
+        }
+      ],
+      "r_only_G1": [
+        {
+          "file": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261021_matched_fixed_native\\r_only_G1\\independent_runtime_sass_review.json",
+          "sha256": "dbd8dbb73d260bc5abd8520d5e96e13eeb38ede4e4d4669bcff9ccb0d6a9ef7e",
+          "role": "OWN_RUNTIME_AUTHENTICATED_SM87_SIGNED8_MAC_SUPPLEMENT",
+          "review_role": "Independent agent reader; G1G5/G1G2 executed saved-only by root using identical authenticated reader."
+        }
+      ],
+      "r_only_G1_G5": [
+        {
+          "file": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261021_matched_fixed_native\\r_only_G1_G5\\runtime_sass_root_review.json",
+          "sha256": "69a3a9687632552d7a43dfe1d12ac8b26aac07cca92514caeaa568b673abbfb4",
+          "role": "OWN_RUNTIME_AUTHENTICATED_SM87_SIGNED8_MAC_SUPPLEMENT",
+          "review_role": "Independent agent reader; G1G5/G1G2 executed saved-only by root using identical authenticated reader."
+        }
+      ],
+      "r_only_G1_G2": [
+        {
+          "file": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261021_matched_fixed_native\\r_only_G1_G2\\runtime_sass_root_review.json",
+          "sha256": "2e3ad724c02f1f318947ebc295686199eccbfc36a432e0fb20d28e73becf1d5f",
+          "role": "OWN_RUNTIME_AUTHENTICATED_SM87_SIGNED8_MAC_SUPPLEMENT",
+          "review_role": "Independent agent reader; G1G5/G1G2 executed saved-only by root using identical authenticated reader."
+        }
+      ],
+      "q_only_G1": []
+    }
+  },
+  "common_input_postprocess_and_matching": {
+    "input": {
+      "batch": 1,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "float32",
+      "color": "RGB",
+      "normalization": "divide255",
+      "order": "NCHW C-contiguous",
+      "preprocess_source": "src/gate0.py:119-141",
+      "letterbox": "cv2.INTER_LINEAR; ratio=min(640/h,640/w); new dimensions=round; pad114; left/top=round(halfpad-0.1), right/bottom=round(halfpad+0.1)",
+      "per_image_input_hash": "One frozen preprocessed tensor reused byte-for-byte for all native and ORT configurations"
+    },
+    "NMS": {
+      "candidate_confidence": 0.001,
+      "iou": 0.7,
+      "max_det": 1000,
+      "classes": 10,
+      "agnostic": false,
+      "multi_label": false,
+      "implementation_and_version_sha256": {
+        "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+        "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+        "device": "cpu",
+        "library_versions": {
+          "torch": "2.10.0+cu128",
+          "torchvision": "0.25.0+cu128",
+          "ultralytics": "8.4.142",
+          "numpy": "2.5.3"
+        },
+        "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+        "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+      },
+      "time_limit_behavior": "Existing max_time_img2.0 semantics must be recorded. Any truncation/time-limit warning yields incomplete image/INCONCLUSIVE, not silently accepted fewer boxes.",
+      "ties": "Freeze candidate order and NMS runtime/device/version; preserve raw output and detection order. Cross-backend NMS tie differences must not be hidden as model differences."
+    },
+    "smoke_threshold_warning": "The original smoke used candidate confidence0.25; the fixed dataset uses original Gate0 diagnostic candidate0.001 followed by primary0.25. They are different scopes, not an adaptive threshold change.",
+    "coordinate_transform": "Subtract exact letterbox left/top, divide by recorded ratio, clip to original image width/height. Match in original pixel coordinates.",
+    "target_id": "image_file_name + colon + original zero-based physical label-line index, as src/gate0.py:238; never renumber by successful match or new annotation parsing",
+    "target_inventory": "All865 target IDs exactly once per configuration; original label bytes and manifest counts. Parse/count inconsistency is engineering incomplete, no target omission.",
+    "match": {
+      "class": "exact same class",
+      "primary_confidence_min": 0.25,
+      "IoU_min": 0.5,
+      "algorithm": "enumerate all eligible GT/detection pairs; tuples(IoU,confidence,gt_index,detection_index); sort reverse=True; greedily assign one detection and one GT once",
+      "decision_precision": "Use unrounded floats; CSV rounding only presentation",
+      "source": "src/gate0.py:424-474"
+    },
+    "no_reassociation": "One fixed target ID defines damage and rescue; a nearby different object or class cannot count as the same target."
+  },
+  "target_sets_and_metrics": {
+    "universe": "T=865 fixed target IDs",
+    "sets": {
+      "F": "native fp16_control hits",
+      "Q": "native q_all hits",
+      "R_G1": "native r_only_G1 hits",
+      "R_G1_G5": "native r_only_G1_G5 hits",
+      "R_G1_G2": "native r_only_G1_G2 hits",
+      "B_G1": "native q_only_G1 hits",
+      "A": "F minus Q; native quantization-associated added misses",
+      "S": "F intersect Q; stable native baseline hits"
+    },
+    "per_recovery_group": {
+      "rescued": "A intersect R_group",
+      "still_missing": "A minus R_group",
+      "collateral": "S minus R_group",
+      "net_count": "|rescued| minus |collateral|",
+      "rescue_rate": "|rescued|/|A| only if |A|>0, otherwise null plus reason",
+      "collateral_rate": "|collateral|/|S| only if |S|>0, otherwise null plus reason",
+      "stable_retention": "|S intersect R_group|/|S| if |S|>0",
+      "outside_F": "R_group minus F reported separately, never pooled into A-rescue"
+    },
+    "auxiliary_G1": {
+      "destruction": "D_G1=F minus B_G1",
+      "dual_overlap": "A intersect D_G1 intersect R_G1",
+      "overlap_count": "number of identical target IDs in dual_overlap",
+      "overlap_rate": "|dual_overlap|/|A| if |A|>0; also report all component denominators and conditional overlaps",
+      "weak_positive": "At least one dual_overlap target with all six eligible: weak same-target bidirectional pattern for this deployed family",
+      "weak_negative": "No dual_overlap on this set: no positive bidirectional pattern here; does not refute G1 causal relevance generally",
+      "not_identified": "Uncontrolled compiler/fusion consequences or G1 correlations prevent pure-G1 causal attribution in either direction; q_only G1 does not test q_only G1+G5."
+    },
+    "mandatory_strata": "Class and existing Gate0 area-ratio/small-object definition only if exact pre-existing thresholds are pinned; otherwise continuous area or predeclared bins as descriptive. No outcome-selected subgroups.",
+    "all_targets_recorded": "Six matched bits, all rescue/collateral/overlap bits, reference matched bits and supporting detection IDs/IoU/confidence, including negatives.",
+    "no_robustness_inference": "One or more recovered targets establishes local existence only; no repeated-random-sample, multiple-seed, independent-confirmation or population effect claim."
+  },
+  "eligibility_and_decision": {
+    "engineering_eligibility_E": "Frozen identity+reference+float/fusion comparability+actual source formats/integer evidence+complete150x6 raw/detection/865x6 target records+saved evidence/cleanup chain all satisfied.",
+    "primary_ordered_rules": [
+      {
+        "priority": 1,
+        "if": "E is false or unknown",
+        "verdict": "INCONCLUSIVE_ENGINEERING_OR_REFERENCE_GAP",
+        "meaning": "Mechanism/existence is not scientifically tested to the promised contract; list exact gap. Cannot claim Gate complete/pass merely because a diagnostic/checkpoint finished."
+      },
+      {
+        "priority": 2,
+        "if": "E true and |F|=0",
+        "verdict": "INCONCLUSIVE_NO_NATIVE_FP16_ELIGIBLE_TARGETS",
+        "meaning": "No usable native baseline hit universe on this data. Report full outcome and investigate; no recovery denominator."
+      },
+      {
+        "priority": 3,
+        "if": "E true and |F|>0 and |A|=0",
+        "verdict": "FAIL_PHENOMENON_NOT_REPRODUCED_NO_ADDED_MISS",
+        "meaning": "Quantization-associated disappearance was not observed on this fixed diagnostic set. Not a claim that quantization cannot cause misses elsewhere."
+      },
+      {
+        "priority": 4,
+        "if": "E true and |A|>0 and |A intersect R_G1|=0",
+        "verdict": "FAIL_PRIMARY_G1_SAME_TARGET_RECOVERY_NOT_REPRODUCED",
+        "meaning": "Primary G1 recovery not observed. Report combined-group recoveries without substituting them for primary success."
+      },
+      {
+        "priority": 5,
+        "if": "E true and |A intersect R_G1|>0",
+        "verdict": "PASS_LOCAL_G1_SAME_TARGET_RECOVERY_EXISTENCE",
+        "meaning": "At least one exact native FP16-hit target disappeared under verified q_all and returned under G1 restoration. This is deliberately narrow existence, not overall accuracy or net benefit."
+      }
+    ],
+    "collateral_does_not_disappear_on_PASS": "Always report collateral/net/retention. A nonzero rescue with negative net is still narrow existence PASS but explicitly NO_NET_RECOVERY_BENEFIT; cannot write beneficial mixed precision or superior deployment.",
+    "combined_groups": "Complete independent tables for G1+G5 and G1+G2 on the same A/S denominators; not outcome-selected winner, no monotonic-rescue assumption.",
+    "auxiliary_status_separate": "q_only_G1 is predeclared and must be completed for this six-config contract. Its dual-overlap result supplements, not redefines, primary existence PASS/FAIL. If only five core configurations are technically complete, report provisional core verdict plus overall contract incomplete; no bidirectional statement.",
+    "completion_vs_success": "A technically valid scientific FAIL can finish the Gate0.5 authenticity investigation with a negative result. It is not permission to enter Gate1 on a positive-mechanism premise. Engineering INCONCLUSIVE is incomplete work, not scientific failure or success.",
+    "preserve_raw_numeric_guard_status": "Every final verdict must also show original_complete_model_guard=FAILED_UNCHANGED and new_reference_role=independent_export_semantics; never collapse these into a single PASS.",
+    "no_unjustified_percent_or_tolerance_added": true,
+    "root_review_policy_decisions": [
+      "Confirm original item9 primary G1 reading, rather than any-of-three winner selection.",
+      "Confirm A=0 is a valid-set nonreproduction FAIL and F=0 is lack-of-baseline INCONCLUSIVE; do not choose after outcomes.",
+      "Confirm negative net can only support narrow existence PASS and never benefit.",
+      "Confirm all six are planned mandatory deliverables while dual-overlap is auxiliary to the core existence verdict."
+    ]
+  },
+  "planned_execution_and_stop_rules": {
+    "native_primary_dataset_forwards": "6 configurations x150 images=900 primary scored image forwards, no execution authorized here. Bind exact batching/order/warmup and process budgets in final execution protocol.",
+    "ordering": "All six configurations and full list order fixed before outputs. Each image uses common input. Record run order and environmental state; no best-run choice.",
+    "repeat_policy": "No best-of-N or output-driven rerun. Any prespecified repeat check has its own explicit budget and all outputs preserved; cannot substitute a more favorable copy.",
+    "stop_on_technical_issue": [
+      "missing/corrupt image/label/input/engine identity",
+      "nonfinite or wrong output schema",
+      "CUDA/driver/kernel/resource monitor failure",
+      "unexpected source precision/mapping or library identity",
+      "NMS timeout/truncated record inventory"
+    ],
+    "scientific_unfavorable_is_not_stop": "Zero detections, no added misses, no rescue or collateral loss do not trigger tuning or alternative image/module selection.",
+    "interruption": "Preserve partial raw/receipt and exact progress; final verdict remains INCONCLUSIVE until a separately authenticated continuation completes the original inventory without changing engines/criteria. Do not silently rerun failed build or overwrite outputs.",
+    "environment": "Same Orin/software/power-mode request, fan active, boot/process IDs, memory/temperature logging, private process monitor/guard and cleanup. Preserve board clock discrepancy and nonprivileged EMC query warning.",
+    "no_performance_claim": "Timing during guarded diagnostics is operational only; Gate2 latency/energy measurement is separate."
+  },
+  "required_reviewable_outputs": [
+    "Frozen acceptance contract and execution protocol hash before new150-image outputs",
+    "Six-configuration artifact/engine/source/actual-format/floating-comparability eligibility matrix with all88 source identities",
+    "Independent complete full-ORT reference provenance and raw outputs for the exact common inputs",
+    "Authentic runtime SASS/tactic arithmetic branch evidence and exact dependency identities",
+    "Native raw outputs/detections/transforms per image/config; all reference and source FP32 comparison results with limitations",
+    "One master target CSV, 865rows with six native hit columns plus reference fields; optionally long form5190rows, both derive the same fixed IDs",
+    "Per-config/per-group added-miss/rescue/collateral/net/retention/weak-dual sets with denominators, including empty sets",
+    "A deterministic full case index; if visual cases displayed, include every recovered/collateral target or fixed target-ID ordering rather than favorable selection",
+    "Exact saved receipt/archive hashes, process completion/cleanup and independent saved-data audit",
+    "Final report with separate engineering eligibility, scientific verdict, old guard status, numeric discrepancies and narrow claim limits"
+  ],
+  "unbound_prerequisites_before_freeze": [],
+  "sources": {
+    "original_gate_remaining": {
+      "path": "23_Gate05_Orin_FP16首轮检查.md",
+      "sha256": "493de8ce3100fa1e8ad2eba283f356b84018e726d48593317204a9a8155cd7d7",
+      "line_start": 78,
+      "line_end": 89,
+      "excerpt": "## 尚未完成的 Gate 0.5 工作\n\n当前仅完成首个精度配置的构建、精度核查和单图执行。64 张原校准图片、150 张原 Holdout 图片及 865 个目标已准备在 `artifacts/gate05/data_v1/`，校准和评估图片内容重叠为 0；本轮未执行这批图片的评估。旧 Holdout 仅用于部署迁移诊断，不能重新包装成新方法的独立确认集。\n\n后续依次完成：\n\n1. 在查看数据集结果前冻结通过、失败和证据不足的判据；沿用固定模型、校准清单、图片清单和目标匹配口径。\n2. 构建并检查全 INT8 卷积基线；确认真实 INT8 内核和 G1–G8 映射，不只检查构建开关。\n3. 分别构建 G1、G1+G5、G1+G2 保持 FP16 的恢复配置，逐个报告结果。\n4. 五个 engine 在同一固定图片集上完成逐目标匹配，统计相对本机 FP16 的新增漏检、同目标救回及附带漏检，并单独检查 FP32→FP16 的变化。\n\n上述五种配置只验证恢复。若声称真实 TensorRT 的双向归因，仍需额外的 `q_only:G1` 破坏侧实验。此轮不作 INT8 真实性、混合精度恢复、正式延迟或能耗结论。",
+      "json_pointer": null
+    },
+    "build_pass_field": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 24,
+      "line_end": 24,
+      "excerpt": "  \"build_pass\": \"Build/deserialization succeeds and all 88 Conv identities map to verified INT8 weighted kernels\",",
+      "json_pointer": "/build_pass"
+    },
+    "execution_pass_field": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 25,
+      "line_end": 25,
+      "excerpt": "  \"execution_pass\": \"Real Jetson execution succeeds with finite [1,14,8400] output on the fixed image\",",
+      "json_pointer": "/execution_pass"
+    },
+    "not_a_pass_condition": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 26,
+      "line_end": 26,
+      "excerpt": "  \"not_a_pass_condition\": \"INT8 matching FP16 detection count or accuracy; quantization may change detections\",",
+      "json_pointer": "/not_a_pass_condition"
+    },
+    "dataset_gate_unfrozen": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 28,
+      "line_end": 28,
+      "excerpt": "  \"dataset_gate_decision_rules\": \"Still to be frozen before fixed-dataset evaluation\",",
+      "json_pointer": "/dataset_gate_decision_rules"
+    },
+    "original_numeric_tolerances": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 16,
+      "line_end": 16,
+      "excerpt": "  \"local_preflight\": {",
+      "json_pointer": "/local_preflight"
+    },
+    "original_quant_scheme": {
+      "path": "24_Gate05_Orin_INT8构建与迁移检查.md",
+      "sha256": "92795b4f48fedcbababbc5239e7dc0b8e9df21fb6bb39bf915ad5b533dce440b",
+      "line_start": 7,
+      "line_end": 17,
+      "excerpt": "本轮仅检查 `q_all`：全部纳入 G1–G8 的 88 个卷积，其权重和输入激活采用显式 INT8 Q/DQ。其他网络算子允许 FP16/FP32，不能将其描述为全网络所有运算均为 INT8。本轮不运行固定 150 张图片的评估，也不运行 G1/G1+G5/G1+G2 恢复配置。\n\n沿用 Gate 0 的模型、64 张训练校准图片产生的冻结范围和 88 层分组。没有重新校准或依据本轮结果更换图片、模块、范围。量化图来源为上一轮 FP16 使用的同一份 FP32 ONNX，输入 `[1,3,640,640]`，输出 `[1,14,8400]`。\n\n量化设置：\n\n- 激活为对称、逐张量、零点 0，scale=`max(冻结absmax/127,1e-12)`。\n- 激活在进入 INT8 QuantizeLinear 前先 Clip 到 `[-127*scale,127*scale]`，保持原模拟的窄范围语义。\n- 卷积权重为对称、逐输出通道，axis=0，scale=`max(逐通道absmax,1e-12)/127`，零点 0。\n- 不额外量化卷积输出；后续卷积输入按其自身冻结范围量化。\n- 显式 Q/DQ 的输入量化位置参考 [TensorRT 开发者指南](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-861/developer-guide/index.html)和 [NVIDIA 维护者对卷积输入/输出精度的说明](https://github.com/NVIDIA/TensorRT/issues/2383)。实际是否采用 INT8 内核仍由引擎逐层证据决定。",
+      "json_pointer": null
+    },
+    "research_route": {
+      "path": "研究状态与后续计划.md",
+      "sha256": "a6f27012704ee80a5dae3c08484455c692cd7374e87891be5745f2d81e553e0e",
+      "line_start": 167,
+      "line_end": 187,
+      "interpretation": "Original Gate question; five fixed configurations; G1 recovery as primary existence check; optional q_only G1 for bidirectional overlap; no outcome-based substitution."
+    },
+    "preprocessing": {
+      "path": "src/gate0.py",
+      "sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+      "lines": [
+        119,
+        141
+      ]
+    },
+    "postprocess": {
+      "path": "src/gate0.py",
+      "sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+      "lines": [
+        394,
+        420
+      ]
+    },
+    "matching": {
+      "path": "src/gate0.py",
+      "sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+      "lines": [
+        424,
+        474
+      ]
+    },
+    "target_identity": {
+      "path": "src/gate0.py",
+      "sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+      "lines": [
+        216,
+        245
+      ]
+    },
+    "gate0_config": {
+      "path": "config/gate0.json",
+      "sha256": "1b6ed3a841d6cba07c3a92065855e146f5a069f7fb1c7ee643c8a65d541c4f54",
+      "lines": null
+    },
+    "prior_reference_contract": {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+      "lines": null
+    },
+    "dataset": {
+      "path": "artifacts/gate05/data_v1/manifest.json",
+      "sha256": "c4dac80ad7c59524194a9501f5ff8126cc0517e84f29f4106068c0c4b27a93aa",
+      "lines": null
+    },
+    "module_mapping": {
+      "path": "artifacts/gate05/20261021_qall_none_control/source_bundle/module_map.json",
+      "sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+      "lines": null
+    },
+    "sass_static_review": {
+      "path": "artifacts/gate05/20261021_gate05_completion_plan/sass_static_independent_review.json",
+      "sha256": "40eb7919d25d795aec84df57f6f8c9cb7d54061672500ebd81b32fdb45dd850c",
+      "lines": null
+    },
+    "old_kernel_trace": {
+      "path": "artifacts/gate05/20261019_qall_kernel_diagnostic/analysis.json",
+      "sha256": "6cab40a4da8cbc90329fcf12feea10771360bbed2c48a588abeec5d99a1bb634",
+      "lines": null
+    }
+  },
+  "draft_construction": {
+    "script_sha256": "d9ba5f787ee3970abbbf42fe6919636bf71beda9d1bb30ab8ae96912bbdd21ec",
+    "only_stdlib_reads_and_new_draft_write": true
+  },
+  "draft_parent_sha256": "a848a52ad4acb5db7e5b8ad1223ff27a90ff02cf4e4123e85561f9deb7285f5e",
+  "raw_contract_sha256": "11e9a09b1278fecff9f5c3f1a83011d077e88d550288503ef000c0c96012f94e",
+  "input_manifest_sha256": "05c6509f5afcf6a715a2328aac9581ca2f9534ee5de6fcffc670a3fd745f4f80",
+  "evaluator_identity": {
+    "file_sha256": "b5ac60351e17761144a8897300ef8c8005f14e87e119b74dc1be2907be4cb895",
+    "matching_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+  },
+  "postprocess_identity": {
+    "implementation_sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+    "environment_sha256": "76bc3958ba0f2dc64b11f45c849fc801a20964fa3b03f5d5ab4a5f1c83bb8c58",
+    "device": "cpu",
+    "library_versions": {
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "ultralytics": "8.4.142",
+      "numpy": "2.5.3"
+    },
+    "nms_implementation_sha256": "8162e70fc11f31e108f2b6ce56ee88873482b33ec249886fc104cf9c83a71952",
+    "legacy_decode_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+  },
+  "postprocess_execution": {
+    "maximum_NMS_calls": 1800,
+    "maximum_attempts": 1,
+    "automatic_retry": false,
+    "warning_fail_closed": true,
+    "matrix_root": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261021_dataset_matrix",
+    "attempt_root": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261021_postprocess_attempts",
+    "stream_order": [
+      {
+        "configuration": "fp16_control",
+        "backend": "trt"
+      },
+      {
+        "configuration": "q_all",
+        "backend": "trt"
+      },
+      {
+        "configuration": "r_only_G1",
+        "backend": "trt"
+      },
+      {
+        "configuration": "r_only_G1_G5",
+        "backend": "trt"
+      },
+      {
+        "configuration": "r_only_G1_G2",
+        "backend": "trt"
+      },
+      {
+        "configuration": "q_only_G1",
+        "backend": "trt"
+      },
+      {
+        "configuration": "fp16_control",
+        "backend": "ort"
+      },
+      {
+        "configuration": "q_all",
+        "backend": "ort"
+      },
+      {
+        "configuration": "r_only_G1",
+        "backend": "ort"
+      },
+      {
+        "configuration": "r_only_G1_G5",
+        "backend": "ort"
+      },
+      {
+        "configuration": "r_only_G1_G2",
+        "backend": "ort"
+      },
+      {
+        "configuration": "q_only_G1",
+        "backend": "ort"
+      }
+    ]
+  },
+  "technical_preflight_decision_sha256": "3fe0e5a542eaad04457c2a916dd42f5b64ca855c4cf3400d9375c640d5261d9c",
+  "new150_model_calls_before_freeze": 0,
+  "selected_family_roles": {
+    "primary_core_five_NONE": [
+      "fp16_control",
+      "q_all",
+      "r_only_G1",
+      "r_only_G1_G5",
+      "r_only_G1_G2"
+    ],
+    "auxiliary_different_PREFER_policy": [
+      "q_only_G1"
+    ],
+    "rejected_qonly_NONE_engine_sha256": "aefd8dc6438081939587760401e77212ded88579b209d61d991be816f8a4b5a1",
+    "rejected_qonly_NONE_precision_failure_preserved": true,
+    "pure_G1_arithmetic_causality_claim": false
+  },
+  "optional_provenance_nulls_justified": "Original sources.*.lines/json_pointer null means a whole-file source citation rather than a missing artifact identity. All execution, model, audit, evaluator, input and postprocessing identities are bound separately."
+}

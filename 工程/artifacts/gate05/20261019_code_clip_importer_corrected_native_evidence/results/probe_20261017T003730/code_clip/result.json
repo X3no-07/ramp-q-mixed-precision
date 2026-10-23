@@ -1,0 +1,86 @@
+{
+  "status": "ISOLATED_ACTIVATION_BOUNDARY_OUTPUTS_SAVED",
+  "diagnostic_only": true,
+  "case": "code_clip",
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        1,
+        1,
+        1811
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "rampq_model_0_conv_a_dq",
+      "input": false,
+      "shape": [
+        1,
+        1,
+        1,
+        1811
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "stats": {
+    "shape": [
+      1,
+      1,
+      1,
+      1811
+    ],
+    "dtype": "float32",
+    "all_finite": true,
+    "nonfinite_count": 0,
+    "min": -1.0,
+    "max": 1.0,
+    "mean": 0.0,
+    "rms": 0.6616947513378925,
+    "raw_bytes_sha256": "5212ea70d6c167552e96f2d51e08693b14b89ae674ed24e4f6b89e13f31536fb"
+  },
+  "comparison_to_cpu_ort": {
+    "all_pairs_finite": true,
+    "nonfinite_pair_count": 0,
+    "max_abs": 0.007874071598052979,
+    "mean_abs": 4.347894713076882e-05,
+    "rms_difference": 0.0005851109745854445,
+    "abs_percentiles_50_90_99_999": [
+      0.0,
+      0.0,
+      0.0,
+      0.007874071598052979
+    ],
+    "bit_exact": false,
+    "descriptive_only_no_new_pass_criterion": true
+  },
+  "repeat_comparison": {
+    "all_pairs_finite": true,
+    "nonfinite_pair_count": 0,
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "rms_difference": 0.0,
+    "abs_percentiles_50_90_99_999": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bit_exact": true,
+    "descriptive_only_no_new_pass_criterion": true
+  },
+  "engine_sha256": "e72cd8de07a6a0df4678e15d7d8b0e40f8a214d211202b0186b377ff2142d6fe",
+  "raw_outputs_sha256": "8df60110b61ae5789c8f784b9bf6284e45de85253b6ffbf20162c10be0e6257c",
+  "spec_sha256": "04d8470c74e3b5747e3f86e634f40faf186ee903abb7e9a69e0d6d121ff30421",
+  "onnx_sha256": "5231cb86184a340a48c2a5144a1584b9cf2e52b0e66ea12976c0b85b6522f113",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "board_time": "2026-10-17T00:38:26+0800",
+  "tensorrt": "8.5.2.2",
+  "torch": "2.0.0+nv23.05",
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false,
+  "limits": "Only fixed input and isolated slice. Removing Clip is a diagnostic intervention; original model is unchanged."
+}

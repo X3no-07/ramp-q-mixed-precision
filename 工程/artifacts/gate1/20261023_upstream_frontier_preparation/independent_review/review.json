@@ -1,0 +1,100 @@
+{
+  "schema": "rampq.gate1.upstream_frontier_source_review/v1",
+  "status": "PASS_BOUNDED_DIAGNOSTIC_IMPLEMENTATION_REVIEW_ONLY",
+  "created_at_utc": "2026-10-22T17:10:33.440871+00:00",
+  "reviewer": "independent upstream frontier reviewer",
+  "source_identities": {
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\scripts\\probe_gate1_upstream_frontier.py": {
+      "sha256": "f5ffa1741f1c4bd97e8c3b36372489f28e3704965ade951a1dc38ce55d347ba8",
+      "bytes": 32230
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\scripts\\audit_gate1_upstream_frontier.py": {
+      "sha256": "b8185f578ce1c7daf99011d884bfcdaf64ba2a3c39705160a2a854ca18ff2fd8",
+      "bytes": 25588
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\tests\\test_gate1_upstream_frontier.py": {
+      "sha256": "6f5041b9d7e9b849292b721e9cce38ac6235a0ee538609a61b149a7b5c2c4de9",
+      "bytes": 12752
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\tests\\test_gate1_upstream_frontier_audit.py": {
+      "sha256": "8124117a0089ab71bb0063467ac2c49f39982ab98d67a23ce8ae4040ba204d5f",
+      "bytes": 14436
+    },
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\scripts\\audit_gate1_decode_probe.py": {
+      "sha256": "04a7d2256ab0a3d90025b2453ef2bc44b043e8b1493b7866c9acc603838dc1ef",
+      "bytes": 22657
+    }
+  },
+  "synthetic_cpu_tests_passed": 39,
+  "test_command": [
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_gate1_upstream_frontier*.py",
+    "-v"
+  ],
+  "cuts": [
+    -1,
+    4,
+    6,
+    10,
+    22
+  ],
+  "derived_frontiers": {
+    "-1": [
+      -1
+    ],
+    "4": [
+      4
+    ],
+    "6": [
+      4,
+      6
+    ],
+    "10": [
+      4,
+      6,
+      10
+    ],
+    "22": [
+      16,
+      19,
+      22
+    ]
+  },
+  "stored_crossed_variants": 10,
+  "fixed_guard_comparisons": 12,
+  "reviewed_checks": [
+    "DAG f references resolve independently; every skip dependency crossing a cut is retained.",
+    "Frozen CPU topology is required to equal actual loaded module graph; all 23 native prefix modules and final outputs must replay exactly before interpretation.",
+    "Native full manual output arrays are stored. Per-cut same-dtype suffix output controls are deduplicated into exact assertions and byte hashes bound to stored native values.",
+    "Only union native frontier tensors and ten crossed logits/decoded outputs are stored; cast reports are independently reconstructed with NumPy source.astype(receiver_dtype).",
+    "Input-cut FP32-to-FP16 and cut22 head endpoints must exactly alias prior native/head outputs and cannot count as independent new evidence.",
+    "Every historical/reference raw identity, fixed all-anchor guard and aggregate is independently rechecked from saved arrays.",
+    "Independent NumPy FP64 decode sanity has predeclared box allowance .002+1e-5*abs(expected) and score allowance 2e-7+3e-6*abs(expected); these are distinct from unchanged fixed FP32/FP16 guards.",
+    "Runner preserves debug-only cohort, fixed pilot order, no automatic retries, source/checkpoint/runtime SHA bindings and no Selection/Holdout/NMS/AP access."
+  ],
+  "issues_repaired_before_freeze": [
+    "Missing nl metadata was added.",
+    "All-native-module exactness was expanded from final-output equality to every captured prefix module.",
+    "Storage was reduced to two crossed directions and cast hashes without repeated decode intermediate arrays.",
+    "Repeated input/head endpoints now require explicit byte-identical alias checks."
+  ],
+  "conditional_execution": "Only fixed pilot3 first; full109 only after exact reconstruction controls and saved-array audit succeed, regardless of diagnostic guard outcome.",
+  "limits": [
+    "Synthetic tests and source review do not establish real GPU execution equivalence.",
+    "Auditor independently verifies stored bytes, casts, guards and approximate decoding; it does not regenerate convolution outputs or establish a unique layer cause.",
+    "Unstored prefix tensor checks, model-state immutability and deduplicated same-dtype replay histories retain reviewed-runner assertion limits.",
+    "No old numerical guard is replaced or relaxed; Gate1 scientific acceptance remains false."
+  ],
+  "scientific_gate_pass": false,
+  "old_guard_replaced": false,
+  "tolerances_changed": false,
+  "selection_detector_inference": false,
+  "holdout_accessed": false
+}

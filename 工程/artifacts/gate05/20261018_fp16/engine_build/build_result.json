@@ -1,0 +1,34 @@
+{
+  "status": "BUILT_AND_DESERIALIZED",
+  "engine_sha256": "64d91db3063ac28c1552a1ba6443ae28ca45d82d988f5cd375b39fc8cc76b85c",
+  "onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+  "engine_bytes": 7607688,
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "engine_layers": 192,
+  "fp16_enabled": true,
+  "layer_precision_review": "pending review of engine_layers.json",
+  "detection_inference": "not run",
+  "benchmark": "not run"
+}

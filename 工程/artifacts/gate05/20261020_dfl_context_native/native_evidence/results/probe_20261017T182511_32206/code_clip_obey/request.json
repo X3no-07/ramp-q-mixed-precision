@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020/jetson_build_dfl_context_probe.py",
+    "--root",
+    "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020",
+    "--case",
+    "code_clip_obey",
+    "--output",
+    "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020/results/probe_20261017T182511_32206/code_clip_obey/model.engine"
+  ],
+  "case": {
+    "id": "code_clip_obey",
+    "variant": "code_clip",
+    "precision_constraint_flag": "obey",
+    "max_build_seconds": 300,
+    "iterations": 1,
+    "apply_native_clip_attribute_correction": true
+  },
+  "spec_sha256": "934e075aa58dde1829b600d3d011f5ad51c4f1da1af78f7791944f492781b14d",
+  "model_sha256": "a8a30c71a20d6b6dd3d031d23ce8dc8672cc62abe6c3eb8725b324fd2e600092",
+  "max_child_seconds": 300,
+  "retries": 0
+}

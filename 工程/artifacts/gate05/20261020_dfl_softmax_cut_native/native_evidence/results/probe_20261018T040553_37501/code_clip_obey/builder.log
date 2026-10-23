@@ -1,0 +1,24 @@
+[10/18/2026-04:06:52] [TRT] [I] [MemUsageChange] Init CUDA: CPU +221, GPU +0, now: CPU 252, GPU 4018 (MiB)
+[10/18/2026-04:06:55] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU +302, GPU +432, now: CPU 577, GPU 4472 (MiB)
+[10/18/2026-04:06:55] [TRT] [W] onnx2trt_utils.cpp:375: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[10/18/2026-04:06:55] [TRT] [I] ---------- Layers Running on DLA ----------
+[10/18/2026-04:06:55] [TRT] [I] ---------- Layers Running on GPU ----------
+[10/18/2026-04:06:55] [TRT] [I] [GpuLayer] COPY: rampq_model_23_dfl_conv_ActivationQ
+[10/18/2026-04:06:55] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_dfl_conv_Clip)
+[10/18/2026-04:06:55] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv
+[10/18/2026-04:06:55] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/dfl/Reshape_1
+[10/18/2026-04:06:56] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +534, GPU +712, now: CPU 1111, GPU 5184 (MiB)
+[10/18/2026-04:06:56] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +83, GPU +88, now: CPU 1194, GPU 5272 (MiB)
+[10/18/2026-04:06:56] [TRT] [I] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[10/18/2026-04:06:57] [TRT] [E] 2: [optimizer.cpp::filterQDQFormats::4421] Error Code 2: Internal Error (Assertion !n->candidateRequirements.empty() failed. All of the candidates were removed, which points to the node being incorrectly marked as an int8 node.)
+[10/18/2026-04:06:57] [TRT] [E] 2: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )
+Traceback (most recent call last):
+  File "/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_build_dfl_softmax_cut_probe.py", line 237, in <module>
+    main()
+  File "/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_build_dfl_softmax_cut_probe.py", line 225, in main
+    build(root, args.case, output, state)
+  File "/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_build_dfl_softmax_cut_probe.py", line 181, in build
+    require(serialized is not None, 'TensorRT returned no serialized engine')
+  File "/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_dfl_softmax_cut_probe.py", line 41, in require
+    raise RuntimeError(message)
+RuntimeError: TensorRT returned no serialized engine

@@ -1,0 +1,128 @@
+{
+  "status": "PASS_READ_ONLY_QUALIFICATION_REPORTING_CONSISTENCY_REVIEW",
+  "reviewed_at_utc": "2026-10-22T10:03:02.155312+00:00",
+  "qualification_execution_complete": true,
+  "fixed_dtype_guard_status": "FAIL_FIXED_TOLERANCES",
+  "independent_saved_output_audit_status": "PASS_SAVED_OUTPUT_CONSISTENCY_ONLY",
+  "model_executed_by_this_review": false,
+  "images_decoded_by_this_review": false,
+  "raw_arrays_reloaded_by_this_review": false,
+  "debug_images": 109,
+  "shape_pass_images": 109,
+  "finite_pass_images": 109,
+  "raw_domain_pass_images": 109,
+  "actual_saved_array_dtypes_pass_images": 109,
+  "fixed_numerical_guard_failed_images": 109,
+  "box_elements": 3662400,
+  "box_violations": 10849,
+  "box_violation_fraction": 0.0029622651813018784,
+  "box_violations_per_image_min": 12,
+  "box_violations_per_image_max": 312,
+  "box_max_absolute_error": 10.43951416015625,
+  "score_elements": 9156000,
+  "score_violations": 0,
+  "score_max_absolute_error": 0.006031900644302368,
+  "tolerances": {
+    "box_rtol": 0.005,
+    "box_atol": 0.5,
+    "score_rtol": 0.02,
+    "score_atol": 0.002
+  },
+  "matching_protocol": {
+    "implementation_sha256": "4e45ff26a86a83ff66e997f15e4c4794246c6440c304446972809ff32db09961",
+    "function": "match_project_targets",
+    "target_id": "image_id:zero_based_original_physical_annotation_line",
+    "confidence_primary_inclusive": 0.25,
+    "confidence_sensitivity_inclusive": [
+      0.2,
+      0.3
+    ],
+    "target_iou": 0.5,
+    "size_scope": "all eligible sizes; no small-only metric",
+    "official_AP": false
+  },
+  "main_confidence_0_25": {
+    "fp32": {
+      "eligible_targets": 9059,
+      "hits": 3146,
+      "misses": 5913,
+      "false_positive_detections": 1631,
+      "score_0_absorbed_detections": 0,
+      "category_0_dropped_detections": 3339,
+      "project_target_recall": 0.34727894911138096,
+      "project_detection_precision": 0.658572325727444
+    },
+    "fp16": {
+      "eligible_targets": 9059,
+      "hits": 3143,
+      "misses": 5916,
+      "false_positive_detections": 1636,
+      "score_0_absorbed_detections": 0,
+      "category_0_dropped_detections": 3340,
+      "project_target_recall": 0.3469477867314273,
+      "project_detection_precision": 0.6576689684034317
+    },
+    "paired_targets": {
+      "eligible_targets": 9059,
+      "fp32_hits": 3146,
+      "fp16_hits": 3143,
+      "both_hit": 3136,
+      "fp32_only_hit": 10,
+      "fp16_only_hit": 7,
+      "both_miss": 5906
+    }
+  },
+  "eligible_target_all_size_scope": true,
+  "small_only_metric": false,
+  "qualifier_source_records_unchanged": {
+    "verified_images_and_original_annotations": 109,
+    "unchanged": true
+  },
+  "accepted_float_baseline_ready": false,
+  "gate1_scientific_pass": false,
+  "official_visdrone_AP": false,
+  "old_gate05_guard_replaced": false,
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "reporting_limits": [
+    "Execution completion and saved-output consistency do not turn a failed fixed numerical qualification into a pass.",
+    "Saved-array dtype validity is separate from numerical FP32/FP16 allclose and must not be described as dtype numerical PASS.",
+    "The 109 images are reused debug engineering data, not independent Selection or Holdout evidence.",
+    "Matching counts use the frozen project ignore-aware matcher at IoU 0.5 for all eligible sizes and are not AP, mAP, or small-object-only results.",
+    "The nearly equal aggregate target counts hide 10 FP32-only and 7 FP16-only target hits at confidence 0.25 and cannot replace the elementwise guard.",
+    "The FP32 branch is saved fp16 EMA cast to FP32, not the original FP32 training state; the two compared models are unfused PyTorch on the same backend.",
+    "No TensorRT, Orin, deployment latency, quantization effect, or recovery causality is established.",
+    "The independent saved-output audit reused the frozen project matcher, did not rerun model computation or torchvision NMS, did not decode input pixels, and is not an independent official AP oracle.",
+    "The original Gate0.5 numerical failure remains separate and unchanged. No tolerance was relaxed."
+  ],
+  "sources": {
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\qualification_receipt.json": {
+      "bytes": 4043,
+      "sha256": "8300c185e3e28cc0e0675bd2a1c7f38746e711f30614ef8ccfc8b6e5b7bcc074"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\raw_dtype_guard.json": {
+      "bytes": 173392,
+      "sha256": "b68a775b2c129fad01a099cd97f8be44c87a328e01d40cd948fab7d50c9a276e"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\matching_summary.json": {
+      "bytes": 4083,
+      "sha256": "8826bb2e91268759c7db7532d8c6f3314f057f92971362a66d2b6b025c7090f6"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\qualification_protocol.json": {
+      "bytes": 4718,
+      "sha256": "c977995f31dcef2c6f50966e80377e754e8200a0227ad2d7425c34c00a453499"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\model_provenance.json": {
+      "bytes": 1469,
+      "sha256": "0c4387a653eeb90095ef1e050dc5bad81289f2bd5aec3ad0f0fe924f7e08d11b"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\source_after_check.json": {
+      "bytes": 79,
+      "sha256": "b7ddb87001ecc40d575813bc9acd71cbed046bc813676f3137bba3793485fde6"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\03_qualification_output_audit\\recomputed_summary.json": {
+      "bytes": 32590,
+      "sha256": "9f55fba3c351ba9f91bd9019a4aaa88417520ac63119dafb2f45a08d4bf126f5"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "rampq.gate05.dfl_softmax_cut_cpu_plan/v1",
+  "status": "FROZEN_BEFORE_FIRST_CPU_EXECUTION",
+  "protocol_sha256": "bbe50e6485a72df194a13684895b4cc29a1db6ceca8ef098d05a6b5e56c56055",
+  "ordered_runs": [
+    "exact_source_Softmax_once",
+    "corrected_eight_node_cut_once"
+  ],
+  "maximum_total_new_CPU_runs": 2,
+  "provider": "CPUExecutionProvider",
+  "graph_optimization": "ORT_DISABLE_ALL",
+  "threads": 4,
+  "new_72Conv_or_old_DFL_or_full_detector_runs": 0,
+  "on_failure": "PRESERVE_FAILURE_NO_RETRY_RESELECTION_OR_NATIVE_START"
+}

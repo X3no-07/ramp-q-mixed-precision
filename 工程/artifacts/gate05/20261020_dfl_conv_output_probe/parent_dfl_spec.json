@@ -1,0 +1,242 @@
+{
+  "schema": "rampq.gate05.dfl_context_probe/v1",
+  "prepared_client_at": "2026-10-20T12:06:24.759716+08:00",
+  "diagnostic_only": true,
+  "source_configuration": "q_all",
+  "source_graph_file": "source_model.onnx",
+  "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "source_original_qall_graph_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+  "parent_spec_file": "parent_spec.json",
+  "parent_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+  "parent_manifest_file": "parent_manifest.json",
+  "parent_manifest_sha256": "f1679f4ebc7daa3e5589c28968785d48f31269cc5f83b0398bfa3bd7a91d861f",
+  "protocol_file": "protocol.json",
+  "protocol_sha256": "b2723549e6acee51c86aeba3b72c8451601ba4add6088f46f7443536a1ab74ee",
+  "input_file": "dfl_transpose_fixture.npy",
+  "input_file_sha256": "cb1e437ef9c67af95ab66dfe7e8db5f28ebbfc437835502f1da1ac816e414dab",
+  "input_binding": {
+    "name": "/model.23/dfl/Transpose_output_0",
+    "input": true,
+    "shape": [
+      1,
+      16,
+      4,
+      8400
+    ],
+    "dtype": "DataType.FLOAT"
+  },
+  "output_bindings_in_order": [
+    {
+      "name": "/model.23/dfl/Reshape_1_output_0",
+      "input": false,
+      "shape": [
+        1,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "role": "dfl_distances_not_decoded_boxes",
+      "kind": "primary"
+    }
+  ],
+  "conv_names": [
+    "/model.23/dfl/conv/Conv"
+  ],
+  "source_conv_names": [
+    "/model.23/dfl/conv/Conv"
+  ],
+  "clip_names": [
+    "rampq_model_23_dfl_conv_Clip"
+  ],
+  "source_activation_boundaries": [
+    {
+      "prefix": "rampq_model_23_dfl_conv",
+      "q_name": "rampq_model_23_dfl_conv_ActivationQ",
+      "clip_name": "rampq_model_23_dfl_conv_Clip",
+      "dq_name": "rampq_model_23_dfl_conv_ActivationDQ",
+      "scale_initializer": "rampq_model_23_dfl_conv_a_scale",
+      "scale": 0.007873943075537682,
+      "zero_initializer": "rampq_model_23_dfl_conv_a_zero",
+      "zero": 0,
+      "original_float_clip_bounds": [
+        -0.9999907612800598,
+        0.9999907612800598
+      ],
+      "corrected_int8_clip_bounds": [
+        -127,
+        127
+      ],
+      "all_other_nodes_and_initializers_exact_source_bytes": true
+    }
+  ],
+  "activation_scale": 0.007873943075537682,
+  "variants": {
+    "code_clip": {
+      "model_file": "model_dfl_code_clip.onnx",
+      "model_sha256": "a8a30c71a20d6b6dd3d031d23ce8dc8672cc62abe6c3eb8725b324fd2e600092",
+      "expected_output_npz_keys": {
+        "/model.23/dfl/Reshape_1_output_0": "code_clip_output"
+      },
+      "nodes": 9,
+      "initializers": 7,
+      "selected_node_serialized_sha256": {
+        "/model.23/dfl/Softmax": "b3b4c7e2d24556983e61ae3a731e6fc82625f83a8b8c671b0e98596c7f258adc",
+        "rampq_model_23_dfl_conv_ActivationQ": "2447af675995af25c59aa9671087cc367eba2238a0196e09f4ecf820fc546828",
+        "rampq_model_23_dfl_conv_Clip": "d4fd35cd63f63d843a8eee8a491b57ef7c40668fc194083cd88bc46d9cc0a1c0",
+        "rampq_model_23_dfl_conv_ActivationDQ": "6cdf5d318eae17034dd62c016f211454efebc5781fcf9ca160a9767f48b3909f",
+        "rampq_model_23_dfl_conv_WeightQ": "34964f50638aa400067fc00fb7d9bafc4690a5964f57236afcd4707c9bf8c573",
+        "rampq_model_23_dfl_conv_WeightDQ": "5647d10eabb4b240dc8e35a3bb2ca2f6d998521c540d8ef17722a34219e85298",
+        "/model.23/dfl/conv/Conv": "7a591ab990e69fbb77a98879ddd1206a8f32caa93998b33196b470e169e3ce84",
+        "/model.23/dfl/Constant_1": "7664d51a20df4185c82a4fa80f43fb4bc939492051dd2d587b0d75ab4616cff2",
+        "/model.23/dfl/Reshape_1": "8c06eaf27c829f44b16846fbcc1a84d49c008b4929b4f9691b4c93580d2dc432"
+      },
+      "selected_initializer_serialized_sha256": {
+        "model.23.dfl.conv.weight": "a131eefd3ebd329d085da840c8dc11d2b27a6e44099c89f184c6274e5157cee6",
+        "rampq_model_23_dfl_conv_a_scale": "2829f3607b4f5e53b4b09e474e815510edb9af7de2b67d3a0d7f8d74a6dd3515",
+        "rampq_model_23_dfl_conv_a_zero": "d5bedf7af5175093714b089c71f7b51387474a6f06375c72c0388c13fa9a475a",
+        "rampq_model_23_dfl_conv_clip_min": "8c6a1dd38e0094d87f39f6e6f675e9f5b2a94c0ae07dde04caf2a64ca5c019ea",
+        "rampq_model_23_dfl_conv_clip_max": "607b7de5a6b6ec43b4aa767d90c51fd036af6e2b63c8067e39aacef0f10fef45",
+        "rampq_model_23_dfl_conv_w_scale": "a15635bcb4d263cdbfb1aa58c992181355459ed1dcebd75d143af73eb06eb63f",
+        "rampq_model_23_dfl_conv_w_zero": "d99018865509be56fe0120daba4774c3a3c00fe693b56416b271d825f3c44f3e"
+      }
+    }
+  },
+  "cpu_control_variants": {
+    "original": {
+      "model_file": "model_dfl_original.onnx",
+      "model_sha256": "b60be2c2d196ed1fb4e962446f374d9e53d066476172cfa1db415194b2306d90",
+      "expected_output_npz_keys": {
+        "/model.23/dfl/Reshape_1_output_0": "original_output"
+      },
+      "nodes": 9,
+      "initializers": 7,
+      "selected_node_serialized_sha256": {
+        "/model.23/dfl/Softmax": "b3b4c7e2d24556983e61ae3a731e6fc82625f83a8b8c671b0e98596c7f258adc",
+        "rampq_model_23_dfl_conv_Clip": "c67db449d9c9cf552b5523bbd01240f42d6dd87d10cfcbde6dc687b5b23170dc",
+        "rampq_model_23_dfl_conv_ActivationQ": "13f992ac1e0e675314393b5ac7169b984a1c10314c96c508dd2779c51e5a3a14",
+        "rampq_model_23_dfl_conv_ActivationDQ": "6cdf5d318eae17034dd62c016f211454efebc5781fcf9ca160a9767f48b3909f",
+        "rampq_model_23_dfl_conv_WeightQ": "34964f50638aa400067fc00fb7d9bafc4690a5964f57236afcd4707c9bf8c573",
+        "rampq_model_23_dfl_conv_WeightDQ": "5647d10eabb4b240dc8e35a3bb2ca2f6d998521c540d8ef17722a34219e85298",
+        "/model.23/dfl/conv/Conv": "7a591ab990e69fbb77a98879ddd1206a8f32caa93998b33196b470e169e3ce84",
+        "/model.23/dfl/Constant_1": "7664d51a20df4185c82a4fa80f43fb4bc939492051dd2d587b0d75ab4616cff2",
+        "/model.23/dfl/Reshape_1": "8c06eaf27c829f44b16846fbcc1a84d49c008b4929b4f9691b4c93580d2dc432"
+      },
+      "selected_initializer_serialized_sha256": {
+        "model.23.dfl.conv.weight": "a131eefd3ebd329d085da840c8dc11d2b27a6e44099c89f184c6274e5157cee6",
+        "rampq_model_23_dfl_conv_a_scale": "2829f3607b4f5e53b4b09e474e815510edb9af7de2b67d3a0d7f8d74a6dd3515",
+        "rampq_model_23_dfl_conv_a_zero": "d5bedf7af5175093714b089c71f7b51387474a6f06375c72c0388c13fa9a475a",
+        "rampq_model_23_dfl_conv_clip_min": "a265ae009da71fd5c149c52543750744b7b091a8e5c812d9c479a51591a7c31b",
+        "rampq_model_23_dfl_conv_clip_max": "d59b70bb1958e2d02754262ed7b61030abd9204d6f18e414af7a219bb4d4db9a",
+        "rampq_model_23_dfl_conv_w_scale": "a15635bcb4d263cdbfb1aa58c992181355459ed1dcebd75d143af73eb06eb63f",
+        "rampq_model_23_dfl_conv_w_zero": "d99018865509be56fe0120daba4774c3a3c00fe693b56416b271d825f3c44f3e"
+      }
+    },
+    "code_clip": {
+      "model_file": "model_dfl_code_clip.onnx",
+      "model_sha256": "a8a30c71a20d6b6dd3d031d23ce8dc8672cc62abe6c3eb8725b324fd2e600092",
+      "expected_output_npz_keys": {
+        "/model.23/dfl/Reshape_1_output_0": "code_clip_output"
+      },
+      "nodes": 9,
+      "initializers": 7,
+      "selected_node_serialized_sha256": {
+        "/model.23/dfl/Softmax": "b3b4c7e2d24556983e61ae3a731e6fc82625f83a8b8c671b0e98596c7f258adc",
+        "rampq_model_23_dfl_conv_ActivationQ": "2447af675995af25c59aa9671087cc367eba2238a0196e09f4ecf820fc546828",
+        "rampq_model_23_dfl_conv_Clip": "d4fd35cd63f63d843a8eee8a491b57ef7c40668fc194083cd88bc46d9cc0a1c0",
+        "rampq_model_23_dfl_conv_ActivationDQ": "6cdf5d318eae17034dd62c016f211454efebc5781fcf9ca160a9767f48b3909f",
+        "rampq_model_23_dfl_conv_WeightQ": "34964f50638aa400067fc00fb7d9bafc4690a5964f57236afcd4707c9bf8c573",
+        "rampq_model_23_dfl_conv_WeightDQ": "5647d10eabb4b240dc8e35a3bb2ca2f6d998521c540d8ef17722a34219e85298",
+        "/model.23/dfl/conv/Conv": "7a591ab990e69fbb77a98879ddd1206a8f32caa93998b33196b470e169e3ce84",
+        "/model.23/dfl/Constant_1": "7664d51a20df4185c82a4fa80f43fb4bc939492051dd2d587b0d75ab4616cff2",
+        "/model.23/dfl/Reshape_1": "8c06eaf27c829f44b16846fbcc1a84d49c008b4929b4f9691b4c93580d2dc432"
+      },
+      "selected_initializer_serialized_sha256": {
+        "model.23.dfl.conv.weight": "a131eefd3ebd329d085da840c8dc11d2b27a6e44099c89f184c6274e5157cee6",
+        "rampq_model_23_dfl_conv_a_scale": "2829f3607b4f5e53b4b09e474e815510edb9af7de2b67d3a0d7f8d74a6dd3515",
+        "rampq_model_23_dfl_conv_a_zero": "d5bedf7af5175093714b089c71f7b51387474a6f06375c72c0388c13fa9a475a",
+        "rampq_model_23_dfl_conv_clip_min": "8c6a1dd38e0094d87f39f6e6f675e9f5b2a94c0ae07dde04caf2a64ca5c019ea",
+        "rampq_model_23_dfl_conv_clip_max": "607b7de5a6b6ec43b4aa767d90c51fd036af6e2b63c8067e39aacef0f10fef45",
+        "rampq_model_23_dfl_conv_w_scale": "a15635bcb4d263cdbfb1aa58c992181355459ed1dcebd75d143af73eb06eb63f",
+        "rampq_model_23_dfl_conv_w_zero": "d99018865509be56fe0120daba4774c3a3c00fe693b56416b271d825f3c44f3e"
+      }
+    }
+  },
+  "cpu_expected_outputs_file": "cpu_expected_outputs.npz",
+  "cpu_expected_outputs_sha256": "fe6e4048681a5ac252b430b850cd27129061f8f1602835a8723ca7d827d59511",
+  "cpu_diagnostic_file": "cpu_diagnostic.json",
+  "cpu_diagnostic_sha256": "f190cb5412ac7ff95645dd4f5593bbb903ebb2459c8c200b3da366a945213678",
+  "graph_identity_audit_file": "graph_identity_audit.json",
+  "graph_identity_audit_sha256": "f7ef6d8aba211950d8a415b666d9ac1cdec53b53e39b498b14f6cfe3e5d82b07",
+  "fixture_lineage_file": "fixture_lineage.json",
+  "fixture_lineage_sha256": "ecd2bb92223c5e3d820cd70c0bacc5f1b9fc42b40a545f0552b0c247e45e4365",
+  "cases": [
+    {
+      "id": "code_clip_none",
+      "variant": "code_clip",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    },
+    {
+      "id": "code_clip_obey",
+      "variant": "code_clip",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    }
+  ],
+  "case_order": [
+    "code_clip_none",
+    "code_clip_obey"
+  ],
+  "max_seconds": 900,
+  "max_build_seconds": 300,
+  "maximum_attempts_per_case": 1,
+  "maximum_native_builds": 2,
+  "maximum_native_inferences": 4,
+  "executions_per_successful_case": 2,
+  "native_importer_clip_attribute_correction": {
+    "variant": "code_clip",
+    "layer_names": [
+      "rampq_model_23_dfl_conv_Clip"
+    ],
+    "activation_alpha": -127.0,
+    "activation_beta": 127.0,
+    "when": "After ONNX parsing; preserve all parser layer precision/output constraints."
+  },
+  "native_build_policy": {
+    "int8": true,
+    "fp16": true,
+    "tf32": false,
+    "prefer": false,
+    "workspace_mib": 1024,
+    "avg_timing_iterations": 1,
+    "profiling_verbosity": "DETAILED",
+    "io_format": "FLOAT_LINEAR",
+    "repeat_executions_if_success": 2,
+    "layer_precision_or_output_type_setters_or_resets": false,
+    "clip_alpha": -127.0,
+    "clip_beta": 127.0
+  },
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "corrected_full_qall_failure": "FAILED_TENSORRT_FORMAT_SELECTION_NO_ENGINE_UNCHANGED",
+  "retained_qall_failure_checkpoint_sha256": "66e149025bb0d777afe79a013797704c7878fdcad30140ac256aac305db48471",
+  "failure_boundary_inventory_sha256": "a2780d83f1de24ab166553a8a3d341f04cf3c6f74ae41cabd5885124bc81d112",
+  "original_tolerances_changed": false,
+  "calibration_recomputed": false,
+  "weights_changed": false,
+  "dataset_evaluation_run": false,
+  "complete_detector_executions": 0,
+  "ancestor_cpu_executions": 1,
+  "ancestor_conv_count": 72,
+  "tail_cpu_executions": 2,
+  "native_build_or_execution_run_by_preparer": false,
+  "limits": "DFL distance tensor only, not detected boxes. Failure localizes a cut context, not a named full-model failing node. Success cannot validate full q_all or exclude OBEY interactions elsewhere. Saved full failure logs are optimization plans, not an executed engine.",
+  "native_runner_file": "jetson_dfl_context_probe.py",
+  "native_builder_file": "jetson_build_dfl_context_probe.py",
+  "native_runner_sha256": "5f4c14dd6b4989f5d4011502b3caa647c785d355cdb8f54ec7d1f296d4159b65",
+  "native_builder_sha256": "3651f7deec68cb4e604022999ba0c42f20f66eaf961b35feea0fc94d62a50ffd",
+  "sealed_client_at": "2026-10-20T12:07:34.219370+08:00"
+}

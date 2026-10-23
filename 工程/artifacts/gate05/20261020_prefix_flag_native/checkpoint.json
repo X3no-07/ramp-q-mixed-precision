@@ -1,0 +1,95 @@
+{
+  "schema": "rampq.gate05.prefix_flag_checkpoint/v1",
+  "client_at": "2026-10-20T10:35:59.334844+08:00",
+  "status": "PREFIX_CLIP_FLAG_DIAGNOSTIC_CHECKPOINT_COMPLETE",
+  "gate05_status": "INCOMPLETE",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "source_conv_count": 1,
+  "source_nodes": 11,
+  "successful_builds": 4,
+  "fixed_input_executions": 8,
+  "native_build_attempts_each": 1,
+  "same_topology_none_obey_raw_byte_identical": true,
+  "each_case_repeat_raw_byte_identical": true,
+  "sole_conv_actual_int8_input_weight_output_and_named_integer_tactic": true,
+  "same_generic_tanh_silu_fusion_all_four": true,
+  "parser_constraints_each": {
+    "parsed_layers": 18,
+    "precision_INT8": 3,
+    "output_type_INT8": 3,
+    "metadata_errors": 0
+  },
+  "parser_constraints_unchanged_by_clip_correction": true,
+  "parser_constraints_not_reset": true,
+  "cpu_different_elements": {
+    "original": 769777,
+    "code_clip": 7
+  },
+  "cpu_max_abs": {
+    "original": 36.65729832649231,
+    "code_clip": 0.7481081485748291
+  },
+  "monitor_seconds": 368.42,
+  "runner_seconds_not_benchmark": 362.84885020799993,
+  "verified_receipt_files": 107,
+  "independent_native_review_checks": 530,
+  "all_seven_owned_tasks_exited_same_boot": true,
+  "guard_intervened": false,
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "full_model_retry_performed": false,
+  "full_model_failure_resolved": false,
+  "qonly_preserved_engine_sha256": "486845ca9bcc71e9ad6b721329855a1444184e721d64bcb7eb7daae593bd1476",
+  "prior_sources_archives_and_failed_preflight_unchanged": true,
+  "local_auditor_failures_preserved": 2,
+  "native_failures": 0,
+  "raw_evidence_unchanged": true,
+  "derived_mean_rms_saved_separately_no_acceptance_tolerance": true,
+  "new_tolerances_defined": false,
+  "dataset_evaluation_run": false,
+  "accuracy_causal_recovery_or_performance_pass": false,
+  "required_work_remaining_for_this_bounded_stage": [],
+  "next_step": "Freeze a separately identified context slice from the actual failed corrected q_all graph; verify dependency/shape/CPU semantics before bounded native. No monotonic-prefix assumption, full retry, parser reset, restore matrix or dataset run.",
+  "limits": "OBEY alone did not reproduce the failure in this one-Conv context; interaction with other graph contexts is unresolved. Small-case success is not a full-model or Gate pass.",
+  "protected_identities": {
+    "artifacts/gate05/20261019_corrected_qonly_native/post_smoke_evidence.zip": "5eac1543e5151708585e57923dd82410c9b21aac81cb5cfd1137e057e35ed205",
+    "artifacts/gate05/20261019_corrected_qall_native/build_failed_evidence.zip": "027433baa5b1e18fafb72cf64b70e58e1bd2aa05b295fd8f539ae8317e1c9a99",
+    "artifacts/gate05/20261019_corrected_qall_native/parser_metadata_evidence.zip": "a567b474be0e563448ce96b7b5cc0f1e9bfff1036461b9512efe9b8c1ba32d78",
+    "artifacts/gate05/20261018_int8/input_v1/preflight.json": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+    "artifacts/gate05/20261020_prefix_flag_probe_v2.zip": "7a6a1d88a50f9db72ac48aeed3a0c2923068031f956393b5fb5c4997f32fcc96",
+    "artifacts/gate05/20261020_prefix_flag_probe.zip": "5615fa40845d4b0630d3ac2fa08d581ff1e3c5f0e3b2fe4a907d6192f655ba95",
+    "artifacts/gate05/20261020_prefix_flag_native/native_evidence.zip": "a66da15dad97b1a807376b8281fa19457d749ae036ef6cad88b67113171cb8b6"
+  },
+  "stage_inventory_files_before_checkpoint": 181,
+  "stage_manifest": {
+    "path": "artifacts/gate05/20261020_prefix_flag_native/stage_manifest.json",
+    "bytes": 41635,
+    "sha256": "27019d9f312dd122c5d3cb974bf238e0fc72fc39d687f2761d9e798e1ff9f288"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/gate05/20261020_prefix_flag_native/root_native_audit.json",
+      "bytes": 28331,
+      "sha256": "1351ee0ad9caa40888e716452dd0a4f767793693f9d8f14867a7a26134a45492"
+    },
+    {
+      "path": "artifacts/gate05/20261020_prefix_flag_native/independent_native_review.json",
+      "bytes": 108595,
+      "sha256": "6e136e642346a90c0a210b098f8072791b26ab5a25863b70241fadedd5875205"
+    },
+    {
+      "path": "artifacts/gate05/20261020_prefix_flag_native/final_board_observation.json",
+      "bytes": 1869,
+      "sha256": "03e58e289be8f18daa51a78ddcfc2107bbff0a9a8a9e51bce0f0bc8b03a2a196"
+    },
+    {
+      "path": "artifacts/gate05/20261020_prefix_flag_native/final_remote_receipt_verification.json",
+      "bytes": 7790,
+      "sha256": "e4014e8f38935d93112e22ee557c9fa075f03db3e297b4ec681aa8b56a78c481"
+    },
+    {
+      "path": "artifacts/gate05/20261020_prefix_flag_native/native_evidence.zip",
+      "bytes": 2219829,
+      "sha256": "a66da15dad97b1a807376b8281fa19457d749ae036ef6cad88b67113171cb8b6"
+    }
+  ]
+}

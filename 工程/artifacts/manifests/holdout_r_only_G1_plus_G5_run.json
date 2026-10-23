@@ -1,0 +1,38 @@
+{
+  "schema": "rampq.gate0.run/v1",
+  "phase": "holdout_single_intervention",
+  "configuration": "r_only:G1+G5",
+  "device": "cuda:0",
+  "torch": "2.10.0+cu128",
+  "model": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\runs\\yolo11n_ruod_pilot\\weights\\best.pt",
+  "model_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "calibration": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\calibration\\screen.json",
+  "image_list": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\splits\\gate0_holdout_images.txt",
+  "holdout_read_for_inference": true,
+  "outputs": {
+    "predictions": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\predictions\\holdout_r_only_G1_plus_G5.csv",
+    "summary": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\tables\\holdout_r_only_G1_plus_G5_summary.json",
+    "degraded_targets": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\tables\\holdout_r_only_G1_plus_G5_targets.csv",
+    "report": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\Gate0_holdout_r_only_G1_plus_G5_自动摘要.md"
+  },
+  "summary": {
+    "schema": "rampq.gate0.subset_intervention/v1",
+    "configuration": "r_only:G1+G5",
+    "subset": "holdout",
+    "image_count": 150,
+    "target_count": 865,
+    "fp32_hit_count": 722,
+    "q_all_added_miss_count": 46,
+    "image_list_sha256": "4061739eb2e3b1812f2daf0b4327a65cf0cb7922eb43b30fc9457db310f976c7",
+    "baseline_predictions_sha256": "93f7a651201f2fdca747a2cfe1852f32bad5dd7cc2f6683c989ebdd258796388",
+    "intervention_predictions_sha256": "44990d3c27b07cba116840ff3efc42a62b10ccc6be41e1c0b983980cd97639dd",
+    "elapsed_seconds": 31.887801600001694,
+    "rescued_count": 43,
+    "rescue_rate": 0.9347826086956522,
+    "unrecovered_count": 3,
+    "collateral_miss_count": 5,
+    "stable_hit_retention": 0.992603550295858,
+    "rescue_precision": 0.8958333333333334,
+    "net_rescue": 38
+  }
+}

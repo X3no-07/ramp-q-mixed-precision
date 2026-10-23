@@ -1,0 +1,104 @@
+{
+  "schema": "rampq.gate05.prefix_flag_probe_protocol/v1",
+  "client_frozen_at": "2026-10-20T09:56:45.236203+08:00",
+  "status": "FROZEN_BEFORE_FOUR_SMALL_PREFIX_BUILDS",
+  "purpose": "Disentangle first-prefix Clip topology/import correction and OBEY flag; no complete-model retry",
+  "source_scope": "Known 11-node ONE first Conv+SiLU+two activation Q/DQ boundaries; output second activation DQ; secondConv excluded",
+  "parent_spec_sha256": "8eda3d9fc2b4b9e997742efe7b7e9c5599619940af0aef388bbaccc5f3eaf496",
+  "variant_graph_sha256": {
+    "original": "22b1065c01792492d658596c1069aee074e054f32648fa90bf87cc39a6d11a33",
+    "code_clip": "d2b8ca8105f8a05fabb7aac66c6fbab1a2558ac35bdd5ea1736ce8e0052465de"
+  },
+  "input_file_sha256": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94",
+  "cases": [
+    {
+      "id": "original_none",
+      "variant": "original",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": false
+    },
+    {
+      "id": "original_obey",
+      "variant": "original",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": false
+    },
+    {
+      "id": "code_clip_none",
+      "variant": "code_clip",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    },
+    {
+      "id": "code_clip_obey",
+      "variant": "code_clip",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    }
+  ],
+  "case_order": [
+    "original_none",
+    "original_obey",
+    "code_clip_none",
+    "code_clip_obey"
+  ],
+  "once_per_case": true,
+  "per_case_max_build_seconds": 300,
+  "batch_max_seconds": 1500,
+  "common_native_settings": {
+    "TensorRT": "8.5.x native Python Builder",
+    "INT8": true,
+    "FP16": true,
+    "TF32": false,
+    "PREFER_PRECISION_CONSTRAINTS": false,
+    "workspace_mib": 1024,
+    "avg_timing_iterations": 1,
+    "profiling_verbosity": "DETAILED",
+    "external_io": "FLOAT/LINEAR",
+    "precision_and_output_type_setter_calls": 0,
+    "parser_constraints_reset": false,
+    "same_input_and_cpu_expected_bytes": true,
+    "repeat_executions_if_success": 2
+  },
+  "factors": {
+    "topology": "Original FLOAT Clip->Q->DQ unchanged OR Q->INT8Clip[-127,+127]->DQ plus both imported Clip alpha/beta corrections; no other graph changes",
+    "flag": "Both OBEY and PREFER cleared for none; only OBEY enabled for obey; query actual config.get_flag values"
+  },
+  "parser_metadata_required": "Every layer precision_is_set and every output output_type_is_set before and after only Clip bounds correction; record explicit values only when set; preserve all unsupported/error states",
+  "build_failure_policy": "Record each compiler failure with exact rc/log/result and proceed to next frozen case only after child exited; never execute failed engine or retry; timeout/resource guard/stale state/outer interrupt aborts remaining cases with cleanup",
+  "execution_policy": "Only successfully built/deserialized engines with exact static bindings; save sole Conv inspector and two raw outputs, finite state, repeat equality, CPU descriptive deltas and topology/flag paired comparisons",
+  "actual_precision_review": "Independently inspect sole Conv input/weight/output types and named integer tactic, activation/fusion identity; no engine name or requested flag is actual INT8 proof",
+  "outcome_interpretation": {
+    "build_failure_reproduced": "Evidence only for this local prefix context, not a complete detector proof",
+    "all_small_cases_build": "Failure not reproduced here; OBEY alone on this prefix insufficient, full q_all incompatibility remains unresolved",
+    "output_flag_difference": "Descriptive raw and fusion/tactic differences; no newly chosen numerical acceptance tolerance",
+    "completion": "Four outcomes saved or explicit safe abort with final process/resource records; not Gate PASS"
+  },
+  "safety": {
+    "new_native_root": "/home/nvidia/rampq/gate05_prefix_flag_20261020/gate05_prefix_flag_probe_20261020",
+    "no_parallel_build": true,
+    "fan_active_required": true,
+    "available_memory_start_min_gib": 3,
+    "temperature_stop_c": 85,
+    "available_memory_stop": "<384MiB for3 consecutive2second samples",
+    "private_process_group_and_supplemental_guard": true
+  },
+  "protected_scope": {
+    "original_complete_pytorch_ort_guard": "FAILED_UNCHANGED",
+    "original_tolerances_changed": false,
+    "weights_or_calibration_changed": false,
+    "full_detector_build_or_execution_run": false,
+    "dataset_evaluation_run": false,
+    "causal_target_recovery_claim": false,
+    "performance_claim": false,
+    "gate05_status": "INCOMPLETE"
+  }
+}

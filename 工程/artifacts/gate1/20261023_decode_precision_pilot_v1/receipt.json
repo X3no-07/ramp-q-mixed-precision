@@ -1,0 +1,30 @@
+{
+  "schema": "rampq.gate1.decode_precision_probe_receipt/v1",
+  "status": "COMPLETE_DIAGNOSTIC_ONLY",
+  "phase": "COMPLETE",
+  "started_utc": "2026-10-22T16:38:52.810764+00:00",
+  "protocol_sha256": "b9b5c7435ff829317c1af6d3660f0580e9402522979faaeaa5d3646e7781b93a",
+  "runner_sha256": "f76f3bfd677487fa7d87947f866daaf7407ddd455ad3e4d9e399da719e481ec0",
+  "stage": "pilot3",
+  "images_requested": 3,
+  "images_completed": 3,
+  "inference_started": true,
+  "data_role": "debug",
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "scientific_gate_pass": false,
+  "accepted_float_baseline_ready": false,
+  "old_guard_replaced": false,
+  "tolerances_changed": false,
+  "limits": [
+    "Post-hoc arithmetic diagnosis on previously reused training-derived debug images; no Selection or Holdout access.",
+    "The saved fp16 EMA lifted to float32 is not original full-precision training EMA.",
+    "FP16-logit FP32 decoding changes arithmetic only and is not a validated deployment fix.",
+    "Diagnostic comparison PASS never replaces the original unchanged dtype guard or accepts Gate1.",
+    "No NMS, target matching, AP, quantization, TensorRT, Orin, speed, or energy measurement."
+  ],
+  "historical_bytes_all_equal": true,
+  "native_reconstruction_all_exact": true,
+  "elapsed_seconds": 26.75,
+  "finished_utc": "2026-10-22T16:39:19.560919+00:00"
+}

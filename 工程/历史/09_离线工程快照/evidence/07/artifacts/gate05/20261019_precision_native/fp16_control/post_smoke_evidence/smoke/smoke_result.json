@@ -1,0 +1,196 @@
+{
+  "schema": "rampq.gate05.precision_candidate_smoke/v1",
+  "status": "DIAGNOSTIC_FIXED_IMAGE_EXECUTION_OK",
+  "configuration": "fp16_control",
+  "execution_success": true,
+  "diagnostic_only": true,
+  "diagnostic_formats_only_opt_in": false,
+  "precision_audit_status": "REQUESTED_CONV_FORMATS_VERIFIED",
+  "strict_int8_status": "NO_INT8_REQUESTED",
+  "strict_int8_tactics_verified": true,
+  "all_requested_conv_formats_verified": true,
+  "all_outputs_finite": {
+    "/model.10/m/m.0/attn/pe/conv/Conv_output_0": true,
+    "output0": true
+  },
+  "auxiliary_output_npz_keys": {
+    "/model.10/m/m.0/attn/pe/conv/Conv_output_0": "auxiliary_output_0"
+  },
+  "primary_output_npz_key": "tensorrt",
+  "engine_sha256": "92ce7a8f487cbaf473a281b94daa953120870fa2ad992807d60390dffd1b72fb",
+  "lineage": {
+    "build_result_sha256": "557f93c7b282eecf9cfc687ae77f3481bfe40cb2d16229afb21c09965e7a56b6",
+    "spec_sha256": "4b279517da8d847dca9fe60a592b914f7b68f24bd5c4b85b67881172a9f3cfb9",
+    "bundle_manifest_sha256": "f7cabe1ce2530a62c20398c8e79c80d98de4c640f2e6df697013f1751809c330",
+    "precision_audit_sha256": "253b2e3348cb45817b931f452d46b45aa5f1d4d71fd39e6a86a0d140c47ff703",
+    "onnx_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+    "graph_audit_sha256": "3dd8dbe9e8a923f491ad2e6f964557e3c4a57883d6b8a00643aaf90bc4bbc990",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "failed_preflight_sha256": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+    "diagnostic_scope_sha256": "2d2b20fe352672de7ae3b78e830b95b72cefd0159e8c52783e415229ac49e4b1",
+    "source_manifest_sha256": "b14cb5381e82d19c12531ba7db02f50c6b31a1c96df9645b52da78169d5d2eba"
+  },
+  "image": "000020.jpg",
+  "image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "preprocess": {
+    "imgsz": 640,
+    "batch": 1,
+    "rect": false,
+    "bgr_to_rgb": true,
+    "scale": "float32 / 255.0",
+    "letterbox_auto": false,
+    "stride": 32
+  },
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "primary_output_name": "output0",
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "detections": [
+    [
+      2.8125,
+      3.0,
+      245.625,
+      284.25,
+      0.6671474575996399,
+      0.0
+    ],
+    [
+      168.84375,
+      195.9375,
+      245.90625,
+      285.5625,
+      0.44360047578811646,
+      2.0
+    ]
+  ],
+  "class_count": 10,
+  "raw_outputs_sha256": "6a70a5294f9290f953b39e47314c2d91b364b96bbaf16ece857ca9ece0eea385",
+  "shared_graph_control": {
+    "common_preparation_sha256": "8d5c4fc4008cdaab6dc3664dbf52f17d2dbdb309395ccf37d07bf0432d850321",
+    "common_source_fp32_onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+    "common_source_weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+    "common_q_all_pe_tap_reference_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+    "common_output_declaration_sha256": "1f30abe2954219c3ada6feb65f7f917cc4d64f18047c48e506524eaec0e67fb7"
+  },
+  "fp16_comparisons": [
+    {
+      "kind": "old_fp16",
+      "report_sha256": "373892670db8607a80d057bd9c92e26b46297e1f39ee779dfac14bf14dbd71b4",
+      "raw_outputs_sha256": "f38d9b113c148198735dfd0a2577c17b93c8cd46ac1f97002a6c0e0a756cf45b",
+      "engine_sha256": "64d91db3063ac28c1552a1ba6443ae28ca45d82d988f5cd375b39fc8cc76b85c",
+      "onnx_sha256": null,
+      "detections": [
+        [
+          2.8125,
+          2.8125,
+          245.4375,
+          284.0625,
+          0.6671474575996399,
+          0.0
+        ],
+        [
+          168.796875,
+          196.1953125,
+          245.859375,
+          285.796875,
+          0.44360047578811646,
+          2.0
+        ]
+      ],
+      "shared_graph_control": null,
+      "descriptive_only": true,
+      "common_output_contract_verified": false,
+      "shared_source_graph_hash_control_verified": false,
+      "graph_structure_confounded": true,
+      "fusion_and_nonquantized_floating_precision_control_unverified": true,
+      "causal_attribution_allowed": false,
+      "max_abs_box_output_difference": 8.625,
+      "max_abs_score_output_difference": 0.0039024949073791504
+    }
+  ],
+  "comparison_limits": "All comparisons are descriptive. Common graph and output declarations do not establish common fusion or floating precision. A protocol decision is still required before target rescue, causal attribution, or dataset conclusions.",
+  "first_call_ms_not_benchmark": 1432.1631679995335,
+  "nvtx_capture_range": null,
+  "tensorrt": "8.5.2.2",
+  "torch": "2.0.0+nv23.05",
+  "ultralytics": "8.4.50",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "board_time": "2026-10-17T03:38:03+0800",
+  "numerical_migration_status": "ORIGINAL_LOCAL_FULL_MODEL_PYTORCH_ORT_QDQ_PARITY_FAILED_RETAINED",
+  "dataset_evaluation_run": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "causal_attribution_allowed": false,
+  "scope": "One existing fixed Selection image only; build/format/execution evidence only"
+}

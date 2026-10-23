@@ -1,0 +1,98 @@
+{
+  "schema": "rampq.gate05.twoconv_context_protocol/v1",
+  "client_at": "2026-10-20T11:14:41.526266+08:00",
+  "status": "FROZEN_BEFORE_PREPARATION_AND_NATIVE",
+  "source_graph": "artifacts/gate05/20261019_corrected_qall_candidate/model.onnx",
+  "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "source_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+  "source_manifest_sha256": "f1679f4ebc7daa3e5589c28968785d48f31269cc5f83b0398bfa3bd7a91d861f",
+  "failure_inventory_sha256": "a2780d83f1de24ab166553a8a3d341f04cf3c6f74ae41cabd5885124bc81d112",
+  "source_conv_names": [
+    "/model.0/conv/Conv",
+    "/model.1/conv/Conv"
+  ],
+  "excluded_third_conv_name": "/model.2/cv1/conv/Conv",
+  "input_name": "images",
+  "input_shape": [
+    1,
+    3,
+    640,
+    640
+  ],
+  "input_dtype": "float32",
+  "input_npy_sha256": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94",
+  "output_name": "rampq_model_2_cv1_conv_a_dq",
+  "output_shape": [
+    1,
+    32,
+    160,
+    160
+  ],
+  "output_dtype": "float32",
+  "graph_node_count": 19,
+  "initializer_count": 20,
+  "clip_names": [
+    "rampq_model_0_conv_Clip",
+    "rampq_model_1_conv_Clip",
+    "rampq_model_2_cv1_conv_Clip"
+  ],
+  "new_boundary_scale": 1.5619523525238037,
+  "new_boundary_reason": "Saved failed full graph log fuses third activation Clip with second Conv and SiLU, unlike first two standalone Clip boundaries; hypothesis only.",
+  "case_order": [
+    "code_clip_none",
+    "code_clip_obey"
+  ],
+  "cases": [
+    {
+      "id": "code_clip_none",
+      "variant": "code_clip",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    },
+    {
+      "id": "code_clip_obey",
+      "variant": "code_clip",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    }
+  ],
+  "per_case_max_build_seconds": 300,
+  "batch_max_seconds": 900,
+  "maximum_builds": 2,
+  "maximum_executions": 4,
+  "common_native_settings": {
+    "int8": true,
+    "fp16": true,
+    "tf32": false,
+    "prefer": false,
+    "workspace_mib": 1024,
+    "avg_timing_iterations": 1,
+    "profiling_verbosity": "DETAILED",
+    "io_format": "FLOAT_LINEAR",
+    "repeat_executions_if_success": 2,
+    "layer_precision_or_output_type_setters_or_resets": false,
+    "clip_alpha": -127.0,
+    "clip_beta": 127.0
+  },
+  "cpu_preparation": "Exact dependency closure from failed corrected q_all; preserve source serialized nodes/initializer identities; extract matching original q_all slice, new CPU fixed-input outputs must be byte identical; no full model inference or changed quantization.",
+  "continue_on_plain_compile_failure": true,
+  "abort_batch_on": [
+    "timeout",
+    "resource_stop",
+    "signal_or_external_interrupt",
+    "stale_input_or_protocol"
+  ],
+  "attempts_each": 1,
+  "native_output_policy": "Save raw inspector rows for every actual Conv, binding/constraints/actualflags, raw float32 outputs and repeats. Map by unique source names, report ambiguous/missing explicitly. No new numerical tolerance.",
+  "protected_status": {
+    "original_complete_model_guard": "FAILED_UNCHANGED",
+    "full_model_retry_run": false,
+    "dataset_evaluation_run": false,
+    "gate05_status": "INCOMPLETE"
+  },
+  "interpretation": "Failure localizes only this new two-Conv context; no monotonic-prefix assumption or proof newly added node is causal. Success cannot validate complete q_all or exclude OBEY interactions elsewhere."
+}

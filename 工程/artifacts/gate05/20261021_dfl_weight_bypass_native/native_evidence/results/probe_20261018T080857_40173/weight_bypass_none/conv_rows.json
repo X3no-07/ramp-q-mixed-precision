@@ -1,0 +1,76 @@
+[
+  {
+    "Name": "/model.23/dfl/conv/Conv",
+    "LayerType": "CaskConvolution",
+    "Inputs": [
+      {
+        "Name": "rampq_model_23_dfl_conv_a_dq",
+        "Location": "Device",
+        "Dimensions": [
+          1,
+          16,
+          4,
+          8400
+        ],
+        "Format/Datatype": "Two wide channel vectorized row major FP16 format"
+      }
+    ],
+    "Outputs": [
+      {
+        "Name": "Reformatted Output Tensor 0 to /model.23/dfl/conv/Conv",
+        "Location": "Device",
+        "Dimensions": [
+          1,
+          1,
+          4,
+          8400
+        ],
+        "Format/Datatype": "Two wide channel vectorized row major FP16 format"
+      }
+    ],
+    "ParameterType": "Convolution",
+    "Kernel": [
+      1,
+      1
+    ],
+    "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+    "PrePadding": [
+      0,
+      0
+    ],
+    "PostPadding": [
+      0,
+      0
+    ],
+    "Stride": [
+      1,
+      1
+    ],
+    "Dilation": [
+      1,
+      1
+    ],
+    "OutMaps": 1,
+    "Groups": 1,
+    "Weights": {
+      "Type": "Half",
+      "Count": 16
+    },
+    "Bias": {
+      "Type": "Half",
+      "Count": 0
+    },
+    "HasSparseWeights": 0,
+    "HasDynamicFilter": 0,
+    "HasDynamicBias": 0,
+    "HasResidual": 0,
+    "ConvXAsActInputIdx": -1,
+    "BiasAsActInputIdx": -1,
+    "ResAsActInputIdx": -1,
+    "Activation": "NONE",
+    "HasBias": 0,
+    "HasReLU": 0,
+    "TacticName": "ampere_fp16x2_hcudnn_fp16x2_128x32_relu_interior_nn_v1",
+    "TacticValue": "0x6697f322e8f3726b"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "schema": "rampq.gate1.training_contract_supersession/v2",
+  "recorded_at_utc": "2026-10-22T04:22:40.512626+00:00",
+  "active_contract": "training_contract_v3",
+  "active_contract_sha256": "6dfc1b1c8b2d89948c5804cfda8f22c92cbd721b3dfaf0cffdc314b2b2bd4fc0",
+  "active_runner_sha256": "99730c52afcd363250054b41bf47bc0aceb8db1bbb8f0179c0b1742f2d951ef6",
+  "active_attempt": "float_training_v2",
+  "all_three_contract_manifests_verified": true,
+  "earlier_attempts": [
+    {
+      "contract": "training_contract_v1",
+      "used_for_training": false,
+      "superseded_before_training": true
+    },
+    {
+      "contract": "training_contract_v2",
+      "attempt": "float_training_v1",
+      "status": "FAILED_PRESERVED_NO_RESTART",
+      "completed_epochs": 0,
+      "cause": "finite guard did not handle named loss dictionaries"
+    }
+  ],
+  "fix": "Recursive tensor/number/dict/list/tuple finite checks, covered by regression tests. Training restarts from the same official initial weight under a new contract; no failed checkpoint resume.",
+  "budget_or_split_changed": false,
+  "old_attempt_and_contracts_preserved": true,
+  "framework_automatic_retry": false,
+  "launch_sha256": "40ee51f8badcc45ed0e574e506405310309a792fc93fa73d64e460b0a9011d81",
+  "dry_validation_receipt_sha256": "051c155f6f6c6961cfe1caf16e323422d527b20489ef7b54d383cf4f63518618",
+  "tests_sha256": "2d228da76898dbde3ae62b1b8318c7d95a01ccee4698ae9361cf08f8e5cf3f7d"
+}

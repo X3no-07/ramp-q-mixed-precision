@@ -1,0 +1,153 @@
+{
+  "board_time": "2026-10-16T18:39:33+0800",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "build": {
+    "status": "BUILT_AND_DESERIALIZED",
+    "configuration": "q_all",
+    "engine_sha256": "e5c9cae835bddc60bfe744d8d5af8c41c112133911936d8a85e8eddf58ebf9e5",
+    "engine_bytes": 7761909,
+    "onnx_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+    "engine_layers": 272,
+    "bindings": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "expected_binding_contract": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "primary_output_name": "output0",
+    "kernel_selection_avg_timing_override": 1,
+    "elapsed_seconds": 3276.426,
+    "layer_precision_review": "pending",
+    "diagnostic_only": true,
+    "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+    "detection_inference": "not run",
+    "benchmark": "not run",
+    "run_dir": "/home/nvidia/rampq/gate05_qall_extended_20261019/results/build_20261016T090003_217244Z"
+  },
+  "monitor": {
+    "monitor_pid": 3635,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-16T17:00:01+0800",
+    "root": "/home/nvidia/rampq/gate05_qall_extended_20261019",
+    "max_seconds": 7200,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_qall_extended_20261019/jetson_build_qdq.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 3640,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 3279.35,
+    "final_resources": {
+      "MemAvailable_kib": 5275924,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3756944,
+      "temperatures_c": {
+        "CV0-therm": 47.562,
+        "CPU-therm": 49.531,
+        "SOC2-therm": 49.0,
+        "SOC0-therm": 49.0,
+        "CV1-therm": 47.5,
+        "GPU-therm": 47.718,
+        "tj-therm": 50.687,
+        "SOC1-therm": 50.687,
+        "CV2-therm": 48.343
+      }
+    }
+  },
+  "other_trtexec_processes": "",
+  "other_builds_allowed_during_collection": false,
+  "memory": {
+    "command": [
+      "free",
+      "-m"
+    ],
+    "returncode": 0,
+    "output": "              total        used        free      shared  buff/cache   available\nMem:           7337        1977        3545          20        1814        5140\nSwap:          3668           0        3668\n"
+  },
+  "jtop": {
+    "command": [
+      "systemctl",
+      "show",
+      "jtop.service",
+      "-p",
+      "ActiveState",
+      "-p",
+      "NRestarts"
+    ],
+    "returncode": 0,
+    "output": "NRestarts=0\nActiveState=active\n"
+  },
+  "fan": {
+    "command": [
+      "systemctl",
+      "is-active",
+      "nvfancontrol.service"
+    ],
+    "returncode": 0,
+    "output": "active\n"
+  }
+}

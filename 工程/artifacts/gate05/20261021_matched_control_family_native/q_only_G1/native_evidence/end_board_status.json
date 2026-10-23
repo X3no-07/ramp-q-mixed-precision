@@ -1,0 +1,80 @@
+{
+  "board_time": "2026-10-18T20:19:31+0800",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "terminal_monitor": {
+    "monitor_pid": 47863,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-18T19:58:31+0800",
+    "root": "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_q_only_G1_20261021",
+    "max_seconds": 7200,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_q_only_G1_20261021/jetson_build_matched_control.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 47868,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 1258.02,
+    "final_resources": {
+      "MemAvailable_kib": 4966960,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3745424,
+      "temperatures_c": {
+        "CV0-therm": 46.656,
+        "CPU-therm": 48.718,
+        "SOC2-therm": 48.0,
+        "SOC0-therm": 48.187,
+        "CV1-therm": 46.781,
+        "GPU-therm": 46.875,
+        "tj-therm": 49.906,
+        "SOC1-therm": 50.0,
+        "CV2-therm": 47.375
+      }
+    }
+  },
+  "owned_process_checks": {
+    "monitor_pid": {
+      "pid": 47863,
+      "stat": ""
+    },
+    "build_pid": {
+      "pid": 47868,
+      "stat": ""
+    }
+  },
+  "trtexec_stdout": "",
+  "fan": {
+    "command": [
+      "systemctl",
+      "is-active",
+      "nvfancontrol.service"
+    ],
+    "returncode": 0,
+    "stdout": "active\n",
+    "stderr": ""
+  },
+  "jtop": {
+    "command": [
+      "systemctl",
+      "show",
+      "jtop.service",
+      "-p",
+      "ActiveState",
+      "-p",
+      "NRestarts"
+    ],
+    "returncode": 0,
+    "stdout": "NRestarts=0\nActiveState=active\n",
+    "stderr": ""
+  },
+  "memory": {
+    "command": [
+      "free",
+      "-m"
+    ],
+    "returncode": 0,
+    "stdout": "              total        used        free      shared  buff/cache   available\nMem:           7337        2107        2977          70        2252        4858\nSwap:          3668          11        3657\n",
+    "stderr": ""
+  }
+}

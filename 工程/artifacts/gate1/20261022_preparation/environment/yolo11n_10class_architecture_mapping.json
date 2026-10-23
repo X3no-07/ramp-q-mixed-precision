@@ -1,0 +1,1112 @@
+{
+  "status": "ARCHITECTURE_MAPPING_CHECK_ONLY_NOT_TRAINED_MODEL",
+  "nc": 10,
+  "class_order": [
+    "pedestrian",
+    "people",
+    "bicycle",
+    "car",
+    "van",
+    "truck",
+    "tricycle",
+    "awning-tricycle",
+    "bus",
+    "motor"
+  ],
+  "source_conv_count": 88,
+  "group_conv_counts": {
+    "G1": 6,
+    "G2": 5,
+    "G3": 10,
+    "G4": 19,
+    "G5": 8,
+    "G6": 15,
+    "G7": 8,
+    "G8": 17
+  },
+  "source_conv_MACs_at_640": 3160115200,
+  "group_macs": {
+    "G1": 326041600,
+    "G2": 399769600,
+    "G3": 373555200,
+    "G4": 419891200,
+    "G5": 380108800,
+    "G6": 406323200,
+    "G7": 561971200,
+    "G8": 292454400
+  },
+  "group_mac_shares": {
+    "G1": 0.1031739602404368,
+    "G2": 0.1265047552696813,
+    "G3": 0.11820936148150549,
+    "G4": 0.13287211807974594,
+    "G5": 0.12028320992854943,
+    "G6": 0.12857860371672528,
+    "G7": 0.1778325043340192,
+    "G8": 0.09254548694933654
+  },
+  "module_macs": {
+    "model.0.conv": 44236800,
+    "model.1.conv": 117964800,
+    "model.2.cv1.conv": 26214400,
+    "model.2.m.0.cv1.conv": 29491200,
+    "model.2.m.0.cv2.conv": 29491200,
+    "model.2.cv2.conv": 78643200,
+    "model.3.conv": 235929600,
+    "model.4.cv1.conv": 26214400,
+    "model.4.m.0.cv1.conv": 29491200,
+    "model.4.m.0.cv2.conv": 29491200,
+    "model.4.cv2.conv": 78643200,
+    "model.5.conv": 235929600,
+    "model.6.cv1.conv": 26214400,
+    "model.6.m.0.cv1.conv": 3276800,
+    "model.6.m.0.m.0.cv1.conv": 14745600,
+    "model.6.m.0.m.0.cv2.conv": 14745600,
+    "model.6.m.0.m.1.cv1.conv": 14745600,
+    "model.6.m.0.m.1.cv2.conv": 14745600,
+    "model.6.m.0.cv2.conv": 3276800,
+    "model.6.m.0.cv3.conv": 6553600,
+    "model.6.cv2.conv": 39321600,
+    "model.7.conv": 117964800,
+    "model.8.cv1.conv": 26214400,
+    "model.8.m.0.cv1.conv": 3276800,
+    "model.8.m.0.m.0.cv1.conv": 14745600,
+    "model.8.m.0.m.0.cv2.conv": 14745600,
+    "model.8.m.0.m.1.cv1.conv": 14745600,
+    "model.8.m.0.m.1.cv2.conv": 14745600,
+    "model.8.m.0.cv2.conv": 3276800,
+    "model.8.m.0.cv3.conv": 6553600,
+    "model.8.cv2.conv": 39321600,
+    "model.9.cv1.conv": 13107200,
+    "model.9.cv2.conv": 52428800,
+    "model.10.cv1.conv": 26214400,
+    "model.10.m.0.attn.qkv.conv": 13107200,
+    "model.10.m.0.attn.pe.conv": 460800,
+    "model.10.m.0.attn.proj.conv": 6553600,
+    "model.10.m.0.ffn.0.conv": 13107200,
+    "model.10.m.0.ffn.1.conv": 13107200,
+    "model.10.cv2.conv": 26214400,
+    "model.13.cv1.conv": 78643200,
+    "model.13.m.0.cv1.conv": 29491200,
+    "model.13.m.0.cv2.conv": 29491200,
+    "model.13.cv2.conv": 39321600,
+    "model.16.cv1.conv": 104857600,
+    "model.16.m.0.cv1.conv": 29491200,
+    "model.16.m.0.cv2.conv": 29491200,
+    "model.16.cv2.conv": 39321600,
+    "model.17.conv": 58982400,
+    "model.19.cv1.conv": 39321600,
+    "model.19.m.0.cv1.conv": 29491200,
+    "model.19.m.0.cv2.conv": 29491200,
+    "model.19.cv2.conv": 39321600,
+    "model.20.conv": 58982400,
+    "model.22.cv1.conv": 39321600,
+    "model.22.m.0.cv1.conv": 3276800,
+    "model.22.m.0.m.0.cv1.conv": 14745600,
+    "model.22.m.0.m.0.cv2.conv": 14745600,
+    "model.22.m.0.m.1.cv1.conv": 14745600,
+    "model.22.m.0.m.1.cv2.conv": 14745600,
+    "model.22.m.0.cv2.conv": 3276800,
+    "model.22.m.0.cv3.conv": 6553600,
+    "model.22.cv2.conv": 39321600,
+    "model.23.cv2.0.0.conv": 235929600,
+    "model.23.cv2.0.1.conv": 235929600,
+    "model.23.cv2.0.2": 26214400,
+    "model.23.cv2.1.0.conv": 117964800,
+    "model.23.cv2.1.1.conv": 58982400,
+    "model.23.cv2.1.2": 6553600,
+    "model.23.cv2.2.0.conv": 58982400,
+    "model.23.cv2.2.1.conv": 14745600,
+    "model.23.cv2.2.2": 1638400,
+    "model.23.cv3.0.0.0.conv": 3686400,
+    "model.23.cv3.0.0.1.conv": 26214400,
+    "model.23.cv3.0.1.0.conv": 3686400,
+    "model.23.cv3.0.1.1.conv": 26214400,
+    "model.23.cv3.0.2": 4096000,
+    "model.23.cv3.1.0.0.conv": 1843200,
+    "model.23.cv3.1.0.1.conv": 13107200,
+    "model.23.cv3.1.1.0.conv": 921600,
+    "model.23.cv3.1.1.1.conv": 6553600,
+    "model.23.cv3.1.2": 1024000,
+    "model.23.cv3.2.0.0.conv": 921600,
+    "model.23.cv3.2.0.1.conv": 6553600,
+    "model.23.cv3.2.1.0.conv": 230400,
+    "model.23.cv3.2.1.1.conv": 1638400,
+    "model.23.cv3.2.2": 256000,
+    "model.23.dfl.conv": 537600
+  },
+  "layers": [
+    {
+      "name": "model.0.conv",
+      "group": "G1",
+      "in_channels": 3,
+      "out_channels": 16,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.1.conv",
+      "group": "G1",
+      "in_channels": 16,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.2.cv1.conv",
+      "group": "G1",
+      "in_channels": 32,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.2.cv2.conv",
+      "group": "G1",
+      "in_channels": 48,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.2.m.0.cv1.conv",
+      "group": "G1",
+      "in_channels": 16,
+      "out_channels": 8,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.2.m.0.cv2.conv",
+      "group": "G1",
+      "in_channels": 8,
+      "out_channels": 16,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.3.conv",
+      "group": "G2",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.4.cv1.conv",
+      "group": "G2",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.4.cv2.conv",
+      "group": "G2",
+      "in_channels": 96,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.4.m.0.cv1.conv",
+      "group": "G2",
+      "in_channels": 32,
+      "out_channels": 16,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.4.m.0.cv2.conv",
+      "group": "G2",
+      "in_channels": 16,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.5.conv",
+      "group": "G3",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.6.cv1.conv",
+      "group": "G3",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.6.cv2.conv",
+      "group": "G3",
+      "in_channels": 192,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.6.m.0.cv1.conv",
+      "group": "G3",
+      "in_channels": 64,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.6.m.0.cv2.conv",
+      "group": "G3",
+      "in_channels": 64,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.6.m.0.cv3.conv",
+      "group": "G3",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.6.m.0.m.0.cv1.conv",
+      "group": "G3",
+      "in_channels": 32,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.6.m.0.m.0.cv2.conv",
+      "group": "G3",
+      "in_channels": 32,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.6.m.0.m.1.cv1.conv",
+      "group": "G3",
+      "in_channels": 32,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.6.m.0.m.1.cv2.conv",
+      "group": "G3",
+      "in_channels": 32,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.7.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.8.cv1.conv",
+      "group": "G4",
+      "in_channels": 256,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.8.cv2.conv",
+      "group": "G4",
+      "in_channels": 384,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.8.m.0.cv1.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.8.m.0.cv2.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.8.m.0.cv3.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.8.m.0.m.0.cv1.conv",
+      "group": "G4",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.8.m.0.m.0.cv2.conv",
+      "group": "G4",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.8.m.0.m.1.cv1.conv",
+      "group": "G4",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.8.m.0.m.1.cv2.conv",
+      "group": "G4",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.9.cv1.conv",
+      "group": "G4",
+      "in_channels": 256,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.9.cv2.conv",
+      "group": "G4",
+      "in_channels": 512,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.10.cv1.conv",
+      "group": "G4",
+      "in_channels": 256,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.10.cv2.conv",
+      "group": "G4",
+      "in_channels": 256,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.10.m.0.attn.qkv.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.10.m.0.attn.proj.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.10.m.0.attn.pe.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 128,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.10.m.0.ffn.0.conv",
+      "group": "G4",
+      "in_channels": 128,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.10.m.0.ffn.1.conv",
+      "group": "G4",
+      "in_channels": 256,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.13.cv1.conv",
+      "group": "G5",
+      "in_channels": 384,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.13.cv2.conv",
+      "group": "G5",
+      "in_channels": 192,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.13.m.0.cv1.conv",
+      "group": "G5",
+      "in_channels": 64,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.13.m.0.cv2.conv",
+      "group": "G5",
+      "in_channels": 32,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.16.cv1.conv",
+      "group": "G5",
+      "in_channels": 256,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.16.cv2.conv",
+      "group": "G5",
+      "in_channels": 96,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.16.m.0.cv1.conv",
+      "group": "G5",
+      "in_channels": 32,
+      "out_channels": 16,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.16.m.0.cv2.conv",
+      "group": "G5",
+      "in_channels": 16,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.17.conv",
+      "group": "G6",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.19.cv1.conv",
+      "group": "G6",
+      "in_channels": 192,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.19.cv2.conv",
+      "group": "G6",
+      "in_channels": 192,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.19.m.0.cv1.conv",
+      "group": "G6",
+      "in_channels": 64,
+      "out_channels": 32,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.19.m.0.cv2.conv",
+      "group": "G6",
+      "in_channels": 32,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.20.conv",
+      "group": "G6",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.22.cv1.conv",
+      "group": "G6",
+      "in_channels": 384,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.22.cv2.conv",
+      "group": "G6",
+      "in_channels": 384,
+      "out_channels": 256,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.22.m.0.cv1.conv",
+      "group": "G6",
+      "in_channels": 128,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.22.m.0.cv2.conv",
+      "group": "G6",
+      "in_channels": 128,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.22.m.0.cv3.conv",
+      "group": "G6",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.22.m.0.m.0.cv1.conv",
+      "group": "G6",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.22.m.0.m.0.cv2.conv",
+      "group": "G6",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.22.m.0.m.1.cv1.conv",
+      "group": "G6",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.22.m.0.m.1.cv2.conv",
+      "group": "G6",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.0.0.conv",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.0.1.conv",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.0.2",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv2.1.0.conv",
+      "group": "G8",
+      "in_channels": 128,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.1.1.conv",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.1.2",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv2.2.0.conv",
+      "group": "G8",
+      "in_channels": 256,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.2.1.conv",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv2.2.2",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.0.0.0.conv",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 64,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv3.0.0.1.conv",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.0.1.0.conv",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 64,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv3.0.1.1.conv",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.0.2",
+      "group": "G7",
+      "in_channels": 64,
+      "out_channels": 10,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.1.0.0.conv",
+      "group": "G8",
+      "in_channels": 128,
+      "out_channels": 128,
+      "groups": 128,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv3.1.0.1.conv",
+      "group": "G8",
+      "in_channels": 128,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.1.1.0.conv",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 64,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv3.1.1.1.conv",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.1.2",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 10,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.2.0.0.conv",
+      "group": "G8",
+      "in_channels": 256,
+      "out_channels": 256,
+      "groups": 256,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv3.2.0.1.conv",
+      "group": "G8",
+      "in_channels": 256,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.2.1.0.conv",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 64,
+      "kernel_size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "model.23.cv3.2.1.1.conv",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 64,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.cv3.2.2",
+      "group": "G8",
+      "in_channels": 64,
+      "out_channels": 10,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "model.23.dfl.conv",
+      "group": "G8",
+      "in_channels": 16,
+      "out_channels": 1,
+      "groups": 1,
+      "kernel_size": [
+        1,
+        1
+      ]
+    }
+  ],
+  "scope": "Generic COCO weights adapted to 10-class architecture for mapping and zero-input MAC check. Not a trained VisDrone detector or baseline accuracy result.",
+  "data_images_read": 0,
+  "testdev_access": false,
+  "torch": "2.10.0+cu128"
+}

@@ -1,0 +1,123 @@
+{
+  "class_count": 10,
+  "data_role": "synthetic_only",
+  "data_root": "files",
+  "policy": {
+    "allowed_roles": [
+      "train",
+      "training_val"
+    ],
+    "bad_or_empty_source_region": "reject_whole_sample_never_silent_drop",
+    "color": "BGR_decode_to_RGB_CHW_uint8",
+    "complex_transforms": false,
+    "current_execution_data_role": "synthetic_only",
+    "empty_sidecar": "explicit_zero_rows_allowed",
+    "flips": "same_explicit_per_image_epoch_seed_params_for_image_positive_ignore",
+    "hash_recheck": "manifest_and_three_member_files_each_getitem",
+    "image_decode": "verified_bytes_cv2_imdecode_color_no_unbound_cache",
+    "letterbox": "centered_fixed_square_auto_false_scale_fill_false_padding_114",
+    "membership": "exact_list_in_caller_hash_bound_single_role_manifest_no_prefix_inference",
+    "official_training_rule": false,
+    "positive_labels": "independent_normalized_yolo_xywh_not_publisher_ignore_rows",
+    "real_data_training_verified": false,
+    "resize": "longest_side_to_image_size_ceil_both_axes_cv2_linear",
+    "schema": "rampq.gate1.ignore_dataset_policy/v1",
+    "selection_or_holdout": "roles_and_paths_rejected_before_member_file_read"
+  },
+  "samples": [
+    {
+      "image": {
+        "bytes": 2677,
+        "path": "000.png",
+        "sha256": "a174e2f3174b2b71bfffd550b627a12edd60e8ec0418ea76f393866c579ed3e5"
+      },
+      "image_id": "train/synthetic_train_000",
+      "labels": {
+        "bytes": 40,
+        "path": "000.txt",
+        "sha256": "49aaa98bb33198487204ca6ce485807f949351b94e0e07a9de00c95bc48c6144"
+      },
+      "original_hw": [
+        33,
+        101
+      ],
+      "sidecar": {
+        "bytes": 1511,
+        "path": "000.ignore.jsonl",
+        "sha256": "11504ab6c3603b2c0ebf28d3682783479f160eab504f14e93d4c6e1b1e9f508f"
+      },
+      "split_role": "train"
+    },
+    {
+      "image": {
+        "bytes": 2915,
+        "path": "001.png",
+        "sha256": "417034259c1fabf25eaa6100a2a0401bbf124dbfb6fe83d8a74e96dab61d3afd"
+      },
+      "image_id": "train/synthetic_train_001",
+      "labels": {
+        "bytes": 40,
+        "path": "001.txt",
+        "sha256": "49aaa98bb33198487204ca6ce485807f949351b94e0e07a9de00c95bc48c6144"
+      },
+      "original_hw": [
+        101,
+        33
+      ],
+      "sidecar": {
+        "bytes": 1518,
+        "path": "001.ignore.jsonl",
+        "sha256": "0f7d71ccfd253bffd439582a6ee8efa63fb73e7504fc5f22672ab8555554ff9a"
+      },
+      "split_role": "train"
+    },
+    {
+      "image": {
+        "bytes": 2610,
+        "path": "002.png",
+        "sha256": "fc19a5d1cd1cbb4b33366b9ab89c618f5a7a56bc8d7bac7addf3a743163ca4c8"
+      },
+      "image_id": "train/synthetic_train_002",
+      "labels": {
+        "bytes": 40,
+        "path": "002.txt",
+        "sha256": "49aaa98bb33198487204ca6ce485807f949351b94e0e07a9de00c95bc48c6144"
+      },
+      "original_hw": [
+        47,
+        67
+      ],
+      "sidecar": {
+        "bytes": 1359,
+        "path": "002.ignore.jsonl",
+        "sha256": "228ebb9a2eff70d0a6fbefe71b5f3a91452ed3fb44639b4a744c03f3b847bbea"
+      },
+      "split_role": "train"
+    },
+    {
+      "image": {
+        "bytes": 3371,
+        "path": "003.png",
+        "sha256": "44242c98360155736f7f622b77ab52fc30f6e099d635cec50e8e6e45b87498fa"
+      },
+      "image_id": "train/synthetic_train_003",
+      "labels": {
+        "bytes": 40,
+        "path": "003.txt",
+        "sha256": "49aaa98bb33198487204ca6ce485807f949351b94e0e07a9de00c95bc48c6144"
+      },
+      "original_hw": [
+        64,
+        64
+      ],
+      "sidecar": {
+        "bytes": 1311,
+        "path": "003.ignore.jsonl",
+        "sha256": "b8ef155ca8d972cf8e5d4a7773a5b9b1884819c4a849fefde7bb6b9662537eec"
+      },
+      "split_role": "train"
+    }
+  ],
+  "schema": "rampq.gate1.ignore_dataset_manifest/v1",
+  "split_role": "train"
+}

@@ -1,0 +1,739 @@
+{
+  "schema": "rampq.gate05.acceptance_gap_audit/v1",
+  "client_at": "2026-10-21T01:47:24.912099+08:00",
+  "status": "READ_ONLY_ACCEPTANCE_GAPS_AND_COMPLETION_PATH_AUDITED_NOT_A_CRITERIA_AMENDMENT",
+  "gate05_current_status": "INCOMPLETE",
+  "audit_runs_CPU_native_or_SSH": false,
+  "oldcriteria_or_entry_documents_modified": false,
+  "original_failure_and_tolerances_must_remain": true,
+  "sources": {
+    "fp16_original_guard": {
+      "path": "23_Gate05_Orin_FP16首轮检查.md",
+      "sha256": "493de8ce3100fa1e8ad2eba283f356b84018e726d48593317204a9a8155cd7d7",
+      "line_start": 20,
+      "line_end": 40,
+      "excerpt": "## 固定条件与证据范围\n\n- 设备：Jetson Orin NX 8GB；Ubuntu 20.04.6；Jetson Linux 35.3.1；Python 3.8.10；PyTorch 2.0.0+nv23.05。\n- 输入：batch 1，RGB，640×640，letterbox；输出为 `[1,14,8400]`。\n- 构建：`--fp16 --noTF32 --memPoolSize=workspace:1024 --profilingVerbosity=detailed --buildOnly`。\n- 电源设置：请求 15W mode 2；非管理员 `nvpmodel -q` 返回 15W，同时报告 EMC 参数无读取权限。完整特权查询未重跑，不隐去该限制。\n- 图片：已有 Selection 的第一张 `000020.jpg`，未重新选图。\n- 单图 NMS：confidence 0.25、IoU 0.7、max_det 1000；这些是流水线检查设置，不是完整数据集诊断的全部设置。\n- 运行前护栏：两边检测数相同且非零，同类别一对一框 IoU ≥0.90、置信度绝对差 ≤0.05。本次通过。\n\n引擎的输入输出及部分检测头解码仍为 FP32，20 个层包含 FP32 输入或输出张量；这不是“全网络所有运算都是 FP16”。卷积张量和权重的 FP16 格式也不等于累加器一定采用 FP16。\n\n3 组双卷积融合分别发生于 G3、G4、G6，各自未跨分组。分组原始卷积数为 G1=6、G2=5、G3=10、G4=19、G5=8、G6=15、G7=8、G8=17。本轮 FP16 的映射可供后续核查使用，但每个 INT8/混合精度 engine 仍需重新检查，不能套用这次的融合结果。\n\n## 单图核对的实际含义\n\n保存了 TensorRT 与 PyTorch 的 NMS 前原始输出，并使用独立 NumPy 坐标变换重算检测框。与保存的原图坐标最大差小于 0.001 像素，确认不存在遗漏 letterbox 去 padding 或缩放的情况。\n\n该图只有一个海参标注，TensorRT 海参检测框与标注的 IoU 约 0.7914；另一个检测为扇贝，没有对应标注。因此“两个检测与 PyTorch 一致”不表示“两次检测都正确”，也不构成数据集精度证据。\n\nNMS 前全部位置的最大框数值差为 19.7130，最大类别分数差为 0.005245；本次通过的是预先定义的最终检测一致性护栏，没有声称全部原始输出逐元素相等。",
+      "json_pointer": null
+    },
+    "original_gate_remaining": {
+      "path": "23_Gate05_Orin_FP16首轮检查.md",
+      "sha256": "493de8ce3100fa1e8ad2eba283f356b84018e726d48593317204a9a8155cd7d7",
+      "line_start": 78,
+      "line_end": 89,
+      "excerpt": "## 尚未完成的 Gate 0.5 工作\n\n当前仅完成首个精度配置的构建、精度核查和单图执行。64 张原校准图片、150 张原 Holdout 图片及 865 个目标已准备在 `artifacts/gate05/data_v1/`，校准和评估图片内容重叠为 0；本轮未执行这批图片的评估。旧 Holdout 仅用于部署迁移诊断，不能重新包装成新方法的独立确认集。\n\n后续依次完成：\n\n1. 在查看数据集结果前冻结通过、失败和证据不足的判据；沿用固定模型、校准清单、图片清单和目标匹配口径。\n2. 构建并检查全 INT8 卷积基线；确认真实 INT8 内核和 G1–G8 映射，不只检查构建开关。\n3. 分别构建 G1、G1+G5、G1+G2 保持 FP16 的恢复配置，逐个报告结果。\n4. 五个 engine 在同一固定图片集上完成逐目标匹配，统计相对本机 FP16 的新增漏检、同目标救回及附带漏检，并单独检查 FP32→FP16 的变化。\n\n上述五种配置只验证恢复。若声称真实 TensorRT 的双向归因，仍需额外的 `q_only:G1` 破坏侧实验。此轮不作 INT8 真实性、混合精度恢复、正式延迟或能耗结论。",
+      "json_pointer": null
+    },
+    "original_local_failure": {
+      "path": "24_Gate05_Orin_INT8构建与迁移检查.md",
+      "sha256": "92795b4f48fedcbababbc5239e7dc0b8e9df21fb6bb39bf915ad5b533dce440b",
+      "line_start": 19,
+      "line_end": 47,
+      "excerpt": "## 本地数值检查：未通过\n\n`artifacts/gate05/20261018_int8/input_v1/protocol.json` 在运行前保存了单图数值容差。对已有 Selection 第一张 `000020.jpg`，比较 PyTorch FP32 Q/DQ 模拟与 ONNX Runtime CPU Q/DQ 执行：\n\n| 项目 | 结果 |\n|---|---|\n| 全部权重和偏置与源模型核对 | 完全一致 |\n| INT8 舍入与窄范围饱和独立样例 | 通过 |\n| 全部原始框输出最大绝对差 | 96.570465（640 输入坐标） |\n| 全部原始类别分数最大绝对差 | 0.072959 |\n| 原始框数值护栏 | 未通过，33,600 个元素中 14,204 个超出预定组合容差 |\n| 修改原始容差后改判通过 | 没有 |\n\n这些最大差遍历全部 8,400 个输出位置，不等于最终检测框都偏移了该距离。\n\n进一步隔离检查保存于 `local_divergence_diagnostic.json`、`isolated_quantizer_audit.json`：\n\n1. 88 个量化权重张量在 PyTorch 与 ONNX Runtime 中完全一致。\n2. 使用相同的输入张量分别测试 88 个激活量化器，22,835,200 个元素全部一致。\n3. 第一层卷积输出已有最大约 `1.62125e-5` 的浮点后端差异；第二层量化输入有 3 个元素出现量化格差异，后续差异逐层传播。该记录支持进一步调查后端浮点计算与量化舍入的耦合，不能把后续全部差异直接视为已穷尽解释。\n4. ONNX 图结构审计确认：原始非卷积节点及全部原始 initializer 保持一致；卷积只改接两个量化输入，增加 440 个量化/裁剪节点，冻结 scale 和窄范围边界准确。\n\n相同图片的描述性 NMS 结果仍各有海参、扇贝两项检测，但海参置信度从 PyTorch 模拟的约 0.614 变为 ONNX 模拟的约 0.673；检测数相同不能替代原始数值护栏。未据此调整校准范围或选择其他图片。\n\n## 为何继续实机诊断\n\n在保留完整模型数值失败的前提下，另行冻结 `diagnostic_scope.json`：这里只回答该显式图能否在真实 TensorRT 8.5.2.2 上构建、88 个卷积是否采用真实 INT8 内核、固定单图能否成功执行。它不把本地数值失败改判为通过，也不直接给出迁移真实性、恢复机制或精度结论。\n\n这一诊断没有改变量化图和校准范围。局部量化语义验证与完整模型数值检查是两项不同证据，都保留。",
+      "json_pointer": null
+    },
+    "original_kernel_proxy": {
+      "path": "24_Gate05_Orin_INT8构建与迁移检查.md",
+      "sha256": "92795b4f48fedcbababbc5239e7dc0b8e9df21fb6bb39bf915ad5b533dce440b",
+      "line_start": 98,
+      "line_end": 104,
+      "excerpt": "## 结果文件与下一步\n\n本轮证据统一位于 `artifacts/gate05/20261018_int8/`，`checkpoint.json` 保存当前机器状态，`audit_summary.json` 为核对过原始文件的机器可读摘要。`input_v1/` 保留原始失败记录，`diagnostic_bundle_v1/` 与 `diagnostic_bundle_v2/` 保存两次构建输入；不得删除第一次失败结果。\n\n若生成完整引擎，先使用 `scripts/audit_gate05_int8_precision.py` 检查原始 Conv 身份、INT8 权重、INT8 输入格式、整数 tactic 及分组覆盖。该审计器已用既有 FP16 引擎作反例检查，88 个 FP16 卷积均不能被判为 INT8。它当前会对缺失整数 tactic 名称的层保守报需复查，后续必须依据完整 inspector 记录处理，不能为了通过而忽略未确认项。\n\n通过实际精度审计后，才运行 `scripts/jetson_trt_int8_smoke.py` 的同一 Selection 图片执行检查。后续完整 Gate 0.5 仍需冻结数据集判据、检查三种恢复 engine、完成同一图片集的逐目标匹配，并交代本地数值迁移差异。正式延迟、FPS、功耗及双向归因尚无本轮证据。",
+      "json_pointer": null
+    },
+    "original_quant_scheme": {
+      "path": "24_Gate05_Orin_INT8构建与迁移检查.md",
+      "sha256": "92795b4f48fedcbababbc5239e7dc0b8e9df21fb6bb39bf915ad5b533dce440b",
+      "line_start": 7,
+      "line_end": 17,
+      "excerpt": "本轮仅检查 `q_all`：全部纳入 G1–G8 的 88 个卷积，其权重和输入激活采用显式 INT8 Q/DQ。其他网络算子允许 FP16/FP32，不能将其描述为全网络所有运算均为 INT8。本轮不运行固定 150 张图片的评估，也不运行 G1/G1+G5/G1+G2 恢复配置。\n\n沿用 Gate 0 的模型、64 张训练校准图片产生的冻结范围和 88 层分组。没有重新校准或依据本轮结果更换图片、模块、范围。量化图来源为上一轮 FP16 使用的同一份 FP32 ONNX，输入 `[1,3,640,640]`，输出 `[1,14,8400]`。\n\n量化设置：\n\n- 激活为对称、逐张量、零点 0，scale=`max(冻结absmax/127,1e-12)`。\n- 激活在进入 INT8 QuantizeLinear 前先 Clip 到 `[-127*scale,127*scale]`，保持原模拟的窄范围语义。\n- 卷积权重为对称、逐输出通道，axis=0，scale=`max(逐通道absmax,1e-12)/127`，零点 0。\n- 不额外量化卷积输出；后续卷积输入按其自身冻结范围量化。\n- 显式 Q/DQ 的输入量化位置参考 [TensorRT 开发者指南](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-861/developer-guide/index.html)和 [NVIDIA 维护者对卷积输入/输出精度的说明](https://github.com/NVIDIA/TensorRT/issues/2383)。实际是否采用 INT8 内核仍由引擎逐层证据决定。",
+      "json_pointer": null
+    },
+    "build_pass_field": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 24,
+      "line_end": 24,
+      "excerpt": "  \"build_pass\": \"Build/deserialization succeeds and all 88 Conv identities map to verified INT8 weighted kernels\",",
+      "json_pointer": "/build_pass"
+    },
+    "execution_pass_field": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 25,
+      "line_end": 25,
+      "excerpt": "  \"execution_pass\": \"Real Jetson execution succeeds with finite [1,14,8400] output on the fixed image\",",
+      "json_pointer": "/execution_pass"
+    },
+    "not_a_pass_condition": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 26,
+      "line_end": 26,
+      "excerpt": "  \"not_a_pass_condition\": \"INT8 matching FP16 detection count or accuracy; quantization may change detections\",",
+      "json_pointer": "/not_a_pass_condition"
+    },
+    "dataset_gate_unfrozen": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 28,
+      "line_end": 28,
+      "excerpt": "  \"dataset_gate_decision_rules\": \"Still to be frozen before fixed-dataset evaluation\",",
+      "json_pointer": "/dataset_gate_decision_rules"
+    },
+    "original_numeric_tolerances": {
+      "path": "artifacts/gate05/20261018_int8/input_v1/protocol.json",
+      "sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+      "line_start": 16,
+      "line_end": 16,
+      "excerpt": "  \"local_preflight\": {",
+      "json_pointer": "/local_preflight"
+    },
+    "six_old_configs": {
+      "path": "26_Gate05_当前可执行工作收口.md",
+      "sha256": "4d9d934a96af6ecf3706bc7066033dbccf7ea93e60cdf309f26fb217e61899d7",
+      "line_start": 7,
+      "line_end": 18,
+      "excerpt": "| 冻结配置 | 实际 INT8 / FP16 卷积 | 有命名整数 tactic / 请求 INT8 数 | 固定单图预测数（conf=0.25） |\n|---|---:|---:|---:|\n| FP16 对照 | 0 / 88 | 不适用 | 2 |\n| q_all | 88 / 0 | 81 / 88 | 0 |\n| 仅恢复 G1 | 82 / 6 | 75 / 82 | 0 |\n| 恢复 G1+G5 | 74 / 14 | 67 / 74 | 0 |\n| 恢复 G1+G2 | 77 / 11 | 70 / 77 | 0 |\n| 仅量化 G1 | 6 / 82 | 6 / 6 | 0 |\n\n全部引擎均已真实执行，主输出与 PE 辅助输出均为有限值。q_all 及三个恢复配置各有 7 个深度卷积未暴露 tactic 名，格式完整与严格整数计算证据分开保留。所有量化配置在本张图上均为零检测，不能把构建或有限输出写成检测精度通过。最终同一启动环境复跑 FP16 对照仍有两个预测，原始输出与先前 FP16 对照逐位相同。\n\n当前可执行的冻结工程矩阵已完成，下一步需要规划数值异常定位和可比参考、非量化浮点与融合控制，以及查看数据集结果前的验收规则。没有运行 150 张数据集评估，没有调整原阈值、校准范围或数值容差，也没有建立实机恢复、双向归因或性能结论。下面保留各次失败、超时和最终完成的证据。",
+      "json_pointer": null
+    },
+    "old_kernel_trace_limit": {
+      "path": "26_Gate05_当前可执行工作收口.md",
+      "sha256": "4d9d934a96af6ecf3706bc7066033dbccf7ea93e60cdf309f26fb217e61899d7",
+      "line_start": 139,
+      "line_end": 147,
+      "excerpt": "本次在监护计时 **3279.35 秒**（约 55 分钟）完成构建及反序列化。最高温度 53.625°C、最低可用内存 1867.22 MiB、swap 使用 0，无新增内核事件；结束后确认 monitor、build 和全部 trtexec 已退出。完整 engine SHA256 为 `e5c9cae835bddc60bfe744d8d5af8c41c112133911936d8a85e8eddf58ebf9e5`。因此，先前 30 分钟的停止只能解释为预算不足，不能解释为该图必然不能构建。\n\n逐层检查确认全部 88 个卷积的激活输入和权重均为 INT8 格式，其中 81 个有命名整数 tactic，7 个 CudaDepthwiseConvolution 未暴露 tactic 名。**严格整数计算证据仍为待核查**，没有用 TacticValue 或权重格式代替该证据。旧审计工具此前固定读取第一个输入；已归档原工具并按原生 ConvXAsActInputIdx 修正寻址，对非法或未知索引保持失败。此引擎的 88 个索引均为原生 -1 主输入标记，修复前后 88/81/7 的结论一致，没有放宽格式、融合或整数计算标准。\n\n在明确启用 `--diagnostic-formats-only` 后执行同一固定 Selection 图，主输出和 PE 辅助输出均为有限值，但固定 conf=0.25 下仍为零检测，唯一标注海参没有匹配；FP16 对照中的该目标匹配。原完整模型 PyTorch/ORT 数值护栏失败保持不变，没有数据集通过或恢复结论。\n\n第一次 Nsight 尝试在旧版板端脚本的参数检查阶段停止，未执行图片；旧脚本已保留。同步已有 NVTX 脚本后的第二次尝试完成图片执行，但 NVTX 触发方式没有生成 trace，未将它写成捕获成功。第三次用全进程捕获重放同一固定图，成功取得原始 `.nsys-rep` 和 SQLite。两次实际执行的原始输出逐位相同，最高类别分数约 0.000102222；该重复检查不是性能测量。\n\n对保存的 SQLite 进行只读分析，7 个深度卷积都能通过完整 NVTX 层名和与 inspector 一致的层 JSON、同线程 CUDA API 区间及唯一 correlationId，精确关联到各自的运行内核。PE 对应 `depthwiseConvINT8GenericKernelF`，其余对应 DSConvIMMA 模板或 `depthwiseConvINT8SpecializedKernel`。这些函数名证明运行身份，不能充当执行算术指令的证明，也没有补写缺失的 TacticName。88 个 INT8 格式、81 个命名整数 tactic、7 个内核运行身份分别保留，严格审计仍为 `PRECISION_REVIEW_REQUIRED`。三次尝试及重放输出均保留；只读分析在 `artifacts/gate05/20261019_qall_kernel_diagnostic/`，分析 JSON SHA256 为 `6cab40a4da8cbc90329fcf12feea10771360bbed2c48a588abeec5d99a1bb634`。",
+      "json_pointer": null
+    },
+    "restore_kernel_trace_limit": {
+      "path": "26_Gate05_当前可执行工作收口.md",
+      "sha256": "4d9d934a96af6ecf3706bc7066033dbccf7ea93e60cdf309f26fb217e61899d7",
+      "line_start": 163,
+      "line_end": 171,
+      "excerpt": "三个监护均以 `BUILD_SCRIPT_OK` 结束，没有新增内核安全事件。队列对每项记录了 owned 后代退出及全局 trtexec 为空后才进入下一项；最终也独立确认任务进程为空。延长预算后成功构建，未改变图或实际精度要求。\n\n| 配置 | engine SHA256 |\n|---|---|\n| 仅恢复 G1 | `112cbe6f6a0edceaf0e05f82a4217951663498177935e5fcacf7863a0d1fdbce` |\n| 恢复 G1+G5 | `57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784` |\n| 恢复 G1+G2 | `8054e6242c63eae17dfaf473944426c77ad3a79c25000bb093476fe31556c40e` |\n\n三个引擎逐层检查均达到原请求格式，分别有 75/67/70 个命名整数 tactic，均剩 7 个深度卷积 tactic 名缺失。独立重算确认原始图、权重、分组、融合和实际映射一致。随后明确启用格式完整但严格证据未齐的诊断选项，各执行一次原 `000020.jpg`，同时进行全进程 Nsight 捕获；两类输出均为有限值，但 conf=0.25 下均为零检测。三者最高类别分数分别约 0.000105888、0.000145435、0.000096500。三个配置共 21 个未命名层均通过完整 NVTX/注册层 JSON、同线程 API 区间和唯一 correlationId 精确关联运行内核；不据此补写 TacticName 或宣称整数算术指令已证明。只读分析在 `artifacts/gate05/20261019_restore_saved_execution_diagnostic/`，JSON SHA256 为 `0e30bbd92e9c7c4720cfd8f71d88beb77868d1bd04175e219d111beac30c09c2`。保存的标注匹配也都由 FP16 对照的海参匹配变为未匹配；这仅为固定单图描述，不能宣布数据集恢复失败、成功或因果关系。",
+      "json_pointer": null
+    },
+    "reference_decision_explicitly_open": {
+      "path": "26_Gate05_当前可执行工作收口.md",
+      "sha256": "4d9d934a96af6ecf3706bc7066033dbccf7ea93e60cdf309f26fb217e61899d7",
+      "line_start": 198,
+      "line_end": 207,
+      "excerpt": "## 后续协议停止点\n\n当前原生检查只回答构建、约束采用、固定单图执行及其格式事实，不定义数据集成功门槛。开始 150 张图片的评估前，需要确定：\n\n1. 原完整模型数值迁移失败如何处理，是否另设可对齐参考实现及独立的目标级迁移验收。\n2. 各引擎非量化浮点精度和融合的控制方式；共同输出声明本身不足以消除这些因素。\n3. 在查看数据集结果前冻结 PASS / FAIL / INCONCLUSIVE 判据。\n4. 量化引擎在固定图上数值输出明显异常，需要选择后续定位路线；并明确七个深度卷积的严格整数计算证据怎样验收。不能以构建成功、INT8 张量格式或内核名称代替数值正确性和缺失的证据。\n\n原始失败和所有限时停止记录保留。冻结工程检查已完成，当前没有固定数据集精度、救回、双向归因或性能结论。继续数据集试验、改变后端/图结构/浮点控制策略或重新定义迁移标准，均属于下一步方案规划，不在本轮追加执行。",
+      "json_pointer": null
+    },
+    "reference_failure_reproduced": {
+      "path": "29_Gate05_完整参考数值分歧定位.md",
+      "sha256": "4cef3c405ca302b70ce6ad04f5bb703411859e87b39ef9a3c7c755a5530ab272",
+      "line_start": 7,
+      "line_end": 16,
+      "excerpt": "## 原失败准确复现\n\n新跑的 PyTorch 与 ORT 主输出分别与原 `20261018_int8/input_v1/local_raw_outputs.npz` 对应数组逐字节一致。ORT 关闭图优化，CPU FP32、四线程，输入预处理保持原样。既有两部分容差均重新检查，未只因第一条断言失败而跳过 score 的统计：\n\n| 主输出部分 | 原 rtol / atol | 最大绝对差 | 超出原容差的元素 |\n|---|---|---:|---:|\n| xywh | 0.005 / 0.5 | 96.5704651 | 14,204 / 33,600 |\n| 10 类分数 | 0.02 / 0.002 | 0.0729592 | 47 / 84,000 |\n\n因此这不是旧日志无法复现的问题。原状态仍为 `LOCAL_QDQ_PREFLIGHT_FAILED`，没有新容差，没有把单图预测数量相同改成数值通过标准。",
+      "json_pointer": null
+    },
+    "rounding_causal_evidence": {
+      "path": "29_Gate05_完整参考数值分歧定位.md",
+      "sha256": "4cef3c405ca302b70ce6ad04f5bb703411859e87b39ef9a3c7c755a5530ab272",
+      "line_start": 28,
+      "line_end": 41,
+      "excerpt": "## 首个量化边界的交叉对照\n\n首 Conv 使用相同输入、量化权重和 bias 时，PyTorch 与 ORT 最大绝对差为 `1.621246337890625e-5`。它们经过首 SiLU 后，在第二 Conv 输入量化处出现 3 / 1,638,400 个整数码分歧，对应量化步长 `0.7481081485748291`。\n\n诊断把 Conv、SiLU、量化器分别交叉换用两个后端：\n\n- 固定 Conv 来源，仅切换 SiLU，第二量化器的整数码不变。\n- 切换 Conv 来源，恰好翻转这 3 个位置的整数码。\n- 四份 SiLU 输入分别同时送入 PyTorch 与 ORT 量化器，整数码及 DQ 数值各自一致。\n- 裸 ORT 卷积以动态 x/w/b 回放，与原前缀首 Conv 输出一致，已检查拆图上下文。\n\n当前固定图的 3 个位置为 `[0,7,105,184]`、`[0,7,176,138]`、`[0,7,177,144]`。其 SiLU 输出除以量化尺度后在 0.5 两侧，距离边界约为 0.5e-6 至 2.4e-6 个整数码单位。原值、浮点 ULP、归一化值和四组交叉结果全部保留。\n\n这支持一个范围明确的因果结论：这 3 处最早的量化码分离由首卷积的浮点计算差异跨过舍入边界造成；该处不是量化器规则不同，也不是切换 SiLU 导致的码变化。它不排除后续网络存在额外的后端差异，不能把三个位置直接等同于完整模型全部误差的唯一来源。",
+      "json_pointer": null
+    },
+    "hybrid_not_independent": {
+      "path": "29_Gate05_完整参考数值分歧定位.md",
+      "sha256": "4cef3c405ca302b70ce6ad04f5bb703411859e87b39ef9a3c7c755a5530ab272",
+      "line_start": 49,
+      "line_end": 65,
+      "excerpt": "## 完整算子后端对照\n\n在内存中的 PyTorch 模型里，保留原激活 `round/clamp/multiply`、权重、卷积属性和其他 PyTorch 运算，将 88 个 Conv 临时委托给分别建立的 ORT 会话。先使用原完整 ORT 的激活 DQ 输入验证会话上下文。\n\n首次单线程控制在 34 / 88 层有微小差异（最大 1.6212463e-5），因此没有执行该配置的完整反事实，失败控制和代码保留。改用与原完整运行一致的四线程，在新目录进行一次控制复验，88 个会话的输出全部与原 full ORT 及此前 replay 逐字节一致，之后才执行两个完整反事实。\n\n| 参考实现，对照原完整 ORT | box 最大绝对差 | score 最大绝对差 | 原容差下 box / score 越界数 |\n|---|---:|---:|---:|\n| 原 PyTorch Q/DQ | 96.5704651 | 0.0729592 | 14,204 / 47 |\n| PyTorch Q/DQ＋ORT Conv，其余 PyTorch | 0 | 5.6009958e-6 | 0 / 0 |\n| 上述实现再统一 ORT SiLU | 0 | 1.3061498e-7 | 0 / 0 |\n\n仅替换 Conv 时，有 84 层 Conv 输出逐字节一致，另外四层位于分类头。第一个额外数值分歧是 `model.23.cv3.0.0.1.conv` 的一个激活量化输入，相差 0.0744243；后续三层也记录完整。再替换 SiLU 后，88 个 Conv 输出均逐字节一致，88 个激活 Q/DQ 输入数值相等，但因正负零不能说输入字节都相同。SiLU 是 1 个共享实例、77 个别名，第二个反事实中实际调用 77 次，未漏掉共享实例。\n\n这形成了完整的定位链：原失败可复现；局部相同输入卷积误差很小；最早三处量化码变化由 Conv 来源决定；完整运行统一 Conv 后大幅收敛；再统一 SiLU 后全部量化卷积输出一致。它支持当前固定图上的完整分歧主要来自后端浮点算术及其量化边界放大，而非本轮已验证的量化参数、权重或量化器规则不一致。不能外推到所有图片、所有算子、TensorRT 引擎或独立数据集。\n\n两种反事实改变了参考实现本身，虽落在原容差内，也不能把原 PyTorch/ORT 记录改成 PASS，或以新实现冒充原 Gate 0 模拟参考。原模型参数、源图和脚本文件前后 SHA 一致，内存中的 forward 在完成后还原。",
+      "json_pointer": null
+    },
+    "new_reference_protocol_needed": {
+      "path": "29_Gate05_完整参考数值分歧定位.md",
+      "sha256": "4cef3c405ca302b70ce6ad04f5bb703411859e87b39ef9a3c7c755a5530ab272",
+      "line_start": 82,
+      "line_end": 84,
+      "excerpt": "原始数组、诊断代码、源文件前后哈希、两个失败尝试和 manifest 均保存；主阶段已正常结束，没有后台板端任务。独立审查复核了保存数组、88 个控制、整数码坐标、各分支原容差计数以及源文件现时哈希。\n\n完整数值迁移仍未通过，Gate 0.5 为 `INCOMPLETE`。本轮已从“数值原因未定位”推进到可复现的后端算术解释。下一步须固定能清楚区分语义等价与后端数值一致性的参考协议，并记录与原 Gate 0 参考的关系，再评审修复推广和数据集验收。当前不直接启动耗时的其余引擎矩阵，不用放宽容差或只比较检测数量来消除失败。",
+      "json_pointer": null
+    },
+    "corrected_full_compiler_failure": {
+      "path": "30_Gate05_全INT8修复候选验证.md",
+      "sha256": "d6ac2f218322abada9de128a7d054995ef81dc745b3585eaf78f947f6102bf2d",
+      "line_start": 54,
+      "line_end": 72,
+      "excerpt": "## Native 构建结果：格式筛选失败，未生成引擎\n\nmonitor PID 23569、私有构建组 23574、补充 guard PID 23575。monitor 正常观察到子进程返回码 1，状态为 `BUILD_SCRIPT_FAILED`，用时 13.07 秒；Builder 记录用时 10.5340614 秒。它不是 7200 秒超时，没有按延长预算重跑。\n\n原始错误是：\n\n```text\noptimizer.cpp::filterQDQFormats::4421\nAssertion !n->candidateRequirements.empty() failed.\nAll of the candidates were removed, which points to the node being incorrectly marked as an int8 node.\n```\n\n随后 `buildSerializedNetwork::751` 返回空引擎，Python 在 `assert serialized is not None` 停止。日志没有给出触发该断言的具体源节点；不能把旧七个深度卷积的严格 tactic 缺口直接当成本次根因，也不能断言已经证明是 obey 或某一处 Clip 造成。\n\n板端解析、校正前/后的 88 份 Clip 属性记录及构建请求已保存；独立静态重审确认校正后的 alpha/beta 全部为 -127/+127。构建请求确为 INT8、FP16、OBEY，关闭 PREFER 和 TF32。记录中的“0 个显式层精度约束”仅指脚本没有调用层精度/输出类型 setter；当时没有查询解析器自身是否带入约束，不能据此断言 OBEY 没有影响。源图审计仍零错误，但这些是解析/输入证据，不是实际引擎精度通过。\n\n优化日志将 57 个 Clip 列为独立 POINTWISE 计划层、31 个列为融合到 Conv 的计划层。尚无引擎，不能把这些日志当成实际执行精度或故障节点定位证据。\n\n没有 `model.engine`、没有 actual precision audit、没有单图执行。现有显式 `--diagnostic-formats-only` 分支在本次不具备使用条件，未启动。目标级恢复机制本轮未被测试，不能把编译失败写成机制不复现。",
+      "json_pointer": null
+    },
+    "parser_imported_constraints": {
+      "path": "30_Gate05_全INT8修复候选验证.md",
+      "sha256": "d6ac2f218322abada9de128a7d054995ef81dc745b3585eaf78f947f6102bf2d",
+      "line_start": 84,
+      "line_end": 105,
+      "excerpt": "## 下一诊断条件\n\n在单独冻结的 parse-only 元数据检查中，没有创建 Builder 配置，没有调用构建或推理 API，只解析同一图、读取约束并对临时内存中的 88 个 Clip 校正边界。1275 个解析层的查询全部成功：\n\n| 解析器设置的状态 | 数量及来源 |\n|---|---|\n| precision_is_set=true | 176 个 Dequantize 层为 INT8，另 1 个 Shape 层为 INT32 |\n| output_type_is_set=true | 176 个 Quantize 输出为 INT8，另同一 Shape 输出为 INT32 |\n\n176 对应 88 个激活及 88 个权重量化器。校正前后这两类约束各为 177，逐项元数据未变化。由此确实不能把“0 次脚本 setter”理解为解析网络无约束；但不能仅凭这些元数据判定 OBEY 就是失败原因，也不能拿 parsed 类型当实际引擎格式。\n\n补充检查 monitor 用时 9.06 秒，guard 无干预且私有组完全为空。26 份原始文件均已回收核验，ZIP 为 122,747 bytes，SHA256 `a567b474be0e563448ce96b7b5cc0f1e9bfff1036461b9512efe9b8c1ba32d78`；文件在 `artifacts/gate05/20261019_corrected_qall_native/parser_metadata_evidence/`，与原全模型失败包分开保存。\n\n独立补充审查 859 项通过，报告 `parser_metadata_independent_review.json` SHA256 `bb78f349eb8784fe1374f34e777d8948e2eefb1fabd8858f0d18fea1c3ac55aa`。两次任务均已退出；最后实时记录在 `final_board_observation_after_parser.json`。此前成功 q_only_G1 引擎的板端 SHA 仍为 `486845ca9bcc71e9ad6b721329855a1444184e721d64bcb7eb7daae593bd1476`，未覆盖或改动。\n\n本协议的单次全模型尝试已经结束。下一步对比原浮点 Clip 和已校正整数码 Clip，并在 0 次手动层精度设置的同一解析上下文中区分 OBEY 与不启用 OBEY/PREFER 的影响。先固定解析 API、输入、权重和观测输出，防止同时改变多个因素。\n\n已成功的融合前缀实际为 11 节点、**一个首 Conv**＋SiLU＋第二激活 Q/DQ 输出，不含第二 Conv。独立 builder 审查建议里的“已成功双 Conv code_clip 前缀”措辞过强，原报告保留，`next_probe_plan.json` 明确更正并重新从原 ONNX 计数。任何双 Conv 扩展都应作为新切片先验证，不能继承旧前缀成功状态。\n\n具体后续切片仍须以本次日志和图边界选定，不能只凭最后一个打印层命名故障节点。`next_probe_plan.json` 是未执行计划，本轮未运行新的 2×2 引擎构建。\n\n小切片若不能复现完整错误，应记为不足以定位；不能因它成功而宣称全模型可构建。若复现，必须保持原数值语义并核验实际执行格式，再评审新的全模型尝试。本轮没有偷偷调整条件重试。",
+      "json_pointer": null
+    },
+    "current_research_acceptance": {
+      "path": "研究状态与后续计划.md",
+      "sha256": "a6f27012704ee80a5dae3c08484455c692cd7374e87891be5745f2d81e553e0e",
+      "line_start": 167,
+      "line_end": 187,
+      "excerpt": "### Gate 0.5：先在真实Orin上做小规模真实性检查\n\n截至 2026-10-21，已通过 SSH 连接真实 Orin NX 8GB，确认 Ubuntu 20.04.6、Jetson Linux 35.3.1、TensorRT 8.5.2.2。原六个配置完成构建和固定单图执行，另存完整 q_only_G1 修复候选完成实际精度审计与单图检查；另存修复 q_all 仍构建失败。最新 DFL 六节点 Conv 输出边界仍为 NONE 成功、OBEY 同类断言失败，无引擎或推理，详见[36](36_Gate05_DFL卷积输出边界定位.md)。成功四维输出和旧八节点三维数组在明确对应后字节相同；这次概率输入相同，与更早 logits/概率跨边界对照的证据应分开。实际 Conv 输出 FP32，不能将构建成功当成完整数值正确性或 Gate 通过。此前全部对照与原始拓扑数值偏差继续保留。本次未升级、刷机或重试完整图；监护完成不等于两组构建均通过。第一阶段仍需要回答：\n\n> PyTorch模拟中看到的“目标消失—恢复模块—同一目标回来”，在真实TensorRT上是否还存在？\n\n后续真实性评估路线如下，启动前需完成当前完整图兼容性、参考可比性和验收协议；当前不直接重试全图、启动恢复矩阵或运行 150 张图片：\n\n1. 已确认系统可运行，保留当前软件环境和模型哈希。\n2. 当前通过连接电脑的 USB 网络使用 SSH；后续运行继续记录启动编号及断连情况。\n3. 已记录 Orin、Jetson Linux、TensorRT、输入尺寸和 batch size。15W 模式查询有非管理员 EMC 读取权限提示，完整特权查询未重跑，报告保留这一限制。\n4. 复制YOLO11n模型、独立校准数据和预先固定的约100–150张RUOD-R验证图片；保存文件清单和哈希。不得一边看结果一边换图、改阈值或挑恢复模块，也不能将旧Holdout再次包装成新方法的独立确认集。\n5. 在同一设备、同一输入尺寸和同一功耗模式下构建五个engine：FP16、全INT8、G1恢复、G1+G5恢复、G1+G2恢复。\n6. 用engine inspector或等价工具检查精度约束真的生效，不能只看engine构建成功。\n7. 对五个engine运行同一批图片，使用和Gate 0相同的目标级匹配规则，记录新增漏检、救回和附带漏检。实机的新增漏检首先相对本机FP16定义，另检查FP32到FP16自身的变化；不要与原模拟FP32口径直接混加。\n8. 若要验证实机“双向同目标”，必须额外构建第六个engine：仅G1用INT8，其余FP16，作为`q_only:G1`破坏侧。前五种配置只能验证恢复，不能单独得出双向归因。G1+G5若也要双向验证，还需要它自己的q_only配置。\n9. 如果全INT8没有新增漏检，或者恢复G1不能让相同目标回来，就记录不复现或证据不足，先核对校准、分组映射和匹配口径，不能伪造成功；若精度约束无法落实，记为部署验证未完成，而非机制失败。如果现象复现，再进入Gate 1。\n\n开始固定数据集评估前还要解决原完整数值护栏及浮点/融合参考可比性，并冻结通过/失败/不确定的判据，不能看完结果再定门槛。单图流水线护栏已在运行前记录于 `artifacts/gate05/20261018_fp16/checkpoint.json`，它不替代数据集判据。此阶段至少保存环境记录、校准/测试清单、engine构建及实际层精度记录、逐目标CSV、同目标破坏—恢复案例和一份结论报告。当前 FP16、INT8 和按组精度请求的构建及格式审计均已有实现；严格整数证据缺口和完整数值迁移仍待解决。\n\n这一阶段只做真实性检查，不急着写完整的FPS、功耗和能量结论。",
+      "json_pointer": null
+    },
+    "current_catalog_not_acceptance": {
+      "path": "README.md",
+      "sha256": "bd3232e1b77fbee6f484fb47e30f5e0b0bbfb4254b95be95f7e52809b3eebf10",
+      "line_start": 383,
+      "line_end": 407,
+      "excerpt": "### 9.11 Gate 0.5 实机检查\n\n- `23_Gate05_Orin_FP16首轮检查.md`：首个 FP16 配置的实机结果和限制；\n- `24_Gate05_Orin_INT8构建与迁移检查.md`：早期全 INT8 构建失败、本地数值护栏失败及 G4 节点最小复现；\n- `26_Gate05_当前可执行工作收口.md`：原六个冻结配置的构建、实际格式及单图执行闭环；\n- `27_Gate05_首层量化异常定位.md`：首层 Clip/QDQ 数值异常与孤立算子修复；\n- `28_Gate05_融合前缀与完整候选验证.md`：融合前缀、完整 q_only_G1 修复候选及证据边界；\n- `29_Gate05_完整参考数值分歧定位.md`：原完整护栏复现、量化边界及完整算子后端对照；\n- `30_Gate05_全INT8修复候选验证.md`：参考诊断协议、全 INT8 改写 CPU 等价及 native 格式筛选失败证据；\n- `31_Gate05_前缀Clip与精度约束对照.md`：此前单 Conv 四组对照、真实 INT8/GENERIC 融合及同拓扑 NONE/OBEY 输出一致性；\n- `32_Gate05_双卷积上下文定位.md`：此前双 Conv 两组对照、实际专用 SWISH/GENERIC 融合、重复及跨标志输出一致性；\n- `33_Gate05_DFL内部上下文定位.md`：此前修正 DFL 9 节点局部复现，NONE 成功/OBEY 同类断言失败；\n- `34_Gate05_DFL原始拓扑与约束对照.md`：此前原始 DFL 两格与旧修正两格对照，两个 OBEY 均失败、两个 NONE 构建成功但数值表现不同；\n- `35_Gate05_DFL_Softmax邻接定位.md`：此前 Softmax 后八节点上下文，以及外部输入与跨阶段输出比较的界限；\n- `36_Gate05_DFL卷积输出边界定位.md`：最新六节点 QDQ＋Conv、四维输出契约与旧三维原始数组字节对应，NONE 成功/OBEY 仍同类失败；\n- `artifacts/gate05/20261020_prefix_flag_native/`：四组原始构建与重复输出、精确回执、根审计及独立审查；\n- `artifacts/gate05/20261020_twoconv_context_native/`：双 Conv 两组原始构建、重复输出、89 文件回执、实际层审计及独立码域/进程退出复查；\n- `artifacts/gate05/20261020_twoconv_context_review/next_context_static_options.json`：此前 DFL、PE 和分支/残差的静态选项；本轮只推进 DFL，PE 与分支未执行；\n- `artifacts/gate05/20261020_dfl_context_probe/`：72 Conv CPU 上游来源、冻结内部 logits fixture、原/改 DFL tail 共享输入字节等价及密封清单；\n- `artifacts/gate05/20261020_dfl_context_native/`：NONE 实际引擎与重复输出、OBEY 编译失败原始证据、88 文件回执及独立审查；\n- `artifacts/gate05/20261020_dfl_original_native/`：原始拓扑两格、84 文件回执、四格比较、失败签名与实际层审查；其 Softmax 切口建议已由下一阶段另冻协议执行；\n- `artifacts/gate05/20261020_dfl_softmax_cut_probe/`：原 Softmax 单节点、冻结概率 fixture、8 节点切片及严格两次 CPU 字节组成核验；\n- `artifacts/gate05/20261020_dfl_softmax_cut_native/`：八节点原始记录、实际层/约束、NONE 保存输出和 OBEY 失败证据；其六节点建议已另冻协议执行；\n- `artifacts/gate05/20261020_dfl_conv_output_probe/`：六节点精确闭包、复用概率、一次 CPU 和纯形状转换的新四维 expected 来源；\n- `artifacts/gate05/20261020_dfl_conv_output_native/`：最新 89 文件回执、四维实际输出与旧三维字节对应、OBEY 失败和静态下一控制建议；",
+      "json_pointer": null
+    },
+    "gate2_performance_separate": {
+      "path": "研究状态与后续计划.md",
+      "sha256": "a6f27012704ee80a5dae3c08484455c692cd7374e87891be5745f2d81e553e0e",
+      "line_start": 202,
+      "line_end": 214,
+      "excerpt": "### Gate 2：测真实部署收益\n\n候选方案冻结后，才在Orin上系统测量：\n\n- 端到端和纯模型延迟；\n- P50/P95延迟；\n- 吞吐和显存；\n- 固定功耗模式下的平均功率；\n- 能量/帧；\n- FP16/INT8边界转换开销；\n- G1、G1+G5、G1+G2的精度—速度—能耗折中。\n\n如果混合精度没有比FP16更快，或者实际大量层隐式回退到FP16，就不能声称它有部署Pareto优势。",
+      "json_pointer": null
+    },
+    "contract_not_gate_amendment": {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+      "line_start": 6,
+      "line_end": 6,
+      "excerpt": "  \"not_a_gate_amendment\": true,",
+      "json_pointer": "/not_a_gate_amendment"
+    },
+    "contract_reference_roles": {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+      "line_start": 7,
+      "line_end": 22,
+      "excerpt": "  \"reference_roles\": {\n    \"original_gate0_pytorch_qdq\": \"Unchanged historical simulation reference; original full PyTorch/ORT guard remains FAILED_UNCHANGED\",\n    \"original_onnx_cpu\": \"Pinned original q_all+PE-tap graph, CPUExecutionProvider/ORT_DISABLE_ALL, float32, four threads; source for rewrite-equivalence diagnostic\",\n    \"hybrid_ort_conv_silu_torch_other\": \"Mechanism-localization bridge only, not an independent numerical reference or a replacement for Gate0\",\n    \"tensorrt_corrected_candidate\": \"New diagnostic derivative; actual native formats/tactics and outputs must be separately inspected\"\n  },\n  \"protected_failure\": {\n    \"path\": \"artifacts/gate05/20261018_int8/input_v1/preflight.json\",\n    \"sha256\": \"505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21\",\n    \"status\": \"LOCAL_QDQ_PREFLIGHT_FAILED\",\n    \"original_complete_model_guard\": \"FAILED_UNCHANGED\",\n    \"original_box_rtol\": 0.005,\n    \"original_box_atol\": 0.5,\n    \"original_score_rtol\": 0.02,\n    \"original_score_atol\": 0.002,\n    \"tolerances_changed\": false",
+      "json_pointer": "/reference_roles"
+    },
+    "contract_actual_precision": {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+      "line_start": 93,
+      "line_end": 108,
+      "excerpt": "  \"native_audit_and_execution\": {\n    \"actual_format_tactic_and_fusion_criteria\": \"Reuse original base auditor unchanged; new source tracer restricted to frozen integer-code-Clip graph\",\n    \"all_88_actual_int8_input_and_weight_formats_required\": true,\n    \"zero_mapping_format_or_fusion_errors_required\": true,\n    \"strict_integer_evidence\": \"Every quantized source requires verified named integer tactic to count strict pass; prior seven depthwise gaps not excused\",\n    \"if_only_named_tactic_evidence_incomplete\": \"Allow the existing explicit --diagnostic-formats-only fixed-image branch only after all original format/mapping/fusion criteria pass; preserve INTEGER_TACTIC_REVIEW_REQUIRED and no strict/gate pass\",\n    \"image\": \"000020.jpg only\",\n    \"nms\": {\n      \"conf_thres\": 0.25,\n      \"iou_thres\": 0.7,\n      \"max_det\": 1000,\n      \"nc\": 10\n    },\n    \"main_and_aux_outputs\": \"Save all raw float32 arrays, shape/dtype/finite state and original detections; preserve nonfinite/failure outputs too\",\n    \"saved_cpu_and_fp16_output_comparisons\": \"Descriptive only; no new native numeric tolerance or accuracy gate\",\n    \"native_rescue_or_causal_attribution_claim_allowed\": false",
+      "json_pointer": "/native_audit_and_execution"
+    },
+    "contract_floating_control_gap": {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+      "line_start": 110,
+      "line_end": 113,
+      "excerpt": "  \"control_identity\": {\n    \"common_preparation\": \"New rewrite audit identity; cannot reuse parent common_preparation to declare matchedFP16\",\n    \"old_fp16_control\": \"Historical provenance/descriptive comparison only; floating and fusion control unestablished for this new preparation\",\n    \"old_native_q_all\": \"Failure history and descriptive comparison, not matched compiler control\"",
+      "json_pointer": "/control_identity"
+    },
+    "contract_dataset_forbidden": {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+      "line_start": 115,
+      "line_end": 128,
+      "excerpt": "  \"not_permitted_in_this_contract\": [\n    \"Dataset/150image/holdout inference\",\n    \"Calibration recomputation, new training, weight changes, changing conf/NMS\",\n    \"Changing the original guard result or tolerance\",\n    \"Treating hybrid control as original reference PASS\",\n    \"Promoting a fixed-image execution to accuracy, target-recovery, performance, paper-novelty or overallGate pass\"\n  ],\n  \"stage_result_states\": {\n    \"COMPLETE\": \"Static+CPU equivalence and native build/audit/fixedimage receipt chain completed with its separate statuses; overallGate still INCOMPLETE\",\n    \"STOPPED_OR_FAILED\": \"Preserve exact failure, process cleanup and receipts; no retry or criteria change within this one attempt\",\n    \"INCONCLUSIVE\": \"Native required format/mapping/fusion unavailable, or strict evidence not complete; cannot report Gate PASS\"\n  },\n  \"dataset_gate\": \"No dataset evaluation until a separate reference/control decision and pre-outcome PASS/FAIL/INCONCLUSIVE criteria exist\",\n  \"gate05_status\": \"INCOMPLETE\"",
+      "json_pointer": "/dataset_gate"
+    },
+    "named_tactic_regex_proxy": {
+      "path": "scripts/audit_gate05_int8_precision.py",
+      "sha256": "4ef240b00932ff350ec13576e783798d3d9ab0f78255e5ea3ffc8d69475ba06b",
+      "line_start": 128,
+      "line_end": 148,
+      "excerpt": "    \"\"\"Report inspector formats separately from the stronger named-tactic test.\"\"\"\n    weight_type = layer.get('Weights', {}).get('Type', '')\n    inputs = [t.get('Format/Datatype', '') for t in layer.get('Inputs', [])]\n    outputs = [t.get('Format/Datatype', '') for t in layer.get('Outputs', [])]\n    tactic = layer.get('TacticName', '')\n    activation = convolution_activation_input(layer)\n    weights_int8 = weight_type.lower() in ('int8', 'int8_t', 'signed int8', 'signed byte')\n    activation_int8 = activation['valid'] and 'INT8' in inputs[activation['index']].upper()\n    integer_tactic = bool(re.search(r'i8|s8|int8|imma', tactic, re.IGNORECASE))\n    return {'engine_layer': layer['Name'], 'engine_layer_type': layer['LayerType'],\n            'weights_type': weight_type, 'input_formats': inputs, 'output_formats': outputs,\n            'convolution_activation_input_index': activation['index'],\n            'convolution_activation_input': activation,\n            'tactic': tactic, 'tactic_value': layer.get('TacticValue'),\n            'int8_input_and_weight_formats': weights_int8 and activation_int8,\n            'integer_tactic_evidence': 'NAMED_INTEGER_TACTIC' if integer_tactic else\n                ('TACTIC_NAME_NOT_EXPOSED' if not tactic else 'INTEGER_TACTIC_NOT_IDENTIFIED'),\n            'verified_int8_kernel': weights_int8 and activation_int8 and integer_tactic,\n            'checks': {'weight_int8': weights_int8, 'activation_input_index_valid': activation['valid'],\n                       'activation_input_int8': activation_int8,\n                       'integer_tactic': integer_tactic}}",
+      "json_pointer": null
+    },
+    "target_matching_source": {
+      "path": "src/gate0.py",
+      "sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+      "line_start": 424,
+      "line_end": 474,
+      "excerpt": "def match_targets(\n    ground_truths: Sequence[GroundTruth],\n    detections: Sequence[Detection],\n    primary_conf: float,\n    match_iou: float,\n) -> list[dict[str, Any]]:\n    candidates: list[tuple[float, float, int, int]] = []\n    for gt_index, gt in enumerate(ground_truths):\n        for det_index, detection in enumerate(detections):\n            if detection.class_id != gt.class_id or detection.confidence < primary_conf:\n                continue\n            iou = box_iou(gt.box, detection.box)\n            if iou >= match_iou:\n                candidates.append((iou, detection.confidence, gt_index, det_index))\n    candidates.sort(reverse=True)\n    assigned_gt: dict[int, tuple[int, float, float]] = {}\n    used_detections: set[int] = set()\n    for iou, confidence, gt_index, det_index in candidates:\n        if gt_index in assigned_gt or det_index in used_detections:\n            continue\n        assigned_gt[gt_index] = (det_index, iou, confidence)\n        used_detections.add(det_index)\n\n    rows: list[dict[str, Any]] = []\n    for gt_index, gt in enumerate(ground_truths):\n        same_class = [det for det in detections if det.class_id == gt.class_id]\n        best = max(\n            ((box_iou(gt.box, det.box), det.confidence) for det in same_class),\n            default=(0.0, 0.0),\n        )\n        assignment = assigned_gt.get(gt_index)\n        rows.append(\n            {\n                \"target_id\": gt.target_id,\n                \"class_id\": gt.class_id,\n                \"x1\": round(gt.box[0], 4),\n                \"y1\": round(gt.box[1], 4),\n                \"x2\": round(gt.box[2], 4),\n                \"y2\": round(gt.box[3], 4),\n                \"area_ratio\": round(gt.area_ratio, 8),\n                \"local_contrast\": round(gt.contrast, 8),\n                \"matched\": int(assignment is not None),\n                \"match_iou\": round(assignment[1], 6) if assignment else 0.0,\n                \"match_conf\": round(assignment[2], 6) if assignment else 0.0,\n                \"best_low_iou\": round(best[0], 6),\n                \"best_low_conf\": round(best[1], 6),\n            }\n        )\n    return rows\n\n",
+      "json_pointer": null
+    },
+    "data_fixed_and_used": {
+      "path": "artifacts/gate05/data_v1/manifest.json",
+      "sha256": "c4dac80ad7c59524194a9501f5ff8126cc0517e84f29f4106068c0c4b27a93aa",
+      "line_start": 1,
+      "line_end": 14,
+      "excerpt": "{\n  \"schema\": \"rampq.gate05.data/v1\",\n  \"prepared_client_date\": \"2026-10-18\",\n  \"purpose\": \"Fixed deployment migration diagnostic using the existing Gate 0 Holdout\",\n  \"evidence_boundary\": \"This is previously used Holdout data, not a fresh independent method-confirmation set.\",\n  \"source_calibration_manifest_sha256\": \"cdb38549ba9aa78d32a00203de0ab050aeb7ee7f24e006402d32a5a2b616bb20\",\n  \"source_holdout_file_bytes_sha256\": \"f7f4d8dae73a05b91e7974aabce71b263bdb43d1c89d21b2ae0eed6837b4bb40\",\n  \"canonical_holdout_list_sha256\": \"4061739eb2e3b1812f2daf0b4327a65cf0cb7922eb43b30fc9457db310f976c7\",\n  \"canonical_calibration_list_sha256\": \"02caf7d8888b72a8ac884eb95aeb76ae9c9dd984baf3b1714a379faf2eaa7069\",\n  \"weights_sha256\": \"62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af\",\n  \"calibration_count\": 64,\n  \"evaluation_count\": 150,\n  \"evaluation_target_count\": 865,\n  \"image_content_overlap\": 0,",
+      "json_pointer": null
+    },
+    "corrected_qonly_status": {
+      "path": "artifacts/gate05/20261019_corrected_qonly_native/checkpoint.json",
+      "sha256": "1ed6056bec24ea34dc25d7382ffac6dcfed1332cb02c554c79fa7bb7d92a84c4",
+      "line_start": 1,
+      "line_end": 27,
+      "excerpt": "{\n  \"schema\": \"rampq.gate05.corrected_qonly_candidate_checkpoint/v1\",\n  \"client_at\": \"2026-10-19T19:31:25.969929+08:00\",\n  \"status\": \"CORRECTED_QONLY_FIXED_IMAGE_CHECKPOINT_COMPLETE\",\n  \"gate05_status\": \"INCOMPLETE\",\n  \"configuration\": \"q_only_G1\",\n  \"raw_archive_exact_receipt_files\": 70,\n  \"raw_archive_crc_and_all_hashes_verified\": true,\n  \"strict_source_and_native_audit\": \"REQUESTED_CONV_FORMATS_VERIFIED;ALL_REQUESTED_INT8_TACTICS_VERIFIED\",\n  \"verified_int8_input_weight_convs\": 6,\n  \"verified_fp16_input_weight_output_convs\": 82,\n  \"quantized_conv_output_types\": {\n    \"INT8\": 3,\n    \"FP32\": 2,\n    \"FP16\": 1\n  },\n  \"first_native_conv_activation\": \"SWISH\",\n  \"engine_sha256\": \"486845ca9bcc71e9ad6b721329855a1444184e721d64bcb7eb7daae593bd1476\",\n  \"fixed_image\": \"000020.jpg\",\n  \"old_native_detection_count\": 0,\n  \"new_native_detection_count\": 2,\n  \"supplied_gt_count\": 1,\n  \"gt_supported_match_count\": 1,\n  \"gt_iou\": 0.8108697094462965,\n  \"new_native_detection_values\": [\n    [\n      3.5625,",
+      "json_pointer": null
+    },
+    "state_snapshot": {
+      "path": "artifacts/gate05/current_execution_state.json",
+      "sha256": "80e00341b5a10e3816e91e7015d74bb0f80db50a157b9bf642867f00c756294c",
+      "line_start": 34,
+      "line_end": 34,
+      "excerpt": "  \"gate05_status\": \"INCOMPLETE\",",
+      "json_pointer": "/gate05_status"
+    },
+    "saved_seven_exact_kernel_identities": {
+      "path": "artifacts/gate05/20261019_qall_kernel_diagnostic/analysis.json",
+      "sha256": "6cab40a4da8cbc90329fcf12feea10771360bbed2c48a588abeec5d99a1bb634",
+      "line_start": 65,
+      "line_end": 65,
+      "excerpt": "  \"target_depthwise_layers\": 7,",
+      "json_pointer": "/layers"
+    },
+    "saved_twentyone_restore_kernel_identities": {
+      "path": "artifacts/gate05/20261019_restore_saved_execution_diagnostic/analysis.json",
+      "sha256": "0e30bbd92e9c7c4720cfd8f71d88beb77868d1bd04175e219d111beac30c09c2",
+      "line_start": 13,
+      "line_end": 13,
+      "excerpt": "  \"restores\": [",
+      "json_pointer": "/restores"
+    }
+  },
+  "minimum_acceptance": [
+    {
+      "id": "A_identity",
+      "requirement": "Freeze same model/calibration/150-image list/target IDs/preprocessing and source-to-G1-G8 mapping; record same Orin/software/batch/power.",
+      "original_requirement": true,
+      "sources": [
+        "original_gate_remaining",
+        "current_research_acceptance",
+        "data_fixed_and_used"
+      ],
+      "current": "Mostly reusable immutable identities; candidate preparation/control family still needs one new frozen identity.",
+      "gap": "Candidate-dependent common graph and floating-control identities."
+    },
+    {
+      "id": "B_deployment",
+      "requirement": "Five complete real engines: matched FP16, q_all, r_only_G1, r_only_G1_G5, r_only_G1_G2; each requested Conv actually mapped and precision verified, finite real execution.",
+      "original_requirement": true,
+      "sources": [
+        "original_gate_remaining",
+        "build_pass_field",
+        "execution_pass_field",
+        "current_research_acceptance"
+      ],
+      "current": "Old five built/executed but all quantized fixed-image outputs anomalous. Corrected q_only alone now healthy; corrected full q_all has no engine.",
+      "gap": "Numerically credible corrected q_all + three corrected restores + matched floating control; cannot mix corrected q_only with anomalous old engines as repair success."
+    },
+    {
+      "id": "C_reference_controls",
+      "requirement": "Keep historical PyTorch/ORT failure and independently establish comparable deployment reference plus floating/fusion controls before target inference.",
+      "original_requirement": "Original raw guard failed; later explicit open reference/control decision, not a requirement to force PyTorch/ORT bit equality.",
+      "sources": [
+        "original_local_failure",
+        "reference_decision_explicitly_open",
+        "hybrid_not_independent",
+        "contract_reference_roles",
+        "contract_floating_control_gap"
+      ],
+      "current": "Backend-rounding explanation strong for fixed image; hybrid is not independent. Current contract explicitly single-image-only.",
+      "gap": "A new independent end-to-end reference/control contract with no cached native tensor injection; protect old guard/tolerances/status and state new estimand."
+    },
+    {
+      "id": "D_preoutcome_rules",
+      "requirement": "Freeze PASS/FAIL/INCONCLUSIVE target-level rules and denominator before running the fixed 150 images.",
+      "original_requirement": true,
+      "sources": [
+        "original_gate_remaining",
+        "dataset_gate_unfrozen",
+        "contract_dataset_forbidden",
+        "current_research_acceptance"
+      ],
+      "current": "No dataset criterion frozen and no native150-image run recorded.",
+      "gap": "New protocol must state target-level event definitions, collateral loss, abstention/technical failure handling, and planned comparisons; no threshold tuning after results."
+    },
+    {
+      "id": "E_target_migration",
+      "requirement": "Same150 images/all865 targets: local-FP16-relative added misses, same-target rescue, collateral misses; separately FP32-to-FP16 changes; CSV/raw/cases/report.",
+      "original_requirement": true,
+      "sources": [
+        "original_gate_remaining",
+        "current_research_acceptance",
+        "target_matching_source"
+      ],
+      "current": "Only fixed000020 smoke/GT; no dataset target result.",
+      "gap": "Run every frozen image/config exactly once per protocol, preserve all targets/negative cases and raw outputs."
+    },
+    {
+      "id": "F_bidirectional_conditional",
+      "requirement": "q_only_G1 is required only if claiming real TensorRT bidirectional same-target attribution; other groups need own q_only only when making those claims.",
+      "original_requirement": "Conditional extension, not necessary for five-engine recovery-only conclusion.",
+      "sources": [
+        "original_gate_remaining",
+        "current_research_acceptance"
+      ],
+      "current": "Corrected full q_only_G1 is available; no150-image results.",
+      "gap": "If claiming G1 dual attribution, evaluate it and intersect the same target IDs, no inference from detection-count equality."
+    }
+  ],
+  "diagnostic_additions_vs_original_requirements": [
+    {
+      "condition": "Every INT8 source must have a nonempty inspector TacticName matching i8|s8|int8|imma.",
+      "classification": "Project-added conservative proof proxy for original real-integer-kernel requirement. Cannot silently waive; direct authenticated machine-code evidence can be a separately registered equivalent evidence channel.",
+      "sources": [
+        "build_pass_field",
+        "original_kernel_proxy",
+        "named_tactic_regex_proxy",
+        "contract_actual_precision"
+      ]
+    },
+    {
+      "condition": "OBEY must be enabled, no parser-request reset, one-shot per-stage timing/CPU byte proof.",
+      "classification": "Frozen diagnostic controls of particular stages, not original Gate scientific outcome. Each frozen failed attempt stays failed. New controlled compiler recipe may use NONE/PREFER if actual requested precision still passes; no hidden resets/fallback.",
+      "sources": [
+        "original_gate_remaining",
+        "parser_imported_constraints",
+        "contract_actual_precision"
+      ]
+    },
+    {
+      "condition": "All old and new graph raw outputs or PyTorch/ORT output bits must be identical.",
+      "classification": "Exact array equality is specific to declared graph-rewrite proofs on a fixture; not general cross-backend inference identity. Original tolerance guard is binding for its original comparison and remains failed.",
+      "sources": [
+        "fp16_original_guard",
+        "original_numeric_tolerances",
+        "hybrid_not_independent",
+        "contract_reference_roles"
+      ]
+    },
+    {
+      "condition": "Every Conv output INT8, all network ops INT8, Tensor Core-only arithmetic, FP16 accumulation, FPS/energy Pareto gains.",
+      "classification": "Not Gate0.5 requirements. Original quantization does not newly quantize Conv outputs; other ops may float; Gate2 covers performance. Integer MAC evidence can be SIMT integer or IMMA, not necessarily TensorCore.",
+      "sources": [
+        "original_quant_scheme",
+        "fp16_original_guard",
+        "gate2_performance_separate"
+      ]
+    },
+    {
+      "condition": "Unique full-model failing source node or all local diagnostic experiments must be resolved before any valid corrected deployment can proceed.",
+      "classification": "Not an original acceptance requirement. Preserve unresolved root cause; a new complete implementation can qualify via static semantic proof, actual precision, credible independent reference, and target criteria. Partial slices alone cannot qualify it.",
+      "sources": [
+        "original_gate_remaining",
+        "reference_decision_explicitly_open",
+        "current_research_acceptance"
+      ]
+    }
+  ],
+  "independent_reference_contract_assessment": {
+    "answer": "A separately frozen independent deployment reference is legitimate; turning the old FAILED guard into PASS or relabeling a cache-injected/hybrid run as original reference is not.",
+    "basis": [
+      "reference_decision_explicitly_open",
+      "rounding_causal_evidence",
+      "hybrid_not_independent",
+      "new_reference_protocol_needed",
+      "contract_reference_roles"
+    ],
+    "minimum_new_contract": [
+      "Keep original preflight path/hash/rtol/atol and FAILED_UNCHANGED. Label new contract as deployment migration verification, not retrospective Gate0 simulation parity.",
+      "Independent end-to-end original/corrected ONNX CPU with immutable images/weights/scales, CPUExecutionProvider/ORT_DISABLE_ALL/threads pinned; no native outputs or recorded hidden tensors injected into reference.",
+      "Require exact selected-node/initializer/quantizer-rule preservation and same-input quantizer tests as semantic proof; distinguish signed zero numerical equality from byte identity.",
+      "Use own CPU output for each new quantization configuration. Weight-QDQ bypass changes mathematical model and cannot be q_all-equivalent or inherit its expected array.",
+      "Establish complete unquantized/floating controls on the same common output preparation; inspect nonquantized formats and fusions. Report residual backend differences instead of assigning all change to quantization.",
+      "Define native-to-reference numeric/target decision before new dataset inference. Do not set a large all-output tolerance to cover already seen96.57box error or use same detection count as correctness.",
+      "For mixed-G1 causal claim, use same native FP16 baseline and same backend/control family; separately report Gate0 PyTorch FP32-to-native FP16 shifts. Do not conflate FP32-restoration simulation with FP16 deployment restoration."
+    ],
+    "cannot_infer": "The fixed-image backend explanation does not prove all images or TensorRT correct; no promise that original raw guard can be passed without changing implementation."
+  },
+  "strict_integer_evidence_path": {
+    "existing_evidence": "7 q_all plus21 restore source layers already correlate exact inspector JSON/NVTX thread/CUDA launch correlationId to full mangled kernel symbols; no instruction evidence yet.",
+    "qall_engine_sha256": "e5c9cae835bddc60bfe744d8d5af8c41c112133911936d8a85e8eddf58ebf9e5",
+    "sqlite_sha256": "678b6a886207a0c89148df89117d0d30c86a24bc0689d4e5de4553df49747f29",
+    "seven_layers": [
+      {
+        "saved_analysis_pointer": "/layers/0",
+        "native_layer_name": "model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN11cuDepthwise31depthwiseConvINT8GenericKernelFILi3ELi3EEEvPKiPfN8nvinfer12rt14ReducedDivisorEiiiS6_iiiiiiS6_S2_PK6float4S9_ffbbfiiii",
+            "demangled_symbol": "void cuDepthwise::depthwiseConvINT8GenericKernelF<(int)3, (int)3>(const int *, float *, nvinfer1::rt::ReducedDivisor, int, int, int, nvinfer1::rt::ReducedDivisor, int, int, int, int, int, int, nvinfer1::rt::ReducedDivisor, const int *, const float4 *, const float4 *, float, float, bool, bool, float, int, int, int, int)",
+            "correlation_id": 3897,
+            "grid": [
+              50,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "saved_analysis_pointer": "/layers/1",
+        "native_layer_name": "model.23.cv3.0.0.0.conv.weight + rampq_model_23_cv3_0_0_0_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul)",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_29MathModuleDSConvIMMAReusePRMTIS5_EELb1EEEvNS0_12LaunchParamsEi",
+            "demangled_symbol": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMAReusePRMT<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+            "correlation_id": 4479,
+            "grid": [
+              5,
+              10,
+              2
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "saved_analysis_pointer": "/layers/2",
+        "native_layer_name": "model.23.cv3.0.1.0.conv.weight + rampq_model_23_cv3_0_1_0_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul)",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_29MathModuleDSConvIMMAReusePRMTIS5_EELb1EEEvNS0_12LaunchParamsEi",
+            "demangled_symbol": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMAReusePRMT<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+            "correlation_id": 4525,
+            "grid": [
+              5,
+              10,
+              2
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "saved_analysis_pointer": "/layers/3",
+        "native_layer_name": "model.23.cv3.1.0.0.conv.weight + rampq_model_23_cv3_1_0_0_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul)",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_29MathModuleDSConvIMMAReusePRMTIS5_EELb1EEEvNS0_12LaunchParamsEi",
+            "demangled_symbol": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMAReusePRMT<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+            "correlation_id": 4580,
+            "grid": [
+              5,
+              5,
+              4
+            ],
+            "block": [
+              32,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "saved_analysis_pointer": "/layers/4",
+        "native_layer_name": "model.23.cv3.1.1.0.conv.weight + rampq_model_23_cv3_1_1_0_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul)",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN8nvinfer15sdcrr15kernelFrameworkINS0_13TraitsWrapperINS0_18TraitsR3S3U1V1BaseILi8ELi1ELi4EEEEENS0_20MathModuleDSConvIMMAIS5_EELb1EEEvNS0_12LaunchParamsEi",
+            "demangled_symbol": "void nvinfer1::sdcrr::kernelFramework<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>, nvinfer1::sdcrr::MathModuleDSConvIMMA<nvinfer1::sdcrr::TraitsWrapper<nvinfer1::sdcrr::TraitsR3S3U1V1Base<(int)8, (int)1, (int)4>>>, (bool)1>(nvinfer1::sdcrr::LaunchParams, int)",
+            "correlation_id": 4627,
+            "grid": [
+              3,
+              10,
+              2
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "saved_analysis_pointer": "/layers/5",
+        "native_layer_name": "model.23.cv3.2.0.0.conv.weight + rampq_model_23_cv3_2_0_0_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul)",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN11cuDepthwise34depthwiseConvINT8SpecializedKernelILi3ELi3ELi1ELi1EEEvPKiP5char4N8nvinfer12rt14ReducedDivisorEiiS7_iiiS7_S2_PK6float4SA_ffbbfiii",
+            "demangled_symbol": "void cuDepthwise::depthwiseConvINT8SpecializedKernel<(int)3, (int)3, (int)1, (int)1>(const int *, char4 *, nvinfer1::rt::ReducedDivisor, int, int, nvinfer1::rt::ReducedDivisor, int, int, int, nvinfer1::rt::ReducedDivisor, const int *, const float4 *, const float4 *, float, float, bool, bool, float, int, int, int)",
+            "correlation_id": 4714,
+            "grid": [
+              25,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "saved_analysis_pointer": "/layers/6",
+        "native_layer_name": "model.23.cv3.2.1.0.conv.weight + rampq_model_23_cv3_2_1_0_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul)",
+        "native_type": "CudaDepthwiseConvolution",
+        "native_tactic_name": null,
+        "instruction_proven_in_saved_trace": false,
+        "launches": [
+          {
+            "mangled_symbol": "_ZN11cuDepthwise34depthwiseConvINT8SpecializedKernelILi3ELi3ELi1ELi1EEEvPKiP5char4N8nvinfer12rt14ReducedDivisorEiiS7_iiiS7_S2_PK6float4SA_ffbbfiii",
+            "demangled_symbol": "void cuDepthwise::depthwiseConvINT8SpecializedKernel<(int)3, (int)3, (int)1, (int)1>(const int *, char4 *, nvinfer1::rt::ReducedDivisor, int, int, nvinfer1::rt::ReducedDivisor, int, int, int, nvinfer1::rt::ReducedDivisor, const int *, const float4 *, const float4 *, float, float, bool, bool, float, int, int, int)",
+            "correlation_id": 4724,
+            "grid": [
+              7,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    ],
+    "bounded_readonly_first_path": [
+      "Inventory the board-installed cuobjdump/nvdisasm version, actual library paths/build IDs/SHA256 and architecture. Do not upgrade packages or assume engine.plan itself contains a readable ELF.",
+      "Search only relevant TensorRT/CUDA fatbin-bearing libraries from actual installed version for the exact saved mangled symbols; cuobjdump --list-elf and --dump-elf-symbols, then --dump-sass --function <exact_symbol> <library>. Preserve full stdout/stderr/toolversion/hash, not grep fragments.",
+      "If resident/JIT kernel has no matching extractable symbol, record static route inconclusive; bounded future module/cubin identity capture or NsightCompute SASS path may be needed. Do not mass dump all libraries or claim a function spelling proves arithmetic.",
+      "Tie disassembly architecture+library/cubin identity+exact symbol to the engine/run kernel identity. Same spelling alone cannot distinguish multiple architectures/overloads/JIT modules.",
+      "For each MAC loop, trace loaded quantized activation/weight operands into signed8bit IDP4A/IDP or IMMA signed8bit/INT32 accumulator (or demonstrably equivalent integer MAC dataflow), with scaling/conversion/output FP32 separately. Address/pointer IMAD alone is not proof.",
+      "Check control flow/predicates: presence of integer instructions in an unexecuted branch is insufficient to claim executed arithmetic. If unresolved, preserve STATIC_INTEGER_PATH_FOUND versus EXECUTED_INTEGER_PATH_VERIFIED separately; optional narrowly scoped instruction profiling only if needed.",
+      "Create a new external supplement referencing unchanged old precision_audit, rather than fabricating missing TacticName or overwriting old strict failure. New candidate engines need their own layer/launch/module mapping; old binary evidence can be reused only with exact identity chain."
+    ],
+    "expected_terminal_states": [
+      "VERIFIED_INTEGER_MAC_FOR_ALL_REQUESTED_SOURCES",
+      "FORMAT_ONLY_INCONCLUSIVE",
+      "ARITHMETIC_FALLBACK_OBSERVED_FAIL"
+    ],
+    "not_required": "INT8 external output, integer-only epilogue or specifically Tensor Core arithmetic.",
+    "no_disassembly_or_board_command_run_in_this_audit": true
+  },
+  "reusable_evidence": [
+    {
+      "asset": "data_v1 manifest64 calibration/150 evaluation/865GT/no image-content overlap",
+      "use": "Reuse fixed list and labels; oldHoldout is deployment migration diagnostic, not fresh method-confirmation data.",
+      "source": "data_fixed_and_used"
+    },
+    {
+      "asset": "88Conv group/weight/calibration identities, 23FP16 smoke, old common-output FP16 engine",
+      "use": "Reuse provenance, matching implementation and execution tool tests. New corrected preparation needs an explicitly matched control or proof of what changed.",
+      "source": "original_gate_remaining"
+    },
+    {
+      "asset": "Original six native engines/raw/receipts/traces",
+      "use": "Reuse negative history, exact running-kernel mapping and SASS targets. Do not present zero-detection old graphs as corrected numeric validation.",
+      "source": "six_old_configs"
+    },
+    {
+      "asset": "Corrected q_only_G1 engine486845..., strict6INT8/82FP16, fixedGTmatch",
+      "use": "Can reuse exact engine for conditional dual experiment if new common/control contract admits its identity; fixedGTmatch alone not dataset pass.",
+      "source": "corrected_qonly_status"
+    },
+    {
+      "asset": "All88 codeClip static/synthetic CPU equivalence and fullq_all fixed-image primary+aux byte proof",
+      "use": "Avoid repeating already authenticated semantic preparation; add only proofs needed by new family or varied image inputs.",
+      "source": "corrected_full_compiler_failure"
+    },
+    {
+      "asset": "29 full/replay/hybrid and31–36 local failed/success contexts",
+      "use": "Reuse diagnosis to choose bounded full deployment candidate; no obligation to chase every local derivative before evaluating a valid full implementation.",
+      "source": "rounding_causal_evidence"
+    }
+  ],
+  "completion_sequence": [
+    {
+      "step": 1,
+      "action": "Freeze a Gate0.5 acceptance/reference/control protocol now, with signed identities and outcome states. Separate completed engineering task from scientific PASS/FAIL/INCONCLUSIVE.",
+      "completion_artifact": "New gate_acceptance_protocol.json + independent review. Existing reference_contract remains unchanged single-image diagnostic.",
+      "stop": "Do not run150 until criterion/control decision is frozen."
+    },
+    {
+      "step": 2,
+      "action": "Parallelize static SASS identity/instruction audit of saved kernels with a corrected full-model compiler recipe. Prefer one controlled fullq_all attempt with only NONE instead of OBEY/PREFER, preserving all parser QDQ requests and Clip correction; inspect actual formats/fusions afterward.",
+      "completion_artifact": "New protocol/controlled derivative + full engine/receipt OR exact terminal compiler failure; no promise NONE repairs whole graph.",
+      "stop": "If full build fails, use the exact failure evidence to select at most a new bounded next control. No endless unconstrained local matrix or silent semantics change."
+    },
+    {
+      "step": 3,
+      "action": "Qualify corrected fullq_all numerics on existing fixed image and independent CPU reference with same control family; inspect actual everyConv and relevant floating/fusion changes. Reuse semantic equivalence already valid.",
+      "completion_artifact": "Native raw/CPU comparison+GT diagnostics+complete actual mapping/SASS supplement; retain原failed.",
+      "stop": "Anomalous output or precision fallback is technical FAIL/INCONCLUSIVE, not evidence mechanism failed."
+    },
+    {
+      "step": 4,
+      "action": "Extend same validated corrected preparation to three originally planned restores and matched FP16; no changing groups/calibration based on results. Reuse q_only_G1 only if compatible and claim needs dual attribution.",
+      "completion_artifact": "Five required full engines and actual precision audit/finite executable checks; optional sixthq_only.",
+      "stop": "Any missing/wrong requested precision prevents deployment-qualified PASS; preserve each terminal status."
+    },
+    {
+      "step": 5,
+      "action": "Run locked150images/865targets across qualified engines and independent FP32/FP16 controls, applying existing sameclass one-to-one matching. Save targetCSV/raw/predictions/allnegatives and same-target cases.",
+      "completion_artifact": "Table of FP16 hits, q_all added misses, G1/G1G5/G1G2 rescue/collateral/net and conditional dual-target intersection.",
+      "stop": "No postoutcome threshold/image/module changes. OldHoldout cannot become new independent confirmation."
+    },
+    {
+      "step": 6,
+      "action": "Issue scientific terminal outcome and engineering completion separately. PASS only if frozen meaningful target-recovery criteria and all technical prerequisites hold; technically sound nonreproduction is FAIL, absent eligible events or unresolved precision/reference is INCONCLUSIVE.",
+      "completion_artifact": "FinalGate0.5 report+machine-readable acceptance receipt+immutable evidence manifest+clean task exit.",
+      "stop": "User asks completion, not guaranteedpositive result. Do not manufacture PASS or keep a completed negative experiment open just to chase a favorable result."
+    }
+  ],
+  "candidate_dataset_outcome_rules": {
+    "status": "PROPOSAL_ONLY_NOT_FROZEN_CRITERIA",
+    "event_definitions": {
+      "F": "Targets matched by this nativeFP16 baseline",
+      "Q": "Targets matched by q_all",
+      "R_G1": "Targets matched by r_only_G1",
+      "added_misses": "F minus Q",
+      "rescued_G1": "(F minus Q) intersect R_G1",
+      "collateral_G1": "(F intersect Q) minus R_G1",
+      "dual_G1": "(F minus Q) intersect (F minus q_only_G1 hits) intersect R_G1"
+    },
+    "logical_minimum": "Nonempty added-miss set and nonempty same-targetG1 rescue are necessary for existential recovery reproduction. They are not sufficient for practical effect/robustness or method superiority.",
+    "must_still_choose_preoutcome": "If PASS includes netbenefit/stable-retention/effectsize/confidence interval thresholds, put explicit numbers and handling of small denominators into the new protocol BEFORE150inference. No such quantitativeGate0.5 threshold is present in original23/24; do not invent one as inherited.",
+    "FAIL_vs_INCONCLUSIVE": "All technical prerequisites met but frozen recovery criterion fails => mechanism not reproduced on this diagnostic set. No added-miss denominator/sparse eligible events or technical comparability unmet => INCONCLUSIVE as preregistered. Both are reportable completion, neither is PASS."
+  },
+  "official_sources": [
+    {
+      "title": "TensorRT8.6.1 Developer Guide7.4, nearest archived family to installed8.5.2.2",
+      "url": "https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-861/developer-guide/index.html",
+      "verified_via": "Official indexed excerpts; direct archive redirects inaccessible in browser.",
+      "use": "Explicit Q/DQ controls precision representation; do not infer requirement for manually forcing all outputsINT8. Version8.6 guidance supports rationale, not a guarantee of8.5.2.2 behavior."
+    },
+    {
+      "title": "CUDA11.4.4 Binary Utilities2.2/Instruction Set Reference",
+      "url": "https://docs.nvidia.com/cuda/archive/11.4.4/cuda-binary-utilities/index.html",
+      "use": "cuobjdump dump-sass/function/list-elf and nvdisasm disassembly; IDP4A/IMMA definitions. Verify actual installed tool/SM support first, no assumed upgrade."
+    },
+    {
+      "title": "TensorRT10.x Working with Quantized Types, contextual numerical principle only",
+      "url": "https://docs.nvidia.com/deeplearning/tensorrt/10.x.x/inference-library/work-quantized-types.html",
+      "use": "Q/DQ optimization may change floating operation order, so bit identity is generally not promised. This does not retroactively invalidate the project original tolerance failure or prove this engine correct."
+    }
+  ],
+  "current_state_snapshot": {
+    "sha256_at_read": "80e00341b5a10e3816e91e7015d74bb0f80db50a157b9bf642867f00c756294c",
+    "client_at": "2026-10-21T01:43:16.938600+08:00",
+    "gate05_status": "INCOMPLETE",
+    "current_stage_status": "DFL_WEIGHT_BYPASS_PROTOCOL_FROZEN_PREPARATION_PENDING",
+    "no_dataset_inference_run": true,
+    "warning": "Historical state.goal says stop for planning; new direct user instruction continue untilGate0.5completion supersedes that old authorization text. Snapshot is not a live board check."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "rampq.gate05.final_board_observation/v1",
+  "client_date": "2026-10-19",
+  "board_at": "2026-10-16T23:47:01+0800",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "all_current_build_and_fixed_image_work_finished": true,
+  "trtexec": {
+    "command": [
+      "pgrep",
+      "-ax",
+      "trtexec"
+    ],
+    "returncode": 1,
+    "output": ""
+  },
+  "fan": {
+    "command": [
+      "systemctl",
+      "is-active",
+      "nvfancontrol.service"
+    ],
+    "returncode": 0,
+    "output": "active\n"
+  },
+  "jtop": {
+    "command": [
+      "systemctl",
+      "show",
+      "jtop.service",
+      "-p",
+      "ActiveState",
+      "-p",
+      "SubState",
+      "-p",
+      "NRestarts"
+    ],
+    "returncode": 0,
+    "output": "NRestarts=0\nActiveState=active\nSubState=running\n"
+  },
+  "power_mode": {
+    "command": [
+      "/usr/sbin/nvpmodel",
+      "-q"
+    ],
+    "returncode": 0,
+    "output": "NV Power Mode: 15W\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\n"
+  },
+  "memory": {
+    "command": [
+      "free",
+      "-m"
+    ],
+    "returncode": 0,
+    "output": "              total        used        free      shared  buff/cache   available\nMem:           7337        1976        3830          26        1530        5138\nSwap:          3668           9        3659\n"
+  },
+  "uptime": {
+    "command": [
+      "uptime"
+    ],
+    "returncode": 0,
+    "output": " 23:47:01 up  6:53,  3 users,  load average: 0.10, 0.24, 0.12\n"
+  },
+  "kernel_tail": {
+    "command": [
+      "journalctl",
+      "-k",
+      "-b",
+      "-n",
+      "80",
+      "--no-pager",
+      "-o",
+      "short-monotonic"
+    ],
+    "returncode": 0,
+    "output": "-- Logs begin at Tue 2024-06-18 04:29:39 CST, end at Fri 2026-10-16 23:47:01 CST. --\n[13881.582210] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 4 disabled\n[13881.582224] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 7 disabled\n[13881.582269] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 9 disabled\n[13881.582293] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 13 disabled\n[13881.582317] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 8 disabled\n[13881.582334] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 15 disabled\n[13881.582351] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 11 disabled\n[13881.582374] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 6 disabled\n[13881.583680] nvidia-desktop kernel: l4tbr0: port 2(usb0) entered disabled state\n[17316.106626] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 5 (type: intr, dir: in) enabled\n[17316.106645] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 3 (type: bulk, dir: in) enabled\n[17316.106658] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 2 (type: bulk, dir: out) enabled\n[17316.106723] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 9 (type: intr, dir: in) enabled\n[17316.106737] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 7 (type: bulk, dir: in) enabled\n[17316.106748] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 4 (type: bulk, dir: out) enabled\n[17316.106860] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 15 (type: intr, dir: in) enabled\n[17316.106879] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 11 (type: bulk, dir: in) enabled\n[17316.106896] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 6 (type: bulk, dir: out) enabled\n[17316.106971] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered blocking state\n[17316.106975] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered forwarding state\n[17316.107098] nvidia-desktop kernel: IPv6: ADDRCONF(NETDEV_CHANGE): l4tbr0: link becomes ready\n[17326.361520] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 3 disabled\n[17326.361544] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 2 disabled\n[17326.361559] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 5 disabled\n[17326.361573] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 4 disabled\n[17326.361585] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 7 disabled\n[17326.361628] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 9 disabled\n[17326.361647] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 15 disabled\n[17326.361695] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 11 disabled\n[17326.361710] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 6 disabled\n[17326.361817] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered disabled state\n[17326.492342] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 5 (type: intr, dir: in) enabled\n[17326.492362] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 3 (type: bulk, dir: in) enabled\n[17326.492376] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 2 (type: bulk, dir: out) enabled\n[17326.492447] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 9 (type: intr, dir: in) enabled\n[17326.492462] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 7 (type: bulk, dir: in) enabled\n[17326.492475] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 4 (type: bulk, dir: out) enabled\n[17326.492503] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 15 (type: intr, dir: in) enabled\n[17326.492521] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 11 (type: bulk, dir: in) enabled\n[17326.492539] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 6 (type: bulk, dir: out) enabled\n[17326.492590] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 13 (type: bulk, dir: in) enabled\n[17326.492602] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 8 (type: bulk, dir: out) enabled\n[17326.492711] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered blocking state\n[17326.492715] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered forwarding state\n[17326.492814] nvidia-desktop kernel: l4tbr0: port 2(usb0) entered blocking state\n[17326.492817] nvidia-desktop kernel: l4tbr0: port 2(usb0) entered forwarding state\n[17326.494445] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 13 disabled\n[17326.494527] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 8 disabled\n[17326.495715] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 13 (type: bulk, dir: in) enabled\n[17326.495730] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 8 (type: bulk, dir: out) enabled\n[21904.231023] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 3 disabled\n[21904.231047] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 2 disabled\n[21904.231068] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 5 disabled\n[21904.231084] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 4 disabled\n[21904.231098] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 7 disabled\n[21904.231143] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 9 disabled\n[21904.231162] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 13 disabled\n[21904.231187] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 8 disabled\n[21904.231205] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 15 disabled\n[21904.231222] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 11 disabled\n[21904.231245] nvidia-desktop kernel: tegra-xudc 3550000.xudc: ep 6 disabled\n[21904.231399] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered disabled state\n[21904.231926] nvidia-desktop kernel: l4tbr0: port 2(usb0) entered disabled state\n[24413.896382] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 5 (type: intr, dir: in) enabled\n[24413.896403] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 3 (type: bulk, dir: in) enabled\n[24413.896417] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 2 (type: bulk, dir: out) enabled\n[24413.896491] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 9 (type: intr, dir: in) enabled\n[24413.896506] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 7 (type: bulk, dir: in) enabled\n[24413.896520] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 4 (type: bulk, dir: out) enabled\n[24413.896620] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 15 (type: intr, dir: in) enabled\n[24413.896636] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 11 (type: bulk, dir: in) enabled\n[24413.896656] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 6 (type: bulk, dir: out) enabled\n[24413.952550] nvidia-desktop kernel: tegra-xudc 3550000.xudc: setup request failed: -22\n[24413.959764] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 13 (type: bulk, dir: in) enabled\n[24413.959780] nvidia-desktop kernel: tegra-xudc 3550000.xudc: EP 8 (type: bulk, dir: out) enabled\n[24414.859462] nvidia-desktop kernel: l4tbr0: port 2(usb0) entered blocking state\n[24414.859473] nvidia-desktop kernel: l4tbr0: port 2(usb0) entered forwarding state\n[24414.859531] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered blocking state\n[24414.859535] nvidia-desktop kernel: l4tbr0: port 1(rndis0) entered forwarding state\n[24414.899739] nvidia-desktop kernel: IPv6: ADDRCONF(NETDEV_CHANGE): l4tbr0: link becomes ready\n"
+  },
+  "known_task_build_and_smoke_processes": [],
+  "extended_queue_terminal_status": "EXTENDED_RESTORE_QUEUE_FINISHED_AUDIT_AND_SMOKE_PENDING",
+  "dataset_evaluation_run": false,
+  "kernel_note": "Tail may contain USB cable disconnection/reconnection records; original per-build monitor kernels are separately preserved. No inference of reboot cause."
+}

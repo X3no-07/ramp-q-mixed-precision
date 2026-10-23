@@ -1,0 +1,2234 @@
+{
+  "schema": "rampq.gate1.ignore_negative_loss_source_gap_review/v1",
+  "status": "GAP_CONFIRMED_CURRENT_SOURCE_AND_FROZEN_CONTRACT_PRIMITIVE_ONLY",
+  "sources": {
+    "utils/loss.py": {
+      "original_path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Lib\\site-packages\\ultralytics\\utils\\loss.py",
+      "snapshot": "sources/utils__loss.py",
+      "bytes": 71880,
+      "sha256": "357053aa9a24ad2c4d541c3ada3a27232a10d679f89c7b4957b9a84a7da4ec1d",
+      "historical_training_contract_sha256": null,
+      "historical_pin_matches_current": null,
+      "code_evidence": [
+        {
+          "line_start": 337,
+          "line_end": 373,
+          "lines": [
+            {
+              "line": 337,
+              "text": "class v8DetectionLoss:"
+            },
+            {
+              "line": 338,
+              "text": "    \"\"\"Criterion class for computing training losses for YOLOv8 object detection.\"\"\""
+            },
+            {
+              "line": 339,
+              "text": ""
+            },
+            {
+              "line": 340,
+              "text": "    def __init__("
+            },
+            {
+              "line": 341,
+              "text": "        self, model: torch.nn.Module, tal_topk: int = 10, tal_topk2: int | None = None"
+            },
+            {
+              "line": 342,
+              "text": "    ):  # model must be de-paralleled"
+            },
+            {
+              "line": 343,
+              "text": "        \"\"\"Initialize v8DetectionLoss with model parameters and task-aligned assignment settings.\"\"\""
+            },
+            {
+              "line": 344,
+              "text": "        device = next(model.parameters()).device  # get model device"
+            },
+            {
+              "line": 345,
+              "text": "        h = model.args  # hyperparameters"
+            },
+            {
+              "line": 346,
+              "text": ""
+            },
+            {
+              "line": 347,
+              "text": "        m = model.model[-1]  # Detect() module"
+            },
+            {
+              "line": 348,
+              "text": "        self.bce = nn.BCEWithLogitsLoss(reduction=\"none\")"
+            },
+            {
+              "line": 349,
+              "text": "        self.hyp = h"
+            },
+            {
+              "line": 350,
+              "text": "        self.stride = m.stride  # model strides"
+            },
+            {
+              "line": 351,
+              "text": "        self.nc = m.nc  # number of classes"
+            },
+            {
+              "line": 352,
+              "text": "        self.no = m.nc + m.reg_max * 4"
+            },
+            {
+              "line": 353,
+              "text": "        self.reg_max = m.reg_max"
+            },
+            {
+              "line": 354,
+              "text": "        self.device = device"
+            },
+            {
+              "line": 355,
+              "text": ""
+            },
+            {
+              "line": 356,
+              "text": "        self.use_dfl = m.reg_max > 1"
+            },
+            {
+              "line": 357,
+              "text": "        self.loss_names = \"box_loss\", \"cls_loss\", \"dfl_loss\" if self.use_dfl else \"l1_loss\""
+            },
+            {
+              "line": 358,
+              "text": ""
+            },
+            {
+              "line": 359,
+              "text": "        # Class weights for handling imbalanced datasets"
+            },
+            {
+              "line": 360,
+              "text": "        self.class_weights = getattr(model, \"class_weights\", None)"
+            },
+            {
+              "line": 361,
+              "text": "        if self.class_weights is not None:"
+            },
+            {
+              "line": 362,
+              "text": "            self.class_weights = self.class_weights.to(device).view(1, 1, -1)"
+            },
+            {
+              "line": 363,
+              "text": ""
+            },
+            {
+              "line": 364,
+              "text": "        self.assigner = TaskAlignedAssigner("
+            },
+            {
+              "line": 365,
+              "text": "            topk=tal_topk,"
+            },
+            {
+              "line": 366,
+              "text": "            num_classes=self.nc,"
+            },
+            {
+              "line": 367,
+              "text": "            alpha=0.5,"
+            },
+            {
+              "line": 368,
+              "text": "            beta=6.0,"
+            },
+            {
+              "line": 369,
+              "text": "            stride=self.stride.tolist(),"
+            },
+            {
+              "line": 370,
+              "text": "            topk2=tal_topk2,"
+            },
+            {
+              "line": 371,
+              "text": "        )"
+            },
+            {
+              "line": 372,
+              "text": "        self.bbox_loss = BboxLoss(m.reg_max).to(device)"
+            },
+            {
+              "line": 373,
+              "text": "        self.proj = torch.arange(m.reg_max, dtype=torch.float, device=device)"
+            }
+          ]
+        },
+        {
+          "line_start": 402,
+          "line_end": 467,
+          "lines": [
+            {
+              "line": 402,
+              "text": "    def get_assigned_targets_and_loss(self, preds: dict[str, torch.Tensor], batch: dict[str, Any]) -> tuple:"
+            },
+            {
+              "line": 403,
+              "text": "        \"\"\"Calculate the sum of the loss for box, cls and dfl multiplied by batch size and return foreground mask and"
+            },
+            {
+              "line": 404,
+              "text": "        target indices."
+            },
+            {
+              "line": 405,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 406,
+              "text": "        loss = torch.zeros(3, device=self.device)  # box, cls, dfl"
+            },
+            {
+              "line": 407,
+              "text": "        pred_distri, pred_scores = ("
+            },
+            {
+              "line": 408,
+              "text": "            preds[\"boxes\"].permute(0, 2, 1).contiguous(),"
+            },
+            {
+              "line": 409,
+              "text": "            preds[\"scores\"].permute(0, 2, 1).contiguous(),"
+            },
+            {
+              "line": 410,
+              "text": "        )"
+            },
+            {
+              "line": 411,
+              "text": "        anchor_points, stride_tensor = make_anchors(preds[\"feats\"], self.stride, 0.5)"
+            },
+            {
+              "line": 412,
+              "text": ""
+            },
+            {
+              "line": 413,
+              "text": "        dtype = pred_scores.dtype"
+            },
+            {
+              "line": 414,
+              "text": "        batch_size = pred_scores.shape[0]"
+            },
+            {
+              "line": 415,
+              "text": "        imgsz = torch.tensor(preds[\"feats\"][0].shape[2:], device=self.device, dtype=dtype) * self.stride[0]"
+            },
+            {
+              "line": 416,
+              "text": ""
+            },
+            {
+              "line": 417,
+              "text": "        # Targets"
+            },
+            {
+              "line": 418,
+              "text": "        targets = torch.cat((batch[\"batch_idx\"].view(-1, 1), batch[\"cls\"].view(-1, 1), batch[\"bboxes\"]), 1)"
+            },
+            {
+              "line": 419,
+              "text": "        targets = self.preprocess(targets.to(self.device), batch_size, scale_tensor=imgsz[[1, 0, 1, 0]])"
+            },
+            {
+              "line": 420,
+              "text": "        gt_labels, gt_bboxes = targets.split((1, 4), 2)  # cls, xyxy"
+            },
+            {
+              "line": 421,
+              "text": "        mask_gt = gt_bboxes.sum(2, keepdim=True).gt_(0.0)"
+            },
+            {
+              "line": 422,
+              "text": ""
+            },
+            {
+              "line": 423,
+              "text": "        # Pboxes"
+            },
+            {
+              "line": 424,
+              "text": "        pred_bboxes = self.bbox_decode(anchor_points, pred_distri)  # xyxy, (b, h*w, 4)"
+            },
+            {
+              "line": 425,
+              "text": ""
+            },
+            {
+              "line": 426,
+              "text": "        _, target_bboxes, target_scores, fg_mask, target_gt_idx = self.assigner("
+            },
+            {
+              "line": 427,
+              "text": "            pred_scores.detach().sigmoid(),"
+            },
+            {
+              "line": 428,
+              "text": "            (pred_bboxes.detach() * stride_tensor).type(gt_bboxes.dtype),"
+            },
+            {
+              "line": 429,
+              "text": "            anchor_points * stride_tensor,"
+            },
+            {
+              "line": 430,
+              "text": "            gt_labels,"
+            },
+            {
+              "line": 431,
+              "text": "            gt_bboxes,"
+            },
+            {
+              "line": 432,
+              "text": "            mask_gt,"
+            },
+            {
+              "line": 433,
+              "text": "        )"
+            },
+            {
+              "line": 434,
+              "text": ""
+            },
+            {
+              "line": 435,
+              "text": "        target_scores_sum = max(target_scores.sum(), 1)"
+            },
+            {
+              "line": 436,
+              "text": ""
+            },
+            {
+              "line": 437,
+              "text": "        # Cls loss with optional class weighting"
+            },
+            {
+              "line": 438,
+              "text": "        bce_loss = self.bce(pred_scores, target_scores.to(dtype))  # (bs, num_anchors, nc)"
+            },
+            {
+              "line": 439,
+              "text": "        if self.class_weights is not None:"
+            },
+            {
+              "line": 440,
+              "text": "            bce_loss *= self.class_weights"
+            },
+            {
+              "line": 441,
+              "text": "        loss[1] = bce_loss.sum() / target_scores_sum  # BCE"
+            },
+            {
+              "line": 442,
+              "text": ""
+            },
+            {
+              "line": 443,
+              "text": "        # Bbox loss"
+            },
+            {
+              "line": 444,
+              "text": "        if fg_mask.sum():"
+            },
+            {
+              "line": 445,
+              "text": "            loss[0], loss[2] = self.bbox_loss("
+            },
+            {
+              "line": 446,
+              "text": "                pred_distri,"
+            },
+            {
+              "line": 447,
+              "text": "                pred_bboxes,"
+            },
+            {
+              "line": 448,
+              "text": "                anchor_points,"
+            },
+            {
+              "line": 449,
+              "text": "                target_bboxes / stride_tensor,"
+            },
+            {
+              "line": 450,
+              "text": "                target_scores,"
+            },
+            {
+              "line": 451,
+              "text": "                target_scores_sum,"
+            },
+            {
+              "line": 452,
+              "text": "                fg_mask,"
+            },
+            {
+              "line": 453,
+              "text": "                imgsz,"
+            },
+            {
+              "line": 454,
+              "text": "                stride_tensor,"
+            },
+            {
+              "line": 455,
+              "text": "            )"
+            },
+            {
+              "line": 456,
+              "text": "        # WARNING: line below prevents Multi-GPU DDP 'unused gradient' PyTorch errors, do not remove"
+            },
+            {
+              "line": 457,
+              "text": "        else:"
+            },
+            {
+              "line": 458,
+              "text": "            loss[0] += pred_distri[..., :0].sum()"
+            },
+            {
+              "line": 459,
+              "text": ""
+            },
+            {
+              "line": 460,
+              "text": "        loss[0] *= self.hyp.box  # box gain"
+            },
+            {
+              "line": 461,
+              "text": "        loss[1] *= self.hyp.cls  # cls gain"
+            },
+            {
+              "line": 462,
+              "text": "        loss[2] *= self.hyp.dfl  # dfl gain"
+            },
+            {
+              "line": 463,
+              "text": "        return ("
+            },
+            {
+              "line": 464,
+              "text": "            (fg_mask, target_gt_idx, target_bboxes, anchor_points, stride_tensor),"
+            },
+            {
+              "line": 465,
+              "text": "            loss,"
+            },
+            {
+              "line": 466,
+              "text": "            dict(zip(self.loss_names, loss.detach())),"
+            },
+            {
+              "line": 467,
+              "text": "        )  # loss(box, cls, dfl)"
+            }
+          ]
+        }
+      ]
+    },
+    "utils/tal.py": {
+      "original_path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Lib\\site-packages\\ultralytics\\utils\\tal.py",
+      "snapshot": "sources/utils__tal.py",
+      "bytes": 25375,
+      "sha256": "cdf158d6cc61a91810a23194c7d0848ae5456aaf5d60341db79b38d16e9c1d8b",
+      "historical_training_contract_sha256": null,
+      "historical_pin_matches_current": null,
+      "code_evidence": [
+        {
+          "line_start": 147,
+          "line_end": 175,
+          "lines": [
+            {
+              "line": 147,
+              "text": ""
+            },
+            {
+              "line": 148,
+              "text": "        Returns:"
+            },
+            {
+              "line": 149,
+              "text": "            target_labels (torch.Tensor): Target labels with shape (bs, num_total_anchors)."
+            },
+            {
+              "line": 150,
+              "text": "            target_bboxes (torch.Tensor): Target bounding boxes with shape (bs, num_total_anchors, 4)."
+            },
+            {
+              "line": 151,
+              "text": "            target_scores (torch.Tensor): Target scores with shape (bs, num_total_anchors, num_classes)."
+            },
+            {
+              "line": 152,
+              "text": "            fg_mask (torch.Tensor): Foreground mask with shape (bs, num_total_anchors)."
+            },
+            {
+              "line": 153,
+              "text": "            target_gt_idx (torch.Tensor): Target ground truth indices with shape (bs, num_total_anchors)."
+            },
+            {
+              "line": 154,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 155,
+              "text": "        mask_pos, align_metric, overlaps = self.get_pos_mask("
+            },
+            {
+              "line": 156,
+              "text": "            pd_scores, pd_bboxes, gt_labels, gt_bboxes, anc_points, mask_gt"
+            },
+            {
+              "line": 157,
+              "text": "        )"
+            },
+            {
+              "line": 158,
+              "text": ""
+            },
+            {
+              "line": 159,
+              "text": "        target_gt_idx, fg_mask, mask_pos = self.select_highest_overlaps("
+            },
+            {
+              "line": 160,
+              "text": "            mask_pos, overlaps, self.n_max_boxes, align_metric"
+            },
+            {
+              "line": 161,
+              "text": "        )"
+            },
+            {
+              "line": 162,
+              "text": ""
+            },
+            {
+              "line": 163,
+              "text": "        # Assigned target"
+            },
+            {
+              "line": 164,
+              "text": "        target_labels, target_bboxes, target_scores = self.get_targets(gt_labels, gt_bboxes, target_gt_idx, fg_mask)"
+            },
+            {
+              "line": 165,
+              "text": ""
+            },
+            {
+              "line": 166,
+              "text": "        # Normalize"
+            },
+            {
+              "line": 167,
+              "text": "        align_metric *= mask_pos"
+            },
+            {
+              "line": 168,
+              "text": "        pos_align_metrics = align_metric.amax(dim=-1, keepdim=True)  # b, max_num_obj"
+            },
+            {
+              "line": 169,
+              "text": "        overlaps *= mask_pos"
+            },
+            {
+              "line": 170,
+              "text": "        pos_overlaps = overlaps.amax(dim=-1, keepdim=True)  # b, max_num_obj"
+            },
+            {
+              "line": 171,
+              "text": "        align_metric.mul_(pos_overlaps).div_(pos_align_metrics + self.eps)"
+            },
+            {
+              "line": 172,
+              "text": "        norm_align_metric = align_metric.amax(-2).unsqueeze(-1)"
+            },
+            {
+              "line": 173,
+              "text": "        target_scores = target_scores * norm_align_metric"
+            },
+            {
+              "line": 174,
+              "text": ""
+            },
+            {
+              "line": 175,
+              "text": "        return target_labels, target_bboxes, target_scores, fg_mask.bool(), target_gt_idx"
+            }
+          ]
+        },
+        {
+          "line_start": 271,
+          "line_end": 309,
+          "lines": [
+            {
+              "line": 271,
+              "text": "    def get_targets(self, gt_labels, gt_bboxes, target_gt_idx, fg_mask):"
+            },
+            {
+              "line": 272,
+              "text": "        \"\"\"Compute target labels, target bounding boxes, and target scores for the positive anchor points."
+            },
+            {
+              "line": 273,
+              "text": ""
+            },
+            {
+              "line": 274,
+              "text": "        Args:"
+            },
+            {
+              "line": 275,
+              "text": "            gt_labels (torch.Tensor): Ground truth labels of shape (b, max_num_obj, 1), where b is the batch size and"
+            },
+            {
+              "line": 276,
+              "text": "                max_num_obj is the maximum number of objects."
+            },
+            {
+              "line": 277,
+              "text": "            gt_bboxes (torch.Tensor): Ground truth bounding boxes of shape (b, max_num_obj, 4)."
+            },
+            {
+              "line": 278,
+              "text": "            target_gt_idx (torch.Tensor): Indices of the assigned ground truth objects for positive anchor points, with"
+            },
+            {
+              "line": 279,
+              "text": "                shape (b, h*w), where h*w is the total number of anchor points."
+            },
+            {
+              "line": 280,
+              "text": "            fg_mask (torch.Tensor): A boolean tensor of shape (b, h*w) indicating the positive (foreground) anchor"
+            },
+            {
+              "line": 281,
+              "text": "                points."
+            },
+            {
+              "line": 282,
+              "text": ""
+            },
+            {
+              "line": 283,
+              "text": "        Returns:"
+            },
+            {
+              "line": 284,
+              "text": "            target_labels (torch.Tensor): Target labels for positive anchor points with shape (b, h*w)."
+            },
+            {
+              "line": 285,
+              "text": "            target_bboxes (torch.Tensor): Target bounding boxes for positive anchor points with shape (b, h*w, 4)."
+            },
+            {
+              "line": 286,
+              "text": "            target_scores (torch.Tensor): Target scores for positive anchor points with shape (b, h*w, num_classes)."
+            },
+            {
+              "line": 287,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 288,
+              "text": "        # Assigned target labels, (b, 1)"
+            },
+            {
+              "line": 289,
+              "text": "        batch_ind = torch.arange(end=self.bs, dtype=torch.int64, device=gt_labels.device)[..., None]"
+            },
+            {
+              "line": 290,
+              "text": "        target_gt_idx = target_gt_idx + batch_ind * self.n_max_boxes  # (b, h*w)"
+            },
+            {
+              "line": 291,
+              "text": "        target_labels = gt_labels.long().flatten()[target_gt_idx]  # (b, h*w)"
+            },
+            {
+              "line": 292,
+              "text": ""
+            },
+            {
+              "line": 293,
+              "text": "        # Assigned target boxes, (b, max_num_obj, 4) -> (b, h*w, 4)"
+            },
+            {
+              "line": 294,
+              "text": "        target_bboxes = gt_bboxes.view(-1, gt_bboxes.shape[-1])[target_gt_idx]"
+            },
+            {
+              "line": 295,
+              "text": ""
+            },
+            {
+              "line": 296,
+              "text": "        # Assigned target scores"
+            },
+            {
+              "line": 297,
+              "text": "        target_labels.clamp_(0)"
+            },
+            {
+              "line": 298,
+              "text": ""
+            },
+            {
+              "line": 299,
+              "text": "        # 10x faster than F.one_hot()"
+            },
+            {
+              "line": 300,
+              "text": "        target_scores = torch.zeros("
+            },
+            {
+              "line": 301,
+              "text": "            (target_labels.shape[0], target_labels.shape[1], self.num_classes),"
+            },
+            {
+              "line": 302,
+              "text": "            dtype=torch.int8,"
+            },
+            {
+              "line": 303,
+              "text": "            device=target_labels.device,"
+            },
+            {
+              "line": 304,
+              "text": "        )  # (b, h*w, 80)"
+            },
+            {
+              "line": 305,
+              "text": "        target_scores.scatter_(2, target_labels.unsqueeze(-1), 1)"
+            },
+            {
+              "line": 306,
+              "text": ""
+            },
+            {
+              "line": 307,
+              "text": "        target_scores = target_scores * (fg_mask[:, :, None] > 0)"
+            },
+            {
+              "line": 308,
+              "text": ""
+            },
+            {
+              "line": 309,
+              "text": "        return target_labels, target_bboxes, target_scores"
+            }
+          ]
+        }
+      ]
+    },
+    "data/dataset.py": {
+      "original_path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Lib\\site-packages\\ultralytics\\data\\dataset.py",
+      "snapshot": "sources/data__dataset.py",
+      "bytes": 57717,
+      "sha256": "c78379de8080bde83bb6588a1690475f6fe325658246bbeaf2b5697b6014132d",
+      "historical_training_contract_sha256": "c78379de8080bde83bb6588a1690475f6fe325658246bbeaf2b5697b6014132d",
+      "historical_pin_matches_current": true,
+      "code_evidence": [
+        {
+          "line_start": 274,
+          "line_end": 333,
+          "lines": [
+            {
+              "line": 274,
+              "text": "    def get_labels(self) -> list[dict]:"
+            },
+            {
+              "line": 275,
+              "text": "        \"\"\"Return list of label dictionaries for YOLO training."
+            },
+            {
+              "line": 276,
+              "text": ""
+            },
+            {
+              "line": 277,
+              "text": "        This method loads labels from disk or cache, verifies their integrity, and prepares them for training."
+            },
+            {
+              "line": 278,
+              "text": ""
+            },
+            {
+              "line": 279,
+              "text": "        Returns:"
+            },
+            {
+              "line": 280,
+              "text": "            (list[dict]): List of label dictionaries, each containing information about an image and its annotations."
+            },
+            {
+              "line": 281,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 282,
+              "text": "        label_files = self.get_label_files()"
+            },
+            {
+              "line": 283,
+              "text": "        cache_path = Path(label_files[0]).parent.with_suffix(\".cache\")"
+            },
+            {
+              "line": 284,
+              "text": "        cache, exists = self._load_or_scan_cache(cache_path, self.get_cache_hash())"
+            },
+            {
+              "line": 285,
+              "text": ""
+            },
+            {
+              "line": 286,
+              "text": "        # Display cache"
+            },
+            {
+              "line": 287,
+              "text": "        nf, nm, ne, nc, n = cache.pop(\"results\")  # found, missing, empty, corrupt, total"
+            },
+            {
+              "line": 288,
+              "text": "        if exists and LOCAL_RANK in {-1, 0}:"
+            },
+            {
+              "line": 289,
+              "text": "            d = f\"Scanning {cache_path}... {self.scan_summary(nf, nm, ne, nc)}\""
+            },
+            {
+              "line": 290,
+              "text": "            TQDM(None, desc=self.prefix + d, total=n, initial=n)  # display results"
+            },
+            {
+              "line": 291,
+              "text": "            if cache[\"msgs\"]:"
+            },
+            {
+              "line": 292,
+              "text": "                LOGGER.info(\"\\n\".join(cache[\"msgs\"]))  # display warnings"
+            },
+            {
+              "line": 293,
+              "text": ""
+            },
+            {
+              "line": 294,
+              "text": "        # Read cache"
+            },
+            {
+              "line": 295,
+              "text": "        labels = cache[\"labels\"]"
+            },
+            {
+              "line": 296,
+              "text": "        if not labels:"
+            },
+            {
+              "line": 297,
+              "text": "            issues = \"\\n  \".join(sorted(set(cache[\"msgs\"]))) or \"no error details\""
+            },
+            {
+              "line": 298,
+              "text": "            raise RuntimeError(f\"No valid images found in {cache_path}.\\n  {issues}\\n{HELP_URL}\")"
+            },
+            {
+              "line": 299,
+              "text": "        [cache.pop(k) for k in (\"hash\", \"version\", \"msgs\")]  # remove items"
+            },
+            {
+              "line": 300,
+              "text": "        self.im_files = [lb[\"im_file\"] for lb in labels]  # update im_files"
+            },
+            {
+              "line": 301,
+              "text": "        self.verify_labels(labels, cache_path)"
+            },
+            {
+              "line": 302,
+              "text": "        return labels"
+            },
+            {
+              "line": 303,
+              "text": ""
+            },
+            {
+              "line": 304,
+              "text": "    def build_transforms(self, hyp: dict | None = None) -> Compose:"
+            },
+            {
+              "line": 305,
+              "text": "        \"\"\"Build and append transforms to the list."
+            },
+            {
+              "line": 306,
+              "text": ""
+            },
+            {
+              "line": 307,
+              "text": "        Args:"
+            },
+            {
+              "line": 308,
+              "text": "            hyp (dict, optional): Hyperparameters for transforms."
+            },
+            {
+              "line": 309,
+              "text": ""
+            },
+            {
+              "line": 310,
+              "text": "        Returns:"
+            },
+            {
+              "line": 311,
+              "text": "            (Compose): Composed transforms."
+            },
+            {
+              "line": 312,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 313,
+              "text": "        if self.augment:"
+            },
+            {
+              "line": 314,
+              "text": "            hyp.mosaic = hyp.mosaic if self.augment and not self.rect else 0.0"
+            },
+            {
+              "line": 315,
+              "text": "            hyp.mixup = hyp.mixup if self.augment and not self.rect else 0.0"
+            },
+            {
+              "line": 316,
+              "text": "            hyp.cutmix = hyp.cutmix if self.augment and not self.rect else 0.0"
+            },
+            {
+              "line": 317,
+              "text": "            transforms = v8_transforms(self, self.imgsz, hyp)"
+            },
+            {
+              "line": 318,
+              "text": "        else:"
+            },
+            {
+              "line": 319,
+              "text": "            transforms = Compose([LetterBox(new_shape=(self.imgsz, self.imgsz), scaleup=False)])"
+            },
+            {
+              "line": 320,
+              "text": "        transforms.append("
+            },
+            {
+              "line": 321,
+              "text": "            self.format_class("
+            },
+            {
+              "line": 322,
+              "text": "                bbox_format=\"xywh\","
+            },
+            {
+              "line": 323,
+              "text": "                normalize=True,"
+            },
+            {
+              "line": 324,
+              "text": "                return_mask=self.use_segments,"
+            },
+            {
+              "line": 325,
+              "text": "                return_keypoint=self.use_keypoints,"
+            },
+            {
+              "line": 326,
+              "text": "                return_obb=self.use_obb,"
+            },
+            {
+              "line": 327,
+              "text": "                batch_idx=True,"
+            },
+            {
+              "line": 328,
+              "text": "                mask_ratio=hyp.mask_ratio,"
+            },
+            {
+              "line": 329,
+              "text": "                mask_overlap=hyp.overlap_mask,"
+            },
+            {
+              "line": 330,
+              "text": "                bgr=hyp.bgr if self.augment else 0.0,  # only affect training."
+            },
+            {
+              "line": 331,
+              "text": "            )"
+            },
+            {
+              "line": 332,
+              "text": "        )"
+            },
+            {
+              "line": 333,
+              "text": "        return transforms"
+            }
+          ]
+        },
+        {
+          "line_start": 376,
+          "line_end": 438,
+          "lines": [
+            {
+              "line": 376,
+              "text": "    def update_labels_info(self, label: dict) -> dict:"
+            },
+            {
+              "line": 377,
+              "text": "        \"\"\"Update label format for different tasks."
+            },
+            {
+              "line": 378,
+              "text": ""
+            },
+            {
+              "line": 379,
+              "text": "        Args:"
+            },
+            {
+              "line": 380,
+              "text": "            label (dict): Label dictionary containing bboxes, segments, keypoints, etc."
+            },
+            {
+              "line": 381,
+              "text": ""
+            },
+            {
+              "line": 382,
+              "text": "        Returns:"
+            },
+            {
+              "line": 383,
+              "text": "            (dict): Updated label dictionary with instances."
+            },
+            {
+              "line": 384,
+              "text": ""
+            },
+            {
+              "line": 385,
+              "text": "        Notes:"
+            },
+            {
+              "line": 386,
+              "text": "            cls is not with bboxes now, classification and semantic segmentation need an independent cls label"
+            },
+            {
+              "line": 387,
+              "text": "            Can also support classification and semantic segmentation by adding or removing dict keys there."
+            },
+            {
+              "line": 388,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 389,
+              "text": "        bboxes = label.pop(\"bboxes\")"
+            },
+            {
+              "line": 390,
+              "text": "        segments = label.pop(\"segments\", [])"
+            },
+            {
+              "line": 391,
+              "text": "        keypoints = label.pop(\"keypoints\", None)"
+            },
+            {
+              "line": 392,
+              "text": "        bbox_format = label.pop(\"bbox_format\")"
+            },
+            {
+              "line": 393,
+              "text": "        normalized = label.pop(\"normalized\")"
+            },
+            {
+              "line": 394,
+              "text": ""
+            },
+            {
+              "line": 395,
+              "text": "        # NOTE: do NOT resample oriented boxes"
+            },
+            {
+              "line": 396,
+              "text": "        segment_resamples = 100 if self.use_obb else 1000"
+            },
+            {
+              "line": 397,
+              "text": "        if len(segments) > 0:"
+            },
+            {
+              "line": 398,
+              "text": "            # make sure segments interpolate correctly if original length is greater than segment_resamples"
+            },
+            {
+              "line": 399,
+              "text": "            max_len = max(len(s) for s in segments)"
+            },
+            {
+              "line": 400,
+              "text": "            segment_resamples = (max_len + 1) if segment_resamples < max_len else segment_resamples"
+            },
+            {
+              "line": 401,
+              "text": "            # list[np.array(segment_resamples, 2)] * num_samples"
+            },
+            {
+              "line": 402,
+              "text": "            segments = np.stack(resample_segments(segments, n=segment_resamples), axis=0)"
+            },
+            {
+              "line": 403,
+              "text": "        else:"
+            },
+            {
+              "line": 404,
+              "text": "            segments = np.zeros((0, segment_resamples, 2), dtype=np.float32)"
+            },
+            {
+              "line": 405,
+              "text": "        label[\"instances\"] = Instances(bboxes, segments, keypoints, bbox_format=bbox_format, normalized=normalized)"
+            },
+            {
+              "line": 406,
+              "text": "        return label"
+            },
+            {
+              "line": 407,
+              "text": ""
+            },
+            {
+              "line": 408,
+              "text": "    @staticmethod"
+            },
+            {
+              "line": 409,
+              "text": "    def collate_fn(batch: list[dict]) -> dict:"
+            },
+            {
+              "line": 410,
+              "text": "        \"\"\"Collate data samples into batches."
+            },
+            {
+              "line": 411,
+              "text": ""
+            },
+            {
+              "line": 412,
+              "text": "        Args:"
+            },
+            {
+              "line": 413,
+              "text": "            batch (list[dict]): List of dictionaries containing sample data."
+            },
+            {
+              "line": 414,
+              "text": ""
+            },
+            {
+              "line": 415,
+              "text": "        Returns:"
+            },
+            {
+              "line": 416,
+              "text": "            (dict): Collated batch with stacked tensors."
+            },
+            {
+              "line": 417,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 418,
+              "text": "        new_batch = {}"
+            },
+            {
+              "line": 419,
+              "text": "        batch = [dict(sorted(b.items())) for b in batch]  # make sure the keys are in the same order"
+            },
+            {
+              "line": 420,
+              "text": "        keys = batch[0].keys()"
+            },
+            {
+              "line": 421,
+              "text": "        values = list(zip(*[list(b.values()) for b in batch]))"
+            },
+            {
+              "line": 422,
+              "text": "        for i, k in enumerate(keys):"
+            },
+            {
+              "line": 423,
+              "text": "            value = values[i]"
+            },
+            {
+              "line": 424,
+              "text": "            if k in {\"img\", \"text_feats\", \"semantic_mask\", \"sem_masks\", \"depth\"}:"
+            },
+            {
+              "line": 425,
+              "text": "                value = torch.stack(value, 0)"
+            },
+            {
+              "line": 426,
+              "text": "            elif k == \"visuals\":"
+            },
+            {
+              "line": 427,
+              "text": "                value = torch.nn.utils.rnn.pad_sequence(value, batch_first=True)"
+            },
+            {
+              "line": 428,
+              "text": "            if k in {\"masks\", \"keypoints\", \"bboxes\", \"cls\", \"segments\", \"obb\"}:"
+            },
+            {
+              "line": 429,
+              "text": "                value = torch.cat(value, 0)"
+            },
+            {
+              "line": 430,
+              "text": "            new_batch[k] = value"
+            },
+            {
+              "line": 431,
+              "text": "        if \"batch_idx\" in new_batch:"
+            },
+            {
+              "line": 432,
+              "text": "            new_batch[\"batch_idx\"] = list(new_batch[\"batch_idx\"])"
+            },
+            {
+              "line": 433,
+              "text": "            for i in range(len(new_batch[\"batch_idx\"])):"
+            },
+            {
+              "line": 434,
+              "text": "                new_batch[\"batch_idx\"][i] += i  # add target image index for build_targets()"
+            },
+            {
+              "line": 435,
+              "text": "            new_batch[\"batch_idx\"] = torch.cat(new_batch[\"batch_idx\"], 0)"
+            },
+            {
+              "line": 436,
+              "text": "        return new_batch"
+            },
+            {
+              "line": 437,
+              "text": ""
+            },
+            {
+              "line": 438,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    "data/augment.py": {
+      "original_path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Lib\\site-packages\\ultralytics\\data\\augment.py",
+      "snapshot": "sources/data__augment.py",
+      "bytes": 144657,
+      "sha256": "83e653664fa459beb66b9f245d90ca50ea25bc3c83caabfa9fab541d4abcb4b3",
+      "historical_training_contract_sha256": "83e653664fa459beb66b9f245d90ca50ea25bc3c83caabfa9fab541d4abcb4b3",
+      "historical_pin_matches_current": true,
+      "code_evidence": [
+        {
+          "line_start": 754,
+          "line_end": 771,
+          "lines": [
+            {
+              "line": 754,
+              "text": "        imgsz = self.imgsz * 2  # mosaic imgsz"
+            },
+            {
+              "line": 755,
+              "text": "        for labels in mosaic_labels:"
+            },
+            {
+              "line": 756,
+              "text": "            cls.append(labels[\"cls\"])"
+            },
+            {
+              "line": 757,
+              "text": "            instances.append(labels[\"instances\"])"
+            },
+            {
+              "line": 758,
+              "text": "        # Final labels"
+            },
+            {
+              "line": 759,
+              "text": "        final_labels = {"
+            },
+            {
+              "line": 760,
+              "text": "            \"im_file\": mosaic_labels[0][\"im_file\"],"
+            },
+            {
+              "line": 761,
+              "text": "            \"ori_shape\": mosaic_labels[0][\"ori_shape\"],"
+            },
+            {
+              "line": 762,
+              "text": "            \"resized_shape\": (imgsz, imgsz),"
+            },
+            {
+              "line": 763,
+              "text": "            \"cls\": np.concatenate(cls, 0),"
+            },
+            {
+              "line": 764,
+              "text": "            \"instances\": Instances.concatenate(instances, axis=0),"
+            },
+            {
+              "line": 765,
+              "text": "        }"
+            },
+            {
+              "line": 766,
+              "text": "        final_labels[\"instances\"].clip(imgsz, imgsz, preserve_obb=self.preserve_obb)"
+            },
+            {
+              "line": 767,
+              "text": "        good = final_labels[\"instances\"].remove_zero_area_boxes()"
+            },
+            {
+              "line": 768,
+              "text": "        final_labels[\"cls\"] = final_labels[\"cls\"][good]"
+            },
+            {
+              "line": 769,
+              "text": "        if \"texts\" in mosaic_labels[0]:"
+            },
+            {
+              "line": 770,
+              "text": "            final_labels[\"texts\"] = mosaic_labels[0][\"texts\"]"
+            },
+            {
+              "line": 771,
+              "text": "        return final_labels"
+            }
+          ]
+        },
+        {
+          "line_start": 838,
+          "line_end": 851,
+          "lines": [
+            {
+              "line": 838,
+              "text": "    def apply_instances(self, labels: dict[str, Any], params: dict[str, Any] | None = None) -> dict[str, Any]:"
+            },
+            {
+              "line": 839,
+              "text": "        \"\"\"Concatenate instances for MixUp."
+            },
+            {
+              "line": 840,
+              "text": ""
+            },
+            {
+              "line": 841,
+              "text": "        Args:"
+            },
+            {
+              "line": 842,
+              "text": "            labels (dict[str, Any]): Dictionary containing 'instances' and 'cls'."
+            },
+            {
+              "line": 843,
+              "text": "            params (dict | None): Parameters from get_params."
+            },
+            {
+              "line": 844,
+              "text": ""
+            },
+            {
+              "line": 845,
+              "text": "        Returns:"
+            },
+            {
+              "line": 846,
+              "text": "            (dict): Updated labels with concatenated instances."
+            },
+            {
+              "line": 847,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 848,
+              "text": "        labels2 = labels[\"mix_labels\"][0]"
+            },
+            {
+              "line": 849,
+              "text": "        labels[\"instances\"] = Instances.concatenate([labels[\"instances\"], labels2[\"instances\"]], axis=0)"
+            },
+            {
+              "line": 850,
+              "text": "        labels[\"cls\"] = np.concatenate([labels[\"cls\"], labels2[\"cls\"]], 0)"
+            },
+            {
+              "line": 851,
+              "text": "        return labels"
+            }
+          ]
+        },
+        {
+          "line_start": 1203,
+          "line_end": 1235,
+          "lines": [
+            {
+              "line": 1203,
+              "text": "    def apply_instances(self, labels: dict[str, Any], params: dict[str, Any] | None = None) -> dict[str, Any]:"
+            },
+            {
+              "line": 1204,
+              "text": "        \"\"\"Apply the affine transformation to object instances.\"\"\""
+            },
+            {
+              "line": 1205,
+              "text": "        cls = labels[\"cls\"]"
+            },
+            {
+              "line": 1206,
+              "text": "        instances = labels.pop(\"instances\")"
+            },
+            {
+              "line": 1207,
+              "text": "        instances.convert_bbox(format=\"xyxy\")"
+            },
+            {
+              "line": 1208,
+              "text": "        instances.denormalize(*params[\"orig_shape\"][::-1])"
+            },
+            {
+              "line": 1209,
+              "text": ""
+            },
+            {
+              "line": 1210,
+              "text": "        M = params[\"M\"]"
+            },
+            {
+              "line": 1211,
+              "text": "        scale = params[\"scale\"]"
+            },
+            {
+              "line": 1212,
+              "text": ""
+            },
+            {
+              "line": 1213,
+              "text": "        bboxes = self.apply_bboxes(instances.bboxes, M)"
+            },
+            {
+              "line": 1214,
+              "text": ""
+            },
+            {
+              "line": 1215,
+              "text": "        segments = instances.segments"
+            },
+            {
+              "line": 1216,
+              "text": "        keypoints = instances.keypoints"
+            },
+            {
+              "line": 1217,
+              "text": "        # Update bboxes if there are segments."
+            },
+            {
+              "line": 1218,
+              "text": "        if len(segments):"
+            },
+            {
+              "line": 1219,
+              "text": "            bboxes, segments = self.apply_segments(segments, M, params[\"size\"])"
+            },
+            {
+              "line": 1220,
+              "text": ""
+            },
+            {
+              "line": 1221,
+              "text": "        if keypoints is not None:"
+            },
+            {
+              "line": 1222,
+              "text": "            keypoints = self.apply_keypoints(keypoints, M, params[\"size\"])"
+            },
+            {
+              "line": 1223,
+              "text": "        new_instances = Instances(bboxes, segments, keypoints, bbox_format=\"xyxy\", normalized=False)"
+            },
+            {
+              "line": 1224,
+              "text": "        # Clip"
+            },
+            {
+              "line": 1225,
+              "text": "        new_instances.clip(*params[\"size\"], preserve_obb=self.preserve_obb)"
+            },
+            {
+              "line": 1226,
+              "text": ""
+            },
+            {
+              "line": 1227,
+              "text": "        # Filter instances"
+            },
+            {
+              "line": 1228,
+              "text": "        instances.scale(scale_w=scale, scale_h=scale, bbox_only=True)"
+            },
+            {
+              "line": 1229,
+              "text": "        # Make the bboxes have the same scale with new_bboxes"
+            },
+            {
+              "line": 1230,
+              "text": "        i = self.box_candidates("
+            },
+            {
+              "line": 1231,
+              "text": "            box1=instances.bboxes.T, box2=new_instances.bboxes.T, area_thr=0.01 if len(segments) else 0.10"
+            },
+            {
+              "line": 1232,
+              "text": "        )"
+            },
+            {
+              "line": 1233,
+              "text": "        labels[\"instances\"] = new_instances[i]"
+            },
+            {
+              "line": 1234,
+              "text": "        labels[\"cls\"] = cls[i]"
+            },
+            {
+              "line": 1235,
+              "text": "        return labels"
+            }
+          ]
+        },
+        {
+          "line_start": 1237,
+          "line_end": 1269,
+          "lines": [
+            {
+              "line": 1237,
+              "text": "    def apply_bboxes(self, bboxes: np.ndarray, M: np.ndarray) -> np.ndarray:"
+            },
+            {
+              "line": 1238,
+              "text": "        \"\"\"Apply affine transformation to bounding boxes."
+            },
+            {
+              "line": 1239,
+              "text": ""
+            },
+            {
+              "line": 1240,
+              "text": "        This function applies an affine transformation to a set of bounding boxes using the provided transformation"
+            },
+            {
+              "line": 1241,
+              "text": "        matrix."
+            },
+            {
+              "line": 1242,
+              "text": ""
+            },
+            {
+              "line": 1243,
+              "text": "        Args:"
+            },
+            {
+              "line": 1244,
+              "text": "            bboxes (np.ndarray): Bounding boxes in xyxy format with shape (N, 4), where N is the number of bounding"
+            },
+            {
+              "line": 1245,
+              "text": "                boxes."
+            },
+            {
+              "line": 1246,
+              "text": "            M (np.ndarray): Affine transformation matrix with shape (3, 3)."
+            },
+            {
+              "line": 1247,
+              "text": ""
+            },
+            {
+              "line": 1248,
+              "text": "        Returns:"
+            },
+            {
+              "line": 1249,
+              "text": "            (np.ndarray): Transformed bounding boxes in xyxy format with shape (N, 4)."
+            },
+            {
+              "line": 1250,
+              "text": ""
+            },
+            {
+              "line": 1251,
+              "text": "        Examples:"
+            },
+            {
+              "line": 1252,
+              "text": "            >>> rp = RandomPerspective()"
+            },
+            {
+              "line": 1253,
+              "text": "            >>> bboxes = np.array([[10, 10, 20, 20], [30, 30, 40, 40]], dtype=np.float32)"
+            },
+            {
+              "line": 1254,
+              "text": "            >>> M = np.eye(3, dtype=np.float32)"
+            },
+            {
+              "line": 1255,
+              "text": "            >>> transformed_bboxes = rp.apply_bboxes(bboxes, M)"
+            },
+            {
+              "line": 1256,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 1257,
+              "text": "        n = len(bboxes)"
+            },
+            {
+              "line": 1258,
+              "text": "        if n == 0:"
+            },
+            {
+              "line": 1259,
+              "text": "            return bboxes"
+            },
+            {
+              "line": 1260,
+              "text": ""
+            },
+            {
+              "line": 1261,
+              "text": "        xy = np.ones((n * 4, 3), dtype=bboxes.dtype)"
+            },
+            {
+              "line": 1262,
+              "text": "        xy[:, :2] = bboxes[:, [0, 1, 2, 3, 0, 3, 2, 1]].reshape(n * 4, 2)  # x1y1, x2y2, x1y2, x2y1"
+            },
+            {
+              "line": 1263,
+              "text": "        xy = xy @ M.T  # transform"
+            },
+            {
+              "line": 1264,
+              "text": "        xy = (xy[:, :2] / xy[:, 2:3] if self.perspective else xy[:, :2]).reshape(n, 8)  # perspective rescale or affine"
+            },
+            {
+              "line": 1265,
+              "text": ""
+            },
+            {
+              "line": 1266,
+              "text": "        # Create new boxes"
+            },
+            {
+              "line": 1267,
+              "text": "        x = xy[:, [0, 2, 4, 6]]"
+            },
+            {
+              "line": 1268,
+              "text": "        y = xy[:, [1, 3, 5, 7]]"
+            },
+            {
+              "line": 1269,
+              "text": "        return np.concatenate((x.min(1), y.min(1), x.max(1), y.max(1)), dtype=bboxes.dtype).reshape(4, n).T"
+            }
+          ]
+        },
+        {
+          "line_start": 1573,
+          "line_end": 1593,
+          "lines": [
+            {
+              "line": 1573,
+              "text": "    def apply_instances(self, labels: dict[str, Any], params: dict[str, Any]) -> dict[str, Any]:"
+            },
+            {
+              "line": 1574,
+              "text": "        \"\"\"Apply flip to object instances."
+            },
+            {
+              "line": 1575,
+              "text": ""
+            },
+            {
+              "line": 1576,
+              "text": "        Args:"
+            },
+            {
+              "line": 1577,
+              "text": "            labels (dict[str, Any]): Dictionary containing 'instances'."
+            },
+            {
+              "line": 1578,
+              "text": "            params (dict): Parameters from get_params."
+            },
+            {
+              "line": 1579,
+              "text": ""
+            },
+            {
+              "line": 1580,
+              "text": "        Returns:"
+            },
+            {
+              "line": 1581,
+              "text": "            (dict): Updated labels with flipped (or unchanged) instances."
+            },
+            {
+              "line": 1582,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 1583,
+              "text": "        instances = labels.pop(\"instances\")"
+            },
+            {
+              "line": 1584,
+              "text": "        instances.convert_bbox(format=\"xywh\")"
+            },
+            {
+              "line": 1585,
+              "text": "        if params[\"flip\"]:"
+            },
+            {
+              "line": 1586,
+              "text": "            if params[\"direction\"] == \"vertical\":"
+            },
+            {
+              "line": 1587,
+              "text": "                instances.flipud(params[\"h\"])"
+            },
+            {
+              "line": 1588,
+              "text": "            elif params[\"direction\"] == \"horizontal\":"
+            },
+            {
+              "line": 1589,
+              "text": "                instances.fliplr(params[\"w\"])"
+            },
+            {
+              "line": 1590,
+              "text": "            if params[\"flip_idx\"] is not None and instances.keypoints is not None:"
+            },
+            {
+              "line": 1591,
+              "text": "                instances.keypoints = np.ascontiguousarray(instances.keypoints[:, params[\"flip_idx\"], :])"
+            },
+            {
+              "line": 1592,
+              "text": "        labels[\"instances\"] = instances"
+            },
+            {
+              "line": 1593,
+              "text": "        return labels"
+            }
+          ]
+        },
+        {
+          "line_start": 1737,
+          "line_end": 1776,
+          "lines": [
+            {
+              "line": 1737,
+              "text": "        \"\"\""
+            },
+            {
+              "line": 1738,
+              "text": "        img = labels[\"img\"]"
+            },
+            {
+              "line": 1739,
+              "text": "        shape = img.shape[:2]  # current shape [height, width]"
+            },
+            {
+              "line": 1740,
+              "text": "        new_shape = labels.pop(\"rect_shape\", self.new_shape)"
+            },
+            {
+              "line": 1741,
+              "text": "        if isinstance(new_shape, int):"
+            },
+            {
+              "line": 1742,
+              "text": "            new_shape = (new_shape, new_shape)"
+            },
+            {
+              "line": 1743,
+              "text": ""
+            },
+            {
+              "line": 1744,
+              "text": "        # Scale ratio (new / old)"
+            },
+            {
+              "line": 1745,
+              "text": "        r = min(new_shape[0] / shape[0], new_shape[1] / shape[1])"
+            },
+            {
+              "line": 1746,
+              "text": "        if not self.scaleup:  # only scale down, do not scale up (for better val mAP)"
+            },
+            {
+              "line": 1747,
+              "text": "            r = min(r, 1.0)"
+            },
+            {
+              "line": 1748,
+              "text": ""
+            },
+            {
+              "line": 1749,
+              "text": "        # Compute padding"
+            },
+            {
+              "line": 1750,
+              "text": "        ratio = r, r  # width, height ratios"
+            },
+            {
+              "line": 1751,
+              "text": "        new_unpad = round(shape[1] * r), round(shape[0] * r)"
+            },
+            {
+              "line": 1752,
+              "text": "        dw, dh = new_shape[1] - new_unpad[0], new_shape[0] - new_unpad[1]  # wh padding"
+            },
+            {
+              "line": 1753,
+              "text": "        if self.auto:  # minimum rectangle"
+            },
+            {
+              "line": 1754,
+              "text": "            dw, dh = np.mod(dw, self.stride), np.mod(dh, self.stride)  # wh padding"
+            },
+            {
+              "line": 1755,
+              "text": "        elif self.scale_fill:  # stretch"
+            },
+            {
+              "line": 1756,
+              "text": "            dw, dh = 0.0, 0.0"
+            },
+            {
+              "line": 1757,
+              "text": "            new_unpad = (new_shape[1], new_shape[0])"
+            },
+            {
+              "line": 1758,
+              "text": "            ratio = new_shape[1] / shape[1], new_shape[0] / shape[0]  # width, height ratios"
+            },
+            {
+              "line": 1759,
+              "text": ""
+            },
+            {
+              "line": 1760,
+              "text": "        if self.center:"
+            },
+            {
+              "line": 1761,
+              "text": "            dw /= 2  # divide padding into 2 sides"
+            },
+            {
+              "line": 1762,
+              "text": "            dh /= 2"
+            },
+            {
+              "line": 1763,
+              "text": ""
+            },
+            {
+              "line": 1764,
+              "text": "        top, bottom = round(dh - 0.1) if self.center else 0, round(dh + 0.1)"
+            },
+            {
+              "line": 1765,
+              "text": "        left, right = round(dw - 0.1) if self.center else 0, round(dw + 0.1)"
+            },
+            {
+              "line": 1766,
+              "text": ""
+            },
+            {
+              "line": 1767,
+              "text": "        return {"
+            },
+            {
+              "line": 1768,
+              "text": "            \"orig_shape\": shape,"
+            },
+            {
+              "line": 1769,
+              "text": "            \"new_shape\": new_shape,"
+            },
+            {
+              "line": 1770,
+              "text": "            \"ratio\": ratio,"
+            },
+            {
+              "line": 1771,
+              "text": "            \"new_unpad\": new_unpad,"
+            },
+            {
+              "line": 1772,
+              "text": "            \"top\": top,"
+            },
+            {
+              "line": 1773,
+              "text": "            \"bottom\": bottom,"
+            },
+            {
+              "line": 1774,
+              "text": "            \"left\": left,"
+            },
+            {
+              "line": 1775,
+              "text": "            \"right\": right,"
+            },
+            {
+              "line": 1776,
+              "text": "        }"
+            }
+          ]
+        },
+        {
+          "line_start": 2812,
+          "line_end": 2854,
+          "lines": [
+            {
+              "line": 2812,
+              "text": "    mosaic = Mosaic(dataset, imgsz=imgsz, p=hyp.mosaic)"
+            },
+            {
+              "line": 2813,
+              "text": "    affine = RandomPerspective("
+            },
+            {
+              "line": 2814,
+              "text": "        degrees=hyp.degrees,"
+            },
+            {
+              "line": 2815,
+              "text": "        translate=hyp.translate,"
+            },
+            {
+              "line": 2816,
+              "text": "        scale=hyp.scale,"
+            },
+            {
+              "line": 2817,
+              "text": "        shear=hyp.shear,"
+            },
+            {
+              "line": 2818,
+              "text": "        perspective=hyp.perspective,"
+            },
+            {
+              "line": 2819,
+              "text": "        size=(imgsz, imgsz),"
+            },
+            {
+              "line": 2820,
+              "text": "        preserve_obb=getattr(dataset, \"use_obb\", False),"
+            },
+            {
+              "line": 2821,
+              "text": "    )"
+            },
+            {
+              "line": 2822,
+              "text": ""
+            },
+            {
+              "line": 2823,
+              "text": "    pre_transform = Compose([mosaic, affine])"
+            },
+            {
+              "line": 2824,
+              "text": "    if hyp.copy_paste_mode == \"flip\":"
+            },
+            {
+              "line": 2825,
+              "text": "        pre_transform.insert(1, CopyPaste(dataset, p=hyp.copy_paste, mode=hyp.copy_paste_mode))"
+            },
+            {
+              "line": 2826,
+              "text": "    else:"
+            },
+            {
+              "line": 2827,
+              "text": "        pre_transform.append("
+            },
+            {
+              "line": 2828,
+              "text": "            CopyPaste("
+            },
+            {
+              "line": 2829,
+              "text": "                dataset,"
+            },
+            {
+              "line": 2830,
+              "text": "                pre_transform=Compose([Mosaic(dataset, imgsz=imgsz, p=hyp.mosaic), affine]),"
+            },
+            {
+              "line": 2831,
+              "text": "                p=hyp.copy_paste,"
+            },
+            {
+              "line": 2832,
+              "text": "                mode=hyp.copy_paste_mode,"
+            },
+            {
+              "line": 2833,
+              "text": "            )"
+            },
+            {
+              "line": 2834,
+              "text": "        )"
+            },
+            {
+              "line": 2835,
+              "text": "    flip_idx = dataset.data.get(\"flip_idx\", [])  # for keypoints augmentation"
+            },
+            {
+              "line": 2836,
+              "text": "    if getattr(dataset, \"use_keypoints\", False):"
+            },
+            {
+              "line": 2837,
+              "text": "        kpt_shape = dataset.data.get(\"kpt_shape\", None)"
+            },
+            {
+              "line": 2838,
+              "text": "        if len(flip_idx) == 0 and (hyp.fliplr > 0.0 or hyp.flipud > 0.0):"
+            },
+            {
+              "line": 2839,
+              "text": "            hyp.fliplr = hyp.flipud = 0.0  # both fliplr and flipud require flip_idx"
+            },
+            {
+              "line": 2840,
+              "text": "            LOGGER.warning(\"No 'flip_idx' array defined in data.yaml, disabling 'fliplr' and 'flipud' augmentations.\")"
+            },
+            {
+              "line": 2841,
+              "text": "        elif flip_idx and (len(flip_idx) != kpt_shape[0]):"
+            },
+            {
+              "line": 2842,
+              "text": "            raise ValueError(f\"data.yaml flip_idx={flip_idx} length must be equal to kpt_shape[0]={kpt_shape[0]}\")"
+            },
+            {
+              "line": 2843,
+              "text": ""
+            },
+            {
+              "line": 2844,
+              "text": "    return Compose("
+            },
+            {
+              "line": 2845,
+              "text": "        ["
+            },
+            {
+              "line": 2846,
+              "text": "            pre_transform,"
+            },
+            {
+              "line": 2847,
+              "text": "            MixUp(dataset, pre_transform=pre_transform, p=hyp.mixup),"
+            },
+            {
+              "line": 2848,
+              "text": "            CutMix(dataset, pre_transform=pre_transform, p=hyp.cutmix),"
+            },
+            {
+              "line": 2849,
+              "text": "            Albumentations(p=1.0, transforms=getattr(hyp, \"augmentations\", None), flip_idx=flip_idx),"
+            },
+            {
+              "line": 2850,
+              "text": "            RandomHSV(hgain=hyp.hsv_h, sgain=hyp.hsv_s, vgain=hyp.hsv_v),"
+            },
+            {
+              "line": 2851,
+              "text": "            RandomFlip(direction=\"vertical\", p=hyp.flipud, flip_idx=flip_idx),"
+            },
+            {
+              "line": 2852,
+              "text": "            RandomFlip(direction=\"horizontal\", p=hyp.fliplr, flip_idx=flip_idx),"
+            },
+            {
+              "line": 2853,
+              "text": "        ]"
+            },
+            {
+              "line": 2854,
+              "text": "    )  # transforms"
+            }
+          ]
+        }
+      ]
+    },
+    "nn/tasks.py": {
+      "original_path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Lib\\site-packages\\ultralytics\\nn\\tasks.py",
+      "snapshot": "sources/nn__tasks.py",
+      "bytes": 98107,
+      "sha256": "2371b1bc9b1a17782c55259cf760fcd603f0bd012feb55737e7809dafe89c807",
+      "historical_training_contract_sha256": "2371b1bc9b1a17782c55259cf760fcd603f0bd012feb55737e7809dafe89c807",
+      "historical_pin_matches_current": true,
+      "code_evidence": []
+    }
+  },
+  "workspace_sources": {
+    "artifacts/gate1/20261022_split_refinement/training_contract_v3/contract.json": {
+      "bytes": 6024,
+      "sha256": "6dfc1b1c8b2d89948c5804cfda8f22c92cbd721b3dfaf0cffdc314b2b2bd4fc0"
+    },
+    "artifacts/gate1/20261022_split_refinement/training_contract_v3/runner_source.py": {
+      "bytes": 37078,
+      "sha256": "99730c52afcd363250054b41bf47bc0aceb8db1bbb8f0179c0b1742f2d951ef6"
+    },
+    "artifacts/gate1/20261022_split_refinement/training_contract_v3/framework_defaults.json": {
+      "bytes": 2300,
+      "sha256": "af5e9b0f337612a025943ccf735a9aeada59d033eeb0969386d5a67e21dacd67"
+    },
+    "scripts/prepare_gate1_visdrone.py": {
+      "bytes": 32526,
+      "sha256": "80cd0131020a9712a921a0ee1293c5003b160d1240393a28f51c8de290d2f735"
+    },
+    "scripts/gate1_ignore_negative_loss.py": {
+      "bytes": 7782,
+      "sha256": "67fa0f7a171d26b1f8d2ebd922333f30bb97ffb94b523a58f6f784ed572b3c1f"
+    },
+    "tests/test_gate1_ignore_negative_loss.py": {
+      "bytes": 9170,
+      "sha256": "e6b182bf70abeabcb5b2a843b50bf288d7282f1e6d33ffe4aab2346e32516fe4"
+    },
+    "artifacts/gate1/20261023_ignore_loss_preparation_v1/build_source_review.py": {
+      "bytes": 10847,
+      "sha256": "f50e7d9e69349f5c766291360b694d336ab89556ff4d69234c18ed5569a5bc3e"
+    }
+  },
+  "evidence_chain": [
+    {
+      "source": "frozen training contract limits",
+      "finding": "Explicitly acknowledges ordinary YOLO loss does not mask ignored negative regions."
+    },
+    {
+      "source": "prepare_gate1_visdrone.py:161-204,255-271",
+      "finding": "Publisher score=0/category 0 or 11 rows are excluded from YOLO positives; ignored rows also remain in sidecars. Preparation-quality exclusions are distinguished."
+    },
+    {
+      "source": "frozen runner_source.py:308-332",
+      "finding": "Only ordinary image/YOLO label copies are exposed in data.yaml; no ignore geometry is provided to criterion."
+    },
+    {
+      "source": "utils/tal.py:300-307",
+      "finding": "Unassigned anchor target scores are zero; zero BCE targets still incur background loss."
+    },
+    {
+      "source": "utils/loss.py:411,426-441",
+      "finding": "Assign from regular GT, calculate BCE for all anchors/classes, optionally apply class weights, sum every entry with original target-score denominator."
+    },
+    {
+      "source": "utils/loss.py:444-455",
+      "finding": "Box and DFL branches operate on fg_mask positives; the proposed primitive never changes them."
+    },
+    {
+      "source": "data/augment.py:759-771,1203-1235,1573-1593;data/dataset.py:409-438",
+      "finding": "Ordinary transform/collation supports specific fields; arbitrary ignore sidecars are not automatically transformed, merged or indexed."
+    }
+  ],
+  "historical_pin_limit": "loss.py and tal.py were not separately pinned in training_contract_v3. This review pins their current installed bytes only. Dataset/augment/tasks pins are checked; historical contract explicitly acknowledges the same gap, but no retrospective byte identity is claimed for unpinned files.",
+  "proposed_policy": {
+    "schema": "rampq.gate1.ignore_negative_loss_policy/v1",
+    "scope": "classification_BCE_primitive_only_after_augmentation",
+    "geometry": "clipped_final_canvas_pixel_xyxy",
+    "inside": "x1 <= anchor_x < x2 and y1 <= anchor_y < y2",
+    "ignore_class_policy": "class_agnostic_for_unassigned_anchors_only",
+    "positive_priority": "preserve_all_class_channels_at_every_fg_mask_anchor",
+    "normalization": "original_target_scores_sum_clamp_min_1_no_area_rescaling",
+    "supported_float_dtypes": [
+      "torch.float32",
+      "torch.float64"
+    ],
+    "official_visdrone_training_or_AP_rule": false,
+    "training_pipeline_integrated": false
+  },
+  "ignore_source_policy_proposed_not_loaded": {
+    "include": "Nonempty clipped publisher_ignored regions (score=0 or category in {0,11}) for authorized train rows only.",
+    "exclude": "Do not silently convert preparation-quality invalid positive geometry into publisher-ignore regions; fail/quarantine through a separately reviewed policy.",
+    "class_semantics": "All such regions would suppress every class at unassigned anchors. This deliberately stronger class-agnostic policy is an engineering proposal, not official class-specific score=0 matching semantics.",
+    "selection_holdout": "Neither may enter training loss preparation or tuning."
+  },
+  "augmentation_integration_required": [
+    "Carry ignore geometry and source identities separately from positive Instances; never add ignored boxes to TAL GT.",
+    "Use the exact sampled resize/pad/crop/mosaic/flip parameters applied to the image, not an independently sampled second transform.",
+    "Mosaic must merge every contributing source ignore set, map placement/crop, and clip to final canvas; arbitrary dict fields are currently dropped by final_labels reconstruction.",
+    "Use a loss-specific clipped region validity rule, not positive box_candidates area/aspect filtering; dropping tiny ignore remnants silently reintroduces negative gradients.",
+    "Current frozen defaults have degrees/shear/perspective=0, mixup/cutmix/copy_paste=0. A first integration must assert these settings or implement separately reviewed polygon/paste semantics. AABB after rotation can ignore extra background.",
+    "Photometric transforms need no geometry change, but any spatial Albumentations must expose/replay geometry or be rejected.",
+    "Format and collate must preserve ragged per-image ignore boxes and explicit batch identity; criterion receives final-canvas pixel coordinates after multi-scale preprocessing, if enabled.",
+    "Unit tests of this primitive do not verify these unimplemented data-flow requirements."
+  ],
+  "normalization_and_noninterference": {
+    "keep": "fg_mask OR NOT anchor_center_inside_union_ignore",
+    "numerator": "sum(where(keep[...,None], ordinary_elementwise_BCE_after_optional_class_weights, 0))",
+    "denominator": "target_scores.sum().clamp_min(1), identical original positive normalization",
+    "unchanged_at_fixed_inputs": [
+      "TAL assignment",
+      "positive all-class BCE terms and gradients",
+      "retained negative BCE terms and gradients",
+      "box/DFL inputs and normalization"
+    ],
+    "not_claimed": "Shared-parameter gradients and future training trajectories necessarily can change after removing negative terms; no training efficacy or official semantics is established."
+  },
+  "data_access": {
+    "source_code_and_contract_metadata_only": true,
+    "real_images_or_labels_parsed": false,
+    "real_ignored_rows_parsed": false,
+    "selection_accessed": false,
+    "holdout_accessed": false,
+    "models_or_weights_loaded": false,
+    "gpu_used": false,
+    "training_started": false
+  },
+  "complete_ignore_aware_training_solved": false,
+  "official_ap_implemented_or_certified": false,
+  "original_scientific_gates_changed": false
+}

@@ -1,0 +1,190 @@
+{
+  "schema": "rampq.gate05.current_stage_completion_audit/v1",
+  "audited_client_at": "2026-10-19T17:37:56.537780+08:00",
+  "status": "CURRENT_FROZEN_ENGINEERING_SCOPE_COMPLETE_ROOT_FINALIZATION_PENDING",
+  "gate05_status": "INCOMPLETE",
+  "material_engineering_missing_items": [],
+  "matrix": [
+    {
+      "configuration": "fp16_control",
+      "built": true,
+      "source_convs_mapped": 88,
+      "int8_formats": 0,
+      "fp16_formats": 88,
+      "strict_integer_tactics": "NOT_APPLICABLE_NO_INT8",
+      "finite_primary_and_auxiliary_fixed_image_execution": true,
+      "detections": 2,
+      "engine_sha256": "92ce7a8f487cbaf473a281b94daa953120870fa2ad992807d60390dffd1b72fb",
+      "inherited_spec_seconds": 1800,
+      "effective_monitor_seconds": 1800,
+      "monitor_elapsed_seconds": 563.23,
+      "end_repeat_all_raw_arrays_bit_exact_to_prior": true,
+      "end_repeat_boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "original_build_boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95"
+    },
+    {
+      "configuration": "q_all",
+      "built": true,
+      "source_convs_mapped": 88,
+      "int8_formats": 88,
+      "fp16_formats": 0,
+      "strict_integer_tactics": "UNRESOLVED_7_UNNAMED_81_NAMED_VERIFIED",
+      "finite_primary_and_auxiliary_fixed_image_execution": true,
+      "detections": 0,
+      "engine_sha256": "e5c9cae835bddc60bfe744d8d5af8c41c112133911936d8a85e8eddf58ebf9e5",
+      "effective_monitor_seconds": 7200,
+      "monitor_elapsed_seconds": 3279.35
+    },
+    {
+      "configuration": "r_only_G1",
+      "built": true,
+      "source_convs_mapped": 88,
+      "int8_formats": 82,
+      "fp16_formats": 6,
+      "strict_integer_tactics": "UNRESOLVED_7_UNNAMED",
+      "finite_primary_and_auxiliary_fixed_image_execution": true,
+      "detections": 0,
+      "engine_sha256": "112cbe6f6a0edceaf0e05f82a4217951663498177935e5fcacf7863a0d1fdbce",
+      "inherited_spec_seconds": 1800,
+      "effective_monitor_seconds": 7200,
+      "monitor_elapsed_seconds": 3393.67
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "built": true,
+      "source_convs_mapped": 88,
+      "int8_formats": 74,
+      "fp16_formats": 14,
+      "strict_integer_tactics": "UNRESOLVED_7_UNNAMED",
+      "finite_primary_and_auxiliary_fixed_image_execution": true,
+      "detections": 0,
+      "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+      "inherited_spec_seconds": 1800,
+      "effective_monitor_seconds": 7200,
+      "monitor_elapsed_seconds": 4062.2
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "built": true,
+      "source_convs_mapped": 88,
+      "int8_formats": 77,
+      "fp16_formats": 11,
+      "strict_integer_tactics": "UNRESOLVED_7_UNNAMED",
+      "finite_primary_and_auxiliary_fixed_image_execution": true,
+      "detections": 0,
+      "engine_sha256": "8054e6242c63eae17dfaf473944426c77ad3a79c25000bb093476fe31556c40e",
+      "inherited_spec_seconds": 1800,
+      "effective_monitor_seconds": 7200,
+      "monitor_elapsed_seconds": 3267.34
+    },
+    {
+      "configuration": "q_only_G1",
+      "built": true,
+      "source_convs_mapped": 88,
+      "int8_formats": 6,
+      "fp16_formats": 82,
+      "strict_integer_tactics": "ALL_6_REQUESTED_VERIFIED",
+      "finite_primary_and_auxiliary_fixed_image_execution": true,
+      "detections": 0,
+      "engine_sha256": "d727cd809926b2a016a6e18e25999701caf2beb31c24725f5019bbd894a0cf44",
+      "inherited_spec_seconds": 1800,
+      "effective_monitor_seconds": 1800,
+      "monitor_elapsed_seconds": 1402.37
+    }
+  ],
+  "all_six_engine_configurations_built_mapped_and_fixed_image_executed": true,
+  "same_88_source_conv_identity_set": true,
+  "fixed_image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "frozen_nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "original_numerical_migration_failure": "FAILED_UNCHANGED_ORIGINAL_TOLERANCES_RETAINED",
+  "strict_integer_evidence_unresolved_configurations": [
+    "q_all",
+    "r_only_G1",
+    "r_only_G1_G5",
+    "r_only_G1_G2"
+  ],
+  "receipts_independently_reverified": [
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/queue_evidence",
+      "receipt_sha256": "178a17f520257dd85afd56f87a2c150c4628641f7f578ffc3d020f9264049bd6",
+      "verified_files": 41
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/r_only_G1/build_evidence",
+      "receipt_sha256": "054074534a3a356fbfa07e83b2c253170354e4f0d1dd815cfc8410d0fbe1f106",
+      "verified_files": 28
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/r_only_G1/post_smoke_evidence",
+      "receipt_sha256": "f43bbc0c1112024f920c42ad0136346c26d140b564f033599a0c6ef635a054c7",
+      "verified_files": 40
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/build_evidence",
+      "receipt_sha256": "0b02902008ccaedccf20023a86a95dc8a40f4bcc4a4d4352c7687fdc065f78f3",
+      "verified_files": 28
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/r_only_G1_G5/post_smoke_evidence",
+      "receipt_sha256": "87854e80468ba06f8503ceba8be46a94d5bd08512f6f36ebc9f59217223a0670",
+      "verified_files": 40
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/build_evidence",
+      "receipt_sha256": "0a1840d1e713fc62c2c417b8532ec1a606b5ed7e3b38db8c4cc1a2bb23d37529",
+      "verified_files": 28
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/r_only_G1_G2/post_smoke_evidence",
+      "receipt_sha256": "b8ffaee810f6c9c91efd633d00c8f76856ab79d52972dff7db4ec7198105512f",
+      "verified_files": 40
+    },
+    {
+      "path": "artifacts/gate05/20261019_precision_native/prefer/q_only_G1/post_smoke_evidence",
+      "receipt_sha256": "f072d9e8a88a38f462e96bc844edfc5f50f14c1d71e78e9f6cd29156d81750f1",
+      "verified_files": 33
+    },
+    {
+      "path": "artifacts/gate05/20261019_restore_extended/fp16_end_control/post_smoke_evidence",
+      "receipt_sha256": "002b037e2a48589c45f84257751c316470883f5521577035de399b8fd491724c",
+      "verified_files": 32
+    },
+    {
+      "path": "artifacts/gate05/20261019_precision_native/fp16_control/post_smoke_evidence",
+      "receipt_sha256": "4867b742da3b5849211ddc3b17a7c6e242f08404c40719d1690f629ae6d5fd7b",
+      "verified_files": 32
+    },
+    {
+      "path": "artifacts/gate05/20261019_qall_extended/post_smoke_evidence",
+      "receipt_sha256": "5e435059fe98055dee044c66f0c8ca73f6ff223ece98fe007bf45bc91f369b0c",
+      "verified_files": 53
+    }
+  ],
+  "extended_queue_checkpoint_recomputed_read_only": "EXTENDED_RESTORE_LOCAL_CHECKPOINT_COMPLETE",
+  "scope_evidence": {
+    "all_audited_executions_fixed_image_only": true,
+    "no_150_image_inference_in_audited_evidence": true,
+    "no_new_calibration_or_threshold_change_in_frozen_sources": true,
+    "no_dataset_accuracy_rescue_causality_or_performance_pass_established": true,
+    "limits": "This is an audit of retained artifacts and source/receipt lineage, not live process observation or a search of unrelated tasks."
+  },
+  "planning_boundary": [
+    "Choose an independent numerical/target-level migration acceptance protocol while retaining the original PyTorch-ORT full-model failure.",
+    "Resolve the nonquantized floating precision/fusion control and prospective PASS/FAIL/INCONCLUSIVE rules before causal or rescue comparisons.",
+    "Choose the next strict integer-kernel proof method or prospectively scoped evidence policy for seven unnamed tactics; existing formats-only and named-tactic evidence must remain separate.",
+    "Decide the next quantization/calibration/training intervention after frozen INT8/mixed fixed-image runs yielded no detections; do not relabel the current runs as recovery.",
+    "Freeze the use of the existing 150-image holdout, acceptance metrics and controlled performance protocol before any dataset evaluation or benchmark."
+  ],
+  "root_finalization_pending": [
+    "Finish report26 and final machine-readable execution state.",
+    "Revoke only this task temporary SSH key and record verification."
+  ],
+  "audit_native_board_access": false,
+  "audit_gpu_or_new_inference": false,
+  "raw_artifacts_modified": false
+}

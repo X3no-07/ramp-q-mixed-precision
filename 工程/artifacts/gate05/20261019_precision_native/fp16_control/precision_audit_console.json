@@ -1,0 +1,214 @@
+{
+  "schema": "rampq.gate05.precision_candidate_audit/v1",
+  "status": "REQUESTED_CONV_FORMATS_VERIFIED",
+  "requested_conv_formats_complete": true,
+  "source_convs": 88,
+  "quantized_conv_count": 0,
+  "fp16_conv_count": 88,
+  "verified_int8_format_convs": 0,
+  "verified_fp16_format_convs": 88,
+  "strict_int8_status": "NO_INT8_REQUESTED",
+  "named_integer_tactic_source_convs": 0,
+  "source_convs_without_tactic_name": 0,
+  "groups": {
+    "G1": {
+      "source_convs": 6,
+      "requested_int8": 0,
+      "requested_fp16": 6,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 6
+    },
+    "G2": {
+      "source_convs": 5,
+      "requested_int8": 0,
+      "requested_fp16": 5,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 5
+    },
+    "G3": {
+      "source_convs": 10,
+      "requested_int8": 0,
+      "requested_fp16": 10,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 10
+    },
+    "G4": {
+      "source_convs": 19,
+      "requested_int8": 0,
+      "requested_fp16": 19,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 19
+    },
+    "G5": {
+      "source_convs": 8,
+      "requested_int8": 0,
+      "requested_fp16": 8,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 8
+    },
+    "G6": {
+      "source_convs": 15,
+      "requested_int8": 0,
+      "requested_fp16": 15,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 15
+    },
+    "G7": {
+      "source_convs": 8,
+      "requested_int8": 0,
+      "requested_fp16": 8,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 8
+    },
+    "G8": {
+      "source_convs": 17,
+      "requested_int8": 0,
+      "requested_fp16": 17,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 17
+    }
+  },
+  "errors": [],
+  "unmapped_engine_convs": [],
+  "fusions": [
+    {
+      "engine_layer": "/model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv",
+      "source_members": [
+        "/model.22/m.0/cv1/conv/Conv",
+        "/model.22/m.0/cv2/conv/Conv"
+      ],
+      "accounting": {
+        "status": "FUSION_ACCOUNTING_PASS",
+        "checks": {
+          "same_group": true,
+          "same_requested_precision": true,
+          "one_native_activation_input": true,
+          "source_graph_available": true,
+          "complete_exact_source_names": true,
+          "all_traces_complete": true,
+          "same_original_activation_and_quantizer_if_int8": true,
+          "native_weight_count_equals_source_sum": true
+        },
+        "source_weight_counts": [
+          {
+            "onnx_node": "/model.22/m.0/cv1/conv/Conv",
+            "initializer": "model.22.m.0.cv1.conv.weight",
+            "count": 8192
+          },
+          {
+            "onnx_node": "/model.22/m.0/cv2/conv/Conv",
+            "initializer": "model.22.m.0.cv2.conv.weight",
+            "count": 8192
+          }
+        ],
+        "source_weight_count_sum": 16384,
+        "native_weight_count": 16384,
+        "traces": [
+          {
+            "source_tensor": "/model.22/Split_output_1"
+          },
+          {
+            "source_tensor": "/model.22/Split_output_1"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "engine_layer": "/model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv",
+      "source_members": [
+        "/model.6/m.0/cv1/conv/Conv",
+        "/model.6/m.0/cv2/conv/Conv"
+      ],
+      "accounting": {
+        "status": "FUSION_ACCOUNTING_PASS",
+        "checks": {
+          "same_group": true,
+          "same_requested_precision": true,
+          "one_native_activation_input": true,
+          "source_graph_available": true,
+          "complete_exact_source_names": true,
+          "all_traces_complete": true,
+          "same_original_activation_and_quantizer_if_int8": true,
+          "native_weight_count_equals_source_sum": true
+        },
+        "source_weight_counts": [
+          {
+            "onnx_node": "/model.6/m.0/cv1/conv/Conv",
+            "initializer": "model.6.m.0.cv1.conv.weight",
+            "count": 2048
+          },
+          {
+            "onnx_node": "/model.6/m.0/cv2/conv/Conv",
+            "initializer": "model.6.m.0.cv2.conv.weight",
+            "count": 2048
+          }
+        ],
+        "source_weight_count_sum": 4096,
+        "native_weight_count": 4096,
+        "traces": [
+          {
+            "source_tensor": "/model.6/Split_output_1"
+          },
+          {
+            "source_tensor": "/model.6/Split_output_1"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "engine_layer": "/model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv",
+      "source_members": [
+        "/model.8/m.0/cv1/conv/Conv",
+        "/model.8/m.0/cv2/conv/Conv"
+      ],
+      "accounting": {
+        "status": "FUSION_ACCOUNTING_PASS",
+        "checks": {
+          "same_group": true,
+          "same_requested_precision": true,
+          "one_native_activation_input": true,
+          "source_graph_available": true,
+          "complete_exact_source_names": true,
+          "all_traces_complete": true,
+          "same_original_activation_and_quantizer_if_int8": true,
+          "native_weight_count_equals_source_sum": true
+        },
+        "source_weight_counts": [
+          {
+            "onnx_node": "/model.8/m.0/cv1/conv/Conv",
+            "initializer": "model.8.m.0.cv1.conv.weight",
+            "count": 8192
+          },
+          {
+            "onnx_node": "/model.8/m.0/cv2/conv/Conv",
+            "initializer": "model.8.m.0.cv2.conv.weight",
+            "count": 8192
+          }
+        ],
+        "source_weight_count_sum": 16384,
+        "native_weight_count": 16384,
+        "traces": [
+          {
+            "source_tensor": "/model.8/Split_output_1"
+          },
+          {
+            "source_tensor": "/model.8/Split_output_1"
+          }
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "scope": "Actual requested Conv weight/input/output formats; integer tactic evidence separate. No numerical migration, target recovery, dataset accuracy or performance claim.",
+  "configuration": "fp16_control",
+  "engine_sha256": "92ce7a8f487cbaf473a281b94daa953120870fa2ad992807d60390dffd1b72fb",
+  "onnx_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+  "spec_sha256": "4b279517da8d847dca9fe60a592b914f7b68f24bd5c4b85b67881172a9f3cfb9",
+  "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+  "layer_file_sha256": "c709646476e2da5bdb14e4efa3e1508fc2cd3865a86f8f727963f86267e57630",
+  "build_result_sha256": "557f93c7b282eecf9cfc687ae77f3481bfe40cb2d16229afb21c09965e7a56b6",
+  "original_numerical_failure_retained": true,
+  "nonquantized_float_control_status": "PENDING_NATIVE_VALIDATION_AND_PROTOCOL"
+}

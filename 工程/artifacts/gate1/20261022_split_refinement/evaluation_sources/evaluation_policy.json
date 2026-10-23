@@ -1,0 +1,152 @@
+{
+  "schema": "rampq.gate1.ignore_aware_evaluation_policy/v1",
+  "status": "DRAFT_TECHNICALLY_TESTED_PENDING_RESEARCH_FREEZE_AND_OFFICIAL_ORACLE",
+  "client_date": "2026-10-22",
+  "official_repository": "https://github.com/VisDrone/VisDrone2018-DET-toolkit",
+  "official_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+  "source_manifest": {
+    "path": "source_manifest.json",
+    "sha256": "1d45d3ecaabf5f3f8a8885436a0a22718a890a17f8ad9d5ec4f9c274c3c079ae"
+  },
+  "source_review": {
+    "path": "OFFICIAL_SOURCE_REVIEW.md",
+    "sha256": "31ad22ab40e2c5deb3e27a822499bdb155d33abf13b7fcef850f43738fbf8376"
+  },
+  "implementation": {
+    "scripts/gate1_ignore_aware_evaluation.py": {
+      "bytes": 18720,
+      "sha256": "4e45ff26a86a83ff66e997f15e4c4794246c6440c304446972809ff32db09961"
+    },
+    "tests/test_gate1_ignore_evaluation.py": {
+      "bytes": 10173,
+      "sha256": "9ac12195e8308a9f95008fbf935248ca9ef11b033fbacf60c45c0bec23116232"
+    }
+  },
+  "scope": {
+    "data_or_model_predictions_scored": false,
+    "models_executed": false,
+    "testdev_or_holdout_read": false,
+    "full_training_started_by_this_work": false,
+    "official_AP_implemented": false,
+    "Gate1_scientific_result": false
+  },
+  "input_contract": {
+    "ground_truth": "raw eight-column VisDrone CSV; class/category remains publisher 0..11",
+    "predictions": "eight-column VisDrone CSV or records with bbox_xywh, score, category 0..11, unique detection_id; no implicit conversion from YOLO class_id",
+    "target_identity": "image_id plus zero-based original physical annotation line, including blank-line positions",
+    "prediction_identity": "explicit unique ID; original input row order is retained for deterministic ties",
+    "positive_GT_nonpositive_geometry": "REFUSE; affected training components must be quarantined before evaluation",
+    "prediction_nonpositive_or_nonfinite_geometry": "REFUSE",
+    "maximum_image_pixels": 32000000
+  },
+  "official_source_region_prefilter": {
+    "region_definition": "category=0 GT only, regardless of score; category=11 and score=0 alone are not global raster regions",
+    "raster": "union of category-0 regions; max(1,xywh); inclusive one-based x:x+w,y:y+h, upper image edges clipped",
+    "region_coordinate_requirement": "integer source region xywh; noninteger regions explicitly refused",
+    "query": "MATLAB half-away-from-zero round then max(1,xywh); x/y clipped to image; integral query covers (x,x+w] and (y,y+h]",
+    "denominator": "rounded, lower-clamped original w*h, not clipped area",
+    "drop_condition": "raster_fraction >= 0.5 for both non-category0 GT and detections",
+    "returned_coordinates": "original raw boxes survive unchanged; mask query is not a returned-box clip",
+    "ordinary_continuous_IoF_is_not_a_substitute": true
+  },
+  "project_primary_target_metric": {
+    "function": "match_project_targets",
+    "name": "PROJECT_IGNORE_AWARE_TARGET_MATCHING",
+    "official_AP": false,
+    "confidence_primary": 0.25,
+    "iou_primary": 0.5,
+    "planned_confidence_sensitivity": [
+      0.2,
+      0.3
+    ],
+    "effective_GT": "after category-0 filter, score=1 and category 1..10, nonempty box after clip",
+    "box_policy": "category-0 prefilter on raw boxes first; clip surviving target/prediction xyxy to [0,W]x[0,H]",
+    "matching": "same-category, one-to-one global greedy descending (IoU, confidence, original GT physical line, original detection input index)",
+    "score0_absorption": "only unmatched considered predictions; same class score=0 GT; intersection/prediction area >= primary IoU threshold; an ignored GT can absorb multiple predictions",
+    "others": "category 11 is outside evaluated classes; others GT does not absorb predictions of classes 1..10",
+    "truncation_and_occlusion": "retained as attributes; no exclusion based on either",
+    "NMS": "not implemented here; upstream candidate filtering, NMS and max_det must be separately frozen",
+    "FP_precision_recall_scope": "project confidence/ignore/matching policy; never labeled official VisDrone AP",
+    "empty_denominator": "must be reported N/A or insufficient evidence by downstream analysis, never automatic PASS"
+  },
+  "official_style_single_image_metric": {
+    "function": "match_official_style",
+    "name": "UNCERTIFIED_OFFICIAL_STYLE_SINGLE_IMAGE_MATCHING",
+    "official_AP": false,
+    "default_max_detections": 500,
+    "cap_order": "category0 prefilter then first max_detections across all classes in submitted input order, before class extraction and score sorting",
+    "matching": "per-class confidence-descending, valid-GT preferred; continuous raw-coordinate IoU, ignore-GT uses intersection/prediction area",
+    "ties": "Python stable detection input order; equal overlap replaces with later GT; MATLAB version tie behavior remains unverified",
+    "clipping": "no returned raw-coordinate clipping",
+    "oracle_equivalence_verified": false
+  },
+  "official_AP_source_semantics_not_yet_implemented": {
+    "IoU_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "AP_maxDets": 500,
+    "AR_maxDets": [
+      1,
+      10,
+      100,
+      500
+    ],
+    "interpolation": "VOC monotonic precision-envelope integral at recall changes; not COCO 101-point sampling",
+    "class_averaging": "literal calcAccuracy evalClass appends category once per image containing that category, without unique; class repetition affects final averaging",
+    "recall_denominator": "literal calcAccuracy numel(gtMatch) includes surviving same-class score=0 GT flags",
+    "class_availability": "source checks any surviving GT of class, including ignored GT",
+    "submission_order": "must be frozen explicitly; source does not globally sort submitted detections before per-image cap",
+    "NMS": "none in fixed official evaluation path",
+    "required_before_official_equivalence_claim": "run official MATLAB/Octave oracle on pinned synthetic fixtures covering all edge cases and validate full aggregation, ordering and denominators"
+  },
+  "training_monitor_boundary": {
+    "builtin_YOLO_mAP50_95": "train-derived training_val monitoring and checkpoint selection only; no official AP or Gate1 mechanism claim",
+    "ignored_region_negative_loss": "ordinary YOLO labels omit ignored positives but ordinary loss does not mask ignored-area negative examples; limitation persists",
+    "checkpoint_selection": "must not use Selection or Holdout; freeze exact criterion/tie rule and resulting weight SHA separately"
+  },
+  "technical_validation": {
+    "status": "PYTHON_DECLARED_SEMANTICS_SYNTHETIC_TESTS_PASSED_ONLY",
+    "counts": {
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "junit": {
+      "path": "python_synthetic_tests_v2.xml",
+      "sha256": "46bea590a455e287f9a3edbf8297ed4f3b3b92d44c0cf87a3078593030f4cc3a"
+    },
+    "console": {
+      "path": "python_synthetic_tests_v2_console.txt",
+      "sha256": "db8bdbe982119739ed3aec6de8a493cfd6f87ccd6005ae9d758345966fa18ca4"
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.3",
+    "pytest": "9.1.1",
+    "official_oracle_verified": false,
+    "MATLAB_or_Octave_available_in_checked_locations": false,
+    "checked_locations": [
+      "PATH: matlab, octave, octave-cli",
+      "C:/Program Files/MATLAB",
+      "C:/Program Files/GNU Octave",
+      "C:/Program Files/Octave"
+    ],
+    "installation_search_scope_limit": "these checked locations only; not proof that no installation exists elsewhere"
+  },
+  "remaining_before_full_Gate1_acceptance": [
+    "freeze research contract, actual prediction/NMS adapter, candidate order and metric family",
+    "validate official AP via a pinned official runtime oracle or keep that acceptance item explicitly incomplete",
+    "verify actual data true-scene and near-duplicate independence; synthetic tests do not prove data independence",
+    "validate model numeric/precision contracts and data-role access separately",
+    "run no Holdout until selection and analysis contracts are frozen"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "One-image Windows CPU Q/DQ preparation check, not TensorRT hardware evidence",
+  "protocol_sha256": "5fda9be6ef9101b0e0259e451fa8cbd3e89db9b7a0c873ee6155d382382d2a55",
+  "onnx_sha256": "89db74ab1af2d568c2a5351201a9b91e4361a2bc0c906fcbc48eaf6d2c8a3a60",
+  "conv_weights_and_biases_exactly_match_source": true,
+  "qdq_convs": 88,
+  "narrow_range_probe": "PASS",
+  "max_abs_box_difference": 96.57046508789062,
+  "max_abs_score_difference": 0.07295918464660645,
+  "image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+  "error": "\nNot equal to tolerance rtol=0.005, atol=0.5\n\nMismatched elements: 14204 / 33600 (42.3%)\nFirst 5 mismatches are at indices:\n [0, 0, 0]: 12.202540397644043 (ACTUAL), 12.957695007324219 (DESIRED)\n [0, 0, 1]: 32.805809020996094 (ACTUAL), 29.238353729248047 (DESIRED)\n [0, 0, 2]: 32.837623596191406 (ACTUAL), 32.0155143737793 (DESIRED)\n [0, 0, 4]: 41.66180419921875 (ACTUAL), 42.38719177246094 (DESIRED)\n [0, 0, 5]: 45.84138870239258 (ACTUAL), 48.080810546875 (DESIRED)\nMax absolute difference among violations:       96.57\nMax relative difference among violations:      17.727\n ACTUAL: array([[[     12.203,      32.806,      32.838, ...,      523.65,      549.82,      578.05],\n        [     4.4241,      4.0856,      3.3527, ...,      576.32,      575.95,      577.04],\n        [     23.919,      64.036,      66.208, ...,      228.58,      176.62,      121.48],\n        [     9.4636,      7.9235,       6.562, ...,      122.55,      122.28,      121.18]]], shape=(1, 4, 8400), dtype=float32)\n DESIRED: array([[[     12.958,      29.238,      32.016, ...,      526.94,       548.8,      571.74],\n        [     4.5171,      3.8177,       3.561, ...,      579.51,      577.99,      578.68],\n        [     25.311,      57.154,      64.564, ...,       223.5,      178.65,      133.15],\n        [     9.6496,      7.1349,      6.9787, ...,      117.13,      118.21,      118.86]]], shape=(1, 4, 8400), dtype=float32)"
+}

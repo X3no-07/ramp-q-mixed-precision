@@ -1,0 +1,152 @@
+{
+  "schema": "rampq.gate05.dfl_softmax_cut_next_control_plan/v1",
+  "client_at": "2026-10-20T12:40:02.317528+08:00",
+  "status": "STATIC_RECOMMENDATION_ONLY_NOT_PROTOCOL_OR_EXECUTION_AUTHORIZATION",
+  "source_identity": {
+    "corrected_full_source": {
+      "path": "artifacts/gate05/20261019_corrected_qall_candidate/model.onnx",
+      "bytes": 10772798,
+      "sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee"
+    },
+    "saved_corrected_DFL_tail": {
+      "path": "artifacts/gate05/20261020_dfl_context_probe/model_dfl_code_clip.onnx",
+      "bytes": 2788,
+      "sha256": "a8a30c71a20d6b6dd3d031d23ce8dc8672cc62abe6c3eb8725b324fd2e600092"
+    },
+    "saved_logits_fixture": {
+      "path": "artifacts/gate05/20261020_dfl_context_probe/dfl_transpose_fixture.npy",
+      "bytes": 2150528,
+      "sha256": "cb1e437ef9c67af95ab66dfe7e8db5f28ebbfc437835502f1da1ac816e414dab"
+    },
+    "saved_corrected_DFL_CPU_output": {
+      "path": "artifacts/gate05/20261020_dfl_context_probe/cpu_actual_code_clip.npy",
+      "bytes": 134528,
+      "sha256": "fd4bcdcee24cd53651fdd7a508423c802f3b432c759647204c7b748f22abd50d"
+    },
+    "saved_original_DFL_CPU_output": {
+      "path": "artifacts/gate05/20261020_dfl_context_probe/cpu_actual_original.npy",
+      "bytes": 134528,
+      "sha256": "fd4bcdcee24cd53651fdd7a508423c802f3b432c759647204c7b748f22abd50d"
+    },
+    "saved_DFL_CPU_expected_NPZ": {
+      "path": "artifacts/gate05/20261020_dfl_context_probe/cpu_expected_outputs.npz",
+      "bytes": 187768,
+      "sha256": "fe6e4048681a5ac252b430b850cd27129061f8f1602835a8723ca7d827d59511"
+    },
+    "corrected_DFL_native_archive": {
+      "path": "artifacts/gate05/20261020_dfl_context_native/native_evidence.zip",
+      "bytes": 21481431,
+      "sha256": "a53750401ccdbb7c008c14e75cadec80a586a05f2baa32f5e985abdff527bd24"
+    },
+    "original_DFL_native_archive": {
+      "path": "artifacts/gate05/20261020_dfl_original_native/native_evidence.zip",
+      "bytes": 11644748,
+      "sha256": "9f027ada5086843e4b967a6ab4f5a4e1d5f23bc904e30b9913e8e619db7dd96d"
+    },
+    "local_four_case_comparison": {
+      "path": "artifacts/gate05/20261020_dfl_original_native/topology_flag_comparison.json",
+      "bytes": 21952,
+      "sha256": "88fcc89eaec465dc1ed5493834898ba76c16925d0a1364c785482848e01453bb"
+    }
+  },
+  "why_next": "Original and corrected9nodeDFL each fail OBEY with the same4421/751 compiler messages. Both NONE builds succeed but only correctedNONE is numerically near the sharedCPU reference. Retain the corrected quantizer and cut exactly at existing Softmax output to study a structurally minimal compiler context change, keeping compilation compatibility separate from numerical validity.",
+  "exact_original_source_Softmax": {
+    "name": "/model.23/dfl/Softmax",
+    "op_type": "Softmax",
+    "axis": 1,
+    "input": "/model.23/dfl/Transpose_output_0",
+    "output": "/model.23/dfl/Softmax_output_0",
+    "input_and_output_shape": [
+      1,
+      16,
+      4,
+      8400
+    ],
+    "dtype": "FLOAT",
+    "source_node_serialized_sha256": "b3b4c7e2d24556983e61ae3a731e6fc82625f83a8b8c671b0e98596c7f258adc",
+    "fixture_generator_nodes": 1,
+    "fixture_generator_initializers": 0
+  },
+  "proposed_preparation_if_a_new_protocol_is_frozen": {
+    "reuse_logits_without_regeneration": true,
+    "new_72Conv_upstream_or_full_model_CPU_runs": 0,
+    "new_probability_fixture": "Run exactly the unchanged one-node source Softmax once on the saved authenticated logits, using CPUExecutionProvider/ORT_DISABLE_ALL/four threads; freeze the new probabilities NPY/hash and finiteFLOATshape before native.",
+    "new_corrected_cut_CPU_runs": 1,
+    "required_CPU_check": "One8nodecutCPU execution on the frozen probabilities must be byte-identical to saved correctedDFLcpu_actual_code_clip.npy for all33600DFL distances; the old originalCPU raw is already byte-identical. This is local composition equality, not native Softmax equivalence.",
+    "on_fixture_or_CPU_composition_failure": "Preserve failure, do not reselect fixture, rerun or start native.",
+    "total_new_CPU_runs": 2,
+    "output_role": "DFL_DISTANCES_NOT_DECODED_BOXES"
+  },
+  "proposed_corrected_cut": {
+    "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+    "input": {
+      "name": "/model.23/dfl/Softmax_output_0",
+      "shape": [
+        1,
+        16,
+        4,
+        8400
+      ],
+      "dtype": "FLOAT",
+      "meaning": "CPU-generated sourceSoftmax probabilities; never logits or images"
+    },
+    "output": {
+      "name": "/model.23/dfl/Reshape_1_output_0",
+      "shape": [
+        1,
+        4,
+        8400
+      ],
+      "dtype": "FLOAT"
+    },
+    "nodes": 8,
+    "initializers": 7,
+    "conv_names": [
+      "/model.23/dfl/conv/Conv"
+    ],
+    "node_names": [
+      "rampq_model_23_dfl_conv_ActivationQ",
+      "rampq_model_23_dfl_conv_Clip",
+      "rampq_model_23_dfl_conv_ActivationDQ",
+      "rampq_model_23_dfl_conv_WeightQ",
+      "rampq_model_23_dfl_conv_WeightDQ",
+      "/model.23/dfl/conv/Conv",
+      "/model.23/dfl/Constant_1",
+      "/model.23/dfl/Reshape_1"
+    ],
+    "initializer_names": [
+      "model.23.dfl.conv.weight",
+      "rampq_model_23_dfl_conv_a_scale",
+      "rampq_model_23_dfl_conv_a_zero",
+      "rampq_model_23_dfl_conv_clip_min",
+      "rampq_model_23_dfl_conv_clip_max",
+      "rampq_model_23_dfl_conv_w_scale",
+      "rampq_model_23_dfl_conv_w_zero"
+    ],
+    "selected_source_nodes_and_initializers_must_remain_serialized_byte_identical": true
+  },
+  "proposed_native_scope_if_separately_frozen": {
+    "topology": "Corrected8nodecut only; one NONE and one OBEY attempt. Reuse old9nodeobservations without rerun.",
+    "preserve_parser_constraints": true,
+    "no_layer_precision_or_output_setters_or_resets": true,
+    "clip_importer_attribute_correction": "Only original named codeClip alpha/beta -127/+127, record before/after.",
+    "common_settings": "INT8+FP16, noTF32/noPREFER, workspace1024MiB, avgTiming1, DETAILED, FLOAT/LINEAR bindings.",
+    "actual_precision": "Record sourceConv input/weight/output/tactic separately. OutputINT8 is not required.",
+    "failure_has_no_engine_or_inference": true,
+    "repeat_successful_outputs": 2,
+    "budgets_and_attempts_require_new_protocol": true
+  },
+  "interpretation_limits": [
+    "The cut changes graph boundary and native fusion context as well as supplying CPU probabilities. A changed outcome does not prove Softmax is the unique offending node.",
+    "If OBEY still fails, preserve the local failure. Do not reset parser requests or remove further nodes without another frozen control.",
+    "If both build, it only shows the8nodecut is compatible in these observations; full q_all compatibility and numerical output remain unresolved.",
+    "OriginalNONE numerical mismatch remains distinct from OBEY compilation failure; OBEYfailure does not require the codeClip derivative.",
+    "No new slice, probabilities, CPU/native run, fullmodel retry, dataset inference or new acceptance tolerance has been created by this plan."
+  ],
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "new_slice_files_created": 0,
+  "new_CPU_executions": 0,
+  "new_native_executions": 0,
+  "new_SSH_calls": 0
+}

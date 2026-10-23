@@ -1,0 +1,170 @@
+{
+  "schema": "rampq.gate1.synthetic_training_integration_decision/v1",
+  "as_of_utc": "2026-10-23T09:49:51.629657+00:00",
+  "status": "COMPLETED_ACTUAL_SYNTHETIC_CPU_TRAINER_IGNORE_AND_PRE_HALF_FP32_CAPTURE_ONLY",
+  "accepted_attempt": "attempt_03",
+  "accepted_attempt_manifest": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_03/manifest.json",
+    "bytes": 2753,
+    "sha256": "2db67027771d57ff4edcc3f54547d784e6630a5affa47c8ad06aace0d0b82dd8"
+  },
+  "accepted_training_receipt": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_03/training_receipt.json",
+    "bytes": 4228,
+    "sha256": "25d3bd647d310791b3a1e5b88b06cb1f652cbfcbc3ab62c8437c9287143b5e19"
+  },
+  "contract": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/training_contract_v3.json",
+    "bytes": 4354,
+    "sha256": "36cbcc0d93aba63ec0516af36438c15c10c9adc43ed21a94fb0913d269637068"
+  },
+  "preparation": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/preparation_manifest_v3.json",
+    "bytes": 7402,
+    "sha256": "13aa953986abd92420098044f6376c23790422f8f0f0aab08209b0a457f71eb5"
+  },
+  "component_manifests": {
+    "dataset": {
+      "path": "artifacts/gate1/20261023_ignore_dataset_integration_v1/manifest.json",
+      "bytes": 6809,
+      "sha256": "f058954fa67ade24a0c7c45f24a36d27daf61be9c5daf52975f4597e7d6c2a92"
+    },
+    "criterion_trainer": {
+      "path": "artifacts/gate1/20261023_ignore_trainer_integration_v1/manifest.json",
+      "bytes": 1454,
+      "sha256": "98cf1ce4885c037f2f5e6be62501be99f66591cc751133ee0eed065d81cbc095"
+    },
+    "fp32_capture": {
+      "path": "artifacts/gate1/20261023_fp32_live_capture_v1/manifest.json",
+      "bytes": 2849,
+      "sha256": "348fbafe615330af2d1ccfd56f5c47a85c814a9494847740b8540d1576bad342"
+    }
+  },
+  "independent_reviews": [
+    {
+      "path": "artifacts/gate1/20261023_training_integration_review_v1/source_review.json",
+      "bytes": 7691,
+      "sha256": "8e59d1198329e7d160f4bbba47238ce2c6d582d2a45cb95abf644722438ee85f"
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_review_v1/fp32_source_review.json",
+      "bytes": 7081,
+      "sha256": "e81e2e05ee21a412aef0b4f061e3a8312eba1b402ef2840ab8fc22fafb3f063d"
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_runner_source_review_v3/runner_source_review.json",
+      "bytes": 6378,
+      "sha256": "94578333af2ed014c4a115fb340e23152a96a5ef1b1e8a0f7307afe99b626606"
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_review_v1/result_review_v3.json",
+      "bytes": 7129,
+      "sha256": "0f221b6c0e4cdf278420f535cbb8d9ed9fd900d338dcc4d098f44548a0a5ff68"
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_review_v1/synthetic_output_audit_v3/audit_result.json",
+      "bytes": 6791,
+      "sha256": "98ae7dca0d7d72154da9e62162084a6728b280b093bb064ca8ab37a30ef977e8"
+    }
+  ],
+  "synthetic_component_tests": {
+    "dataset": 45,
+    "criterion_trainer": 51,
+    "fp32_capture": 23,
+    "total": 119
+  },
+  "actual_training": {
+    "epochs": 1,
+    "train_images": 4,
+    "validation_images_built": 2,
+    "task_AP_computed": false,
+    "random_initialized_model": "YOLO11n_nc10",
+    "model_parameters": 2591790,
+    "optimizer_steps": 2,
+    "ema_updates": 2,
+    "changed_parameter_tensors": 238,
+    "changed_parameter_elements_runtime_observed": 2209385,
+    "changed_element_count_independently_recomputed_from_saved_raw_tensors": false,
+    "positive_anchors_per_batch": [
+      9,
+      10
+    ],
+    "ignored_negative_anchors_per_batch": [
+      67,
+      98
+    ],
+    "positive_rows_preserved": true,
+    "device": "cpu",
+    "amp": false,
+    "workers": 0,
+    "threads": 1,
+    "cpu_settings_at_capture": {
+      "intraop_threads": 1,
+      "interop_threads": 1,
+      "deterministic_algorithms": true,
+      "deterministic_warn_only": true,
+      "mkldnn_enabled": true,
+      "float32_matmul_precision": "highest",
+      "cpu_capability": "AVX2"
+    },
+    "cpu_settings_after_train_return": {
+      "intraop_threads": 1,
+      "interop_threads": 1,
+      "deterministic_algorithms": false,
+      "deterministic_warn_only": false,
+      "mkldnn_enabled": true,
+      "float32_matmul_precision": "highest",
+      "cpu_capability": "AVX2"
+    },
+    "each_optimizer_step_thread_setting_asserted": true,
+    "each_optimizer_step_full_backend_flags_logged": false
+  },
+  "fp32_capture": {
+    "live_EMA_already_FP32": true,
+    "ema_updates": 2,
+    "before_native_half_serialization": true,
+    "state_and_update_count_unchanged": true,
+    "strict_architecture_reconstruction": true,
+    "analytic_CPU_input_outputs_exact": true,
+    "independent_state_only_CPU_reconstruction": true,
+    "optimizer_resume_saved": false,
+    "arbitrary_external_concurrent_writers_proven_absent": false,
+    "GPU_capture_qualified": false,
+    "scientific_reference_accepted": false
+  },
+  "preserved_attempt_01": {
+    "functional_training_checks_passed": true,
+    "final_execution_acceptance": false,
+    "reason": "sync/logger settings did not suppress platform callback registration",
+    "external_connection_or_upload_observed_or_proven": false,
+    "superseded_by_process_local_registration_disable_and_base_callback_inventory_in_attempt_02_and_03": true
+  },
+  "preserved_attempt_02": {
+    "functional_training_checks_passed": true,
+    "final_execution_acceptance": false,
+    "hardcoded_threads_1_receipt_inaccurate": true,
+    "effective_intraop_threads_diagnosed": 8,
+    "independent_1_thread_output_exact": false,
+    "independent_8_thread_output_exact": true,
+    "reason": "Trainer select_device(cpu) reset thread count after the original pre-constructor setting",
+    "superseded_by_observed_post_constructor_thread_enforcement_in_attempt_03": true,
+    "exact_output_guard_relaxed": false
+  },
+  "execution_scope": "fixed synthetic fixture, default Dataset factory, one CPU epoch, explicit split preflight",
+  "universal_split_or_custom_factory_boundary_certified": false,
+  "real_dataset_training_with_ignore_completed": false,
+  "real_dataset_AP_computed": false,
+  "selection_detector_inference": false,
+  "holdout_opened_or_listed": false,
+  "old_checkpoints_modified": false,
+  "accepted_float_baseline_ready": false,
+  "gate1_scientific_pass": false,
+  "original_gate1_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "old_gate05_numeric_guard": "FAILED_UNCHANGED",
+  "next_steps": [
+    "Freeze a NEW real-data contract with explicit invalid-ignore rejection/quarantine rules and separately verified train/training_val membership; do not reuse the synthetic-only runner as real-data authorization.",
+    "Qualify live FP32 capture for the intended CUDA training lifecycle and preserve full-precision EMA before any half serialization; optimizer/resume is a separate contract.",
+    "Bind independent validation, prediction submission order and candidate/budget/statistical commitments before scientific AP or baseline qualification.",
+    "Qualify export, TensorRT, Orin and performance separately while preserving both original numerical failures."
+  ]
+}

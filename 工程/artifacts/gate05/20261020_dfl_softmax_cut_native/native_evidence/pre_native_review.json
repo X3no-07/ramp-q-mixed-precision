@@ -1,0 +1,1635 @@
+{
+  "schema": "rampq.gate05.dfl_softmax_cut_pre_native_independent_review/v1",
+  "client_at": "2026-10-20T21:53:53.341744+08:00",
+  "status": "PRE_NATIVE_SOFTMAX_CUT_STATIC_AND_SAVED_CPU_REVIEW_PASSED_ADOPTION_PENDING",
+  "launch_blockers": [],
+  "check_count": 392,
+  "checks": [
+    {
+      "name": "pinned_identity:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:spec.json",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:manifest.json",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_schema",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:README.md",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:README.md",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:README.md",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:spec.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_path:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_bytes:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "manifest_sha:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "exact_payload_plus_seals",
+      "passed": true
+    },
+    {
+      "name": "regular_files_no_symlinks",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:README.md",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:manifest.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:spec.json",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "zip_identity",
+      "passed": true
+    },
+    {
+      "name": "zip_size",
+      "passed": true
+    },
+    {
+      "name": "zip_crc",
+      "passed": true
+    },
+    {
+      "name": "zip_exact_members",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/README.md",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/SHA256SUMS",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_softmax_cut_probe_20261020/cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "historical_source_exact:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "previous_source_review_identity",
+      "passed": true
+    },
+    {
+      "name": "source_snapshots_equal:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261018_int8/input_v1/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/diagnostic_scope.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/field_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/graph_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/model.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/module_map.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_graph_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_reference_protocol.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/preparation_attempt1.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/prepare_gate05_corrected_qall_candidate.py",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/preprocessed_input.npy",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/README.md",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/reference_contract.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/semantic_rewrite_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_native/build_failed_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_native/parser_metadata_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qonly_native/post_smoke_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_native/checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_native/native_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/cpu_actual_original.npy",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/dfl_transpose_fixture.npy",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/jetson_build_dfl_context_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/jetson_dfl_context_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/model_dfl_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/model_dfl_fixture_ancestors.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/model_dfl_original.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/original_qall_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/original_qall_spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/prepare_gate05_dfl_context_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/README.md",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/source_images.npy",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe/static_options.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_native/checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_native/native_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_native/next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_probe.zip",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_protocol/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:source_hashes_before.json:scripts/prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_snapshots_equal:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:seal_native_source_hashes_before.json:scripts/jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_current_fresh:seal_native_source_hashes_before.json:scripts/jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:README.md",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "prepared_payload_unchanged:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_cases",
+      "passed": true
+    },
+    {
+      "name": "counts_and_budgets",
+      "passed": true
+    },
+    {
+      "name": "common_native_settings_exact",
+      "passed": true
+    },
+    {
+      "name": "CPU_counts_only_two_no72Conv",
+      "passed": true
+    },
+    {
+      "name": "model_identity:Softmax_generator",
+      "passed": true
+    },
+    {
+      "name": "model_counts:Softmax_generator",
+      "passed": true
+    },
+    {
+      "name": "exact_dependency_closure:Softmax_generator",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:Softmax_generator:/model.23/dfl/Softmax",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:Softmax_generator:/model.23/dfl/Softmax",
+      "passed": true
+    },
+    {
+      "name": "one_input_one_output:Softmax_generator",
+      "passed": true
+    },
+    {
+      "name": "source_io_decl:Softmax_generator:/model.23/dfl/Transpose_output_0",
+      "passed": true
+    },
+    {
+      "name": "source_io_decl:Softmax_generator:/model.23/dfl/Softmax_output_0",
+      "passed": true
+    },
+    {
+      "name": "model_metadata_unchanged:Softmax_generator",
+      "passed": true
+    },
+    {
+      "name": "ONNX_static_check:Softmax_generator",
+      "passed": true
+    },
+    {
+      "name": "model_identity:code_clip_cut",
+      "passed": true
+    },
+    {
+      "name": "model_counts:code_clip_cut",
+      "passed": true
+    },
+    {
+      "name": "exact_dependency_closure:code_clip_cut",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:rampq_model_23_dfl_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:rampq_model_23_dfl_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:rampq_model_23_dfl_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:rampq_model_23_dfl_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:rampq_model_23_dfl_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:rampq_model_23_dfl_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:rampq_model_23_dfl_conv_WeightQ",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:rampq_model_23_dfl_conv_WeightQ",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:rampq_model_23_dfl_conv_WeightDQ",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:rampq_model_23_dfl_conv_WeightDQ",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:/model.23/dfl/conv/Conv",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:/model.23/dfl/conv/Conv",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:/model.23/dfl/Constant_1",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:/model.23/dfl/Constant_1",
+      "passed": true
+    },
+    {
+      "name": "exact_source_node:code_clip_cut:/model.23/dfl/Reshape_1",
+      "passed": true
+    },
+    {
+      "name": "identity_node_hash:code_clip_cut:/model.23/dfl/Reshape_1",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:model.23.dfl.conv.weight",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:model.23.dfl.conv.weight",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:rampq_model_23_dfl_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:rampq_model_23_dfl_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:rampq_model_23_dfl_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:rampq_model_23_dfl_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:rampq_model_23_dfl_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:rampq_model_23_dfl_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:rampq_model_23_dfl_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:rampq_model_23_dfl_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:rampq_model_23_dfl_conv_w_scale",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:rampq_model_23_dfl_conv_w_scale",
+      "passed": true
+    },
+    {
+      "name": "exact_source_initializer:code_clip_cut:rampq_model_23_dfl_conv_w_zero",
+      "passed": true
+    },
+    {
+      "name": "identity_initializer_hash:code_clip_cut:rampq_model_23_dfl_conv_w_zero",
+      "passed": true
+    },
+    {
+      "name": "one_input_one_output:code_clip_cut",
+      "passed": true
+    },
+    {
+      "name": "source_io_decl:code_clip_cut:/model.23/dfl/Softmax_output_0",
+      "passed": true
+    },
+    {
+      "name": "source_io_decl:code_clip_cut:/model.23/dfl/Reshape_1_output_0",
+      "passed": true
+    },
+    {
+      "name": "model_metadata_unchanged:code_clip_cut",
+      "passed": true
+    },
+    {
+      "name": "ONNX_static_check:code_clip_cut",
+      "passed": true
+    },
+    {
+      "name": "generator_exact_source_Softmax_axis1",
+      "passed": true
+    },
+    {
+      "name": "cut_no_Softmax_and_one_Conv",
+      "passed": true
+    },
+    {
+      "name": "cut_first_Q_consumes_probabilities",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "old_logits_metadata",
+      "passed": true
+    },
+    {
+      "name": "probability_fixture_metadata_domain",
+      "passed": true
+    },
+    {
+      "name": "probability_fixture_raw_identity",
+      "passed": true
+    },
+    {
+      "name": "probability_lineage_file_identity",
+      "passed": true
+    },
+    {
+      "name": "probability_sums_descriptive_recompute",
+      "passed": true
+    },
+    {
+      "name": "generator_single_CPU_no_oldreruns",
+      "passed": true
+    },
+    {
+      "name": "two_CPU_plan_frozen",
+      "passed": true
+    },
+    {
+      "name": "local_CPU_composition_counts",
+      "passed": true
+    },
+    {
+      "name": "local_CPU_output_metadata",
+      "passed": true
+    },
+    {
+      "name": "local_CPU_composition_raw_byte_exact",
+      "passed": true
+    },
+    {
+      "name": "local_CPU_NPY_same_saved_old_bytes",
+      "passed": true
+    },
+    {
+      "name": "saved_NPZ_two_keys",
+      "passed": true
+    },
+    {
+      "name": "saved_expected_NPZ_both_equal_new_cut",
+      "passed": true
+    },
+    {
+      "name": "tool_current_source_exact:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_source_syntax:prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_current_source_exact:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_source_syntax:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_layer_precision_output_setter_or_reset:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_direct_precision_dtype_store:jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_current_source_exact:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_source_syntax:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_layer_precision_output_setter_or_reset:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_direct_precision_dtype_store:jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_stdlib_inputcheck_exit0",
+      "passed": true
+    },
+    {
+      "name": "sealed_stdlib_inputcheck_status",
+      "passed": true
+    },
+    {
+      "name": "original_guard_and_scope",
+      "passed": true
+    },
+    {
+      "name": "manual:source_exact_composition",
+      "passed": true
+    },
+    {
+      "name": "manual:probability_boundary_not_logits",
+      "passed": true
+    },
+    {
+      "name": "manual:only_OBEY_case_factor",
+      "passed": true
+    },
+    {
+      "name": "manual:parser_requests_preserved",
+      "passed": true
+    },
+    {
+      "name": "manual:bounded_safe_case_execution",
+      "passed": true
+    },
+    {
+      "name": "manual:actual_formats_pending",
+      "passed": true
+    },
+    {
+      "name": "manual:no_unique_Softmax_cause",
+      "passed": true
+    },
+    {
+      "name": "manual:root_launch_responsibility",
+      "passed": true
+    }
+  ],
+  "manual_review": [
+    {
+      "name": "source_exact_composition",
+      "assessment": "One exact source Softmax axis1 once creates the probability fixture from old authenticated logits; one exact eight-node cut CPU execution is byte-equal to saved old DFL CPU outputs. Only two new CPU runs, no72Conv or oldnative reruns."
+    },
+    {
+      "name": "probability_boundary_not_logits",
+      "assessment": "Native consumes external FLOAT[1,16,4,8400] Softmax probabilities. Both parsed network and source cut contain no Softmax. [0,1] inputdomain is not a new output acceptance tolerance; probability sums are descriptive."
+    },
+    {
+      "name": "only_OBEY_case_factor",
+      "assessment": "Same cut/input/Clip correction path for NONE/OBEY; INT8+FP16/noTF32/noPREFER/workspace1024/avg1/FLOATLINEAR, actual flags queried. Only OBEY toggles."
+    },
+    {
+      "name": "parser_requests_preserved",
+      "assessment": "Only named Clip alpha/beta corrected to -127/+127. Every parser precision/output request and unsupported/error state recorded before/after; request semantics preserved. No layer setter/reset."
+    },
+    {
+      "name": "bounded_safe_case_execution",
+      "assessment": "Two once-only builders300s each, batch900s; ordinary compile failures saved and next case only after child exit/inputrevalidation. Timeout/signal/stale/interrupt abort and cleanup. Success fixedprobabilities repeated twice with raw saved."
+    },
+    {
+      "name": "actual_formats_pending",
+      "assessment": "One DFL source Conv mapping, actual input/weight/output/tactic each independently recorded. No output QDQ or requirement for actual INT8 output; adopted precision remains pending receipt review."
+    },
+    {
+      "name": "no_unique_Softmax_cause",
+      "assessment": "Cut also changes external input boundary, compiler fusion context and uses CPU-generated probabilities; a changed result cannot isolate Softmax as unique fullmodel fault or establish a fullmodel workaround. Output DFL distances only, not boxes."
+    },
+    {
+      "name": "root_launch_responsibility",
+      "assessment": "Root still verifies current boardboot/fan/memory/no parallel work and outer900s/private group+guard. Reviewer uses no SSH or new CPU/native inference."
+    }
+  ],
+  "identities": {
+    "protocol.json": "bbe50e6485a72df194a13684895b4cc29a1db6ceca8ef098d05a6b5e56c56055",
+    "spec.json": "45f284588d37e607478ce79e443d46a49b870ef0d65614c5ce0867130f50316b",
+    "manifest.json": "6c456b5a08d34a9a3fb87d7fced5474f2c349d632076bfc0fb5eb8dd793ddde1",
+    "jetson_dfl_softmax_cut_probe.py": "7f1f90a3dcc9ff40ff717af741fc2340da7c2c3ced275aa57fd1c44e6ce82d30",
+    "jetson_build_dfl_softmax_cut_probe.py": "bed3be9c7b07acf73daac884191d7199b3ebe07c88b5e664762d71a557e18146",
+    "model_dfl_source_softmax.onnx": "09bd1b2903cfa5208a54a15fb85c8f1c7074b4f655d9880b49b30bc7c70a1c06",
+    "model_dfl_softmax_cut_code_clip.onnx": "1f8662a55675152d57d248b16c2eebec08c4d54b5b6ebc4841f0c177d6ac2298",
+    "dfl_softmax_probabilities.npy": "5a7c5b1c58bd4d956a042dfeab3b11133a072ce7ab8630195f51d8f38a508520",
+    "bundle_zip_sha256": "aeff82c52ff3b2ec1d83b4b06c21f014b30699a1e428a0c5fb37bcd3f6cb25dd",
+    "source_readonly_review_sha256": "62a49becab274e17ac31ca6dd1e32a1ad2ae89e447709f9be646fd9c262ae45a"
+  },
+  "check_input_only_receipt": {
+    "status": "FROZEN_DFL_SOFTMAX_CUT_INPUTS_VERIFIED",
+    "spec_sha256": "45f284588d37e607478ce79e443d46a49b870ef0d65614c5ce0867130f50316b",
+    "case_count": 2,
+    "native_runtime_imported": false
+  },
+  "new_CPU_or_native_inference_run_by_review": false,
+  "reviewer_SSH": false,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false,
+  "gate05_status": "INCOMPLETE",
+  "limits": "Reuse immutable 9node original/corrected DFL observations, no reruns. Compare only supported common constraints/flags/weights/scales. Cut also changes input boundary and native fusion context while supplying CPU probabilities, so differing outcomes do not isolate Softmax as unique full-model offending node."
+}

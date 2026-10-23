@@ -1,0 +1,143 @@
+{
+  "schema": "rampq.gate1.actual_synthetic_trainer_result_review/v1",
+  "status": "PASS_V3_THREAD_CONTROL_SAVED_STATE_AND_BOUND_INDEPENDENT_FORWARD_AUDIT_ONLY",
+  "issues": [],
+  "blocking_issue_count": 0,
+  "reviewed_attempt": "attempt_03",
+  "reviewed_runner": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/run_training_v3.py",
+    "bytes": 12829,
+    "sha256": "078121a603bc0ada67c2838c4c610ccd2ec2e28fede1de91a04152bc14373bfb"
+  },
+  "source_review": {
+    "path": "artifacts/gate1/20261023_training_integration_review_v1/source_review.json",
+    "bytes": 7691,
+    "sha256": "8e59d1198329e7d160f4bbba47238ce2c6d582d2a45cb95abf644722438ee85f"
+  },
+  "training_contract": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/training_contract_v3.json",
+    "bytes": 4354,
+    "sha256": "36cbcc0d93aba63ec0516af36438c15c10c9adc43ed21a94fb0913d269637068"
+  },
+  "verified_manifests": [
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/preparation_manifest_v3.json",
+      "bytes": 7402,
+      "sha256": "13aa953986abd92420098044f6376c23790422f8f0f0aab08209b0a457f71eb5",
+      "listed_files_verified": 33
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_03/manifest.json",
+      "bytes": 2753,
+      "sha256": "2db67027771d57ff4edcc3f54547d784e6630a5affa47c8ad06aace0d0b82dd8",
+      "listed_files_verified": 17
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_03/fp32_capture/epoch_0001/manifest.json",
+      "bytes": 810,
+      "sha256": "04ee832475a3f3a172a5704841760673dac87e6995689d699dfa20bc87e9a359",
+      "listed_files_verified": 5
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_03/fp32_capture/epoch_0001/state/manifest.json",
+      "bytes": 378,
+      "sha256": "235671a2e3e586a429363e954f48ee9827a2076003e0e125c96cefdd07c8578c",
+      "listed_files_verified": 2
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_review_v1/synthetic_output_audit_v3/manifest.json",
+      "bytes": 2477,
+      "sha256": "ab1475407dc4f0ce19824e96b8ce563953c57b57e5e816b8c2a8dc9d62b01e98",
+      "listed_files_verified": 5
+    }
+  ],
+  "actual_training_receipt": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_03/training_receipt.json",
+    "bytes": 4228,
+    "sha256": "25d3bd647d310791b3a1e5b88b06cb1f652cbfcbc3ab62c8437c9287143b5e19"
+  },
+  "read_only_review": true,
+  "model_forward_or_training_rerun": false,
+  "state_only_restricted_load_and_tensor_hashes_independently_recomputed": true,
+  "synthetic_input_recipe_sha_independently_recomputed": true,
+  "architecture_output_equal_independently_replayed_by_other_agent_bound_audit": true,
+  "train_images": 4,
+  "training_val_images": 2,
+  "explicit_member_bytes_verified": 18,
+  "image_identity_and_content_hash_intersections": [],
+  "default_reviewed_dataset_factory_used": true,
+  "observed_optimizer_steps": 2,
+  "observed_ema_updates": 2,
+  "parameter_change_receipt_sum_consistent": 2209385,
+  "parameter_hash_change_sets_consistent": 238,
+  "exact_changed_element_count_not_recomputed_from_initial_tensors": true,
+  "positive_anchor_counts": [
+    9,
+    10
+  ],
+  "ignored_negative_anchor_counts": [
+    67,
+    98
+  ],
+  "positive_rows_preserved": true,
+  "classification_reduced_by_ignore_mask": true,
+  "capture_before_framework_half_serialization": "supported by bound actual MRO source plus entry/return events, dedicated capture receipt and serialization event",
+  "external_integration_registration_disabled_before_actual_train": true,
+  "only_base_callbacks_present_before_custom_hooks": true,
+  "runtime_registration_function_intentionally_patched_in_process": true,
+  "framework_on_disk_sources_unchanged": true,
+  "network_traffic_absence_independently_measured": false,
+  "attempt_01": "Preserved functional success; not selected for final external-integration-registration assurance or correct thread declaration",
+  "attempt_02": "Superseded: receipt declared one thread, but Trainer constructor reset effective intraop threads to eight; independent fresh-forward audit exposed the resulting hash mismatch",
+  "prior_v2_review_limit_disclosed": "The saved-metadata review did not detect the runtime thread-setting provenance error. Its original text remains unchanged and must not be used as final acceptance",
+  "prior_v2_review_identity": {
+    "path": "artifacts/gate1/20261023_training_integration_review_v1/result_review_v2.json",
+    "bytes": 4565,
+    "sha256": "62ce160e533b19ebf2c75d75f5fa79cabef4fb0a25664e0541cdee9d699d0042"
+  },
+  "actual_constructor_intraop_threads_before_reapply": 8,
+  "observed_capture_runtime_cpu_settings": {
+    "intraop_threads": 1,
+    "interop_threads": 1,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": true,
+    "mkldnn_enabled": true,
+    "float32_matmul_precision": "highest",
+    "cpu_capability": "AVX2"
+  },
+  "observed_after_train_teardown_runtime_cpu_settings": {
+    "intraop_threads": 1,
+    "interop_threads": 1,
+    "deterministic_algorithms": false,
+    "deterministic_warn_only": false,
+    "mkldnn_enabled": true,
+    "float32_matmul_precision": "highest",
+    "cpu_capability": "AVX2"
+  },
+  "step_thread_checks": "Pinned v3 optimizer_step asserts effective intraop/inter-op threads before each real step; full backend dictionaries are recorded at start and capture, not at every step",
+  "fresh_independent_forward_audit": {
+    "path": "artifacts/gate1/20261023_training_integration_review_v1/synthetic_output_audit_v3/audit_result.json",
+    "bytes": 6791,
+    "sha256": "98ae7dca0d7d72154da9e62162084a6728b280b093bb064ca8ab37a30ef977e8"
+  },
+  "fresh_independent_forward_audit_manifest": {
+    "path": "artifacts/gate1/20261023_training_integration_review_v1/synthetic_output_audit_v3/manifest.json",
+    "bytes": 2477,
+    "sha256": "ab1475407dc4f0ce19824e96b8ce563953c57b57e5e816b8c2a8dc9d62b01e98"
+  },
+  "fresh_same_context_output_replay_verified_by_separate_bound_audit": true,
+  "state_tensor_count": 499,
+  "final_numeric_output_acceptance_provided_by_this_review": false,
+  "scientific_gate1_passed": false,
+  "official_AP_qualified": false,
+  "GPU_or_board_capture_qualified": false,
+  "old_gate05_numeric_guard": "FAILED_UNCHANGED",
+  "old_gate1_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "scope_limits": [
+    "CPU synthetic one epoch; no real data training or selection/holdout certification",
+    "No optimizer/resume reconstruction",
+    "No arbitrary external-writer exclusion guarantee",
+    "Cross-role split and default-factory obligations checked only for this bound fixture",
+    "This metadata reviewer independently recomputed state hashes and did not rerun model forward. A separate bound audit independently reproduced fresh outputs; gradients and element-change counts remain bounded runner observations rather than rerun training"
+  ]
+}

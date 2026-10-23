@@ -1,0 +1,23 @@
+{
+  "schema": "rampq.gate1.float_training_attempt/v1",
+  "mode": "freeze",
+  "status": "FROZEN_NOT_STARTED",
+  "phase": "COMPLETE",
+  "started_at_utc": "2026-10-22T04:18:41.591589+00:00",
+  "training_started": false,
+  "runner_sha256": "99730c52afcd363250054b41bf47bc0aceb8db1bbb8f0179c0b1742f2d951ef6",
+  "limits": [
+    "Builtin training_val validation is ignore-unaware and is only a checkpoint-selection proxy.",
+    "Fitness uses builtin mAP50-95; tied best fitness saves the later epoch.",
+    "No Selection detector inference and no Holdout access are authorized by this runner.",
+    "A completed run is not automatically an accepted scientific baseline or official VisDrone AP.",
+    "Filename/pixel grouping does not establish true camera or scene identity.",
+    "Framework checkpoint serialization is fp16 EMA; training uses amp=False, and no quantization is applied.",
+    "Ordinary YOLO training loss does not mask ignored regions as negative samples; ignored annotations are only omitted from YOLO positive labels.",
+    "Thirty epochs is the fixed first candidate-training budget, not evidence of sufficient convergence or a final research method.",
+    "Float qualification of preprocessing, box restoration, ignore-aware target hits, and FP32/FP16 numerics remains a separate pending step."
+  ],
+  "contract_sha256": "6dfc1b1c8b2d89948c5804cfda8f22c92cbd721b3dfaf0cffdc314b2b2bd4fc0",
+  "elapsed_seconds": 26.51500000001397,
+  "finished_at_utc": "2026-10-22T04:19:08.106138+00:00"
+}

@@ -1,0 +1,322 @@
+{
+  "schema": "rampq.gate1.cpu_checkpoint_topology/v1",
+  "status": "CPU_TOPOLOGY_OBSERVED_NO_FORWARD",
+  "at_utc": "2026-10-22T17:01:55.484909+00:00",
+  "checkpoint_sha256": "cddd14b3ebba294e4c3200bfb50fc1db1a9459c425d8e51d583c0881d71cfcfa",
+  "torch": "2.10.0+cu128",
+  "ultralytics": "8.4.142",
+  "script_sha256": "24eb138bd1510d8e76fd6fbf9359a40fee196adbb220b630463215ba51f915db",
+  "modules": [
+    {
+      "index": 0,
+      "from": -1,
+      "dependencies": [
+        -1
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 464,
+      "saved_for_skip": false
+    },
+    {
+      "index": 1,
+      "from": -1,
+      "dependencies": [
+        0
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 4672,
+      "saved_for_skip": false
+    },
+    {
+      "index": 2,
+      "from": -1,
+      "dependencies": [
+        1
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 6640,
+      "saved_for_skip": false
+    },
+    {
+      "index": 3,
+      "from": -1,
+      "dependencies": [
+        2
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 36992,
+      "saved_for_skip": false
+    },
+    {
+      "index": 4,
+      "from": -1,
+      "dependencies": [
+        3
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 26080,
+      "saved_for_skip": true
+    },
+    {
+      "index": 5,
+      "from": -1,
+      "dependencies": [
+        4
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 147712,
+      "saved_for_skip": false
+    },
+    {
+      "index": 6,
+      "from": -1,
+      "dependencies": [
+        5
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 87040,
+      "saved_for_skip": true
+    },
+    {
+      "index": 7,
+      "from": -1,
+      "dependencies": [
+        6
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 295424,
+      "saved_for_skip": false
+    },
+    {
+      "index": 8,
+      "from": -1,
+      "dependencies": [
+        7
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 346112,
+      "saved_for_skip": false
+    },
+    {
+      "index": 9,
+      "from": -1,
+      "dependencies": [
+        8
+      ],
+      "type": "ultralytics.nn.modules.block.SPPF",
+      "parameters": 164608,
+      "saved_for_skip": false
+    },
+    {
+      "index": 10,
+      "from": -1,
+      "dependencies": [
+        9
+      ],
+      "type": "ultralytics.nn.modules.block.C2PSA",
+      "parameters": 249728,
+      "saved_for_skip": true
+    },
+    {
+      "index": 11,
+      "from": -1,
+      "dependencies": [
+        10
+      ],
+      "type": "torch.nn.modules.upsampling.Upsample",
+      "parameters": 0,
+      "saved_for_skip": false
+    },
+    {
+      "index": 12,
+      "from": [
+        -1,
+        6
+      ],
+      "dependencies": [
+        11,
+        6
+      ],
+      "type": "ultralytics.nn.modules.conv.Concat",
+      "parameters": 0,
+      "saved_for_skip": false
+    },
+    {
+      "index": 13,
+      "from": -1,
+      "dependencies": [
+        12
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 111296,
+      "saved_for_skip": true
+    },
+    {
+      "index": 14,
+      "from": -1,
+      "dependencies": [
+        13
+      ],
+      "type": "torch.nn.modules.upsampling.Upsample",
+      "parameters": 0,
+      "saved_for_skip": false
+    },
+    {
+      "index": 15,
+      "from": [
+        -1,
+        4
+      ],
+      "dependencies": [
+        14,
+        4
+      ],
+      "type": "ultralytics.nn.modules.conv.Concat",
+      "parameters": 0,
+      "saved_for_skip": false
+    },
+    {
+      "index": 16,
+      "from": -1,
+      "dependencies": [
+        15
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 32096,
+      "saved_for_skip": true
+    },
+    {
+      "index": 17,
+      "from": -1,
+      "dependencies": [
+        16
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 36992,
+      "saved_for_skip": false
+    },
+    {
+      "index": 18,
+      "from": [
+        -1,
+        13
+      ],
+      "dependencies": [
+        17,
+        13
+      ],
+      "type": "ultralytics.nn.modules.conv.Concat",
+      "parameters": 0,
+      "saved_for_skip": false
+    },
+    {
+      "index": 19,
+      "from": -1,
+      "dependencies": [
+        18
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 86720,
+      "saved_for_skip": true
+    },
+    {
+      "index": 20,
+      "from": -1,
+      "dependencies": [
+        19
+      ],
+      "type": "ultralytics.nn.modules.conv.Conv",
+      "parameters": 147712,
+      "saved_for_skip": false
+    },
+    {
+      "index": 21,
+      "from": [
+        -1,
+        10
+      ],
+      "dependencies": [
+        20,
+        10
+      ],
+      "type": "ultralytics.nn.modules.conv.Concat",
+      "parameters": 0,
+      "saved_for_skip": false
+    },
+    {
+      "index": 22,
+      "from": -1,
+      "dependencies": [
+        21
+      ],
+      "type": "ultralytics.nn.modules.block.C3k2",
+      "parameters": 378880,
+      "saved_for_skip": true
+    },
+    {
+      "index": 23,
+      "from": [
+        16,
+        19,
+        22
+      ],
+      "dependencies": [
+        16,
+        19,
+        22
+      ],
+      "type": "ultralytics.nn.modules.head.Detect",
+      "parameters": 432622,
+      "saved_for_skip": false
+    }
+  ],
+  "model_save": [
+    4,
+    6,
+    10,
+    13,
+    16,
+    19,
+    22
+  ],
+  "macro_cuts": [
+    -1,
+    4,
+    6,
+    10,
+    22
+  ],
+  "cut_frontiers": {
+    "-1": [
+      -1
+    ],
+    "4": [
+      4
+    ],
+    "6": [
+      4,
+      6
+    ],
+    "10": [
+      4,
+      6,
+      10
+    ],
+    "22": [
+      16,
+      19,
+      22
+    ]
+  },
+  "head_reg_max": 16,
+  "model_stride": [
+    8.0,
+    16.0,
+    32.0
+  ],
+  "native_forward_executed": false,
+  "gpu_execution": false,
+  "images_or_annotations_opened": false,
+  "selection_or_holdout_accessed": false,
+  "saved_fp16_checkpoint_lift_recovers_original_fp32": false
+}

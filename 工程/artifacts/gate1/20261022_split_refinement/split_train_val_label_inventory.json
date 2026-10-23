@@ -1,0 +1,101 @@
+{
+  "schema": "rampq.gate1.split_label_inventory/v1",
+  "scope": "Only source-train-derived train and training_val labels. Metadata QA, no model predictions or Selection scoring.",
+  "holdout_accessed": false,
+  "roles": {
+    "train": {
+      "images": 4534,
+      "components": 92,
+      "largest_component_images": 407,
+      "valid_label_objects": 227425,
+      "class_object_counts": {
+        "0": 50488,
+        "1": 16623,
+        "2": 7057,
+        "3": 105005,
+        "4": 16386,
+        "5": 9078,
+        "6": 2118,
+        "7": 1343,
+        "8": 3277,
+        "9": 16050
+      },
+      "class_image_counts": {
+        "0": 3690,
+        "1": 2637,
+        "2": 1902,
+        "3": 4309,
+        "4": 3496,
+        "5": 2534,
+        "6": 983,
+        "7": 653,
+        "8": 1378,
+        "9": 2863
+      },
+      "all_ten_classes_present": true
+    },
+    "training_val": {
+      "images": 414,
+      "components": 58,
+      "largest_component_images": 41,
+      "valid_label_objects": 28007,
+      "class_object_counts": {
+        "0": 6641,
+        "1": 2920,
+        "2": 923,
+        "3": 11591,
+        "4": 1178,
+        "5": 665,
+        "6": 491,
+        "7": 169,
+        "8": 193,
+        "9": 3236
+      },
+      "class_image_counts": {
+        "0": 363,
+        "1": 324,
+        "2": 217,
+        "3": 382,
+        "4": 288,
+        "5": 199,
+        "6": 161,
+        "7": 70,
+        "8": 70,
+        "9": 312
+      },
+      "all_ten_classes_present": true
+    }
+  },
+  "transitions": {
+    "calibration_pool->calibration_pool": 571,
+    "debug->debug": 109,
+    "quarantine->quarantine": 497,
+    "selection->selection": 548,
+    "train->calibration_pool": 118,
+    "train->quarantine": 228,
+    "train->train": 4127,
+    "train->training_val": 412,
+    "training_val->train": 407,
+    "training_val->training_val": 2
+  },
+  "calibration_seed_components": {
+    "2026102201": {
+      "images": 64,
+      "components": 17,
+      "max_images_per_component": 8
+    },
+    "2026102202": {
+      "images": 64,
+      "components": 17,
+      "max_images_per_component": 8
+    },
+    "2026102203": {
+      "images": 64,
+      "components": 19,
+      "max_images_per_component": 8
+    }
+  },
+  "split_assignment.jsonl_sha256": "50113cde0843076f9524a55b75d54392fced1c5e1092bb9d28d84649272ea025",
+  "split_plan.json_sha256": "e3da7f30586f1ae787b24487c14f902c491a7357fecbb03372ec49de8e5ac64b",
+  "manifest.json_sha256": "c757d7665ec5b3336433ec22ce50fc9104e7f8c2352fd919e2481e470508232d"
+}

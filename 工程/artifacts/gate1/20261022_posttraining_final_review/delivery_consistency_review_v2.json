@@ -1,0 +1,43 @@
+{
+  "status": "PASS_DELIVERY_REPORT_ADDENDUM_CONSISTENCY_REVIEW_V2",
+  "at_utc": "2026-10-22T10:15:34.058373+00:00",
+  "previous_review": {
+    "path": "artifacts\\gate1\\20261022_posttraining_final_review\\delivery_consistency_review.json",
+    "sha256": "707acccab12b6b5d42f8dd298c79183429e1ec5c1bc18bf4b02211ed23ff6e88",
+    "unchanged": true
+  },
+  "current_report": {
+    "path": "44_Gate1_首轮训练与浮点资格检查结果.md",
+    "bytes": 7351,
+    "sha256": "c6e005422534226d824765487646b8924fa0ef643b554749a40769a117ff7145"
+  },
+  "change_verified": "Removing only the newly added proposal/scope paragraph reproduces exactly the previously reviewed report SHA256, preserving CRLF line endings",
+  "local_report_links_checked": 12,
+  "new_links_checked": [
+    {
+      "path": "artifacts\\gate1\\20261022_dtype_guard_diagnostics\\independent_review\\README.md",
+      "bytes": 8708,
+      "sha256": "6f2044cc1a5fdd4ea2f51dcf50e098134b300054098aee7a273018961317a71a"
+    },
+    {
+      "path": "artifacts\\gate1\\20261022_dtype_guard_diagnostics\\independent_review\\SCOPE_ADDENDUM.md",
+      "bytes": 662,
+      "sha256": "0190a7a7685b50636fea22589bcceeec17e20ce4dbab189659b7496558fbe757"
+    }
+  ],
+  "findings": [],
+  "scope_statement_verified": [
+    "Minimum head/logit control is explicitly a proposal not executed",
+    "head.reg_max and actual 4*reg_max channels must be observed at the next run",
+    "Default 16-bin/64-channel source expectation is not claimed as independently observed runtime evidence",
+    "Previously reviewed numerical values and conclusions are byte-identical outside the added paragraph"
+  ],
+  "review_scope": {
+    "new_inference": false,
+    "model_loading": false,
+    "image_loading": false,
+    "raw_array_loading": false,
+    "other_audits_repeated": false,
+    "previous_review_modified": false
+  }
+}

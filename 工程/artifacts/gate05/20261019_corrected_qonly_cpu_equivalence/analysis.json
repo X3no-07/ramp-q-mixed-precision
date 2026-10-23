@@ -1,0 +1,54 @@
+{
+  "status": "FIXED_IMAGE_ORIGINAL_VS_CODE_CLIP_CPU_OUTPUTS_SAVED",
+  "client_at": "2026-10-19T18:51:01.822798+08:00",
+  "onnxruntime": "1.29.0",
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "graph_optimization": "ORT_DISABLE_ALL",
+  "source_hashes_before": {
+    "original": "946fe83ea185fde114096f9d7b64b5ec9d4bc69afc87476b9c7548cf97a04b91",
+    "code_clip": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+    "input": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94"
+  },
+  "source_hashes_after": {
+    "original": "946fe83ea185fde114096f9d7b64b5ec9d4bc69afc87476b9c7548cf97a04b91",
+    "code_clip": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+    "input": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94"
+  },
+  "comparisons": [
+    {
+      "name": "output0",
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "all_finite": true,
+      "bit_exact": true,
+      "different_elements": 0,
+      "max_abs": 0.0
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "all_finite": true,
+      "bit_exact": true,
+      "different_elements": 0,
+      "max_abs": 0.0
+    }
+  ],
+  "all_outputs_bit_exact": true,
+  "raw_outputs_sha256": "328347916312e3bf922502ece981f0aeda3e9438c28d712ad4292588c2219e94",
+  "original_complete_model_pytorch_ort_guard": "FAILED_UNCHANGED",
+  "new_tolerances_defined": false,
+  "full_cpu_model_executions": 2,
+  "native_execution_run": false,
+  "dataset_evaluation_run": false,
+  "limits": "One existing frozen image. Equality of these two ORT graphs is not original PyTorch/ORT numerical migration or native TensorRT parity."
+}

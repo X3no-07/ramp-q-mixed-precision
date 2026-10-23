@@ -1,0 +1,59 @@
+{
+  "schema": "rampq.gate05.corrected_qall_cpu_equivalence/v1",
+  "client_at": "2026-10-19T21:23:58.220440+08:00",
+  "status": "FULL_FIXED_INPUT_CPU_REWRITE_BYTE_EQUIVALENCE_VERIFIED",
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "onnxruntime": "1.29.0",
+    "numpy": "2.5.3"
+  },
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "graph_optimizations": "ORT_DISABLE_ALL",
+  "intra_op_threads": 4,
+  "source_and_candidate_outputs": {
+    "output0": {
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "float32",
+      "elements": 117600,
+      "different_elements": 0,
+      "byte_identical": true,
+      "max_abs": 0.0
+    },
+    "/model.10/m/m.0/attn/pe/conv/Conv_output_0": {
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "float32",
+      "elements": 51200,
+      "different_elements": 0,
+      "byte_identical": true,
+      "max_abs": 0.0
+    }
+  },
+  "old_no_pe_tap_primary_ort_output_byte_identical": true,
+  "input_npy_sha256": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94",
+  "candidate_onnx_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "parent_onnx_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+  "candidate_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+  "candidate_manifest_sha256": "f1679f4ebc7daa3e5589c28968785d48f31269cc5f83b0398bfa3bd7a91d861f",
+  "reference_contract_sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430",
+  "raw_outputs_sha256": "1fe8d81720679ad47fb6f6d7d47b3019dc2cbd7fccdc72ab6683f8a5d2ce705c",
+  "all_original_sources_hash_unchanged": true,
+  "original_complete_model_pytorch_ort_guard": "FAILED_UNCHANGED",
+  "new_tolerances_defined": false,
+  "dataset_evaluation_run": false,
+  "native_execution_run": false,
+  "numerical_migration_pass_claim": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "limits": "One existing fixed image. Compares original ONNX CPU with the new derivative only; does not compare or replace original PyTorch/ORT guard."
+}

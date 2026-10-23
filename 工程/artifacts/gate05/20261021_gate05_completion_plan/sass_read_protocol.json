@@ -1,0 +1,18 @@
+{
+  "schema": "rampq.gate05.sass_readonly_identity_protocol/v1",
+  "client_at": "2026-10-21T01:51:53.649500+08:00",
+  "operation": "Read-only static SM87 SASS of four exact previously executed kernel symbols; no inference or source changes",
+  "source_analysis": "artifacts/gate05/20261019_qall_kernel_diagnostic/analysis.json",
+  "source_analysis_sha256": "6cab40a4da8cbc90329fcf12feea10771360bbed2c48a588abeec5d99a1bb634",
+  "libraries": [
+    "/usr/lib/aarch64-linux-gnu/libnvinfer.so.8.5.2",
+    "/usr/lib/aarch64-linux-gnu/libnvinfer_builder_resource.so.8.5.2"
+  ],
+  "tool": "/usr/local/cuda/bin/cuobjdump",
+  "gpu_architecture": "sm_87",
+  "max_seconds_per_library": 120,
+  "pass_policy": "This static read cannot by itself change old strict audit. Future arithmetic evidence requires exact source-to-layer-to-runtimekernel-to-loadedbinary/SM87 symbol identity plus actual signed8 integer MAC instructions in the accumulating path. Generic kernel names or the presence of one integer opcode outside arithmetic do not suffice.",
+  "outcomes": "Record found/unfound symbols and all emitted instructions; no automatic pass or fallback.",
+  "new_inference": 0,
+  "new_builds": 0
+}

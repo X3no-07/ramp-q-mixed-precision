@@ -1,0 +1,290 @@
+{
+  "status": "DFL_WEIGHT_BYPASS_BATCH_COMPLETED",
+  "cases": {
+    "weight_bypass_none": {
+      "status": "DFL_WEIGHT_BYPASS_FIXED_INPUT_OUTPUTS_SAVED",
+      "case": "weight_bypass_none",
+      "variant": "weight_bypass",
+      "precision_constraint_flag": "none",
+      "bindings": [
+        {
+          "name": "/model.23/dfl/Softmax_output_0",
+          "input": true,
+          "shape": [
+            1,
+            16,
+            4,
+            8400
+          ],
+          "dtype": "DataType.FLOAT",
+          "format": "TensorFormat.LINEAR"
+        },
+        {
+          "name": "/model.23/dfl/conv/Conv_output_0",
+          "input": false,
+          "shape": [
+            1,
+            1,
+            4,
+            8400
+          ],
+          "dtype": "DataType.FLOAT",
+          "format": "TensorFormat.LINEAR"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          1,
+          4,
+          8400
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": 0.0,
+        "max": 12.421875,
+        "raw_bytes_sha256": "6b751eb404f8a173cc9d70bf403086039424d8cdc1b1d13965e3134126bdcb7b"
+      },
+      "comparison_to_frozen_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": false,
+        "byte_identical": false,
+        "different_elements": 33594,
+        "max_abs": 0.010239601135253906,
+        "mean_abs": 0.0007279089507868603,
+        "rms_difference": 0.0011238111666195159,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": true,
+        "byte_identical": true,
+        "different_elements": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "conv_rows_file": "conv_rows.json",
+      "conv_source_mapping_file": "conv_source_mapping.json",
+      "one_dfl_actual_convolution_uniquely_mapped": true,
+      "convolution_descriptors": [
+        {
+          "name": "/model.23/dfl/conv/Conv",
+          "inputs": [
+            {
+              "Name": "rampq_model_23_dfl_conv_a_dq",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                16,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Two wide channel vectorized row major FP16 format"
+            }
+          ],
+          "weights": {
+            "Type": "Half",
+            "Count": 16
+          },
+          "outputs": [
+            {
+              "Name": "Reformatted Output Tensor 0 to /model.23/dfl/conv/Conv",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                1,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Two wide channel vectorized row major FP16 format"
+            }
+          ],
+          "activation": "NONE",
+          "tactic_name": "ampere_fp16x2_hcudnn_fp16x2_128x32_relu_interior_nn_v1",
+          "tactic_value": "0x6697f322e8f3726b",
+          "actual_precision_requires_independent_review": true
+        }
+      ],
+      "engine_sha256": "3259a455db211ea42d7c8a92b801369bf1727dd99f922c1ded2a002bddf75dfd",
+      "raw_outputs_sha256": "278c1731c289175d09626929219e0d770c8fd57b87f1b2d87a2a2d6bc91eac5a",
+      "spec_sha256": "df7de4468cec5cb0672f89c61e63ce26decbb1d6bc52a521e453e02aad9c5b4f",
+      "model_sha256": "020dad7f70c04f495dfe1b6e62e63e925ff6468a6cde0c157b7122a38274eb41",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-18T08:09:58+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "diagnostic_only": true,
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "accuracy_pass_claim": false,
+      "performance_pass_claim": false,
+      "output_role": "DFL_WEIGHT_BYPASS_DISTANCES_WITH_SINGLETON_CHANNEL_NOT_DECODED_BOXES",
+      "fixture_role": "FROZEN_CPU_SOFTMAX_PROBABILITIES_NOT_LOGITS_OR_NATIVE_SOFTMAX_OUTPUT",
+      "actual_conv_output_int8_required": false,
+      "explicit_weight_qdq_removed": true,
+      "own_candidate_CPU_reference_used": true,
+      "actual_weight_precision_not_inferred_from_source_dtype": true,
+      "limits": "Four-node weight-QDQ bypass changes numerical semantics and parser context; own candidate CPU reference required. Activation Q/Clip/DQ, probability input and source weight bytes retained. FP32 initializer does not prove actual FP32 arithmetic. No unique full-model cause, INT8-output acceptance rule or new tolerance."
+    },
+    "weight_bypass_obey": {
+      "status": "DFL_WEIGHT_BYPASS_FIXED_INPUT_OUTPUTS_SAVED",
+      "case": "weight_bypass_obey",
+      "variant": "weight_bypass",
+      "precision_constraint_flag": "obey",
+      "bindings": [
+        {
+          "name": "/model.23/dfl/Softmax_output_0",
+          "input": true,
+          "shape": [
+            1,
+            16,
+            4,
+            8400
+          ],
+          "dtype": "DataType.FLOAT",
+          "format": "TensorFormat.LINEAR"
+        },
+        {
+          "name": "/model.23/dfl/conv/Conv_output_0",
+          "input": false,
+          "shape": [
+            1,
+            1,
+            4,
+            8400
+          ],
+          "dtype": "DataType.FLOAT",
+          "format": "TensorFormat.LINEAR"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          1,
+          4,
+          8400
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": 0.0,
+        "max": 12.421875,
+        "raw_bytes_sha256": "5cc25fbd339ebe7a269cb419cc30ffc570659a88bd4fbe983f8760cd1fbd920e"
+      },
+      "comparison_to_frozen_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": false,
+        "byte_identical": false,
+        "different_elements": 33594,
+        "max_abs": 0.00620269775390625,
+        "mean_abs": 0.0004970305783319331,
+        "rms_difference": 0.0007196950312612292,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": true,
+        "byte_identical": true,
+        "different_elements": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "conv_rows_file": "conv_rows.json",
+      "conv_source_mapping_file": "conv_source_mapping.json",
+      "one_dfl_actual_convolution_uniquely_mapped": true,
+      "convolution_descriptors": [
+        {
+          "name": "/model.23/dfl/conv/Conv",
+          "inputs": [
+            {
+              "Name": "rampq_model_23_dfl_conv_a_dq",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                16,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Row major linear FP16 format"
+            }
+          ],
+          "weights": {
+            "Type": "Half",
+            "Count": 16
+          },
+          "outputs": [
+            {
+              "Name": "Reformatted Output Tensor 0 to /model.23/dfl/conv/Conv",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                1,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Row major linear FP16 format"
+            }
+          ],
+          "activation": "NONE",
+          "tactic_name": null,
+          "tactic_value": "0x0000000000000038",
+          "actual_precision_requires_independent_review": true
+        }
+      ],
+      "engine_sha256": "6efe9963f608ee3bc3b7f57b8c9a88c650188434ecc4a8e0093ddc18fa6144e2",
+      "raw_outputs_sha256": "549c5328bea6fbf5c802d8cbdf1436b7dac473605d953277640c4fee1a1339d8",
+      "spec_sha256": "df7de4468cec5cb0672f89c61e63ce26decbb1d6bc52a521e453e02aad9c5b4f",
+      "model_sha256": "020dad7f70c04f495dfe1b6e62e63e925ff6468a6cde0c157b7122a38274eb41",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-18T08:11:00+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "diagnostic_only": true,
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "accuracy_pass_claim": false,
+      "performance_pass_claim": false,
+      "output_role": "DFL_WEIGHT_BYPASS_DISTANCES_WITH_SINGLETON_CHANNEL_NOT_DECODED_BOXES",
+      "fixture_role": "FROZEN_CPU_SOFTMAX_PROBABILITIES_NOT_LOGITS_OR_NATIVE_SOFTMAX_OUTPUT",
+      "actual_conv_output_int8_required": false,
+      "explicit_weight_qdq_removed": true,
+      "own_candidate_CPU_reference_used": true,
+      "actual_weight_precision_not_inferred_from_source_dtype": true,
+      "limits": "Four-node weight-QDQ bypass changes numerical semantics and parser context; own candidate CPU reference required. Activation Q/Clip/DQ, probability input and source weight bytes retained. FP32 initializer does not prove actual FP32 arithmetic. No unique full-model cause, INT8-output acceptance rule or new tolerance."
+    }
+  },
+  "cross_native_comparisons": {
+    "weight_bypass_none_vs_weight_bypass_obey": {
+      "all_pairs_finite": true,
+      "nonfinite_pair_count": 0,
+      "numeric_equal": false,
+      "byte_identical": false,
+      "different_elements": 8452,
+      "max_abs": 0.0078125,
+      "mean_abs": 0.0005338795979817709,
+      "rms_difference": 0.001262257422054191,
+      "descriptive_only_no_new_pass_criterion": true
+    }
+  },
+  "requested_case_order": [
+    "weight_bypass_none",
+    "weight_bypass_obey"
+  ],
+  "observed_case_count": 2,
+  "successful_output_case_count": 2,
+  "elapsed_seconds_not_benchmark": 123.35258435201831,
+  "aborted": null,
+  "batch_completion_is_not_numerical_pass": true,
+  "diagnostic_only": true,
+  "dataset_evaluation_run": false,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED"
+}

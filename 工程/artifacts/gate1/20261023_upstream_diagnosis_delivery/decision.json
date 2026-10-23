@@ -1,0 +1,379 @@
+{
+  "schema": "rampq.gate1.upstream_frontier_diagnosis_decision/v1",
+  "as_of_utc": "2026-10-22T17:28:18.777600+00:00",
+  "client_date": "2026-10-23",
+  "status": "COMPLETE_BOUNDED_UPSTREAM_DEBUG_DIAGNOSIS_ONLY",
+  "completed_training_epochs": 30,
+  "checkpoint_selection_changed": false,
+  "best_checkpoint_sha256": "cddd14b3ebba294e4c3200bfb50fc1db1a9459c425d8e51d583c0881d71cfcfa",
+  "pilot_images": 3,
+  "full_debug_images": 109,
+  "macro_cuts": [
+    -1,
+    4,
+    6,
+    10,
+    22
+  ],
+  "dag_frontiers": {
+    "-1": [
+      -1
+    ],
+    "4": [
+      4
+    ],
+    "6": [
+      4,
+      6
+    ],
+    "10": [
+      4,
+      6,
+      10
+    ],
+    "22": [
+      16,
+      19,
+      22
+    ]
+  },
+  "all_native_historical_manual_and_same_dtype_controls_exact": true,
+  "same_dtype_controls_are_not_new_independent_evidence": true,
+  "input_and_head_endpoints_include_previous_aliases": true,
+  "all_crossed_outputs_decode_dtype": "fp32",
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 10849,
+        "max_absolute_error": 10.43951416015625,
+        "max_error_over_tolerance": 9.708852188760341
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.006031900644302368,
+        "max_error_over_tolerance": 0.6683826368440458
+      }
+    },
+    "native_heads_both_decode_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8992,
+        "max_absolute_error": 10.375579833984375,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.006042659282684326,
+        "max_error_over_tolerance": 0.6849108671344437
+      }
+    },
+    "reference_fp32_vs_cut_-1_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8992,
+        "max_absolute_error": 10.375579833984375,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.006042659282684326,
+        "max_error_over_tolerance": 0.6849108671344437
+      }
+    },
+    "reference_fp32_vs_cut_-1_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 34,
+      "fail_images": 75,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 274,
+        "max_absolute_error": 5.05584716796875,
+        "max_error_over_tolerance": 5.080306063371506
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.002169668674468994,
+        "max_error_over_tolerance": 0.39701979326545633
+      }
+    },
+    "reference_fp32_vs_cut_4_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 21,
+      "fail_images": 88,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 450,
+        "max_absolute_error": 8.34527587890625,
+        "max_error_over_tolerance": 6.813278041381262
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004635512828826904,
+        "max_error_over_tolerance": 0.5408448737063566
+      }
+    },
+    "reference_fp32_vs_cut_4_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 6193,
+        "max_absolute_error": 8.749099731445312,
+        "max_error_over_tolerance": 8.791425638081781
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.002975940704345703,
+        "max_error_over_tolerance": 0.5823615936889606
+      }
+    },
+    "reference_fp32_vs_cut_6_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 30,
+      "fail_images": 79,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 340,
+        "max_absolute_error": 7.0670928955078125,
+        "max_error_over_tolerance": 5.769739615567455
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004391491413116455,
+        "max_error_over_tolerance": 0.7361950576789252
+      }
+    },
+    "reference_fp32_vs_cut_6_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 7944,
+        "max_absolute_error": 9.221282958984375,
+        "max_error_over_tolerance": 7.615460665116234
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.0032635927200317383,
+        "max_error_over_tolerance": 0.57705373382879
+      }
+    },
+    "reference_fp32_vs_cut_10_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 103,
+      "fail_images": 6,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 7,
+        "max_absolute_error": 3.344390869140625,
+        "max_error_over_tolerance": 2.385735267177467
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004314124584197998,
+        "max_error_over_tolerance": 0.571361403484841
+      }
+    },
+    "reference_fp32_vs_cut_10_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8694,
+        "max_absolute_error": 10.101470947265625,
+        "max_error_over_tolerance": 9.136010651868862
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.0034378767013549805,
+        "max_error_over_tolerance": 0.48842395083115486
+      }
+    },
+    "reference_fp32_vs_cut_22_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 109,
+      "fail_images": 0,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 0,
+        "max_absolute_error": 0.26373291015625,
+        "max_error_over_tolerance": 0.1779523919574763
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.0040915608406066895,
+        "max_error_over_tolerance": 0.4807440407148357
+      }
+    },
+    "reference_fp32_vs_cut_22_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8980,
+        "max_absolute_error": 10.370834350585938,
+        "max_error_over_tolerance": 9.746064426388767
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004985898733139038,
+        "max_error_over_tolerance": 0.5395663508676046
+      }
+    }
+  },
+  "fp32_prefix_fp16_suffix_cuts_within_fixed_tolerances_on_reused_debug": [
+    22
+  ],
+  "backbone_fp32_suffix_fp16_debug_guard": {
+    "images": 109,
+    "pass_images": 103,
+    "fail_images": 6,
+    "boxes": {
+      "elements": 3662400,
+      "violations": 7,
+      "max_absolute_error": 3.344390869140625,
+      "max_error_over_tolerance": 2.385735267177467
+    },
+    "scores": {
+      "elements": 9156000,
+      "violations": 0,
+      "max_absolute_error": 0.004314124584197998,
+      "max_error_over_tolerance": 0.571361403484841
+    }
+  },
+  "input_cast_only_with_fp32_network_debug_guard": {
+    "images": 109,
+    "pass_images": 34,
+    "fail_images": 75,
+    "boxes": {
+      "elements": 3662400,
+      "violations": 274,
+      "max_absolute_error": 5.05584716796875,
+      "max_error_over_tolerance": 5.080306063371506
+    },
+    "scores": {
+      "elements": 9156000,
+      "violations": 0,
+      "max_absolute_error": 0.002169668674468994,
+      "max_error_over_tolerance": 0.39701979326545633
+    }
+  },
+  "saved_array_audit": "PASS_SAVED_UPSTREAM_FRONTIER_ARRAYS_ONLY",
+  "unique_causal_layer_or_operation_identified": false,
+  "minimal_or_optimal_precision_partition_proven": false,
+  "scientific_precision_module_selected": false,
+  "new_precision_model_accepted_or_deployed": false,
+  "original_gate1_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "old_gate05_numeric_guard": "FAILED_UNCHANGED",
+  "accepted_float_baseline_ready": false,
+  "gate1_scientific_pass": false,
+  "selection_detector_inference": false,
+  "holdout_opened_or_listed": false,
+  "new_target_scoring": false,
+  "new_quantization_matrix_executed": false,
+  "official_AP_implemented": false,
+  "official_oracle_verified": false,
+  "official_runtime_followup": "No usable runtime found in explicitly limited readable locations; access errors retained, no native oracle execution.",
+  "evidence": [
+    {
+      "path": "artifacts/gate1/20261023_upstream_probe_preparation/topology_inspection_v1/topology.json",
+      "bytes": 6390,
+      "sha256": "bc7d77a7261c8f32d02f5bf7e5baff2c5f86ad8e7d4579fdbb6d66b8788059da"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_probe_preparation/preparation_receipt.json",
+      "bytes": 1449,
+      "sha256": "eceb1abd2b174f35a8c69a4e9eb3a583f886b5b270100ada69dbe1ba9a39311a"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_probe_preparation/pilot3_protocol.json",
+      "bytes": 11990,
+      "sha256": "a534b29509a44f8f4323d91f283c6e66d1559de79be0b145ab1d4ff014d6b7ab"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_probe_preparation/full109_protocol.json",
+      "bytes": 16128,
+      "sha256": "1b9d696f187bb96d813c6bfdfa2d73f71cfac22839fa8199fe3347f74ce32af1"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_preparation/independent_review/manifest.json",
+      "bytes": 1239,
+      "sha256": "9fdadc8b670230533b9abd41e3a57395496deff1ee2b0eb5554a69fb9b876286"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_pilot_v1/manifest.json",
+      "bytes": 2368,
+      "sha256": "7f36a018a2ed9c2a064a04f5a52cb10e2da01fa878f917f7f36c8ea5a48bb1a6"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_pilot_audit_v1/manifest.json",
+      "bytes": 469,
+      "sha256": "058f8ccef005a640d16069adf4508d5bb0ea38b636c2d8712708a376d1ae2fe7"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_full_v1/manifest.json",
+      "bytes": 36712,
+      "sha256": "a5e3da8beb8f232267aa924bb1dca02abbcf9fcfb030a6e0a908ed537ad6c1e6"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_full_v1/summary.json",
+      "bytes": 7537,
+      "sha256": "d52f42b22aff704b6d0af460aa7b2d2d6c4367db506c8d782d0ecd72fb5c375f"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_full_audit_v1/manifest.json",
+      "bytes": 471,
+      "sha256": "cc1a0b5393086f6df089303862296a99c136f9cf6298ab90d0c63cf94c8de298"
+    },
+    {
+      "path": "artifacts/gate1/20261023_upstream_frontier_full_audit_v1/recomputed_summary.json",
+      "bytes": 8479,
+      "sha256": "5ce4420488ff54512ba4cd1184a39bb02e3b480ddf30615164a8c1df9b2aca5f"
+    },
+    {
+      "path": "artifacts/gate1/20261023_official_oracle_followup/manifest.json",
+      "bytes": 807,
+      "sha256": "2aba5aa78dc431b482e163be23b4849343fe43549c6b01a1c9eb13feac44165a"
+    },
+    {
+      "path": "artifacts/gate1/20261023_official_oracle_followup/runtime_search_receipt.json",
+      "bytes": 7356,
+      "sha256": "8c07c1a8524af4955ef35269cddd1b4a45e8a2d0006a9ca231cde4725c63506b"
+    }
+  ],
+  "limits": [
+    "Reused train-derived engineering debug images, not independent Selection or Holdout.",
+    "A complete frontier includes every crossing DAG edge. Its intervention bundles prefix arithmetic, skip paths and receiving-dtype casts.",
+    "A passing prefix/suffix counterfactual is not a standalone accepted model, optimal allocation or deployment result.",
+    "Differences of violation counts are nonlinear and not additive causal contributions.",
+    "Only union frontiers/manual end outputs are stored. Other per-module replay assertions/hashes and state immutability are reviewed-runner observations, not independent convolution execution.",
+    "Saved FP16 EMA lifted to FP32 cannot recover original pre-save full-precision training EMA.",
+    "No new NMS, target scoring, AP, TensorRT/Orin accuracy, latency, FPS, memory or power measurement."
+  ]
+}

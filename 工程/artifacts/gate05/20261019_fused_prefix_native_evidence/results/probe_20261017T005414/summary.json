@@ -1,0 +1,199 @@
+{
+  "status": "PAIRED_FUSED_PREFIX_OUTPUTS_SAVED",
+  "cases": {
+    "original": {
+      "status": "ISOLATED_FUSED_PREFIX_OUTPUTS_SAVED",
+      "diagnostic_only": true,
+      "case": "original",
+      "bindings": [
+        {
+          "name": "images",
+          "input": true,
+          "shape": [
+            1,
+            3,
+            640,
+            640
+          ],
+          "dtype": "DataType.FLOAT"
+        },
+        {
+          "name": "rampq_model_1_conv_a_dq",
+          "input": false,
+          "shape": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "dtype": "DataType.FLOAT"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          16,
+          320,
+          320
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": 0.0,
+        "max": 7.481081485748291,
+        "mean": 1.8238058269955217,
+        "rms": 2.8793963404790492,
+        "raw_bytes_sha256": "27b5aa8940d2dd83edb62d270e427f82c0f8dfdd9387ab2638b6790e2b76ca6c"
+      },
+      "comparison_to_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 36.65729832649231,
+        "mean_abs": 0.6578995738952653,
+        "rms_difference": 1.370192455524067,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          1.4962162971496582,
+          3.7405407428741455,
+          10.473514556884766
+        ],
+        "bit_exact": false,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": true,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "engine_sha256": "28c4c8844e8f2c66fdcbdec37601f0b2e404a54d52da39ae1f1af0d7b12a4a00",
+      "raw_outputs_sha256": "d049cabf3d95f2b2a4c67cb48d693a11b295496a7e7364240e9ea822d00f5338",
+      "spec_sha256": "8eda3d9fc2b4b9e997742efe7b7e9c5599619940af0aef388bbaccc5f3eaf496",
+      "onnx_sha256": "22b1065c01792492d658596c1069aee074e054f32648fa90bf87cc39a6d11a33",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-17T00:56:02+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "limits": "One original fixed image, two activation boundaries and one Conv+SiLU; code_clip rewrites boundary semantics and corrects parsed attributes. Actual SWISH/INT8 adoption remains inspector-dependent; no complete model pass."
+    },
+    "code_clip": {
+      "status": "ISOLATED_FUSED_PREFIX_OUTPUTS_SAVED",
+      "diagnostic_only": true,
+      "case": "code_clip",
+      "bindings": [
+        {
+          "name": "images",
+          "input": true,
+          "shape": [
+            1,
+            3,
+            640,
+            640
+          ],
+          "dtype": "DataType.FLOAT"
+        },
+        {
+          "name": "rampq_model_1_conv_a_dq",
+          "input": false,
+          "shape": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "dtype": "DataType.FLOAT"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          16,
+          320,
+          320
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": 0.0,
+        "max": 38.9016227722168,
+        "mean": 1.6229211623825541,
+        "rms": 2.8482221788068474,
+        "raw_bytes_sha256": "15a6b790c26da42840120bde810c10c03e74a7bf19bb685c6552c967ebfbb2db"
+      },
+      "comparison_to_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.7481081485748291,
+        "mean_abs": 3.1962628418114038e-06,
+        "rms_difference": 0.0015463344647734046,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": false,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": true,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "engine_sha256": "4eddaa012325aa1bfde6e910c5acb6716876245244639548c85f6205385125ab",
+      "raw_outputs_sha256": "755f93d0d5214c95aaaf8a1ad48a4714acc1c2184315531c8be25d28f5f60ef0",
+      "spec_sha256": "8eda3d9fc2b4b9e997742efe7b7e9c5599619940af0aef388bbaccc5f3eaf496",
+      "onnx_sha256": "d2b8ca8105f8a05fabb7aac66c6fbab1a2558ac35bdd5ea1736ce8e0052465de",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-17T00:57:16+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "limits": "One original fixed image, two activation boundaries and one Conv+SiLU; code_clip rewrites boundary semantics and corrects parsed attributes. Actual SWISH/INT8 adoption remains inspector-dependent; no complete model pass."
+    }
+  },
+  "native_clip_vs_no_clip": null,
+  "requested_clip_precision": null,
+  "cross_native_comparisons": {
+    "original_vs_code_clip": {
+      "all_pairs_finite": true,
+      "nonfinite_pair_count": 0,
+      "max_abs": 36.65729832649231,
+      "mean_abs": 0.6579027701581072,
+      "rms_difference": 1.370195073201587,
+      "abs_percentiles_50_90_99_999": [
+        0.0,
+        1.4962162971496582,
+        3.7405407428741455,
+        10.473514556884766
+      ],
+      "bit_exact": false,
+      "descriptive_only_no_new_pass_criterion": true
+    }
+  },
+  "diagnostic_only": true,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false
+}

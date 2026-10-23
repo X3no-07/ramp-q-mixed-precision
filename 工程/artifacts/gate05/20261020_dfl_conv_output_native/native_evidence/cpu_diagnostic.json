@@ -1,0 +1,50 @@
+{
+  "schema": "rampq.gate05.dfl_conv_output_cpu/v1",
+  "status": "ONE_CPU_CONV_OUTPUT_RAW_BYTE_EQUIVALENCE_PASSED",
+  "new_CPU_executions": 1,
+  "new_probability_Softmax_72Conv_old_DFL_or_full_detector_runs": 0,
+  "native_executions": 0,
+  "provider": "CPUExecutionProvider",
+  "graph_optimization": "ORT_DISABLE_ALL",
+  "threads": 4,
+  "onnx": "1.22.0",
+  "onnxruntime": "1.29.0",
+  "numpy": "2.5.3",
+  "probability_fixture_sha256": "5a7c5b1c58bd4d956a042dfeab3b11133a072ce7ab8630195f51d8f38a508520",
+  "actual_output_file": "cpu_actual_code_clip.npy",
+  "actual_output_file_sha256": "d2f4327fcc792b864e420f1b1554a5b7b52b88fd27a8f01f6c07a0159c3e723b",
+  "actual_output": {
+    "shape": [
+      1,
+      1,
+      4,
+      8400
+    ],
+    "dtype": "float32",
+    "elements": 33600,
+    "all_finite": true,
+    "min": 0.0,
+    "max": 12.431220054626465,
+    "raw_array_bytes_sha256": "3e4280d6a97b12d4e0c33eeb1e0a462ab3d457cef8eca9ce2ac5554816f45436"
+  },
+  "old_saved_reference_file_sha256": "fd4bcdcee24cd53651fdd7a508423c802f3b432c759647204c7b748f22abd50d",
+  "old_saved_reference_shape": [
+    1,
+    4,
+    8400
+  ],
+  "new_output_shape": [
+    1,
+    1,
+    4,
+    8400
+  ],
+  "C_order_array_bytes_identical_saved_reference": true,
+  "both_outputs_byte_exact": true,
+  "differing_elements": 0,
+  "max_absolute_difference": 0.0,
+  "shape_header_difference_is_not_numeric_difference": true,
+  "output_meaning": "DFL_DISTANCES_WITH_SINGLETON_CHANNEL_NOT_DECODED_BOXES",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "new_tolerances_defined": false
+}

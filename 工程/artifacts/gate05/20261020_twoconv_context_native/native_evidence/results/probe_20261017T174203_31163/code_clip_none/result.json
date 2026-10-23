@@ -1,0 +1,161 @@
+{
+  "status": "TWOCONV_CONTEXT_FIXED_INPUT_OUTPUTS_SAVED",
+  "case": "code_clip_none",
+  "variant": "code_clip",
+  "precision_constraint_flag": "none",
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "rampq_model_2_cv1_conv_a_dq",
+      "input": false,
+      "shape": [
+        1,
+        32,
+        160,
+        160
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "stats": {
+    "shape": [
+      1,
+      32,
+      160,
+      160
+    ],
+    "dtype": "float32",
+    "all_finite": true,
+    "nonfinite_count": 0,
+    "min": 0.0,
+    "max": 87.46932983398438,
+    "raw_bytes_sha256": "f524e075db8746be34c4282c10eb6f50f8d1483b881f47cac6fbd1ca4391c93a"
+  },
+  "comparison_to_frozen_cpu_ort": {
+    "all_pairs_finite": true,
+    "nonfinite_pair_count": 0,
+    "numeric_equal": false,
+    "byte_identical": false,
+    "different_elements": 18,
+    "max_abs": 1.5619525909423828,
+    "mean_abs": 3.4320240083616226e-05,
+    "rms_difference": 0.0073216512178381965,
+    "descriptive_only_no_new_pass_criterion": true
+  },
+  "repeat_comparison": {
+    "all_pairs_finite": true,
+    "nonfinite_pair_count": 0,
+    "numeric_equal": true,
+    "byte_identical": true,
+    "different_elements": 0,
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "rms_difference": 0.0,
+    "descriptive_only_no_new_pass_criterion": true
+  },
+  "conv_rows_file": "conv_rows.json",
+  "conv_source_mapping_file": "conv_source_mapping.json",
+  "two_distinct_actual_convolutions_verified": true,
+  "convolution_descriptors": [
+    {
+      "name": "model.0.conv.weight + rampq_model_0_conv_WeightQ + /model.0/conv/Conv + PWN(/model.0/act/Sigmoid, /model.0/act/Mul)",
+      "inputs": [
+        {
+          "Name": "rampq_model_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            3,
+            640,
+            640
+          ],
+          "Format/Datatype": "Row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 432
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_1_conv_a_q_before_code_clip",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "SWISH",
+      "tactic_name": "ampere_first_layer_filter3x3_imma_fwd_swish",
+      "tactic_value": "0x9760d209ec71dd70",
+      "actual_precision_requires_independent_review": true
+    },
+    {
+      "name": "model.1.conv.weight + rampq_model_1_conv_WeightQ + /model.1/conv/Conv + PWN(/model.1/act/Sigmoid, /model.1/act/Mul) + PWN(rampq_model_2_cv1_conv_Clip)",
+      "inputs": [
+        {
+          "Name": "rampq_model_1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "weights": {
+        "Type": "Int8",
+        "Count": 4608
+      },
+      "outputs": [
+        {
+          "Name": "rampq_model_2_cv1_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            32,
+            160,
+            160
+          ],
+          "Format/Datatype": "Thirty-two wide channel vectorized row major Int8 format"
+        }
+      ],
+      "activation": "GENERIC",
+      "tactic_name": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3_linkable",
+      "tactic_value": "0xb35096a016bb733a",
+      "actual_precision_requires_independent_review": true
+    }
+  ],
+  "engine_sha256": "8bcada5ac6a1132dc7f1951b1d2f6160a98ff5ba05338a4a641483fcada87fa9",
+  "raw_outputs_sha256": "d73fc35ad5e33cba26401ce7f924a0e202d5089400f6efc262994cdf51058fc4",
+  "spec_sha256": "e9b48c0319f68e361977d093b25df8ceacb5f1827f8a413e5e7107f751af2a5c",
+  "model_sha256": "5e6dfc0294a97b65810816c1ba80ef679b6d55851b03724be4c8de3e32c6c6fb",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "board_time": "2026-10-17T17:43:18+0800",
+  "tensorrt": "8.5.2.2",
+  "torch": "2.0.0+nv23.05",
+  "diagnostic_only": true,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "limits": "One fixed input, two Conv layers, three activation boundaries; no new numeric tolerance."
+}

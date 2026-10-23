@@ -1,0 +1,64 @@
+{
+  "schema": "rampq.gate1.body32_head16_saved_output_audit/v1",
+  "status": "PASS_SAVED_BODY32_HEAD16_OUTPUTS_ONLY",
+  "images_verified": 3,
+  "protocol_sha256": "e4272d6ac3d9fcaf4267839970370fdbfab3eaa6a65c6338a9a650e0e6aec00b",
+  "probe_manifest": {
+    "sha256": "55e37e776b03bcd12bbdf7319f5a896b90e27c9c801b0507f7b17de714acda78",
+    "files_verified": 15
+  },
+  "reference_head_manifest": {
+    "sha256": "5394dbde5881bf2936ac2cc7de049ed717f6d4d8554e60bac761ceb024d15408",
+    "files_verified": 228
+  },
+  "comparison": {
+    "images": 3,
+    "pass_images": 3,
+    "fail_images": 0,
+    "boxes": {
+      "elements": 100800,
+      "violations": 0,
+      "max_absolute_error": 0.2259521484375,
+      "max_error_over_tolerance": 0.1343262618680277
+    },
+    "scores": {
+      "elements": 252000,
+      "violations": 0,
+      "max_absolute_error": 0.002092331647872925,
+      "max_error_over_tolerance": 0.2133783626062006
+    }
+  },
+  "historical_full_model_comparison_unchanged": {
+    "images": 3,
+    "pass_images": 0,
+    "fail_images": 3,
+    "boxes": {
+      "elements": 100800,
+      "violations": 285,
+      "max_absolute_error": 9.662109375,
+      "max_error_over_tolerance": 9.708852188760341
+    },
+    "scores": {
+      "elements": 252000,
+      "violations": 0,
+      "max_absolute_error": 0.002469658851623535,
+      "max_error_over_tolerance": 0.3613380905265842
+    }
+  },
+  "guard_name": "GATE1_BODY_FP32_HEAD_TOWERS_FP16_DECODE_FP32_DEBUG_NUMERIC_CHECK",
+  "historical_gate1_dtype_guard_replaced": false,
+  "scientific_gate_pass": false,
+  "accepted_float_baseline_ready": false,
+  "old_guard_replaced": false,
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "limits": [
+    "Saved-array and metadata consistency only; no model, convolution, BatchNorm, pixel decoding, GPU, NMS, annotations, AP, Selection or Holdout execution.",
+    "The reviewed runner must load the frozen checkpoint and compute from each fresh image; reference NPZ array values may be read only after the new mixed forward for comparison. Earlier integrity hashing reads bytes only.",
+    "Runtime body/head/decode precision observations are reviewed-runner reports. This auditor does not independently execute those operators or establish GPU internal accumulation precision.",
+    "Fresh feature arrays are deduplicated into SHA/statistics and compared against stored reference features. The receiving FP16 cast statistics are independently recomputed from the reference FP32 tensors.",
+    "NumPy FP64 decoding is an approximate arithmetic sanity check, not bitwise CUDA equivalence or a replacement numerical guard.",
+    "The repeated head-intervention endpoint is not independent evidence. A diagnostic guard PASS never replaces the frozen full-FP16 FAIL or accepts Gate1, deployment, accuracy or performance."
+  ],
+  "created_at_utc": "2026-10-23T02:37:26.296304+00:00"
+}

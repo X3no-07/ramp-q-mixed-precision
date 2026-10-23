@@ -1,0 +1,580 @@
+{
+  "schema": "rampq.gate05.twoconv_context_code_grid_and_terminal_independent_review/v1",
+  "client_at": "2026-10-20T11:38:27.338522+08:00",
+  "status": "SAVED_CODE_GRID_AND_FIVE_PID_TERMINATION_VERIFIED",
+  "parent_independent_native_review_sha256": "428075bbbddc2974aea157cabef5fef1cbcd89cade0a836f0ca4de00f1dfaa8b",
+  "scale_initializer": "rampq_model_2_cv1_conv_a_scale",
+  "scale_float32": 1.5619523525238037,
+  "method": "Infer signed code by nearest integer in FLOAT64; re-dequantize each inferred code as FLOAT32 multiplication by original frozen scale and require every output byte exactly reconstructed. This is saved raw inspection, no inference.",
+  "cases": {
+    "code_clip_none": {
+      "all_values_exact_float32_dequantized_code_grid": true,
+      "differing_code_count": 18,
+      "all_differing_codes_exactly_one_step": true,
+      "signed_code_delta_counts": {
+        "-1": 10,
+        "0": 819182,
+        "1": 8
+      },
+      "rows": [
+        {
+          "index": [
+            0,
+            1,
+            75,
+            122
+          ],
+          "CPU_code": 3,
+          "native_code": 2,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 3.1239047050476074,
+          "native_minus_CPU_float64": -1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            2,
+            89,
+            107
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            7,
+            43,
+            13
+          ],
+          "CPU_code": 3,
+          "native_code": 2,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 3.1239047050476074,
+          "native_minus_CPU_float64": -1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            10,
+            88,
+            72
+          ],
+          "CPU_code": 3,
+          "native_code": 4,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 6.247809410095215,
+          "native_minus_CPU_float64": 1.5619525909423828
+        },
+        {
+          "index": [
+            0,
+            12,
+            75,
+            122
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            13,
+            107,
+            28
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            16,
+            42,
+            14
+          ],
+          "CPU_code": 2,
+          "native_code": 1,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            20,
+            107,
+            28
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            21,
+            42,
+            14
+          ],
+          "CPU_code": 2,
+          "native_code": 1,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            21,
+            43,
+            13
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            21,
+            102,
+            134
+          ],
+          "CPU_code": 3,
+          "native_code": 4,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 6.247809410095215,
+          "native_minus_CPU_float64": 1.5619525909423828
+        },
+        {
+          "index": [
+            0,
+            21,
+            102,
+            135
+          ],
+          "CPU_code": 0,
+          "native_code": 1,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 0.0,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": 1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            24,
+            75,
+            122
+          ],
+          "CPU_code": 2,
+          "native_code": 1,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            26,
+            43,
+            13
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            27,
+            43,
+            14
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            27,
+            89,
+            72
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            31,
+            42,
+            13
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            31,
+            75,
+            122
+          ],
+          "CPU_code": 5,
+          "native_code": 6,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 7.809762001037598,
+          "native_float32": 9.371713638305664,
+          "native_minus_CPU_float64": 1.5619516372680664
+        }
+      ],
+      "maximum_float32_dequantized_difference": 1.5619525909423828
+    },
+    "code_clip_obey": {
+      "all_values_exact_float32_dequantized_code_grid": true,
+      "differing_code_count": 18,
+      "all_differing_codes_exactly_one_step": true,
+      "signed_code_delta_counts": {
+        "-1": 10,
+        "0": 819182,
+        "1": 8
+      },
+      "rows": [
+        {
+          "index": [
+            0,
+            1,
+            75,
+            122
+          ],
+          "CPU_code": 3,
+          "native_code": 2,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 3.1239047050476074,
+          "native_minus_CPU_float64": -1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            2,
+            89,
+            107
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            7,
+            43,
+            13
+          ],
+          "CPU_code": 3,
+          "native_code": 2,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 3.1239047050476074,
+          "native_minus_CPU_float64": -1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            10,
+            88,
+            72
+          ],
+          "CPU_code": 3,
+          "native_code": 4,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 6.247809410095215,
+          "native_minus_CPU_float64": 1.5619525909423828
+        },
+        {
+          "index": [
+            0,
+            12,
+            75,
+            122
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            13,
+            107,
+            28
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            16,
+            42,
+            14
+          ],
+          "CPU_code": 2,
+          "native_code": 1,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            20,
+            107,
+            28
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            21,
+            42,
+            14
+          ],
+          "CPU_code": 2,
+          "native_code": 1,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            21,
+            43,
+            13
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            21,
+            102,
+            134
+          ],
+          "CPU_code": 3,
+          "native_code": 4,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 4.685856819152832,
+          "native_float32": 6.247809410095215,
+          "native_minus_CPU_float64": 1.5619525909423828
+        },
+        {
+          "index": [
+            0,
+            21,
+            102,
+            135
+          ],
+          "CPU_code": 0,
+          "native_code": 1,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 0.0,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": 1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            24,
+            75,
+            122
+          ],
+          "CPU_code": 2,
+          "native_code": 1,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 1.5619523525238037,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            26,
+            43,
+            13
+          ],
+          "CPU_code": 1,
+          "native_code": 0,
+          "native_minus_CPU_code": -1,
+          "CPU_float32": 1.5619523525238037,
+          "native_float32": 0.0,
+          "native_minus_CPU_float64": -1.5619523525238037
+        },
+        {
+          "index": [
+            0,
+            27,
+            43,
+            14
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            27,
+            89,
+            72
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            31,
+            42,
+            13
+          ],
+          "CPU_code": 2,
+          "native_code": 3,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 3.1239047050476074,
+          "native_float32": 4.685856819152832,
+          "native_minus_CPU_float64": 1.5619521141052246
+        },
+        {
+          "index": [
+            0,
+            31,
+            75,
+            122
+          ],
+          "CPU_code": 5,
+          "native_code": 6,
+          "native_minus_CPU_code": 1,
+          "CPU_float32": 7.809762001037598,
+          "native_float32": 9.371713638305664,
+          "native_minus_CPU_float64": 1.5619516372680664
+        }
+      ],
+      "maximum_float32_dequantized_difference": 1.5619525909423828
+    }
+  },
+  "five_PID_terminal_record": {
+    "board_time": "2026-10-17T17:46:22.400773+08:00",
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "known_processes": {
+      "31158": {
+        "exists": false,
+        "state": null,
+        "live_non_zombie": false
+      },
+      "31163": {
+        "exists": false,
+        "state": null,
+        "live_non_zombie": false
+      },
+      "31169": {
+        "exists": false,
+        "state": null,
+        "live_non_zombie": false
+      },
+      "31176": {
+        "exists": false,
+        "state": null,
+        "live_non_zombie": false
+      },
+      "31222": {
+        "exists": false,
+        "state": null,
+        "live_non_zombie": false
+      }
+    },
+    "scope": "Fresh root check of all five recorded native task PIDs before exact collection"
+  },
+  "raw_tree_unchanged": true,
+  "native_or_CPU_inference_run": false,
+  "new_tolerance_defined": false,
+  "limits": "All 18 differing values are exactly one code apart. FLOAT32 dequantized values subtracted in FLOAT64 need not yield a number bit-equal to the source scale. Full model error unresolved, no accuracy or Gate PASS.",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false,
+  "gate05_status": "INCOMPLETE"
+}

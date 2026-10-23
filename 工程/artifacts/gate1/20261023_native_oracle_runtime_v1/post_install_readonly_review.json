@@ -1,0 +1,17 @@
+{
+  "schema": "rampq.gate1.octave_post_install_review/v1",
+  "path": "artifacts/gate1/20261023_native_oracle_runtime_v1/runtime/octave-11.3.0-w64/post-install.bat",
+  "bytes": 1486,
+  "sha256": "e4deced49c36b63b075b1bc4be940e36ef70069b9444fa12991becdd658b3f09",
+  "reviewed": true,
+  "executed": false,
+  "observed_actions": [
+    "Sets process-local ROOT_DIR/MSYSDIR/MSYSTEM/OCTAVE_HOME/QT_SUBDIR variables",
+    "Writes qt.conf under runtime bin directory",
+    "Runs MSYS bash --login",
+    "Runs fc-cache -v",
+    "Invokes octave.bat conditional pkg rebuild for pre-6 versions"
+  ],
+  "decision": "Do not execute: CLI synthetic oracle uses no GUI/font cache and will directly resolve bundled mean2. Native CLI viability must be tested independently.",
+  "official_file_edited": false
+}

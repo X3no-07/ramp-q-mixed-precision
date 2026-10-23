@@ -1,0 +1,40 @@
+{
+  "configuration": "r_only_G1",
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v3_extended_7200/jetson_monitored_build.py",
+    "--root",
+    "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v3_extended_7200",
+    "--run",
+    "/home/nvidia/rampq/gate05_restore_extended_queue_20261019/monitor_r_only_G1",
+    "--max-seconds",
+    "7200",
+    "--build-script",
+    "jetson_build_precision_candidate.py"
+  ],
+  "monitor_process": {
+    "pid": 5744,
+    "state": "R",
+    "ppid": 5740,
+    "pgid": 5744,
+    "sid": 5744,
+    "start_ticks": 692502,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v3_extended_7200/jetson_monitored_build.py",
+      "--root",
+      "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v3_extended_7200",
+      "--run",
+      "/home/nvidia/rampq/gate05_restore_extended_queue_20261019/monitor_r_only_G1",
+      "--max-seconds",
+      "7200",
+      "--build-script",
+      "jetson_build_precision_candidate.py"
+    ]
+  },
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "inherited_spec_max_seconds": 1800,
+  "effective_monitor_max_seconds": 7200
+}

@@ -1,0 +1,39 @@
+{
+  "case": "code_clip_none",
+  "phase": "COMPLETE",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "build_seconds_not_benchmark": 69.18809731199872,
+  "status": "TWOCONV_CONTEXT_ENGINE_SAVED",
+  "engine_sha256": "8bcada5ac6a1132dc7f1951b1d2f6160a98ff5ba05338a4a641483fcada87fa9",
+  "engine_bytes": 207723,
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "rampq_model_2_cv1_conv_a_dq",
+      "input": false,
+      "shape": [
+        1,
+        32,
+        160,
+        160
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "model_sha256_after": "5e6dfc0294a97b65810816c1ba80ef679b6d55851b03724be4c8de3e32c6c6fb",
+  "builder_request_sha256": "875230fcd50eee811f04aaf2e3e835cdfd5876704875c6b465fd84a87df17e73",
+  "diagnostic_only": true,
+  "numerical_pass_claim": false
+}

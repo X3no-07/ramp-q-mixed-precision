@@ -1,0 +1,14 @@
+{
+  "schema": "rampq.gate1.decode_precision_independent_review_timing_addendum/v1",
+  "review_manifest_sha256": "4003edead9f13e9eae37a0f54231f4d53130976f32c6432e65f40b45b1383911",
+  "frozen_final_auditor_sha256": "04a7d2256ab0a3d90025b2453ef2bc44b043e8b1493b7866c9acc603838dc1ef",
+  "frozen_final_tests_sha256": "ddcb6e93e34d05c728021ce33e9d0e4ab9eab140444dea6acc7642eb95a08e56",
+  "synthetic_tests_for_final_auditor": 22,
+  "qualification_rule": "Only new saved-array audits explicitly recording the final 04a7d225... source identity may be attributed to the final reviewed auditor and its 22-test suite.",
+  "historical_attempt_preserved": "pilot_audit_v1 was run from an earlier ffd979e5...7ab0 auditor revision before final summary/scope additions. Preserve its files, do not relabel it as final source output, and do not overwrite it.",
+  "required_successor": "Recompute the same saved pilot arrays into pilot_audit_v2 using the final frozen source. Use that successor plus the final-source full109 saved-array audit for delivery conclusions.",
+  "new_model_execution_required_for_successor_audit": false,
+  "guard_tolerances_changed": false,
+  "original_guard_replaced": false,
+  "scientific_gate_pass": false
+}

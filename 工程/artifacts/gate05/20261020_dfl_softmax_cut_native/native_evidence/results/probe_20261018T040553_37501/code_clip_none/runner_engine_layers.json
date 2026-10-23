@@ -1,0 +1,113 @@
+{"Layers": [{
+  "Name": "rampq_model_23_dfl_conv_ActivationQ",
+  "LayerType": "Reformat",
+  "Inputs": [
+  {
+    "Name": "/model.23/dfl/Softmax_output_0",
+    "Location": "Device",
+    "Dimensions": [1,16,4,8400],
+    "Format/Datatype": "Row major linear FP32"
+  }],
+  "Outputs": [
+  {
+    "Name": "rampq_model_23_dfl_conv_a_q_before_code_clip",
+    "Location": "Device",
+    "Dimensions": [1,16,4,8400],
+    "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+  }],
+  "ParameterType": "Reformat",
+  "Origin": "QDQ",
+  "TacticValue": "0x0000000000000000"
+},{
+  "Name": "PWN(rampq_model_23_dfl_conv_Clip)",
+  "LayerType": "PointWiseV2",
+  "Inputs": [
+  {
+    "Name": "rampq_model_23_dfl_conv_a_q_before_code_clip",
+    "Location": "Device",
+    "Dimensions": [1,16,4,8400],
+    "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+  }],
+  "Outputs": [
+  {
+    "Name": "rampq_model_23_dfl_conv_a_q",
+    "Location": "Device",
+    "Dimensions": [1,16,4,8400],
+    "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+  }],
+  "ParameterType": "PointWise",
+  "ParameterSubType": "PointWiseExpression",
+  "NbInputArgs": 1,
+  "InputArgs": ["arg0"],
+  "NbOutputVars": 1,
+  "OutputVars": ["var1"],
+  "NbParams": 0,
+  "Params": [],
+  "NbLiterals": 4,
+  "Literals": ["0.000000e+00f", "1.000000e+00f", "-1.270000e+02f", "1.270000e+02f"],
+  "NbOperations": 2,
+  "Operations": ["auto const var0 = pwgen::iMin(literal3, arg0);", "auto const var1 = pwgen::iMax(literal2, var0);"],
+  "TacticValue": "0x0000000000000006"
+},{
+  "Name": "model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv",
+  "LayerType": "CaskConvolution",
+  "Inputs": [
+  {
+    "Name": "rampq_model_23_dfl_conv_a_q",
+    "Location": "Device",
+    "Dimensions": [1,16,4,8400],
+    "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+  }],
+  "Outputs": [
+  {
+    "Name": "/model.23/dfl/conv/Conv_output_0",
+    "Location": "Device",
+    "Dimensions": [1,1,4,8400],
+    "Format/Datatype": "Row major linear FP32"
+  }],
+  "ParameterType": "Convolution",
+  "Kernel": [1,1],
+  "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+  "PrePadding": [0,0],
+  "PostPadding": [0,0],
+  "Stride": [1,1],
+  "Dilation": [1,1],
+  "OutMaps": 1,
+  "Groups": 1,
+  "Weights": {"Type": "Int8", "Count": 16},
+  "Bias": {"Type": "Float", "Count": 0},
+  "HasSparseWeights": 0,
+  "HasDynamicFilter": 0,
+  "HasDynamicBias": 0,
+  "HasResidual": 0,
+  "ConvXAsActInputIdx": -1,
+  "BiasAsActInputIdx": -1,
+  "ResAsActInputIdx": -1,
+  "Activation": "NONE",
+  "HasBias": 0,
+  "HasReLU": 0,
+  "TacticName": "ampere_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+  "TacticValue": "0xa4ae2d82115c3e83"
+},{
+  "Name": "/model.23/dfl/Reshape_1",
+  "LayerType": "NoOp",
+  "Inputs": [
+  {
+    "Name": "/model.23/dfl/conv/Conv_output_0",
+    "Location": "Device",
+    "Dimensions": [1,1,4,8400],
+    "Format/Datatype": "Row major linear FP32"
+  }],
+  "Outputs": [
+  {
+    "Name": "/model.23/dfl/Reshape_1_output_0",
+    "Location": "Device",
+    "Dimensions": [1,4,8400],
+    "Format/Datatype": "Row major linear FP32"
+  }],
+  "TacticValue": "0x0000000000000000"
+}],
+"Bindings": ["/model.23/dfl/Softmax_output_0"
+,"/model.23/dfl/Reshape_1_output_0"
+]}
+

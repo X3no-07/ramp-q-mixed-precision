@@ -1,0 +1,712 @@
+{
+  "schema": "rampq.gate05.independent_readonly_audit/v1",
+  "client_at": "2026-10-19T08:02:35.296537+08:00",
+  "scope": "Pure local integrity, graph/command contracts and auditor compatibility checks only; no inference, CUDA, board connection or dataset evaluation. The legacy engine layer inventory is a parser/auditor positive and negative control, not proof that a candidate engine exists.",
+  "configs": [
+    {
+      "configuration": "fp16_control",
+      "spec_sha256": "4b279517da8d847dca9fe60a592b914f7b68f24bd5c4b85b67881172a9f3cfb9",
+      "manifest_sha256": "f7cabe1ce2530a62c20398c8e79c80d98de4c640f2e6df697013f1751809c330",
+      "archive_sha256": "87612071bdbad19a1a49462bc1fd5977c223971d6df9c12e2df5375b7988ec64",
+      "manifest_errors": [],
+      "stale_packaged_scripts": [],
+      "zip_errors": [],
+      "onnx_full_checker": "PASS",
+      "graph_request_errors": [],
+      "command_mask": "PASS",
+      "same_binding_signatures": "PASS",
+      "quantized_conv_count": 0,
+      "fp16_conv_count": 88
+    },
+    {
+      "configuration": "q_all",
+      "spec_sha256": "ca13e5e6913ef656db6a5dc37e72bb4f3e7fb1afe7034dc4d0acbb4fb9a409b9",
+      "manifest_sha256": "d7fb5fa24234ec38c11a88003a8cb5b7447257e4ca844e77e88247460524950b",
+      "archive_sha256": "9539dd56d2f25c539f6027c2cae79b5880890cfd717e5b8474e802aca9f2d595",
+      "manifest_errors": [],
+      "stale_packaged_scripts": [],
+      "zip_errors": [],
+      "onnx_full_checker": "PASS",
+      "graph_request_errors": [],
+      "command_mask": "PASS",
+      "same_binding_signatures": "PASS",
+      "quantized_conv_count": 88,
+      "fp16_conv_count": 0
+    },
+    {
+      "configuration": "q_only_G1",
+      "spec_sha256": "cd6bde58334770339b9259002ce3b2a00563bbba4340c3bc8bfa8e914aa4e67f",
+      "manifest_sha256": "32b4187f6f694e3efc843ec41c3132f48b4bdf34b84bd2399097b2998507b06a",
+      "archive_sha256": "a4eaf7b4de296b5c94b45e7d5508b69d3f88d5aede7139e3212261d1206f613e",
+      "manifest_errors": [],
+      "stale_packaged_scripts": [],
+      "zip_errors": [],
+      "onnx_full_checker": "PASS",
+      "graph_request_errors": [],
+      "command_mask": "PASS",
+      "same_binding_signatures": "PASS",
+      "quantized_conv_count": 6,
+      "fp16_conv_count": 82
+    },
+    {
+      "configuration": "r_only_G1",
+      "spec_sha256": "4c84b8dfd32dacb9d900b1d758d822bd00ca61265bd9e956ec9d8110db709da9",
+      "manifest_sha256": "93ee4e2e9be6cc372d1d87edc3b4d12adc1ccd99bea65e0cdbadc19235a71fd9",
+      "archive_sha256": "f28870d6c418be3437d927fb320cf11709a8977a228af4ebb9254daab1ba18d9",
+      "manifest_errors": [],
+      "stale_packaged_scripts": [],
+      "zip_errors": [],
+      "onnx_full_checker": "PASS",
+      "graph_request_errors": [],
+      "command_mask": "PASS",
+      "same_binding_signatures": "PASS",
+      "quantized_conv_count": 82,
+      "fp16_conv_count": 6
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "spec_sha256": "db44dba09e252b881bdac5545694f333772a9422911e548eaebc08321bdf313e",
+      "manifest_sha256": "c7853f869b3dc1faec1ac33b077a03510547969ff210253a5cd856883ec48c2e",
+      "archive_sha256": "7d2a513e2d7e511c0576973ca518f109fb2a2529ecbb46236a531f0c58e9af1a",
+      "manifest_errors": [],
+      "stale_packaged_scripts": [],
+      "zip_errors": [],
+      "onnx_full_checker": "PASS",
+      "graph_request_errors": [],
+      "command_mask": "PASS",
+      "same_binding_signatures": "PASS",
+      "quantized_conv_count": 77,
+      "fp16_conv_count": 11
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "spec_sha256": "e013d721396c513333d136e95f72544f3d6198b86df44988d2363e46c3008053",
+      "manifest_sha256": "7195473e36ad03af3ac51f85e8ea292edc225c57ba47d17a5e6c58093aa4fbfc",
+      "archive_sha256": "1242286789faf89406b7484be0b05e9b07cc6f915a3743248d813a404ee2458b",
+      "manifest_errors": [],
+      "stale_packaged_scripts": [],
+      "zip_errors": [],
+      "onnx_full_checker": "PASS",
+      "graph_request_errors": [],
+      "command_mask": "PASS",
+      "same_binding_signatures": "PASS",
+      "quantized_conv_count": 74,
+      "fp16_conv_count": 14
+    }
+  ],
+  "syntax": {
+    "jetson_build_precision_candidate.py": {
+      "python38_ast": "PASS",
+      "sha256": "5145a16686c23e9fa817db3320490b3ec0de11c97084e9e05c445980c8aa7c88"
+    },
+    "audit_gate05_precision_candidate.py": {
+      "python38_ast": "PASS",
+      "sha256": "40420902d6fb3fd5d6b6278d64bbaa4b44c839bdae69da73dbaeb3e15cf66f6a"
+    },
+    "package_gate05_precision_candidate.py": {
+      "python38_ast": "PASS",
+      "sha256": "16439259bd84ca8db0249df61b9f380132a3ec2e23cd8c08a17454f20c4d403a"
+    },
+    "jetson_precision_candidate_smoke.py": {
+      "python38_ast": "PASS",
+      "sha256": "1961e2a59e7222acf483c063bd61ab378ea531538e657d2c9816b0d899a3c34e"
+    },
+    "compare_gate05_fixed_image.py": {
+      "python38_ast": "PASS",
+      "sha256": "c8d3c7c8faf8df0036c55312ef4ed4c5f4cb41d0631916308ba1bcf111d991ed"
+    }
+  },
+  "legacy_fp16_native_inventory_positive_control": {
+    "status": "REQUESTED_CONV_FORMATS_VERIFIED",
+    "requested_conv_formats_complete": true,
+    "source_convs": 88,
+    "verified_int8_format_convs": 0,
+    "verified_fp16_format_convs": 88,
+    "strict_int8_status": "NO_INT8_REQUESTED",
+    "errors": [],
+    "fusions": [
+      {
+        "engine_layer": "/model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv",
+        "source_members": [
+          "/model.22/m.0/cv1/conv/Conv",
+          "/model.22/m.0/cv2/conv/Conv"
+        ],
+        "accounting": {
+          "status": "FUSION_ACCOUNTING_PASS",
+          "checks": {
+            "same_group": true,
+            "same_requested_precision": true,
+            "one_native_activation_input": true,
+            "source_graph_available": true,
+            "complete_exact_source_names": true,
+            "all_traces_complete": true,
+            "same_original_activation_and_quantizer_if_int8": true,
+            "native_weight_count_equals_source_sum": true
+          },
+          "source_weight_counts": [
+            {
+              "onnx_node": "/model.22/m.0/cv1/conv/Conv",
+              "initializer": "model.22.m.0.cv1.conv.weight",
+              "count": 8192
+            },
+            {
+              "onnx_node": "/model.22/m.0/cv2/conv/Conv",
+              "initializer": "model.22.m.0.cv2.conv.weight",
+              "count": 8192
+            }
+          ],
+          "source_weight_count_sum": 16384,
+          "native_weight_count": 16384,
+          "traces": [
+            {
+              "source_tensor": "/model.22/Split_output_1"
+            },
+            {
+              "source_tensor": "/model.22/Split_output_1"
+            }
+          ],
+          "errors": []
+        }
+      },
+      {
+        "engine_layer": "/model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv",
+        "source_members": [
+          "/model.6/m.0/cv1/conv/Conv",
+          "/model.6/m.0/cv2/conv/Conv"
+        ],
+        "accounting": {
+          "status": "FUSION_ACCOUNTING_PASS",
+          "checks": {
+            "same_group": true,
+            "same_requested_precision": true,
+            "one_native_activation_input": true,
+            "source_graph_available": true,
+            "complete_exact_source_names": true,
+            "all_traces_complete": true,
+            "same_original_activation_and_quantizer_if_int8": true,
+            "native_weight_count_equals_source_sum": true
+          },
+          "source_weight_counts": [
+            {
+              "onnx_node": "/model.6/m.0/cv1/conv/Conv",
+              "initializer": "model.6.m.0.cv1.conv.weight",
+              "count": 2048
+            },
+            {
+              "onnx_node": "/model.6/m.0/cv2/conv/Conv",
+              "initializer": "model.6.m.0.cv2.conv.weight",
+              "count": 2048
+            }
+          ],
+          "source_weight_count_sum": 4096,
+          "native_weight_count": 4096,
+          "traces": [
+            {
+              "source_tensor": "/model.6/Split_output_1"
+            },
+            {
+              "source_tensor": "/model.6/Split_output_1"
+            }
+          ],
+          "errors": []
+        }
+      },
+      {
+        "engine_layer": "/model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv",
+        "source_members": [
+          "/model.8/m.0/cv1/conv/Conv",
+          "/model.8/m.0/cv2/conv/Conv"
+        ],
+        "accounting": {
+          "status": "FUSION_ACCOUNTING_PASS",
+          "checks": {
+            "same_group": true,
+            "same_requested_precision": true,
+            "one_native_activation_input": true,
+            "source_graph_available": true,
+            "complete_exact_source_names": true,
+            "all_traces_complete": true,
+            "same_original_activation_and_quantizer_if_int8": true,
+            "native_weight_count_equals_source_sum": true
+          },
+          "source_weight_counts": [
+            {
+              "onnx_node": "/model.8/m.0/cv1/conv/Conv",
+              "initializer": "model.8.m.0.cv1.conv.weight",
+              "count": 8192
+            },
+            {
+              "onnx_node": "/model.8/m.0/cv2/conv/Conv",
+              "initializer": "model.8.m.0.cv2.conv.weight",
+              "count": 8192
+            }
+          ],
+          "source_weight_count_sum": 16384,
+          "native_weight_count": 16384,
+          "traces": [
+            {
+              "source_tensor": "/model.8/Split_output_1"
+            },
+            {
+              "source_tensor": "/model.8/Split_output_1"
+            }
+          ],
+          "errors": []
+        }
+      }
+    ],
+    "unmapped_engine_convs": []
+  },
+  "legacy_fp16_native_inventory_as_q_all_negative_control": {
+    "status": "PRECISION_REVIEW_REQUIRED",
+    "requested_conv_formats_complete": false,
+    "source_convs": 88,
+    "verified_int8_format_convs": 0,
+    "verified_fp16_format_convs": 0,
+    "strict_int8_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+    "errors": [
+      "Requested INT8 formats incomplete for /model.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.2/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.2/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.2/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.2/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.3/conv/Conv",
+      "Requested INT8 formats incomplete for /model.4/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.4/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.4/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.4/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.5/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/m/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/m/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/m/m.1/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/m/m.1/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/m.0/cv3/conv/Conv",
+      "Requested INT8 formats incomplete for /model.6/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.7/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/m/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/m/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/m/m.1/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/m/m.1/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/m.0/cv3/conv/Conv",
+      "Requested INT8 formats incomplete for /model.8/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.9/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.9/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/m/m.0/attn/qkv/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/m/m.0/attn/pe/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/m/m.0/attn/proj/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/m/m.0/ffn/ffn.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/m/m.0/ffn/ffn.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.10/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.13/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.13/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.13/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.13/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.16/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.16/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.16/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.16/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.17/conv/Conv",
+      "Requested INT8 formats incomplete for /model.19/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.19/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.19/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.19/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.20/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/m/m.0/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/m/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/m/m.1/cv1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/m/m.1/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/m.0/cv3/conv/Conv",
+      "Requested INT8 formats incomplete for /model.22/cv2/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.0/cv2.0.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.0/cv2.0.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.0/cv2.0.2/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.1/cv2.1.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.1/cv2.1.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.1/cv2.1.2/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.2/cv2.2.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.2/cv2.2.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv2.2/cv2.2.2/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.0/cv3.0.2/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.1/cv3.1.2/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+      "Requested INT8 formats incomplete for /model.23/cv3.2/cv3.2.2/Conv",
+      "Requested INT8 formats incomplete for /model.23/dfl/conv/Conv"
+    ],
+    "fusions": [
+      {
+        "engine_layer": "/model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv",
+        "source_members": [
+          "/model.22/m.0/cv1/conv/Conv",
+          "/model.22/m.0/cv2/conv/Conv"
+        ],
+        "accounting": {
+          "status": "FUSION_ACCOUNTING_PASS",
+          "checks": {
+            "same_group": true,
+            "same_requested_precision": true,
+            "one_native_activation_input": true,
+            "source_graph_available": true,
+            "complete_exact_source_names": true,
+            "all_traces_complete": true,
+            "same_original_activation_and_quantizer_if_int8": true,
+            "native_weight_count_equals_source_sum": true
+          },
+          "source_weight_counts": [
+            {
+              "onnx_node": "/model.22/m.0/cv1/conv/Conv",
+              "initializer": "model.22.m.0.cv1.conv.weight",
+              "count": 8192
+            },
+            {
+              "onnx_node": "/model.22/m.0/cv2/conv/Conv",
+              "initializer": "model.22.m.0.cv2.conv.weight",
+              "count": 8192
+            }
+          ],
+          "source_weight_count_sum": 16384,
+          "native_weight_count": 16384,
+          "traces": [
+            {
+              "source_tensor": "/model.22/Split_output_1",
+              "constants": {
+                "scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "11274e46d57f2c8bc63222b473da0e738c66245bd207492ec2c1ed8be222a2a3"
+                },
+                "zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "dq_scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "11274e46d57f2c8bc63222b473da0e738c66245bd207492ec2c1ed8be222a2a3"
+                },
+                "dq_zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "clip_min": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "695b5ea16ba0a266b74d520f1b10eeff2b90ca7fe076b97524a4c79b8a9ce7c5"
+                },
+                "clip_max": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "7fe45616ab36e4b70336383a95aa77a800d57be30d2f9395b88b7ad2694f5cc9"
+                }
+              },
+              "q_attributes": [],
+              "dq_attributes": []
+            },
+            {
+              "source_tensor": "/model.22/Split_output_1",
+              "constants": {
+                "scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "11274e46d57f2c8bc63222b473da0e738c66245bd207492ec2c1ed8be222a2a3"
+                },
+                "zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "dq_scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "11274e46d57f2c8bc63222b473da0e738c66245bd207492ec2c1ed8be222a2a3"
+                },
+                "dq_zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "clip_min": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "695b5ea16ba0a266b74d520f1b10eeff2b90ca7fe076b97524a4c79b8a9ce7c5"
+                },
+                "clip_max": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "7fe45616ab36e4b70336383a95aa77a800d57be30d2f9395b88b7ad2694f5cc9"
+                }
+              },
+              "q_attributes": [],
+              "dq_attributes": []
+            }
+          ],
+          "errors": []
+        }
+      },
+      {
+        "engine_layer": "/model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv",
+        "source_members": [
+          "/model.6/m.0/cv1/conv/Conv",
+          "/model.6/m.0/cv2/conv/Conv"
+        ],
+        "accounting": {
+          "status": "FUSION_ACCOUNTING_PASS",
+          "checks": {
+            "same_group": true,
+            "same_requested_precision": true,
+            "one_native_activation_input": true,
+            "source_graph_available": true,
+            "complete_exact_source_names": true,
+            "all_traces_complete": true,
+            "same_original_activation_and_quantizer_if_int8": true,
+            "native_weight_count_equals_source_sum": true
+          },
+          "source_weight_counts": [
+            {
+              "onnx_node": "/model.6/m.0/cv1/conv/Conv",
+              "initializer": "model.6.m.0.cv1.conv.weight",
+              "count": 2048
+            },
+            {
+              "onnx_node": "/model.6/m.0/cv2/conv/Conv",
+              "initializer": "model.6.m.0.cv2.conv.weight",
+              "count": 2048
+            }
+          ],
+          "source_weight_count_sum": 4096,
+          "native_weight_count": 4096,
+          "traces": [
+            {
+              "source_tensor": "/model.6/Split_output_1",
+              "constants": {
+                "scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "dd1b7edbdd5d18f4dba1921fd9923c9145241359a5faf6a0eced43a621e526bd"
+                },
+                "zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "dq_scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "dd1b7edbdd5d18f4dba1921fd9923c9145241359a5faf6a0eced43a621e526bd"
+                },
+                "dq_zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "clip_min": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "454e98bfaeae3248f5a7632dc27873069b8a62d806b2079145a0b6ca8091cc7c"
+                },
+                "clip_max": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "185f5c98bec0ad0a7bb1ee6cfa22f99d07769a023b7dec4eff406ab51b5b29c5"
+                }
+              },
+              "q_attributes": [],
+              "dq_attributes": []
+            },
+            {
+              "source_tensor": "/model.6/Split_output_1",
+              "constants": {
+                "scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "dd1b7edbdd5d18f4dba1921fd9923c9145241359a5faf6a0eced43a621e526bd"
+                },
+                "zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "dq_scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "dd1b7edbdd5d18f4dba1921fd9923c9145241359a5faf6a0eced43a621e526bd"
+                },
+                "dq_zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "clip_min": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "454e98bfaeae3248f5a7632dc27873069b8a62d806b2079145a0b6ca8091cc7c"
+                },
+                "clip_max": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "185f5c98bec0ad0a7bb1ee6cfa22f99d07769a023b7dec4eff406ab51b5b29c5"
+                }
+              },
+              "q_attributes": [],
+              "dq_attributes": []
+            }
+          ],
+          "errors": []
+        }
+      },
+      {
+        "engine_layer": "/model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv",
+        "source_members": [
+          "/model.8/m.0/cv1/conv/Conv",
+          "/model.8/m.0/cv2/conv/Conv"
+        ],
+        "accounting": {
+          "status": "FUSION_ACCOUNTING_PASS",
+          "checks": {
+            "same_group": true,
+            "same_requested_precision": true,
+            "one_native_activation_input": true,
+            "source_graph_available": true,
+            "complete_exact_source_names": true,
+            "all_traces_complete": true,
+            "same_original_activation_and_quantizer_if_int8": true,
+            "native_weight_count_equals_source_sum": true
+          },
+          "source_weight_counts": [
+            {
+              "onnx_node": "/model.8/m.0/cv1/conv/Conv",
+              "initializer": "model.8.m.0.cv1.conv.weight",
+              "count": 8192
+            },
+            {
+              "onnx_node": "/model.8/m.0/cv2/conv/Conv",
+              "initializer": "model.8.m.0.cv2.conv.weight",
+              "count": 8192
+            }
+          ],
+          "source_weight_count_sum": 16384,
+          "native_weight_count": 16384,
+          "traces": [
+            {
+              "source_tensor": "/model.8/Split_output_1",
+              "constants": {
+                "scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "a0352e9635a072f063f76c42f4237a00ac14f663652218e42b0977c60e7de595"
+                },
+                "zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "dq_scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "a0352e9635a072f063f76c42f4237a00ac14f663652218e42b0977c60e7de595"
+                },
+                "dq_zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "clip_min": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "036523e065cc66f78e784725a3a49390cadbb92f56f0eb18e4190b289236162c"
+                },
+                "clip_max": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "5ec45f4ecd5077b0c9c67924aa9dda8b3681b06869487c425ac383ad04e0d7fd"
+                }
+              },
+              "q_attributes": [],
+              "dq_attributes": []
+            },
+            {
+              "source_tensor": "/model.8/Split_output_1",
+              "constants": {
+                "scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "a0352e9635a072f063f76c42f4237a00ac14f663652218e42b0977c60e7de595"
+                },
+                "zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "dq_scale": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "a0352e9635a072f063f76c42f4237a00ac14f663652218e42b0977c60e7de595"
+                },
+                "dq_zero": {
+                  "dtype": "|i1",
+                  "shape": [],
+                  "bytes_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                },
+                "clip_min": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "036523e065cc66f78e784725a3a49390cadbb92f56f0eb18e4190b289236162c"
+                },
+                "clip_max": {
+                  "dtype": "<f4",
+                  "shape": [],
+                  "bytes_sha256": "5ec45f4ecd5077b0c9c67924aa9dda8b3681b06869487c425ac383ad04e0d7fd"
+                }
+              },
+              "q_attributes": [],
+              "dq_attributes": []
+            }
+          ],
+          "errors": []
+        }
+      }
+    ],
+    "unmapped_engine_convs": []
+  },
+  "blocking_schema_or_packaged_hash_bugs_found": [],
+  "nonblocking_hardening_observations": [
+    "verify_inputs should also directly verify recorded build binding format==TensorFormat.LINEAR during check-only; actual smoke rechecks runtime LINEAR before execution.",
+    "The build script itself does not enforce max_build_seconds; the monitored wrapper must remain mandatory.",
+    "compare_gate05_fixed_image accepts unknown legacy schema after image/NMS/execution checks; current intended legacy source is known and its engine hash is not independently frozen in that path."
+  ],
+  "actionable_now": [
+    "Establish current board authentication and actual terminal/live process state.",
+    "For successfully built candidates, native engine/hash/contract/precision audit then one fixed 000020 execution and saved target comparison.",
+    "Run remaining already frozen configurations sequentially under the monitor; preserve failures.",
+    "Verify and archive native source evidence and update current matrix/report."
+  ],
+  "planning_boundary": [
+    "Before dataset inference, freeze PASS/FAIL/INCONCLUSIVE target migration criteria and decide how original failed PyTorch/ORT numerical parity and fusion/nonquantized floating controls will be resolved.",
+    "No new masks, calibration images/ranges, numerical tolerance changes, JetPack/TensorRT upgrade, performance/energy study or next Gate without planning."
+  ],
+  "dataset_evaluation_run": false,
+  "inference_run": false
+}

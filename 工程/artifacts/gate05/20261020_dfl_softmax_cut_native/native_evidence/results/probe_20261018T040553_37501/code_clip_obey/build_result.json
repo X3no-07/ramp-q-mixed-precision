@@ -1,0 +1,13 @@
+{
+  "case": "code_clip_obey",
+  "phase": "BUILDING",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "build_seconds_not_benchmark": 1.5299543040018762,
+  "status": "DFL_SOFTMAX_CUT_BUILD_FAILED",
+  "error_type": "RuntimeError",
+  "error": "TensorRT returned no serialized engine",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_build_dfl_softmax_cut_probe.py\", line 225, in main\n    build(root, args.case, output, state)\n  File \"/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_build_dfl_softmax_cut_probe.py\", line 181, in build\n    require(serialized is not None, 'TensorRT returned no serialized engine')\n  File \"/home/nvidia/rampq/gate05_dfl_softmax_cut_20261020/gate05_dfl_softmax_cut_probe_20261020/jetson_dfl_softmax_cut_probe.py\", line 41, in require\n    raise RuntimeError(message)\nRuntimeError: TensorRT returned no serialized engine\n",
+  "inference_run": false,
+  "diagnostic_only": true,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED"
+}

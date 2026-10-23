@@ -1,0 +1,15 @@
+{
+  "schema": "rampq.gate1.synthetic_training_output_audit_failure/v1",
+  "status": "FAILED_DECLARED_ONE_THREAD_CPU_RECONSTRUCTION_CONTEXT",
+  "attempt_01_audit_failed_at": "independent CPU output differs after verified new state-only load and strict reconstruction",
+  "attempt_02_new_state_diagnosis": "fresh CPU model exact at 8 threads and not exact at 1 thread",
+  "root_cause": "Ultralytics select_device(cpu) calls torch.set_num_threads(NUM_THREADS=8) after runner's initial setting of 1",
+  "fixed_input_and_state_values_equal": true,
+  "precision_threshold_changed": false,
+  "receipt_threads_declaration_accepted": false,
+  "strict_offline_01_accepted": false,
+  "normal_model_checkpoint_deserialized": false,
+  "old_weights_or_real_data_read": false,
+  "required_new_attempt": "reassert effective intraop=1 after Trainer construction, verify actual context at start/save and record values; independently reconstruct new state in one-thread process",
+  "scientific_gate_pass": false
+}

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/usr/src/tensorrt/bin/trtexec",
+    "--onnx=/home/nvidia/rampq/gate05_fp16_constraint_probe_20261019/model.onnx",
+    "--saveEngine=/home/nvidia/rampq/gate05_fp16_constraint_probe_20261019/model.engine",
+    "--fp16",
+    "--noTF32",
+    "--precisionConstraints=obey",
+    "--layerPrecisions=/model.10/m/m.0/attn/pe/conv/Conv:fp16",
+    "--layerOutputTypes=/model.10/m/m.0/attn/pe/conv/Conv:fp16",
+    "--inputIOFormats=fp32:chw",
+    "--outputIOFormats=fp32:chw,fp32:chw",
+    "--avgTiming=1",
+    "--memPoolSize=workspace:1024",
+    "--profilingVerbosity=detailed",
+    "--buildOnly"
+  ],
+  "max_build_seconds": 180,
+  "spec_sha256": "dbc15e9ae5020824dba4145818c9b986c7f883e6555c93045b761c79c6e9d650",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "board_time": "2026-10-17T03:24:18+0800",
+  "scope": "Small build/adoption diagnostic only; no model inference or performance evidence"
+}

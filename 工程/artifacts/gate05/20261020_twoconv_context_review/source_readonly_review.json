@@ -1,0 +1,179 @@
+{
+  "schema": "rampq.gate05.twoconv_source_independent_readonly_review/v1",
+  "status": "SOURCE_EXACT_DEPENDENCY_CLOSURE_AND_PROTOCOL_VERIFIED",
+  "checks": [
+    {
+      "name": "frozen_protocol_sha",
+      "passed": true
+    },
+    {
+      "name": "source_sha:model.onnx",
+      "passed": true
+    },
+    {
+      "name": "actual_failed_raw_exact:model.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_sha:spec.json",
+      "passed": true
+    },
+    {
+      "name": "actual_failed_raw_exact:spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_sha:manifest.json",
+      "passed": true
+    },
+    {
+      "name": "actual_failed_raw_exact:manifest.json",
+      "passed": true
+    },
+    {
+      "name": "inventory_sha",
+      "passed": true
+    },
+    {
+      "name": "inventory_same_source",
+      "passed": true
+    },
+    {
+      "name": "third_clip_exact_planned_fusion",
+      "passed": true
+    },
+    {
+      "name": "19_node_exact_closure",
+      "passed": true
+    },
+    {
+      "name": "20_initializer_exact_closure",
+      "passed": true
+    },
+    {
+      "name": "two_named_source_convs",
+      "passed": true
+    },
+    {
+      "name": "third_conv_excluded",
+      "passed": true
+    },
+    {
+      "name": "three_exact_clips",
+      "passed": true
+    },
+    {
+      "name": "only_images_input",
+      "passed": true
+    },
+    {
+      "name": "third_activation_DQ_output",
+      "passed": true
+    },
+    {
+      "name": "third_scale",
+      "passed": true
+    },
+    {
+      "name": "two_case_NONE_OBEY",
+      "passed": true
+    },
+    {
+      "name": "protected_scope",
+      "passed": true
+    }
+  ],
+  "check_count": 20,
+  "node_names": [
+    "rampq_model_0_conv_ActivationQ",
+    "rampq_model_0_conv_Clip",
+    "rampq_model_0_conv_ActivationDQ",
+    "rampq_model_0_conv_WeightQ",
+    "rampq_model_0_conv_WeightDQ",
+    "/model.0/conv/Conv",
+    "/model.0/act/Sigmoid",
+    "/model.0/act/Mul",
+    "rampq_model_1_conv_ActivationQ",
+    "rampq_model_1_conv_Clip",
+    "rampq_model_1_conv_ActivationDQ",
+    "rampq_model_1_conv_WeightQ",
+    "rampq_model_1_conv_WeightDQ",
+    "/model.1/conv/Conv",
+    "/model.1/act/Sigmoid",
+    "/model.1/act/Mul",
+    "rampq_model_2_cv1_conv_ActivationQ",
+    "rampq_model_2_cv1_conv_Clip",
+    "rampq_model_2_cv1_conv_ActivationDQ"
+  ],
+  "initializers": [
+    "model.0.conv.weight",
+    "model.0.conv.bias",
+    "model.1.conv.weight",
+    "model.1.conv.bias",
+    "rampq_model_0_conv_a_scale",
+    "rampq_model_0_conv_a_zero",
+    "rampq_model_0_conv_clip_min",
+    "rampq_model_0_conv_clip_max",
+    "rampq_model_0_conv_w_scale",
+    "rampq_model_0_conv_w_zero",
+    "rampq_model_1_conv_a_scale",
+    "rampq_model_1_conv_a_zero",
+    "rampq_model_1_conv_clip_min",
+    "rampq_model_1_conv_clip_max",
+    "rampq_model_1_conv_w_scale",
+    "rampq_model_1_conv_w_zero",
+    "rampq_model_2_cv1_conv_a_scale",
+    "rampq_model_2_cv1_conv_a_zero",
+    "rampq_model_2_cv1_conv_clip_min",
+    "rampq_model_2_cv1_conv_clip_max"
+  ],
+  "selected_node_serialized_sha256": {
+    "rampq_model_0_conv_ActivationQ": "f45a426d51eb1924e607d4e597cb805869c5f18e8a54f1cd772c0263c9b8c95a",
+    "rampq_model_0_conv_Clip": "9695d447ec054c6d73c8fa2e3e58e5d9e1df069d65acebb48204c9e580ff3955",
+    "rampq_model_0_conv_ActivationDQ": "57a9a4a099362e16b3568dcfbb3814d2687d5d0294ef895e5271094f604053c8",
+    "rampq_model_0_conv_WeightQ": "2c3d2a13d16a177b53792024060fc75167610e89f4838dca2d6ec6a957b422d3",
+    "rampq_model_0_conv_WeightDQ": "18b40e03fd2f77ddc045df40956566811bb66b4e4cbead7228a511606030cdfc",
+    "/model.0/conv/Conv": "e9ec7cc9c3ec44ebffbb589bd2d286fb5f99176e78a0cb191f924298623fe01f",
+    "/model.0/act/Sigmoid": "4093d348d540e387fb069fbe83e2e40696100ed23a86e129ee5f07a18183a3c8",
+    "/model.0/act/Mul": "aa5d7b6a19dee88e1f333a1560ed550db263f5f8c2f17e1ee45ff3e3d8c06ff2",
+    "rampq_model_1_conv_ActivationQ": "fb42dacd4b530df63eda2f2cc7415cbb74ce1f9978fee490959665ab56091d6b",
+    "rampq_model_1_conv_Clip": "c69cf4e14963c346a00b27a987332b95741b9405f3aff98e036f30407c786fe0",
+    "rampq_model_1_conv_ActivationDQ": "f4d25e1bc74af5cd438e0e7b1123893fe0f34fe474440bddeb9d327631c0c175",
+    "rampq_model_1_conv_WeightQ": "a42acd097c3110f3b65be5fa01ae14462e47eda5606fb1f9bd1c5f895bb1b1bd",
+    "rampq_model_1_conv_WeightDQ": "a132ed7fa257afea93f9f80de42ff9b8a525837212d729e47ebfb10c0efe36f9",
+    "/model.1/conv/Conv": "9f555695fb5b2f44f9875efba9632ed29da3975c48a6151b7761308dd6f18d6e",
+    "/model.1/act/Sigmoid": "d0fc04c6624529e1fc8f7bbe6af559b2ebea3e822c3e88031e63ba3eac18af5b",
+    "/model.1/act/Mul": "6a66e3a09d34afead1e73aa5d027ae7c6a903f7a3a2efb9a87d42a1e02c09169",
+    "rampq_model_2_cv1_conv_ActivationQ": "e8f52405b691eef532d6b34ed098a4d214f2ff7a54c427dadd1a590d140c90fe",
+    "rampq_model_2_cv1_conv_Clip": "e74ecd13e73734bf525fa53400b6b648aced1a6c1a211555166d2ad6016cd5c2",
+    "rampq_model_2_cv1_conv_ActivationDQ": "a5da041c6d9730851f9a20056527bf5f69417557f51a1c6bb3d6ce5f857c1f1d"
+  },
+  "selected_initializer_serialized_sha256": {
+    "model.0.conv.weight": "4c2e37106db019bb156bef296a3fb02ce90f116317ffa19e2b0a05d03bfebc20",
+    "model.0.conv.bias": "f1b80428a21715bbc51a3f22687d984cca51af652d23004e8e531feee598955d",
+    "model.1.conv.weight": "bd62acfda97c9fc24babf36c0986acf80a4eacf804e2afd1a5810c990aa577f6",
+    "model.1.conv.bias": "5b8c86edfa0f0e075e6f40c92432256815819677465c4bbe873a04cee7ee9ac8",
+    "rampq_model_0_conv_a_scale": "dd6763c2032de819c675c63c1ba0a5c828643973a404107f7788c54e2f1b2336",
+    "rampq_model_0_conv_a_zero": "8e63b0176e26616c0ca4262b1ccae1bcf298ce490b216241eb6b50b5366f975f",
+    "rampq_model_0_conv_clip_min": "17153fa59b77ca8f3571ac90d4c631b70ebc39890d4b6a4341dc6faf20a25b94",
+    "rampq_model_0_conv_clip_max": "1fee434402ff2824e48e5242b9236be0d4d00f54e3457293248c4d54d1d41f15",
+    "rampq_model_0_conv_w_scale": "0f7b0d58a3ea693ffde94114c0e873344b4c318294bc2411cb964c2259006f73",
+    "rampq_model_0_conv_w_zero": "e809575ec4b1e9b1cd3a71e9983e4a13ac5b90b05c8466aaa9eef09154e7a986",
+    "rampq_model_1_conv_a_scale": "36e5f89e271797af68c85153884576d714457fc276eeb50ec896a33d9e1836d1",
+    "rampq_model_1_conv_a_zero": "f7d4085e2810b725587ce1b925cf4804b66df5de2bc164e254f6716a8f7be3e8",
+    "rampq_model_1_conv_clip_min": "86ee9448356f47f521f59ad6eaa6a6c2969df50cffb5e5c8266eed02416b37da",
+    "rampq_model_1_conv_clip_max": "af80304ccb7559d6509adf8e13317a17c9bc338d8214f599fd6ae792a408992f",
+    "rampq_model_1_conv_w_scale": "62d5c567d82050a5571cba1b2f46c68cbfd93e3e64ef6fb70378cded5c6d6b77",
+    "rampq_model_1_conv_w_zero": "5af4988c75346aafc89152d59d668d263d2919f018796652a28974564df0e14d",
+    "rampq_model_2_cv1_conv_a_scale": "93c3aa6366c3909b8d6d95aee10c81f5a2b3da803b7ce059de7046faac8f0a69",
+    "rampq_model_2_cv1_conv_a_zero": "3b4c9e47b56a638ae64672d28697bc27381edfa7fe13d0dc789977d66b87283d",
+    "rampq_model_2_cv1_conv_clip_min": "a48cc3634baee93b5adb5f47487f0a468961f60155c0cdab70a6d098fa1aed2d",
+    "rampq_model_2_cv1_conv_clip_max": "463f29a489565e6ddbf7281a0087043f63a98e0ba9cda0d96c0625951308d42f"
+  },
+  "third_boundary_planned_log": {
+    "kind": "FUSED_CONVOLUTION",
+    "line": 11,
+    "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.1.conv.weight + rampq_model_1_conv_WeightQ + /model.1/conv/Conv + PWN(/model.1/act/Sigmoid, /model.1/act/Mul) + PWN(rampq_model_2_cv1_conv_Clip)"
+  },
+  "limits": "Failure optimizer log is planned fusion, not actual engine or proven fault node. New twoConv context does not inherit prior oneConv success. No monotonicity assumption; no native or CPU inference by reviewer."
+}

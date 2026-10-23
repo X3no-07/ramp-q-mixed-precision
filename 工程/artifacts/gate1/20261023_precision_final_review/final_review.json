@@ -1,0 +1,241 @@
+{
+  "schema": "rampq.gate1.precision_final_delivery_review/v1",
+  "status": "PASS_FINAL_METADATA_REPORT_AND_SCOPE_CONSISTENCY_REVIEW_ONLY",
+  "at_utc": "2026-10-22T16:57:35.061696+00:00",
+  "issues": [],
+  "report_sha256": "3a085cfe27e787bf3a385ac7189ecc3b0d7534e25160c4d514c079f4cdde43c8",
+  "local_report_links_checked": 10,
+  "decision_evidence_files_hash_checked": 15,
+  "head_full_images": 109,
+  "decode_full_images": 109,
+  "decode_array_audit": "PASS_SAVED_ARRAY_CONSISTENCY_ONLY",
+  "head_array_audit": "PASS_SAVED_HEAD_PROBE_ARRAYS_ONLY",
+  "head_distinct_2x2_contrasts_checked": 4,
+  "head_aliases_checked_not_independent": {
+    "reference_fp32_vs_fp32_features_fp16_head": "same_fp32_features_head_fp32_vs_fp16",
+    "reference_fp32_vs_fp16_features_fp32_head": "same_fp32_head_features_fp32_vs_fp16"
+  },
+  "conclusions_verified": [
+    "Decode FP32 alone leaves 8992 violations and all 109 original diagnostic images failing.",
+    "Same-source decode contrasts and same-source feature head-dtype contrasts are within the unchanged tolerance, with nonzero arithmetic differences.",
+    "Changing captured feature source under either fixed receiving-head precision reproduces 8980/8989 box violations, supporting broad upstream feature-source sensitivity only.",
+    "No uniquely identified convolution, BatchNorm, neck, backbone, input cast or additive causal error fraction is claimed.",
+    "Native/historical exactness is recorded and saved-array audits confirm saved-data consistency, without independently rerunning head convolutions or deserializing head state.",
+    "Aliases do not count as additional independent observations.",
+    "Official evaluation remains synthetic readiness only: 20 fixtures, 37 Python tests, native runtime unavailable in checked locations, no full Python AP or oracle equivalence.",
+    "Both original numerical failures, scientific baseline nonacceptance, Selection/Holdout isolation and reference FP16 EMA limitation remain explicit."
+  ],
+  "review_scope": {
+    "model_execution": false,
+    "model_loading": false,
+    "gpu_execution": false,
+    "real_image_or_annotation_loading": false,
+    "raw_array_loading": false,
+    "large_raw_rehash_repeated": false,
+    "new_tests_executed": false,
+    "old_preliminary_modified": false,
+    "full_historical_gate05_manifest_rechecked": false
+  },
+  "local_links": [
+    "artifacts\\gate1\\20261023_precision_diagnosis_delivery\\decision.json",
+    "artifacts\\gate1\\current_execution_state_v6.json",
+    "44_Gate1_首轮训练与浮点资格检查结果.md",
+    "artifacts\\gate1\\20261023_saved_decode_trace\\trace.json",
+    "artifacts\\gate1\\20261023_decode_precision_full_v1\\summary.json",
+    "artifacts\\gate1\\20261023_decode_precision_full_audit_v1\\recomputed_summary.json",
+    "artifacts\\gate1\\20261023_head_precision_full_v1\\summary.json",
+    "artifacts\\gate1\\20261023_head_precision_full_audit_v1\\recomputed_summary.json",
+    "artifacts\\gate1\\20261023_official_evaluator_readiness\\README.md",
+    "artifacts\\gate1\\20261023_official_evaluator_readiness\\execution_01\\launcher_receipt.json"
+  ],
+  "sources": {
+    "45_Gate1_精度误差分层诊断与评测准备.md": {
+      "bytes": 7667,
+      "sha256": "3a085cfe27e787bf3a385ac7189ecc3b0d7534e25160c4d514c079f4cdde43c8"
+    },
+    "artifacts/gate1/current_execution_state_v6.json": {
+      "bytes": 3335,
+      "sha256": "526668d40330be75caa5154702da1f5c9167623e053db3374934660538c87d89"
+    },
+    "artifacts/gate1/20261023_precision_diagnosis_delivery/decision.json": {
+      "bytes": 12853,
+      "sha256": "0c280f45c1fbd83f8292a66a17760fda651d0110d1c0dd7d05d915196336c8f9"
+    },
+    "artifacts/gate1/20261023_precision_final_review/preliminary_review.json": {
+      "bytes": 8931,
+      "sha256": "0e3e7fabcd19a71410f2b9ef8fd3896225ad30ce491a7f38fb2059d58f4136b8"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/readiness.json": {
+      "bytes": 7960,
+      "sha256": "67b4656d5e30a5c99f8470cbd44aaf26fbfee6f794d5ebc7f3a3aca54e3ff21b"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/manifest.json": {
+      "bytes": 2096,
+      "sha256": "10e6d14bfd0b0c557bf6e995790a7d4290d869e45a7c94bbfd3bd09e89a7952a"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/runtime_probe.json": {
+      "bytes": 714,
+      "sha256": "b4f99b0186a8481569735330c6f22e0bd6ad27de03193a38b5dab72cdb2b4832"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/fixture_contract.json": {
+      "bytes": 1791,
+      "sha256": "6263f29ff6c1f165ac8c6d087693a3fa073651ebc71a842a54b8e3b616244f96"
+    },
+    "artifacts/gate1/20261023_official_evaluator_readiness/execution_01/launcher_receipt.json": {
+      "bytes": 3548,
+      "sha256": "f21d1d661a9832b97669ca8568f8c45feb852da820d230fbda353750cb1e17e9"
+    },
+    "artifacts/gate1/20261023_saved_decode_trace/trace.json": {
+      "bytes": 34351,
+      "sha256": "c7878293cde7a2779796ae60669096477453c3a656a8f77544e96f7e2c8ec5b7"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_v1/summary.json": {
+      "bytes": 3255,
+      "sha256": "0cf616d9b49c128446fe5095883f0e1dbbffd69ea52cc26fcb9bc319eb75c26b"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_v1/receipt.json": {
+      "bytes": 1401,
+      "sha256": "fe19aca451a1b5f772c27432baf27a4bb8a79bb9dd1533046ed7e68c27f31390"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_v1/protocol.json": {
+      "bytes": 5507,
+      "sha256": "b9b5c7435ff829317c1af6d3660f0580e9402522979faaeaa5d3646e7781b93a"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_v1/manifest.json": {
+      "bytes": 2363,
+      "sha256": "4ad3fad1dcd94661de920a5058f170d34f8447c4e33adabacf0728e8a28402a9"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_v1/model_provenance.json": {
+      "bytes": 2188,
+      "sha256": "10b1bf6b4b7385f1f1378e62e3086baef7d129973a4307e61536a85dba2d9b6d"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_v1/summary.json": {
+      "bytes": 3272,
+      "sha256": "7406aba72743f5251148224cba78b29b1a7a7fedb126f80d5aaf239138f56b03"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_v1/receipt.json": {
+      "bytes": 1419,
+      "sha256": "5b217d19c0c88dc9f7095431f36d5734d97e7af414b9abdc14a88f7283ef6295"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_v1/protocol.json": {
+      "bytes": 9643,
+      "sha256": "35a7278fb0593eb0adf266d206de56981213173673c5261b2b3b5c0623db76bf"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_v1/manifest.json": {
+      "bytes": 36601,
+      "sha256": "07d79bf768089e49bf683a74c3a77c61179db6bb04ac6b59c01ba3491581ebe6"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_v1/model_provenance.json": {
+      "bytes": 2188,
+      "sha256": "10b1bf6b4b7385f1f1378e62e3086baef7d129973a4307e61536a85dba2d9b6d"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_v1/summary.json": {
+      "bytes": 5063,
+      "sha256": "70bbd811b89d3e46dbbc3931e2666eb581dc9e958fb0fa6936da4f49f25150d9"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_v1/receipt.json": {
+      "bytes": 1804,
+      "sha256": "b791331658b360bf988a3adb0cfcd7b16585ed8f8d5a63b1085692d29c2e51a6"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_v1/protocol.json": {
+      "bytes": 7218,
+      "sha256": "4f0cf342b7002c462e3fa70f8dc277fb028c887ae25456caf7b31d18552c2adb"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_v1/manifest.json": {
+      "bytes": 2508,
+      "sha256": "f96af86943d99a775ae10663fea0fb368cdbc3919e70a2e4133cfe69e155fb3e"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_v1/model_provenance.json": {
+      "bytes": 1754,
+      "sha256": "34d7d3f0ce11fd1bff9b419d7d4242c3b44fc153b19d59f0ffca8e3612c65d9d"
+    },
+    "artifacts/gate1/20261023_head_precision_full_v1/summary.json": {
+      "bytes": 5092,
+      "sha256": "4d7ef4f9c5959095138947906d4b2c90bc73abc5a69f0ce7afbb579ebf5e32de"
+    },
+    "artifacts/gate1/20261023_head_precision_full_v1/receipt.json": {
+      "bytes": 1809,
+      "sha256": "08a057f87acd6146efa115ebed3cc687029d9e295c66b4bc15c14fa5f57e84bb"
+    },
+    "artifacts/gate1/20261023_head_precision_full_v1/protocol.json": {
+      "bytes": 11292,
+      "sha256": "1645f59028b1079cad15fd9f5d1e7a6ebd7d6f667a54d129fb911b44621bd17a"
+    },
+    "artifacts/gate1/20261023_head_precision_full_v1/manifest.json": {
+      "bytes": 36853,
+      "sha256": "5394dbde5881bf2936ac2cc7de049ed717f6d4d8554e60bac761ceb024d15408"
+    },
+    "artifacts/gate1/20261023_head_precision_full_v1/model_provenance.json": {
+      "bytes": 1754,
+      "sha256": "34d7d3f0ce11fd1bff9b419d7d4242c3b44fc153b19d59f0ffca8e3612c65d9d"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_audit_v1/recomputed_summary.json": {
+      "bytes": 3836,
+      "sha256": "31892c20f8c915e9ac8768a5ce9d3f09cde0f233ad3d5b9d0a80a2336230350f"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_audit_v1/manifest.json": {
+      "bytes": 470,
+      "sha256": "4ce1b7376e2fa6e775005c743e625420aab90f958a1e23648bb54a10030dcbdb"
+    },
+    "artifacts/gate1/20261023_decode_precision_full_audit_v1/audit_source_identity.json": {
+      "bytes": 255,
+      "sha256": "1aca47e7d0df643cb151c01e99fb0c5888233dbb40298519204c1f28178a60e8"
+    },
+    "artifacts/gate1/20261023_head_precision_full_audit_v1/recomputed_summary.json": {
+      "bytes": 5923,
+      "sha256": "b4deb0c20598d1b49a763dbdbf2bfd53c20be5ec9f109896240dd188fddb89fc"
+    },
+    "artifacts/gate1/20261023_head_precision_full_audit_v1/manifest.json": {
+      "bytes": 471,
+      "sha256": "029f6a30b8f54b25fb47347ed205798954a65ccc0094140ccbfad609d9ed70c5"
+    },
+    "artifacts/gate1/20261023_head_precision_full_audit_v1/audit_source_identity.json": {
+      "bytes": 581,
+      "sha256": "91cb7df7d8a9f22b8b9e8fabb0da2d11e80ce727e6dccf53f2a51aa1b16aa082"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_audit_v2/recomputed_summary.json": {
+      "bytes": 3799,
+      "sha256": "7eddd4ef17fefb6bd94a7d07e765d220faa0c6c24f589e92a02ca79a34bdf990"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_audit_v2/manifest.json": {
+      "bytes": 469,
+      "sha256": "a36bd95134aaa943cfba3b31d21bf98717d65cbcdde3e1fef7a3521447b50569"
+    },
+    "artifacts/gate1/20261023_decode_precision_pilot_audit_v2/audit_source_identity.json": {
+      "bytes": 255,
+      "sha256": "1aca47e7d0df643cb151c01e99fb0c5888233dbb40298519204c1f28178a60e8"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_audit_v1/recomputed_summary.json": {
+      "bytes": 5861,
+      "sha256": "bb8409b92e62b4c864bbb6aaf58eb657733285bc760db45af5e8bf7d678e187f"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_audit_v1/manifest.json": {
+      "bytes": 469,
+      "sha256": "09a122cb2aaf2f435ff0715061484c5e6b8b37da8b9ba7979f84e81247c759e8"
+    },
+    "artifacts/gate1/20261023_head_precision_pilot_audit_v1/audit_source_identity.json": {
+      "bytes": 581,
+      "sha256": "91cb7df7d8a9f22b8b9e8fabb0da2d11e80ce727e6dccf53f2a51aa1b16aa082"
+    },
+    "artifacts/gate1/20261023_decode_probe_preparation/runner_tests/synthetic_test_receipt.json": {
+      "bytes": 1627,
+      "sha256": "f5af15cdbe699e87118f080a42350f5cbba229b8dda7be102663a37f2896e99a"
+    },
+    "artifacts/gate1/20261023_decode_probe_preparation/runner_tests/head_synthetic_test_receipt.json": {
+      "bytes": 1629,
+      "sha256": "f53336ce675a42ffd0d436e7897773fa70bb15779707b660d38efd41c86d8ccc"
+    },
+    "artifacts/gate1/20261023_decode_probe_preparation/independent_review/review.json": {
+      "bytes": 3395,
+      "sha256": "e2d67fb5c2f5a99b6d347595c2d4735a2a577aca4f6a1c5122d565a77c297dbc"
+    },
+    "artifacts/gate1/20261023_head_probe_preparation/independent_review/review.json": {
+      "bytes": 3696,
+      "sha256": "6843a36d6c419085dfab6ce0289f313808bf7a32c8a594d59c6d9e29ae29db0a"
+    },
+    "artifacts/gate1/20261023_decode_probe_preparation/independent_review_timing_addendum.json": {
+      "bytes": 1219,
+      "sha256": "5b335a98bd38185eb2a30020fcbcc2378205e7e6e79286c18312e3db781c20c8"
+    }
+  }
+}

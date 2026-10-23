@@ -1,0 +1,38 @@
+{
+  "case": "code_clip_none",
+  "phase": "COMPLETE",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "build_seconds_not_benchmark": 52.22816268799943,
+  "status": "DFL_SOFTMAX_CUT_ENGINE_SAVED",
+  "engine_sha256": "43d429867fdbd013b91dcac08e598610f1dad3c98b8b565c2dd7ba0d3ca2d514",
+  "engine_bytes": 29765,
+  "bindings": [
+    {
+      "name": "/model.23/dfl/Softmax_output_0",
+      "input": true,
+      "shape": [
+        1,
+        16,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.23/dfl/Reshape_1_output_0",
+      "input": false,
+      "shape": [
+        1,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "model_sha256_after": "1f8662a55675152d57d248b16c2eebec08c4d54b5b6ebc4841f0c177d6ac2298",
+  "builder_request_sha256": "80e8daa05b93023e3b05e4ec9b4dadcfdace39c12c1f6b6123dfe6eccfdb2be8",
+  "diagnostic_only": true,
+  "numerical_pass_claim": false
+}

@@ -1,0 +1,636 @@
+{
+  "schema": "rampq.gate05.onnx_module_map/v1",
+  "onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+  "inventory_sha256": "554ce338dd17a9a24507491db02fd96d66a068695e4c89e3bf78cf3078d4b7fb",
+  "mapping_method": "Exact Conv weight initializer identity and shape",
+  "mapped_conv_count": 88,
+  "groups": {
+    "G1": 6,
+    "G2": 5,
+    "G3": 10,
+    "G4": 19,
+    "G5": 8,
+    "G6": 15,
+    "G7": 8,
+    "G8": 17
+  },
+  "mapping": [
+    {
+      "onnx_node": "/model.0/conv/Conv",
+      "pytorch_module": "model.0.conv",
+      "group": "G1",
+      "macs": 44236800,
+      "weight_input": "model.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.1/conv/Conv",
+      "pytorch_module": "model.1.conv",
+      "group": "G1",
+      "macs": 117964800,
+      "weight_input": "model.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.2/cv1/conv/Conv",
+      "pytorch_module": "model.2.cv1.conv",
+      "group": "G1",
+      "macs": 26214400,
+      "weight_input": "model.2.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.2/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.2.m.0.cv1.conv",
+      "group": "G1",
+      "macs": 29491200,
+      "weight_input": "model.2.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.2/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.2.m.0.cv2.conv",
+      "group": "G1",
+      "macs": 29491200,
+      "weight_input": "model.2.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.2/cv2/conv/Conv",
+      "pytorch_module": "model.2.cv2.conv",
+      "group": "G1",
+      "macs": 78643200,
+      "weight_input": "model.2.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.3/conv/Conv",
+      "pytorch_module": "model.3.conv",
+      "group": "G2",
+      "macs": 235929600,
+      "weight_input": "model.3.conv.weight"
+    },
+    {
+      "onnx_node": "/model.4/cv1/conv/Conv",
+      "pytorch_module": "model.4.cv1.conv",
+      "group": "G2",
+      "macs": 26214400,
+      "weight_input": "model.4.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.4/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.4.m.0.cv1.conv",
+      "group": "G2",
+      "macs": 29491200,
+      "weight_input": "model.4.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.4/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.4.m.0.cv2.conv",
+      "group": "G2",
+      "macs": 29491200,
+      "weight_input": "model.4.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.4/cv2/conv/Conv",
+      "pytorch_module": "model.4.cv2.conv",
+      "group": "G2",
+      "macs": 78643200,
+      "weight_input": "model.4.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.5/conv/Conv",
+      "pytorch_module": "model.5.conv",
+      "group": "G3",
+      "macs": 235929600,
+      "weight_input": "model.5.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/cv1/conv/Conv",
+      "pytorch_module": "model.6.cv1.conv",
+      "group": "G3",
+      "macs": 26214400,
+      "weight_input": "model.6.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.6.m.0.cv1.conv",
+      "group": "G3",
+      "macs": 3276800,
+      "weight_input": "model.6.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/m/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.6.m.0.m.0.cv1.conv",
+      "group": "G3",
+      "macs": 14745600,
+      "weight_input": "model.6.m.0.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/m/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.6.m.0.m.0.cv2.conv",
+      "group": "G3",
+      "macs": 14745600,
+      "weight_input": "model.6.m.0.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/m/m.1/cv1/conv/Conv",
+      "pytorch_module": "model.6.m.0.m.1.cv1.conv",
+      "group": "G3",
+      "macs": 14745600,
+      "weight_input": "model.6.m.0.m.1.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/m/m.1/cv2/conv/Conv",
+      "pytorch_module": "model.6.m.0.m.1.cv2.conv",
+      "group": "G3",
+      "macs": 14745600,
+      "weight_input": "model.6.m.0.m.1.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.6.m.0.cv2.conv",
+      "group": "G3",
+      "macs": 3276800,
+      "weight_input": "model.6.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/m.0/cv3/conv/Conv",
+      "pytorch_module": "model.6.m.0.cv3.conv",
+      "group": "G3",
+      "macs": 6553600,
+      "weight_input": "model.6.m.0.cv3.conv.weight"
+    },
+    {
+      "onnx_node": "/model.6/cv2/conv/Conv",
+      "pytorch_module": "model.6.cv2.conv",
+      "group": "G3",
+      "macs": 39321600,
+      "weight_input": "model.6.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.7/conv/Conv",
+      "pytorch_module": "model.7.conv",
+      "group": "G4",
+      "macs": 117964800,
+      "weight_input": "model.7.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/cv1/conv/Conv",
+      "pytorch_module": "model.8.cv1.conv",
+      "group": "G4",
+      "macs": 26214400,
+      "weight_input": "model.8.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.8.m.0.cv1.conv",
+      "group": "G4",
+      "macs": 3276800,
+      "weight_input": "model.8.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/m/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.8.m.0.m.0.cv1.conv",
+      "group": "G4",
+      "macs": 14745600,
+      "weight_input": "model.8.m.0.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/m/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.8.m.0.m.0.cv2.conv",
+      "group": "G4",
+      "macs": 14745600,
+      "weight_input": "model.8.m.0.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/m/m.1/cv1/conv/Conv",
+      "pytorch_module": "model.8.m.0.m.1.cv1.conv",
+      "group": "G4",
+      "macs": 14745600,
+      "weight_input": "model.8.m.0.m.1.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/m/m.1/cv2/conv/Conv",
+      "pytorch_module": "model.8.m.0.m.1.cv2.conv",
+      "group": "G4",
+      "macs": 14745600,
+      "weight_input": "model.8.m.0.m.1.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.8.m.0.cv2.conv",
+      "group": "G4",
+      "macs": 3276800,
+      "weight_input": "model.8.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/m.0/cv3/conv/Conv",
+      "pytorch_module": "model.8.m.0.cv3.conv",
+      "group": "G4",
+      "macs": 6553600,
+      "weight_input": "model.8.m.0.cv3.conv.weight"
+    },
+    {
+      "onnx_node": "/model.8/cv2/conv/Conv",
+      "pytorch_module": "model.8.cv2.conv",
+      "group": "G4",
+      "macs": 39321600,
+      "weight_input": "model.8.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.9/cv1/conv/Conv",
+      "pytorch_module": "model.9.cv1.conv",
+      "group": "G4",
+      "macs": 13107200,
+      "weight_input": "model.9.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.9/cv2/conv/Conv",
+      "pytorch_module": "model.9.cv2.conv",
+      "group": "G4",
+      "macs": 52428800,
+      "weight_input": "model.9.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/cv1/conv/Conv",
+      "pytorch_module": "model.10.cv1.conv",
+      "group": "G4",
+      "macs": 26214400,
+      "weight_input": "model.10.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/m/m.0/attn/qkv/conv/Conv",
+      "pytorch_module": "model.10.m.0.attn.qkv.conv",
+      "group": "G4",
+      "macs": 13107200,
+      "weight_input": "model.10.m.0.attn.qkv.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/m/m.0/attn/pe/conv/Conv",
+      "pytorch_module": "model.10.m.0.attn.pe.conv",
+      "group": "G4",
+      "macs": 460800,
+      "weight_input": "model.10.m.0.attn.pe.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/m/m.0/attn/proj/conv/Conv",
+      "pytorch_module": "model.10.m.0.attn.proj.conv",
+      "group": "G4",
+      "macs": 6553600,
+      "weight_input": "model.10.m.0.attn.proj.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/m/m.0/ffn/ffn.0/conv/Conv",
+      "pytorch_module": "model.10.m.0.ffn.0.conv",
+      "group": "G4",
+      "macs": 13107200,
+      "weight_input": "model.10.m.0.ffn.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/m/m.0/ffn/ffn.1/conv/Conv",
+      "pytorch_module": "model.10.m.0.ffn.1.conv",
+      "group": "G4",
+      "macs": 13107200,
+      "weight_input": "model.10.m.0.ffn.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.10/cv2/conv/Conv",
+      "pytorch_module": "model.10.cv2.conv",
+      "group": "G4",
+      "macs": 26214400,
+      "weight_input": "model.10.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.13/cv1/conv/Conv",
+      "pytorch_module": "model.13.cv1.conv",
+      "group": "G5",
+      "macs": 78643200,
+      "weight_input": "model.13.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.13/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.13.m.0.cv1.conv",
+      "group": "G5",
+      "macs": 29491200,
+      "weight_input": "model.13.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.13/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.13.m.0.cv2.conv",
+      "group": "G5",
+      "macs": 29491200,
+      "weight_input": "model.13.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.13/cv2/conv/Conv",
+      "pytorch_module": "model.13.cv2.conv",
+      "group": "G5",
+      "macs": 39321600,
+      "weight_input": "model.13.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.16/cv1/conv/Conv",
+      "pytorch_module": "model.16.cv1.conv",
+      "group": "G5",
+      "macs": 104857600,
+      "weight_input": "model.16.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.16/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.16.m.0.cv1.conv",
+      "group": "G5",
+      "macs": 29491200,
+      "weight_input": "model.16.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.16/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.16.m.0.cv2.conv",
+      "group": "G5",
+      "macs": 29491200,
+      "weight_input": "model.16.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.16/cv2/conv/Conv",
+      "pytorch_module": "model.16.cv2.conv",
+      "group": "G5",
+      "macs": 39321600,
+      "weight_input": "model.16.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.17/conv/Conv",
+      "pytorch_module": "model.17.conv",
+      "group": "G6",
+      "macs": 58982400,
+      "weight_input": "model.17.conv.weight"
+    },
+    {
+      "onnx_node": "/model.19/cv1/conv/Conv",
+      "pytorch_module": "model.19.cv1.conv",
+      "group": "G6",
+      "macs": 39321600,
+      "weight_input": "model.19.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.19/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.19.m.0.cv1.conv",
+      "group": "G6",
+      "macs": 29491200,
+      "weight_input": "model.19.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.19/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.19.m.0.cv2.conv",
+      "group": "G6",
+      "macs": 29491200,
+      "weight_input": "model.19.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.19/cv2/conv/Conv",
+      "pytorch_module": "model.19.cv2.conv",
+      "group": "G6",
+      "macs": 39321600,
+      "weight_input": "model.19.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.20/conv/Conv",
+      "pytorch_module": "model.20.conv",
+      "group": "G6",
+      "macs": 58982400,
+      "weight_input": "model.20.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/cv1/conv/Conv",
+      "pytorch_module": "model.22.cv1.conv",
+      "group": "G6",
+      "macs": 39321600,
+      "weight_input": "model.22.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.22.m.0.cv1.conv",
+      "group": "G6",
+      "macs": 3276800,
+      "weight_input": "model.22.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/m/m.0/cv1/conv/Conv",
+      "pytorch_module": "model.22.m.0.m.0.cv1.conv",
+      "group": "G6",
+      "macs": 14745600,
+      "weight_input": "model.22.m.0.m.0.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/m/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.22.m.0.m.0.cv2.conv",
+      "group": "G6",
+      "macs": 14745600,
+      "weight_input": "model.22.m.0.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/m/m.1/cv1/conv/Conv",
+      "pytorch_module": "model.22.m.0.m.1.cv1.conv",
+      "group": "G6",
+      "macs": 14745600,
+      "weight_input": "model.22.m.0.m.1.cv1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/m/m.1/cv2/conv/Conv",
+      "pytorch_module": "model.22.m.0.m.1.cv2.conv",
+      "group": "G6",
+      "macs": 14745600,
+      "weight_input": "model.22.m.0.m.1.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/cv2/conv/Conv",
+      "pytorch_module": "model.22.m.0.cv2.conv",
+      "group": "G6",
+      "macs": 3276800,
+      "weight_input": "model.22.m.0.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/m.0/cv3/conv/Conv",
+      "pytorch_module": "model.22.m.0.cv3.conv",
+      "group": "G6",
+      "macs": 6553600,
+      "weight_input": "model.22.m.0.cv3.conv.weight"
+    },
+    {
+      "onnx_node": "/model.22/cv2/conv/Conv",
+      "pytorch_module": "model.22.cv2.conv",
+      "group": "G6",
+      "macs": 39321600,
+      "weight_input": "model.22.cv2.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.0/cv2.0.0/conv/Conv",
+      "pytorch_module": "model.23.cv2.0.0.conv",
+      "group": "G7",
+      "macs": 235929600,
+      "weight_input": "model.23.cv2.0.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.0/cv2.0.1/conv/Conv",
+      "pytorch_module": "model.23.cv2.0.1.conv",
+      "group": "G7",
+      "macs": 235929600,
+      "weight_input": "model.23.cv2.0.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.0/cv2.0.2/Conv",
+      "pytorch_module": "model.23.cv2.0.2",
+      "group": "G7",
+      "macs": 26214400,
+      "weight_input": "model.23.cv2.0.2.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.1/cv2.1.0/conv/Conv",
+      "pytorch_module": "model.23.cv2.1.0.conv",
+      "group": "G8",
+      "macs": 117964800,
+      "weight_input": "model.23.cv2.1.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.1/cv2.1.1/conv/Conv",
+      "pytorch_module": "model.23.cv2.1.1.conv",
+      "group": "G8",
+      "macs": 58982400,
+      "weight_input": "model.23.cv2.1.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.1/cv2.1.2/Conv",
+      "pytorch_module": "model.23.cv2.1.2",
+      "group": "G8",
+      "macs": 6553600,
+      "weight_input": "model.23.cv2.1.2.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.2/cv2.2.0/conv/Conv",
+      "pytorch_module": "model.23.cv2.2.0.conv",
+      "group": "G8",
+      "macs": 58982400,
+      "weight_input": "model.23.cv2.2.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.2/cv2.2.1/conv/Conv",
+      "pytorch_module": "model.23.cv2.2.1.conv",
+      "group": "G8",
+      "macs": 14745600,
+      "weight_input": "model.23.cv2.2.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv2.2/cv2.2.2/Conv",
+      "pytorch_module": "model.23.cv2.2.2",
+      "group": "G8",
+      "macs": 1638400,
+      "weight_input": "model.23.cv2.2.2.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+      "pytorch_module": "model.23.cv3.0.0.0.conv",
+      "group": "G7",
+      "macs": 3686400,
+      "weight_input": "model.23.cv3.0.0.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+      "pytorch_module": "model.23.cv3.0.0.1.conv",
+      "group": "G7",
+      "macs": 26214400,
+      "weight_input": "model.23.cv3.0.0.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+      "pytorch_module": "model.23.cv3.0.1.0.conv",
+      "group": "G7",
+      "macs": 3686400,
+      "weight_input": "model.23.cv3.0.1.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+      "pytorch_module": "model.23.cv3.0.1.1.conv",
+      "group": "G7",
+      "macs": 26214400,
+      "weight_input": "model.23.cv3.0.1.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.0/cv3.0.2/Conv",
+      "pytorch_module": "model.23.cv3.0.2",
+      "group": "G7",
+      "macs": 4096000,
+      "weight_input": "model.23.cv3.0.2.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+      "pytorch_module": "model.23.cv3.1.0.0.conv",
+      "group": "G8",
+      "macs": 1843200,
+      "weight_input": "model.23.cv3.1.0.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+      "pytorch_module": "model.23.cv3.1.0.1.conv",
+      "group": "G8",
+      "macs": 13107200,
+      "weight_input": "model.23.cv3.1.0.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+      "pytorch_module": "model.23.cv3.1.1.0.conv",
+      "group": "G8",
+      "macs": 921600,
+      "weight_input": "model.23.cv3.1.1.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+      "pytorch_module": "model.23.cv3.1.1.1.conv",
+      "group": "G8",
+      "macs": 6553600,
+      "weight_input": "model.23.cv3.1.1.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.1/cv3.1.2/Conv",
+      "pytorch_module": "model.23.cv3.1.2",
+      "group": "G8",
+      "macs": 1024000,
+      "weight_input": "model.23.cv3.1.2.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+      "pytorch_module": "model.23.cv3.2.0.0.conv",
+      "group": "G8",
+      "macs": 921600,
+      "weight_input": "model.23.cv3.2.0.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+      "pytorch_module": "model.23.cv3.2.0.1.conv",
+      "group": "G8",
+      "macs": 6553600,
+      "weight_input": "model.23.cv3.2.0.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+      "pytorch_module": "model.23.cv3.2.1.0.conv",
+      "group": "G8",
+      "macs": 230400,
+      "weight_input": "model.23.cv3.2.1.0.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+      "pytorch_module": "model.23.cv3.2.1.1.conv",
+      "group": "G8",
+      "macs": 1638400,
+      "weight_input": "model.23.cv3.2.1.1.conv.weight"
+    },
+    {
+      "onnx_node": "/model.23/cv3.2/cv3.2.2/Conv",
+      "pytorch_module": "model.23.cv3.2.2",
+      "group": "G8",
+      "macs": 256000,
+      "weight_input": "model.23.cv3.2.2.weight"
+    },
+    {
+      "onnx_node": "/model.23/dfl/conv/Conv",
+      "pytorch_module": "model.23.dfl.conv",
+      "group": "G8",
+      "macs": 537600,
+      "weight_input": "model.23.dfl.conv.weight"
+    }
+  ],
+  "boundary": "Pre-fusion ONNX mapping only; TensorRT layer precision must be inspected separately."
+}

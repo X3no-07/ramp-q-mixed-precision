@@ -1,0 +1,228 @@
+{
+  "models": [
+    {
+      "branch": "fp32",
+      "checkpoint_key": "model",
+      "saved_state_dtypes": {
+        "torch.float16": 418,
+        "torch.int64": 81
+      },
+      "saved_floating_parameters_dtype": "torch.float16",
+      "cpu_load": true,
+      "fusion_called": false,
+      "effective_dtype": "torch.float32",
+      "unfused_structure": {
+        "Conv2d": 88,
+        "BatchNorm2d": 81,
+        "UltralyticsConv": 75,
+        "UltralyticsConv_with_BatchNorm": 75
+      },
+      "reference_is_original_fp32_training_state": false
+    },
+    {
+      "branch": "fp16",
+      "checkpoint_key": "model",
+      "saved_state_dtypes": {
+        "torch.float16": 418,
+        "torch.int64": 81
+      },
+      "saved_floating_parameters_dtype": "torch.float16",
+      "cpu_load": true,
+      "fusion_called": false,
+      "effective_dtype": "torch.float16",
+      "unfused_structure": {
+        "Conv2d": 88,
+        "BatchNorm2d": 81,
+        "UltralyticsConv": 75,
+        "UltralyticsConv_with_BatchNorm": 75
+      },
+      "reference_is_original_fp32_training_state": false
+    }
+  ],
+  "state_equal_after_float32_lift": {
+    "equal_after_float32_lift": true,
+    "state_tensors": 499,
+    "floating_tensors": 418,
+    "nonfloating_tensors": 81
+  },
+  "topology": {
+    "modules": [
+      {
+        "i": 0,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 1,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 2,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 3,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 4,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 5,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 6,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 7,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 8,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 9,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.SPPF"
+      },
+      {
+        "i": 10,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C2PSA"
+      },
+      {
+        "i": 11,
+        "f": -1,
+        "type": "torch.nn.modules.upsampling.Upsample"
+      },
+      {
+        "i": 12,
+        "f": [
+          -1,
+          6
+        ],
+        "type": "ultralytics.nn.modules.conv.Concat"
+      },
+      {
+        "i": 13,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 14,
+        "f": -1,
+        "type": "torch.nn.modules.upsampling.Upsample"
+      },
+      {
+        "i": 15,
+        "f": [
+          -1,
+          4
+        ],
+        "type": "ultralytics.nn.modules.conv.Concat"
+      },
+      {
+        "i": 16,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 17,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 18,
+        "f": [
+          -1,
+          13
+        ],
+        "type": "ultralytics.nn.modules.conv.Concat"
+      },
+      {
+        "i": 19,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 20,
+        "f": -1,
+        "type": "ultralytics.nn.modules.conv.Conv"
+      },
+      {
+        "i": 21,
+        "f": [
+          -1,
+          10
+        ],
+        "type": "ultralytics.nn.modules.conv.Concat"
+      },
+      {
+        "i": 22,
+        "f": -1,
+        "type": "ultralytics.nn.modules.block.C3k2"
+      },
+      {
+        "i": 23,
+        "f": [
+          16,
+          19,
+          22
+        ],
+        "type": "ultralytics.nn.modules.head.Detect"
+      }
+    ],
+    "save": [
+      4,
+      6,
+      10,
+      13,
+      16,
+      19,
+      22
+    ]
+  },
+  "cuts": [
+    -1,
+    4,
+    6,
+    10,
+    22
+  ],
+  "frontiers": {
+    "-1": [
+      -1
+    ],
+    "4": [
+      4
+    ],
+    "6": [
+      4,
+      6
+    ],
+    "10": [
+      4,
+      6,
+      10
+    ],
+    "22": [
+      16,
+      19,
+      22
+    ]
+  },
+  "reg_max": 16,
+  "fusion_called": false
+}

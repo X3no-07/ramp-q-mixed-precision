@@ -1,0 +1,1070 @@
+[
+  {
+    "image_id": "train/0000046_00000_d_0000087",
+    "all_native_historical_reference_byte_checks": true,
+    "features": {
+      "fp32": {
+        "sha256": [
+          "f6065e7a4e2d052ac0a103b865b945bb2c97c0db49e57831bd8e14a4924c6d53",
+          "66b00ae775148aef90e7ed179f9b56997a3f5e1cba17f5bdf1a3a6e87d4f3151",
+          "d644276057831486f7222ad61921f6c84f2185223d9a877f7b8d26986f43fe7c"
+        ],
+        "shapes": [
+          [
+            1,
+            64,
+            80,
+            80
+          ],
+          [
+            1,
+            128,
+            40,
+            40
+          ],
+          [
+            1,
+            256,
+            20,
+            20
+          ]
+        ]
+      },
+      "fp16": {
+        "sha256": [
+          "d114b83216a2886c2ddb3e12b94987429d50d69c42876a5e64e5400247d99b57",
+          "dd6f4597917d80f634c0ca9c7bbb7eaa3953b161920f8c4ef35ff585f90d648b",
+          "9e4ee2ff7d76233079dd4d50bfe16607d5103d356127e8d9dded0b44b4e53f4a"
+        ],
+        "shapes": [
+          [
+            1,
+            64,
+            80,
+            80
+          ],
+          [
+            1,
+            128,
+            40,
+            40
+          ],
+          [
+            1,
+            256,
+            20,
+            20
+          ]
+        ]
+      }
+    },
+    "arithmetic_checks": {
+      "source_fp32_head_fp32": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.051212710327491e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 4.993525143381916e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 2.048327587544918e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 5.533993596706921e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp32_head_fp16": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.18619348355287e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.173318817774941e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.9598502944973006e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 6.00760219904295e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp16_head_fp32": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.840857113525999e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.812910394142889e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.909218553919345e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 5.5539305376939296e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp16_head_fp16": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.40584256469856e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.341091181554347e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 2.1474852474057116e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 6.00760219904295e-08,
+        "nonlinear_checks_are_approximate_only": true
+      }
+    },
+    "comparisons": {
+      "original_fp32_vs_original_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 35,
+          "max_absolute_error": 2.4913330078125,
+          "max_error_over_tolerance": 2.264937417079086
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.002094447612762451,
+          "max_error_over_tolerance": 0.29581835636623427
+        }
+      },
+      "native_heads_both_decode_fp32": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 26,
+          "max_absolute_error": 2.23419189453125,
+          "max_error_over_tolerance": 2.092155211205852
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.002078026533126831,
+          "max_error_over_tolerance": 0.29349905424668343
+        }
+      },
+      "same_fp32_features_head_fp32_vs_fp16": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.2259521484375,
+          "max_error_over_tolerance": 0.12511078585725116
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0016152560710906982,
+          "max_error_over_tolerance": 0.2133783626062006
+        }
+      },
+      "same_fp16_features_head_fp32_vs_fp16": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.14630126953125,
+          "max_error_over_tolerance": 0.14435414304883035
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0015385448932647705,
+          "max_error_over_tolerance": 0.21810712090868212
+        }
+      },
+      "same_fp32_head_features_fp32_vs_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 26,
+          "max_absolute_error": 2.24749755859375,
+          "max_error_over_tolerance": 2.09250135573273
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.000975191593170166,
+          "max_error_over_tolerance": 0.21868185183844507
+        }
+      },
+      "same_fp16_head_features_fp32_vs_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 26,
+          "max_absolute_error": 2.2515869140625,
+          "max_error_over_tolerance": 2.0884444694442403
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0022260844707489014,
+          "max_error_over_tolerance": 0.3145422082923896
+        }
+      },
+      "reference_fp32_vs_fp32_features_fp16_head": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.2259521484375,
+          "max_error_over_tolerance": 0.12511078585725116
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0016152560710906982,
+          "max_error_over_tolerance": 0.2133783626062006
+        }
+      },
+      "reference_fp32_vs_fp16_features_fp32_head": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 26,
+          "max_absolute_error": 2.24749755859375,
+          "max_error_over_tolerance": 2.09250135573273
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.000975191593170166,
+          "max_error_over_tolerance": 0.21868185183844507
+        }
+      }
+    },
+    "logit_differences": {
+      "native_heads_both_decode_fp32": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537562,
+          "max_absolute_error": 0.14792537689208984,
+          "mean_absolute_error": 0.0024491144468469254
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83995,
+          "max_absolute_error": 0.04491233825683594,
+          "mean_absolute_error": 0.003475905242420378
+        }
+      },
+      "same_fp32_features_head_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537541,
+          "max_absolute_error": 0.014644622802734375,
+          "mean_absolute_error": 0.0007299340705793882
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83992,
+          "max_absolute_error": 0.026169776916503906,
+          "mean_absolute_error": 0.002353602931613014
+        }
+      },
+      "same_fp16_features_head_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537545,
+          "max_absolute_error": 0.01738739013671875,
+          "mean_absolute_error": 0.0007184797074487072
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83985,
+          "max_absolute_error": 0.020212173461914062,
+          "mean_absolute_error": 0.0023168451814424423
+        }
+      },
+      "same_fp32_head_features_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537570,
+          "max_absolute_error": 0.1480426788330078,
+          "mean_absolute_error": 0.002254239636881071
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83981,
+          "max_absolute_error": 0.040778160095214844,
+          "mean_absolute_error": 0.0024305955370267232
+        }
+      },
+      "same_fp16_head_features_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 320902,
+          "max_absolute_error": 0.1484375,
+          "mean_absolute_error": 0.002345512321307546
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 29716,
+          "max_absolute_error": 0.046875,
+          "mean_absolute_error": 0.0029008556547619048
+        }
+      },
+      "reference_fp32_vs_fp32_features_fp16_head": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537541,
+          "max_absolute_error": 0.014644622802734375,
+          "mean_absolute_error": 0.0007299340705793882
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83992,
+          "max_absolute_error": 0.026169776916503906,
+          "mean_absolute_error": 0.002353602931613014
+        }
+      },
+      "reference_fp32_vs_fp16_features_fp32_head": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537570,
+          "max_absolute_error": 0.1480426788330078,
+          "mean_absolute_error": 0.002254239636881071
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83981,
+          "max_absolute_error": 0.040778160095214844,
+          "mean_absolute_error": 0.0024305955370267232
+        }
+      }
+    }
+  },
+  {
+    "image_id": "train/0000170_01201_d_0000001",
+    "all_native_historical_reference_byte_checks": true,
+    "features": {
+      "fp32": {
+        "sha256": [
+          "6a8e351ba9b858b6ed64bdec15b75441bffd5388b11136ed52bdc3b40ce21940",
+          "9092e08432ed15c90dfd07c7f8f17de6976cf0109f5bbc88a52ec222f2dcd45b",
+          "d37b9d9ce1a43f4771401a109bc0986d70ac2ea5124a7322dd4dc7a33c5ab89a"
+        ],
+        "shapes": [
+          [
+            1,
+            64,
+            80,
+            80
+          ],
+          [
+            1,
+            128,
+            40,
+            40
+          ],
+          [
+            1,
+            256,
+            20,
+            20
+          ]
+        ]
+      },
+      "fp16": {
+        "sha256": [
+          "bcc11168059b78a2d0639eedb61cc0416fae73b7d691acc5593b634d9e1b6105",
+          "7aec16dd9edfcdd48513bf4715cf0f7f2d580a47aed942c7d615b14e06dc5fd2",
+          "e3a9963f519eed62f4344ccddb689a6c62c534dd95c93d252e6d8767a31fea0d"
+        ],
+        "shapes": [
+          [
+            1,
+            64,
+            80,
+            80
+          ],
+          [
+            1,
+            128,
+            40,
+            40
+          ],
+          [
+            1,
+            256,
+            20,
+            20
+          ]
+        ]
+      }
+    },
+    "arithmetic_checks": {
+      "source_fp32_head_fp32": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.958296966923626e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.745779806387574e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.932698069140315e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 3.570540380026799e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp32_head_fp16": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 6.180742353478763e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.839896740633677e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.8625246411829721e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 3.5951335575212795e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp16_head_fp32": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.616274485475969e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.289471030067716e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 2.178749127779156e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 4.599831382456898e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp16_head_fp16": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 6.006967439020627e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.706282788509043e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 2.007698640227318e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 3.5951335575212795e-08,
+        "nonlinear_checks_are_approximate_only": true
+      }
+    },
+    "comparisons": {
+      "original_fp32_vs_original_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 39,
+          "max_absolute_error": 9.662109375,
+          "max_error_over_tolerance": 9.708852188760341
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0020898282527923584,
+          "max_error_over_tolerance": 0.26464570491377487
+        }
+      },
+      "native_heads_both_decode_fp32": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 39,
+          "max_absolute_error": 9.751129150390625,
+          "max_error_over_tolerance": 9.79830261905463
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0021993815898895264,
+          "max_error_over_tolerance": 0.2641532853088737
+        }
+      },
+      "same_fp32_features_head_fp32_vs_fp16": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.16943359375,
+          "max_error_over_tolerance": 0.1117790779544231
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0013457238674163818,
+          "max_error_over_tolerance": 0.18613255843490595
+        }
+      },
+      "same_fp16_features_head_fp32_vs_fp16": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.21234130859375,
+          "max_error_over_tolerance": 0.11988003333249707
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0018220245838165283,
+          "max_error_over_tolerance": 0.20383902736286127
+        }
+      },
+      "same_fp32_head_features_fp32_vs_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 39,
+          "max_absolute_error": 9.699142456054688,
+          "max_error_over_tolerance": 9.746064426388767
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0013499557971954346,
+          "max_error_over_tolerance": 0.19655144287874612
+        }
+      },
+      "same_fp16_head_features_fp32_vs_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 37,
+          "max_absolute_error": 9.84295654296875,
+          "max_error_over_tolerance": 9.886013256282665
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0019429922103881836,
+          "max_error_over_tolerance": 0.27548721614389016
+        }
+      },
+      "reference_fp32_vs_fp32_features_fp16_head": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.16943359375,
+          "max_error_over_tolerance": 0.1117790779544231
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0013457238674163818,
+          "max_error_over_tolerance": 0.18613255843490595
+        }
+      },
+      "reference_fp32_vs_fp16_features_fp32_head": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 39,
+          "max_absolute_error": 9.699142456054688,
+          "max_error_over_tolerance": 9.746064426388767
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0013499557971954346,
+          "max_error_over_tolerance": 0.19655144287874612
+        }
+      }
+    },
+    "logit_differences": {
+      "native_heads_both_decode_fp32": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537575,
+          "max_absolute_error": 0.23574423789978027,
+          "mean_absolute_error": 0.002904836889591111
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83996,
+          "max_absolute_error": 0.039595603942871094,
+          "mean_absolute_error": 0.003521791554632641
+        }
+      },
+      "same_fp32_features_head_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537546,
+          "max_absolute_error": 0.015155792236328125,
+          "mean_absolute_error": 0.0007228438815920007
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83994,
+          "max_absolute_error": 0.023527145385742188,
+          "mean_absolute_error": 0.0023562082846959433
+        }
+      },
+      "same_fp16_features_head_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537546,
+          "max_absolute_error": 0.01407623291015625,
+          "mean_absolute_error": 0.0007070211168870411
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83989,
+          "max_absolute_error": 0.01995086669921875,
+          "mean_absolute_error": 0.002332338259333656
+        }
+      },
+      "same_fp32_head_features_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537562,
+          "max_absolute_error": 0.23471903800964355,
+          "mean_absolute_error": 0.0027618269593858713
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83991,
+          "max_absolute_error": 0.036810874938964844,
+          "mean_absolute_error": 0.0025512599831535704
+        }
+      },
+      "same_fp16_head_features_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 360401,
+          "max_absolute_error": 0.236328125,
+          "mean_absolute_error": 0.0028203441415514266
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 28320,
+          "max_absolute_error": 0.0390625,
+          "mean_absolute_error": 0.002915829613095238
+        }
+      },
+      "reference_fp32_vs_fp32_features_fp16_head": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537546,
+          "max_absolute_error": 0.015155792236328125,
+          "mean_absolute_error": 0.0007228438815920007
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83994,
+          "max_absolute_error": 0.023527145385742188,
+          "mean_absolute_error": 0.0023562082846959433
+        }
+      },
+      "reference_fp32_vs_fp16_features_fp32_head": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537562,
+          "max_absolute_error": 0.23471903800964355,
+          "mean_absolute_error": 0.0027618269593858713
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83991,
+          "max_absolute_error": 0.036810874938964844,
+          "mean_absolute_error": 0.0025512599831535704
+        }
+      }
+    }
+  },
+  {
+    "image_id": "train/9999990_00000_d_0000024",
+    "all_native_historical_reference_byte_checks": true,
+    "features": {
+      "fp32": {
+        "sha256": [
+          "9d7dff3e886b034257fb7ceee51e583e82c199d22f4e2c524da6ad6fc0014420",
+          "b8897e6a5c27a3d2e0b08b7c4e0b2d2816adaf0087a5d73ff546b7bb06593dd2",
+          "be3257d02c6316123abbde1755cb5b16aa854683ca825ca02bb51e09d6a8d423"
+        ],
+        "shapes": [
+          [
+            1,
+            64,
+            80,
+            80
+          ],
+          [
+            1,
+            128,
+            40,
+            40
+          ],
+          [
+            1,
+            256,
+            20,
+            20
+          ]
+        ]
+      },
+      "fp16": {
+        "sha256": [
+          "1a850158a6ea6af8e74c4513feca5b1a9312c9a8b93f00868a6300312f372483",
+          "b7fe1fb7b49c4e6e49ebe06b5020ba5faa831c964fe73069afd951db3a6d6ab8",
+          "8b249c81805c5d6c1fd73a6234475abe394422675b287cd03456765b3065cca2"
+        ],
+        "shapes": [
+          [
+            1,
+            64,
+            80,
+            80
+          ],
+          [
+            1,
+            128,
+            40,
+            40
+          ],
+          [
+            1,
+            256,
+            20,
+            20
+          ]
+        ]
+      }
+    },
+    "arithmetic_checks": {
+      "source_fp32_head_fp32": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.031807930322429e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.010470083277596e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.557404175400734e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 5.782595047243433e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp32_head_fp16": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.307174220092747e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.198781223292315e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.5897094272077084e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 7.181057082306097e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp16_head_fp32": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.268681135817133e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.160444934704245e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.7750135157257318e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 6.701832166999822e-08,
+        "nonlinear_checks_are_approximate_only": true
+      },
+      "source_fp16_head_fp16": {
+        "elementwise_stage_checks_exact": true,
+        "probability_normalization_max_error": 5.865108860803048e-07,
+        "softmax_max_absolute_error_vs_numpy_fp64": 5.74112463347376e-07,
+        "dfl_max_absolute_error_vs_numpy_fp64_from_saved_probs": 1.9383151084184647e-06,
+        "sigmoid_max_absolute_error_vs_numpy_fp64": 7.181057082306097e-08,
+        "nonlinear_checks_are_approximate_only": true
+      }
+    },
+    "comparisons": {
+      "original_fp32_vs_original_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 211,
+          "max_absolute_error": 5.9405059814453125,
+          "max_error_over_tolerance": 7.247148526085012
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.002469658851623535,
+          "max_error_over_tolerance": 0.3613380905265842
+        }
+      },
+      "native_heads_both_decode_fp32": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 183,
+          "max_absolute_error": 5.9268341064453125,
+          "max_error_over_tolerance": 7.230469457153082
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0025492310523986816,
+          "max_error_over_tolerance": 0.36192498355768216
+        }
+      },
+      "same_fp32_features_head_fp32_vs_fp16": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.109283447265625,
+          "max_error_over_tolerance": 0.1343262618680277
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.002092331647872925,
+          "max_error_over_tolerance": 0.19811682266161845
+        }
+      },
+      "same_fp16_features_head_fp32_vs_fp16": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.1478271484375,
+          "max_error_over_tolerance": 0.13012124724499302
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0014972388744354248,
+          "max_error_over_tolerance": 0.16056150180582404
+        }
+      },
+      "same_fp32_head_features_fp32_vs_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 183,
+          "max_absolute_error": 5.9727935791015625,
+          "max_error_over_tolerance": 7.286537934410864
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0017670392990112305,
+          "max_error_over_tolerance": 0.28074221430692126
+        }
+      },
+      "same_fp16_head_features_fp32_vs_fp16": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 186,
+          "max_absolute_error": 5.9811859130859375,
+          "max_error_over_tolerance": 7.294357876531498
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0024116933345794678,
+          "max_error_over_tolerance": 0.41305627166506254
+        }
+      },
+      "reference_fp32_vs_fp32_features_fp16_head": {
+        "status": "PASS",
+        "allclose_pass": true,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 0,
+          "max_absolute_error": 0.109283447265625,
+          "max_error_over_tolerance": 0.1343262618680277
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.002092331647872925,
+          "max_error_over_tolerance": 0.19811682266161845
+        }
+      },
+      "reference_fp32_vs_fp16_features_fp32_head": {
+        "status": "FAIL_FIXED_TOLERANCES",
+        "allclose_pass": false,
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "elements": 33600,
+          "violations": 183,
+          "max_absolute_error": 5.9727935791015625,
+          "max_error_over_tolerance": 7.286537934410864
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "elements": 84000,
+          "violations": 0,
+          "max_absolute_error": 0.0017670392990112305,
+          "max_error_over_tolerance": 0.28074221430692126
+        }
+      }
+    },
+    "logit_differences": {
+      "native_heads_both_decode_fp32": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537570,
+          "max_absolute_error": 0.1740584373474121,
+          "mean_absolute_error": 0.0038671307524297542
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83992,
+          "max_absolute_error": 0.04111003875732422,
+          "mean_absolute_error": 0.0032850782019751413
+        }
+      },
+      "same_fp32_features_head_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537532,
+          "max_absolute_error": 0.01526641845703125,
+          "mean_absolute_error": 0.0006819430096393694
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83990,
+          "max_absolute_error": 0.015064239501953125,
+          "mean_absolute_error": 0.0022084550119581678
+        }
+      },
+      "same_fp16_features_head_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537520,
+          "max_absolute_error": 0.012554168701171875,
+          "mean_absolute_error": 0.0006685678225225967
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83993,
+          "max_absolute_error": 0.015672683715820312,
+          "mean_absolute_error": 0.0021897314474696203
+        }
+      },
+      "same_fp32_head_features_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537559,
+          "max_absolute_error": 0.17383623123168945,
+          "mean_absolute_error": 0.003724914492469387
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83986,
+          "max_absolute_error": 0.03435230255126953,
+          "mean_absolute_error": 0.0022911958439009532
+        }
+      },
+      "same_fp16_head_features_fp32_vs_fp16": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 354430,
+          "max_absolute_error": 0.17578125,
+          "mean_absolute_error": 0.003780535977511179
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 26156,
+          "max_absolute_error": 0.0390625,
+          "mean_absolute_error": 0.002593470982142857
+        }
+      },
+      "reference_fp32_vs_fp32_features_fp16_head": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537532,
+          "max_absolute_error": 0.01526641845703125,
+          "mean_absolute_error": 0.0006819430096393694
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83990,
+          "max_absolute_error": 0.015064239501953125,
+          "mean_absolute_error": 0.0022084550119581678
+        }
+      },
+      "reference_fp32_vs_fp16_features_fp32_head": {
+        "box_logits": {
+          "elements": 537600,
+          "unequal_elements": 537559,
+          "max_absolute_error": 0.17383623123168945,
+          "mean_absolute_error": 0.003724914492469387
+        },
+        "class_logits": {
+          "elements": 84000,
+          "unequal_elements": 83986,
+          "max_absolute_error": 0.03435230255126953,
+          "mean_absolute_error": 0.0022911958439009532
+        }
+      }
+    }
+  }
+]

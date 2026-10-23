@@ -1,0 +1,1906 @@
+{
+  "image_id": "train/0000142_00258_d_0000024",
+  "image_sha256": "945977c4215e3f47e958821202f9155561a99d22d1bd2fe94037e7b29435107e",
+  "array_file": "raw/0000142_00258_d_0000024.npz",
+  "reg_max": 16,
+  "nc": 10,
+  "nl": 3,
+  "normalized_fp32_input_sha256": "1bb7628884906e32cc6f593b2e71876ac16050bbccdf0ce7ee96776322f13981",
+  "preprocessed_uint8_sha256": "07ce0b2255afb3fb5ed27d09dfbbba29a99c5ee93a0cb960fb757639bf17aa15",
+  "letterbox_params": {
+    "orig_shape": [
+      1080,
+      1920
+    ],
+    "new_shape": [
+      640,
+      640
+    ],
+    "ratio": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "new_unpad": [
+      640,
+      360
+    ],
+    "top": 140,
+    "bottom": 140,
+    "left": 0,
+    "right": 0
+  },
+  "historical_byte_equal": {
+    "fp32": true,
+    "fp16": true
+  },
+  "reference_head_capture_exact": {
+    "fp32": true,
+    "fp16": true
+  },
+  "reference_unified_decode_exact": {
+    "fp32": true,
+    "fp16": true
+  },
+  "native_manual_replay_exact": {
+    "fp32": true,
+    "fp16": true
+  },
+  "native_manual_replay_sha256": {
+    "fp32": {
+      "forward": "ac25a70f26111ec90c8b150009b1ca753cf1da67fbb7908b97585972e67fc677",
+      "box_logits": "3ef354e43112ee5341864573730d1a65542e5cd839e313aed8f784a82a26bea7",
+      "class_logits": "f43b349527376d40ec4cdb4dfc6f444c4317ee7fea9fde9a4641d3a69015592a"
+    },
+    "fp16": {
+      "forward": "e0b9c5e589c4f59fce61881032aac0d539293668c354b72add71245daa8258e4",
+      "box_logits": "181c59ba8e7a5fb587d1caad7aec2e0521c157808277eac7451eb1c14b3efec8",
+      "class_logits": "40c27685854e00ff057a2dbf366e653839881daf44b78169b367c9a1aee9173a"
+    }
+  },
+  "native_suffix_replay_exact": {
+    "-1": {
+      "fp32": true,
+      "fp16": true
+    },
+    "4": {
+      "fp32": true,
+      "fp16": true
+    },
+    "6": {
+      "fp32": true,
+      "fp16": true
+    },
+    "10": {
+      "fp32": true,
+      "fp16": true
+    },
+    "22": {
+      "fp32": true,
+      "fp16": true
+    }
+  },
+  "native_manual_module_replay_exact": {
+    "fp32": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true,
+      "9": true,
+      "10": true,
+      "11": true,
+      "12": true,
+      "13": true,
+      "14": true,
+      "15": true,
+      "16": true,
+      "17": true,
+      "18": true,
+      "19": true,
+      "20": true,
+      "21": true,
+      "22": true
+    },
+    "fp16": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true,
+      "9": true,
+      "10": true,
+      "11": true,
+      "12": true,
+      "13": true,
+      "14": true,
+      "15": true,
+      "16": true,
+      "17": true,
+      "18": true,
+      "19": true,
+      "20": true,
+      "21": true,
+      "22": true
+    }
+  },
+  "native_manual_module_replay_sha256": {
+    "fp32": {
+      "0": "860cc5600d609d68f4c071d315670ee1703e13d3ba7bad66559736507f7b37f1",
+      "1": "165946f03bcf9306bf37a33b6bac8e9c6a2f1f7b1441e4fe0bb4d8c6fbbabf88",
+      "2": "abf6460959882b805a55ca0a0e15444753f1b6df1b009630dd6420727f35744a",
+      "3": "b1caf415d7fc13c52cda1d74e088ad4056c4b0df9fe5076362db4577af7746b7",
+      "4": "ac9c7a92cb59e6482dcefebf75b2c8e497f0fafcf8b1040da9289fd4b8745a62",
+      "5": "f9f9559359073f71f247a567550c115f77dc06c927aa081e9bc132919c6db186",
+      "6": "704be1326685773c30a5a40a9c1074485f756beda1e4d75e978c8d784ed924a1",
+      "7": "adc743cfa2f65ecf78477ac6ef59eea84fcc7fdf9e8077bc60f623122acbecd3",
+      "8": "6aee26beec02981a1eb4ed708c20bddf3961711a6617b8c56c6f74c1012721f6",
+      "9": "cc0e582f18a6bc6b2f94fe93dc0cd1f39f305dcffa8f8b8cc46ae358b7db9a7d",
+      "10": "7bf4a866af6971e1df4338e0d9c17d8a6bf3bba7790a31555a6bd55977c4240a",
+      "11": "2d48ada47a1c3ff3e9c54e4776a84d777c3ce6d1afb7a6b914f4dc6e5813d343",
+      "12": "2aa63f1b0b23be42e9571e790809e2622f9dc00e9ee3e818a738a845d2964659",
+      "13": "f825765b1dde498c33b0b7135a5b617b613f2db8490185828527b26f4ed40c60",
+      "14": "6fcd206bcea52003c582c38e72b070e6987d4f59732ba31c8a782ccf32ce92ad",
+      "15": "f4c11eb1040e3e038b82cdd3fb42cedfcfca2a1dfd4591770d621a453c661876",
+      "16": "e8d01501145548d3e6491251ad8171cc80d6db25b5fd752a26cccc4dc2465459",
+      "17": "3840eb70fb903a067d9776a2509540c234236766542df8370bfcf0114218e00a",
+      "18": "26b4a28b5b8c1955f853aef8ab260378ad2d461e529d4a742cdf2be12f376641",
+      "19": "80dc61973e94892f55e3dfb085bf18a2633db00c0455af41646c2807aeecf1eb",
+      "20": "e99dfcffc19a49d47e7c6c6a00e2d44de6729143fc8b1cfb6ddf7acefd21848f",
+      "21": "5ccbeeffed910a27b1a2c748b0d1a85cdce3250d339ede1316470956ed3bf8fd",
+      "22": "5c2ed018299a10ff53dc524ebeb78884e6d10e25fa38afcb17acf88c0b0e8f9c"
+    },
+    "fp16": {
+      "0": "80fdc3ff58cadc9d54acca7c0d56fdc05803194505fe76b83d4e9f646dda6a83",
+      "1": "dd6507812748860024ccd5337f414af0ae7091cf700ca68f8849e0d00d208b71",
+      "2": "9f75bf56a59d45af2f7043422710a47036d7548a47d47c69a4a01bc87e3c73a7",
+      "3": "4a5750d6ece71fa1816877253dafff99c222f9f7bdc406f096f5332753cb2160",
+      "4": "11025d9378381bd0b85519b3138a0c8741efaf26f20ed65c937bd07c25ac3789",
+      "5": "f3c940b8f3ff05fb5f331a1f671f1f3e6a1be526827011ce33e7eb7480783f9b",
+      "6": "ba0173b06548907353c1f849b07ade3132d5949efad034158616b28cf6129628",
+      "7": "89c13b1ff961456d3a840fc4ba5db6fcc92c8c2b033f55b5a4fa1228de4f1936",
+      "8": "d756d0dcc107f00369332e81534387693064b12d43e61630118589aeb9e4b544",
+      "9": "0fea9deb0b45cdfd4e4780b153f57acee65ebb4a2a74a312e340b7e9756e095d",
+      "10": "80e00d63ba5c1cb009d454a0becccbaa847f035c5027071605e5de5feffc8673",
+      "11": "ff55ab5af80f3e3570f8a5480cd77748496b06240744022dc251186c2191cc97",
+      "12": "3658d86e3e4ae0798acdc559c2966ab6a92cee5e24de1add08ba4321180dd461",
+      "13": "911ff13a0d2164bf68006a513c02df3159eb67e1466900a38fa8f1345b0e1bf2",
+      "14": "a00cc0a8776990c2f7f6a3786b33dc217388fcff5bbee4cf664c2d6e0dedfbee",
+      "15": "65a3674d4857d1af9f5ebb9ff662d2f9e44a983526bf42b273cd5d3abb76dbf3",
+      "16": "7cbb8ea0abdb4e7d2168754deea19ed3d04ef35e05c14301aec313f9d3c12a44",
+      "17": "9fe132f53bf0ce4721ccf619e782fd49d1b384d1bac7494b93b1946311a72fbf",
+      "18": "1760988d7d508c52928316e546086c4d3d65063ff9fec3871e49114802a9eb01",
+      "19": "4d6ddbf3e261ff178da72aba9a15629827d5e6f9ef7f1aee046b1f6b06ab1bef",
+      "20": "9409eb8ab1856f99c570ba03504ca74d3074d3dea06814594d1c35fd781d0b66",
+      "21": "656f31a3665c9185df8f2915a507e94a530f3f69002b4ced535fddd1637d8421",
+      "22": "0f850f0eb606cc3819b6145d3c87655358a072395120c6cc5a6a0152d432a925"
+    }
+  },
+  "native_suffix_replay_sha256": {
+    "-1": {
+      "fp32": {
+        "box_logits": "3ef354e43112ee5341864573730d1a65542e5cd839e313aed8f784a82a26bea7",
+        "class_logits": "f43b349527376d40ec4cdb4dfc6f444c4317ee7fea9fde9a4641d3a69015592a",
+        "decoded": "ac25a70f26111ec90c8b150009b1ca753cf1da67fbb7908b97585972e67fc677"
+      },
+      "fp16": {
+        "box_logits": "181c59ba8e7a5fb587d1caad7aec2e0521c157808277eac7451eb1c14b3efec8",
+        "class_logits": "40c27685854e00ff057a2dbf366e653839881daf44b78169b367c9a1aee9173a",
+        "decoded": "8ff0f8914f3a6ac97843933a9f20c1470f59d954238a55f4d13cd867a5d57837"
+      }
+    },
+    "4": {
+      "fp32": {
+        "box_logits": "3ef354e43112ee5341864573730d1a65542e5cd839e313aed8f784a82a26bea7",
+        "class_logits": "f43b349527376d40ec4cdb4dfc6f444c4317ee7fea9fde9a4641d3a69015592a",
+        "decoded": "ac25a70f26111ec90c8b150009b1ca753cf1da67fbb7908b97585972e67fc677"
+      },
+      "fp16": {
+        "box_logits": "181c59ba8e7a5fb587d1caad7aec2e0521c157808277eac7451eb1c14b3efec8",
+        "class_logits": "40c27685854e00ff057a2dbf366e653839881daf44b78169b367c9a1aee9173a",
+        "decoded": "8ff0f8914f3a6ac97843933a9f20c1470f59d954238a55f4d13cd867a5d57837"
+      }
+    },
+    "6": {
+      "fp32": {
+        "box_logits": "3ef354e43112ee5341864573730d1a65542e5cd839e313aed8f784a82a26bea7",
+        "class_logits": "f43b349527376d40ec4cdb4dfc6f444c4317ee7fea9fde9a4641d3a69015592a",
+        "decoded": "ac25a70f26111ec90c8b150009b1ca753cf1da67fbb7908b97585972e67fc677"
+      },
+      "fp16": {
+        "box_logits": "181c59ba8e7a5fb587d1caad7aec2e0521c157808277eac7451eb1c14b3efec8",
+        "class_logits": "40c27685854e00ff057a2dbf366e653839881daf44b78169b367c9a1aee9173a",
+        "decoded": "8ff0f8914f3a6ac97843933a9f20c1470f59d954238a55f4d13cd867a5d57837"
+      }
+    },
+    "10": {
+      "fp32": {
+        "box_logits": "3ef354e43112ee5341864573730d1a65542e5cd839e313aed8f784a82a26bea7",
+        "class_logits": "f43b349527376d40ec4cdb4dfc6f444c4317ee7fea9fde9a4641d3a69015592a",
+        "decoded": "ac25a70f26111ec90c8b150009b1ca753cf1da67fbb7908b97585972e67fc677"
+      },
+      "fp16": {
+        "box_logits": "181c59ba8e7a5fb587d1caad7aec2e0521c157808277eac7451eb1c14b3efec8",
+        "class_logits": "40c27685854e00ff057a2dbf366e653839881daf44b78169b367c9a1aee9173a",
+        "decoded": "8ff0f8914f3a6ac97843933a9f20c1470f59d954238a55f4d13cd867a5d57837"
+      }
+    },
+    "22": {
+      "fp32": {
+        "box_logits": "3ef354e43112ee5341864573730d1a65542e5cd839e313aed8f784a82a26bea7",
+        "class_logits": "f43b349527376d40ec4cdb4dfc6f444c4317ee7fea9fde9a4641d3a69015592a",
+        "decoded": "ac25a70f26111ec90c8b150009b1ca753cf1da67fbb7908b97585972e67fc677"
+      },
+      "fp16": {
+        "box_logits": "181c59ba8e7a5fb587d1caad7aec2e0521c157808277eac7451eb1c14b3efec8",
+        "class_logits": "40c27685854e00ff057a2dbf366e653839881daf44b78169b367c9a1aee9173a",
+        "decoded": "8ff0f8914f3a6ac97843933a9f20c1470f59d954238a55f4d13cd867a5d57837"
+      }
+    }
+  },
+  "frontier_sha256_before": {
+    "fp32": {
+      "-1": "1bb7628884906e32cc6f593b2e71876ac16050bbccdf0ce7ee96776322f13981",
+      "4": "ac9c7a92cb59e6482dcefebf75b2c8e497f0fafcf8b1040da9289fd4b8745a62",
+      "6": "704be1326685773c30a5a40a9c1074485f756beda1e4d75e978c8d784ed924a1",
+      "10": "7bf4a866af6971e1df4338e0d9c17d8a6bf3bba7790a31555a6bd55977c4240a",
+      "16": "e8d01501145548d3e6491251ad8171cc80d6db25b5fd752a26cccc4dc2465459",
+      "19": "80dc61973e94892f55e3dfb085bf18a2633db00c0455af41646c2807aeecf1eb",
+      "22": "5c2ed018299a10ff53dc524ebeb78884e6d10e25fa38afcb17acf88c0b0e8f9c"
+    },
+    "fp16": {
+      "-1": "8026bb886c60466fbb3b0c655be35b35ab16e942ecaa2a86bc9315d35ee863bf",
+      "4": "11025d9378381bd0b85519b3138a0c8741efaf26f20ed65c937bd07c25ac3789",
+      "6": "ba0173b06548907353c1f849b07ade3132d5949efad034158616b28cf6129628",
+      "10": "80e00d63ba5c1cb009d454a0becccbaa847f035c5027071605e5de5feffc8673",
+      "16": "7cbb8ea0abdb4e7d2168754deea19ed3d04ef35e05c14301aec313f9d3c12a44",
+      "19": "4d6ddbf3e261ff178da72aba9a15629827d5e6f9ef7f1aee046b1f6b06ab1bef",
+      "22": "0f850f0eb606cc3819b6145d3c87655358a072395120c6cc5a6a0152d432a925"
+    }
+  },
+  "frontier_sha256_after": {
+    "fp32": {
+      "-1": "1bb7628884906e32cc6f593b2e71876ac16050bbccdf0ce7ee96776322f13981",
+      "4": "ac9c7a92cb59e6482dcefebf75b2c8e497f0fafcf8b1040da9289fd4b8745a62",
+      "6": "704be1326685773c30a5a40a9c1074485f756beda1e4d75e978c8d784ed924a1",
+      "10": "7bf4a866af6971e1df4338e0d9c17d8a6bf3bba7790a31555a6bd55977c4240a",
+      "16": "e8d01501145548d3e6491251ad8171cc80d6db25b5fd752a26cccc4dc2465459",
+      "19": "80dc61973e94892f55e3dfb085bf18a2633db00c0455af41646c2807aeecf1eb",
+      "22": "5c2ed018299a10ff53dc524ebeb78884e6d10e25fa38afcb17acf88c0b0e8f9c"
+    },
+    "fp16": {
+      "-1": "8026bb886c60466fbb3b0c655be35b35ab16e942ecaa2a86bc9315d35ee863bf",
+      "4": "11025d9378381bd0b85519b3138a0c8741efaf26f20ed65c937bd07c25ac3789",
+      "6": "ba0173b06548907353c1f849b07ade3132d5949efad034158616b28cf6129628",
+      "10": "80e00d63ba5c1cb009d454a0becccbaa847f035c5027071605e5de5feffc8673",
+      "16": "7cbb8ea0abdb4e7d2168754deea19ed3d04ef35e05c14301aec313f9d3c12a44",
+      "19": "4d6ddbf3e261ff178da72aba9a15629827d5e6f9ef7f1aee046b1f6b06ab1bef",
+      "22": "0f850f0eb606cc3819b6145d3c87655358a072395120c6cc5a6a0152d432a925"
+    }
+  },
+  "variant_frontier_casts": {
+    "cut_-1_source_fp32_suffix_fp16": {
+      "-1": {
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "float16",
+        "sha256": "8026bb886c60466fbb3b0c655be35b35ab16e942ecaa2a86bc9315d35ee863bf",
+        "elements": 1228800,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.43958640499661367
+      }
+    },
+    "cut_-1_source_fp16_suffix_fp32": {
+      "-1": {
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "float32",
+        "sha256": "98b54f4314afc3d801500f1b43b8e98f566c3051c86d2a857aec4df03ba859b7",
+        "elements": 1228800,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.43958640499661367
+      }
+    },
+    "cut_4_source_fp32_suffix_fp16": {
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "fc39145a4cd3f2664e8bfb9dfee94da935fa5827ea75eb6895253372b65eea1f",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.48828125,
+        "mean": -0.08544880335837661
+      }
+    },
+    "cut_4_source_fp16_suffix_fp32": {
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "2abf2ae4bff5a82136567b8a2096aa1b673522e8165cdb640a950a019fd01d59",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.484375,
+        "mean": -0.08544043469279132
+      }
+    },
+    "cut_6_source_fp32_suffix_fp16": {
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "fc39145a4cd3f2664e8bfb9dfee94da935fa5827ea75eb6895253372b65eea1f",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.48828125,
+        "mean": -0.08544880335837661
+      },
+      "6": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "23ed52a9d490d65d03c5a368b2510a310b0507f7c0a88df3899bce8d58d39993",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 7.66796875,
+        "mean": 0.053044759647746104
+      }
+    },
+    "cut_6_source_fp16_suffix_fp32": {
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "2abf2ae4bff5a82136567b8a2096aa1b673522e8165cdb640a950a019fd01d59",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.484375,
+        "mean": -0.08544043469279132
+      },
+      "6": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "b426b500b50d0e34376ca9f8176a202769d6f7404b7ab4052fd63f8ed6baa378",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 7.671875,
+        "mean": 0.05305278684478253
+      }
+    },
+    "cut_10_source_fp32_suffix_fp16": {
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "fc39145a4cd3f2664e8bfb9dfee94da935fa5827ea75eb6895253372b65eea1f",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.48828125,
+        "mean": -0.08544880335837661
+      },
+      "6": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "23ed52a9d490d65d03c5a368b2510a310b0507f7c0a88df3899bce8d58d39993",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 7.66796875,
+        "mean": 0.053044759647746104
+      },
+      "10": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "359c890ac4aa3de3ff117abd62052c2345e1cc0e8fbcee4033cded30dd4b469b",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 5.20703125,
+        "mean": -0.07149301424564328
+      }
+    },
+    "cut_10_source_fp16_suffix_fp32": {
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "2abf2ae4bff5a82136567b8a2096aa1b673522e8165cdb640a950a019fd01d59",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.484375,
+        "mean": -0.08544043469279132
+      },
+      "6": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "b426b500b50d0e34376ca9f8176a202769d6f7404b7ab4052fd63f8ed6baa378",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 7.671875,
+        "mean": 0.05305278684478253
+      },
+      "10": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "a3748d08577125067ce81813019d4d56e0469f9368ca58b448ab3ef280f08046",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 5.203125,
+        "mean": -0.0714916092826752
+      }
+    },
+    "cut_22_source_fp32_suffix_fp16": {
+      "16": {
+        "shape": [
+          1,
+          64,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "c29a360ed976f4102a1d308129399dfcff57bffea2766d8a80a3b2b13a48a2b2",
+        "elements": 409600,
+        "min": -0.278564453125,
+        "max": 5.46484375,
+        "mean": 0.273892899650964
+      },
+      "19": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "5862d31dad4bbae042f39c47ddd00221fd07aca00811692f04b73374ac9e2586",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 6.0390625,
+        "mean": 0.035679643616313116
+      },
+      "22": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "2c56f499b103c4c104cef321982c76845febd0e3daee3a2d9540ee578258f1ec",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 9.3046875,
+        "mean": 0.03391609669837635
+      }
+    },
+    "cut_22_source_fp16_suffix_fp32": {
+      "16": {
+        "shape": [
+          1,
+          64,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "573469dc376f64285c00b520dc26773e313152655c6d1963546c9f85dff715e4",
+        "elements": 409600,
+        "min": -0.278564453125,
+        "max": 5.46484375,
+        "mean": 0.2738801624471671
+      },
+      "19": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "1433208d0a226fea4229c58c5692da4292e147ba7b7bd8e4834af3be633dc32f",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 6.03515625,
+        "mean": 0.03564343854202889
+      },
+      "22": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "6ec7aa64fd4df5e57cf51267656069d63cf7756e59b1be1aa6e096e2f11e0ab1",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 9.3125,
+        "mean": 0.03390323612838984
+      }
+    }
+  },
+  "native_layer_statistics": {
+    "fp32": {
+      "-1": {
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "float32",
+        "sha256": "1bb7628884906e32cc6f593b2e71876ac16050bbccdf0ce7ee96776322f13981",
+        "elements": 1228800,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.4396061210572403
+      },
+      "0": {
+        "shape": [
+          1,
+          16,
+          320,
+          320
+        ],
+        "dtype": "float32",
+        "sha256": "860cc5600d609d68f4c071d315670ee1703e13d3ba7bad66559736507f7b37f1",
+        "elements": 1638400,
+        "min": -0.27846455574035645,
+        "max": 74.09001159667969,
+        "mean": 1.9476239629028662
+      },
+      "1": {
+        "shape": [
+          1,
+          32,
+          160,
+          160
+        ],
+        "dtype": "float32",
+        "sha256": "165946f03bcf9306bf37a33b6bac8e9c6a2f1f7b1441e4fe0bb4d8c6fbbabf88",
+        "elements": 819200,
+        "min": -0.27846455574035645,
+        "max": 113.84632873535156,
+        "mean": 2.392333796028156
+      },
+      "2": {
+        "shape": [
+          1,
+          64,
+          160,
+          160
+        ],
+        "dtype": "float32",
+        "sha256": "abf6460959882b805a55ca0a0e15444753f1b6df1b009630dd6420727f35744a",
+        "elements": 1638400,
+        "min": -0.27846455574035645,
+        "max": 23.51726531982422,
+        "mean": 0.6140878102730936
+      },
+      "3": {
+        "shape": [
+          1,
+          64,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "b1caf415d7fc13c52cda1d74e088ad4056c4b0df9fe5076362db4577af7746b7",
+        "elements": 409600,
+        "min": -0.27846455574035645,
+        "max": 10.187800407409668,
+        "mean": 0.6059690438536784
+      },
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "ac9c7a92cb59e6482dcefebf75b2c8e497f0fafcf8b1040da9289fd4b8745a62",
+        "elements": 819200,
+        "min": -0.27846455574035645,
+        "max": 5.487641334533691,
+        "mean": -0.08545051511105768
+      },
+      "5": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "f9f9559359073f71f247a567550c115f77dc06c927aa081e9bc132919c6db186",
+        "elements": 204800,
+        "min": -0.27846455574035645,
+        "max": 7.1710734367370605,
+        "mean": 0.1765458952495881
+      },
+      "6": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "704be1326685773c30a5a40a9c1074485f756beda1e4d75e978c8d784ed924a1",
+        "elements": 204800,
+        "min": -0.27846455574035645,
+        "max": 7.667431354522705,
+        "mean": 0.05304453780123279
+      },
+      "7": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "adc743cfa2f65ecf78477ac6ef59eea84fcc7fdf9e8077bc60f623122acbecd3",
+        "elements": 102400,
+        "min": -0.27846455574035645,
+        "max": 5.463439464569092,
+        "mean": 0.013129237654261976
+      },
+      "8": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "6aee26beec02981a1eb4ed708c20bddf3961711a6617b8c56c6f74c1012721f6",
+        "elements": 102400,
+        "min": -0.27846455574035645,
+        "max": 6.011689186096191,
+        "mean": 0.12153592888138127
+      },
+      "9": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "cc0e582f18a6bc6b2f94fe93dc0cd1f39f305dcffa8f8b8cc46ae358b7db9a7d",
+        "elements": 102400,
+        "min": -0.27846455574035645,
+        "max": 3.8780932426452637,
+        "mean": -0.056128050912908005
+      },
+      "10": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "7bf4a866af6971e1df4338e0d9c17d8a6bf3bba7790a31555a6bd55977c4240a",
+        "elements": 102400,
+        "min": -0.27846455574035645,
+        "max": 5.208620548248291,
+        "mean": -0.07149311665885831
+      },
+      "11": {
+        "shape": [
+          1,
+          256,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "2d48ada47a1c3ff3e9c54e4776a84d777c3ce6d1afb7a6b914f4dc6e5813d343",
+        "elements": 409600,
+        "min": -0.27846455574035645,
+        "max": 5.208620548248291,
+        "mean": -0.07149311665885831
+      },
+      "12": {
+        "shape": [
+          1,
+          384,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "2aa63f1b0b23be42e9571e790809e2622f9dc00e9ee3e818a738a845d2964659",
+        "elements": 614400,
+        "min": -0.27846455574035645,
+        "max": 7.667431354522705,
+        "mean": -0.02998056517216128
+      },
+      "13": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "f825765b1dde498c33b0b7135a5b617b613f2db8490185828527b26f4ed40c60",
+        "elements": 204800,
+        "min": -0.27846455574035645,
+        "max": 5.1805419921875,
+        "mean": -0.004000493872913332
+      },
+      "14": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "6fcd206bcea52003c582c38e72b070e6987d4f59732ba31c8a782ccf32ce92ad",
+        "elements": 819200,
+        "min": -0.27846455574035645,
+        "max": 5.1805419921875,
+        "mean": -0.004000493872913332
+      },
+      "15": {
+        "shape": [
+          1,
+          256,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "f4c11eb1040e3e038b82cdd3fb42cedfcfca2a1dfd4591770d621a453c661876",
+        "elements": 1638400,
+        "min": -0.27846455574035645,
+        "max": 5.487641334533691,
+        "mean": -0.04472550449198551
+      },
+      "16": {
+        "shape": [
+          1,
+          64,
+          80,
+          80
+        ],
+        "dtype": "float32",
+        "sha256": "e8d01501145548d3e6491251ad8171cc80d6db25b5fd752a26cccc4dc2465459",
+        "elements": 409600,
+        "min": -0.27846455574035645,
+        "max": 5.465997695922852,
+        "mean": 0.27389279318688914
+      },
+      "17": {
+        "shape": [
+          1,
+          64,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "3840eb70fb903a067d9776a2509540c234236766542df8370bfcf0114218e00a",
+        "elements": 102400,
+        "min": -0.27846455574035645,
+        "max": 8.03738021850586,
+        "mean": -0.016017816630501037
+      },
+      "18": {
+        "shape": [
+          1,
+          192,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "26b4a28b5b8c1955f853aef8ab260378ad2d461e529d4a742cdf2be12f376641",
+        "elements": 307200,
+        "min": -0.27846455574035645,
+        "max": 8.03738021850586,
+        "mean": -0.008006268125442568
+      },
+      "19": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float32",
+        "sha256": "80dc61973e94892f55e3dfb085bf18a2633db00c0455af41646c2807aeecf1eb",
+        "elements": 204800,
+        "min": -0.27846455574035645,
+        "max": 6.0397748947143555,
+        "mean": 0.03567965347015726
+      },
+      "20": {
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "e99dfcffc19a49d47e7c6c6a00e2d44de6729143fc8b1cfb6ddf7acefd21848f",
+        "elements": 51200,
+        "min": -0.27846455574035645,
+        "max": 6.331525802612305,
+        "mean": -0.0023596525004941694
+      },
+      "21": {
+        "shape": [
+          1,
+          384,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "5ccbeeffed910a27b1a2c748b0d1a85cdce3250d339ede1316470956ed3bf8fd",
+        "elements": 153600,
+        "min": -0.27846455574035645,
+        "max": 6.331525802612305,
+        "mean": -0.048448628606070264
+      },
+      "22": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "sha256": "5c2ed018299a10ff53dc524ebeb78884e6d10e25fa38afcb17acf88c0b0e8f9c",
+        "elements": 102400,
+        "min": -0.27846455574035645,
+        "max": 9.305792808532715,
+        "mean": 0.033916075295889206
+      }
+    },
+    "fp16": {
+      "-1": {
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "float16",
+        "sha256": "8026bb886c60466fbb3b0c655be35b35ab16e942ecaa2a86bc9315d35ee863bf",
+        "elements": 1228800,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.43958640499661367
+      },
+      "0": {
+        "shape": [
+          1,
+          16,
+          320,
+          320
+        ],
+        "dtype": "float16",
+        "sha256": "80fdc3ff58cadc9d54acca7c0d56fdc05803194505fe76b83d4e9f646dda6a83",
+        "elements": 1638400,
+        "min": -0.278564453125,
+        "max": 74.125,
+        "mean": 1.9475678408700696
+      },
+      "1": {
+        "shape": [
+          1,
+          32,
+          160,
+          160
+        ],
+        "dtype": "float16",
+        "sha256": "dd6507812748860024ccd5337f414af0ae7091cf700ca68f8849e0d00d208b71",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 113.875,
+        "mean": 2.392391603231299
+      },
+      "2": {
+        "shape": [
+          1,
+          64,
+          160,
+          160
+        ],
+        "dtype": "float16",
+        "sha256": "9f75bf56a59d45af2f7043422710a47036d7548a47d47c69a4a01bc87e3c73a7",
+        "elements": 1638400,
+        "min": -0.278564453125,
+        "max": 23.515625,
+        "mean": 0.6139508321254107
+      },
+      "3": {
+        "shape": [
+          1,
+          64,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "4a5750d6ece71fa1816877253dafff99c222f9f7bdc406f096f5332753cb2160",
+        "elements": 409600,
+        "min": -0.278564453125,
+        "max": 10.1875,
+        "mean": 0.6060399715944368
+      },
+      "4": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "11025d9378381bd0b85519b3138a0c8741efaf26f20ed65c937bd07c25ac3789",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.484375,
+        "mean": -0.08544043469279132
+      },
+      "5": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "f3c940b8f3ff05fb5f331a1f671f1f3e6a1be526827011ce33e7eb7480783f9b",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 7.171875,
+        "mean": 0.17654682709282496
+      },
+      "6": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "ba0173b06548907353c1f849b07ade3132d5949efad034158616b28cf6129628",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 7.671875,
+        "mean": 0.05305278684478253
+      },
+      "7": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "89c13b1ff961456d3a840fc4ba5db6fcc92c8c2b033f55b5a4fa1228de4f1936",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 5.4609375,
+        "mean": 0.013138766973279417
+      },
+      "8": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "d756d0dcc107f00369332e81534387693064b12d43e61630118589aeb9e4b544",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 6.01171875,
+        "mean": 0.12153726578573697
+      },
+      "9": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "0fea9deb0b45cdfd4e4780b153f57acee65ebb4a2a74a312e340b7e9756e095d",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 3.87890625,
+        "mean": -0.056130048308405095
+      },
+      "10": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "80e00d63ba5c1cb009d454a0becccbaa847f035c5027071605e5de5feffc8673",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 5.203125,
+        "mean": -0.0714916092826752
+      },
+      "11": {
+        "shape": [
+          1,
+          256,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "ff55ab5af80f3e3570f8a5480cd77748496b06240744022dc251186c2191cc97",
+        "elements": 409600,
+        "min": -0.278564453125,
+        "max": 5.203125,
+        "mean": -0.0714916092826752
+      },
+      "12": {
+        "shape": [
+          1,
+          384,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "3658d86e3e4ae0798acdc559c2966ab6a92cee5e24de1add08ba4321180dd461",
+        "elements": 614400,
+        "min": -0.278564453125,
+        "max": 7.671875,
+        "mean": -0.02997681057352262
+      },
+      "13": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "911ff13a0d2164bf68006a513c02df3159eb67e1466900a38fa8f1345b0e1bf2",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 5.18359375,
+        "mean": -0.004018101653200574
+      },
+      "14": {
+        "shape": [
+          1,
+          128,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "a00cc0a8776990c2f7f6a3786b33dc217388fcff5bbee4cf664c2d6e0dedfbee",
+        "elements": 819200,
+        "min": -0.278564453125,
+        "max": 5.18359375,
+        "mean": -0.004018101653200574
+      },
+      "15": {
+        "shape": [
+          1,
+          256,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "65a3674d4857d1af9f5ebb9ff662d2f9e44a983526bf42b273cd5d3abb76dbf3",
+        "elements": 1638400,
+        "min": -0.278564453125,
+        "max": 5.484375,
+        "mean": -0.04472926817299595
+      },
+      "16": {
+        "shape": [
+          1,
+          64,
+          80,
+          80
+        ],
+        "dtype": "float16",
+        "sha256": "7cbb8ea0abdb4e7d2168754deea19ed3d04ef35e05c14301aec313f9d3c12a44",
+        "elements": 409600,
+        "min": -0.278564453125,
+        "max": 5.46484375,
+        "mean": 0.2738801624471671
+      },
+      "17": {
+        "shape": [
+          1,
+          64,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "9fe132f53bf0ce4721ccf619e782fd49d1b384d1bac7494b93b1946311a72fbf",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 8.0390625,
+        "mean": -0.01602576634672005
+      },
+      "18": {
+        "shape": [
+          1,
+          192,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "1760988d7d508c52928316e546086c4d3d65063ff9fec3871e49114802a9eb01",
+        "elements": 307200,
+        "min": -0.278564453125,
+        "max": 8.0390625,
+        "mean": -0.008020656551040398
+      },
+      "19": {
+        "shape": [
+          1,
+          128,
+          40,
+          40
+        ],
+        "dtype": "float16",
+        "sha256": "4d6ddbf3e261ff178da72aba9a15629827d5e6f9ef7f1aee046b1f6b06ab1bef",
+        "elements": 204800,
+        "min": -0.278564453125,
+        "max": 6.03515625,
+        "mean": 0.03564343854202889
+      },
+      "20": {
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "9409eb8ab1856f99c570ba03504ca74d3074d3dea06814594d1c35fd781d0b66",
+        "elements": 51200,
+        "min": -0.278564453125,
+        "max": 6.33203125,
+        "mean": -0.0023892850382253527
+      },
+      "21": {
+        "shape": [
+          1,
+          384,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "656f31a3665c9185df8f2915a507e94a530f3f69002b4ced535fddd1637d8421",
+        "elements": 153600,
+        "min": -0.278564453125,
+        "max": 6.33203125,
+        "mean": -0.04845750120119192
+      },
+      "22": {
+        "shape": [
+          1,
+          256,
+          20,
+          20
+        ],
+        "dtype": "float16",
+        "sha256": "0f850f0eb606cc3819b6145d3c87655358a072395120c6cc5a6a0152d432a925",
+        "elements": 102400,
+        "min": -0.278564453125,
+        "max": 9.3125,
+        "mean": 0.03390323612838984
+      }
+    }
+  },
+  "runtime_geometry_equal_after_float_lift": true,
+  "model_states_unchanged": {
+    "fp32": true,
+    "fp16": true
+  },
+  "endpoint_aliases_exact": {
+    "cut22_fp32_to_fp16": true,
+    "cut22_fp16_to_fp32": true,
+    "input_fp32_to_fp16": true
+  },
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 57,
+        "max_absolute_error": 5.115631103515625,
+        "max_error_over_tolerance": 3.649256924524283
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0036973953247070312,
+        "max_error_over_tolerance": 0.4487386935673765
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8349,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1338,
+        "candidate_union_total": 1340,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "native_heads_both_decode_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 57,
+        "max_absolute_error": 5.19805908203125,
+        "max_error_over_tolerance": 3.70805726905381
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.003759533166885376,
+        "max_error_over_tolerance": 0.45628012521626726
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8349,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1338,
+        "candidate_union_total": 1340,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_-1_source_fp32_suffix_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 57,
+        "max_absolute_error": 5.19805908203125,
+        "max_error_over_tolerance": 3.70805726905381
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.003759533166885376,
+        "max_error_over_tolerance": 0.45628012521626726
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8349,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1338,
+        "candidate_union_total": 1340,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_-1_source_fp16_suffix_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 1,
+        "max_absolute_error": 2.3691864013671875,
+        "max_error_over_tolerance": 1.6900690659137496
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0009471774101257324,
+        "max_error_over_tolerance": 0.14060004761351358
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8394,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1336,
+        "candidate_union_total": 1338,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_4_source_fp32_suffix_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 13,
+        "max_absolute_error": 4.1132659912109375,
+        "max_error_over_tolerance": 2.9342155634563154
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0029527246952056885,
+        "max_error_over_tolerance": 0.4065970110533456
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8359,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1338,
+        "candidate_union_total": 1339,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_4_source_fp16_suffix_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 48,
+        "max_absolute_error": 2.640533447265625,
+        "max_error_over_tolerance": 2.199829794982785
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0026128292083740234,
+        "max_error_over_tolerance": 0.31710906260026306
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8380,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1338,
+        "candidate_union_total": 1338,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_6_source_fp32_suffix_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 9,
+        "max_absolute_error": 2.7657470703125,
+        "max_error_over_tolerance": 1.9729572839770368
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.002266496419906616,
+        "max_error_over_tolerance": 0.27968817734223084
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8357,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1337,
+        "candidate_union_total": 1339,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_6_source_fp16_suffix_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 59,
+        "max_absolute_error": 5.272308349609375,
+        "max_error_over_tolerance": 3.7610232957995855
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.002282440662384033,
+        "max_error_over_tolerance": 0.30901607406607745
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8380,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1339,
+        "candidate_union_total": 1339,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_10_source_fp32_suffix_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 2,
+        "max_absolute_error": 3.344390869140625,
+        "max_error_over_tolerance": 2.385735267177467
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0022180676460266113,
+        "max_error_over_tolerance": 0.37345681714321644
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8353,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1336,
+        "candidate_union_total": 1338,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_10_source_fp16_suffix_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 57,
+        "max_absolute_error": 7.467559814453125,
+        "max_error_over_tolerance": 5.327015144517467
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0019621551036834717,
+        "max_error_over_tolerance": 0.3522121371703484
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8385,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1339,
+        "candidate_union_total": 1339,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    },
+    "reference_fp32_vs_cut_22_source_fp32_suffix_fp16": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 0,
+        "max_absolute_error": 0.143310546875,
+        "max_error_over_tolerance": 0.15758103782952593
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0023203790187835693,
+        "max_error_over_tolerance": 0.26616997676010523
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8353,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1338,
+        "candidate_union_total": 1339,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": true,
+      "status": "PASS"
+    },
+    "reference_fp32_vs_cut_22_source_fp16_suffix_fp32": {
+      "shape_reference": [
+        1,
+        14,
+        8400
+      ],
+      "shape_comparison": [
+        1,
+        14,
+        8400
+      ],
+      "shape_pass": true,
+      "finite_pass": true,
+      "guard_name": "GATE1_SAME_PYTORCH_UNFUSED_FP32_FP16_DTYPE_GUARD",
+      "old_gate05_guard_replaced": false,
+      "tolerances_changed": false,
+      "boxes": {
+        "rtol": 0.005,
+        "atol": 0.5,
+        "elements": 33600,
+        "violations": 55,
+        "max_absolute_error": 5.1932373046875,
+        "max_error_over_tolerance": 3.704617633942494
+      },
+      "scores": {
+        "rtol": 0.02,
+        "atol": 0.002,
+        "elements": 84000,
+        "violations": 0,
+        "max_absolute_error": 0.0025906264781951904,
+        "max_error_over_tolerance": 0.31598693939971584
+      },
+      "raw_geometry": {
+        "fp32": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        },
+        "fp16": {
+          "positive_width_height": true,
+          "class_scores_within_0_1": true
+        }
+      },
+      "class_argmax": {
+        "all_anchors_equal": 8387,
+        "all_anchors_total": 8400,
+        "candidate_union_equal": 1339,
+        "candidate_union_total": 1339,
+        "criterion": "reported separately; class argmax equality is not substituted for the fixed elementwise score guard"
+      },
+      "allclose_pass": false,
+      "status": "FAIL_FIXED_TOLERANCES"
+    }
+  },
+  "old_guard_replaced": false,
+  "tolerances_changed": false
+}

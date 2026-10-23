@@ -1,0 +1,417 @@
+{
+  "schema": "rampq.gate05.prefix_flag_source_readonly_review/v1",
+  "status": "SOURCE_AND_SAVED_ARRAYS_VERIFIED",
+  "checks": [
+    {
+      "name": "parent_schema",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:cpu_actual_original.npy",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:cpu_actual_original.npy",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:model_fused_prefix_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:model_fused_prefix_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:model_fused_prefix_original.onnx",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:model_fused_prefix_original.onnx",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:prepare_gate05_fused_prefix_probe.py",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:prepare_gate05_fused_prefix_probe.py",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:preprocessed_input.npy",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:preprocessed_input.npy",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:README.md",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:README.md",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_size:spec.json",
+      "passed": true
+    },
+    {
+      "name": "parent_manifest_sha256:spec.json",
+      "passed": true
+    },
+    {
+      "name": "original:graph_source_hash",
+      "passed": true
+    },
+    {
+      "name": "original:11_nodes",
+      "passed": true
+    },
+    {
+      "name": "original:12_initializers",
+      "passed": true
+    },
+    {
+      "name": "original:sole_first_conv",
+      "passed": true
+    },
+    {
+      "name": "original:one_final_dq_output",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_0_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_0_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_0_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_0_conv_WeightQ",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_0_conv_WeightDQ",
+      "passed": true
+    },
+    {
+      "name": "original:node:/model.0/conv/Conv",
+      "passed": true
+    },
+    {
+      "name": "original:node:/model.0/act/Sigmoid",
+      "passed": true
+    },
+    {
+      "name": "original:node:/model.0/act/Mul",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_1_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_1_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "original:node:rampq_model_1_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:model.0.conv.weight",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:model.0.conv.bias",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_0_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_0_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_0_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_0_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_0_conv_w_scale",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_0_conv_w_zero",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_1_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_1_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_1_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "original:initializer:rampq_model_1_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "code_clip:graph_source_hash",
+      "passed": true
+    },
+    {
+      "name": "code_clip:11_nodes",
+      "passed": true
+    },
+    {
+      "name": "code_clip:12_initializers",
+      "passed": true
+    },
+    {
+      "name": "code_clip:sole_first_conv",
+      "passed": true
+    },
+    {
+      "name": "code_clip:one_final_dq_output",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_0_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_0_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_0_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_0_conv_WeightQ",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_0_conv_WeightDQ",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:/model.0/conv/Conv",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:/model.0/act/Sigmoid",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:/model.0/act/Mul",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_1_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_1_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "code_clip:node:rampq_model_1_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:model.0.conv.weight",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:model.0.conv.bias",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_0_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_0_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_0_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_0_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_0_conv_w_scale",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_0_conv_w_zero",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_1_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_1_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_1_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "code_clip:initializer:rampq_model_1_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "input_file_sha",
+      "passed": true
+    },
+    {
+      "name": "input_array_sha",
+      "passed": true
+    },
+    {
+      "name": "input_float32_finite_shape",
+      "passed": true
+    },
+    {
+      "name": "cpu_keys",
+      "passed": true
+    },
+    {
+      "name": "original_output:dtype_finite_shape",
+      "passed": true
+    },
+    {
+      "name": "original_output:array_sha",
+      "passed": true
+    },
+    {
+      "name": "code_clip_output:dtype_finite_shape",
+      "passed": true
+    },
+    {
+      "name": "code_clip_output:array_sha",
+      "passed": true
+    },
+    {
+      "name": "saved_cpu_outputs_bit_exact",
+      "passed": true
+    },
+    {
+      "name": "saved_cpu_actual_matches_expected:original",
+      "passed": true
+    },
+    {
+      "name": "saved_cpu_actual_matches_expected:code_clip",
+      "passed": true
+    }
+  ],
+  "check_count": 94,
+  "graphs": {
+    "original": {
+      "path": "artifacts\\gate05\\20261019_fused_prefix_probe\\model_fused_prefix_original.onnx",
+      "sha256": "22b1065c01792492d658596c1069aee074e054f32648fa90bf87cc39a6d11a33",
+      "nodes": 11,
+      "initializers": 12,
+      "conv_names": [
+        "/model.0/conv/Conv"
+      ],
+      "outputs": [
+        "rampq_model_1_conv_a_dq"
+      ]
+    },
+    "code_clip": {
+      "path": "artifacts\\gate05\\20261019_fused_prefix_probe\\model_fused_prefix_code_clip.onnx",
+      "sha256": "d2b8ca8105f8a05fabb7aac66c6fbab1a2558ac35bdd5ea1736ce8e0052465de",
+      "nodes": 11,
+      "initializers": 12,
+      "conv_names": [
+        "/model.0/conv/Conv"
+      ],
+      "outputs": [
+        "rampq_model_1_conv_a_dq"
+      ]
+    }
+  },
+  "input_array_read_only": true,
+  "new_cpu_inference_run": false,
+  "new_native_run": false,
+  "parent_manifest_sha256": "f85bb5a98bfb75f5b428d6ea62927dd5e0eb878e4366dd138ddfd4cef946af05",
+  "parent_spec_sha256": "8eda3d9fc2b4b9e997742efe7b7e9c5599619940af0aef388bbaccc5f3eaf496",
+  "parent_cpu_expected_sha256": "720040da21943f67ed376ab433524af56249cce7e2e2f73e8dc3d7000279a59f",
+  "original_full_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false
+}

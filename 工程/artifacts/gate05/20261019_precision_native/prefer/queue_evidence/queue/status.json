@@ -1,0 +1,833 @@
+{
+  "schema": "rampq.gate05.frozen_build_queue_request/v1",
+  "queue_pid": 16498,
+  "queue_script_sha256": "21d4436fae4ea067d6c1d2a6475b056a66fd2d40b1d00818075e909f358512de",
+  "original_plan_sha256": "4384c4038c5c4c18c09a0e018caffd1825cfd3332f4890f933894f29448e3550",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "bundles": [
+    {
+      "configuration": "fp16_control",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_fp16_control_20261019",
+      "manifest_sha256": "f7cabe1ce2530a62c20398c8e79c80d98de4c640f2e6df697013f1751809c330",
+      "spec_sha256": "4b279517da8d847dca9fe60a592b914f7b68f24bd5c4b85b67881172a9f3cfb9",
+      "precision_constraint_request_mode": "obey"
+    },
+    {
+      "configuration": "r_only_G1",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer",
+      "manifest_sha256": "e5970f9a1767dff4cfd1d82d61ecf9db970a86a09013339bbddf192b0efb5de7",
+      "spec_sha256": "1bfb1e0bc1df7e5e74bd560c650b17a344413be676383bd4d873ff8453696aee",
+      "precision_constraint_request_mode": "prefer"
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer",
+      "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+      "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+      "precision_constraint_request_mode": "prefer"
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer",
+      "manifest_sha256": "08fb7fa8b9d076cb10c8e4def6960bdd0a3a2aabb3e44480bf4ab2e207348547",
+      "spec_sha256": "0a0e5df085876e5daeb86fe8390f2dcac6493c22680f52ff3764d45570e4e432",
+      "precision_constraint_request_mode": "prefer"
+    },
+    {
+      "configuration": "q_only_G1",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_q_only_G1_20261019_v2_prefer",
+      "manifest_sha256": "14deff8beec746b24035a396630506a87764ba50efe3d2c4ad3585461f88756d",
+      "spec_sha256": "cd5577738bd2d16e02d4f72d2ea9a2ce85812f312956699f17c77c95198b1607",
+      "precision_constraint_request_mode": "prefer"
+    }
+  ],
+  "inference_run": false,
+  "dataset_evaluation_run": false,
+  "native_precision_pass_claim": false,
+  "status": "FROZEN_BUILD_QUEUE_FINISHED_AUDIT_AND_SMOKE_PENDING",
+  "elapsed_seconds": 6816.49,
+  "completed_builds": [
+    {
+      "configuration": "r_only_G1",
+      "monitor_pid": 16505,
+      "monitor_returncode": 0,
+      "monitor_run": "/home/nvidia/rampq/gate05_frozen_build_queue_prefer_20261019/monitor_r_only_G1",
+      "terminal_monitor_status": {
+        "monitor_pid": 16505,
+        "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+        "board_time": "2026-10-17T03:46:29+0800",
+        "root": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer",
+        "max_seconds": 1800,
+        "stop_temperature_c": 85,
+        "build_script": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer/jetson_build_precision_candidate.py",
+        "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+        "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+        "build_pid": 16557,
+        "status": "STOPPED_BY_MONITOR",
+        "reason": "Build supervision time limit reached",
+        "build_returncode": -2,
+        "elapsed_seconds": 1802.48,
+        "final_resources": {
+          "MemAvailable_kib": 5215956,
+          "SwapTotal_kib": 3756928,
+          "SwapFree_kib": 3746944,
+          "temperatures_c": {
+            "CV0-therm": 47.125,
+            "CPU-therm": 49.531,
+            "SOC2-therm": 48.437,
+            "SOC0-therm": 48.312,
+            "CV1-therm": 46.937,
+            "GPU-therm": 47.156,
+            "tj-therm": 50.25,
+            "SOC1-therm": 50.25,
+            "CV2-therm": 47.812
+          }
+        }
+      },
+      "initial_resources": {
+        "available_kib": 5241004,
+        "temperatures_c": {
+          "CV0-therm": 46.062,
+          "CPU-therm": 48.437,
+          "SOC2-therm": 47.531,
+          "SOC0-therm": 47.375,
+          "CV1-therm": 46.031,
+          "GPU-therm": 46.218,
+          "tj-therm": 49.25,
+          "SOC1-therm": 49.25,
+          "CV2-therm": 46.812
+        }
+      },
+      "final_resources": {
+        "available_kib": 5222048,
+        "temperatures_c": {
+          "CV0-therm": 47.031,
+          "CPU-therm": 49.062,
+          "SOC2-therm": 48.375,
+          "SOC0-therm": 48.25,
+          "CV1-therm": 46.906,
+          "GPU-therm": 47.031,
+          "tj-therm": 50.093,
+          "SOC1-therm": 50.093,
+          "CV2-therm": 47.625
+        }
+      },
+      "native_precision_audit": "NOT_RUN",
+      "fixed_image_execution": "NOT_RUN",
+      "latest_build_sha256": "81855bd9c79a921324c44cba405c9219357d84a4f5d9a5327368b8785ce603da",
+      "latest_build": {
+        "configuration": "r_only_G1",
+        "onnx_sha256": "4f94499d817be12e1286433276ae5a697e30ba8c66916f014a4c9b5e97076c06",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "1bfb1e0bc1df7e5e74bd560c650b17a344413be676383bd4d873ff8453696aee",
+        "manifest_sha256": "e5970f9a1767dff4cfd1d82d61ecf9db970a86a09013339bbddf192b0efb5de7",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "94779f52b63b3d02398434e10916e080a8fb7c67a76648af0b98156fa5e2e78e",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+        "elapsed_seconds": 1800.934317184001,
+        "error": "KeyboardInterrupt: ",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer/jetson_build_precision_candidate.py\", line 156, in main\n    code = process.wait(timeout=20)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1083, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1800, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN",
+        "run_dir": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer/results/build_20261016T194630_829475Z"
+      },
+      "build_result_path": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer/results/build_20261016T194630_829475Z/build_result.json",
+      "build_result_sha256": "2c0342261e80f643c6571902f90beb982d27f6d4b89e690dd8f6d4fb178d86ca",
+      "build_result": {
+        "configuration": "r_only_G1",
+        "onnx_sha256": "4f94499d817be12e1286433276ae5a697e30ba8c66916f014a4c9b5e97076c06",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "1bfb1e0bc1df7e5e74bd560c650b17a344413be676383bd4d873ff8453696aee",
+        "manifest_sha256": "e5970f9a1767dff4cfd1d82d61ecf9db970a86a09013339bbddf192b0efb5de7",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "94779f52b63b3d02398434e10916e080a8fb7c67a76648af0b98156fa5e2e78e",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+        "elapsed_seconds": 1800.934317184001,
+        "error": "KeyboardInterrupt: ",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v2_prefer/jetson_build_precision_candidate.py\", line 156, in main\n    code = process.wait(timeout=20)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1083, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1800, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN"
+      }
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "monitor_pid": 19112,
+      "monitor_returncode": 0,
+      "monitor_run": "/home/nvidia/rampq/gate05_frozen_build_queue_prefer_20261019/monitor_r_only_G1_G5",
+      "terminal_monitor_status": {
+        "monitor_pid": 19112,
+        "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+        "board_time": "2026-10-17T04:16:33+0800",
+        "root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer",
+        "max_seconds": 1800,
+        "stop_temperature_c": 85,
+        "build_script": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer/jetson_build_precision_candidate.py",
+        "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+        "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+        "build_pid": 19118,
+        "status": "STOPPED_BY_MONITOR",
+        "reason": "Build supervision time limit reached",
+        "build_returncode": -2,
+        "elapsed_seconds": 1802.56,
+        "final_resources": {
+          "MemAvailable_kib": 5217940,
+          "SwapTotal_kib": 3756928,
+          "SwapFree_kib": 3746944,
+          "temperatures_c": {
+            "CV0-therm": 46.968,
+            "CPU-therm": 49.062,
+            "SOC2-therm": 48.125,
+            "SOC0-therm": 48.156,
+            "CV1-therm": 46.781,
+            "GPU-therm": 46.812,
+            "tj-therm": 49.937,
+            "SOC1-therm": 49.937,
+            "CV2-therm": 47.531
+          }
+        }
+      },
+      "initial_resources": {
+        "available_kib": 5220480,
+        "temperatures_c": {
+          "CV0-therm": 46.937,
+          "CPU-therm": 49.093,
+          "SOC2-therm": 48.5,
+          "SOC0-therm": 48.312,
+          "CV1-therm": 47.031,
+          "GPU-therm": 47.0,
+          "tj-therm": 50.093,
+          "SOC1-therm": 50.093,
+          "CV2-therm": 47.656
+        }
+      },
+      "final_resources": {
+        "available_kib": 5224124,
+        "temperatures_c": {
+          "CV0-therm": 46.468,
+          "CPU-therm": 48.656,
+          "SOC2-therm": 47.906,
+          "SOC0-therm": 48.062,
+          "CV1-therm": 46.656,
+          "GPU-therm": 46.812,
+          "tj-therm": 49.75,
+          "SOC1-therm": 49.75,
+          "CV2-therm": 47.281
+        }
+      },
+      "native_precision_audit": "NOT_RUN",
+      "fixed_image_execution": "NOT_RUN",
+      "latest_build_sha256": "ea6d0917d304c3950269be1f2e45d71f22a116a702cb23dcb9e374c699484c4b",
+      "latest_build": {
+        "configuration": "r_only_G1_G5",
+        "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+        "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+        "elapsed_seconds": 1800.967448704003,
+        "error": "KeyboardInterrupt: ",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer/jetson_build_precision_candidate.py\", line 156, in main\n    code = process.wait(timeout=20)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1083, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1800, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN",
+        "run_dir": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer/results/build_20261016T201634_421666Z"
+      },
+      "build_result_path": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer/results/build_20261016T201634_421666Z/build_result.json",
+      "build_result_sha256": "b4e9a7e10948368b96faa14d62a974c1b181eab1f07cdd624bac8667c4ba9520",
+      "build_result": {
+        "configuration": "r_only_G1_G5",
+        "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+        "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+        "elapsed_seconds": 1800.967448704003,
+        "error": "KeyboardInterrupt: ",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v2_prefer/jetson_build_precision_candidate.py\", line 156, in main\n    code = process.wait(timeout=20)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1083, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1800, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN"
+      }
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "monitor_pid": 20894,
+      "monitor_returncode": 0,
+      "monitor_run": "/home/nvidia/rampq/gate05_frozen_build_queue_prefer_20261019/monitor_r_only_G1_G2",
+      "terminal_monitor_status": {
+        "monitor_pid": 20894,
+        "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+        "board_time": "2026-10-17T04:46:37+0800",
+        "root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer",
+        "max_seconds": 1800,
+        "stop_temperature_c": 85,
+        "build_script": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer/jetson_build_precision_candidate.py",
+        "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+        "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+        "build_pid": 20901,
+        "status": "STOPPED_BY_MONITOR",
+        "reason": "Build supervision time limit reached",
+        "build_returncode": -2,
+        "elapsed_seconds": 1802.52,
+        "final_resources": {
+          "MemAvailable_kib": 5220484,
+          "SwapTotal_kib": 3756928,
+          "SwapFree_kib": 3746944,
+          "temperatures_c": {
+            "CV0-therm": 47.031,
+            "CPU-therm": 49.375,
+            "SOC2-therm": 48.375,
+            "SOC0-therm": 48.312,
+            "CV1-therm": 47.093,
+            "GPU-therm": 47.375,
+            "tj-therm": 50.125,
+            "SOC1-therm": 50.125,
+            "CV2-therm": 47.687
+          }
+        }
+      },
+      "initial_resources": {
+        "available_kib": 5223712,
+        "temperatures_c": {
+          "CV0-therm": 46.531,
+          "CPU-therm": 48.937,
+          "SOC2-therm": 48.031,
+          "SOC0-therm": 48.0,
+          "CV1-therm": 46.718,
+          "GPU-therm": 46.937,
+          "tj-therm": 49.718,
+          "SOC1-therm": 49.718,
+          "CV2-therm": 47.312
+        }
+      },
+      "final_resources": {
+        "available_kib": 5225724,
+        "temperatures_c": {
+          "CV0-therm": 46.843,
+          "CPU-therm": 49.375,
+          "SOC2-therm": 48.25,
+          "SOC0-therm": 48.187,
+          "CV1-therm": 47.031,
+          "GPU-therm": 47.093,
+          "tj-therm": 50.031,
+          "SOC1-therm": 50.031,
+          "CV2-therm": 47.562
+        }
+      },
+      "native_precision_audit": "NOT_RUN",
+      "fixed_image_execution": "NOT_RUN",
+      "latest_build_sha256": "dc55dc123cfa3654524bba93096bdab6e6dac30fdf5a72c0a1064fb24fff3452",
+      "latest_build": {
+        "configuration": "r_only_G1_G2",
+        "onnx_sha256": "25f7afbd9c860ea86bc56ac6e803fb832231a10bec84eab95520532a0faa6225",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "0a0e5df085876e5daeb86fe8390f2dcac6493c22680f52ff3764d45570e4e432",
+        "manifest_sha256": "08fb7fa8b9d076cb10c8e4def6960bdd0a3a2aabb3e44480bf4ab2e207348547",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "ef3d5b74da5c0389506c37592b197af4570265c938d26f8e3c78584436e7c887",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+        "elapsed_seconds": 1800.8676970880042,
+        "error": "KeyboardInterrupt: ",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer/jetson_build_precision_candidate.py\", line 156, in main\n    code = process.wait(timeout=20)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1083, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1800, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN",
+        "run_dir": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer/results/build_20261016T204638_875000Z"
+      },
+      "build_result_path": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer/results/build_20261016T204638_875000Z/build_result.json",
+      "build_result_sha256": "86276d55eedb5041941cedc617a272aebee4dddf6d73d4615992445c6bb0889e",
+      "build_result": {
+        "configuration": "r_only_G1_G2",
+        "onnx_sha256": "25f7afbd9c860ea86bc56ac6e803fb832231a10bec84eab95520532a0faa6225",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "0a0e5df085876e5daeb86fe8390f2dcac6493c22680f52ff3764d45570e4e432",
+        "manifest_sha256": "08fb7fa8b9d076cb10c8e4def6960bdd0a3a2aabb3e44480bf4ab2e207348547",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "ef3d5b74da5c0389506c37592b197af4570265c938d26f8e3c78584436e7c887",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+        "elapsed_seconds": 1800.8676970880042,
+        "error": "KeyboardInterrupt: ",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v2_prefer/jetson_build_precision_candidate.py\", line 156, in main\n    code = process.wait(timeout=20)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1083, in wait\n    return self._wait(timeout=timeout)\n  File \"/usr/lib/python3.8/subprocess.py\", line 1800, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN"
+      }
+    },
+    {
+      "configuration": "q_only_G1",
+      "monitor_pid": 21893,
+      "monitor_returncode": 0,
+      "monitor_run": "/home/nvidia/rampq/gate05_frozen_build_queue_prefer_20261019/monitor_q_only_G1",
+      "terminal_monitor_status": {
+        "monitor_pid": 21893,
+        "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+        "board_time": "2026-10-17T05:16:42+0800",
+        "root": "/home/nvidia/rampq/gate05_precision_q_only_G1_20261019_v2_prefer",
+        "max_seconds": 1800,
+        "stop_temperature_c": 85,
+        "build_script": "/home/nvidia/rampq/gate05_precision_q_only_G1_20261019_v2_prefer/jetson_build_precision_candidate.py",
+        "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+        "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+        "build_pid": 21899,
+        "status": "BUILD_SCRIPT_OK",
+        "reason": null,
+        "build_returncode": 0,
+        "elapsed_seconds": 1402.37,
+        "final_resources": {
+          "MemAvailable_kib": 5224084,
+          "SwapTotal_kib": 3756928,
+          "SwapFree_kib": 3746944,
+          "temperatures_c": {
+            "CV0-therm": 47.343,
+            "CPU-therm": 49.406,
+            "SOC2-therm": 48.656,
+            "SOC0-therm": 48.718,
+            "CV1-therm": 47.218,
+            "GPU-therm": 47.343,
+            "tj-therm": 50.531,
+            "SOC1-therm": 50.531,
+            "CV2-therm": 48.156
+          }
+        }
+      },
+      "initial_resources": {
+        "available_kib": 5225728,
+        "temperatures_c": {
+          "CV0-therm": 46.843,
+          "CPU-therm": 49.218,
+          "SOC2-therm": 48.156,
+          "SOC0-therm": 48.25,
+          "CV1-therm": 47.031,
+          "GPU-therm": 46.812,
+          "tj-therm": 50.062,
+          "SOC1-therm": 50.062,
+          "CV2-therm": 47.593
+        }
+      },
+      "final_resources": {
+        "available_kib": 5230408,
+        "temperatures_c": {
+          "CV0-therm": 47.25,
+          "CPU-therm": 49.656,
+          "SOC2-therm": 48.718,
+          "SOC0-therm": 48.687,
+          "CV1-therm": 47.281,
+          "GPU-therm": 47.312,
+          "tj-therm": 50.375,
+          "SOC1-therm": 50.375,
+          "CV2-therm": 47.906
+        }
+      },
+      "native_precision_audit": "NOT_RUN",
+      "fixed_image_execution": "NOT_RUN",
+      "latest_build_sha256": "72e473899990d5ffc1808c97b08066dd1e57d0e7d35f8185c693e076e3e63ffb",
+      "latest_build": {
+        "configuration": "q_only_G1",
+        "onnx_sha256": "946fe83ea185fde114096f9d7b64b5ec9d4bc69afc87476b9c7548cf97a04b91",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "cd5577738bd2d16e02d4f72d2ea9a2ce85812f312956699f17c77c95198b1607",
+        "manifest_sha256": "14deff8beec746b24035a396630506a87764ba50efe3d2c4ad3585461f88756d",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "f115ad776711085ca2748919b5430f297f41f9a21f469ad8ffb25c446a1e7e54",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "engine_sha256": "d727cd809926b2a016a6e18e25999701caf2beb31c24725f5019bbd894a0cf44",
+        "engine_bytes": 6931312,
+        "bindings": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT",
+            "format": "TensorFormat.LINEAR"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT",
+            "format": "TensorFormat.LINEAR"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT",
+            "format": "TensorFormat.LINEAR"
+          }
+        ],
+        "engine_layers": 300,
+        "status": "BUILT_AND_DESERIALIZED",
+        "elapsed_seconds": 1399.9075300160039,
+        "actual_precision_audit": "PENDING",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN",
+        "run_dir": "/home/nvidia/rampq/gate05_precision_q_only_G1_20261019_v2_prefer/results/build_20261016T211643_480855Z"
+      },
+      "build_result_path": "/home/nvidia/rampq/gate05_precision_q_only_G1_20261019_v2_prefer/results/build_20261016T211643_480855Z/build_result.json",
+      "build_result_sha256": "c3815462ffdef6e18fa27a7fcc2d48ae970bcb270cf7e39a20d349044ec6d63b",
+      "build_result": {
+        "configuration": "q_only_G1",
+        "onnx_sha256": "946fe83ea185fde114096f9d7b64b5ec9d4bc69afc87476b9c7548cf97a04b91",
+        "requested_precision_constraints_mode": "prefer",
+        "spec_sha256": "cd5577738bd2d16e02d4f72d2ea9a2ce85812f312956699f17c77c95198b1607",
+        "manifest_sha256": "14deff8beec746b24035a396630506a87764ba50efe3d2c4ad3585461f88756d",
+        "diagnostic_only": true,
+        "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+        "expected_binding_contract": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT"
+          }
+        ],
+        "primary_output_name": "output0",
+        "graph_audit_sha256": "f115ad776711085ca2748919b5430f297f41f9a21f469ad8ffb25c446a1e7e54",
+        "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+        "engine_sha256": "d727cd809926b2a016a6e18e25999701caf2beb31c24725f5019bbd894a0cf44",
+        "engine_bytes": 6931312,
+        "bindings": [
+          {
+            "name": "images",
+            "input": true,
+            "shape": [
+              1,
+              3,
+              640,
+              640
+            ],
+            "dtype": "DataType.FLOAT",
+            "format": "TensorFormat.LINEAR"
+          },
+          {
+            "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+            "input": false,
+            "shape": [
+              1,
+              128,
+              20,
+              20
+            ],
+            "dtype": "DataType.FLOAT",
+            "format": "TensorFormat.LINEAR"
+          },
+          {
+            "name": "output0",
+            "input": false,
+            "shape": [
+              1,
+              14,
+              8400
+            ],
+            "dtype": "DataType.FLOAT",
+            "format": "TensorFormat.LINEAR"
+          }
+        ],
+        "engine_layers": 300,
+        "status": "BUILT_AND_DESERIALIZED",
+        "elapsed_seconds": 1399.9075300160039,
+        "actual_precision_audit": "PENDING",
+        "single_image_inference": "NOT_RUN",
+        "dataset_evaluation": "NOT_RUN"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "status": "LAUNCHED",
+  "pid": 18837,
+  "command": [
+    "python3",
+    "-u",
+    "/home/nvidia/rampq/gate05_activation_fp32_clip_constraint_20261019/gate05_first_activation_boundary_probe_20261019/jetson_monitored_build.py",
+    "--root",
+    "/home/nvidia/rampq/gate05_activation_fp32_clip_constraint_20261019/gate05_first_activation_boundary_probe_20261019",
+    "--run",
+    "/home/nvidia/rampq/gate05_activation_fp32_clip_constraint_20261019/gate05_first_activation_boundary_probe_20261019/monitor",
+    "--max-seconds",
+    "160",
+    "--build-script",
+    "jetson_activation_boundary_fp32_clip_probe.py"
+  ],
+  "tool_hashes": {
+    "jetson_activation_boundary_probe.py": "8f23ddf56cc9d35cdd90d8c902ecfd8c93491c67ba869f1aeb2a3f15835f18a3",
+    "jetson_firstconv_numeric_probe.py": "2c2228cf9fa1631b9979a65292c74ba3737d67ff2746a2cba2f2b87d70620363",
+    "jetson_collect_isolated_numeric_probe.py": "95f03e093f84a473111b0d0d35190cbde4482cdbb992a58427528cb62d0383a6",
+    "jetson_monitored_build.py": "71ebc77843137c93cf2de6558f5234996330fab54dd900e251912b7b1ddae2a1",
+    "jetson_activation_boundary_fp32_clip_probe.py": "4bf1c2589a73c46ebf2ebded15c4bf5050a4b8d9777b8af67638940cd8df252d"
+  },
+  "spec_sha256": "34e449ba3314c132b2ecd459e233a20c208e4c8d0d2e39bb8e44c09af04be9e6",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "diagnostic_only": true,
+  "source_graph_unchanged": true,
+  "requested_clip_precision": "fp32",
+  "dataset_evaluation_run": false
+}

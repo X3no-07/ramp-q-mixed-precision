@@ -1,0 +1,891 @@
+{
+  "runtime": "11.3.0",
+  "computer": "x86_64-w64-mingw32",
+  "resolved_function_path_checks": [
+    {
+      "function": "dropObjectsInIgr",
+      "reported": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\dropObjectsInIgr.m",
+      "expected": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\dropObjectsInIgr.m",
+      "method": "live_samefile"
+    },
+    {
+      "function": "createIntImg",
+      "reported": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\createIntImg.m",
+      "expected": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\createIntImg.m",
+      "method": "live_samefile"
+    },
+    {
+      "function": "evalRes",
+      "reported": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\evalRes.m",
+      "expected": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\evalRes.m",
+      "method": "live_samefile"
+    },
+    {
+      "function": "compOas",
+      "reported": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\compOas.m",
+      "expected": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\compOas.m",
+      "method": "live_samefile"
+    },
+    {
+      "function": "calcAccuracy",
+      "reported": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\calcAccuracy.m",
+      "expected": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\calcAccuracy.m",
+      "method": "live_samefile"
+    },
+    {
+      "function": "VOCap",
+      "reported": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\VOCap.m",
+      "expected": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\official_toolkit\\utils\\VOCap.m",
+      "method": "live_samefile"
+    }
+  ],
+  "fixture_count": 20,
+  "kinds": {
+    "aggregate": 11,
+    "region": 4,
+    "match": 5
+  },
+  "observations": [
+    {
+      "id": "A01_perfect_single_class",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 100.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A02_gt_without_predictions",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            0,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 0.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A03_empty_both",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            0,
+            8
+          ],
+          "filtered_predictions_shape": [
+            0,
+            8
+          ],
+          "prepared_gt_shape": [
+            0,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": null,
+          "is_nan": true
+        },
+        "AP_50": {
+          "value": null,
+          "is_nan": true
+        },
+        "AP_75": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_1": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_10": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_100": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_500": {
+          "value": null,
+          "is_nan": true
+        }
+      }
+    },
+    {
+      "id": "A04_predictions_without_gt",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            0,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            0,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": null,
+          "is_nan": true
+        },
+        "AP_50": {
+          "value": null,
+          "is_nan": true
+        },
+        "AP_75": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_1": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_10": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_100": {
+          "value": null,
+          "is_nan": true
+        },
+        "AR_500": {
+          "value": null,
+          "is_nan": true
+        }
+      }
+    },
+    {
+      "id": "A05_same_class_ignore_only",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 1
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 0.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A06_positive_plus_ignored_denominator",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            2,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            2,
+            8
+          ],
+          "surviving_score_zero_gt": 1
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 50.0,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 50.0,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 50.0,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 50.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 50.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 50.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 50.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A07_unequal_class_image_frequency",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        },
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            0,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        },
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 66.66666666666667,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A08_input_order_before_cap",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            2,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 100.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A09_swapped_submission_order",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            2,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 100.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A10_precision_envelope",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            2,
+            8
+          ],
+          "filtered_predictions_shape": [
+            3,
+            8
+          ],
+          "prepared_gt_shape": [
+            2,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 66.66666666666666,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 66.66666666666666,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 66.66666666666666,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 0.0,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 100.0,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 100.0,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "A11_three_gt_one_hit",
+      "kind": "aggregate",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            3,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            3,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ],
+      "native_metrics_observed_not_handwritten_expected": {
+        "AP_all": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        },
+        "AP_50": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        },
+        "AP_75": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        },
+        "AR_1": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        },
+        "AR_10": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        },
+        "AR_100": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        },
+        "AR_500": {
+          "value": 33.33333333333333,
+          "is_nan": false
+        }
+      }
+    },
+    {
+      "id": "R01_exact_half_region",
+      "kind": "region",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            0,
+            8
+          ],
+          "filtered_predictions_shape": [
+            0,
+            8
+          ],
+          "prepared_gt_shape": [
+            0,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "R02_overlapping_region_union",
+      "kind": "region",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            0,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            0,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "R03_border_and_rounding",
+      "kind": "region",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            0,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            0,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "R04_zero_height_ignored_region",
+      "kind": "region",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            0,
+            8
+          ],
+          "filtered_predictions_shape": [
+            0,
+            8
+          ],
+          "prepared_gt_shape": [
+            0,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "M01_score_first_over_iou_first",
+      "kind": "match",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            2,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "M02_tied_score_and_overlap",
+      "kind": "match",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            2,
+            8
+          ],
+          "filtered_predictions_shape": [
+            2,
+            8
+          ],
+          "prepared_gt_shape": [
+            2,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "M03_ignore_absorbs_multiple_same_class",
+      "kind": "match",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            3,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 1
+        }
+      ]
+    },
+    {
+      "id": "M04_raw_outside_coordinates",
+      "kind": "match",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            1,
+            8
+          ],
+          "filtered_predictions_shape": [
+            1,
+            8
+          ],
+          "prepared_gt_shape": [
+            1,
+            8
+          ],
+          "surviving_score_zero_gt": 0
+        }
+      ]
+    },
+    {
+      "id": "M05_others_and_positive_priority",
+      "kind": "match",
+      "status": "STRUCTURE_CONSISTENT",
+      "images": [
+        {
+          "filtered_gt_shape": [
+            3,
+            8
+          ],
+          "filtered_predictions_shape": [
+            2,
+            8
+          ],
+          "prepared_gt_shape": [
+            3,
+            8
+          ],
+          "surviving_score_zero_gt": 1
+        }
+      ]
+    }
+  ],
+  "MAT_authoritative_for_empty_dimensions_and_NaN": true,
+  "JSON_serialization_consistent": true,
+  "schema": "rampq.gate1.native_synthetic_oracle_saved_output_audit/v1",
+  "status": "PASS_NATIVE_SYNTHETIC_OUTPUT_STRUCTURE_IDENTITIES_ONLY",
+  "execution": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261023_native_oracle_runtime_v1\\execution_01",
+  "launcher": {
+    "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261023_native_oracle_runtime_v1\\execution_01\\launcher_receipt.json",
+    "bytes": 7313,
+    "sha256": "ae5b17f675274b817a98ae5cf407ff203cfe00d419ef0d3f36c956446b07f5d1"
+  },
+  "source_manifest": {
+    "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\evaluation_sources\\source_manifest.json",
+    "bytes": 5124,
+    "sha256": "1d45d3ecaabf5f3f8a8885436a0a22718a890a17f8ad9d5ec4f9c274c3c079ae"
+  },
+  "frozen_readiness_manifest": {
+    "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261023_official_evaluator_readiness\\manifest.json",
+    "bytes": 2096,
+    "sha256": "10e6d14bfd0b0c557bf6e995790a7d4290d869e45a7c94bbfd3bd09e89a7952a"
+  },
+  "mat_reader": {
+    "scipy": "1.18.1",
+    "numpy": "2.5.3",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "mat_reader_dependency_verification": {
+    "wheel": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261023_native_oracle_comparison_preparation_v1\\scipy-1.18.1-cp312-cp312-win_amd64.whl",
+      "bytes": 36658278,
+      "sha256": "5e4d44984abc0020154ea81b247adeddcc3ac5527b975ff798bd1ba0adc513c2"
+    },
+    "verified_extracted_member_count": 1535,
+    "existing_Python_environment_modified": false
+  },
+  "official_AP_equivalence_certified": false,
+  "existing_Python_matcher_certified": false,
+  "full_Python_AP_implemented": false,
+  "gate1_scientific_pass": false,
+  "model_executed_by_auditor": false,
+  "real_data_read_by_auditor": false,
+  "handwritten_expected_AP_values_used": false
+}

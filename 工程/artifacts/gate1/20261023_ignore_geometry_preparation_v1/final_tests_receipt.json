@@ -1,0 +1,55 @@
+{
+  "schema": "rampq.gate1.ignore_geometry_synthetic_test_receipt/v1",
+  "status": "PASS_CPU_SYNTHETIC_GEOMETRY_ONLY",
+  "counts": {
+    "tests": 85,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "tests_include": {
+    "real_letterbox_crosschecks": 10,
+    "real_flip_crosschecks": 4,
+    "installed_loader_with_in_memory_imread_full_chain_crosschecks": 3,
+    "ragged_identity_and_loss_mask_linkage_dtypes": 2
+  },
+  "final_sources": {
+    "scripts/gate1_ignore_geometry.py": {
+      "bytes": 15626,
+      "sha256": "4ecb3eedc4c5597f64e2290d73de4d6a4d40f4cd265e06c0dbb0ca03371dfd56"
+    },
+    "tests/test_gate1_ignore_geometry.py": {
+      "bytes": 15620,
+      "sha256": "675f1627b11af41295b3b8dd475baf697c8dbb4ae00d4822c75a24104bcb1df8"
+    }
+  },
+  "junit_xml": {
+    "bytes": 12522,
+    "sha256": "8933f413425ca094d6117b8c6bd2035cac2da3d5b6dee345a20ba540a7ae2eac"
+  },
+  "console": {
+    "bytes": 182,
+    "sha256": "d1dad822dbf197ef81e8a560386dedd8caff5ede8f37d959d44d7542822d236e"
+  },
+  "runtime_packages": {
+    "numpy": "2.5.3",
+    "torch": "2.10.0+cu128",
+    "ultralytics": "8.4.142",
+    "pytest": "9.1.1"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "interpreter": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Scripts\\python.exe",
+  "failed_attempts_preserved": [
+    "initial_tests.xml",
+    "initial_tests.log",
+    "second_tests.xml",
+    "second_tests.log"
+  ],
+  "intermediate_82_test_pass_preserved": [
+    "third_tests.xml",
+    "third_tests.log"
+  ],
+  "real_data_or_weights_used": false,
+  "gpu_used": false,
+  "training_pipeline_integrated": false
+}

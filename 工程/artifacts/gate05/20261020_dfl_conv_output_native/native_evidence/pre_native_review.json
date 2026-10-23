@@ -1,0 +1,1539 @@
+{
+  "schema": "rampq.gate05.dfl_conv_output_pre_native_independent_review/v1",
+  "client_at": "2026-10-21T00:34:03.664748+08:00",
+  "status": "PRE_NATIVE_CONV_OUTPUT_STATIC_AND_SAVED_CPU_REVIEW_PASSED_ADOPTION_PENDING",
+  "launch_blockers": [],
+  "check_count": 369,
+  "checks": [
+    {
+      "name": "pinned_identity:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:model_dfl_conv_output_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:spec.json",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:manifest.json",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "pinned_identity:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "static_source_review_signed",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:model_dfl_conv_output_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:model_dfl_conv_output_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_softmax_cut_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_softmax_cut_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_softmax_cut_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_softmax_cut_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_softmax_cut_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_softmax_cut_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:README.md",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:README.md",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:reference_shape_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:reference_shape_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:reshaped_saved_cpu_reference_4d.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:reshaped_saved_cpu_reference_4d.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:spec.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_path:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "sealed_member_bytes:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "exact_payload_plus_seals",
+      "passed": true
+    },
+    {
+      "name": "regular_files_no_symlinks",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:README.md",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:model_dfl_conv_output_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_softmax_cut_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_softmax_cut_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_softmax_cut_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:reference_shape_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:reshaped_saved_cpu_reference_4d.npy",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:spec.json",
+      "passed": true
+    },
+    {
+      "name": "sha256sums:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "zip_identity_and_size",
+      "passed": true
+    },
+    {
+      "name": "zip_crc",
+      "passed": true
+    },
+    {
+      "name": "zip_exact_inventory",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/README.md",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/reshaped_saved_cpu_reference_4d.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_softmax_cut_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/SHA256SUMS",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/reference_shape_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/model_dfl_conv_output_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_softmax_cut_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/parent_softmax_cut_spec.json",
+      "passed": true
+    },
+    {
+      "name": "zip_original_payload:gate05_dfl_conv_output_probe_20261020/source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_softmax_cut_spec.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_softmax_cut_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_softmax_cut_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "historical_copy_exact:saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "source_snapshots_equal:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261018_int8/input_v1/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/diagnostic_scope.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/field_provenance.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/graph_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/model.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/module_map.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_graph_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_reference_protocol.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/preparation_attempt1.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/prepare_gate05_corrected_qall_candidate.py",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/preprocessed_input.npy",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/README.md",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/reference_contract.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/semantic_rewrite_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_candidate/spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_native/build_failed_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qall_native/parser_metadata_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261019_corrected_qonly_native/post_smoke_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_native/checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_native/native_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_context_probe.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_conv_output_protocol/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_native/checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_native/native_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_original_probe.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_native/checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_native/independent_native_review.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_native/native_evidence.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_native/next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/jetson_build_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/jetson_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/model_dfl_softmax_cut_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/model_dfl_source_softmax.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_dfl_original_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/prepare_gate05_dfl_softmax_cut_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/prepared_content_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/README.md",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/saved_cpu_reference.npy",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/saved_dfl_logits.npy",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/seal_native_source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/spec.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe/spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:artifacts/gate05/20261020_dfl_softmax_cut_probe.zip",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:source_hashes_before.json:scripts/prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_snapshots_equal:seal_native_source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:seal_native_source_hashes_before.json:scripts/jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "source_fresh:seal_native_source_hashes_before.json:scripts/jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:cpu_actual_code_clip.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:cpu_execution_plan.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:cpu_expected_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:dfl_softmax_probabilities.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:failure_inventory.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:model_dfl_conv_output_code_clip.onnx",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:original_failed_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_dfl_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_dfl_spec.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_next_control_plan.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_softmax_cut_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_softmax_cut_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_softmax_cut_spec.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:parent_spec.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:README.md",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:reference_shape_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:reshaped_saved_cpu_reference_4d.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:retained_qall_failure_checkpoint.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:saved_cpu_reference_3d.npy",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:saved_expected_outputs_3d.npz",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:source_model.onnx",
+      "passed": true
+    },
+    {
+      "name": "prepared_content_unchanged:spec_draft.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_cases",
+      "passed": true
+    },
+    {
+      "name": "frozen_budgets",
+      "passed": true
+    },
+    {
+      "name": "exact_common_native_policy",
+      "passed": true
+    },
+    {
+      "name": "CPU_once_no_old_reruns",
+      "passed": true
+    },
+    {
+      "name": "six_nodes_seven_init_one_Conv",
+      "passed": true
+    },
+    {
+      "name": "removed_exact_two_nodes_no_Softmax",
+      "passed": true
+    },
+    {
+      "name": "exact_full_source_closure",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_node_exact:rampq_model_23_dfl_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "serialized_node_hash:rampq_model_23_dfl_conv_ActivationQ",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_node_exact:rampq_model_23_dfl_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "serialized_node_hash:rampq_model_23_dfl_conv_Clip",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_node_exact:rampq_model_23_dfl_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "serialized_node_hash:rampq_model_23_dfl_conv_ActivationDQ",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_node_exact:rampq_model_23_dfl_conv_WeightQ",
+      "passed": true
+    },
+    {
+      "name": "serialized_node_hash:rampq_model_23_dfl_conv_WeightQ",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_node_exact:rampq_model_23_dfl_conv_WeightDQ",
+      "passed": true
+    },
+    {
+      "name": "serialized_node_hash:rampq_model_23_dfl_conv_WeightDQ",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_node_exact:/model.23/dfl/conv/Conv",
+      "passed": true
+    },
+    {
+      "name": "serialized_node_hash:/model.23/dfl/conv/Conv",
+      "passed": true
+    },
+    {
+      "name": "all_parent_initializers_retained",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:model.23.dfl.conv.weight",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:model.23.dfl.conv.weight",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:rampq_model_23_dfl_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:rampq_model_23_dfl_conv_a_scale",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:rampq_model_23_dfl_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:rampq_model_23_dfl_conv_a_zero",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:rampq_model_23_dfl_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:rampq_model_23_dfl_conv_clip_min",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:rampq_model_23_dfl_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:rampq_model_23_dfl_conv_clip_max",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:rampq_model_23_dfl_conv_w_scale",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:rampq_model_23_dfl_conv_w_scale",
+      "passed": true
+    },
+    {
+      "name": "source_and_parent_initializer_exact:rampq_model_23_dfl_conv_w_zero",
+      "passed": true
+    },
+    {
+      "name": "serialized_initializer_hash:rampq_model_23_dfl_conv_w_zero",
+      "passed": true
+    },
+    {
+      "name": "one_input_one_output",
+      "passed": true
+    },
+    {
+      "name": "exact_source_io_declaration:/model.23/dfl/Softmax_output_0",
+      "passed": true
+    },
+    {
+      "name": "exact_source_io_declaration:/model.23/dfl/conv/Conv_output_0",
+      "passed": true
+    },
+    {
+      "name": "source_model_metadata_unchanged",
+      "passed": true
+    },
+    {
+      "name": "static_ONNX_check",
+      "passed": true
+    },
+    {
+      "name": "new_4D_binding_contract",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:fixture_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:cpu_diagnostic.json",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:reference_shape_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "derived_record_identity:graph_identity_audit.json",
+      "passed": true
+    },
+    {
+      "name": "same_saved_probability_domain_FLOAT_shape",
+      "passed": true
+    },
+    {
+      "name": "same_saved_probability_raw_hash",
+      "passed": true
+    },
+    {
+      "name": "no_new_probability_generation",
+      "passed": true
+    },
+    {
+      "name": "frozen_one_CPU_plan",
+      "passed": true
+    },
+    {
+      "name": "one_CPU_result_metadata",
+      "passed": true
+    },
+    {
+      "name": "3D_4D_dtype_size_and_declared_shapes",
+      "passed": true
+    },
+    {
+      "name": "3D_4D_C_order_raw_array_bytes_exact",
+      "passed": true
+    },
+    {
+      "name": "NPY_shape_header_difference_not_rejected",
+      "passed": true
+    },
+    {
+      "name": "shape_lineage_authenticates_new_files",
+      "passed": true
+    },
+    {
+      "name": "CPU_byteeq_zero_difference_record_honest",
+      "passed": true
+    },
+    {
+      "name": "new_expected_NPZ_only_4D_code_clip",
+      "passed": true
+    },
+    {
+      "name": "workspace_tool_exact:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_pending_native_hardpins:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_AST_syntax:prepare_gate05_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "workspace_tool_exact:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_pending_native_hardpins:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_AST_syntax:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_layer_setter_or_reset:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_direct_precision_or_dtype_store:jetson_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "workspace_tool_exact:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_pending_native_hardpins:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "tool_AST_syntax:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_layer_setter_or_reset:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "no_direct_precision_or_dtype_store:jetson_build_dfl_conv_output_probe.py",
+      "passed": true
+    },
+    {
+      "name": "pure_stdlib_check_exit0",
+      "passed": true
+    },
+    {
+      "name": "pure_stdlib_check_no_native_import",
+      "passed": true
+    },
+    {
+      "name": "original_guard_and_scope_retained",
+      "passed": true
+    },
+    {
+      "name": "manual:same_input_weights_scales_QDQ",
+      "passed": true
+    },
+    {
+      "name": "manual:explicit_shape_correspondence",
+      "passed": true
+    },
+    {
+      "name": "manual:bounded_native_execution",
+      "passed": true
+    },
+    {
+      "name": "manual:actual_precision_pending",
+      "passed": true
+    },
+    {
+      "name": "manual:output_boundary_context_limit",
+      "passed": true
+    },
+    {
+      "name": "manual:no_new_reviewer_execution",
+      "passed": true
+    },
+    {
+      "name": "sealed_payload_unchanged_by_review",
+      "passed": true
+    }
+  ],
+  "manual_review": [
+    {
+      "name": "same_input_weights_scales_QDQ",
+      "assessment": "Six source nodes and seven initializers exact. Only terminal Constant/Reshape removed; same probability NPY reused without generation. All parser requests retained, Clip alpha/beta alone corrected -127/+127."
+    },
+    {
+      "name": "explicit_shape_correspondence",
+      "assessment": "Saved old3D and new4D CPU arrays have equal dtype/count and C-order raw bytes; expectedNPZ authenticates new4D contract. Different NPY shape headers do not imply numerical difference."
+    },
+    {
+      "name": "bounded_native_execution",
+      "assessment": "NONE/OBEY one builder each,300s each/batch900s,successful engine2raw repetitions. Ordinary compiler failure continues only after child exit/input revalidation; timeout/signal/interrupt/stale input abort batch. No resets/retry."
+    },
+    {
+      "name": "actual_precision_pending",
+      "assessment": "Actual sole Conv input/weight/output/tactic each need saved inspector verification. No INT8 output requirement; external output FLOAT_LINEAR4D."
+    },
+    {
+      "name": "output_boundary_context_limit",
+      "assessment": "Removing Reshape also changes external boundary and format selection. Compatible/incompatible results cannot uniquely identify removed node or fullmodel root cause."
+    },
+    {
+      "name": "no_new_reviewer_execution",
+      "assessment": "Only ONNX parse/staticcheck and savednp.load used; stdlib input check does not import native runtime. No CPUgraph/native inference/SSH."
+    }
+  ],
+  "identities": {
+    "protocol.json": "8f6a55f640915b84d7300d1595ebb895092ccf0374e40a27b6aaf812f406e09b",
+    "model_dfl_conv_output_code_clip.onnx": "805abb78ed4e4d5abc8041b2916dadc83370a14ef1776fcc0a03f163c16bcf81",
+    "dfl_softmax_probabilities.npy": "5a7c5b1c58bd4d956a042dfeab3b11133a072ce7ab8630195f51d8f38a508520",
+    "cpu_expected_outputs.npz": "711fb41fa18bef712bd069c88a552e1bc918d1d1034b6f6d32d802cbd769d0c6",
+    "cpu_actual_code_clip.npy": "d2f4327fcc792b864e420f1b1554a5b7b52b88fd27a8f01f6c07a0159c3e723b",
+    "saved_cpu_reference_3d.npy": "fd4bcdcee24cd53651fdd7a508423c802f3b432c759647204c7b748f22abd50d",
+    "saved_expected_outputs_3d.npz": "fe6e4048681a5ac252b430b850cd27129061f8f1602835a8723ca7d827d59511",
+    "source_model.onnx": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+    "prepare_gate05_dfl_conv_output_probe.py": "f550ba88f24106d666a7da381c43de8d0c148b0a6839e7168ee62bf094667f44",
+    "spec.json": "9e9d31b55e4358d39a08a7869aab77582f094f1d6152599c727196e2b77c3897",
+    "manifest.json": "104137a621b3ea5c65a019555a1d92fc8c876fe0bf9293b5ab7cfe2e6fe71f77",
+    "jetson_dfl_conv_output_probe.py": "c53b90d1b730599a3b222098286da2592cd9ecb9c0ad2453eec54c0d5dfa99e7",
+    "jetson_build_dfl_conv_output_probe.py": "9f34121acf19c13a8d8501a4da62f455dddd7e8d34d2ac44d9c3779e5adc764d",
+    "zip_sha256": "78008952bd6355d4a197913c669c3a7b18ff1e80b119d88789d19f53baed4ba7",
+    "zip_bytes": 11908335
+  },
+  "check_input_only_receipt": {
+    "status": "FROZEN_DFL_CONV_OUTPUT_INPUTS_VERIFIED",
+    "spec_sha256": "9e9d31b55e4358d39a08a7869aab77582f094f1d6152599c727196e2b77c3897",
+    "case_count": 2,
+    "native_runtime_imported": false
+  },
+  "new_CPU_or_native_inference_run_by_review": false,
+  "reviewer_SSH": false,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "limit": "Compare saved8node NONE final raw to new6node NONE after explicit4D/3D arrayshape correspondence, no oldnative rerun. Sameprobfixture/weights/scales/QDQ requests/commonsettings except OBEY. Outputcut removes Constant+Reshape and changes native output boundary, so changed outcomes cannot uniquely attribute fullmodel failure to a removed node."
+}

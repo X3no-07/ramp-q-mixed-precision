@@ -1,0 +1,154 @@
+{
+  "schema": "rampq.gate05.supplemental_owned_group_guard/v1",
+  "status": "COMPLETE",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "root": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020",
+  "guard_pid": 31169,
+  "guard_pgid": 31169,
+  "guard_sid": 31169,
+  "owned_pgid": 31163,
+  "owned_sid": 31163,
+  "guard_script_sha256": "4f69d15df8c395af81ceabecdd5fe0da7406df2339095046e55200a388013ae4",
+  "monitor_status_path": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/monitor/status.json",
+  "monitor_identity": {
+    "root": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020",
+    "monitor_pid": 31158,
+    "build_pid": 31163,
+    "max_seconds": 900,
+    "build_script": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_twoconv_context_probe.py"
+  },
+  "initial_monitor_process": {
+    "pid": 31158,
+    "state": "S",
+    "ppid": 31156,
+    "pgid": 31158,
+    "sid": 31158,
+    "start_ticks": 8931740,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_monitored_build.py",
+      "--root",
+      "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020",
+      "--run",
+      "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/monitor",
+      "--max-seconds",
+      "900",
+      "--build-script",
+      "jetson_twoconv_context_probe.py"
+    ]
+  },
+  "initial_monitor_status": {
+    "monitor_pid": 31158,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-17T17:41:59+0800",
+    "root": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020",
+    "max_seconds": 900,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_twoconv_context_probe.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 31163,
+    "status": "RUNNING",
+    "latest": {
+      "MemAvailable_kib": 5128316,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3747216,
+      "temperatures_c": {
+        "CV0-therm": 46.062,
+        "CPU-therm": 48.25,
+        "SOC2-therm": 47.468,
+        "SOC0-therm": 47.531,
+        "CV1-therm": 46.031,
+        "GPU-therm": 46.406,
+        "tj-therm": 49.218,
+        "SOC1-therm": 49.218,
+        "CV2-therm": 46.781
+      },
+      "elapsed_seconds": 1.01
+    }
+  },
+  "initial_status_stamp": {
+    "sha256": "45e2b28bb30eadbfca265d8e107a00f5a481c7167aa93749e946336d21d9690a",
+    "mtime_ns": 1792230120235533000,
+    "mtime_wall_seconds": 1792230120.235533,
+    "elapsed_seconds": 1.01
+  },
+  "initial_group_members": [
+    {
+      "pid": 31163,
+      "state": "R",
+      "ppid": 31158,
+      "pgid": 31163,
+      "sid": 31163,
+      "start_ticks": 8931851,
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_twoconv_context_probe.py"
+      ],
+      "ps": {
+        "ppid": 31158,
+        "pgid": 31163,
+        "sid": 31163,
+        "stat": "Rsl",
+        "args": "/usr/bin/python3 -u /home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_twoconv_context_probe.py"
+      }
+    }
+  ],
+  "leader_start_ticks": 8931851,
+  "started_board_time": "2026-10-17T17:42:00+0800",
+  "poll_seconds": 2.0,
+  "stale_seconds": 15.0,
+  "budget_grace_seconds": 20.0,
+  "termination_actions": [],
+  "check_only": false,
+  "original_monitor_status_and_tools_modified": false,
+  "last_monitor_status": {
+    "monitor_pid": 31158,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-17T17:41:59+0800",
+    "root": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020",
+    "max_seconds": 900,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_twoconv_context_20261020/gate05_twoconv_context_probe_20261020/jetson_twoconv_context_probe.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 31163,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 155.63,
+    "final_resources": {
+      "MemAvailable_kib": 5129500,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3747216,
+      "temperatures_c": {
+        "CV0-therm": 47.531,
+        "CPU-therm": 49.531,
+        "SOC2-therm": 48.781,
+        "SOC0-therm": 49.0,
+        "CV1-therm": 47.437,
+        "GPU-therm": 48.0,
+        "tj-therm": 50.593,
+        "SOC1-therm": 50.593,
+        "CV2-therm": 48.125
+      }
+    }
+  },
+  "last_status_stamp": {
+    "sha256": "7890cce04305465c0635b38b004f422e49fb08104c2f16376334fdd088f919aa",
+    "mtime_ns": 1792230274859533000,
+    "mtime_wall_seconds": 1792230274.859533,
+    "elapsed_seconds": 155.63
+  },
+  "last_group_members": [],
+  "status_update_age_seconds": 0.021,
+  "guard_elapsed_seconds": 156.244,
+  "cleanup_trigger": "ORIGINAL_MONITOR_TERMINAL",
+  "intervention_performed": false,
+  "final_group_members": [],
+  "owned_group_non_zombie_empty": true,
+  "owned_group_fully_empty": true,
+  "finished_board_time": "2026-10-17T17:44:36+0800"
+}

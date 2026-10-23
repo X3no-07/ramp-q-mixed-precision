@@ -1,0 +1,195 @@
+{
+  "schema": "rampq.gate05.supplemental_owned_group_guard/v1",
+  "status": "COMPLETE",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "root": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021",
+  "guard_pid": 53293,
+  "guard_pgid": 53293,
+  "guard_sid": 53293,
+  "owned_pgid": 53290,
+  "owned_sid": 53290,
+  "guard_script_sha256": "4f69d15df8c395af81ceabecdd5fe0da7406df2339095046e55200a388013ae4",
+  "monitor_status_path": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/monitor/status.json",
+  "monitor_identity": {
+    "root": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021",
+    "monitor_pid": 53285,
+    "build_pid": 53290,
+    "max_seconds": 1800,
+    "build_script": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/jetson_run_frozen_raw_work.py"
+  },
+  "initial_monitor_process": {
+    "pid": 53285,
+    "state": "S",
+    "ppid": 52763,
+    "pgid": 53285,
+    "sid": 53285,
+    "start_ticks": 19959029,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/jetson_monitored_build.py",
+      "--root",
+      "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021",
+      "--run",
+      "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/monitor",
+      "--max-seconds",
+      "1800",
+      "--build-script",
+      "jetson_run_frozen_raw_work.py"
+    ]
+  },
+  "initial_monitor_status": {
+    "monitor_pid": 53285,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-19T00:19:52+0800",
+    "root": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021",
+    "max_seconds": 1800,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/jetson_run_frozen_raw_work.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 53290,
+    "status": "RUNNING",
+    "latest": {
+      "MemAvailable_kib": 5484292,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3208848,
+      "temperatures_c": {
+        "CV0-therm": 46.687,
+        "CPU-therm": 48.781,
+        "SOC2-therm": 48.031,
+        "SOC0-therm": 48.187,
+        "CV1-therm": 46.812,
+        "GPU-therm": 46.875,
+        "tj-therm": 50.062,
+        "SOC1-therm": 50.062,
+        "CV2-therm": 47.468
+      },
+      "elapsed_seconds": 1.01
+    }
+  },
+  "initial_status_stamp": {
+    "sha256": "d3fa9f00ebed2f61d148a431aaf9c01ecae98b6db442172689ae1a74a54f05a1",
+    "mtime_ns": 1792340393123533000,
+    "mtime_wall_seconds": 1792340393.123533,
+    "elapsed_seconds": 1.01
+  },
+  "initial_group_members": [
+    {
+      "pid": 53290,
+      "state": "S",
+      "ppid": 53285,
+      "pgid": 53290,
+      "sid": 53290,
+      "start_ticks": 19959140,
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/jetson_run_frozen_raw_work.py"
+      ],
+      "ps": {
+        "ppid": 53285,
+        "pgid": 53290,
+        "sid": 53290,
+        "stat": "Ss",
+        "args": "/usr/bin/python3 -u /home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/jetson_run_frozen_raw_work.py"
+      }
+    },
+    {
+      "pid": 53292,
+      "state": "R",
+      "ppid": 53290,
+      "pgid": 53290,
+      "sid": 53290,
+      "start_ticks": 19959151,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/run_gate05_frozen_raw_dataset_v2.py",
+        "--contract",
+        "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/raw_contract.json",
+        "--contract-sha256",
+        "11e9a09b1278fecff9f5c3f1a83011d077e88d550288503ef000c0c96012f94e",
+        "--configuration",
+        "r_only_G1_G2",
+        "--backend",
+        "trt",
+        "--inputs",
+        "/home/nvidia/rampq/gate05_shared_inputs_20261021",
+        "--graph",
+        "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_r_only_G1_G2_20261021/model.onnx",
+        "--state-root",
+        "/home/nvidia/rampq/gate05_dataset_attempts_20261021",
+        "--output",
+        "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/raw_outputs",
+        "--evidence-root",
+        "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021",
+        "--engine",
+        "/home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_r_only_G1_G2_20261021/results/build_20261018T113922_244214Z/model.engine",
+        "--check-input-only"
+      ],
+      "ps": {
+        "ppid": 53290,
+        "pgid": 53290,
+        "sid": 53290,
+        "stat": "R",
+        "args": "/usr/bin/python3 -B /home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/run_gate05_frozen_raw_dataset_v2.py --contract /home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/raw_contract.json --contract-sha256 11e9a09b1278fecff9f5c3f1a83011d077e88d550288503ef000c0c96012f94e --configuration r_only_G1_G2 --backend trt --inputs /home/nvidia/rampq/gate05_shared_inputs_20261021 --graph /home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_r_only_G1_G2_20261021/model.onnx --state-root /home/nvidia/rampq/gate05_dataset_attempts_20261021 --output /home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/raw_outputs --evidence-root /home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021 --engine /home/nvidia/rampq/gate05_matched_native_queue_20261021/gate05_matched_r_only_G1_G2_20261021/results/build_20261018T113922_244214Z/model.engine --check-input-only"
+      }
+    }
+  ],
+  "leader_start_ticks": 19959140,
+  "started_board_time": "2026-10-19T00:19:53+0800",
+  "poll_seconds": 2.0,
+  "stale_seconds": 15.0,
+  "budget_grace_seconds": 20.0,
+  "termination_actions": [],
+  "check_only": false,
+  "original_monitor_status_and_tools_modified": false,
+  "last_monitor_status": {
+    "monitor_pid": 53285,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-19T00:19:52+0800",
+    "root": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021",
+    "max_seconds": 1800,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_dataset_native_stage_20261021/gate05_raw_r_only_G1_G2_20261021/jetson_run_frozen_raw_work.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 53290,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 43.19,
+    "final_resources": {
+      "MemAvailable_kib": 5474088,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3208848,
+      "temperatures_c": {
+        "CV0-therm": 46.875,
+        "CPU-therm": 49.062,
+        "SOC2-therm": 48.218,
+        "SOC0-therm": 48.437,
+        "CV1-therm": 46.812,
+        "GPU-therm": 47.187,
+        "tj-therm": 49.906,
+        "SOC1-therm": 49.906,
+        "CV2-therm": 47.5
+      }
+    }
+  },
+  "last_status_stamp": {
+    "sha256": "6edeab18ffaf3e06514ccfca9a63b30437d5f02a048ea7b569fe7cdfa91eed0e",
+    "mtime_ns": 1792340435299533000,
+    "mtime_wall_seconds": 1792340435.299533,
+    "elapsed_seconds": 43.19
+  },
+  "last_group_members": [],
+  "status_update_age_seconds": 0.022,
+  "guard_elapsed_seconds": 42.687,
+  "cleanup_trigger": "ORIGINAL_MONITOR_TERMINAL",
+  "intervention_performed": false,
+  "final_group_members": [],
+  "owned_group_non_zombie_empty": true,
+  "owned_group_fully_empty": true,
+  "finished_board_time": "2026-10-19T00:20:36+0800"
+}

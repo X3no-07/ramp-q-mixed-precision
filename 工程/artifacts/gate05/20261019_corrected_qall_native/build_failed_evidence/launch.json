@@ -1,0 +1,47 @@
+{
+  "schema": "rampq.gate05.corrected_qall_native_launch/v1",
+  "board_time": "2026-10-17T03:39:50.330238+08:00",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "root": "/home/nvidia/rampq/gate05_corrected_qall_20261019/gate05_corrected_qall_candidate_20261019",
+  "max_seconds": 7200,
+  "attempts": 1,
+  "cpu_receipt_sha256": "2af9ab8e1e8b76cbafd1622d75eedd825fe6f42f2dcdcdcfe115a7110965ab87",
+  "independent_review_sha256": "0274e669365cdb58350537048e569761ed77ed39424d8ce6101b8ac39cc385f8",
+  "tool_manifest_sha256": "91185a9325978ad3ab210c578c33f992727908ec826446e471395ff379a26797",
+  "monitor_pid": 23569,
+  "private_build_group": 23574,
+  "guard_pid": 23575,
+  "initial_monitor_status": {
+    "monitor_pid": 23569,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-17T03:39:50+0800",
+    "root": "/home/nvidia/rampq/gate05_corrected_qall_20261019/gate05_corrected_qall_candidate_20261019",
+    "max_seconds": 7200,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_corrected_qall_20261019/gate05_corrected_qall_candidate_20261019/jetson_build_corrected_qall_candidate.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 23574,
+    "status": "RUNNING",
+    "latest": {
+      "MemAvailable_kib": 5162316,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3747216,
+      "temperatures_c": {
+        "CV0-therm": 46.75,
+        "CPU-therm": 48.781,
+        "SOC2-therm": 48.125,
+        "SOC0-therm": 48.187,
+        "CV1-therm": 46.906,
+        "GPU-therm": 46.906,
+        "tj-therm": 50.031,
+        "SOC1-therm": 50.031,
+        "CV2-therm": 47.687
+      },
+      "elapsed_seconds": 1.01
+    }
+  },
+  "guard_initial_status": "WATCHING",
+  "guard_owns_private_group": true,
+  "status": "MONITORED_CORRECTED_QALL_BUILD_STARTED"
+}

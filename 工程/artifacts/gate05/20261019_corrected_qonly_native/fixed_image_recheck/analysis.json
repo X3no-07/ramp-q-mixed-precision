@@ -1,0 +1,711 @@
+{
+  "schema": "rampq.gate05.corrected_qonly_fixed_image_saved_raw_recheck/v1",
+  "status": "SAVED_RAW_CPU_RECHECK_COMPLETE_DESCRIPTIVE_ONLY",
+  "image": "000020.jpg",
+  "source_image_shape_hw": [
+    1080,
+    1920
+  ],
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "gt_match_iou_threshold_from_original_config": 0.5,
+  "new_native_cpu_nms_exactly_reproduces_saved_smoke_float32": true,
+  "new_native_detections": [
+    [
+      3.5625,
+      2.25,
+      248.25,
+      293.25,
+      0.6566590666770935,
+      0.0
+    ],
+    [
+      168.046875,
+      198.375,
+      245.578125,
+      286.125,
+      0.3747900724411011,
+      2.0
+    ]
+  ],
+  "native_unique_holothurian_gt_iou": 0.8108697094462965,
+  "new_native_gt_supported_detection_count": 1,
+  "supplied_ground_truth_count": 1,
+  "supplied_scallop_ground_truth_count": 0,
+  "scallop_interpretation": "Saved output contains a class-2 scallop detection, but the supplied frozen label has no scallop GT; it cannot establish a second correct target.",
+  "ground_truth_matches": {
+    "new_native_saved_raw": [
+      {
+        "target_id": "000020.jpg:0",
+        "class_id": 0,
+        "x1": 9.0,
+        "y1": 0.0005,
+        "x2": 233.0006,
+        "y2": 332.0001,
+        "area_ratio": 0.03586425,
+        "local_contrast": 0.04565647,
+        "matched": 1,
+        "match_iou": 0.81087,
+        "match_conf": 0.656659,
+        "best_low_iou": 0.81087,
+        "best_low_conf": 0.656659
+      }
+    ],
+    "old_native_saved_raw": [
+      {
+        "target_id": "000020.jpg:0",
+        "class_id": 0,
+        "x1": 9.0,
+        "y1": 0.0005,
+        "x2": 233.0006,
+        "y2": 332.0001,
+        "area_ratio": 0.03586425,
+        "local_contrast": 0.04565647,
+        "matched": 0,
+        "match_iou": 0.0,
+        "match_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_low_conf": 0.0
+      }
+    ],
+    "cpu_original_saved_raw": [
+      {
+        "target_id": "000020.jpg:0",
+        "class_id": 0,
+        "x1": 9.0,
+        "y1": 0.0005,
+        "x2": 233.0006,
+        "y2": 332.0001,
+        "area_ratio": 0.03586425,
+        "local_contrast": 0.04565647,
+        "matched": 1,
+        "match_iou": 0.811019,
+        "match_conf": 0.657379,
+        "best_low_iou": 0.811019,
+        "best_low_conf": 0.657379
+      }
+    ]
+  },
+  "raw_max_scores": {
+    "new_native_saved_raw": 0.6566590666770935,
+    "old_native_saved_raw": 0.0031358301639556885,
+    "cpu_original_saved_raw": 0.6573787927627563
+  },
+  "old_native_cpu_nms_detection_count": 0,
+  "native_minus_cpu_original_arithmetic_dtype": "float64",
+  "native_minus_cpu_original_primary_all": {
+    "elements": 117600,
+    "max_abs": 5.923431396484375,
+    "mean_abs": 0.03889381727495161,
+    "rmse": 0.13046147561801388,
+    "p50_abs": 5.960464477539063e-08,
+    "p95_abs": 0.21563720703125,
+    "p99_abs": 0.48315750122070145,
+    "signed_mean": -0.0024724948614024793,
+    "different_elements": 100625,
+    "equal_elements": 16975,
+    "worst": {
+      "original_array_index": [
+        0,
+        2,
+        8133
+      ],
+      "local_slice_index": [
+        0,
+        2,
+        8133
+      ],
+      "native_value": 359.0,
+      "cpu_original_value": 364.9234313964844,
+      "signed_difference": -5.923431396484375,
+      "absolute_difference": 5.923431396484375,
+      "tie_rule": "First maximum in C-order within the selected slice"
+    }
+  },
+  "native_minus_cpu_original_primary_xywh": {
+    "elements": 33600,
+    "max_abs": 5.923431396484375,
+    "mean_abs": 0.13612601894707907,
+    "rmse": 0.244071063199258,
+    "p50_abs": 0.08233642578125,
+    "p95_abs": 0.41068267822265614,
+    "p99_abs": 0.8918011474609409,
+    "signed_mean": -0.008653077894733066,
+    "different_elements": 33599,
+    "equal_elements": 1,
+    "worst": {
+      "original_array_index": [
+        0,
+        2,
+        8133
+      ],
+      "local_slice_index": [
+        0,
+        2,
+        8133
+      ],
+      "native_value": 359.0,
+      "cpu_original_value": 364.9234313964844,
+      "signed_difference": -5.923431396484375,
+      "absolute_difference": 5.923431396484375,
+      "tie_rule": "First maximum in C-order within the selected slice"
+    }
+  },
+  "native_minus_cpu_original_primary_class_scores": {
+    "elements": 84000,
+    "max_abs": 0.004702061414718628,
+    "mean_abs": 9.366061006273542e-07,
+    "rmse": 4.137771143236548e-05,
+    "p50_abs": 2.9802322387695312e-08,
+    "p95_abs": 4.76837158203125e-07,
+    "p99_abs": 4.649162292480469e-06,
+    "signed_mean": -2.616480702445621e-07,
+    "different_elements": 67026,
+    "equal_elements": 16974,
+    "worst": {
+      "original_array_index": [
+        0,
+        4,
+        6841
+      ],
+      "local_slice_index": [
+        0,
+        0,
+        6841
+      ],
+      "native_value": 0.4610167145729065,
+      "cpu_original_value": 0.45631465315818787,
+      "signed_difference": 0.004702061414718628,
+      "absolute_difference": 0.004702061414718628,
+      "tie_rule": "First maximum in C-order within the selected slice"
+    }
+  },
+  "native_minus_cpu_original_primary_per_channel": [
+    {
+      "channel": 0,
+      "name": "x",
+      "elements": 8400,
+      "max_abs": 1.6956787109375,
+      "mean_abs": 0.10459355961708795,
+      "rmse": 0.15818679366839075,
+      "p50_abs": 0.06966400146484375,
+      "p95_abs": 0.31885948181152324,
+      "p99_abs": 0.5167572021484376,
+      "signed_mean": -0.00506983927318028,
+      "different_elements": 8400,
+      "equal_elements": 0,
+      "worst": {
+        "original_array_index": [
+          0,
+          0,
+          8109
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          8109
+        ],
+        "native_value": 284.0,
+        "cpu_original_value": 285.6956787109375,
+        "signed_difference": -1.6956787109375,
+        "absolute_difference": 1.6956787109375,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 1,
+      "name": "y",
+      "elements": 8400,
+      "max_abs": 2.49176025390625,
+      "mean_abs": 0.09385645741508121,
+      "rmse": 0.14213086140618658,
+      "p50_abs": 0.0630340576171875,
+      "p95_abs": 0.2891296386718749,
+      "p99_abs": 0.4392187500000002,
+      "signed_mean": 0.003879509483064924,
+      "different_elements": 8400,
+      "equal_elements": 0,
+      "worst": {
+        "original_array_index": [
+          0,
+          1,
+          8308
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          8308
+        ],
+        "native_value": 390.0,
+        "cpu_original_value": 387.50823974609375,
+        "signed_difference": 2.49176025390625,
+        "absolute_difference": 2.49176025390625,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 2,
+      "name": "w",
+      "elements": 8400,
+      "max_abs": 5.923431396484375,
+      "mean_abs": 0.1999541287195115,
+      "rmse": 0.3654097881134256,
+      "p50_abs": 0.11467742919921875,
+      "p95_abs": 0.6351333618164062,
+      "p99_abs": 1.515933227539064,
+      "signed_mean": -0.024381956713540213,
+      "different_elements": 8400,
+      "equal_elements": 0,
+      "worst": {
+        "original_array_index": [
+          0,
+          2,
+          8133
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          8133
+        ],
+        "native_value": 359.0,
+        "cpu_original_value": 364.9234313964844,
+        "signed_difference": -5.923431396484375,
+        "absolute_difference": 5.923431396484375,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 3,
+      "name": "h",
+      "elements": 8400,
+      "max_abs": 5.149566650390625,
+      "mean_abs": 0.14609993003663563,
+      "rmse": 0.2439962681284604,
+      "p50_abs": 0.094482421875,
+      "p95_abs": 0.4334838867187498,
+      "p99_abs": 0.8478915405273442,
+      "signed_mean": -0.009040025075276693,
+      "different_elements": 8399,
+      "equal_elements": 1,
+      "worst": {
+        "original_array_index": [
+          0,
+          3,
+          8308
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          8308
+        ],
+        "native_value": 231.75,
+        "cpu_original_value": 236.89956665039062,
+        "signed_difference": -5.149566650390625,
+        "absolute_difference": 5.149566650390625,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 4,
+      "name": "holothurian",
+      "elements": 8400,
+      "max_abs": 0.004702061414718628,
+      "mean_abs": 5.748176148959569e-06,
+      "rmse": 0.00012586075778999933,
+      "p50_abs": 5.960464477539063e-08,
+      "p95_abs": 2.0563602447509766e-06,
+      "p99_abs": 1.9285976886749352e-05,
+      "signed_mean": -2.721814172608512e-06,
+      "different_elements": 7058,
+      "equal_elements": 1342,
+      "worst": {
+        "original_array_index": [
+          0,
+          4,
+          6841
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          6841
+        ],
+        "native_value": 0.4610167145729065,
+        "cpu_original_value": 0.45631465315818787,
+        "signed_difference": 0.004702061414718628,
+        "absolute_difference": 0.004702061414718628,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 5,
+      "name": "echinus",
+      "elements": 8400,
+      "max_abs": 1.4632940292358398e-05,
+      "mean_abs": 1.2347385996863956e-07,
+      "rmse": 4.5796935740871766e-07,
+      "p50_abs": 5.960464477539063e-08,
+      "p95_abs": 4.172325134277344e-07,
+      "p99_abs": 1.192390918731696e-06,
+      "signed_mean": -4.4043575014386855e-08,
+      "different_elements": 6927,
+      "equal_elements": 1473,
+      "worst": {
+        "original_array_index": [
+          0,
+          5,
+          6878
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          6878
+        ],
+        "native_value": 0.0004936456680297852,
+        "cpu_original_value": 0.0005082786083221436,
+        "signed_difference": -1.4632940292358398e-05,
+        "absolute_difference": 1.4632940292358398e-05,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 6,
+      "name": "scallop",
+      "elements": 8400,
+      "max_abs": 0.0021516084671020508,
+      "mean_abs": 2.7628172011602494e-06,
+      "rmse": 3.566725358806521e-05,
+      "p50_abs": 5.960464477539063e-08,
+      "p95_abs": 5.0961971282958984e-06,
+      "p99_abs": 3.955185413360605e-05,
+      "signed_mean": 3.630774361746652e-07,
+      "different_elements": 7261,
+      "equal_elements": 1139,
+      "worst": {
+        "original_array_index": [
+          0,
+          6,
+          6924
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          6924
+        ],
+        "native_value": 0.3747900724411011,
+        "cpu_original_value": 0.3769416809082031,
+        "signed_difference": -0.0021516084671020508,
+        "absolute_difference": 0.0021516084671020508,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 7,
+      "name": "starfish",
+      "elements": 8400,
+      "max_abs": 8.910894393920898e-05,
+      "mean_abs": 3.6455336071196055e-07,
+      "rmse": 2.703724751108683e-06,
+      "p50_abs": 5.960464477539063e-08,
+      "p95_abs": 8.642673492431641e-07,
+      "p99_abs": 5.692541599273688e-06,
+      "signed_mean": -6.818345614842006e-08,
+      "different_elements": 6997,
+      "equal_elements": 1403,
+      "worst": {
+        "original_array_index": [
+          0,
+          7,
+          1527
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          1527
+        ],
+        "native_value": 0.0005549788475036621,
+        "cpu_original_value": 0.0006440877914428711,
+        "signed_difference": -8.910894393920898e-05,
+        "absolute_difference": 8.910894393920898e-05,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 8,
+      "name": "fish",
+      "elements": 8400,
+      "max_abs": 2.4586915969848633e-05,
+      "mean_abs": 9.251137574513753e-08,
+      "rmse": 5.680500188011103e-07,
+      "p50_abs": 2.9802322387695312e-08,
+      "p95_abs": 2.384185791015625e-07,
+      "p99_abs": 9.238719940185547e-07,
+      "signed_mean": -5.255497637249175e-08,
+      "different_elements": 6519,
+      "equal_elements": 1881,
+      "worst": {
+        "original_array_index": [
+          0,
+          8,
+          1835
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          1835
+        ],
+        "native_value": 0.0012544989585876465,
+        "cpu_original_value": 0.0012790858745574951,
+        "signed_difference": -2.4586915969848633e-05,
+        "absolute_difference": 2.4586915969848633e-05,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 9,
+      "name": "corals",
+      "elements": 8400,
+      "max_abs": 1.4454126358032227e-05,
+      "mean_abs": 6.230814116341727e-08,
+      "rmse": 2.94149648080039e-07,
+      "p50_abs": 2.9802322387695312e-08,
+      "p95_abs": 1.4901161193847656e-07,
+      "p99_abs": 5.364418029785156e-07,
+      "signed_mean": -5.7759739103771395e-09,
+      "different_elements": 6429,
+      "equal_elements": 1971,
+      "worst": {
+        "original_array_index": [
+          0,
+          9,
+          8199
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          8199
+        ],
+        "native_value": 0.0006615817546844482,
+        "cpu_original_value": 0.000647127628326416,
+        "signed_difference": 1.4454126358032227e-05,
+        "absolute_difference": 1.4454126358032227e-05,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 10,
+      "name": "diver",
+      "elements": 8400,
+      "max_abs": 4.798173904418945e-06,
+      "mean_abs": 5.0862630208333337e-08,
+      "rmse": 1.4230636803151075e-07,
+      "p50_abs": 2.9802322387695312e-08,
+      "p95_abs": 1.1920928955078125e-07,
+      "p99_abs": 3.8743019104003906e-07,
+      "signed_mean": -2.405473164149693e-08,
+      "different_elements": 6342,
+      "equal_elements": 2058,
+      "worst": {
+        "original_array_index": [
+          0,
+          10,
+          6433
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          6433
+        ],
+        "native_value": 0.00011944770812988281,
+        "cpu_original_value": 0.00012424588203430176,
+        "signed_difference": -4.798173904418945e-06,
+        "absolute_difference": 4.798173904418945e-06,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 11,
+      "name": "cuttlefish",
+      "elements": 8400,
+      "max_abs": 2.2351741790771484e-06,
+      "mean_abs": 4.31814364024571e-08,
+      "rmse": 7.857886179412693e-08,
+      "p50_abs": 2.9802322387695312e-08,
+      "p95_abs": 1.1920928955078125e-07,
+      "p99_abs": 2.086162567138672e-07,
+      "signed_mean": -1.1307143029712496e-08,
+      "different_elements": 6356,
+      "equal_elements": 2044,
+      "worst": {
+        "original_array_index": [
+          0,
+          11,
+          1665
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          1665
+        ],
+        "native_value": 5.608797073364258e-05,
+        "cpu_original_value": 5.8323144912719727e-05,
+        "signed_difference": -2.2351741790771484e-06,
+        "absolute_difference": 2.2351741790771484e-06,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 12,
+      "name": "turtle",
+      "elements": 8400,
+      "max_abs": 1.6689300537109375e-05,
+      "mean_abs": 6.35960272380284e-08,
+      "rmse": 2.9035386499977077e-07,
+      "p50_abs": 2.9802322387695312e-08,
+      "p95_abs": 1.1920928955078125e-07,
+      "p99_abs": 2.682209014892578e-07,
+      "signed_mean": -3.4602625029427663e-08,
+      "different_elements": 6545,
+      "equal_elements": 1855,
+      "worst": {
+        "original_array_index": [
+          0,
+          12,
+          6400
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          6400
+        ],
+        "native_value": 0.0005033910274505615,
+        "cpu_original_value": 0.00048670172691345215,
+        "signed_difference": 1.6689300537109375e-05,
+        "absolute_difference": 1.6689300537109375e-05,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    },
+    {
+      "channel": 13,
+      "name": "jellyfish",
+      "elements": 8400,
+      "max_abs": 7.718801498413086e-06,
+      "mean_abs": 5.458082471575056e-08,
+      "rmse": 1.6402562187073993e-07,
+      "p50_abs": 2.9802322387695312e-08,
+      "p95_abs": 1.1920928955078125e-07,
+      "p99_abs": 3.5762786865234375e-07,
+      "signed_mean": -1.7221484865461077e-08,
+      "different_elements": 6592,
+      "equal_elements": 1808,
+      "worst": {
+        "original_array_index": [
+          0,
+          13,
+          6878
+        ],
+        "local_slice_index": [
+          0,
+          0,
+          6878
+        ],
+        "native_value": 0.00040140748023986816,
+        "cpu_original_value": 0.00040912628173828125,
+        "signed_difference": -7.718801498413086e-06,
+        "absolute_difference": 7.718801498413086e-06,
+        "tie_rule": "First maximum in C-order within the selected slice"
+      }
+    }
+  ],
+  "native_minus_cpu_original_auxiliary_all": {
+    "elements": 51200,
+    "max_abs": 0.08037251234054565,
+    "mean_abs": 0.003838166515388366,
+    "rmse": 0.005388887539033223,
+    "p50_abs": 0.0027468055486679077,
+    "p95_abs": 0.01107868552207946,
+    "p99_abs": 0.017325598299503354,
+    "signed_mean": 0.00014833351110610238,
+    "different_elements": 51200,
+    "equal_elements": 0,
+    "worst": {
+      "original_array_index": [
+        0,
+        24,
+        13,
+        3
+      ],
+      "local_slice_index": [
+        0,
+        24,
+        13,
+        3
+      ],
+      "native_value": 0.8564453125,
+      "cpu_original_value": 0.7760728001594543,
+      "signed_difference": 0.08037251234054565,
+      "absolute_difference": 0.08037251234054565,
+      "tie_rule": "First maximum in C-order within the selected slice"
+    }
+  },
+  "auxiliary_per_channel_full_statistics_file": "numeric_arrays_summary.json",
+  "auxiliary_channel_count": 128,
+  "saved_cpu_original_vs_code_clip": {
+    "primary": {
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "float32",
+      "saved_arrays_byte_identical": true,
+      "different_elements": 0,
+      "max_abs_float64": 0.0
+    },
+    "auxiliary": {
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "float32",
+      "saved_arrays_byte_identical": true,
+      "different_elements": 0,
+      "max_abs_float64": 0.0
+    },
+    "scope": "Saved outputs from the existing CPU single-image original/code_clip comparison only",
+    "interpretation": "Bitexact saved CPU outputs do not establish native TensorRT parity or original PyTorch/ORT migration"
+  },
+  "component_evidence": {
+    "nms_gt_analysis.json": {
+      "bytes": 13696,
+      "sha256": "2fe9c2d6e051aa23e3dc1046f5165f389f8e643a7dbf41a3002ad1c884574a8f"
+    },
+    "numeric_arrays_summary.json": {
+      "bytes": 302195,
+      "sha256": "c7d9b76b77f4696cfb7e3a61975c8a5df366ac183a57ded94605c483cd51d62b"
+    }
+  },
+  "local_postprocessing_versions": {
+    "torch": "2.10.0+cu128",
+    "ultralytics": "8.4.142"
+  },
+  "archived_native_smoke_ultralytics": "8.4.50",
+  "postprocessing_version_scope": "Local CPU package versions differ from native; actual new and old saved detection arrays were nonetheless reproduced exactly as FLOAT32.",
+  "all_original_source_files_still_hash_identical": true,
+  "original_complete_model_pytorch_ort_guard": "FAILED_UNCHANGED",
+  "new_tolerances_defined": false,
+  "numerical_migration_pass_claim": false,
+  "accuracy_pass_claim": false,
+  "causal_attribution_allowed": false,
+  "performance_pass_claim": false,
+  "dataset_evaluation_run": false,
+  "new_full_model_inference_run": false,
+  "new_native_execution_run": false,
+  "cuda_used": false,
+  "limits": "Only saved arrays from one original fixed Selection image were postprocessed. Numeric differences are descriptive with no new tolerance or parity PASS. The single supplied GT supports one holothurian match; the scallop detection has no supplied GT and cannot establish a second correct target. Original PyTorch/ORT guard remains failed. Common fusion/nonquantized floating precision controls, native full numerical migration, dataset accuracy and performance remain unestablished."
+}

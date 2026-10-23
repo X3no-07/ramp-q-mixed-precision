@@ -1,0 +1,100 @@
+{
+  "schema": "rampq.gate1.native_python_partial_comparison_predeclared_conditions/v1",
+  "client_date": "2026-10-23",
+  "status": "FIXED_BEFORE_NATIVE_OUTPUT_COMPARISON",
+  "fixture": {
+    "path": "artifacts/gate1/20261023_official_evaluator_readiness/synthetic_fixtures.json",
+    "bytes": 18456,
+    "sha256": "cce5893345da5762956009cffdd61b21a41a78e3284d7ab3321e555f7e709afb"
+  },
+  "case_ids": [
+    "A01_perfect_single_class",
+    "A02_gt_without_predictions",
+    "A03_empty_both",
+    "A04_predictions_without_gt",
+    "A05_same_class_ignore_only",
+    "A06_positive_plus_ignored_denominator",
+    "A07_unequal_class_image_frequency",
+    "A08_input_order_before_cap",
+    "A09_swapped_submission_order",
+    "A10_precision_envelope",
+    "A11_three_gt_one_hit",
+    "R01_exact_half_region",
+    "R02_overlapping_region_union",
+    "R03_border_and_rounding",
+    "R04_zero_height_ignored_region",
+    "M01_score_first_over_iou_first",
+    "M02_tied_score_and_overlap",
+    "M03_ignore_absorbs_multiple_same_class",
+    "M04_raw_outside_coordinates",
+    "M05_others_and_positive_priority"
+  ],
+  "all_cases_required": true,
+  "prefilter_case_count": 20,
+  "prefilter_image_count": 22,
+  "matching_case_ids": [
+    "M01_score_first_over_iou_first",
+    "M02_tied_score_and_overlap",
+    "M03_ignore_absorbs_multiple_same_class",
+    "M04_raw_outside_coordinates",
+    "M05_others_and_positive_priority"
+  ],
+  "matching_categories": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "matrix_fields": [
+    "filtered_gt",
+    "filtered_predictions",
+    "prepared_gt",
+    "class_matches.gt_output",
+    "class_matches.dt_output"
+  ],
+  "absolute_tolerance": 0,
+  "relative_tolerance": 0,
+  "matrix_shape_and_row_order_compared": true,
+  "no_native_arrays_used_as_adapter_inputs": true,
+  "comparison_source": {
+    "path": "artifacts/gate1/20261023_native_python_semantics_v1/compare_partial_semantics.py",
+    "bytes": 11974,
+    "sha256": "2a05c69cfd691cd8acbca21a79432b3bd1cc2b183bf3db2f352b83be56ff6097"
+  },
+  "test_source": {
+    "path": "artifacts/gate1/20261023_native_python_semantics_v1/test_partial_semantics.py",
+    "bytes": 3938,
+    "sha256": "173af5cfafeec9930c6774471b9657abb71516d2eb15593733bcf155765f9b5c"
+  },
+  "test_result": {
+    "path": "artifacts/gate1/20261023_native_python_semantics_v1/adapter_synthetic_regression_v1.xml",
+    "bytes": 5521,
+    "sha256": "6a6dc8c2be7bdc069848f69f70b26353c999e0ff1cd3e5c404506a92df807965"
+  },
+  "regression": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python_source": {
+    "path": "scripts/gate1_ignore_aware_evaluation.py",
+    "bytes": 18720,
+    "sha256": "4e45ff26a86a83ff66e997f15e4c4794246c6440c304446972809ff32db09961"
+  },
+  "native_structure_audit_pass_required_before_execution": true,
+  "success_rule": "All 20 case prefilter/prepared matrices and 5 matching cases times 10 classes GT/DT output matrices compare exactly, including empty shapes, original duplicates, score-zero GT and declared row order",
+  "failure_rule": "Save every differing matrix and retain mismatch status; do not edit existing matcher, choose a subset, relax tolerances, or repair native results",
+  "AP_metrics_compared": false,
+  "full_Python_AP_implemented": false,
+  "project_IoU_first_matcher_called_or_modified": false,
+  "official_AP_equivalence_certified": false,
+  "gate1_scientific_pass": false,
+  "real_data_models_Selection_Holdout_accessed": false
+}

@@ -1,0 +1,159 @@
+{
+  "board_time": "2026-10-17T03:35:56+0800",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "build": {
+    "configuration": "fp16_control",
+    "onnx_sha256": "f449b83ec71b15c54b648e45446fb523cd0710194a60f3dde6e1f14f52a7bd73",
+    "spec_sha256": "4b279517da8d847dca9fe60a592b914f7b68f24bd5c4b85b67881172a9f3cfb9",
+    "manifest_sha256": "f7cabe1ce2530a62c20398c8e79c80d98de4c640f2e6df697013f1751809c330",
+    "diagnostic_only": true,
+    "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+    "expected_binding_contract": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "primary_output_name": "output0",
+    "graph_audit_sha256": "3dd8dbe9e8a923f491ad2e6f964557e3c4a57883d6b8a00643aaf90bc4bbc990",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "engine_sha256": "92ce7a8f487cbaf473a281b94daa953120870fa2ad992807d60390dffd1b72fb",
+    "engine_bytes": 7314801,
+    "bindings": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      }
+    ],
+    "engine_layers": 203,
+    "status": "BUILT_AND_DESERIALIZED",
+    "elapsed_seconds": 560.5602822400033,
+    "actual_precision_audit": "PENDING",
+    "single_image_inference": "NOT_RUN",
+    "dataset_evaluation": "NOT_RUN",
+    "run_dir": "/home/nvidia/rampq/gate05_precision_fp16_control_20261019/results/build_20261016T192616_557097Z"
+  },
+  "monitor": {
+    "monitor_pid": 14196,
+    "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+    "board_time": "2026-10-17T03:26:15+0800",
+    "root": "/home/nvidia/rampq/gate05_precision_fp16_control_20261019",
+    "max_seconds": 1800,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_precision_fp16_control_20261019/jetson_build_precision_candidate.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 14246,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 563.23,
+    "final_resources": {
+      "MemAvailable_kib": 5237044,
+      "SwapTotal_kib": 3756928,
+      "SwapFree_kib": 3746944,
+      "temperatures_c": {
+        "CV0-therm": 47.25,
+        "CPU-therm": 49.125,
+        "SOC2-therm": 48.531,
+        "SOC0-therm": 48.687,
+        "CV1-therm": 47.062,
+        "GPU-therm": 47.406,
+        "tj-therm": 50.281,
+        "SOC1-therm": 50.281,
+        "CV2-therm": 47.812
+      }
+    }
+  },
+  "other_trtexec_processes": "15104 /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_precision_r_only_G1_20261019/model.onnx --saveEngine=/home/nvidia/rampq/gate05_precision_r_only_G1_20261019/results/build_20261016T193540_871540Z/model.engine --fp16 --noTF32 --memPoolSize=workspace:1024 --profilingVerbosity=detailed --buildOnly --avgTiming=1 --precisionConstraints=obey --inputIOFormats=fp32:chw --outputIOFormats=fp32:chw,fp32:chw --int8 --layerPrecisions=/model.0/conv/Conv:fp16,/model.1/conv/Conv:fp16,/model.2/cv1/conv/Conv:fp16,/model.2/m.0/cv1/conv/Conv:fp16,/model.2/m.0/cv2/conv/Conv:fp16,/model.2/cv2/conv/Conv:fp16 --layerOutputTypes=/model.0/conv/Conv:fp16,/model.1/conv/Conv:fp16,/model.2/cv1/conv/Conv:fp16,/model.2/m.0/cv1/conv/Conv:fp16,/model.2/m.0/cv2/conv/Conv:fp16,/model.2/cv2/conv/Conv:fp16\n",
+  "other_builds_allowed_during_collection": true,
+  "memory": {
+    "command": [
+      "free",
+      "-m"
+    ],
+    "returncode": 0,
+    "output": "              total        used        free      shared  buff/cache   available\nMem:           7337        4123        1583          24        1629        2994\nSwap:          3668           9        3659\n"
+  },
+  "jtop": {
+    "command": [
+      "systemctl",
+      "show",
+      "jtop.service",
+      "-p",
+      "ActiveState",
+      "-p",
+      "NRestarts"
+    ],
+    "returncode": 0,
+    "output": "NRestarts=0\nActiveState=active\n"
+  },
+  "fan": {
+    "command": [
+      "systemctl",
+      "is-active",
+      "nvfancontrol.service"
+    ],
+    "returncode": 0,
+    "output": "active\n"
+  }
+}

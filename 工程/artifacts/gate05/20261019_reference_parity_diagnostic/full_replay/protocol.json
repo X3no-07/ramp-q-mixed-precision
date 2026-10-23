@@ -1,0 +1,25 @@
+{
+  "schema": "rampq.gate05.reference_replay_protocol/v1",
+  "client_at": "2026-10-19T21:00:33.354469+08:00",
+  "input": "Original fixed 000020.jpg only; CPU FP32; ORT_DISABLE_ALL; four threads",
+  "baseline": "Reproduce original q_all full PyTorch and ORT primary outputs and both original guard slices",
+  "conv_replay": "88 disconnected original Conv+weightQ/DQ subgraphs; activation DQ values are explicit inputs",
+  "conv_control": "Feed full-ORT activation DQ and compare original full-ORT Conv output, before interpreting PyTorch-input replay",
+  "conv_counterfactual": "Feed recorded PyTorch activation DQ; compare original PyTorch Conv output on exactly those inputs",
+  "head_replay": "Cut all grouped Conv outputs to explicit recorded PyTorch inputs; backwards-prune to primary output",
+  "head_limit": "Tests only the surviving downstream non-Conv arithmetic, not the full model",
+  "guard": {
+    "image": "000020.jpg, first existing Selection image",
+    "box_rtol": 0.005,
+    "box_atol": 0.5,
+    "score_rtol": 0.02,
+    "score_atol": 0.002,
+    "ort_graph_optimizations": "disabled for FP32 Q/DQ comparison"
+  },
+  "tolerances_changed": false,
+  "original_guard": "FAILED_UNCHANGED",
+  "dataset_inference": false,
+  "native_execution": false,
+  "deployment_graph_change": false,
+  "interpretation": "Counterfactual cuts can localize amplification; their closeness does not pass the original guard."
+}

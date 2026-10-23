@@ -1,0 +1,50 @@
+{
+  "schema": "rampq.gate0.random_control_bidirectional/v1",
+  "status": "COMPLETE",
+  "preregistered_order": 3,
+  "groups": [
+    "G2",
+    "G8"
+  ],
+  "mac_share": 0.21905024221901784,
+  "selection_image_count": 350,
+  "all_int8_added_miss_count": 119,
+  "q_only": {
+    "degraded": 15,
+    "overlap_with_all_int8": 11,
+    "overlap_rate": 0.09243697478991597,
+    "outside_all_int8": 4
+  },
+  "r_only": {
+    "rescued": 17,
+    "rescue_rate": 0.14285714285714285,
+    "collateral_misses": 16,
+    "stable_retention": 0.9889807162534435,
+    "net_rescue": 1,
+    "net_rescue_rate": 0.008403361344537815
+  },
+  "two_sided_same_targets": 1,
+  "two_sided_rate": 0.008403361344537815,
+  "two_sided_target_ids": [
+    "012939.jpg:4"
+  ],
+  "candidate_reference": {
+    "groups": [
+      "G1",
+      "G5"
+    ],
+    "mac_share": 0.22345717016898625,
+    "net_rescue": 92,
+    "net_rescue_rate": 0.773109243697479,
+    "two_sided": 83,
+    "stable_retention": 0.9944903581267217
+  },
+  "input_hashes": {
+    "preregistration": "120026dbff929ecd2f9e95df6c46d1cbcc920ffe5317f0bb02cd223199b6ce08",
+    "q_summary": "59c69d3b75a1839283b979c963db29b1c300e2c31ef295cd26eaa8d36231b32f",
+    "r_summary": "292bacbbd1d022330d4fa175e901009f58fdfa13f42a7a412f5922b108dfe22b",
+    "q_details": "ded4547a38a525f406575d24a79e460b8b577f23180d0b65a555d5c3603e7632",
+    "r_details": "3a5733a5767f680a023d47b56a040044ec53ead80e5946600383e1054bc557fe"
+  },
+  "evidence_boundary": "One preregistered random pair on RUOD-R Selection under PyTorch Q/DQ simulated W8A8. Overall candidate-versus-random pass/fail requires all three frozen random controls."
+}

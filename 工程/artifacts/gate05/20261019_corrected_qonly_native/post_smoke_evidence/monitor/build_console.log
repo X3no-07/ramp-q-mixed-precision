@@ -1,0 +1,276 @@
+RESULT_DIR: /home/nvidia/rampq/gate05_corrected_qonly_20261019/gate05_corrected_qonly_candidate_20261019/results/build_20261016T170532_870381Z
+[10/17/2026-01:05:33] [TRT] [I] [MemUsageChange] Init CUDA: CPU +221, GPU +0, now: CPU 252, GPU 2920 (MiB)
+[10/17/2026-01:05:36] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU +302, GPU +285, now: CPU 577, GPU 3227 (MiB)
+[10/17/2026-01:05:36] [TRT] [W] onnx2trt_utils.cpp:375: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[10/17/2026-01:05:37] [TRT] [I] ---------- Layers Running on DLA ----------
+[10/17/2026-01:05:37] [TRT] [I] ---------- Layers Running on GPU ----------
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: rampq_model_0_conv_ActivationQ
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_0_conv_Clip)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: model.0.conv.weight + rampq_model_0_conv_WeightQ + /model.0/conv/Conv + PWN(/model.0/act/Sigmoid, /model.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_1_conv_Clip)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: model.1.conv.weight + rampq_model_1_conv_WeightQ + /model.1/conv/Conv + PWN(/model.1/act/Sigmoid, /model.1/act/Mul) + PWN(rampq_model_2_cv1_conv_Clip)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: model.2.cv1.conv.weight + rampq_model_2_cv1_conv_WeightQ + /model.2/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.2/cv1/act/Sigmoid, /model.2/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: rampq_model_2_cv2_conv_ActivationQ_clone_0
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: rampq_model_2_m_0_cv1_conv_ActivationQ
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_2_m_0_cv1_conv_Clip)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: model.2.m.0.cv1.conv.weight + rampq_model_2_m_0_cv1_conv_WeightQ + /model.2/m.0/cv1/conv/Conv + PWN(/model.2/m.0/cv1/act/Sigmoid, /model.2/m.0/cv1/act/Mul) + PWN(rampq_model_2_m_0_cv2_conv_Clip)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: model.2.m.0.cv2.conv.weight + rampq_model_2_m_0_cv2_conv_WeightQ + /model.2/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.2/m.0/cv2/act/Sigmoid, /model.2/m.0/cv2/act/Mul), /model.2/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: rampq_model_2_cv2_conv_ActivationQ_clone_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.2/Concat_/model.2/Split_output_0_clone_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_2_cv2_conv_Clip)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: model.2.cv2.conv.weight + rampq_model_2_cv2_conv_WeightQ + /model.2/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.2/cv2/act/Sigmoid, /model.2/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.3/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.3/act/Sigmoid, /model.3/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.4/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.4/cv1/act/Sigmoid, /model.4/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.4/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.4/m.0/cv1/act/Sigmoid, /model.4/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.4/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.4/m.0/cv2/act/Sigmoid, /model.4/m.0/cv2/act/Mul), /model.4/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.4/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.4/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.4/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.4/cv2/act/Sigmoid, /model.4/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.5/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.5/act/Sigmoid, /model.5/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/cv1/act/Sigmoid, /model.6/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/m.0/cv1/act/Sigmoid, /model.6/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/m.0/cv2/act/Sigmoid, /model.6/m.0/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/m.0/m/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/m.0/m/m.0/cv1/act/Sigmoid, /model.6/m.0/m/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/m.0/m/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.6/m.0/m/m.0/cv2/act/Sigmoid, /model.6/m.0/m/m.0/cv2/act/Mul), /model.6/m.0/m/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/m.0/m/m.1/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/m.0/m/m.1/cv1/act/Sigmoid, /model.6/m.0/m/m.1/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/m.0/m/m.1/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.6/m.0/m/m.1/cv2/act/Sigmoid, /model.6/m.0/m/m.1/cv2/act/Mul), /model.6/m.0/m/m.1/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/m.0/cv3/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/m.0/cv3/act/Sigmoid, /model.6/m.0/cv3/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.6/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.6/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.6/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.6/cv2/act/Sigmoid, /model.6/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.7/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.7/act/Sigmoid, /model.7/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/cv1/act/Sigmoid, /model.8/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/m.0/cv1/act/Sigmoid, /model.8/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/m.0/cv2/act/Sigmoid, /model.8/m.0/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/m.0/m/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/m.0/m/m.0/cv1/act/Sigmoid, /model.8/m.0/m/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/m.0/m/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.8/m.0/m/m.0/cv2/act/Sigmoid, /model.8/m.0/m/m.0/cv2/act/Mul), /model.8/m.0/m/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/m.0/m/m.1/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/m.0/m/m.1/cv1/act/Sigmoid, /model.8/m.0/m/m.1/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/m.0/m/m.1/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.8/m.0/m/m.1/cv2/act/Sigmoid, /model.8/m.0/m/m.1/cv2/act/Mul), /model.8/m.0/m/m.1/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/m.0/cv3/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/m.0/cv3/act/Sigmoid, /model.8/m.0/cv3/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.8/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.8/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.8/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.8/cv2/act/Sigmoid, /model.8/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.9/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.9/cv1/act/Sigmoid, /model.9/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POOLING: /model.9/m/MaxPool
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POOLING: /model.9/m_1/MaxPool
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POOLING: /model.9/m_2/MaxPool
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.9/cv1/act/Mul_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.9/m/MaxPool_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.9/m_1/MaxPool_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.9/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.9/cv2/act/Sigmoid, /model.9/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.10/cv1/act/Sigmoid, /model.10/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/Split_19
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/m/m.0/attn/qkv/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.10/m/m.0/attn/Reshape
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/m/m.0/attn/Split
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/m/m.0/attn/Split_22
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/m/m.0/attn/Split_23
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SCALE: /model.10/m/m.0/attn/Constant_1_output_0 + (Unnamed Layer* 194) [Shuffle] + /model.10/m/m.0/attn/Mul
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.10/m/m.0/attn/Reshape_2
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/m/m.0/attn/pe/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] MATRIX_MULTIPLY: /model.10/m/m.0/attn/MatMul
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SOFTMAX: /model.10/m/m.0/attn/Softmax
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] MATRIX_MULTIPLY: /model.10/m/m.0/attn/MatMul_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.10/m/m.0/attn/Reshape_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.10/m/m.0/attn/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/m/m.0/attn/proj/conv/Conv + /model.10/m/m.0/Add
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/m/m.0/ffn/ffn.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.10/m/m.0/ffn/ffn.0/act/Sigmoid, /model.10/m/m.0/ffn/ffn.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/m/m.0/ffn/ffn.1/conv/Conv + /model.10/m/m.0/Add_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/m/m.0/Add_1_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.10/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.10/cv2/act/Sigmoid, /model.10/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] RESIZE: /model.11/Resize
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.11/Resize_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.13/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.13/cv1/act/Sigmoid, /model.13/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.13/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.13/m.0/cv1/act/Sigmoid, /model.13/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.13/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.13/m.0/cv2/act/Sigmoid, /model.13/m.0/cv2/act/Mul), /model.13/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.13/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.13/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.13/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.13/cv2/act/Sigmoid, /model.13/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] RESIZE: /model.14/Resize
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.14/Resize_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.16/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.16/cv1/act/Sigmoid, /model.16/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.16/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.16/m.0/cv1/act/Sigmoid, /model.16/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.16/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.16/m.0/cv2/act/Sigmoid, /model.16/m.0/cv2/act/Mul), /model.16/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.16/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.16/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.16/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.16/cv2/act/Sigmoid, /model.16/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.17/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.0/cv2.0.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.17/act/Sigmoid, /model.17/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv2.0/cv2.0.0/act/Sigmoid, /model.23/cv2.0/cv2.0.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.13/cv2/act/Mul_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.0/cv2.0.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.19/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv2.0/cv2.0.1/act/Sigmoid, /model.23/cv2.0/cv2.0.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.19/cv1/act/Sigmoid, /model.19/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.0/cv2.0.2/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/Reshape
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.23/Reshape_copy_output
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.19/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.19/m.0/cv1/act/Sigmoid, /model.19/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.19/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.0/cv3.0.2/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/Reshape_3
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.23/Reshape_3_copy_output
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.19/m.0/cv2/act/Sigmoid, /model.19/m.0/cv2/act/Mul), /model.19/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.19/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.19/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.19/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.19/cv2/act/Sigmoid, /model.19/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.20/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.1/cv2.1.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.20/act/Sigmoid, /model.20/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv2.1/cv2.1.0/act/Sigmoid, /model.23/cv2.1/cv2.1.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.10/cv2/act/Mul_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.1/cv2.1.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv2.1/cv2.1.1/act/Sigmoid, /model.23/cv2.1/cv2.1.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/cv1/act/Sigmoid, /model.22/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.1/cv2.1.2/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/Reshape_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.23/Reshape_1_copy_output
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/m.0/cv1/act/Sigmoid, /model.22/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/m.0/cv2/act/Sigmoid, /model.22/m.0/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/m.0/m/m.0/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.1/cv3.1.2/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/m.0/m/m.0/cv1/act/Sigmoid, /model.22/m.0/m/m.0/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/Reshape_4
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.23/Reshape_4_copy_output
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/m.0/m/m.0/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.22/m.0/m/m.0/cv2/act/Sigmoid, /model.22/m.0/m/m.0/cv2/act/Mul), /model.22/m.0/m/m.0/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/m.0/m/m.1/cv1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/m.0/m/m.1/cv1/act/Sigmoid, /model.22/m.0/m/m.1/cv1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/m.0/m/m.1/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(PWN(/model.22/m.0/m/m.1/cv2/act/Sigmoid, /model.22/m.0/m/m.1/cv2/act/Mul), /model.22/m.0/m/m.1/Add)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/m.0/cv3/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/m.0/cv3/act/Sigmoid, /model.22/m.0/cv3/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.22/Split_output_0 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.22/Split_output_1 copy
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.22/cv2/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.22/cv2/act/Sigmoid, /model.22/cv2/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.2/cv2.2.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv2.2/cv2.2.0/act/Sigmoid, /model.23/cv2.2/cv2.2.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.2/cv2.2.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv2.2/cv2.2.1/act/Sigmoid, /model.23/cv2.2/cv2.2.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv2.2/cv2.2.2/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/Reshape_2
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.23/Reshape_2_copy_output
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/dfl/Reshape + /model.23/dfl/Transpose
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SOFTMAX: /model.23/dfl/Softmax
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/cv3.2/cv3.2.2/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONVOLUTION: /model.23/dfl/conv/Conv
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/Reshape_5
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] COPY: /model.23/Reshape_5_copy_output
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/dfl/Reshape_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONSTANT: /model.23/Constant_12_output_0
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] ELEMENTWISE: /model.23/Sub
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONSTANT: /model.23/Constant_13_output_0
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/Add_1)
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/Constant_14_output_0 + (Unnamed Layer* 446) [Shuffle], PWN(/model.23/Add_2, /model.23/Div_1))
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] ELEMENTWISE: /model.23/Sub_1
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] CONSTANT: /model.23/Constant_15_output_0 + (Unnamed Layer* 451) [Shuffle]
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] ELEMENTWISE: /model.23/Mul_2
+[10/17/2026-01:05:37] [TRT] [I] [GpuLayer] POINTWISE: PWN(/model.23/Sigmoid)
+[10/17/2026-01:05:38] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +534, GPU +497, now: CPU 1124, GPU 3746 (MiB)
+[10/17/2026-01:05:38] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +83, GPU +106, now: CPU 1207, GPU 3852 (MiB)
+[10/17/2026-01:05:38] [TRT] [I] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[10/17/2026-01:12:52] [TRT] [W] No implementation of layer model.2.cv1.conv.weight + rampq_model_2_cv1_conv_WeightQ + /model.2/cv1/conv/Conv obeys the requested constraints. I.e. no conforming implementation was found for requested layer computation precision and output precision. Using fastest implementation instead.
+[10/17/2026-01:14:27] [TRT] [W] No implementation of layer model.2.m.0.cv2.conv.weight + rampq_model_2_m_0_cv2_conv_WeightQ + /model.2/m.0/cv2/conv/Conv obeys the requested constraints. I.e. no conforming implementation was found for requested layer computation precision and output precision. Using fastest implementation instead.
+[10/17/2026-01:15:16] [TRT] [W] No implementation of layer model.2.cv2.conv.weight + rampq_model_2_cv2_conv_WeightQ + /model.2/cv2/conv/Conv obeys the requested constraints. I.e. no conforming implementation was found for requested layer computation precision and output precision. Using fastest implementation instead.
+[10/17/2026-01:18:47] [TRT] [I] Some tactics do not have sufficient workspace memory to run. Increasing workspace size will enable more tactics, please check verbose output for requested sizes.
+[10/17/2026-01:26:25] [TRT] [I] Total Activation Memory: 1170526208
+[10/17/2026-01:26:25] [TRT] [I] Detected 1 inputs and 4 output network tensors.
+[10/17/2026-01:26:31] [TRT] [I] Total Host Persistent Memory: 276688
+[10/17/2026-01:26:31] [TRT] [I] Total Device Persistent Memory: 161792
+[10/17/2026-01:26:31] [TRT] [I] Total Scratch Memory: 4194304
+[10/17/2026-01:26:31] [TRT] [I] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 5 MiB, GPU 824 MiB
+[10/17/2026-01:26:31] [TRT] [I] [BlockAssignment] Started assigning block shifts. This will take 279 steps to complete.
+[10/17/2026-01:26:32] [TRT] [I] [BlockAssignment] Algorithm ShiftNTopDown took 71.7706ms to assign 10 blocks to 279 nodes requiring 10968064 bytes.
+[10/17/2026-01:26:32] [TRT] [I] Total Activation Memory: 10968064
+[10/17/2026-01:26:33] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 1558, GPU 5268 (MiB)
+[10/17/2026-01:26:33] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 1558, GPU 5268 (MiB)
+[10/17/2026-01:26:33] [TRT] [W] TensorRT encountered issues when converting weights between types and that could affect accuracy.
+[10/17/2026-01:26:33] [TRT] [W] If this is not the desired behavior, please modify the weights or retrain with regularization to adjust the magnitude of the weights.
+[10/17/2026-01:26:33] [TRT] [W] Check verbose logs for the list of affected weights.
+[10/17/2026-01:26:33] [TRT] [W] - 68 weights are affected by this issue: Detected subnormal FP16 values.
+[10/17/2026-01:26:33] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +5, GPU +8, now: CPU 5, GPU 8 (MiB)
+[10/17/2026-01:26:33] [TRT] [I] Loaded engine size: 6 MiB
+[10/17/2026-01:26:33] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 1564, GPU 5231 (MiB)
+[10/17/2026-01:26:33] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 1564, GPU 5231 (MiB)
+[10/17/2026-01:26:33] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +5, now: CPU 0, GPU 5 (MiB)
+/home/nvidia/rampq/gate05_corrected_qonly_20261019/gate05_corrected_qonly_candidate_20261019/jetson_build_corrected_qonly_candidate.py:121: DeprecationWarning: Use get_tensor_name instead.
+  bindings = [{'name': engine.get_binding_name(i), 'input': bool(engine.binding_is_input(i)),
+/home/nvidia/rampq/gate05_corrected_qonly_20261019/gate05_corrected_qonly_candidate_20261019/jetson_build_corrected_qonly_candidate.py:121: DeprecationWarning: Use get_tensor_mode instead.
+  bindings = [{'name': engine.get_binding_name(i), 'input': bool(engine.binding_is_input(i)),
+/home/nvidia/rampq/gate05_corrected_qonly_20261019/gate05_corrected_qonly_candidate_20261019/jetson_build_corrected_qonly_candidate.py:122: DeprecationWarning: Use get_tensor_shape instead.
+  'shape': list(engine.get_binding_shape(i)), 'dtype': str(engine.get_binding_dtype(i)),
+/home/nvidia/rampq/gate05_corrected_qonly_20261019/gate05_corrected_qonly_candidate_20261019/jetson_build_corrected_qonly_candidate.py:122: DeprecationWarning: Use get_tensor_dtype instead.
+  'shape': list(engine.get_binding_shape(i)), 'dtype': str(engine.get_binding_dtype(i)),
+/home/nvidia/rampq/gate05_corrected_qonly_20261019/gate05_corrected_qonly_candidate_20261019/jetson_build_corrected_qonly_candidate.py:123: DeprecationWarning: Use get_tensor_format instead.
+  'format': str(engine.get_binding_format(i))} for i in range(engine.num_bindings)]
+CORRECTED_QONLY_CANDIDATE_BUILT_NO_NUMERICAL_PASS_CLAIM

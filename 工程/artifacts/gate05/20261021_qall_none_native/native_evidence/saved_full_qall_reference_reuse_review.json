@@ -1,0 +1,133 @@
+{
+  "schema": "rampq.gate05.saved_full_qall_reference_reuse_review/v1",
+  "client_at": "2026-10-21T01:57:30.576323+08:00",
+  "status": "SAVED_MAIN_AUX_CPU_REWRITE_REFERENCE_REUSE_VERIFIED",
+  "checks": [
+    {
+      "name": "manifest:analysis.json",
+      "passed": true
+    },
+    {
+      "name": "manifest:raw_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "manifest:source_hashes_after.json",
+      "passed": true
+    },
+    {
+      "name": "manifest:source_hashes_before.json",
+      "passed": true
+    },
+    {
+      "name": "manifest:verify_gate05_corrected_qall_cpu.py",
+      "passed": true
+    },
+    {
+      "name": "source_beforeafter",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_precision_runtime_bundles/q_all/model.onnx",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_precision_runtime_bundles/q_all/spec.json",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_corrected_qall_candidate/model.onnx",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_corrected_qall_candidate/spec.json",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_corrected_qall_candidate/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_corrected_qall_candidate/semantic_rewrite_audit.json",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_corrected_qall_candidate/preprocessed_input.npy",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261019_corrected_qall_candidate/reference_contract.json",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261018_int8/input_v1/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:artifacts/gate05/20261018_int8/input_v1/local_raw_outputs.npz",
+      "passed": true
+    },
+    {
+      "name": "sourcecurrent:scripts/verify_gate05_corrected_qall_cpu.py",
+      "passed": true
+    },
+    {
+      "name": "cpu_fixed_reference_status",
+      "passed": true
+    },
+    {
+      "name": "exactkeys",
+      "passed": true
+    },
+    {
+      "name": "paircontract:0",
+      "passed": true
+    },
+    {
+      "name": "pairrawbyteexact:0",
+      "passed": true
+    },
+    {
+      "name": "paircontract:1",
+      "passed": true
+    },
+    {
+      "name": "pairrawbyteexact:1",
+      "passed": true
+    },
+    {
+      "name": "old_fixed_reference_unmodified",
+      "passed": true
+    }
+  ],
+  "check_count": 24,
+  "manifest_sha256": "2d6a12602162c3fbc0c7e373d6f36bf58355c3cf5cadab98aebf3730d2a17791",
+  "analysis_sha256": "2af9ab8e1e8b76cbafd1622d75eedd825fe6f42f2dcdcdcfe115a7110965ab87",
+  "npz_sha256": "1fe8d81720679ad47fb6f6d7d47b3019dc2cbd7fccdc72ab6683f8a5d2ce705c",
+  "arrays": {
+    "0": {
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "float32",
+      "raw_sha256": "d7aa95eb8b62ae61c16027bd8f5ddc7c3a65458a1d48c2d035291869cf13f3c2",
+      "byte_identical": true
+    },
+    "1": {
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "float32",
+      "raw_sha256": "cd18f2fc05846f41f986f359330c6fbdd7fa8133d0fe1fc0e10c54e914344c0d",
+      "byte_identical": true
+    }
+  },
+  "new_CPU_native_SSH": false,
+  "old_failed_guard": "FAILED_UNCHANGED",
+  "limits": "Fixed-image ONNX original/rewrite equivalence reference only, not PyTorch parity, new dataset acceptance or matched floating control. Reuse no new CPU execution."
+}

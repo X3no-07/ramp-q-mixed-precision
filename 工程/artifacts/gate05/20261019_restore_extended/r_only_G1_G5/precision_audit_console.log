@@ -1,0 +1,84 @@
+{
+  "schema": "rampq.gate05.precision_candidate_audit/v1",
+  "status": "REQUESTED_CONV_FORMATS_VERIFIED",
+  "requested_conv_formats_complete": true,
+  "source_convs": 88,
+  "quantized_conv_count": 74,
+  "fp16_conv_count": 14,
+  "verified_int8_format_convs": 74,
+  "verified_fp16_format_convs": 14,
+  "strict_int8_status": "INTEGER_TACTIC_REVIEW_REQUIRED",
+  "named_integer_tactic_source_convs": 67,
+  "source_convs_without_tactic_name": 7,
+  "groups": {
+    "G1": {
+      "source_convs": 6,
+      "requested_int8": 0,
+      "requested_fp16": 6,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 6
+    },
+    "G2": {
+      "source_convs": 5,
+      "requested_int8": 5,
+      "requested_fp16": 0,
+      "verified_int8_formats": 5,
+      "verified_fp16_formats": 0
+    },
+    "G3": {
+      "source_convs": 10,
+      "requested_int8": 10,
+      "requested_fp16": 0,
+      "verified_int8_formats": 10,
+      "verified_fp16_formats": 0
+    },
+    "G4": {
+      "source_convs": 19,
+      "requested_int8": 19,
+      "requested_fp16": 0,
+      "verified_int8_formats": 19,
+      "verified_fp16_formats": 0
+    },
+    "G5": {
+      "source_convs": 8,
+      "requested_int8": 0,
+      "requested_fp16": 8,
+      "verified_int8_formats": 0,
+      "verified_fp16_formats": 8
+    },
+    "G6": {
+      "source_convs": 15,
+      "requested_int8": 15,
+      "requested_fp16": 0,
+      "verified_int8_formats": 15,
+      "verified_fp16_formats": 0
+    },
+    "G7": {
+      "source_convs": 8,
+      "requested_int8": 8,
+      "requested_fp16": 0,
+      "verified_int8_formats": 8,
+      "verified_fp16_formats": 0
+    },
+    "G8": {
+      "source_convs": 17,
+      "requested_int8": 17,
+      "requested_fp16": 0,
+      "verified_int8_formats": 17,
+      "verified_fp16_formats": 0
+    }
+  },
+  "errors": [],
+  "unmapped_engine_convs": [],
+  "fusions": [],
+  "scope": "Actual requested Conv weight/input/output formats; integer tactic evidence separate. No numerical migration, target recovery, dataset accuracy or performance claim.",
+  "configuration": "r_only_G1_G5",
+  "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+  "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+  "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+  "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+  "layer_file_sha256": "286dc04b89e63b0b51e0c016c854eaaf629ddca60169bb548a5fd9b3553b8df7",
+  "build_result_sha256": "9b939478301097542976d3639f8fd5e618b6b2e2f589ce104a705bda5581d2b0",
+  "original_numerical_failure_retained": true,
+  "nonquantized_float_control_status": "PENDING_NATIVE_VALIDATION_AND_PROTOCOL"
+}

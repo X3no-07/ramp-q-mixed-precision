@@ -1,0 +1,107 @@
+{
+  "schema": "rampq.gate05.fixed_matrix_checkpoint/v1",
+  "client_at": "2026-10-19T08:23:43.444942+08:00",
+  "status": "FROZEN_OBEY_MATRIX_COMPLETE_PREFER_RETRIES_PENDING",
+  "gate05_status": "INCOMPLETE",
+  "all_six_frozen_configurations_attempted": true,
+  "successful_native_full_engines": 1,
+  "successful_new_fixed_image_executions": 1,
+  "verified_original_files": {
+    "fp16_control_post_smoke": 32,
+    "mixed_matrix": 88
+  },
+  "configurations": [
+    {
+      "configuration": "fp16_control",
+      "source_conv_count": 88,
+      "expected_int8": 0,
+      "expected_fp16": 88,
+      "build_status": "BUILT_AND_DESERIALIZED",
+      "engine_sha256": "92ce7a8f487cbaf473a281b94daa953120870fa2ad992807d60390dffd1b72fb",
+      "actual_requested_formats_verified": true,
+      "single_image_executed": true,
+      "all_outputs_finite": true,
+      "detections": [
+        [
+          2.8125,
+          3.0,
+          245.625,
+          284.25,
+          0.6671474575996399,
+          0.0
+        ],
+        [
+          168.84375,
+          195.9375,
+          245.90625,
+          285.5625,
+          0.44360047578811646,
+          2.0
+        ]
+      ]
+    },
+    {
+      "configuration": "q_all",
+      "source_conv_count": 88,
+      "expected_int8": 88,
+      "expected_fp16": 0,
+      "build_status": "FULL_QDQ_PE_TAP_BUILD_TIMEOUT_INCONCLUSIVE",
+      "actual_requested_formats_verified": false,
+      "single_image_executed": false,
+      "monitor_seconds": 1802.27
+    },
+    {
+      "configuration": "r_only_G1",
+      "source_conv_count": 88,
+      "expected_int8": 82,
+      "expected_fp16": 6,
+      "build_status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+      "build_script_seconds": 16.504513024003245,
+      "error_class": "TRT_INTERNAL_FILTER_QDQ_FORMATS",
+      "actual_requested_formats_verified": false,
+      "single_image_executed": false,
+      "monitor_safety_stop": false
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "source_conv_count": 88,
+      "expected_int8": 74,
+      "expected_fp16": 14,
+      "build_status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+      "build_script_seconds": 15.422424383999896,
+      "error_class": "TRT_INTERNAL_FILTER_QDQ_FORMATS",
+      "actual_requested_formats_verified": false,
+      "single_image_executed": false,
+      "monitor_safety_stop": false
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "source_conv_count": 88,
+      "expected_int8": 77,
+      "expected_fp16": 11,
+      "build_status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+      "build_script_seconds": 16.07609372799925,
+      "error_class": "TRT_INTERNAL_FILTER_QDQ_FORMATS",
+      "actual_requested_formats_verified": false,
+      "single_image_executed": false,
+      "monitor_safety_stop": false
+    },
+    {
+      "configuration": "q_only_G1",
+      "source_conv_count": 88,
+      "expected_int8": 6,
+      "expected_fp16": 82,
+      "build_status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+      "build_script_seconds": 10.046087839997199,
+      "error_class": "TRT_INTERNAL_FILTER_QDQ_FORMATS",
+      "actual_requested_formats_verified": false,
+      "single_image_executed": false,
+      "monitor_safety_stop": false
+    }
+  ],
+  "original_q_all_numerical_guard": "FAILED_UNCHANGED",
+  "dataset_inference_run": false,
+  "dataset_acceptance_rules_frozen": false,
+  "causal_or_recovery_claim_established": false,
+  "next_required_work": "Use the demonstrated prefer request for the full frozen mixed configurations; retain exact actual-format standards and all original failures."
+}

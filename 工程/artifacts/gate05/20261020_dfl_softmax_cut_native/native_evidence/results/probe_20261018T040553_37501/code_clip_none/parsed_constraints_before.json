@@ -1,0 +1,337 @@
+[
+  {
+    "index": 0,
+    "name": "rampq_model_23_dfl_conv_a_scale",
+    "layer_type": "LayerType.CONSTANT",
+    "num_inputs": 0,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "(Unnamed Layer* 0) [Constant]_output",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "name": "rampq_model_23_dfl_conv_a_zero",
+    "layer_type": "LayerType.CONSTANT",
+    "num_inputs": 0,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "(Unnamed Layer* 1) [Constant]_output",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "rampq_model_23_dfl_conv_ActivationQ",
+    "layer_type": "LayerType.QUANTIZE",
+    "num_inputs": 3,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": true
+        },
+        "requested_output_type": "DataType.INT8",
+        "tensor_name": "rampq_model_23_dfl_conv_a_q_before_code_clip",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          16,
+          4,
+          8400
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "rampq_model_23_dfl_conv_Clip",
+    "layer_type": "LayerType.ACTIVATION",
+    "num_inputs": 1,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "rampq_model_23_dfl_conv_a_q",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          16,
+          4,
+          8400
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "rampq_model_23_dfl_conv_ActivationDQ",
+    "layer_type": "LayerType.DEQUANTIZE",
+    "num_inputs": 3,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": true
+    },
+    "precision": "DataType.INT8",
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "rampq_model_23_dfl_conv_a_dq",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          16,
+          4,
+          8400
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "model.23.dfl.conv.weight",
+    "layer_type": "LayerType.CONSTANT",
+    "num_inputs": 0,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "(Unnamed Layer* 5) [Constant]_output",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          16,
+          1,
+          1
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "rampq_model_23_dfl_conv_w_scale",
+    "layer_type": "LayerType.CONSTANT",
+    "num_inputs": 0,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "(Unnamed Layer* 6) [Constant]_output",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "rampq_model_23_dfl_conv_w_zero",
+    "layer_type": "LayerType.CONSTANT",
+    "num_inputs": 0,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "(Unnamed Layer* 7) [Constant]_output",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "rampq_model_23_dfl_conv_WeightQ",
+    "layer_type": "LayerType.QUANTIZE",
+    "num_inputs": 3,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": true
+        },
+        "requested_output_type": "DataType.INT8",
+        "tensor_name": "rampq_model_23_dfl_conv_w_q",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          16,
+          1,
+          1
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "rampq_model_23_dfl_conv_WeightDQ",
+    "layer_type": "LayerType.DEQUANTIZE",
+    "num_inputs": 3,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": true
+    },
+    "precision": "DataType.INT8",
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "rampq_model_23_dfl_conv_w_dq",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          16,
+          1,
+          1
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "/model.23/dfl/conv/Conv",
+    "layer_type": "LayerType.CONVOLUTION",
+    "num_inputs": 2,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "/model.23/dfl/conv/Conv_output_0",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          1,
+          4,
+          8400
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "/model.23/dfl/Reshape_1",
+    "layer_type": "LayerType.SHUFFLE",
+    "num_inputs": 1,
+    "num_outputs": 1,
+    "precision_is_set": {
+      "supported": true,
+      "value": false
+    },
+    "output_types": [
+      {
+        "index": 0,
+        "output_type_is_set": {
+          "supported": true,
+          "value": false
+        },
+        "tensor_name": "/model.23/dfl/Reshape_1_output_0",
+        "tensor_dtype": "DataType.FLOAT",
+        "tensor_shape": [
+          1,
+          4,
+          8400
+        ],
+        "is_shape_tensor": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "schema": "rampq.gate05.root_hybrid_saved_evidence_review/v1",
+  "status": "HYBRID_SAVED_ARRAYS_AND_ALL_88_CONTROLS_VERIFIED",
+  "manifest_files_verified": 11,
+  "independent_same_input_control_convs": 88,
+  "derived_from_saved_arrays": {
+    "ort_conv_torch_other": {
+      "boxes": {
+        "max_abs": 0.0,
+        "violations": 0
+      },
+      "scores": {
+        "max_abs": 5.60099579161033e-06,
+        "violations": 0
+      },
+      "numeric_input_diff_layers": [
+        "model.23.cv3.0.0.1.conv",
+        "model.23.cv3.0.1.0.conv",
+        "model.23.cv3.0.1.1.conv",
+        "model.23.cv3.0.2"
+      ],
+      "numeric_output_diff_layers": [
+        "model.23.cv3.0.0.1.conv",
+        "model.23.cv3.0.1.0.conv",
+        "model.23.cv3.0.1.1.conv",
+        "model.23.cv3.0.2"
+      ],
+      "output_byte_equal_layers": 84
+    },
+    "ort_conv_and_ort_silu_torch_other": {
+      "boxes": {
+        "max_abs": 0.0,
+        "violations": 0
+      },
+      "scores": {
+        "max_abs": 1.3061497838862124e-07,
+        "violations": 0
+      },
+      "numeric_input_diff_layers": [],
+      "numeric_output_diff_layers": [],
+      "output_byte_equal_layers": 88
+    }
+  },
+  "source_current_hashes_verified": true,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "native_execution_run": false,
+  "dataset_evaluation_run": false,
+  "limits": "Independent saved-array review and script reading. Does not rerun or approve a replacement reference."
+}

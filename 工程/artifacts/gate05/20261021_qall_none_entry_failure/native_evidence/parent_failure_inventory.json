@@ -1,0 +1,4246 @@
+{
+  "schema": "rampq.gate05.corrected_qall_failed_build_boundary_inventory/v1",
+  "status": "STATIC_AND_SAVED_PARSER_LOG_INVENTORY_ONLY",
+  "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "source_requests": 88,
+  "already_quantized_in_successful_qonly": 6,
+  "source_operator_counts": {
+    "GRAPH_INPUT": 1,
+    "Mul": 51,
+    "Split": 12,
+    "Concat": 17,
+    "Add": 5,
+    "Reshape": 1,
+    "Softmax": 1
+  },
+  "input_rank_counts": {
+    "4": 88
+  },
+  "boundaries": [
+    {
+      "conv_name": "/model.0/conv/Conv",
+      "group": "G1",
+      "already_quantized_in_successful_qonly": true,
+      "source_tensor": "images",
+      "source_operator": "GRAPH_INPUT",
+      "weight_shape": [
+        16,
+        3,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 8,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.1/conv/Conv",
+      "group": "G1",
+      "already_quantized_in_successful_qonly": true,
+      "source_tensor": "/model.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        16,
+        320,
+        320
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 10,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.2/cv1/conv/Conv",
+      "group": "G1",
+      "already_quantized_in_successful_qonly": true,
+      "source_tensor": "/model.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        32,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_2_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        160,
+        160
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 11,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.1.conv.weight + rampq_model_1_conv_WeightQ + /model.1/conv/Conv + PWN(/model.1/act/Sigmoid, /model.1/act/Mul) + PWN(rampq_model_2_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.2/m.0/cv1/conv/Conv",
+      "group": "G1",
+      "already_quantized_in_successful_qonly": true,
+      "source_tensor": "/model.2/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        8,
+        16,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_2_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        16,
+        160,
+        160
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 16,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_2_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.2/m.0/cv2/conv/Conv",
+      "group": "G1",
+      "already_quantized_in_successful_qonly": true,
+      "source_tensor": "/model.2/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        16,
+        8,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_2_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        8,
+        160,
+        160
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 17,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.2.m.0.cv1.conv.weight + rampq_model_2_m_0_cv1_conv_WeightQ + /model.2/m.0/cv1/conv/Conv + PWN(/model.2/m.0/cv1/act/Sigmoid, /model.2/m.0/cv1/act/Mul) + PWN(rampq_model_2_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.2/cv2/conv/Conv",
+      "group": "G1",
+      "already_quantized_in_successful_qonly": true,
+      "source_tensor": "/model.2/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        64,
+        48,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_2_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        48,
+        160,
+        160
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 22,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_2_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.3/conv/Conv",
+      "group": "G2",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.2/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_3_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        160,
+        160
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 23,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.2.cv2.conv.weight + rampq_model_2_cv2_conv_WeightQ + /model.2/cv2/conv/Conv + PWN(/model.2/cv2/act/Sigmoid, /model.2/cv2/act/Mul) + PWN(rampq_model_3_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.4/cv1/conv/Conv",
+      "group": "G2",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.3/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_4_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 24,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.3.conv.weight + rampq_model_3_conv_WeightQ + /model.3/conv/Conv + PWN(/model.3/act/Sigmoid, /model.3/act/Mul) + PWN(rampq_model_4_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.4/m.0/cv1/conv/Conv",
+      "group": "G2",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.4/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        16,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_4_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 29,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_4_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.4/m.0/cv2/conv/Conv",
+      "group": "G2",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.4/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_4_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        16,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 30,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.4.m.0.cv1.conv.weight + rampq_model_4_m_0_cv1_conv_WeightQ + /model.4/m.0/cv1/conv/Conv + PWN(/model.4/m.0/cv1/act/Sigmoid, /model.4/m.0/cv1/act/Mul) + PWN(rampq_model_4_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.4/cv2/conv/Conv",
+      "group": "G2",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.4/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        96,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_4_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        96,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 35,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_4_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.5/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.4/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_5_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 39,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_5_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/cv1/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.5/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 40,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.5.conv.weight + rampq_model_5_conv_WeightQ + /model.5/conv/Conv + PWN(/model.5/act/Sigmoid, /model.5/act/Mul) + PWN(rampq_model_6_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/cv1/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        32,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 45,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_6_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/m/m.0/cv1/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 51,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_6_m_0_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/m/m.0/cv2/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/m.0/m/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 52,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.6.m.0.m.0.cv1.conv.weight + rampq_model_6_m_0_m_0_cv1_conv_WeightQ + /model.6/m.0/m/m.0/cv1/conv/Conv + PWN(/model.6/m.0/m/m.0/cv1/act/Sigmoid, /model.6/m.0/m/m.0/cv1/act/Mul) + PWN(rampq_model_6_m_0_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/m/m.1/cv1/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/m.0/m/m.0/Add_output_0",
+      "source_operator": "Add",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_m_1_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 56,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_6_m_0_m_1_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/m/m.1/cv2/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/m.0/m/m.1/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_m_1_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 57,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.6.m.0.m.1.cv1.conv.weight + rampq_model_6_m_0_m_1_cv1_conv_WeightQ + /model.6/m.0/m/m.1/cv1/conv/Conv + PWN(/model.6/m.0/m/m.1/cv1/act/Sigmoid, /model.6/m.0/m/m.1/cv1/act/Mul) + PWN(rampq_model_6_m_0_m_1_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/cv2/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        32,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 46,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_6_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/m.0/cv3/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/m.0/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_m_0_cv3_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 60,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_6_m_0_cv3_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.6/cv2/conv/Conv",
+      "group": "G3",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_6_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        192,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 64,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_6_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.7/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.6/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_7_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 66,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_7_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/cv1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.7/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 67,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.7.conv.weight + rampq_model_7_conv_WeightQ + /model.7/conv/Conv + PWN(/model.7/act/Sigmoid, /model.7/act/Mul) + PWN(rampq_model_8_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/cv1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 69,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_8_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/m/m.0/cv1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 75,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_8_m_0_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/m/m.0/cv2/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/m.0/m/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 76,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.8.m.0.m.0.cv1.conv.weight + rampq_model_8_m_0_m_0_cv1_conv_WeightQ + /model.8/m.0/m/m.0/cv1/conv/Conv + PWN(/model.8/m.0/m/m.0/cv1/act/Sigmoid, /model.8/m.0/m/m.0/cv1/act/Mul) + PWN(rampq_model_8_m_0_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/m/m.1/cv1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/m.0/m/m.0/Add_output_0",
+      "source_operator": "Add",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_m_1_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 80,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_8_m_0_m_1_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/m/m.1/cv2/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/m.0/m/m.1/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_m_1_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 81,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.8.m.0.m.1.cv1.conv.weight + rampq_model_8_m_0_m_1_cv1_conv_WeightQ + /model.8/m.0/m/m.1/cv1/conv/Conv + PWN(/model.8/m.0/m/m.1/cv1/act/Sigmoid, /model.8/m.0/m/m.1/cv1/act/Mul) + PWN(rampq_model_8_m_0_m_1_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/cv2/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 70,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_8_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/m.0/cv3/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/m.0/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_m_0_cv3_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 84,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_8_m_0_cv3_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.8/cv2/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        256,
+        384,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_8_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        384,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 88,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_8_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.9/cv1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.8/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_9_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 89,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.8.cv2.conv.weight + rampq_model_8_cv2_conv_WeightQ + /model.8/cv2/conv/Conv + PWN(/model.8/cv2/act/Sigmoid, /model.8/cv2/act/Mul) + PWN(rampq_model_9_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.9/cv2/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.9/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        256,
+        512,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_9_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        512,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 97,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_9_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/cv1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.9/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 98,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.9.cv2.conv.weight + rampq_model_9_cv2_conv_WeightQ + /model.9/cv2/conv/Conv + PWN(/model.9/cv2/act/Sigmoid, /model.9/cv2/act/Mul) + PWN(rampq_model_10_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/m/m.0/attn/qkv/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.10/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_m_0_attn_qkv_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 104,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_10_m_0_attn_qkv_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/m/m.0/attn/pe/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.10/m/m.0/attn/Reshape_2_output_0",
+      "source_operator": "Reshape",
+      "weight_shape": [
+        128,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 128,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_m_0_attn_pe_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 114,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_10_m_0_attn_pe_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/m/m.0/attn/proj/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.10/m/m.0/attn/Add_output_0",
+      "source_operator": "Add",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_m_0_attn_proj_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 121,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_10_m_0_attn_proj_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/m/m.0/ffn/ffn.0/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.10/m/m.0/Add_output_0",
+      "source_operator": "Add",
+      "weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_m_0_ffn_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 124,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_10_m_0_ffn_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/m/m.0/ffn/ffn.1/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.10/m/m.0/ffn/ffn.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_m_0_ffn_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 125,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.10.m.0.ffn.0.conv.weight + rampq_model_10_m_0_ffn_0_conv_WeightQ + /model.10/m/m.0/ffn/ffn.0/conv/Conv + PWN(/model.10/m/m.0/ffn/ffn.0/act/Sigmoid, /model.10/m/m.0/ffn/ffn.0/act/Mul) + PWN(rampq_model_10_m_0_ffn_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.10/cv2/conv/Conv",
+      "group": "G4",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.10/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_10_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 129,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_10_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.13/cv1/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.12/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        384,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_13_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        384,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 135,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_13_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.13/m.0/cv1/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.13/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        32,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_13_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 140,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_13_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.13/m.0/cv2/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.13/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_13_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 141,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.13.m.0.cv1.conv.weight + rampq_model_13_m_0_cv1_conv_WeightQ + /model.13/m.0/cv1/conv/Conv + PWN(/model.13/m.0/cv1/act/Sigmoid, /model.13/m.0/cv1/act/Mul) + PWN(rampq_model_13_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.13/cv2/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.13/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_13_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        192,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 146,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_13_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.16/cv1/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.15/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_16_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 151,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_16_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.16/m.0/cv1/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.16/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        16,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_16_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 156,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_16_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.16/m.0/cv2/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.16/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_16_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        16,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 157,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.16.m.0.cv1.conv.weight + rampq_model_16_m_0_cv1_conv_WeightQ + /model.16/m.0/cv1/conv/Conv + PWN(/model.16/m.0/cv1/act/Sigmoid, /model.16/m.0/cv1/act/Mul) + PWN(rampq_model_16_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.16/cv2/conv/Conv",
+      "group": "G5",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.16/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        64,
+        96,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_16_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        96,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 162,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_16_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.17/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.16/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_17_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 164,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_17_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.19/cv1/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.18/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_19_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        192,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 172,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_19_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.19/m.0/cv1/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.19/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        32,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_19_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 179,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_19_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.19/m.0/cv2/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.19/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_19_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        32,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 184,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.19.m.0.cv1.conv.weight + rampq_model_19_m_0_cv1_conv_WeightQ + /model.19/m.0/cv1/conv/Conv + PWN(/model.19/m.0/cv1/act/Sigmoid, /model.19/m.0/cv1/act/Mul) + PWN(rampq_model_19_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.19/cv2/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.19/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_19_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        192,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 194,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_19_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.20/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.19/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          2,
+          2
+        ]
+      },
+      "clip_name": "rampq_model_20_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 196,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_20_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/cv1/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.21/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        256,
+        384,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        384,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 204,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/cv1/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 211,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/m/m.0/cv1/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_m_0_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 222,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_m_0_m_0_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/m/m.0/cv2/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/m.0/m/m.0/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 224,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.22.m.0.m.0.cv1.conv.weight + rampq_model_22_m_0_m_0_cv1_conv_WeightQ + /model.22/m.0/m/m.0/cv1/conv/Conv + PWN(/model.22/m.0/m/m.0/cv1/act/Sigmoid, /model.22/m.0/m/m.0/cv1/act/Mul) + PWN(rampq_model_22_m_0_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/m/m.1/cv1/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/m.0/m/m.0/Add_output_0",
+      "source_operator": "Add",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_m_1_cv1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 231,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_m_0_m_1_cv1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/m/m.1/cv2/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/m.0/m/m.1/cv1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_m_1_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 232,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.22.m.0.m.1.cv1.conv.weight + rampq_model_22_m_0_m_1_cv1_conv_WeightQ + /model.22/m.0/m/m.1/cv1/conv/Conv + PWN(/model.22/m.0/m/m.1/cv1/act/Sigmoid, /model.22/m.0/m/m.1/cv1/act/Mul) + PWN(rampq_model_22_m_0_m_1_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/cv2/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/Split_output_1",
+      "source_operator": "Split",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 212,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_m_0_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/m.0/cv3/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/m.0/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_m_0_cv3_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 235,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_m_0_cv3_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.22/cv2/conv/Conv",
+      "group": "G6",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/Concat_output_0",
+      "source_operator": "Concat",
+      "weight_shape": [
+        256,
+        384,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_22_cv2_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        384,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 239,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_22_cv2_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.0/cv2.0.0/conv/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.16/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_0_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 165,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv2_0_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.0/cv2.0.1/conv/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv2.0/cv2.0.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_0_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 168,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv2.0.0.conv.weight + rampq_model_23_cv2_0_0_conv_WeightQ + /model.23/cv2.0/cv2.0.0/conv/Conv + PWN(/model.23/cv2.0/cv2.0.0/act/Sigmoid, /model.23/cv2.0/cv2.0.0/act/Mul) + PWN(rampq_model_23_cv2_0_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.0/cv2.0.2/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv2.0/cv2.0.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_0_2_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 173,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv2.0.1.conv.weight + rampq_model_23_cv2_0_1_conv_WeightQ + /model.23/cv2.0/cv2.0.1/conv/Conv + PWN(/model.23/cv2.0/cv2.0.1/act/Sigmoid, /model.23/cv2.0/cv2.0.1/act/Mul) + PWN(rampq_model_23_cv2_0_2_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.1/cv2.1.0/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.19/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        128,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_1_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 197,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv2_1_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.1/cv2.1.1/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv2.1/cv2.1.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_1_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 200,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv2.1.0.conv.weight + rampq_model_23_cv2_1_0_conv_WeightQ + /model.23/cv2.1/cv2.1.0/conv/Conv + PWN(/model.23/cv2.1/cv2.1.0/act/Sigmoid, /model.23/cv2.1/cv2.1.0/act/Mul) + PWN(rampq_model_23_cv2_1_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.1/cv2.1.2/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv2.1/cv2.1.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_1_2_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 205,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv2.1.1.conv.weight + rampq_model_23_cv2_1_1_conv_WeightQ + /model.23/cv2.1/cv2.1.1/conv/Conv + PWN(/model.23/cv2.1/cv2.1.1/act/Sigmoid, /model.23/cv2.1/cv2.1.1/act/Mul) + PWN(rampq_model_23_cv2_1_2_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.2/cv2.2.0/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        256,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_2_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 241,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv2_2_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.2/cv2.2.1/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv2.2/cv2.2.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_2_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 243,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv2.2.0.conv.weight + rampq_model_23_cv2_2_0_conv_WeightQ + /model.23/cv2.2/cv2.2.0/conv/Conv + PWN(/model.23/cv2.2/cv2.2.0/act/Sigmoid, /model.23/cv2.2/cv2.2.0/act/Mul) + PWN(rampq_model_23_cv2_2_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv2.2/cv2.2.2/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv2.2/cv2.2.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv2_2_2_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 246,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv2.2.1.conv.weight + rampq_model_23_cv2_2_1_conv_WeightQ + /model.23/cv2.2/cv2.2.1/conv/Conv + PWN(/model.23/cv2.2/cv2.2.1/act/Sigmoid, /model.23/cv2.2/cv2.2.1/act/Mul) + PWN(rampq_model_23_cv2_2_2_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.16/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 64,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_0_0_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 166,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_0_0_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_0_0_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 171,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_0_0_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 64,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_0_1_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 174,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv3.0.0.1.conv.weight + rampq_model_23_cv3_0_0_1_conv_WeightQ + /model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv + PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Sigmoid, /model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul) + PWN(rampq_model_23_cv3_0_1_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_0_1_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 185,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_0_1_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.0/cv3.0.2/Conv",
+      "group": "G7",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        10,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_0_2_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 186,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv3.0.1.1.conv.weight + rampq_model_23_cv3_0_1_1_conv_WeightQ + /model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv + PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Sigmoid, /model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul) + PWN(rampq_model_23_cv3_0_2_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.19/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        128,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 128,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_1_0_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 198,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_1_0_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_1_0_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        128,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 203,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_1_0_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 64,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_1_1_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 206,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv3.1.0.1.conv.weight + rampq_model_23_cv3_1_0_1_conv_WeightQ + /model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv + PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Sigmoid, /model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul) + PWN(rampq_model_23_cv3_1_1_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_1_1_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 220,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_1_1_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.1/cv3.1.2/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        10,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_1_2_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 223,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv3.1.1.1.conv.weight + rampq_model_23_cv3_1_1_1_conv_WeightQ + /model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv + PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Sigmoid, /model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul) + PWN(rampq_model_23_cv3_1_2_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.22/cv2/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        256,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 256,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_2_0_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 242,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_2_0_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_2_0_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        256,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 245,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_2_0_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 64,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_2_1_0_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 247,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv3.2.0.1.conv.weight + rampq_model_23_cv3_2_0_1_conv_WeightQ + /model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv + PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Sigmoid, /model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul) + PWN(rampq_model_23_cv3_2_1_0_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_2_1_1_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 253,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_cv3_2_1_1_conv_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/cv3.2/cv3.2.2/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul_output_0",
+      "source_operator": "Mul",
+      "weight_shape": [
+        10,
+        64,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_cv3_2_2_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        64,
+        20,
+        20
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "FUSED_CONVOLUTION",
+        "line": 255,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.cv3.2.1.1.conv.weight + rampq_model_23_cv3_2_1_1_conv_WeightQ + /model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv + PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Sigmoid, /model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul) + PWN(rampq_model_23_cv3_2_2_Clip)"
+      }
+    },
+    {
+      "conv_name": "/model.23/dfl/conv/Conv",
+      "group": "G8",
+      "already_quantized_in_successful_qonly": false,
+      "source_tensor": "/model.23/dfl/Softmax_output_0",
+      "source_operator": "Softmax",
+      "weight_shape": [
+        1,
+        16,
+        1,
+        1
+      ],
+      "conv_attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      },
+      "clip_name": "rampq_model_23_dfl_conv_Clip",
+      "parsed_clip_input_shape": [
+        1,
+        16,
+        4,
+        8400
+      ],
+      "parsed_clip_input_declared_dtype": "DataType.FLOAT",
+      "parsed_clip_output_declared_dtype": "DataType.FLOAT",
+      "optimized_clip_log": {
+        "kind": "STANDALONE_POINTWISE",
+        "line": 257,
+        "text": "[10/17/2026-03:40:00] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_dfl_conv_Clip)"
+      }
+    }
+  ],
+  "limits": "No failed node localization; listed boundary features are inventory, not causes. No execution."
+}

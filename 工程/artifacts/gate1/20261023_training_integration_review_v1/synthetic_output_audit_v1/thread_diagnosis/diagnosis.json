@@ -1,0 +1,202 @@
+{
+  "schema": "rampq.gate1.cpu_thread_context_diagnosis/v1",
+  "status": "DIAGNOSTIC_ONLY_OLD_THREAD_DECLARATION_NOT_ACCEPTED",
+  "before_select_device": 1,
+  "after_select_device": 8,
+  "framework_NUM_THREADS": 8,
+  "results": [
+    {
+      "threads": 1,
+      "interop_threads": 1,
+      "exact_output_matches_capture": false,
+      "output": {
+        "kind": "tuple",
+        "items": [
+          {
+            "kind": "tensor",
+            "tensor": {
+              "shape": [
+                1,
+                14,
+                84
+              ],
+              "dtype": "torch.float32",
+              "sha256": "7341ee4002b7b2bee9f1436c156b2111279168d91e5f110cab961d0019a89c7b"
+            }
+          },
+          {
+            "kind": "dict",
+            "items": {
+              "boxes": {
+                "kind": "tensor",
+                "tensor": {
+                  "shape": [
+                    1,
+                    64,
+                    84
+                  ],
+                  "dtype": "torch.float32",
+                  "sha256": "59b482a8ec383ee2234ff5ea99541fcf40bd91f784f6c2319429fe1d50eb7535"
+                }
+              },
+              "feats": {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "tensor",
+                    "tensor": {
+                      "shape": [
+                        1,
+                        64,
+                        8,
+                        8
+                      ],
+                      "dtype": "torch.float32",
+                      "sha256": "a7fc13e6aeb0d1e2c6e0b074ad04372851d9a5ac4583973c06b5d816e1aa24d0"
+                    }
+                  },
+                  {
+                    "kind": "tensor",
+                    "tensor": {
+                      "shape": [
+                        1,
+                        128,
+                        4,
+                        4
+                      ],
+                      "dtype": "torch.float32",
+                      "sha256": "db1742b14fbee254f631a5a3deacb2d55ff1da61d77dede2056ba5c8a08f9462"
+                    }
+                  },
+                  {
+                    "kind": "tensor",
+                    "tensor": {
+                      "shape": [
+                        1,
+                        256,
+                        2,
+                        2
+                      ],
+                      "dtype": "torch.float32",
+                      "sha256": "63f7e50687c2e3f2872cd5a6a3ec05204f11bcd84dd70755e3674f6e8462a1fd"
+                    }
+                  }
+                ]
+              },
+              "scores": {
+                "kind": "tensor",
+                "tensor": {
+                  "shape": [
+                    1,
+                    10,
+                    84
+                  ],
+                  "dtype": "torch.float32",
+                  "sha256": "59227d2587a0948244879d2a7acc550f6a704479414892fce856ee22df13f834"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "threads": 8,
+      "interop_threads": 1,
+      "exact_output_matches_capture": true,
+      "output": {
+        "kind": "tuple",
+        "items": [
+          {
+            "kind": "tensor",
+            "tensor": {
+              "shape": [
+                1,
+                14,
+                84
+              ],
+              "dtype": "torch.float32",
+              "sha256": "6c985d774e60de391bb8ecfcccde041bdb559f66c9452e70c674e41a0d4e4560"
+            }
+          },
+          {
+            "kind": "dict",
+            "items": {
+              "boxes": {
+                "kind": "tensor",
+                "tensor": {
+                  "shape": [
+                    1,
+                    64,
+                    84
+                  ],
+                  "dtype": "torch.float32",
+                  "sha256": "159fb3f20317cc48a60b041493cbd9b5aa0da9956404f958094c36710d0d234d"
+                }
+              },
+              "feats": {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "tensor",
+                    "tensor": {
+                      "shape": [
+                        1,
+                        64,
+                        8,
+                        8
+                      ],
+                      "dtype": "torch.float32",
+                      "sha256": "38fb407837caa6bf7727bdb8853932a89bb578f10f9844f04d1323b4c48e5c0d"
+                    }
+                  },
+                  {
+                    "kind": "tensor",
+                    "tensor": {
+                      "shape": [
+                        1,
+                        128,
+                        4,
+                        4
+                      ],
+                      "dtype": "torch.float32",
+                      "sha256": "109a27664a055e1626bc62129db37e9e2aaec42e74b636386d73dc9e1f557d72"
+                    }
+                  },
+                  {
+                    "kind": "tensor",
+                    "tensor": {
+                      "shape": [
+                        1,
+                        256,
+                        2,
+                        2
+                      ],
+                      "dtype": "torch.float32",
+                      "sha256": "7a8716985cf152006c578c839d606332342ab388aad9692e980a1b275326fb11"
+                    }
+                  }
+                ]
+              },
+              "scores": {
+                "kind": "tensor",
+                "tensor": {
+                  "shape": [
+                    1,
+                    10,
+                    84
+                  ],
+                  "dtype": "torch.float32",
+                  "sha256": "59227d2587a0948244879d2a7acc550f6a704479414892fce856ee22df13f834"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ordinary_model_checkpoints_deserialized": false,
+  "scientific_gate_pass": false,
+  "conclusion": "CPU select_device overrides prior torch.set_num_threads; exact saved CPU output depends on effective thread context. Caller must reassert and record actual thread context after trainer construction."
+}

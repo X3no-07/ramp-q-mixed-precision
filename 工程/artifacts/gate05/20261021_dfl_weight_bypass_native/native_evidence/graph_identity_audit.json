@@ -1,0 +1,68 @@
+{
+  "schema": "rampq.gate05.dfl_weight_bypass_graph_identity/v1",
+  "status": "ONLY_DECLARED_WEIGHT_QDQ_BYPASS_VERIFIED",
+  "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "parent_six_node_graph_sha256": "805abb78ed4e4d5abc8041b2916dadc83370a14ef1776fcc0a03f163c16bcf81",
+  "removed_nodes": [
+    "rampq_model_23_dfl_conv_WeightQ",
+    "rampq_model_23_dfl_conv_WeightDQ"
+  ],
+  "declared_node_mutation": {
+    "node": "/model.23/dfl/conv/Conv",
+    "field": "input[1]",
+    "old": "rampq_model_23_dfl_conv_w_dq",
+    "new": "model.23.dfl.conv.weight"
+  },
+  "all_retained_activation_nodes_and_used_initializers_exact_source_bytes": true,
+  "Conv_restored_input1_serialized_bytes_exact_source": true,
+  "input_output_declarations_exact_parent_bytes": true,
+  "original_weight_file_values_changed": false,
+  "weight_shape": [
+    1,
+    16,
+    1,
+    1
+  ],
+  "weight_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "unused_weight_scale_zero_source_lineage_only": {
+    "rampq_model_23_dfl_conv_w_scale": "a15635bcb4d263cdbfb1aa58c992181355459ed1dcebd75d143af73eb06eb63f",
+    "rampq_model_23_dfl_conv_w_zero": "d99018865509be56fe0120daba4774c3a3c00fe693b56416b271d825f3c44f3e"
+  },
+  "semantic_change": "Weight quantization removed; not an equivalent rewrite or full-model repair.",
+  "actual_native_weight_precision_not_inferred_from_initializer_dtype": true,
+  "model_file": "model_dfl_weight_bypass.onnx",
+  "model_sha256": "020dad7f70c04f495dfe1b6e62e63e925ff6468a6cde0c157b7122a38274eb41",
+  "nodes": 4,
+  "initializers": 5,
+  "conv_count": 1,
+  "node_serialized_sha256": {
+    "rampq_model_23_dfl_conv_ActivationQ": "2447af675995af25c59aa9671087cc367eba2238a0196e09f4ecf820fc546828",
+    "rampq_model_23_dfl_conv_Clip": "d4fd35cd63f63d843a8eee8a491b57ef7c40668fc194083cd88bc46d9cc0a1c0",
+    "rampq_model_23_dfl_conv_ActivationDQ": "6cdf5d318eae17034dd62c016f211454efebc5781fcf9ca160a9767f48b3909f",
+    "/model.23/dfl/conv/Conv": "a1050ece734c0cb0677a8588defb36327cd50d649de6a840bd03bf8a65e42a03"
+  },
+  "initializer_serialized_sha256": {
+    "model.23.dfl.conv.weight": "a131eefd3ebd329d085da840c8dc11d2b27a6e44099c89f184c6274e5157cee6",
+    "rampq_model_23_dfl_conv_a_scale": "2829f3607b4f5e53b4b09e474e815510edb9af7de2b67d3a0d7f8d74a6dd3515",
+    "rampq_model_23_dfl_conv_a_zero": "d5bedf7af5175093714b089c71f7b51387474a6f06375c72c0388c13fa9a475a",
+    "rampq_model_23_dfl_conv_clip_min": "8c6a1dd38e0094d87f39f6e6f675e9f5b2a94c0ae07dde04caf2a64ca5c019ea",
+    "rampq_model_23_dfl_conv_clip_max": "607b7de5a6b6ec43b4aa767d90c51fd036af6e2b63c8067e39aacef0f10fef45"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "rampq.gate1.float_training_attempt/v1",
+  "mode": "train",
+  "status": "RUNNING_FROZEN_FLOAT_TRAINING",
+  "phase": "TRAINING",
+  "started_at_utc": "2026-10-22T04:21:54.770308+00:00",
+  "training_started": true,
+  "runner_sha256": "99730c52afcd363250054b41bf47bc0aceb8db1bbb8f0179c0b1742f2d951ef6",
+  "limits": [
+    "Builtin training_val validation is ignore-unaware and is only a checkpoint-selection proxy.",
+    "Fitness uses builtin mAP50-95; tied best fitness saves the later epoch.",
+    "No Selection detector inference and no Holdout access are authorized by this runner.",
+    "A completed run is not automatically an accepted scientific baseline or official VisDrone AP.",
+    "Filename/pixel grouping does not establish true camera or scene identity.",
+    "Framework checkpoint serialization is fp16 EMA; training uses amp=False, and no quantization is applied.",
+    "Ordinary YOLO training loss does not mask ignored regions as negative samples; ignored annotations are only omitted from YOLO positive labels.",
+    "Thirty epochs is the fixed first candidate-training budget, not evidence of sufficient convergence or a final research method.",
+    "Float qualification of preprocessing, box restoration, ignore-aware target hits, and FP32/FP16 numerics remains a separate pending step."
+  ],
+  "contract_sha256": "6dfc1b1c8b2d89948c5804cfda8f22c92cbd721b3dfaf0cffdc314b2b2bd4fc0",
+  "contract_manifest_sha256": "f80772ea5122ff64c3c19d7ac7deeefedd4b11cfb6566807a70db778221461ca",
+  "counts": {
+    "calibration_pool": 689,
+    "training_val": 414,
+    "train": 4534,
+    "debug": 109,
+    "quarantine": 725,
+    "selection": 548
+  },
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "recovery_events": [],
+  "epoch_history": [
+    {
+      "epoch_zero_based": 0,
+      "epoch_one_based": 1,
+      "fitness": 0.04259,
+      "best_fitness": 0.04259,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.4426,
+        "metrics/recall(B)": 0.14039,
+        "metrics/mAP50(B)": 0.08887,
+        "metrics/mAP50-95(B)": 0.04259,
+        "val/box_loss": 1.97963,
+        "val/cls_loss": 1.75746,
+        "val/dfl_loss": 1.02394
+      },
+      "at_utc": "2026-10-22T04:30:36.420404+00:00"
+    }
+  ],
+  "checkpoint_history": [
+    {
+      "epoch_zero_based": 0,
+      "best_saved_this_epoch": true,
+      "fitness": 0.04259,
+      "best_fitness": 0.04259,
+      "at_utc": "2026-10-22T04:30:36.418404+00:00"
+    }
+  ],
+  "external_restarts": 0,
+  "effective_batch": 4,
+  "effective_device": "cuda:0",
+  "effective_amp": false,
+  "train_dataset_images": 4534,
+  "validation_dataset_images": 414,
+  "effective_training_args_sha256": "ede9c5f9039d3bfed4494602790fdfb6907545478f12f4618d0dd6d900bfbbe6",
+  "save_dir": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\run",
+  "checkpoint_state_checks": [
+    {
+      "epoch_zero_based": 0,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    }
+  ]
+}

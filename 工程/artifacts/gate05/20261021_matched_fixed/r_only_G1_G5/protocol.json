@@ -1,0 +1,98 @@
+{
+  "schema": "rampq.gate05.matched_control_fixed_input_protocol/v1",
+  "status": "FROZEN_BEFORE_MATCHED_FIXED_INPUT_EXECUTION",
+  "client_at": "2026-10-21T14:12:14.679324+08:00",
+  "configuration": "r_only_G1_G5",
+  "adapter_sha256": "5651c2b55da5af498637fa73f28e79ac6117c50b01e4f2dc7cd08e502327a1d5",
+  "child_guard_sha256": "ebdb2ea93ace365250fcaed1a7ee71e99bad858445e475295ba43bf0dc666347",
+  "profile_wrapper_sha256": "8938ead8199f4a638396c622db61048f2fa659caaa8e4a11f4416d6518945d5a",
+  "execution_helper_sha256": "d1576ea834bd48ad78df3bf920b315726c1f0da8fe388eb7c3450dda8d93e0ca",
+  "build_contract_sha256": "4d2ee7d283abf6cd75b6d76e58870f79f11392fa06eaef37936fab6d7bafca34",
+  "matched_auditor_sha256": "97e031e6ed16f18634483fa3f0f1fa98903f39e12551b94390feab64a8a66d30",
+  "member_spec_sha256": "b51be6cae4ef10788cb31d9342577f4169dfbffdc5e9e67c8a2570453e2645cd",
+  "member_manifest_sha256": "82ed7797d1b454e1ef42a665d5e74039c2906af6b880cc84eb758d4c4d79d39d",
+  "source_graph_sha256": "6ffd47b3e22838791dd33e6124c4871640cb52e6687a47a1ded201e128c28cec",
+  "parent_spec_sha256": "e013d721396c513333d136e95f72544f3d6198b86df44988d2363e46c3008053",
+  "parent_manifest_sha256": "7195473e36ad03af3ac51f85e8ea292edc225c57ba47d17a5e6c58093aa4fbfc",
+  "engine_sha256": "2f240d1debc2f875c9aa5998ebca9c59b3d89e357939360123bc57b4382de811",
+  "precision_audit_sha256": "5da7166f3367b2c3a9a1eb0ffd180b6169c2af0c4f36372df882554017528cfb",
+  "build_result_sha256": "ef74006ab1298f4bd1f4a2f444ed9d9d9de445e1dc0d6ac785692a9cce95956f",
+  "build_request_sha256": "1b211a8f0662031aeb285cf3a0167d0a84816640bc7d128435c2f12d1f9c6b34",
+  "engine_layers_sha256": "3bbe14c9dcc3a75d56e29271b7ac420b362bcc9bf3639010d65acfb0b7025abf",
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "input_file": "preprocessed_input.npy",
+  "input_sha256": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94",
+  "cpu_reference": {
+    "file": "cpu_expected_outputs.npz",
+    "sha256": "69e0c558cd13c4b267188a2e806c68cf2ad982ce82976ace7605556ca745d8b3",
+    "output_npz_keys": {
+      "output0": "main_output",
+      "/model.10/m/m.0/attn/pe/conv/Conv_output_0": "pe_output"
+    }
+  },
+  "primary_output_name": "output0",
+  "executions": 2,
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "nvtx_range": "RAMPQ_MATCHED_QDQ_FIXED_IMAGE",
+  "original_image_shape": [
+    1080,
+    1920
+  ],
+  "fixed_image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "diagnostic_formats_only_allowed": true,
+  "child_guard_required_before_GPU": true,
+  "expected_boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "monitor_build_script": "run_fixed.py",
+  "supervision": {
+    "max_seconds": 300,
+    "private_process_group": true,
+    "independent_escaped_runner_guard": true
+  },
+  "dataset_evaluation_run": false,
+  "new_CPU_model_executions": 0,
+  "new_builds": 0,
+  "new_tolerances_defined": false,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "adapter_static_review_sha256": "dada16b6c60dafa37564c2958e425b2f625526361e7d2492670030da3e87cd69",
+  "wrapper_static_review_sha256": "d9cc3342eb1486fa4d1b53b09ea0682d0577a70afbc6c1565a3d94949ef9df3f",
+  "limits": "Fixed Selection input,exactly2newenginecalls,raw descriptive only. Old named-tactic gaps remain; new authenticated own-runtime/SASS branch is a separate audit. No150-image or speed/accuracy/Gate claim."
+}

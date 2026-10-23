@@ -1,0 +1,35 @@
+{
+  "schema": "rampq.gate0.run/v1",
+  "phase": "selection_single_intervention",
+  "configuration": "q_only:G1+G5",
+  "device": "cuda:0",
+  "torch": "2.10.0+cu128",
+  "model": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\runs\\yolo11n_ruod_pilot\\weights\\best.pt",
+  "model_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "calibration": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\calibration\\screen.json",
+  "selection_list": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\splits\\gate0_selection_images.txt",
+  "holdout_read_for_inference": false,
+  "outputs": {
+    "predictions": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\predictions\\selection_q_only_G1_plus_G5.csv",
+    "summary": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\tables\\selection_q_only_G1_plus_G5_summary.json",
+    "degraded_targets": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\tables\\selection_q_only_G1_plus_G5_targets.csv",
+    "report": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\Gate0_selection_q_only_G1_plus_G5_自动摘要.md"
+  },
+  "summary": {
+    "schema": "rampq.gate0.selection_intervention/v1",
+    "configuration": "q_only:G1+G5",
+    "selection_image_count": 350,
+    "target_count": 1920,
+    "fp32_hit_count": 1571,
+    "q_all_added_miss_count": 119,
+    "selection_list_sha256": "a78348cb515553aece6e40dc02e21fc6be52df2c26989337f9d9a4638677e759",
+    "baseline_predictions_sha256": "93f7a651201f2fdca747a2cfe1852f32bad5dd7cc2f6683c989ebdd258796388",
+    "intervention_predictions_sha256": "1e37b92f3e8933dd06bca31658aa301394bbc6d13ca9deb453b3476c37bf41eb",
+    "elapsed_seconds": 64.28355960000044,
+    "intervention_degraded_count": 117,
+    "intervention_degrade_rate_among_fp32_hits": 0.07447485677912158,
+    "overlap_with_q_all_added_misses": 100,
+    "coverage_of_q_all_added_misses": 0.8403361344537815,
+    "intervention_misses_outside_q_all_set": 17
+  }
+}

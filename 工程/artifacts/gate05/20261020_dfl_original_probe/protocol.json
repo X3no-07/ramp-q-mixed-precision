@@ -1,0 +1,100 @@
+{
+  "schema": "rampq.gate05.dfl_original_protocol/v1",
+  "client_at": "2026-10-20T12:27:37.604566+08:00",
+  "status": "FROZEN_BEFORE_PREPARATION_AND_NATIVE",
+  "parent_dfl_bundle": "artifacts/gate05/20261020_dfl_context_probe",
+  "parent_dfl_spec_sha256": "934e075aa58dde1829b600d3d011f5ad51c4f1da1af78f7791944f492781b14d",
+  "parent_dfl_manifest_sha256": "3836e82ed53afb14fe16d3b9431864c0c4a45fd0d3418c7c06a4f6fcd46ed1d0",
+  "parent_dfl_checkpoint_sha256": "28edf81c0be1f72065a8952f84dc31330ba95709d50ed13aafc16a5bb56c602b",
+  "parent_dfl_native_archive_sha256": "a53750401ccdbb7c008c14e75cadec80a586a05f2baa32f5e985abdff527bd24",
+  "source_graph": "artifacts/gate05/20261019_precision_runtime_bundles/q_all/model.onnx",
+  "source_graph_sha256": "2feb721523cb8d960ceb5d74bd6689fd2f33a58f7d5761587b2d346d0e96eb8d",
+  "corrected_source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "original_tail_sha256": "b60be2c2d196ed1fb4e962446f374d9e53d066476172cfa1db415194b2306d90",
+  "input_name": "/model.23/dfl/Transpose_output_0",
+  "input_shape": [
+    1,
+    16,
+    4,
+    8400
+  ],
+  "input_dtype": "float32",
+  "fixture_file": "dfl_transpose_fixture.npy",
+  "fixture_sha256": "cb1e437ef9c67af95ab66dfe7e8db5f28ebbfc437835502f1da1ac816e414dab",
+  "fixture_origin": "Reuse frozen corrected ONNX CPU 72Conv-ancestor logits from previous DFL stage; not new upstream/native data or replacement Gate reference.",
+  "output_name": "/model.23/dfl/Reshape_1_output_0",
+  "output_shape": [
+    1,
+    4,
+    8400
+  ],
+  "output_dtype": "float32",
+  "cpu_expected_outputs_sha256": "fe6e4048681a5ac252b430b850cd27129061f8f1602835a8723ca7d827d59511",
+  "CPU_execution_runs_this_stage": 0,
+  "source_conv_names": [
+    "/model.23/dfl/conv/Conv"
+  ],
+  "clip_names": [
+    "rampq_model_23_dfl_conv_Clip"
+  ],
+  "graph_node_count": 9,
+  "initializer_count": 7,
+  "topology": "Original FLOAT Clip -> ActivationQ -> ActivationDQ before source DFL Conv; no code_clip importer correction.",
+  "case_order": [
+    "original_none",
+    "original_obey"
+  ],
+  "cases": [
+    {
+      "id": "original_none",
+      "variant": "original",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": false
+    },
+    {
+      "id": "original_obey",
+      "variant": "original",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": false
+    }
+  ],
+  "per_case_max_build_seconds": 300,
+  "batch_max_seconds": 900,
+  "maximum_builds": 2,
+  "maximum_executions": 4,
+  "attempts_each": 1,
+  "common_native_settings": {
+    "int8": true,
+    "fp16": true,
+    "tf32": false,
+    "prefer": false,
+    "workspace_mib": 1024,
+    "avg_timing_iterations": 1,
+    "profiling_verbosity": "DETAILED",
+    "io_format": "FLOAT_LINEAR",
+    "repeat_executions_if_success": 2,
+    "layer_precision_or_output_type_setters_or_resets": false,
+    "clip_attribute_mutation": false
+  },
+  "continue_on_plain_compile_failure": true,
+  "abort_batch_on": [
+    "timeout",
+    "resource_stop",
+    "signal_or_external_interrupt",
+    "stale_input_or_protocol"
+  ],
+  "native_output_policy": "Capture original parsed Clip bounds before/after without setters, all parser requests and actualflags, sole source Conv actual input/weight/tactic/output separately. No required output INT8. Save raw outputs and repeat if engine exists; no execution if failed.",
+  "cross_stage_comparison": "Use saved corrected DFL none/obey records without rerun. Check common flags/bindings/source Conv weights/scales/fixture and actual parser constraints; topology/import correction is one combined derivative factor, not an isolated subfactor.",
+  "interpretation": "Complete local topology x OBEY observations, not a randomized or repeated factorial experiment. Local original/corrected outcomes do not prove a named full-model failing node, unique cause, or full-model flag workaround. DFL distances only, not boxes.",
+  "protected_status": {
+    "original_complete_model_guard": "FAILED_UNCHANGED",
+    "full_model_retry_run": false,
+    "dataset_evaluation_run": false,
+    "new_tolerances_defined": false,
+    "gate05_status": "INCOMPLETE"
+  }
+}

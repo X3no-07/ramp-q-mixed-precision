@@ -1,0 +1,2074 @@
+{
+  "schema": "rampq.gate05.int8_precision_audit/v1",
+  "status": "PRECISION_REVIEW_REQUIRED",
+  "layer_file_sha256": "1d108d1285fa3e62f57f0df0da1e968d4fed8fde0cfa733550aa9febd1ad1174",
+  "engine_layers": 192,
+  "source_convs": 88,
+  "verified_int8_convs": 0,
+  "groups": {
+    "G1": {
+      "total_convs": 6,
+      "verified_int8_convs": 0
+    },
+    "G2": {
+      "total_convs": 5,
+      "verified_int8_convs": 0
+    },
+    "G3": {
+      "total_convs": 10,
+      "verified_int8_convs": 0
+    },
+    "G4": {
+      "total_convs": 19,
+      "verified_int8_convs": 0
+    },
+    "G5": {
+      "total_convs": 8,
+      "verified_int8_convs": 0
+    },
+    "G6": {
+      "total_convs": 15,
+      "verified_int8_convs": 0
+    },
+    "G7": {
+      "total_convs": 8,
+      "verified_int8_convs": 0
+    },
+    "G8": {
+      "total_convs": 17,
+      "verified_int8_convs": 0
+    }
+  },
+  "errors": [
+    "INT8 kernel evidence incomplete for model.0.conv",
+    "INT8 kernel evidence incomplete for model.1.conv",
+    "INT8 kernel evidence incomplete for model.2.cv1.conv",
+    "INT8 kernel evidence incomplete for model.2.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.2.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.2.cv2.conv",
+    "INT8 kernel evidence incomplete for model.3.conv",
+    "INT8 kernel evidence incomplete for model.4.cv1.conv",
+    "INT8 kernel evidence incomplete for model.4.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.4.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.4.cv2.conv",
+    "INT8 kernel evidence incomplete for model.5.conv",
+    "INT8 kernel evidence incomplete for model.6.cv1.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.m.1.cv1.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.m.1.cv2.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.6.m.0.cv3.conv",
+    "INT8 kernel evidence incomplete for model.6.cv2.conv",
+    "INT8 kernel evidence incomplete for model.7.conv",
+    "INT8 kernel evidence incomplete for model.8.cv1.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.m.1.cv1.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.m.1.cv2.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.8.m.0.cv3.conv",
+    "INT8 kernel evidence incomplete for model.8.cv2.conv",
+    "INT8 kernel evidence incomplete for model.9.cv1.conv",
+    "INT8 kernel evidence incomplete for model.9.cv2.conv",
+    "INT8 kernel evidence incomplete for model.10.cv1.conv",
+    "INT8 kernel evidence incomplete for model.10.m.0.attn.qkv.conv",
+    "INT8 kernel evidence incomplete for model.10.m.0.attn.pe.conv",
+    "INT8 kernel evidence incomplete for model.10.m.0.attn.proj.conv",
+    "INT8 kernel evidence incomplete for model.10.m.0.ffn.0.conv",
+    "INT8 kernel evidence incomplete for model.10.m.0.ffn.1.conv",
+    "INT8 kernel evidence incomplete for model.10.cv2.conv",
+    "INT8 kernel evidence incomplete for model.13.cv1.conv",
+    "INT8 kernel evidence incomplete for model.13.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.13.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.13.cv2.conv",
+    "INT8 kernel evidence incomplete for model.16.cv1.conv",
+    "INT8 kernel evidence incomplete for model.16.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.16.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.16.cv2.conv",
+    "INT8 kernel evidence incomplete for model.17.conv",
+    "INT8 kernel evidence incomplete for model.19.cv1.conv",
+    "INT8 kernel evidence incomplete for model.19.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.19.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.19.cv2.conv",
+    "INT8 kernel evidence incomplete for model.20.conv",
+    "INT8 kernel evidence incomplete for model.22.cv1.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.m.0.cv1.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.m.1.cv1.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.m.1.cv2.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.cv2.conv",
+    "INT8 kernel evidence incomplete for model.22.m.0.cv3.conv",
+    "INT8 kernel evidence incomplete for model.22.cv2.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.0.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.0.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.0.2",
+    "INT8 kernel evidence incomplete for model.23.cv2.1.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.1.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.1.2",
+    "INT8 kernel evidence incomplete for model.23.cv2.2.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.2.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv2.2.2",
+    "INT8 kernel evidence incomplete for model.23.cv3.0.0.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.0.0.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.0.1.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.0.1.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.0.2",
+    "INT8 kernel evidence incomplete for model.23.cv3.1.0.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.1.0.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.1.1.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.1.1.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.1.2",
+    "INT8 kernel evidence incomplete for model.23.cv3.2.0.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.2.0.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.2.1.0.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.2.1.1.conv",
+    "INT8 kernel evidence incomplete for model.23.cv3.2.2",
+    "INT8 kernel evidence incomplete for model.23.dfl.conv"
+  ],
+  "mapping": [
+    {
+      "module": "model.0.conv",
+      "group": "G1",
+      "onnx_node": "/model.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.0/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 4 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_image_first_layer_f16f16_f32_f16_nhwckrsc_nhwc_hmma_k16c4r3s3_stride2x2_tile16x64x16_tensor1688",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.1.conv",
+      "group": "G1",
+      "onnx_node": "/model.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.1/conv/Conv + PWN(PWN(/model.1/act/Sigmoid), /model.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.2.cv1.conv",
+      "group": "G1",
+      "onnx_node": "/model.2/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.2/cv1/conv/Conv + PWN(PWN(/model.2/cv1/act/Sigmoid), /model.2/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.2.m.0.cv1.conv",
+      "group": "G1",
+      "onnx_node": "/model.2/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.2/m.0/cv1/conv/Conv + PWN(PWN(/model.2/m.0/cv1/act/Sigmoid), /model.2/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x16x64_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc8",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.2.m.0.cv2.conv",
+      "group": "G1",
+      "onnx_node": "/model.2/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.2/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x16x32_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc8",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.2.cv2.conv",
+      "group": "G1",
+      "onnx_node": "/model.2/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.2/cv2/conv/Conv + PWN(PWN(/model.2/cv2/act/Sigmoid), /model.2/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_256x64_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.3.conv",
+      "group": "G2",
+      "onnx_node": "/model.3/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.3/conv/Conv + PWN(PWN(/model.3/act/Sigmoid), /model.3/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.4.cv1.conv",
+      "group": "G2",
+      "onnx_node": "/model.4/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.4/cv1/conv/Conv + PWN(PWN(/model.4/cv1/act/Sigmoid), /model.4/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.4.m.0.cv1.conv",
+      "group": "G2",
+      "onnx_node": "/model.4/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.4/m.0/cv1/conv/Conv + PWN(PWN(/model.4/m.0/cv1/act/Sigmoid), /model.4/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.4.m.0.cv2.conv",
+      "group": "G2",
+      "onnx_node": "/model.4/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.4/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc8",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.4.cv2.conv",
+      "group": "G2",
+      "onnx_node": "/model.4/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.4/cv2/conv/Conv + PWN(PWN(/model.4/cv2/act/Sigmoid), /model.4/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x128x32_stage4_warpsize2x2x1_g1_tensor16x8x16_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.5.conv",
+      "group": "G3",
+      "onnx_node": "/model.5/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.5/conv/Conv + PWN(PWN(/model.5/act/Sigmoid), /model.5/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.cv1.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/cv1/conv/Conv + PWN(PWN(/model.6/cv1/act/Sigmoid), /model.6/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.cv1.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.m.0.cv1.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/m/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/m/m.0/cv1/conv/Conv + PWN(PWN(/model.6/m.0/m/m.0/cv1/act/Sigmoid), /model.6/m.0/m/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.m.0.cv2.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/m/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/m/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.m.1.cv1.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/m/m.1/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/m/m.1/cv1/conv/Conv + PWN(PWN(/model.6/m.0/m/m.1/cv1/act/Sigmoid), /model.6/m.0/m/m.1/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.m.1.cv2.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/m/m.1/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/m/m.1/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.cv2.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.m.0.cv3.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/m.0/cv3/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/m.0/cv3/conv/Conv + PWN(PWN(/model.6/m.0/cv3/act/Sigmoid), /model.6/m.0/cv3/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_256x64_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.6.cv2.conv",
+      "group": "G3",
+      "onnx_node": "/model.6/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.6/cv2/conv/Conv + PWN(PWN(/model.6/cv2/act/Sigmoid), /model.6/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.7.conv",
+      "group": "G4",
+      "onnx_node": "/model.7/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.7/conv/Conv + PWN(PWN(/model.7/act/Sigmoid), /model.7/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x128x32_stage3_warpsize4x2x1_g1_tensor16x8x16_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.cv1.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/cv1/conv/Conv + PWN(PWN(/model.8/cv1/act/Sigmoid), /model.8/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.cv1.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h16816cudnn_128x128_ldg8_relu_exp_interior_nhwc_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.m.0.cv1.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/m/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/m/m.0/cv1/conv/Conv + PWN(PWN(/model.8/m.0/m/m.0/cv1/act/Sigmoid), /model.8/m.0/m/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.m.0.cv2.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/m/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/m/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.m.1.cv1.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/m/m.1/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/m/m.1/cv1/conv/Conv + PWN(PWN(/model.8/m.0/m/m.1/cv1/act/Sigmoid), /model.8/m.0/m/m.1/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.m.1.cv2.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/m/m.1/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/m/m.1/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.cv2.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h16816cudnn_128x128_ldg8_relu_exp_interior_nhwc_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.m.0.cv3.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/m.0/cv3/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/m.0/cv3/conv/Conv + PWN(PWN(/model.8/m.0/cv3/act/Sigmoid), /model.8/m.0/cv3/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x128x32_stage5_warpsize2x2x1_g1_tensor16x8x16_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.8.cv2.conv",
+      "group": "G4",
+      "onnx_node": "/model.8/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.8/cv2/conv/Conv + PWN(PWN(/model.8/cv2/act/Sigmoid), /model.8/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x128x32_stage4_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.9.cv1.conv",
+      "group": "G4",
+      "onnx_node": "/model.9/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.9/cv1/conv/Conv + PWN(PWN(/model.9/cv1/act/Sigmoid), /model.9/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.9.cv2.conv",
+      "group": "G4",
+      "onnx_node": "/model.9/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.9/cv2/conv/Conv + PWN(PWN(/model.9/cv2/act/Sigmoid), /model.9/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x256x32_stage3_warpsize2x4x1_g1_tensor16x8x16_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.cv1.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/cv1/conv/Conv + PWN(PWN(/model.10/cv1/act/Sigmoid), /model.10/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.m.0.attn.qkv.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/m/m.0/attn/qkv/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/m/m.0/attn/qkv/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.m.0.attn.pe.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/m/m.0/attn/pe/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/m/m.0/attn/pe/conv/Conv + /model.10/m/m.0/attn/Add",
+      "engine_layer_type": "CudnnConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Row major linear FP16 format",
+        "Row major linear FP16 format"
+      ],
+      "output_formats": [
+        "Row major linear FP16 format"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.m.0.attn.proj.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/m/m.0/attn/proj/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/m/m.0/attn/proj/conv/Conv + /model.10/m/m.0/Add",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0",
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.m.0.ffn.0.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/m/m.0/ffn/ffn.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/m/m.0/ffn/ffn.0/conv/Conv + PWN(PWN(/model.10/m/m.0/ffn/ffn.0/act/Sigmoid), /model.10/m/m.0/ffn/ffn.0/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_small_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.m.0.ffn.1.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/m/m.0/ffn/ffn.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/m/m.0/ffn/ffn.1/conv/Conv + /model.10/m/m.0/Add_1",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0",
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x128x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.10.cv2.conv",
+      "group": "G4",
+      "onnx_node": "/model.10/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.10/cv2/conv/Conv + PWN(PWN(/model.10/cv2/act/Sigmoid), /model.10/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.13.cv1.conv",
+      "group": "G5",
+      "onnx_node": "/model.13/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.13/cv1/conv/Conv + PWN(PWN(/model.13/cv1/act/Sigmoid), /model.13/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.13.m.0.cv1.conv",
+      "group": "G5",
+      "onnx_node": "/model.13/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.13/m.0/cv1/conv/Conv + PWN(PWN(/model.13/m.0/cv1/act/Sigmoid), /model.13/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.13.m.0.cv2.conv",
+      "group": "G5",
+      "onnx_node": "/model.13/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.13/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.13.cv2.conv",
+      "group": "G5",
+      "onnx_node": "/model.13/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.13/cv2/conv/Conv + PWN(PWN(/model.13/cv2/act/Sigmoid), /model.13/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.16.cv1.conv",
+      "group": "G5",
+      "onnx_node": "/model.16/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.16/cv1/conv/Conv + PWN(PWN(/model.16/cv1/act/Sigmoid), /model.16/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.16.m.0.cv1.conv",
+      "group": "G5",
+      "onnx_node": "/model.16/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.16/m.0/cv1/conv/Conv + PWN(PWN(/model.16/m.0/cv1/act/Sigmoid), /model.16/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.16.m.0.cv2.conv",
+      "group": "G5",
+      "onnx_node": "/model.16/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.16/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc8",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.16.cv2.conv",
+      "group": "G5",
+      "onnx_node": "/model.16/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.16/cv2/conv/Conv + PWN(PWN(/model.16/cv2/act/Sigmoid), /model.16/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.17.conv",
+      "group": "G6",
+      "onnx_node": "/model.17/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.17/conv/Conv + PWN(PWN(/model.17/act/Sigmoid), /model.17/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.19.cv1.conv",
+      "group": "G6",
+      "onnx_node": "/model.19/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.19/cv1/conv/Conv + PWN(PWN(/model.19/cv1/act/Sigmoid), /model.19/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.19.m.0.cv1.conv",
+      "group": "G6",
+      "onnx_node": "/model.19/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.19/m.0/cv1/conv/Conv + PWN(PWN(/model.19/m.0/cv1/act/Sigmoid), /model.19/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.19.m.0.cv2.conv",
+      "group": "G6",
+      "onnx_node": "/model.19/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.19/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.19.cv2.conv",
+      "group": "G6",
+      "onnx_node": "/model.19/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.19/cv2/conv/Conv + PWN(PWN(/model.19/cv2/act/Sigmoid), /model.19/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_128x128_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.20.conv",
+      "group": "G6",
+      "onnx_node": "/model.20/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.20/conv/Conv + PWN(PWN(/model.20/act/Sigmoid), /model.20/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.cv1.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/cv1/conv/Conv + PWN(PWN(/model.22/cv1/act/Sigmoid), /model.22/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x128x32_stage4_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.cv1.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h16816cudnn_128x128_ldg8_relu_exp_interior_nhwc_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.m.0.cv1.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/m/m.0/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/m/m.0/cv1/conv/Conv + PWN(PWN(/model.22/m.0/m/m.0/cv1/act/Sigmoid), /model.22/m.0/m/m.0/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.m.0.cv2.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/m/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/m/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.m.1.cv1.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/m/m.1/cv1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/m/m.1/cv1/conv/Conv + PWN(PWN(/model.22/m.0/m/m.1/cv1/act/Sigmoid), /model.22/m.0/m/m.1/cv1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.m.1.cv2.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/m/m.1/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/m/m.1/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.cv2.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h16816cudnn_128x128_ldg8_relu_exp_interior_nhwc_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.m.0.cv3.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/m.0/cv3/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/m.0/cv3/conv/Conv + PWN(PWN(/model.22/m.0/cv3/act/Sigmoid), /model.22/m.0/cv3/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x128x32_stage5_warpsize2x2x1_g1_tensor16x8x16_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.22.cv2.conv",
+      "group": "G6",
+      "onnx_node": "/model.22/cv2/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.22/cv2/conv/Conv + PWN(PWN(/model.22/cv2/act/Sigmoid), /model.22/cv2/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x128x32_stage4_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.0.0.conv",
+      "group": "G7",
+      "onnx_node": "/model.23/cv2.0/cv2.0.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.0/cv2.0.0/conv/Conv + PWN(PWN(/model.23/cv2.0/cv2.0.0/act/Sigmoid), /model.23/cv2.0/cv2.0.0/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.0.1.conv",
+      "group": "G7",
+      "onnx_node": "/model.23/cv2.0/cv2.0.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.0/cv2.0.1/conv/Conv + PWN(PWN(/model.23/cv2.0/cv2.0.1/act/Sigmoid), /model.23/cv2.0/cv2.0.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.0.2",
+      "group": "G7",
+      "onnx_node": "/model.23/cv2.0/cv2.0.2/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.0/cv2.0.2/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.1.0.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv2.1/cv2.1.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.1/cv2.1.0/conv/Conv + PWN(PWN(/model.23/cv2.1/cv2.1.0/act/Sigmoid), /model.23/cv2.1/cv2.1.0/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.1.1.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv2.1/cv2.1.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.1/cv2.1.1/conv/Conv + PWN(PWN(/model.23/cv2.1/cv2.1.1/act/Sigmoid), /model.23/cv2.1/cv2.1.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.1.2",
+      "group": "G8",
+      "onnx_node": "/model.23/cv2.1/cv2.1.2/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.1/cv2.1.2/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.2.0.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv2.2/cv2.2.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.2/cv2.2.0/conv/Conv + PWN(PWN(/model.23/cv2.2/cv2.2.0/act/Sigmoid), /model.23/cv2.2/cv2.2.0/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x64_stage3_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.2.1.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv2.2/cv2.2.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.2/cv2.2.1/conv/Conv + PWN(PWN(/model.23/cv2.2/cv2.2.1/act/Sigmoid), /model.23/cv2.2/cv2.2.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_t1r3s3_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv2.2.2",
+      "group": "G8",
+      "onnx_node": "/model.23/cv2.2/cv2.2.2/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv2.2/cv2.2.2/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.0.0.0.conv",
+      "group": "G7",
+      "onnx_node": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+      "engine_layer_type": "CudaDepthwiseConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.0.0.1.conv",
+      "group": "G7",
+      "onnx_node": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv + PWN(PWN(/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Sigmoid), /model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.0.1.0.conv",
+      "group": "G7",
+      "onnx_node": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+      "engine_layer_type": "CudaDepthwiseConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.0.1.1.conv",
+      "group": "G7",
+      "onnx_node": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv + PWN(PWN(/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Sigmoid), /model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.0.2",
+      "group": "G7",
+      "onnx_node": "/model.23/cv3.0/cv3.0.2/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.0/cv3.0.2/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.1.0.0.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+      "engine_layer_type": "CudaDepthwiseConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.1.0.1.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv + PWN(PWN(/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Sigmoid), /model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.1.1.0.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+      "engine_layer_type": "CudaDepthwiseConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.1.1.1.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv + PWN(PWN(/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Sigmoid), /model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "ampere_h1688cudnn_256x64_ldg8_relu_exp_interior_nhwc_linkable_tn_v1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.1.2",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.1/cv3.1.2/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.1/cv3.1.2/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.2.0.0.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+      "engine_layer_type": "CudaDepthwiseConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.2.0.1.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv + PWN(PWN(/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Sigmoid), /model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.2.1.0.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+      "engine_layer_type": "CudaDepthwiseConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.2.1.1.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv + PWN(PWN(/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Sigmoid), /model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul)",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_simple_t1r1s1_linkable",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.cv3.2.2",
+      "group": "G8",
+      "onnx_node": "/model.23/cv3.2/cv3.2.2/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/cv3.2/cv3.2.2/Conv",
+      "engine_layer_type": "CaskConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "output_formats": [
+        "Channel major FP16 format where channel % 8 == 0"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage4_warpsize4x1x1_g1_tensor16x8x16_simple_t1r1s1",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    },
+    {
+      "module": "model.23.dfl.conv",
+      "group": "G8",
+      "onnx_node": "/model.23/dfl/conv/Conv",
+      "matching_engine_layers": 1,
+      "verified_int8_kernel": false,
+      "engine_layer": "/model.23/dfl/conv/Conv",
+      "engine_layer_type": "CudnnConvolution",
+      "weights_type": "Half",
+      "input_formats": [
+        "Row major linear FP16 format"
+      ],
+      "output_formats": [
+        "Row major linear FP16 format"
+      ],
+      "tactic": "",
+      "checks": {
+        "weight_int8": false,
+        "activation_input_int8": false,
+        "integer_tactic": false
+      }
+    }
+  ],
+  "scope": "Inspector evidence of INT8 Conv kernels only, not full numerical migration or dataset accuracy"
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "rampq.gate05.fixed_input_execution_spec/v1",
+  "runner_file": "jetson_gate05_control_fixed_input.py",
+  "runner_sha256": "d1576ea834bd48ad78df3bf920b315726c1f0da8fe388eb7c3450dda8d93e0ca",
+  "protocol_sha256": "857f296be657da8936ddd320f7ade6a0d8b239c19a6ea953a6ba737970f3f29a",
+  "precision_audit_sha256": "52d9f59be4b379817610c1f5d4ef82f73f7aafb23ead8060bfeef59082c9a4a5",
+  "runner_args": [
+    "--root",
+    "/home/nvidia/rampq/gate05_qall_none_entryfix1_20261021/gate05_qall_none_control_20261021",
+    "--build",
+    "/home/nvidia/rampq/gate05_qall_none_entryfix1_20261021/gate05_qall_none_control_20261021/results/build_20261018T002834_795020Z",
+    "--engine-sha256",
+    "c3d9e75d61452c69b97097d1320221d5d56d7ad0e2fc1370480cf3e09eb3a41e",
+    "--audit",
+    "{WORK}/precision_audit.json",
+    "--audit-sha256",
+    "52d9f59be4b379817610c1f5d4ef82f73f7aafb23ead8060bfeef59082c9a4a5",
+    "--protocol",
+    "{WORK}/protocol.json",
+    "--protocol-sha256",
+    "857f296be657da8936ddd320f7ade6a0d8b239c19a6ea953a6ba737970f3f29a",
+    "--output",
+    "{WORK}/fixed_outputs",
+    "--diagnostic-formats-only"
+  ],
+  "max_seconds": 300,
+  "max_engine_executions": 2,
+  "new_builds": 0,
+  "new_CPU_model_executions": 0,
+  "diagnostic_formats_only": true,
+  "overallGate": "INCOMPLETE"
+}

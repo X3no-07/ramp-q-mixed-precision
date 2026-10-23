@@ -1,0 +1,132 @@
+{
+  "schema": "rampq.gate1.actual_synthetic_trainer_receipt/v1",
+  "status": "PASS_ACTUAL_SYNTHETIC_CPU_TRAINER_WITH_IGNORE_AND_PRE_HALF_FP32_CAPTURE_ONLY",
+  "preparation_manifest_sha256": "13aa953986abd92420098044f6376c23790422f8f0f0aab08209b0a457f71eb5",
+  "training_contract_sha256": "36cbcc0d93aba63ec0516af36438c15c10c9adc43ed21a94fb0913d269637068",
+  "actual_train_call_returned": true,
+  "epochs": 1,
+  "train_images": 4,
+  "validation_images_built": 2,
+  "validation": "SMOKE_NO_TASK_AP",
+  "device": "cpu",
+  "amp": false,
+  "threads": 1,
+  "runtime_cpu_settings": {
+    "intraop_threads": 1,
+    "interop_threads": 1,
+    "deterministic_algorithms": false,
+    "deterministic_warn_only": false,
+    "mkldnn_enabled": true,
+    "float32_matmul_precision": "highest",
+    "cpu_capability": "AVX2"
+  },
+  "new_random_model": "YOLO11n_nc10",
+  "model_parameters": 2591790,
+  "optimizer_steps": [
+    {
+      "step": 1,
+      "ema_before": 0,
+      "ema_after": 1,
+      "first_trainable_parameter_changed_elements": 432,
+      "gradient_absmax": 0.5486509203910828,
+      "actual_framework_optimizer_step_returned": true
+    },
+    {
+      "step": 2,
+      "ema_before": 1,
+      "ema_after": 2,
+      "first_trainable_parameter_changed_elements": 432,
+      "gradient_absmax": 1.9236986637115479,
+      "actual_framework_optimizer_step_returned": true
+    }
+  ],
+  "ema_updates": 2,
+  "changed_parameter_tensors": 238,
+  "changed_parameter_elements": 2209385,
+  "actual_criterion_batches": [
+    {
+      "schema": "rampq.gate1.ignore_training_batch_receipt/v1",
+      "batch_size": 2,
+      "num_anchors_per_image": 84,
+      "image_hw": [
+        64,
+        64
+      ],
+      "assigned_positive_anchors": 9,
+      "ignored_negative_anchors": 67,
+      "kept_anchors": 101,
+      "positive_rows_preserved": true,
+      "target_score_denominator": 1.0,
+      "classification_before_gain": 0.1779632568359375,
+      "ordinary_classification_before_gain": 0.3129854202270508,
+      "empty_ignore": false,
+      "classification_only_intervention": true
+    },
+    {
+      "schema": "rampq.gate1.ignore_training_batch_receipt/v1",
+      "batch_size": 2,
+      "num_anchors_per_image": 84,
+      "image_hw": [
+        64,
+        64
+      ],
+      "assigned_positive_anchors": 10,
+      "ignored_negative_anchors": 98,
+      "kept_anchors": 70,
+      "positive_rows_preserved": true,
+      "target_score_denominator": 1.0,
+      "classification_before_gain": 0.14917278289794922,
+      "ordinary_classification_before_gain": 0.3161616325378418,
+      "empty_ignore": false,
+      "classification_only_intervention": true
+    }
+  ],
+  "integration_events": [
+    {
+      "event": "bound_dataset_built",
+      "role": "train",
+      "samples": 4
+    },
+    {
+      "event": "bound_dataset_built",
+      "role": "training_val",
+      "samples": 2
+    },
+    {
+      "event": "validator_disabled",
+      "status": "SMOKE_NO_TASK_AP"
+    },
+    {
+      "event": "validation_skipped",
+      "status": "SMOKE_NO_TASK_AP"
+    },
+    {
+      "event": "save_model_before_fp32_callback",
+      "epoch": 0
+    },
+    {
+      "event": "framework_half_checkpoint_serialized",
+      "epoch": 0
+    },
+    {
+      "event": "final_eval_skipped",
+      "status": "SMOKE_NO_TASK_AP",
+      "reason": "no half/fused checkpoint validation in synthetic capture proof"
+    }
+  ],
+  "capture_receipt": "fp32_capture/epoch_0001/capture_receipt.json",
+  "ordinary_framework_half_checkpoint_saved": true,
+  "normal_checkpoint_never_used_as_fp32_reference": true,
+  "external_integration_registration_disabled_in_process": true,
+  "base_callback_inventory_verified_before_custom_hooks": true,
+  "framework_disk_sources_modified": false,
+  "old_checkpoint_read_or_recovered": false,
+  "real_image_or_label_inputs": false,
+  "selection_or_holdout_accessed": false,
+  "real_dataset_AP_computed": false,
+  "scientific_gate_pass": false,
+  "board_or_CUDA_capture_qualified": false,
+  "old_gate05_numeric_guard": "FAILED_UNCHANGED",
+  "old_gate1_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "elapsed_seconds": 26.014299200032838
+}

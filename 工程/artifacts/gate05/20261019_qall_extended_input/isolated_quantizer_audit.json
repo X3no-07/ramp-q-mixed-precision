@@ -1,0 +1,450 @@
+{
+  "status": "ISOLATED_QUANTIZER_SEMANTICS_VERIFIED",
+  "scope": "Same inputs only; does not pass or replace the failed full-model numerical parity check",
+  "weight_qdq_all_88_exact": true,
+  "first_conv_output_max_abs_error": 1.621246337890625e-05,
+  "second_conv_input_different_elements": 3,
+  "same_input_quantizer": [
+    {
+      "module": "model.0.conv",
+      "elements": 1228800,
+      "different": 0
+    },
+    {
+      "module": "model.1.conv",
+      "elements": 1638400,
+      "different": 0
+    },
+    {
+      "module": "model.2.cv1.conv",
+      "elements": 819200,
+      "different": 0
+    },
+    {
+      "module": "model.2.m.0.cv1.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.2.m.0.cv2.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.2.cv2.conv",
+      "elements": 1228800,
+      "different": 0
+    },
+    {
+      "module": "model.3.conv",
+      "elements": 1638400,
+      "different": 0
+    },
+    {
+      "module": "model.4.cv1.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.4.m.0.cv1.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.4.m.0.cv2.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.4.cv2.conv",
+      "elements": 614400,
+      "different": 0
+    },
+    {
+      "module": "model.5.conv",
+      "elements": 819200,
+      "different": 0
+    },
+    {
+      "module": "model.6.cv1.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.cv1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.m.0.cv1.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.m.0.cv2.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.m.1.cv1.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.m.1.cv2.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.cv2.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.6.m.0.cv3.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.6.cv2.conv",
+      "elements": 307200,
+      "different": 0
+    },
+    {
+      "module": "model.7.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.8.cv1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.cv1.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.m.0.cv1.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.m.0.cv2.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.m.1.cv1.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.m.1.cv2.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.cv2.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.8.m.0.cv3.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.8.cv2.conv",
+      "elements": 153600,
+      "different": 0
+    },
+    {
+      "module": "model.9.cv1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.9.cv2.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.10.cv1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.10.m.0.attn.qkv.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.10.m.0.attn.pe.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.10.m.0.attn.proj.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.10.m.0.ffn.0.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.10.m.0.ffn.1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.10.cv2.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.13.cv1.conv",
+      "elements": 614400,
+      "different": 0
+    },
+    {
+      "module": "model.13.m.0.cv1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.13.m.0.cv2.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.13.cv2.conv",
+      "elements": 307200,
+      "different": 0
+    },
+    {
+      "module": "model.16.cv1.conv",
+      "elements": 1638400,
+      "different": 0
+    },
+    {
+      "module": "model.16.m.0.cv1.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.16.m.0.cv2.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.16.cv2.conv",
+      "elements": 614400,
+      "different": 0
+    },
+    {
+      "module": "model.17.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.19.cv1.conv",
+      "elements": 307200,
+      "different": 0
+    },
+    {
+      "module": "model.19.m.0.cv1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.19.m.0.cv2.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.19.cv2.conv",
+      "elements": 307200,
+      "different": 0
+    },
+    {
+      "module": "model.20.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.22.cv1.conv",
+      "elements": 153600,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.cv1.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.m.0.cv1.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.m.0.cv2.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.m.1.cv1.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.m.1.cv2.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.cv2.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.22.m.0.cv3.conv",
+      "elements": 51200,
+      "different": 0
+    },
+    {
+      "module": "model.22.cv2.conv",
+      "elements": 153600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.0.0.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.0.1.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.0.2",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.1.0.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.1.1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.1.2",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.2.0.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.2.1.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv2.2.2",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.0.0.0.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.0.0.1.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.0.1.0.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.0.1.1.conv",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.0.2",
+      "elements": 409600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.1.0.0.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.1.0.1.conv",
+      "elements": 204800,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.1.1.0.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.1.1.1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.1.2",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.2.0.0.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.2.0.1.conv",
+      "elements": 102400,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.2.1.0.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.2.1.1.conv",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.23.cv3.2.2",
+      "elements": 25600,
+      "different": 0
+    },
+    {
+      "module": "model.23.dfl.conv",
+      "elements": 537600,
+      "different": 0
+    }
+  ],
+  "original_full_model_preflight": "LOCAL_QDQ_PREFLIGHT_FAILED"
+}

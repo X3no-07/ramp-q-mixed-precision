@@ -1,0 +1,97 @@
+{
+  "schema": "rampq.gate1.actual_synthetic_trainer_result_review/v1",
+  "status": "PASS_BOUND_SAVED_EVIDENCE_AND_ACTUAL_CPU_TRAINER_INTEGRATION_ONLY",
+  "issues": [],
+  "blocking_issue_count": 0,
+  "reviewed_attempt": "attempt_02",
+  "reviewed_runner": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/run_training_v2.py",
+    "bytes": 11312,
+    "sha256": "06873faf28caa2f469b0d0bd12cbffedc53d903d654cfab5288553a49ec9f058"
+  },
+  "source_review": {
+    "path": "artifacts/gate1/20261023_training_integration_review_v1/source_review.json",
+    "bytes": 7691,
+    "sha256": "8e59d1198329e7d160f4bbba47238ce2c6d582d2a45cb95abf644722438ee85f"
+  },
+  "training_contract": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/training_contract_v2.json",
+    "bytes": 3921,
+    "sha256": "ff234ffb7360ba3021bc8b1e5c60a9ddc647a456fb199ef105b78b21fffb7f18"
+  },
+  "verified_manifests": [
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/preparation_manifest_v2.json",
+      "bytes": 7125,
+      "sha256": "fb4aa22fba26bfeb0c2d001ab40fe0b968e540abcf8e5b6d7bdb4455414d2496",
+      "listed_files_verified": 32
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_02/manifest.json",
+      "bytes": 2753,
+      "sha256": "1f439b8ae8b8ea5233518225d7715b52c68e95de1e53247bd13059e01b0584f2",
+      "listed_files_verified": 17
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_02/fp32_capture/epoch_0001/manifest.json",
+      "bytes": 810,
+      "sha256": "eebc43ef8e3668e6400222a6be6ba31dd36ea77a239e2134fd52ea9eca8d9dc2",
+      "listed_files_verified": 5
+    },
+    {
+      "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_02/fp32_capture/epoch_0001/state/manifest.json",
+      "bytes": 378,
+      "sha256": "21261877b4293b8a340c9635605a3228bcf1d78bd3bdd68b639c7143f8692039",
+      "listed_files_verified": 2
+    }
+  ],
+  "actual_training_receipt": {
+    "path": "artifacts/gate1/20261023_training_integration_delivery_v1/attempt_02/training_receipt.json",
+    "bytes": 3956,
+    "sha256": "a65b1f6ff10e25873593b9d454103b518e87657a067cc087f0a2ce0ca7605eb0"
+  },
+  "read_only_review": true,
+  "model_forward_or_training_rerun": false,
+  "state_only_restricted_load_and_tensor_hashes_independently_recomputed": true,
+  "synthetic_input_recipe_sha_independently_recomputed": true,
+  "architecture_output_equal_supported_by_pinned_runner_and_capture_receipt_not_independent_forward": true,
+  "train_images": 4,
+  "training_val_images": 2,
+  "explicit_member_bytes_verified": 18,
+  "image_identity_and_content_hash_intersections": [],
+  "default_reviewed_dataset_factory_used": true,
+  "observed_optimizer_steps": 2,
+  "observed_ema_updates": 2,
+  "parameter_change_receipt_sum_consistent": 2209411,
+  "parameter_hash_change_sets_consistent": 238,
+  "exact_changed_element_count_not_recomputed_from_initial_tensors": true,
+  "positive_anchor_counts": [
+    9,
+    10
+  ],
+  "ignored_negative_anchor_counts": [
+    67,
+    98
+  ],
+  "positive_rows_preserved": true,
+  "classification_reduced_by_ignore_mask": true,
+  "capture_before_framework_half_serialization": "supported by bound actual MRO source plus entry/return events, dedicated capture receipt and serialization event",
+  "external_integration_registration_disabled_before_actual_train": true,
+  "only_base_callbacks_present_before_custom_hooks": true,
+  "runtime_registration_function_intentionally_patched_in_process": true,
+  "framework_on_disk_sources_unchanged": true,
+  "network_traffic_absence_independently_measured": false,
+  "attempt_01": "Preserved functional success; not selected for final external-integration-registration assurance",
+  "scientific_gate1_passed": false,
+  "official_AP_qualified": false,
+  "GPU_or_board_capture_qualified": false,
+  "old_gate05_numeric_guard": "FAILED_UNCHANGED",
+  "old_gate1_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "scope_limits": [
+    "CPU synthetic one epoch; no real data training or selection/holdout certification",
+    "No optimizer/resume reconstruction",
+    "No arbitrary external-writer exclusion guarantee",
+    "Cross-role split and default-factory obligations checked only for this bound fixture",
+    "State hashes are independently recomputed; gradients, fresh model output and element-change counts are bounded runner observations rather than a second model execution"
+  ]
+}

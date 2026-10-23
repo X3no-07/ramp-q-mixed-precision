@@ -1,0 +1,28 @@
+{
+  "python": "3.8.10",
+  "torch": "2.0.0+nv23.05",
+  "tensorrt": "8.5.2.2",
+  "numpy": "1.24.4",
+  "torch_CUDA": "11.4",
+  "cuDNN": 8600,
+  "GPU": "Orin",
+  "compute_capability": [
+    8,
+    7
+  ],
+  "GPU_properties": "_CudaDeviceProperties(name='Orin', major=8, minor=7, total_memory=7337MB, multi_processor_count=4)",
+  "runtime_modules": [
+    {
+      "module": "tensorrt.tensorrt",
+      "file": "/usr/lib/python3.8/dist-packages/tensorrt/tensorrt.so",
+      "bytes": 3453024,
+      "sha256": "eb6ed22cb1895927a96093fa1778a2d0bf0120868514c841579cba2cc45aca4a"
+    },
+    {
+      "module": "torch._C",
+      "file": "/home/nvidia/.local/lib/python3.8/site-packages/torch/_C.cpython-38-aarch64-linux-gnu.so",
+      "bytes": 25816,
+      "sha256": "48d08ff39809374804760aadc8281b80c90e198b3d354ea34a11ed38865e852b"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "schema": "rampq.gate0.selection_ranking/v1",
+  "selection_image_count": 350,
+  "fp32_hit_count": 1571,
+  "all_int8_added_miss_count": 119,
+  "ranking_rule": "status(strong, low_priority, eliminated), then net rescue, two-sided count, rescued count, lower MAC",
+  "single_module_thresholds": {
+    "rescued_at_least": 20,
+    "rescue_rate_at_least": 0.15,
+    "stable_retention_at_least": 0.98,
+    "net_rescue_positive": true,
+    "two_sided_same_targets_positive": true,
+    "mac_share_at_most": 0.25
+  },
+  "modules": [
+    {
+      "group": "G1",
+      "status": "strong",
+      "q_only_degraded": 100,
+      "q_overlap_with_all_int8": 88,
+      "q_overlap_coverage": 0.7394957983193278,
+      "rescued": 94,
+      "rescue_rate": 0.7899159663865546,
+      "collateral_misses": 13,
+      "stable_retention": 0.9910468319559229,
+      "net_rescue": 81,
+      "two_sided_same_targets": 69,
+      "two_sided_rate": 0.5798319327731093,
+      "mac_share": 0.1031739602404368,
+      "rank": 1
+    },
+    {
+      "group": "G5",
+      "status": "low_priority",
+      "q_only_degraded": 21,
+      "q_overlap_with_all_int8": 19,
+      "q_overlap_coverage": 0.15966386554621848,
+      "rescued": 16,
+      "rescue_rate": 0.13445378151260504,
+      "collateral_misses": 6,
+      "stable_retention": 0.9958677685950413,
+      "net_rescue": 10,
+      "two_sided_same_targets": 2,
+      "two_sided_rate": 0.01680672268907563,
+      "mac_share": 0.12028320992854943,
+      "rank": 2
+    },
+    {
+      "group": "G3",
+      "status": "low_priority",
+      "q_only_degraded": 11,
+      "q_overlap_with_all_int8": 9,
+      "q_overlap_coverage": 0.07563025210084033,
+      "rescued": 19,
+      "rescue_rate": 0.15966386554621848,
+      "collateral_misses": 12,
+      "stable_retention": 0.9917355371900827,
+      "net_rescue": 7,
+      "two_sided_same_targets": 2,
+      "two_sided_rate": 0.01680672268907563,
+      "mac_share": 0.11820936148150549,
+      "rank": 3
+    },
+    {
+      "group": "G7",
+      "status": "eliminated",
+      "q_only_degraded": 16,
+      "q_overlap_with_all_int8": 13,
+      "q_overlap_coverage": 0.1092436974789916,
+      "rescued": 10,
+      "rescue_rate": 0.08403361344537816,
+      "collateral_misses": 6,
+      "stable_retention": 0.9958677685950413,
+      "net_rescue": 4,
+      "two_sided_same_targets": 0,
+      "two_sided_rate": 0.0,
+      "mac_share": 0.1778325043340192,
+      "rank": 4
+    },
+    {
+      "group": "G8",
+      "status": "eliminated",
+      "q_only_degraded": 10,
+      "q_overlap_with_all_int8": 6,
+      "q_overlap_coverage": 0.05042016806722689,
+      "rescued": 7,
+      "rescue_rate": 0.058823529411764705,
+      "collateral_misses": 3,
+      "stable_retention": 0.9979338842975206,
+      "net_rescue": 4,
+      "two_sided_same_targets": 0,
+      "two_sided_rate": 0.0,
+      "mac_share": 0.09254548694933654,
+      "rank": 5
+    },
+    {
+      "group": "G4",
+      "status": "eliminated",
+      "q_only_degraded": 7,
+      "q_overlap_with_all_int8": 6,
+      "q_overlap_coverage": 0.05042016806722689,
+      "rescued": 12,
+      "rescue_rate": 0.10084033613445378,
+      "collateral_misses": 10,
+      "stable_retention": 0.9931129476584022,
+      "net_rescue": 2,
+      "two_sided_same_targets": 0,
+      "two_sided_rate": 0.0,
+      "mac_share": 0.13287211807974594,
+      "rank": 6
+    },
+    {
+      "group": "G6",
+      "status": "eliminated",
+      "q_only_degraded": 3,
+      "q_overlap_with_all_int8": 3,
+      "q_overlap_coverage": 0.025210084033613446,
+      "rescued": 3,
+      "rescue_rate": 0.025210084033613446,
+      "collateral_misses": 3,
+      "stable_retention": 0.9979338842975206,
+      "net_rescue": 0,
+      "two_sided_same_targets": 0,
+      "two_sided_rate": 0.0,
+      "mac_share": 0.12857860371672528,
+      "rank": 7
+    },
+    {
+      "group": "G2",
+      "status": "eliminated",
+      "q_only_degraded": 9,
+      "q_overlap_with_all_int8": 8,
+      "q_overlap_coverage": 0.06722689075630252,
+      "rescued": 16,
+      "rescue_rate": 0.13445378151260504,
+      "collateral_misses": 19,
+      "stable_retention": 0.9869146005509641,
+      "net_rescue": -3,
+      "two_sided_same_targets": 1,
+      "two_sided_rate": 0.008403361344537815,
+      "mac_share": 0.1265047552696813,
+      "rank": 8
+    }
+  ],
+  "preregistered_combinations": [
+    {
+      "priority": 1,
+      "groups": [
+        "G1",
+        "G5"
+      ],
+      "q_configuration": "q_only:G1+G5",
+      "r_configuration": "r_only:G1+G5",
+      "mac_share": 0.22345717016898625,
+      "reason": "G1 is the only strong module; G5 has the highest net rescue among remaining modules and the second-highest degradation overlap."
+    },
+    {
+      "priority": 2,
+      "groups": [
+        "G1",
+        "G3"
+      ],
+      "q_configuration": "q_only:G1+G3",
+      "r_configuration": "r_only:G1+G3",
+      "mac_share": 0.2213833217219423,
+      "reason": "G3 has the highest rescue count among the remaining modules and a positive net rescue, while staying below the 25% pair MAC cap with G1."
+    }
+  ],
+  "pair_incremental_thresholds_vs_g1": {
+    "rescued_at_least": 99,
+    "net_rescue_at_least": 86,
+    "stable_retention_at_least": 0.98,
+    "two_sided_same_targets_at_least": 69,
+    "mac_share_at_most": 0.25,
+    "decision": "A pair replaces G1 alone only if every threshold passes. If neither pair passes, lock G1 alone. If both pass, prefer higher net rescue, then more two-sided targets, then lower MAC share."
+  },
+  "holdout_status": "sealed; no module intervention inference has been run"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "STAGED_NOT_BUILT",
+  "source_onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+  "model_sha256": "c111abdb32ba785dd26ae3591a6e2364d610cb3a5bb42720bfd87e69c9d2b895",
+  "conv_name": "/model.10/m/m.0/attn/pe/conv/Conv",
+  "desired_conv_precision": "FP16 weight/input/output",
+  "desired_external_dtype": "FLOAT for both named outputs, linear format",
+  "expected_bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "scope": "Only native constraint/auxiliary binding adoption, synthetic external input graph, no model inference or accuracy evidence."
+}

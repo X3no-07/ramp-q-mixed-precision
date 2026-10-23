@@ -1,0 +1,69 @@
+{
+  "status": "FROZEN_FUSED_PREFIX_PARSED",
+  "variant": "code_clip",
+  "spec_sha256": "8eda3d9fc2b4b9e997742efe7b7e9c5599619940af0aef388bbaccc5f3eaf496",
+  "model_sha256": "d2b8ca8105f8a05fabb7aac66c6fbab1a2558ac35bdd5ea1736ce8e0052465de",
+  "clip_attributes": [
+    {
+      "name": "rampq_model_0_conv_Clip",
+      "before": {
+        "alpha": 1.9073720977758057e-05,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      },
+      "explicit_importer_correction": true
+    },
+    {
+      "name": "rampq_model_1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      },
+      "explicit_importer_correction": true
+    }
+  ],
+  "bindings": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "input": true,
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "rampq_model_1_conv_a_dq",
+      "shape": [
+        1,
+        16,
+        320,
+        320
+      ],
+      "input": false,
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "conv_name": "/model.0/conv/Conv",
+  "flags": [
+    "INT8",
+    "FP16",
+    "TF32_DISABLED"
+  ],
+  "workspace_mib": 1024,
+  "avg_timing_iterations": 1,
+  "source_graph_unchanged_by_native_builder": true,
+  "diagnostic_only": true,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false,
+  "limits": "Actual SWISH fusion and INT8 Conv output require final inspector verification; no full-model numerical pass."
+}

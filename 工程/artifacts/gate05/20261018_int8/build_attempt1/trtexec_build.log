@@ -1,0 +1,98 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8502] # /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/model_q_all.onnx --saveEngine=/home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/results/build_20261016T094900_217424Z/model_q_all.engine --fp16 --noTF32 --memPoolSize=workspace:1024 --profilingVerbosity=detailed --buildOnly
+[10/16/2026-17:49:00] [I] === Model Options ===
+[10/16/2026-17:49:00] [I] Format: ONNX
+[10/16/2026-17:49:00] [I] Model: /home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/model_q_all.onnx
+[10/16/2026-17:49:00] [I] Output:
+[10/16/2026-17:49:00] [I] === Build Options ===
+[10/16/2026-17:49:00] [I] Max batch: explicit batch
+[10/16/2026-17:49:00] [I] Memory Pools: workspace: 1024 MiB, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[10/16/2026-17:49:00] [I] minTiming: 1
+[10/16/2026-17:49:00] [I] avgTiming: 8
+[10/16/2026-17:49:00] [I] Precision: FP32+FP16
+[10/16/2026-17:49:00] [I] LayerPrecisions: 
+[10/16/2026-17:49:00] [I] Calibration: 
+[10/16/2026-17:49:00] [I] Refit: Disabled
+[10/16/2026-17:49:00] [I] Sparsity: Disabled
+[10/16/2026-17:49:00] [I] Safe mode: Disabled
+[10/16/2026-17:49:00] [I] DirectIO mode: Disabled
+[10/16/2026-17:49:00] [I] Restricted mode: Disabled
+[10/16/2026-17:49:00] [I] Build only: Enabled
+[10/16/2026-17:49:00] [I] Save engine: /home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/results/build_20261016T094900_217424Z/model_q_all.engine
+[10/16/2026-17:49:00] [I] Load engine: 
+[10/16/2026-17:49:00] [I] Profiling verbosity: 2
+[10/16/2026-17:49:00] [I] Tactic sources: Using default tactic sources
+[10/16/2026-17:49:00] [I] timingCacheMode: local
+[10/16/2026-17:49:00] [I] timingCacheFile: 
+[10/16/2026-17:49:00] [I] Heuristic: Disabled
+[10/16/2026-17:49:00] [I] Preview Features: Use default preview flags.
+[10/16/2026-17:49:00] [I] Input(s)s format: fp32:CHW
+[10/16/2026-17:49:00] [I] Output(s)s format: fp32:CHW
+[10/16/2026-17:49:00] [I] Input build shapes: model
+[10/16/2026-17:49:00] [I] Input calibration shapes: model
+[10/16/2026-17:49:00] [I] === System Options ===
+[10/16/2026-17:49:00] [I] Device: 0
+[10/16/2026-17:49:00] [I] DLACore: 
+[10/16/2026-17:49:00] [I] Plugins:
+[10/16/2026-17:49:00] [I] === Inference Options ===
+[10/16/2026-17:49:00] [I] Batch: Explicit
+[10/16/2026-17:49:00] [I] Input inference shapes: model
+[10/16/2026-17:49:00] [I] Iterations: 10
+[10/16/2026-17:49:00] [I] Duration: 3s (+ 200ms warm up)
+[10/16/2026-17:49:00] [I] Sleep time: 0ms
+[10/16/2026-17:49:00] [I] Idle time: 0ms
+[10/16/2026-17:49:00] [I] Streams: 1
+[10/16/2026-17:49:00] [I] ExposeDMA: Disabled
+[10/16/2026-17:49:00] [I] Data transfers: Enabled
+[10/16/2026-17:49:00] [I] Spin-wait: Disabled
+[10/16/2026-17:49:00] [I] Multithreading: Disabled
+[10/16/2026-17:49:00] [I] CUDA Graph: Disabled
+[10/16/2026-17:49:00] [I] Separate profiling: Disabled
+[10/16/2026-17:49:00] [I] Time Deserialize: Disabled
+[10/16/2026-17:49:00] [I] Time Refit: Disabled
+[10/16/2026-17:49:00] [I] NVTX verbosity: 2
+[10/16/2026-17:49:00] [I] Persistent Cache Ratio: 0
+[10/16/2026-17:49:00] [I] Inputs:
+[10/16/2026-17:49:00] [I] === Reporting Options ===
+[10/16/2026-17:49:00] [I] Verbose: Disabled
+[10/16/2026-17:49:00] [I] Averages: 10 inferences
+[10/16/2026-17:49:00] [I] Percentiles: 90,95,99
+[10/16/2026-17:49:00] [I] Dump refittable layers:Disabled
+[10/16/2026-17:49:00] [I] Dump output: Disabled
+[10/16/2026-17:49:00] [I] Profile: Disabled
+[10/16/2026-17:49:00] [I] Export timing to JSON file: 
+[10/16/2026-17:49:00] [I] Export output to JSON file: 
+[10/16/2026-17:49:00] [I] Export profile to JSON file: 
+[10/16/2026-17:49:00] [I] 
+[10/16/2026-17:49:00] [I] === Device Information ===
+[10/16/2026-17:49:00] [I] Selected Device: Orin
+[10/16/2026-17:49:00] [I] Compute Capability: 8.7
+[10/16/2026-17:49:00] [I] SMs: 4
+[10/16/2026-17:49:00] [I] Compute Clock Rate: 0.765 GHz
+[10/16/2026-17:49:00] [I] Device Global Memory: 7337 MiB
+[10/16/2026-17:49:00] [I] Shared Memory per SM: 164 KiB
+[10/16/2026-17:49:00] [I] Memory Bus Width: 64 bits (ECC disabled)
+[10/16/2026-17:49:00] [I] Memory Clock Rate: 0.612 GHz
+[10/16/2026-17:49:00] [I] 
+[10/16/2026-17:49:00] [I] TensorRT version: 8.5.2
+[10/16/2026-17:49:00] [I] [TRT] [MemUsageChange] Init CUDA: CPU +220, GPU +0, now: CPU 249, GPU 3022 (MiB)
+[10/16/2026-17:49:03] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +302, GPU +431, now: CPU 574, GPU 3472 (MiB)
+[10/16/2026-17:49:03] [I] Start parsing network model
+[10/16/2026-17:49:03] [I] [TRT] ----------------------------------------------------------------
+[10/16/2026-17:49:03] [I] [TRT] Input filename:   /home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/model_q_all.onnx
+[10/16/2026-17:49:03] [I] [TRT] ONNX IR version:  0.0.7
+[10/16/2026-17:49:03] [I] [TRT] Opset version:    13
+[10/16/2026-17:49:03] [I] [TRT] Producer name:    pytorch
+[10/16/2026-17:49:03] [I] [TRT] Producer version: 2.10.0
+[10/16/2026-17:49:03] [I] [TRT] Domain:           
+[10/16/2026-17:49:03] [I] [TRT] Model version:    0
+[10/16/2026-17:49:03] [I] [TRT] Doc string:       
+[10/16/2026-17:49:03] [I] [TRT] ----------------------------------------------------------------
+[10/16/2026-17:49:03] [W] [TRT] onnx2trt_utils.cpp:375: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[10/16/2026-17:49:06] [I] Finish parsing network model
+[10/16/2026-17:49:06] [E] Error[4]: [network.cpp::validate::2922] Error Code 4: Internal Error (Int8 precision has been set for a layer or layer output, but int8 is not configured in the builder)
+[10/16/2026-17:49:06] [E] Error[2]: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )
+[10/16/2026-17:49:06] [E] Engine could not be created from network
+[10/16/2026-17:49:06] [E] Building engine failed
+[10/16/2026-17:49:06] [E] Failed to create engine from model or file.
+[10/16/2026-17:49:06] [E] Engine set up failed
+&&&& FAILED TensorRT.trtexec [TensorRT v8502] # /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/model_q_all.onnx --saveEngine=/home/nvidia/rampq/gate05_int8_diagnostic_20261018_v1/results/build_20261016T094900_217424Z/model_q_all.engine --fp16 --noTF32 --memPoolSize=workspace:1024 --profilingVerbosity=detailed --buildOnly

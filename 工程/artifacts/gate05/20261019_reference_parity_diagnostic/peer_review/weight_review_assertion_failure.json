@@ -1,0 +1,11 @@
+{
+  "status": "REVIEW_ASSERTION_CORRECTED",
+  "error": "original_weight[bit_diff] < 0 failed because original source contains three negative-zero values, not because numeric QDQ differs",
+  "source_modules": [
+    "model.8.cv1.conv",
+    "model.8.m.0.cv3.conv",
+    "model.22.cv2.conv"
+  ],
+  "correction": "Check source signbit, retain both strict-negative and original-negative-zero counts",
+  "original_evidence_changed": false
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "rampq.gate05.dfl_context_checkpoint/v1",
+  "client_at": "2026-10-20T12:25:46.256078+08:00",
+  "status": "DFL_CONTEXT_LOCAL_FAILURE_REPRODUCTION_CHECKPOINT_COMPLETE",
+  "gate05_status": "INCOMPLETE",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "source_convs": 1,
+  "source_nodes": 9,
+  "source_initializers": 7,
+  "fixture_upstream_nodes": 638,
+  "fixture_upstream_initializers": 576,
+  "fixture_upstream_convs": 72,
+  "fixture_upstream_CPU_runs": 1,
+  "tail_CPU_runs": 2,
+  "tail_CPU_original_corrected_same_fixture_byte_exact": true,
+  "full_detector_output_CPU_runs": 0,
+  "native_build_attempts": 2,
+  "native_build_attempts_each": 1,
+  "successful_native_builds": 1,
+  "failed_native_builds": 1,
+  "none_build_seconds": 52.21165119999205,
+  "obey_build_seconds": 1.5382017600059044,
+  "none_fixed_input_executions": 2,
+  "obey_fixed_input_executions": 0,
+  "none_repeat_outputs_byte_exact": true,
+  "none_conv_input_weight_INT8_and_named_integer_tactic": true,
+  "none_conv_output": "FP32",
+  "actual_INT8_output_required": false,
+  "none_cpu_differing_elements": 11779,
+  "none_output_elements": 33600,
+  "none_cpu_max_abs": 1.9073486328125e-06,
+  "none_obey_raw_pair": "UNAVAILABLE_ONE_OR_BOTH_CASES_FAILED",
+  "obey_engine_absent": true,
+  "obey_inference_run": false,
+  "obey_failure_signature": "optimizer.cpp::filterQDQFormats::4421; !n->candidateRequirements.empty()",
+  "same_optimizer_signature_as_failed_full_qall": true,
+  "named_full_model_failure_node_identified": false,
+  "full_model_without_OBEY_build_proven": false,
+  "same_graph_fixture_and_parser_constraints": true,
+  "only_actual_config_flag_changed": "OBEY_PRECISION_CONSTRAINTS",
+  "parser_constraints_each": {
+    "parsed_layers": 14,
+    "precision_INT8": 2,
+    "output_type_INT8": 2,
+    "metadata_errors": 0
+  },
+  "parser_constraints_not_reset": true,
+  "four_DFL_constraint_semantics_match_saved_full_metadata": true,
+  "monitor_status": "BUILD_SCRIPT_OK",
+  "monitor_status_means_both_builds_passed": false,
+  "monitor_seconds": 69.3,
+  "runner_seconds_not_benchmark": 63.99363571200229,
+  "verified_receipt_files": 88,
+  "independent_native_review_checks": 309,
+  "raw_evidence_unchanged": true,
+  "all_five_owned_tasks_exited_same_boot": true,
+  "guard_intervened": false,
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "evidence_transfer_first_attempt_reset": true,
+  "partial_transfer_preserved": true,
+  "evidence_download_retry_only": true,
+  "full_model_native_retry_performed": false,
+  "full_model_failure_resolved": false,
+  "earlier_qonly_success_preserved": true,
+  "prior_sources_archives_and_failed_preflight_unchanged": true,
+  "new_tolerances_defined": false,
+  "dataset_evaluation_run": false,
+  "accuracy_causal_recovery_or_performance_pass": false,
+  "required_work_remaining_for_this_bounded_stage": [],
+  "next_step": "Separately freeze original FLOAT Clip DFL NONE/OBEY controls using the existing authenticated logits fixture and saved CPU outputs. Preserve parser constraints and record imported attributes; no full-model flag retry, parser reset, matrix or dataset run.",
+  "limits": "Corrected DFL cut locally reproduces full compiler signature only under OBEY in these observations. Does not identify the full failing node, establish a unique cause, or prove full-model repair.",
+  "protected_identities": {
+    "artifacts/gate05/20261019_corrected_qonly_native/post_smoke_evidence.zip": "5eac1543e5151708585e57923dd82410c9b21aac81cb5cfd1137e057e35ed205",
+    "artifacts/gate05/20261019_corrected_qall_native/build_failed_evidence.zip": "027433baa5b1e18fafb72cf64b70e58e1bd2aa05b295fd8f539ae8317e1c9a99",
+    "artifacts/gate05/20261019_corrected_qall_native/parser_metadata_evidence.zip": "a567b474be0e563448ce96b7b5cc0f1e9bfff1036461b9512efe9b8c1ba32d78",
+    "artifacts/gate05/20261018_int8/input_v1/preflight.json": "505d139b56c973196792ef60b7bba95e82bca612fab3b12b6183a53f7a815f21",
+    "artifacts/gate05/20261020_twoconv_context_native/checkpoint.json": "760cd93b257ee4473094b169b96e6c195cb4cce2d92d9fd28222a480c8fbf161",
+    "artifacts/gate05/20261020_twoconv_context_native/native_evidence.zip": "6f9ed4fd0f3b21617eb48938cdf79910155a4d18bd29e49c55b168a88226594c",
+    "artifacts/gate05/20261020_dfl_context_probe.zip": "05b9b50e4ddc294151121044facef5e1711ac368c793ca5232c1c1a557c42b9f",
+    "artifacts/gate05/20261020_dfl_context_native/native_evidence.zip": "a53750401ccdbb7c008c14e75cadec80a586a05f2baa32f5e985abdff527bd24"
+  },
+  "stage_inventory_files_before_checkpoint": 158,
+  "stage_manifest": {
+    "path": "artifacts/gate05/20261020_dfl_context_native/stage_manifest.json",
+    "bytes": 34876,
+    "sha256": "410cc7844c0f52b6fed3f9c902f18907f980210bc560ec46c51dadc3b40ce7c3"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/gate05/20261020_dfl_context_native/root_native_audit.json",
+      "bytes": 12428,
+      "sha256": "507c1902886fac7490927f0f97a754a114c0a6d3637948a0aada05ed2d3247f4"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_context_native/independent_native_review.json",
+      "bytes": 50794,
+      "sha256": "18c4dbb38ea7f4f01f9906bad8d347fe198f301f7999598baf341e1bef213b46"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_context_native/full_parser_constraint_correspondence.json",
+      "bytes": 3100,
+      "sha256": "9a3dcc476ee59b3bad0040da1744969f7ce41c0e2bf095cd709535b8033f48d8"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_context_native/final_board_observation.json",
+      "bytes": 6412,
+      "sha256": "851dc97942403ee30efdda3c202d2b3edc3f11a042d44645fd10e733482ab4e7"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_context_native/native_evidence.zip",
+      "bytes": 21481431,
+      "sha256": "a53750401ccdbb7c008c14e75cadec80a586a05f2baa32f5e985abdff527bd24"
+    },
+    {
+      "path": "artifacts/gate05/20261020_dfl_context_native/next_control_plan.json",
+      "bytes": 2088,
+      "sha256": "5b0469faa1f055b2e3e148c1302c65824a04f31b062abd48fbf109b70040aa7d"
+    }
+  ]
+}

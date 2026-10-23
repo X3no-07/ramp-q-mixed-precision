@@ -1,0 +1,54 @@
+{
+  "schema": "rampq.gate05.precision_audit_author_self_check/v1",
+  "review_role": "AUDITOR_AUTHOR_SELF_CHECK_NOT_INDEPENDENT",
+  "configuration": "fp16_control",
+  "precision_audit_file": "precision_audit.json",
+  "precision_audit_sha256": "2249a7ec0c9feefaeee17d967f83e2b87d852ee8732df8d443777a50c04eb8fd",
+  "auditor_sha256": "97e031e6ed16f18634483fa3f0f1fa98903f39e12551b94390feab64a8a66d30",
+  "auditor_invocations_this_task": 1,
+  "declared_main_return_code_from_saved_report": 0,
+  "observed_shell_tool_exit_code": 0,
+  "exit_observation_note": "Exact native exit captured or successful zero exit.",
+  "actual_formats_complete": true,
+  "verified_INT8": 0,
+  "verified_FP16": 88,
+  "named_integer_tactic_source_convs": 0,
+  "strict_integer_gaps": 0,
+  "errors": [],
+  "unmapped_engine_convs": [],
+  "fusion_accounting": [
+    {
+      "name": "/model.22/m.0/cv1/conv/Conv || /model.22/m.0/cv2/conv/Conv",
+      "status": "FUSION_ACCOUNTING_PASS",
+      "source_members": [
+        "/model.22/m.0/cv1/conv/Conv",
+        "/model.22/m.0/cv2/conv/Conv"
+      ]
+    },
+    {
+      "name": "/model.6/m.0/cv1/conv/Conv || /model.6/m.0/cv2/conv/Conv",
+      "status": "FUSION_ACCOUNTING_PASS",
+      "source_members": [
+        "/model.6/m.0/cv1/conv/Conv",
+        "/model.6/m.0/cv2/conv/Conv"
+      ]
+    },
+    {
+      "name": "/model.8/m.0/cv1/conv/Conv || /model.8/m.0/cv2/conv/Conv",
+      "status": "FUSION_ACCOUNTING_PASS",
+      "source_members": [
+        "/model.8/m.0/cv1/conv/Conv",
+        "/model.8/m.0/cv2/conv/Conv"
+      ]
+    }
+  ],
+  "input_evidence_unchanged": true,
+  "criteria_changed": false,
+  "model_execution_runs": 0,
+  "native_execution_runs": 0,
+  "SSH_runs": 0,
+  "dataset150_outputs_read": false,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "created_UTC": "2026-10-21T05:50:48.671947+00:00"
+}

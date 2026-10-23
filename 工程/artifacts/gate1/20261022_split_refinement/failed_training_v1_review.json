@@ -1,0 +1,36 @@
+{
+  "schema": "rampq.gate1.failed_training_attempt_review/v1",
+  "reviewed_at_utc": "2026-10-22T04:18:51.330365+00:00",
+  "attempt": "float_training_v1",
+  "status": "FAILED_PRESERVED_NO_RESTART",
+  "training_started": true,
+  "completed_training_epochs": 0,
+  "error_type": "TypeError",
+  "error": "isfinite(): argument 'input' (position 1) must be Tensor, not dict",
+  "cause": "New per-batch finite guard did not handle installed framework named loss dictionaries. This is a runner compatibility failure, not evidence about model quality or hardware stability.",
+  "action": "Preserve the entire failed attempt and both previous contracts. Add recursive finite tensor/number/dict/list/tuple handling plus regression fixture, freeze a new v3 contract and use a new v2 attempt. No checkpoint is resumed.",
+  "automatic_framework_retry": false,
+  "next_attempt_will_restart_from_official_weight": true,
+  "identities": {
+    "attempt_receipt.json": {
+      "bytes": 2528,
+      "sha256": "744a1200d596428640022ec64c3e5eb144e9af07b9b9c85dd52ee69afe5c9bc9"
+    },
+    "failure_traceback.txt": {
+      "bytes": 2139,
+      "sha256": "fecf637e74c01c7538c1b424f19e6bc574d2311aeb0e9c0ae21e3274feed86af"
+    },
+    "runner_source.py": {
+      "bytes": 36461,
+      "sha256": "5173eeb5e0a8ce9f11b0d54c396ad1f10da43a144a8ae03d394146df94eb91f1"
+    },
+    "frozen_contract.json": {
+      "bytes": 6024,
+      "sha256": "2181eaf57dbc4f8c535d7e0d796d57d7578af9913620c136b4ad86cfb40e68fd"
+    },
+    "effective_training_args.json": {
+      "bytes": 2990,
+      "sha256": "611ff10ee58d2a653364797821db5fa325de8c707220fb3e2ca419b81c07d54d"
+    }
+  }
+}

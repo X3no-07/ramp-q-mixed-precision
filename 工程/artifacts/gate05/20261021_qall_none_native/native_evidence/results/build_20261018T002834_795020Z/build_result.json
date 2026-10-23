@@ -1,0 +1,80 @@
+{
+  "schema": "rampq.gate05.corrected_qall_none_build_result/v1",
+  "configuration": "q_all",
+  "graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "tool_identity": {
+    "builder_file": "jetson_build_corrected_qall_none.py",
+    "builder_sha256": "4e5b9b71be93e72f5310273f477c0cbf7256fe2249f66c3a01f9ad3d96844aaa",
+    "helper_relative_path": "jetson_build_precision_candidate.py",
+    "helper_sha256": "d8431345da90482f0d5798e2d6524bf03591ecef653edfad5ef3e28a509eb19f",
+    "protocol_sha256": "572120502a6db021945c63cdd781d81e2a4b1771f5d9a13c3f58d0da7278eac1",
+    "control_spec_sha256": "b34d042f07969bbe56e68ede5cda41f1e16996d0747a479b7733ac26876b1739",
+    "outer_manifest_sha256": "e667457c74df2c81e78bfaa4b1414907f52cf5763696f075bbc9adbf67f3da60",
+    "legacy_source_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+    "legacy_source_manifest_sha256": "f1679f4ebc7daa3e5589c28968785d48f31269cc5f83b0398bfa3bd7a91d861f"
+  },
+  "legacy_source_precision_constraints": "obey",
+  "runtime_precision_constraints": "none",
+  "separate_new_control_not_legacy_attempt": true,
+  "new_CPU_execution_runs": 0,
+  "saved_full_CPU_equivalence_analysis_sha256": "2af9ab8e1e8b76cbafd1622d75eedd825fe6f42f2dcdcdcfe115a7110965ab87",
+  "single_image_inference": "NOT_RUN",
+  "dataset_evaluation": "NOT_RUN",
+  "actual_precision_audit": "PENDING",
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "numerical_pass_claim": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "max_build_seconds": 7200,
+  "maximum_native_builds": 1,
+  "run_dir": "/home/nvidia/rampq/gate05_qall_none_entryfix1_20261021/gate05_qall_none_control_20261021/results/build_20261018T002834_795020Z",
+  "phase": "COMPLETE",
+  "status": "BUILT_AND_DESERIALIZED_BUILD_ONLY",
+  "build_seconds_not_benchmark": 887.1207151039853,
+  "engine_sha256": "c3d9e75d61452c69b97097d1320221d5d56d7ad0e2fc1370480cf3e09eb3a41e",
+  "engine_bytes": 7123120,
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "engine_layers": 271,
+  "actual_conv_row_count": 88,
+  "source_mapping_complete": true,
+  "elapsed_seconds": 894.9298178880126,
+  "engine_execution_context_created": false,
+  "native_inference_executions": 0
+}

@@ -1,0 +1,116 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8502] # /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/model_code_clip.onnx --saveEngine=/home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/results/probe_20261017T003307/code_clip/model.engine --int8 --noTF32 --inputIOFormats=fp32:chw --outputIOFormats=fp32:chw --avgTiming=1 --memPoolSize=workspace:1024 --profilingVerbosity=detailed --buildOnly
+[10/17/2026-00:34:02] [I] === Model Options ===
+[10/17/2026-00:34:02] [I] Format: ONNX
+[10/17/2026-00:34:02] [I] Model: /home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/model_code_clip.onnx
+[10/17/2026-00:34:02] [I] Output:
+[10/17/2026-00:34:02] [I] === Build Options ===
+[10/17/2026-00:34:02] [I] Max batch: explicit batch
+[10/17/2026-00:34:02] [I] Memory Pools: workspace: 1024 MiB, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[10/17/2026-00:34:02] [I] minTiming: 1
+[10/17/2026-00:34:02] [I] avgTiming: 1
+[10/17/2026-00:34:02] [I] Precision: FP32+INT8
+[10/17/2026-00:34:02] [I] LayerPrecisions: 
+[10/17/2026-00:34:02] [I] Calibration: Dynamic
+[10/17/2026-00:34:02] [I] Refit: Disabled
+[10/17/2026-00:34:02] [I] Sparsity: Disabled
+[10/17/2026-00:34:02] [I] Safe mode: Disabled
+[10/17/2026-00:34:02] [I] DirectIO mode: Disabled
+[10/17/2026-00:34:02] [I] Restricted mode: Disabled
+[10/17/2026-00:34:02] [I] Build only: Enabled
+[10/17/2026-00:34:02] [I] Save engine: /home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/results/probe_20261017T003307/code_clip/model.engine
+[10/17/2026-00:34:02] [I] Load engine: 
+[10/17/2026-00:34:02] [I] Profiling verbosity: 2
+[10/17/2026-00:34:02] [I] Tactic sources: Using default tactic sources
+[10/17/2026-00:34:02] [I] timingCacheMode: local
+[10/17/2026-00:34:02] [I] timingCacheFile: 
+[10/17/2026-00:34:02] [I] Heuristic: Disabled
+[10/17/2026-00:34:02] [I] Preview Features: Use default preview flags.
+[10/17/2026-00:34:02] [I] Input(s): fp32:chw
+[10/17/2026-00:34:02] [I] Output(s): fp32:chw
+[10/17/2026-00:34:02] [I] Input build shapes: model
+[10/17/2026-00:34:02] [I] Input calibration shapes: model
+[10/17/2026-00:34:02] [I] === System Options ===
+[10/17/2026-00:34:02] [I] Device: 0
+[10/17/2026-00:34:02] [I] DLACore: 
+[10/17/2026-00:34:02] [I] Plugins:
+[10/17/2026-00:34:02] [I] === Inference Options ===
+[10/17/2026-00:34:02] [I] Batch: Explicit
+[10/17/2026-00:34:02] [I] Input inference shapes: model
+[10/17/2026-00:34:02] [I] Iterations: 10
+[10/17/2026-00:34:02] [I] Duration: 3s (+ 200ms warm up)
+[10/17/2026-00:34:02] [I] Sleep time: 0ms
+[10/17/2026-00:34:02] [I] Idle time: 0ms
+[10/17/2026-00:34:02] [I] Streams: 1
+[10/17/2026-00:34:02] [I] ExposeDMA: Disabled
+[10/17/2026-00:34:02] [I] Data transfers: Enabled
+[10/17/2026-00:34:02] [I] Spin-wait: Disabled
+[10/17/2026-00:34:02] [I] Multithreading: Disabled
+[10/17/2026-00:34:02] [I] CUDA Graph: Disabled
+[10/17/2026-00:34:02] [I] Separate profiling: Disabled
+[10/17/2026-00:34:02] [I] Time Deserialize: Disabled
+[10/17/2026-00:34:02] [I] Time Refit: Disabled
+[10/17/2026-00:34:02] [I] NVTX verbosity: 2
+[10/17/2026-00:34:02] [I] Persistent Cache Ratio: 0
+[10/17/2026-00:34:02] [I] Inputs:
+[10/17/2026-00:34:02] [I] === Reporting Options ===
+[10/17/2026-00:34:02] [I] Verbose: Disabled
+[10/17/2026-00:34:02] [I] Averages: 10 inferences
+[10/17/2026-00:34:02] [I] Percentiles: 90,95,99
+[10/17/2026-00:34:02] [I] Dump refittable layers:Disabled
+[10/17/2026-00:34:02] [I] Dump output: Disabled
+[10/17/2026-00:34:02] [I] Profile: Disabled
+[10/17/2026-00:34:02] [I] Export timing to JSON file: 
+[10/17/2026-00:34:02] [I] Export output to JSON file: 
+[10/17/2026-00:34:02] [I] Export profile to JSON file: 
+[10/17/2026-00:34:02] [I] 
+[10/17/2026-00:34:02] [I] === Device Information ===
+[10/17/2026-00:34:02] [I] Selected Device: Orin
+[10/17/2026-00:34:02] [I] Compute Capability: 8.7
+[10/17/2026-00:34:02] [I] SMs: 4
+[10/17/2026-00:34:02] [I] Compute Clock Rate: 0.765 GHz
+[10/17/2026-00:34:02] [I] Device Global Memory: 7337 MiB
+[10/17/2026-00:34:02] [I] Shared Memory per SM: 164 KiB
+[10/17/2026-00:34:02] [I] Memory Bus Width: 64 bits (ECC disabled)
+[10/17/2026-00:34:02] [I] Memory Clock Rate: 0.612 GHz
+[10/17/2026-00:34:02] [I] 
+[10/17/2026-00:34:02] [I] TensorRT version: 8.5.2
+[10/17/2026-00:34:02] [I] [TRT] [MemUsageChange] Init CUDA: CPU +220, GPU +0, now: CPU 249, GPU 3818 (MiB)
+[10/17/2026-00:34:06] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +302, GPU +319, now: CPU 574, GPU 4159 (MiB)
+[10/17/2026-00:34:06] [I] Start parsing network model
+[10/17/2026-00:34:06] [I] [TRT] ----------------------------------------------------------------
+[10/17/2026-00:34:06] [I] [TRT] Input filename:   /home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/model_code_clip.onnx
+[10/17/2026-00:34:06] [I] [TRT] ONNX IR version:  0.0.7
+[10/17/2026-00:34:06] [I] [TRT] Opset version:    13
+[10/17/2026-00:34:06] [I] [TRT] Producer name:    pytorch
+[10/17/2026-00:34:06] [I] [TRT] Producer version: 2.10.0
+[10/17/2026-00:34:06] [I] [TRT] Domain:           
+[10/17/2026-00:34:06] [I] [TRT] Model version:    0
+[10/17/2026-00:34:06] [I] [TRT] Doc string:       
+[10/17/2026-00:34:06] [I] [TRT] ----------------------------------------------------------------
+[10/17/2026-00:34:06] [I] Finish parsing network model
+[10/17/2026-00:34:06] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[10/17/2026-00:34:06] [W] [TRT] Calibrator won't be used in explicit precision mode. Use quantization aware training to generate network with Quantize/Dequantize nodes.
+[10/17/2026-00:34:06] [I] [TRT] ---------- Layers Running on DLA ----------
+[10/17/2026-00:34:06] [I] [TRT] ---------- Layers Running on GPU ----------
+[10/17/2026-00:34:06] [I] [TRT] [GpuLayer] COPY: rampq_model_0_conv_ActivationQ
+[10/17/2026-00:34:06] [I] [TRT] [GpuLayer] POINTWISE: PWN(rampq_model_0_conv_Clip)
+[10/17/2026-00:34:06] [I] [TRT] [GpuLayer] COPY: rampq_model_0_conv_ActivationDQ
+[10/17/2026-00:34:07] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +534, GPU +703, now: CPU 1108, GPU 4864 (MiB)
+[10/17/2026-00:34:07] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +83, GPU +120, now: CPU 1191, GPU 4984 (MiB)
+[10/17/2026-00:34:07] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[10/17/2026-00:34:55] [I] [TRT] Total Activation Memory: 1073757184
+[10/17/2026-00:34:55] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[10/17/2026-00:34:55] [I] [TRT] Total Host Persistent Memory: 272
+[10/17/2026-00:34:55] [I] [TRT] Total Device Persistent Memory: 0
+[10/17/2026-00:34:55] [I] [TRT] Total Scratch Memory: 0
+[10/17/2026-00:34:55] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 4 MiB
+[10/17/2026-00:34:55] [I] [TRT] [BlockAssignment] Started assigning block shifts. This will take 2 steps to complete.
+[10/17/2026-00:34:55] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 0.025184ms to assign 2 blocks to 2 nodes requiring 15360 bytes.
+[10/17/2026-00:34:55] [I] [TRT] Total Activation Memory: 15360
+[10/17/2026-00:34:55] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +4, now: CPU 0, GPU 4 (MiB)
+[10/17/2026-00:34:55] [I] Engine built in 53.0274 sec.
+[10/17/2026-00:34:55] [I] [TRT] Loaded engine size: 0 MiB
+[10/17/2026-00:34:55] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +0, now: CPU 0, GPU 0 (MiB)
+[10/17/2026-00:34:55] [I] Engine deserialized in 0.00245056 sec.
+[10/17/2026-00:34:55] [I] Skipped inference phase since --buildOnly is added.
+&&&& PASSED TensorRT.trtexec [TensorRT v8502] # /usr/src/tensorrt/bin/trtexec --onnx=/home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/model_code_clip.onnx --saveEngine=/home/nvidia/rampq/gate05_code_clip_signed_20261019/gate05_code_clip_signed_probe_20261019/results/probe_20261017T003307/code_clip/model.engine --int8 --noTF32 --inputIOFormats=fp32:chw --outputIOFormats=fp32:chw --avgTiming=1 --memPoolSize=workspace:1024 --profilingVerbosity=detailed --buildOnly

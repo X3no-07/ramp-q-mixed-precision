@@ -1,0 +1,296 @@
+{
+  "schema": "rampq.gate05.dataset_toolchain_v2_static_independent_review/v1",
+  "status": "STATIC_SOURCE_AND_SYNTHETIC_BOUNDARIES_VERIFIED_PENDING_FROZEN_INPUT_PREFLIGHT",
+  "check_count": 43,
+  "checks": [
+    {
+      "name": "v2_exact_pin:run_gate05_frozen_raw_dataset_v2.py",
+      "passed": true
+    },
+    {
+      "name": "v2_exact_pin:evaluate_gate05_saved_target_matrix_v2.py",
+      "passed": true
+    },
+    {
+      "name": "v2_exact_pin:postprocess_gate05_frozen_raw_matrix_v2.py",
+      "passed": true
+    },
+    {
+      "name": "raw_execution_core_unchanged_AST:make_ort_driver",
+      "passed": true
+    },
+    {
+      "name": "raw_execution_core_unchanged_AST:make_trt_driver",
+      "passed": true
+    },
+    {
+      "name": "raw_execution_core_unchanged_AST:run",
+      "passed": true
+    },
+    {
+      "name": "raw_execution_core_unchanged_AST:binding_signature",
+      "passed": true
+    },
+    {
+      "name": "evaluator_core_unchanged_AST:legacy_matching",
+      "passed": true
+    },
+    {
+      "name": "evaluator_core_unchanged_AST:match_saved",
+      "passed": true
+    },
+    {
+      "name": "evaluator_core_unchanged_AST:score_stream",
+      "passed": true
+    },
+    {
+      "name": "evaluator_core_unchanged_AST:validate_frozen",
+      "passed": true
+    },
+    {
+      "name": "evaluator_core_unchanged_AST:evaluate",
+      "passed": true
+    },
+    {
+      "name": "primary_verdict_metric_calculation_unchanged_AST",
+      "passed": true
+    },
+    {
+      "name": "postprocess_numeric_core_unchanged_AST:source_decode",
+      "passed": true
+    },
+    {
+      "name": "postprocess_numeric_core_unchanged_AST:captured_call",
+      "passed": true
+    },
+    {
+      "name": "postprocess_numeric_core_unchanged_AST:load_environment",
+      "passed": true
+    },
+    {
+      "name": "postprocessor_pins_new_evaluator",
+      "passed": true
+    },
+    {
+      "name": "raw_vs_acceptance_contract_link_distinct",
+      "passed": true
+    },
+    {
+      "name": "native_vs_ORT_identity_selection",
+      "passed": true
+    },
+    {
+      "name": "raw_exact150_default_no_model",
+      "passed": true
+    },
+    {
+      "name": "one_full_ORT_call_site",
+      "passed": true
+    },
+    {
+      "name": "one_TRT_call_site_and_host_clone",
+      "passed": true
+    },
+    {
+      "name": "attempt_exclusive_and_no_resume",
+      "passed": true
+    },
+    {
+      "name": "nonfinite_outputs_preserved_not_passed",
+      "passed": true
+    },
+    {
+      "name": "post1800_once_warning_fail_closed",
+      "passed": true
+    },
+    {
+      "name": "authenticated_input_manifest_each_row",
+      "passed": true
+    },
+    {
+      "name": "input_manifest_remains_bound_at_finish",
+      "passed": true
+    },
+    {
+      "name": "common_CPU_NMS_geometry_old_AST_not_scale_boxes",
+      "passed": true
+    },
+    {
+      "name": "saved_raw_copy_before_NMS",
+      "passed": true
+    },
+    {
+      "name": "only_full150x12_inventory_allowed",
+      "passed": true
+    },
+    {
+      "name": "engineering_E_receipt_exact_six_IDs",
+      "passed": true
+    },
+    {
+      "name": "primary_and_auxiliary_engineering_priority",
+      "passed": true
+    },
+    {
+      "name": "old_guard_and_no_pure_causal_upgrade",
+      "passed": true
+    },
+    {
+      "name": "raw_path_accepts_exact_frozen_store",
+      "passed": true
+    },
+    {
+      "name": "raw_path_rejects:alternate_state_root",
+      "passed": true
+    },
+    {
+      "name": "raw_path_rejects:inside_inputs",
+      "passed": true
+    },
+    {
+      "name": "raw_path_rejects:inside_source_model_dir",
+      "passed": true
+    },
+    {
+      "name": "raw_path_rejects:ancestor_of_source",
+      "passed": true
+    },
+    {
+      "name": "raw_path_rejects:inside_attempt_store",
+      "passed": true
+    },
+    {
+      "name": "raw_path_rejects:output_equals_state",
+      "passed": true
+    },
+    {
+      "name": "synthetic_evaluator17_pass",
+      "passed": true
+    },
+    {
+      "name": "synthetic_postprocess_no_real_NMS",
+      "passed": true
+    },
+    {
+      "name": "no_backend_or_NMS_runtime_imports",
+      "passed": true
+    }
+  ],
+  "blockers": [],
+  "v2_tools": {
+    "run_gate05_frozen_raw_dataset_v2.py": {
+      "sha256": "ef7e2780203c04442ee3378b7cea31093dafa40eb29c4cea9c012cdb0cd4d26b",
+      "bytes": 33519
+    },
+    "evaluate_gate05_saved_target_matrix_v2.py": {
+      "sha256": "b5ac60351e17761144a8897300ef8c8005f14e87e119b74dc1be2907be4cb895",
+      "bytes": 30211
+    },
+    "postprocess_gate05_frozen_raw_matrix_v2.py": {
+      "sha256": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+      "bytes": 29304
+    }
+  },
+  "synthetic_checks": {
+    "evaluator17": {
+      "status": "SYNTHETIC_MATCHING_CORNER_CASES_PASSED",
+      "checks": [
+        {
+          "name": "same_class_required",
+          "passed": true
+        },
+        {
+          "name": "confidence_equal_quarter_inclusive",
+          "passed": true
+        },
+        {
+          "name": "just_below_confidence_excluded",
+          "passed": true
+        },
+        {
+          "name": "IoU_equal_half_inclusive",
+          "passed": true
+        },
+        {
+          "name": "just_below_IoU_excluded",
+          "passed": true
+        },
+        {
+          "name": "detection_tie_reverse_index",
+          "passed": true
+        },
+        {
+          "name": "one_detection_one_GT_reverse_GT_tie",
+          "passed": true
+        },
+        {
+          "name": "IoU_priority_before_confidence",
+          "passed": true
+        },
+        {
+          "name": "empty_detection_inventory",
+          "passed": true
+        },
+        {
+          "name": "narrow_existence_preserves_negative_net",
+          "passed": true
+        },
+        {
+          "name": "engineering_gap_has_priority",
+          "passed": true
+        },
+        {
+          "name": "auxiliary_engineering_gap_has_priority",
+          "passed": true
+        },
+        {
+          "name": "ineligible_auxiliary_observed_overlap_preserved",
+          "passed": true
+        },
+        {
+          "name": "zero_FP16_baseline_inconclusive",
+          "passed": true
+        },
+        {
+          "name": "zero_added_miss_scientific_nonreproduction",
+          "passed": true
+        },
+        {
+          "name": "no_primary_recovery_not_substituted",
+          "passed": true
+        },
+        {
+          "name": "zero_denominator_is_null",
+          "passed": true
+        }
+      ],
+      "matching_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+      "model_or_dataset_evaluation_run": false
+    },
+    "post_fake_NMS": {
+      "status": "SYNTHETIC_SCHEMA_GEOMETRY_AND_WARNING_CAPTURE_PASSED",
+      "real_NMS_calls": 0,
+      "model_calls": 0,
+      "dataset_prediction_streams_read": 0,
+      "evaluator_sha256": "b5ac60351e17761144a8897300ef8c8005f14e87e119b74dc1be2907be4cb895",
+      "legacy_decode_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb"
+    }
+  },
+  "reviewer_modified_evaluator_disclosure": "Reviewer authored v2 auxiliary eligibility-priority patch; original evaluator author separately reviews that diff. Raw and postprocessing v2 remain other-agent authored and independently reviewed here.",
+  "new_real_NMS_model_CPU_graph_native_SSH_or_150_output_reads": 0,
+  "native_and_ORT_outputs_not_present_or_scored_in_this_review": true,
+  "remaining_pre_execution_requirements": [
+    "Root must freeze both noncircular contracts and bind exact six engine/source/reference/qualification hashes before any new150-image outputs.",
+    "Raw contract backend.attempt_state_root must be the intended separate canonical store on each host.",
+    "Acceptance postprocess_execution.matrix_root/attempt_root must be intended absolute common matrix and separate store, not protected inputs or original backend raw directories.",
+    "Refresh postprocess --describe-environment from the new v2 code; old619/b36 environment identity is not transferable.",
+    "Full source-only authenticated contract/input/evidence preflight is still required once final contracts and12raw manifests exist; synthetic source review is not that preflight."
+  ],
+  "numeric_reference_limits": "Independent whole ORT reference and target-level outcomes do not pass the original PyTorch/ORT guard. Saved paired raw descriptive discrepancy analysis remains a separate final-report deliverable; no large tolerance was introduced.",
+  "old_tool_identities": {
+    "run_gate05_frozen_raw_dataset.py": "eb3ad14ff546038fa4a6e76d6400e3734dbe323dd538085614a3921870066db5",
+    "evaluate_gate05_saved_target_matrix.py": "b36a05789857f2994ec6e8ead9370374eb90a25073b3360e190f0c01707fe57f",
+    "postprocess_gate05_frozen_raw_matrix.py": "619339b16832864f9c09e26a4a054d14d73fc6e03259aa2b65e0b10e1d292d4b"
+  },
+  "review_script_sha256": "36f04c112f0f2d0cbf4d4c7f2aa74abdc730dfd8ff9840a2b6dd0e8a1bb0e685"
+}

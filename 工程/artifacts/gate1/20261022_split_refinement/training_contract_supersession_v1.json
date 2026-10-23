@@ -1,0 +1,31 @@
+{
+  "schema": "rampq.gate1.training_contract_supersession/v1",
+  "recorded_at_utc": "2026-10-22T04:15:18.512969+00:00",
+  "previous_contract": "training_contract_v1",
+  "previous_contract_sha256": "b436364836dae86c1b728ebe4b6da9b595ad68585a201818dbfd4c925749da66",
+  "active_contract": "training_contract_v2",
+  "active_contract_sha256": "2181eaf57dbc4f8c535d7e0d796d57d7578af9913620c136b4ad86cfb40e68fd",
+  "previous_contract_used_for_training": false,
+  "previous_contract_preserved": true,
+  "reason": "Before training, independent review identified silent EMA checkpoint resynchronization/fp16 clamping in the installed framework. The new runner refuses those repairs, checks each batch losses, separates final validation from training epoch count, and binds engine/validator.py. Training budget and dataset remain unchanged.",
+  "checks": [
+    {
+      "directory": "training_contract_v1",
+      "files_checked": 19,
+      "manifest_sha256": "b7fcd98d8526a53059ce9770a4d9844c24030b7f95db94615f7d528cc7f986e4",
+      "pass": true
+    },
+    {
+      "directory": "training_contract_v2",
+      "files_checked": 20,
+      "manifest_sha256": "7475781678e0486140adb41a8c11f59feab3bd3135801b16ee65aa2fb8d77165",
+      "pass": true
+    },
+    {
+      "directory": "split_plan_v1",
+      "files_checked": 12,
+      "manifest_sha256": "c757d7665ec5b3336433ec22ce50fc9104e7f8c2352fd919e2481e470508232d",
+      "pass": true
+    }
+  ]
+}

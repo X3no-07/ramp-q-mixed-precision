@@ -1,0 +1,125 @@
+{
+  "schema": "rampq.gate05.local_reference_queue_static_review/v1",
+  "status": "NO_REMAINING_STATIC_BLOCKER_AFTER_AUTHORIZED_UNSEALED_QUEUE_REPAIRS",
+  "reviewer_role": "INDEPENDENT_STATIC_REVIEW_AND_REPAIR_OF_ROOT_UNSEALED_LOCAL_ORT_QUEUE",
+  "original_script_sha256": "e0b05ae7548b6afeded2d3802954ead5f01c02087920edcec4639868a85edf38",
+  "final_script_sha256": "09be82f1323e94a40c3ac15b48f6aef530c381b6299de79628f661e4befb0cdd",
+  "script_bytes": 10356,
+  "script_file": "scripts/run_gate05_local_reference_queue.py",
+  "checks": [
+    {
+      "id": "DEFAULT_INPUT_ONLY",
+      "pass": true,
+      "evidence": "No --execute means six pinned raw-runner --check-input-only calls, model_calls0 and markers0; branch returns before attempt/Popen."
+    },
+    {
+      "id": "EXACT_RAW_V2_PIN",
+      "pass": true,
+      "evidence": "The exact ef7e2780... frozen raw v2 source and raw contract SHA are checked before commands and between/final members."
+    },
+    {
+      "id": "FROZEN_SIX_ORDER",
+      "pass": true,
+      "evidence": "Plan own queue SHA, order and member sequence exactly fp16_control,q_all,G1,G1G5,G1G2,qonly; 900total/1800permember."
+    },
+    {
+      "id": "ONE_ATTEMPT",
+      "pass": true,
+      "evidence": "Fresh attempt/status/console/output preconditions and exclusive fsynced attempt marker; rawv2 own contract-wide marker remains mandatory; no retry/resume loop."
+    },
+    {
+      "id": "PREFLIGHT_SCOPE",
+      "pass": true,
+      "evidence": "Input-only JSON must explicitly report no runtime/model/build/NMS and planned150, correct configuration/backend/contract."
+    },
+    {
+      "id": "SOURCE_DIRECTORY_ISOLATION",
+      "pass": true,
+      "evidence": "Canonical source/input/contract/scripts roots cannot overlap writable queue runroot; six distinct outputs live within runroot and rawv2 separately pins frozen attempt store."
+    },
+    {
+      "id": "ORT_WHOLE_GRAPH_ONLY",
+      "pass": true,
+      "evidence": "Commands always backend ort; no --engine/native backend; unchanged runner enforcesCPUExecutionProvider/ORT_DISABLE_ALL/four threads and qualified full graph."
+    },
+    {
+      "id": "EXPLICIT_EXECUTE_ONLY",
+      "pass": true,
+      "evidence": "Exactly one subprocess Popen --execute permember, sequential wait1800; next member occurs only after successful full current output validation."
+    },
+    {
+      "id": "LOCAL_EXACT_PID_CLEANUP",
+      "pass": true,
+      "evidence": "Exact owned Popen handle terminate→wait10→kill→wait5 on timeout/exception; no broad PID search or signalling unrelated processes."
+    },
+    {
+      "id": "INTERRUPT_AND_EXIT_CLEANUP",
+      "pass": true,
+      "evidence": "SIGINT/SIGTERM and WindowsSIGBREAK raise into cleanup; atexit fallback registered before execution Popen."
+    },
+    {
+      "id": "CLEANUP_FAILURE_RECORDED",
+      "pass": true,
+      "evidence": "Cleanup errors are caught and recorded so STOP status still persists; failed or partial tensors and once markers remain."
+    },
+    {
+      "id": "STATE_AND_RAW_FULL_COUNT",
+      "pass": true,
+      "evidence": "Successful state/raw status COMPLETE,150attempted/completed/serialized and150rows; nonfinite state or row aborts before nextmember."
+    },
+    {
+      "id": "RESULT_LINEAGE",
+      "pass": true,
+      "evidence": "State and rawmanifest both bind contract,configuration,ORTbackend,runner,graph,shared inputmanifest and nullengine."
+    },
+    {
+      "id": "FROZEN_IMAGE_ORDER",
+      "pass": true,
+      "evidence": "Exactly indices0..149 and contractordered_ids; no subset/skip/resume."
+    },
+    {
+      "id": "SAVED_RAW_HASHES",
+      "pass": true,
+      "evidence": "Every raw file remains inside output, regular/non-symlink and matches declared bytes/SHA before queue acceptsmember."
+    },
+    {
+      "id": "NO_NMS_OR_SCORING",
+      "pass": true,
+      "evidence": "State/raw NMS,targetmatching,accuracy flags false; script has no NMS/scoring/model implementation."
+    },
+    {
+      "id": "NO_PARENT_GPU_IMPORT",
+      "pass": true,
+      "evidence": "Only standard-library top-level imports; all modelruntime code remains unchanged in separately pinned runner executionchild."
+    },
+    {
+      "id": "FINAL_COUNT_AND_FROZEN_IDS",
+      "pass": true,
+      "evidence": "Allsixsuccesses must total900 and finalplan/runner/contract remain exact."
+    },
+    {
+      "id": "PYTHON38_AST",
+      "pass": true,
+      "evidence": "Final source parsed with Python3.8 grammar; no executable process/model tests were launched."
+    }
+  ],
+  "fixed_concrete_issues": [
+    "Added missing parent SIGTERM/SIGBREAK/atexit cleanup; cleanup failure no longer bypasses saved STOP status.",
+    "Bound complete per-configuration state/raw lineage, ordered150finite outputs and exact saved tensor file identities; frozen runner/contract/plan rechecked between and aftermembers.",
+    "Protected source/contract/input/script directories from queue log/status/marker writes and bound fresh distinct per-member output directories inside frozen run root."
+  ],
+  "review_executed_script_main": false,
+  "real_subprocess_or_process_tests": 0,
+  "CPU_model_calls": 0,
+  "GPU_imports": 0,
+  "SSH_operations": 0,
+  "dataset_model_outputs_read": 0,
+  "native_queue_independent_review_claim": false,
+  "limits": [
+    "Source/AST review only. Final local plan and exactsix frozen graphs/input/evidence/outputs/attemptroot directories must still pass actual --check-input-only before --execute.",
+    "Direct owned-child cleanup is appropriate for the unchanged full CPUORT runner, which creates no detached model process; this is not an arbitrary descendant-process supervisor.",
+    "Successful900rawcalls do not constitute accuracy, pureG1cause, original numericalguard repair or GatePASS."
+  ],
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE"
+}

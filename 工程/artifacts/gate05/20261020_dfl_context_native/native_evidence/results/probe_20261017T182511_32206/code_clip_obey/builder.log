@@ -1,0 +1,25 @@
+[10/17/2026-18:26:10] [TRT] [I] [MemUsageChange] Init CUDA: CPU +221, GPU +0, now: CPU 252, GPU 3981 (MiB)
+[10/17/2026-18:26:12] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU +302, GPU +316, now: CPU 577, GPU 4318 (MiB)
+[10/17/2026-18:26:12] [TRT] [W] onnx2trt_utils.cpp:375: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[10/17/2026-18:26:12] [TRT] [I] ---------- Layers Running on DLA ----------
+[10/17/2026-18:26:12] [TRT] [I] ---------- Layers Running on GPU ----------
+[10/17/2026-18:26:12] [TRT] [I] [GpuLayer] SOFTMAX: /model.23/dfl/Softmax
+[10/17/2026-18:26:12] [TRT] [I] [GpuLayer] COPY: rampq_model_23_dfl_conv_ActivationQ
+[10/17/2026-18:26:12] [TRT] [I] [GpuLayer] POINTWISE: PWN(rampq_model_23_dfl_conv_Clip)
+[10/17/2026-18:26:12] [TRT] [I] [GpuLayer] CONVOLUTION: model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv
+[10/17/2026-18:26:12] [TRT] [I] [GpuLayer] SHUFFLE: /model.23/dfl/Reshape_1
+[10/17/2026-18:26:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +534, GPU +692, now: CPU 1111, GPU 5011 (MiB)
+[10/17/2026-18:26:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +83, GPU +133, now: CPU 1194, GPU 5144 (MiB)
+[10/17/2026-18:26:14] [TRT] [I] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[10/17/2026-18:26:14] [TRT] [E] 2: [optimizer.cpp::filterQDQFormats::4421] Error Code 2: Internal Error (Assertion !n->candidateRequirements.empty() failed. All of the candidates were removed, which points to the node being incorrectly marked as an int8 node.)
+[10/17/2026-18:26:14] [TRT] [E] 2: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )
+Traceback (most recent call last):
+  File "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020/jetson_build_dfl_context_probe.py", line 229, in <module>
+    main()
+  File "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020/jetson_build_dfl_context_probe.py", line 217, in main
+    build(root, args.case, output, state)
+  File "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020/jetson_build_dfl_context_probe.py", line 173, in build
+    require(serialized is not None, 'TensorRT returned no serialized engine')
+  File "/home/nvidia/rampq/gate05_dfl_context_20261020/gate05_dfl_context_probe_20261020/jetson_dfl_context_probe.py", line 37, in require
+    raise RuntimeError(message)
+RuntimeError: TensorRT returned no serialized engine

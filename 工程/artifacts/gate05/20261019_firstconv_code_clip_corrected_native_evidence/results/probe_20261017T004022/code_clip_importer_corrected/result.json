@@ -1,0 +1,246 @@
+{
+  "case": "code_clip_importer_corrected",
+  "variant": "code_clip",
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/home/nvidia/rampq/gate05_firstconv_code_clip_corrected_20261019_v2/gate05_firstconv_code_clip_probe_20261019/jetson_build_code_clip_importer_probe.py",
+    "--model",
+    "/home/nvidia/rampq/gate05_firstconv_code_clip_corrected_20261019_v2/gate05_firstconv_code_clip_probe_20261019/model_firstconv_code_clip.onnx",
+    "--expected-sha256",
+    "94a19035d8000bd546a9476db58fa3a6d58348b4e35e4d11109d0c253b9f95a6",
+    "--output",
+    "/home/nvidia/rampq/gate05_firstconv_code_clip_corrected_20261019_v2/gate05_firstconv_code_clip_probe_20261019/results/probe_20261017T004022/code_clip_importer_corrected/model.engine"
+  ],
+  "max_build_seconds": 300,
+  "spec_sha256": "3bafe5e60be41e9e607146cac71c21a4123b9eaa13c20c6e01e7cb56e21f7fcc",
+  "onnx_sha256": "94a19035d8000bd546a9476db58fa3a6d58348b4e35e4d11109d0c253b9f95a6",
+  "diagnostic_only": true,
+  "status": "ISOLATED_FIRSTCONV_NATIVE_OUTPUTS_SAVED",
+  "engine_sha256": "8e3650c8ef44e729db27bed449f7ea8889278109b1d83196047634a0856c9ad7",
+  "bindings": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "input": true,
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.0/conv/Conv_output_0",
+      "shape": [
+        1,
+        16,
+        320,
+        320
+      ],
+      "input": false,
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.0/act/Mul_output_0",
+      "shape": [
+        1,
+        16,
+        320,
+        320
+      ],
+      "input": false,
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "outputs": {
+    "/model.0/act/Mul_output_0": {
+      "npz_key": "first_code_clip_post_silu",
+      "stats": {
+        "shape": [
+          1,
+          16,
+          320,
+          320
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": -0.2784647047519684,
+        "max": 39.02090072631836,
+        "mean": 1.5856521885394397,
+        "rms": 2.8222944577661395,
+        "raw_bytes_sha256": "0797b25ed646107284e927d9d98673f6be8731a23ba6ad02fd4d907ccdfcbb46"
+      },
+      "comparison_to_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 1.430511474609375e-05,
+        "mean_abs": 1.6120699572341745e-06,
+        "rms_difference": 2.617902883079051e-06,
+        "abs_percentiles_50_90_99_999": [
+          5.21540641784668e-07,
+          4.5299530029296875e-06,
+          7.748603820800781e-06,
+          9.238719940185547e-06
+        ],
+        "bit_exact": false,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": true,
+        "descriptive_only_no_new_pass_criterion": true
+      }
+    },
+    "/model.0/conv/Conv_output_0": {
+      "npz_key": "first_code_clip_pre_silu",
+      "stats": {
+        "shape": [
+          1,
+          16,
+          320,
+          320
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": -38.5128059387207,
+        "max": 39.02090072631836,
+        "mean": 0.6473759007643154,
+        "rms": 4.619412773487233,
+        "raw_bytes_sha256": "5c328ddf97d8024058cf7e4a376135d72fff75887aeab23a15ef57cabd8c78ac"
+      },
+      "comparison_to_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 7.62939453125e-06,
+        "mean_abs": 5.086914121132935e-07,
+        "rms_difference": 7.044963861921566e-07,
+        "abs_percentiles_50_90_99_999": [
+          4.172325134277344e-07,
+          1.0728836059570312e-06,
+          2.0265579223632812e-06,
+          3.159046173095703e-06
+        ],
+        "bit_exact": false,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "abs_percentiles_50_90_99_999": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bit_exact": true,
+        "descriptive_only_no_new_pass_criterion": true
+      }
+    }
+  },
+  "convolution_layers": [
+    {
+      "Name": "model.0.conv.weight + rampq_model_0_conv_WeightQ + /model.0/conv/Conv",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "rampq_model_0_conv_a_q",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            3,
+            640,
+            640
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/model.0/conv/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            320,
+            320
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 432
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "HasDynamicFilter": 0,
+      "HasDynamicBias": 0,
+      "HasResidual": 0,
+      "ConvXAsActInputIdx": -1,
+      "BiasAsActInputIdx": -1,
+      "ResAsActInputIdx": -1,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "ampere_fp32_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0xfe80445f7bb61a99"
+    }
+  ],
+  "raw_outputs_sha256": "548f9acb2454f1e12da8f7e87568ced2c44797ec9b32409e8e555db2bfb51878",
+  "build_seconds_not_benchmark": 78.1624025279998,
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "board_time": "2026-10-17T00:41:44+0800",
+  "tensorrt": "8.5.2.2",
+  "torch": "2.0.0+nv23.05",
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "pre_silu_output_tap_may_change_native_fusion": true,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "dataset_evaluation_run": false
+}

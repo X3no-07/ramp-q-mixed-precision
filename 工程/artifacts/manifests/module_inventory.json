@@ -1,0 +1,1026 @@
+{
+  "schema": "rampq.gate0.module_inventory/v1",
+  "model": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\runs\\yolo11n_ruod_pilot\\weights\\best.pt",
+  "conv_count": 88,
+  "total_conv_macs": 3160115200,
+  "groups": {
+    "G1": {
+      "description": "stem_and_early_backbone_top_0_2",
+      "conv_count": 6,
+      "conv_macs": 326041600,
+      "mac_share": 0.1031739602404368
+    },
+    "G2": {
+      "description": "backbone_mid_top_3_4",
+      "conv_count": 5,
+      "conv_macs": 399769600,
+      "mac_share": 0.1265047552696813
+    },
+    "G3": {
+      "description": "backbone_middeep_top_5_6",
+      "conv_count": 10,
+      "conv_macs": 373555200,
+      "mac_share": 0.11820936148150549
+    },
+    "G4": {
+      "description": "backbone_deep_sppf_psa_top_7_10",
+      "conv_count": 19,
+      "conv_macs": 419891200,
+      "mac_share": 0.13287211807974594
+    },
+    "G5": {
+      "description": "neck_topdown_top_13_16",
+      "conv_count": 8,
+      "conv_macs": 380108800,
+      "mac_share": 0.12028320992854943
+    },
+    "G6": {
+      "description": "neck_bottomup_top_17_22",
+      "conv_count": 15,
+      "conv_macs": 406323200,
+      "mac_share": 0.12857860371672528
+    },
+    "G7": {
+      "description": "detect_p3_small_branch",
+      "conv_count": 8,
+      "conv_macs": 561971200,
+      "mac_share": 0.1778325043340192
+    },
+    "G8": {
+      "description": "detect_p4_p5_and_dfl",
+      "conv_count": 17,
+      "conv_macs": 292454400,
+      "mac_share": 0.09254548694933654
+    }
+  },
+  "modules": [
+    {
+      "name": "model.0.conv",
+      "group": "G1",
+      "weight_shape": [
+        16,
+        3,
+        3,
+        3
+      ],
+      "macs": 44236800
+    },
+    {
+      "name": "model.1.conv",
+      "group": "G1",
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "macs": 117964800
+    },
+    {
+      "name": "model.2.cv1.conv",
+      "group": "G1",
+      "weight_shape": [
+        32,
+        32,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.2.cv2.conv",
+      "group": "G1",
+      "weight_shape": [
+        64,
+        48,
+        1,
+        1
+      ],
+      "macs": 78643200
+    },
+    {
+      "name": "model.2.m.0.cv1.conv",
+      "group": "G1",
+      "weight_shape": [
+        8,
+        16,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.2.m.0.cv2.conv",
+      "group": "G1",
+      "weight_shape": [
+        16,
+        8,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.3.conv",
+      "group": "G2",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 235929600
+    },
+    {
+      "name": "model.4.cv1.conv",
+      "group": "G2",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.4.cv2.conv",
+      "group": "G2",
+      "weight_shape": [
+        128,
+        96,
+        1,
+        1
+      ],
+      "macs": 78643200
+    },
+    {
+      "name": "model.4.m.0.cv1.conv",
+      "group": "G2",
+      "weight_shape": [
+        16,
+        32,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.4.m.0.cv2.conv",
+      "group": "G2",
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.5.conv",
+      "group": "G3",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "macs": 235929600
+    },
+    {
+      "name": "model.6.cv1.conv",
+      "group": "G3",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.6.cv2.conv",
+      "group": "G3",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.6.m.0.cv1.conv",
+      "group": "G3",
+      "weight_shape": [
+        32,
+        64,
+        1,
+        1
+      ],
+      "macs": 3276800
+    },
+    {
+      "name": "model.6.m.0.cv2.conv",
+      "group": "G3",
+      "weight_shape": [
+        32,
+        64,
+        1,
+        1
+      ],
+      "macs": 3276800
+    },
+    {
+      "name": "model.6.m.0.cv3.conv",
+      "group": "G3",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.6.m.0.m.0.cv1.conv",
+      "group": "G3",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.6.m.0.m.0.cv2.conv",
+      "group": "G3",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.6.m.0.m.1.cv1.conv",
+      "group": "G3",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.6.m.0.m.1.cv2.conv",
+      "group": "G3",
+      "weight_shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.7.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "macs": 117964800
+    },
+    {
+      "name": "model.8.cv1.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.8.cv2.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        384,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.8.m.0.cv1.conv",
+      "group": "G4",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "macs": 3276800
+    },
+    {
+      "name": "model.8.m.0.cv2.conv",
+      "group": "G4",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "macs": 3276800
+    },
+    {
+      "name": "model.8.m.0.cv3.conv",
+      "group": "G4",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.8.m.0.m.0.cv1.conv",
+      "group": "G4",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.8.m.0.m.0.cv2.conv",
+      "group": "G4",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.8.m.0.m.1.cv1.conv",
+      "group": "G4",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.8.m.0.m.1.cv2.conv",
+      "group": "G4",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.9.cv1.conv",
+      "group": "G4",
+      "weight_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "macs": 13107200
+    },
+    {
+      "name": "model.9.cv2.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        512,
+        1,
+        1
+      ],
+      "macs": 52428800
+    },
+    {
+      "name": "model.10.cv1.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.10.cv2.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        256,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.10.m.0.attn.qkv.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "macs": 13107200
+    },
+    {
+      "name": "model.10.m.0.attn.proj.conv",
+      "group": "G4",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.10.m.0.attn.pe.conv",
+      "group": "G4",
+      "weight_shape": [
+        128,
+        1,
+        3,
+        3
+      ],
+      "macs": 460800
+    },
+    {
+      "name": "model.10.m.0.ffn.0.conv",
+      "group": "G4",
+      "weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "macs": 13107200
+    },
+    {
+      "name": "model.10.m.0.ffn.1.conv",
+      "group": "G4",
+      "weight_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "macs": 13107200
+    },
+    {
+      "name": "model.13.cv1.conv",
+      "group": "G5",
+      "weight_shape": [
+        128,
+        384,
+        1,
+        1
+      ],
+      "macs": 78643200
+    },
+    {
+      "name": "model.13.cv2.conv",
+      "group": "G5",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.13.m.0.cv1.conv",
+      "group": "G5",
+      "weight_shape": [
+        32,
+        64,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.13.m.0.cv2.conv",
+      "group": "G5",
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.16.cv1.conv",
+      "group": "G5",
+      "weight_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "macs": 104857600
+    },
+    {
+      "name": "model.16.cv2.conv",
+      "group": "G5",
+      "weight_shape": [
+        64,
+        96,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.16.m.0.cv1.conv",
+      "group": "G5",
+      "weight_shape": [
+        16,
+        32,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.16.m.0.cv2.conv",
+      "group": "G5",
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.17.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 58982400
+    },
+    {
+      "name": "model.19.cv1.conv",
+      "group": "G6",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.19.cv2.conv",
+      "group": "G6",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.19.m.0.cv1.conv",
+      "group": "G6",
+      "weight_shape": [
+        32,
+        64,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.19.m.0.cv2.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "macs": 29491200
+    },
+    {
+      "name": "model.20.conv",
+      "group": "G6",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "macs": 58982400
+    },
+    {
+      "name": "model.22.cv1.conv",
+      "group": "G6",
+      "weight_shape": [
+        256,
+        384,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.22.cv2.conv",
+      "group": "G6",
+      "weight_shape": [
+        256,
+        384,
+        1,
+        1
+      ],
+      "macs": 39321600
+    },
+    {
+      "name": "model.22.m.0.cv1.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "macs": 3276800
+    },
+    {
+      "name": "model.22.m.0.cv2.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "macs": 3276800
+    },
+    {
+      "name": "model.22.m.0.cv3.conv",
+      "group": "G6",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.22.m.0.m.0.cv1.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.22.m.0.m.0.cv2.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.22.m.0.m.1.cv1.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.22.m.0.m.1.cv2.conv",
+      "group": "G6",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.23.cv2.0.0.conv",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 235929600
+    },
+    {
+      "name": "model.23.cv2.0.1.conv",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 235929600
+    },
+    {
+      "name": "model.23.cv2.0.2",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.23.cv2.1.0.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        128,
+        3,
+        3
+      ],
+      "macs": 117964800
+    },
+    {
+      "name": "model.23.cv2.1.1.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 58982400
+    },
+    {
+      "name": "model.23.cv2.1.2",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.23.cv2.2.0.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        256,
+        3,
+        3
+      ],
+      "macs": 58982400
+    },
+    {
+      "name": "model.23.cv2.2.1.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "macs": 14745600
+    },
+    {
+      "name": "model.23.cv2.2.2",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 1638400
+    },
+    {
+      "name": "model.23.cv3.0.0.0.conv",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "macs": 3686400
+    },
+    {
+      "name": "model.23.cv3.0.0.1.conv",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.23.cv3.0.1.0.conv",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "macs": 3686400
+    },
+    {
+      "name": "model.23.cv3.0.1.1.conv",
+      "group": "G7",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 26214400
+    },
+    {
+      "name": "model.23.cv3.0.2",
+      "group": "G7",
+      "weight_shape": [
+        10,
+        64,
+        1,
+        1
+      ],
+      "macs": 4096000
+    },
+    {
+      "name": "model.23.cv3.1.0.0.conv",
+      "group": "G8",
+      "weight_shape": [
+        128,
+        1,
+        3,
+        3
+      ],
+      "macs": 1843200
+    },
+    {
+      "name": "model.23.cv3.1.0.1.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        128,
+        1,
+        1
+      ],
+      "macs": 13107200
+    },
+    {
+      "name": "model.23.cv3.1.1.0.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "macs": 921600
+    },
+    {
+      "name": "model.23.cv3.1.1.1.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.23.cv3.1.2",
+      "group": "G8",
+      "weight_shape": [
+        10,
+        64,
+        1,
+        1
+      ],
+      "macs": 1024000
+    },
+    {
+      "name": "model.23.cv3.2.0.0.conv",
+      "group": "G8",
+      "weight_shape": [
+        256,
+        1,
+        3,
+        3
+      ],
+      "macs": 921600
+    },
+    {
+      "name": "model.23.cv3.2.0.1.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "macs": 6553600
+    },
+    {
+      "name": "model.23.cv3.2.1.0.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        1,
+        3,
+        3
+      ],
+      "macs": 230400
+    },
+    {
+      "name": "model.23.cv3.2.1.1.conv",
+      "group": "G8",
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "macs": 1638400
+    },
+    {
+      "name": "model.23.cv3.2.2",
+      "group": "G8",
+      "weight_shape": [
+        10,
+        64,
+        1,
+        1
+      ],
+      "macs": 256000
+    },
+    {
+      "name": "model.23.dfl.conv",
+      "group": "G8",
+      "weight_shape": [
+        1,
+        16,
+        1,
+        1
+      ],
+      "macs": 537600
+    }
+  ]
+}

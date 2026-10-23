@@ -1,0 +1,29 @@
+{
+  "schema": "rampq.gate1.decode_probe_runner_synthetic_test_receipt/v1",
+  "status": "PASS_SYNTHETIC_CPU_TESTS_ONLY",
+  "command": "python.exe -B -m unittest discover -s tests -p test_gate1_decode_precision.py -v",
+  "tests_run": 15,
+  "failures": 0,
+  "errors": 0,
+  "real_model_loaded": false,
+  "real_images_opened": false,
+  "gpu_execution": false,
+  "runner_sha256": "f76f3bfd677487fa7d87947f866daaf7407ddd455ad3e4d9e399da719e481ec0",
+  "tests_sha256": "eebabd828fa32c8995c8634b04c57b18c2b01d6b72a3c94158e971e2ecdad968",
+  "initial_attempt": "13 tests passed; 2 file-integrity tests failed because redirected Windows sandbox TEMP was unwritable. Test temporary paths were moved to their owned workspace directory; no production runner change was needed.",
+  "coverage": [
+    "Uniform DFL closed form",
+    "Exact native-style DFL and geometric decoder reconstruction in both CPU floating dtypes",
+    "All arithmetic cast from identical captured logits without input mutation",
+    "FP16 geometric operation-order counterexample",
+    "Invalid shapes, nonfinite values and unsupported precision rejection",
+    "Frozen protocol source/checkpoint/runner identity checks",
+    "Precision-control and tolerance relaxation rejection",
+    "Selection, Holdout and non-debug cohort rejection",
+    "Historical/native exactness disabling rejection",
+    "Unknown, duplicate and reordered full-cohort identity rejection",
+    "Bitwise bytes versus approximate numerical equality",
+    "Immutable input identity and path traversal protections",
+    "Independent branch parameter and buffer equality after float32 lifting"
+  ]
+}

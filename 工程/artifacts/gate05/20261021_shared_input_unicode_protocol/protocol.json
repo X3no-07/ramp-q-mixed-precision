@@ -1,0 +1,32 @@
+{
+  "schema": "rampq.gate05.shared_input_preparation_protocol/v1",
+  "status": "FROZEN_BEFORE_IMAGE_PREPROCESSING_NO_MODEL_EXECUTION",
+  "client_at": "2026-10-21T13:38:57.051295+08:00",
+  "preparer_sha256": "4d3689ffb14295f4748fca92a5d6cf834c3d7cc6fa638a32d5bf32b1eb22dc9f",
+  "source_review_sha256": null,
+  "data_manifest_sha256": "c4dac80ad7c59524194a9501f5ff8126cc0517e84f29f4106068c0c4b27a93aa",
+  "source_gate0_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+  "image_preprocessing_executions": 150,
+  "model_executions": 0,
+  "new_native_builds": 0,
+  "dataset_predictions": 0,
+  "all_model_configurations_share_exact_inputs": true,
+  "environment": {
+    "opencv": "4.14.0",
+    "numpy": "2.5.3"
+  },
+  "preprocessing": "Pinned old gate0 letterbox 640, OpenCV INTER_LINEAR and114border; BGR->RGB CHW contiguousfloat32 /255; addbatch1. Preserve exact ratio,left,top and original image geometry.",
+  "data_order": "Exact data_v1 manifest.data.evaluation order;150images865targets;64 calibration disjoint",
+  "no_selection_recalibration_or_outcome_adaptation": true,
+  "no_accuracy_or_numeric_pass": true,
+  "windows_file_loading_adapter": "Use exact authenticated image.read_bytes buffer with OpenCV imdecode(IMREAD_COLOR), because OpenCV imread cannot open this Chinese Windows path. Letterbox/RGB/float32/div255 remain unchanged.",
+  "parent_protocol_sha256": "60ac99367084601ab0c7442483ddc9ba43c3464026223ba4dcc7f484ec23cfa5",
+  "prior_attempt": {
+    "path": "artifacts/gate05/20261021_shared_inputs",
+    "status": "FAILED_BEFORE_FIRST_ARRAY_NO_MODEL_EXECUTION",
+    "failure_file_sha256": "655c5ac768961cfd4374b9acbd551fbcd471b7f20a9c05f9e3c6f2de7875546e",
+    "completed_images": 0,
+    "model_executions": 0
+  },
+  "revision_scope": "Single file-loading expression only. Fresh one-time150-image preparation; no extra model budget or outcome access."
+}

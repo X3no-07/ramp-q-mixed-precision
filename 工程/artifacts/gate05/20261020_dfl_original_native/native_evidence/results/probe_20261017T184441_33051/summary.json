@@ -1,0 +1,156 @@
+{
+  "status": "DFL_ORIGINAL_BATCH_COMPLETED",
+  "cases": {
+    "original_none": {
+      "status": "DFL_ORIGINAL_FIXED_INPUT_OUTPUTS_SAVED",
+      "case": "original_none",
+      "variant": "original",
+      "precision_constraint_flag": "none",
+      "bindings": [
+        {
+          "name": "/model.23/dfl/Transpose_output_0",
+          "input": true,
+          "shape": [
+            1,
+            16,
+            4,
+            8400
+          ],
+          "dtype": "DataType.FLOAT",
+          "format": "TensorFormat.LINEAR"
+        },
+        {
+          "name": "/model.23/dfl/Reshape_1_output_0",
+          "input": false,
+          "shape": [
+            1,
+            4,
+            8400
+          ],
+          "dtype": "DataType.FLOAT",
+          "format": "TensorFormat.LINEAR"
+        }
+      ],
+      "stats": {
+        "shape": [
+          1,
+          4,
+          8400
+        ],
+        "dtype": "float32",
+        "all_finite": true,
+        "nonfinite_count": 0,
+        "min": 0.0,
+        "max": 0.9448731541633606,
+        "raw_bytes_sha256": "11be9724a648a8a04535876fa1e79e7ef1468c4eb463866313fca0b58f5247dd"
+      },
+      "comparison_to_frozen_cpu_ort": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": false,
+        "byte_identical": false,
+        "different_elements": 33566,
+        "max_abs": 11.957853466272354,
+        "mean_abs": 2.3782942463764005,
+        "rms_difference": 2.8428724297345527,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat_comparison": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": true,
+        "byte_identical": true,
+        "different_elements": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "conv_rows_file": "conv_rows.json",
+      "conv_source_mapping_file": "conv_source_mapping.json",
+      "one_dfl_actual_convolution_uniquely_mapped": true,
+      "convolution_descriptors": [
+        {
+          "name": "model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv",
+          "inputs": [
+            {
+              "Name": "rampq_model_23_dfl_conv_a_q",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                16,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+            }
+          ],
+          "weights": {
+            "Type": "Int8",
+            "Count": 16
+          },
+          "outputs": [
+            {
+              "Name": "/model.23/dfl/conv/Conv_output_0",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                1,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Row major linear FP32"
+            }
+          ],
+          "activation": "NONE",
+          "tactic_name": "ampere_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+          "tactic_value": "0xa4ae2d82115c3e83",
+          "actual_precision_requires_independent_review": true
+        }
+      ],
+      "engine_sha256": "583aaa40a0a5d90e87cf00fd8be7dd08dfe90eed72d5a678e369c4f0cfb8fa3e",
+      "raw_outputs_sha256": "ebb6e83dac9116e2b52c3b397201486870c2b4c3270379b58b69d943f27a6e2b",
+      "spec_sha256": "99d7b3179d9c540c06331a2135de9d645b2421722edb20ff5268e53c7b56f1ae",
+      "model_sha256": "b60be2c2d196ed1fb4e962446f374d9e53d066476172cfa1db415194b2306d90",
+      "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+      "board_time": "2026-10-17T18:45:39+0800",
+      "tensorrt": "8.5.2.2",
+      "torch": "2.0.0+nv23.05",
+      "diagnostic_only": true,
+      "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+      "dataset_evaluation_run": false,
+      "accuracy_pass_claim": false,
+      "performance_pass_claim": false,
+      "output_role": "DFL_DISTANCES_NOT_DECODED_DETECTION_BOXES",
+      "fixture_role": "CORRECTED_ONNX_CPU_UPSTREAM_INTERNAL_LOGITS_NOT_NATIVE_DATA",
+      "actual_conv_output_int8_required": false,
+      "limits": "One fixed internal feature input, one DFL Conv and one activation boundary; no new numeric tolerance. Output is DFL distance, no output QDQ or INT8-output acceptance rule."
+    },
+    "original_obey": {
+      "status": "BUILD_FAILED_OBSERVATION",
+      "case": "original_obey",
+      "returncode": 1,
+      "inference_run": false,
+      "next_case_permitted": true,
+      "spec_sha256": "99d7b3179d9c540c06331a2135de9d645b2421722edb20ff5268e53c7b56f1ae",
+      "builder_failure_file": "build_failure.json"
+    }
+  },
+  "cross_native_comparisons": {
+    "original_none_vs_original_obey": {
+      "status": "UNAVAILABLE_ONE_OR_BOTH_CASES_FAILED"
+    }
+  },
+  "requested_case_order": [
+    "original_none",
+    "original_obey"
+  ],
+  "observed_case_count": 2,
+  "successful_output_case_count": 1,
+  "elapsed_seconds_not_benchmark": 64.02708412799984,
+  "aborted": null,
+  "batch_completion_is_not_numerical_pass": true,
+  "diagnostic_only": true,
+  "dataset_evaluation_run": false,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED"
+}

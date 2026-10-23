@@ -1,0 +1,35 @@
+{
+  "schema": "rampq.gate1.full_ap_independent_source_review/v1",
+  "status": "NO_BLOCKER_BEFORE_NATIVE_COMPARISON",
+  "implementation": {
+    "path": "scripts/gate1_official_ap.py",
+    "bytes": 17031,
+    "sha256": "a76a3ae45f2859fecc89909f903011b483514ee7113b93b881947fc9dbcbb54c"
+  },
+  "official_source_manifest": {
+    "path": "artifacts/gate1/20261022_split_refinement/evaluation_sources/source_manifest.json",
+    "bytes": 5124,
+    "sha256": "1d45d3ecaabf5f3f8a8885436a0a22718a890a17f8ad9d5ec4f9c274c3c079ae"
+  },
+  "reviewed_semantics": [
+    "cap submitted rows globally before category selection and sorting",
+    "prepared GT score inversion",
+    "evalRes full matrix flags, ignored last, score-first stable ties",
+    "raw continuous XYWH with IoF for ignored GT",
+    "recall denominator includes ignored GT rows",
+    "AP from maxDets500 and VOC precision envelope integration",
+    "evalClass repeats once per class occurrence per image",
+    "NaN for empty evalClass",
+    "ten thresholds and four maxDets",
+    "raw adapter reuses only pinned raster prefilter"
+  ],
+  "domain_limits": [
+    "finite binary64 inputs, finite geometry arithmetic and declared category/ignore fields",
+    "raw adapter inherits positive prediction widths and heights and integer category-zero region coordinates",
+    "stable tie policy tested only against pinned Octave runtime, not all MATLAB releases"
+  ],
+  "issues": [],
+  "native_metric_answers_used_to_review_or_change_implementation": false,
+  "native_internal_tables_verified": false,
+  "gate1_scientific_pass": false
+}

@@ -1,0 +1,183 @@
+{
+  "schema": "rampq.gate05.corrected_qall_failed_build_builder_review/v1",
+  "status": "FAILED_BUILD_EVIDENCE_CONFIRMED_CAUSE_NOT_LOCALIZED",
+  "scope": "Independent read-only review of saved artifacts and builder source. No native retry, graph execution, frozen-bundle edit, tolerance change or dataset work.",
+  "raw_root": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate05\\20261019_corrected_qall_native\\build_failed_evidence",
+  "independently_rehashed_receipt_files": 52,
+  "archive_verification_sha256": "7701382c9d768a392d0e01a730385e34110c529bee626a70275ea715271c1d14",
+  "build": {
+    "status": "BUILD_OR_CONTRACT_VALIDATION_FAILED",
+    "api_elapsed_seconds": 10.534061375998135,
+    "monitor_elapsed_seconds": 13.07,
+    "engine_file_present": false,
+    "actual_native_precision_audit_possible": false,
+    "fixed_image_inference_run": false,
+    "error_rows": [
+      {
+        "line": 275,
+        "text": "[10/17/2026-03:40:02] [TRT] [E] 2: [optimizer.cpp::filterQDQFormats::4421] Error Code 2: Internal Error (Assertion !n->candidateRequirements.empty() failed. All of the candidates were removed, which points to the node being incorrectly marked as an int8 node.)"
+      },
+      {
+        "line": 276,
+        "text": "[10/17/2026-03:40:02] [TRT] [E] 2: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )"
+      }
+    ],
+    "failing_python_assertion": "serialized is not None after TensorRT Builder.build_serialized_network returned None"
+  },
+  "clip_corrections": {
+    "count": 88,
+    "all_exact_alpha_minus127_beta_plus127": true,
+    "before_bound_pairs": [
+      {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43,
+        "count": 87
+      },
+      {
+        "alpha": 7215612690432.0,
+        "beta": 1.7796490496925177e-43,
+        "count": 1
+      }
+    ],
+    "parsed_declared_input_output_dtype_pairs": [
+      {
+        "input": "DataType.FLOAT",
+        "output": "DataType.FLOAT",
+        "count": 88
+      }
+    ],
+    "parsed_dtype_interpretation": "Weakly typed parsed tensor dtype is not actual engine format or native INT8 proof. No engine exists.",
+    "gpu_optimized_log_clip_classes": {
+      "STANDALONE_POINTWISE": 57,
+      "FUSED_CONVOLUTION": 31
+    },
+    "complete_clip_names_seen_in_gpu_plan_log": true,
+    "gpu_plan_log_is_not_engine_inspector_or_tactic_adoption_proof": true
+  },
+  "builder_comparison": {
+    "qonly_successful_builder_sha256": "a3706392fa0fb3f316e7b292e60268eebf86f5e97909e5fe15a3fdbb701db08e",
+    "qall_failed_builder_sha256": "f255efb88b517dcc9537da72b76f6e4d1e71bc64e50ad13df006661821823451",
+    "shared_operations": [
+      "EXPLICIT_BATCH; TensorRT8.5 Python API parse and build_serialized_network",
+      "Rebind exact named IActivationLayer CLIP then assign alpha=-127/beta=127 in the same parsed network",
+      "INT8+FP16 flags; TF32 disabled; workspace1024MiB; avg_timing_iterations1; DETAILED inspector request",
+      "External allowed_formats=LINEAR and exact FLOAT binding contract before build",
+      "Same original helper for contract/hash/write/query; no new calibrator, training or weight change"
+    ],
+    "confounded_differences": [
+      {
+        "factor": "quantized source inventory",
+        "qonly": "6INT8 +82FP16",
+        "qall": "88INT8 +0FP16"
+      },
+      {
+        "factor": "precision constraint mode",
+        "qonly": [
+          "INT8",
+          "FP16",
+          "PREFER_PRECISION_CONSTRAINTS",
+          "TF32_DISABLED"
+        ],
+        "qall": [
+          "INT8",
+          "FP16",
+          "OBEY_PRECISION_CONSTRAINTS",
+          "PREFER_PRECISION_CONSTRAINTS_DISABLED",
+          "TF32_DISABLED"
+        ]
+      },
+      {
+        "factor": "user injected layer precision/output constraints",
+        "qonly": 82,
+        "qall": 0
+      },
+      {
+        "factor": "integer Clip topology coverage",
+        "qonly": 6,
+        "qall": 88
+      },
+      {
+        "factor": "frozen source graph and compiler fusion opportunities",
+        "qonly": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+        "qall": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee"
+      }
+    ],
+    "new_logging_reads_are_not_user_layer_precision_writes": true,
+    "comparison_is_not_an_obey_only_intervention": true
+  },
+  "obey_assessment": {
+    "source_user_setPrecision_or_setOutputType_calls": 0,
+    "metadata_explicit_layer_precision_constraint_count_means": "Number of constraints injected by this Python builder; it does not enumerate parser-created precision/output constraints.",
+    "parsed_all_layer_precision_is_set_or_output_type_is_set_recorded": false,
+    "official_semantics": "NVIDIA TensorRT8.5.10 says PREFER/OBEY are ignored if no layer precision/output-type constraints are set. Q/DQ still specifies conversion boundaries independently.",
+    "source_url": "https://developer.nvidia.com/docs/drive/drive-os/6.0.6/public/drive-os-tensorrt/pdf/NVIDIA-TensorRT-8.5.10-Developer-Guide-for-DRIVE-OS.pdf",
+    "source_section": "6.4.2, printed page30 / PDF page44, lines1341-1349 in web extraction",
+    "version_boundary": "Official8.5.10 DRIVE documentation is close-version semantic guidance, not a proof that this Jetson8.5.2.2 implementation has no flag-dependent behavior.",
+    "conclusion": "OBEY alone is not established as the cause and is not the strongest current inference if the parsed network truly has no constraints; parser-created flags were not sampled so zero-user-write count cannot establish the premise. A parser snapshot and matched small-slice flag intervention can discriminate."
+  },
+  "unresolved_candidates_not_confirmed_causes": [
+    "Specific Q/DQ/code-Clip boundary unsupported by format selection",
+    "Interaction among full-graph INT8 region propagation/fusion/fanout and standalone code-Clip nodes",
+    "Constraint flags interacting with parser-created constraints or an implementation issue",
+    "Shape/layout/operator-specific INT8 candidate restrictions"
+  ],
+  "prohibited_inferences": [
+    "Do not attribute to any of the historical seven depthwise tactic-name gaps: the new failure precedes a new engine/actual precision audit.",
+    "Do not name DFL or the final GPU-plan line as culprit: all optimized plan layers are printed before the general assertion and no node name accompanies filterQDQFormats.",
+    "Do not infer missed Clip correction: all88 exact corrected records are present.",
+    "Do not infer a board disconnect, OOM, overheating, or timeout from this compiler assertion."
+  ],
+  "observed_board_exit": {
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "monitor_reason": null,
+    "guard_status": "COMPLETE",
+    "guard_intervention_performed": false,
+    "owned_group_fully_empty": true,
+    "resource_samples": 7,
+    "sampled_min_mem_available_kib": 4168300,
+    "sampled_max_temperature_c": 50.343,
+    "fan_observation": {
+      "command": [
+        "systemctl",
+        "is-active",
+        "nvfancontrol.service"
+      ],
+      "returncode": 0,
+      "stdout": "active\n",
+      "stderr": ""
+    },
+    "jtop_observation": {
+      "command": [
+        "systemctl",
+        "show",
+        "jtop.service",
+        "-p",
+        "ActiveState",
+        "-p",
+        "NRestarts"
+      ],
+      "returncode": 0,
+      "stdout": "NRestarts=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    "limits": "Sampled/local log evidence only; not a universal hardware health proof."
+  },
+  "next_minimal_work": "First a separately recorded parse-only constraint snapshot, then an independently frozen known-successful two-Conv code-Clip prefix with flags NONE versus OBEY, all other settings and source identical. No full candidate retry within the one-attempt contract.",
+  "protected_status": {
+    "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+    "gate05_status": "INCOMPLETE",
+    "new_qall_native_precision": "NOT_AUDITABLE_NO_ENGINE",
+    "dataset_evaluation_run": false
+  },
+  "evidence_sha256": {
+    "results/build_20261016T193951_660815Z/build_result.json": "d3438aadd518ce76ed359d8db1c88928064e28cfdc6cda1c2cf18a7107ced89f",
+    "results/build_20261016T193951_660815Z/build_request.json": "4dde22b0ef8030eccaa1c792f8bc509f1c120da092c4dab1e6a3b322fbaeb0d4",
+    "results/build_20261016T193951_660815Z/parsed_network_validation.json": "3e3e79a548919da867ebdf817270dabcefaa158198462d5bf6df70b869073a9f",
+    "results/build_20261016T193951_660815Z/parsed_clip_attributes_before_correction.json": "70ac775a4cf8bfda16ab204a92da44e3dd55a5f926e13ef74fe5a7b91e8fd620",
+    "results/build_20261016T193951_660815Z/parsed_clip_attributes_after_correction.json": "5ba3886e647dd8abea4493334b1c9620b243743a1a73ce264dd55b28db5e0920",
+    "monitor/build_console.log": "5f842e7b426b5eb5e48fe56ab2204731bbac2f0543776c133d69d5b41dc6f2a0",
+    "monitor/status.json": "eb2f4baa44f61148296c381f67c0992f54851c03a041f99ffaf66aae75e4db62",
+    "supplemental_group_guard.json": "617b294868d2679893f6b2b63c62f27d0096afcff6f5e6a20d51d591b6ba0bcf",
+    "build_failed_end_board_status.json": "5f7c77b2f59b94e15fd3618c6938e3a9e1ab02c4d2141773c2c92ea8249cdc03"
+  }
+}

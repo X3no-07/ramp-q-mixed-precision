@@ -1,0 +1,24 @@
+{
+  "schema": "rampq.gate05.saved_raw_comparer_root_binding_revision/v1",
+  "status": "AUTHORIZED_PRE_REAL_DATASET_COMPARISON_SOURCE_REVISION",
+  "original_source_preserved": "artifacts/gate05/20261021_gate05_completion_plan/comparer_original_before_root_binding.py",
+  "original_source_sha256": "e71a663a0248571cb05b93da8f511a1f244abc2e954e70a14e52d3fa0c553d7e",
+  "revised_source": "scripts/compare_gate05_saved_raw_reference.py",
+  "revised_source_sha256": "132f4e14220bae58e904355a16f357c9d87a9fec267ef2542806f1423a964f73",
+  "only_logic_change": "validate exact raw-index parent equals acceptance frozen absolute canonical matrix_root, which must be a regular directory without symlink.",
+  "postprocess_evaluator_and_frozen_contracts_unchanged": {
+    "scripts/postprocess_gate05_frozen_raw_matrix_v2.py": "d887b9f43fbecf1fec6a9dd3d1663160049cf8b36df57fe167f5d66bb372798d",
+    "scripts/evaluate_gate05_saved_target_matrix_v2.py": "b5ac60351e17761144a8897300ef8c8005f14e87e119b74dc1be2907be4cb895",
+    "artifacts/gate05/20261021_dataset_contracts/raw_contract.json": "11e9a09b1278fecff9f5c3f1a83011d077e88d550288503ef000c0c96012f94e",
+    "artifacts/gate05/20261021_dataset_contracts/acceptance_contract.json": "759506e78383fa262c3cb74735c24c57844d706fdb95bf95bce168d9b143f500"
+  },
+  "Python38_AST": "PASS",
+  "synthetic_self_tests": 6,
+  "synthetic_self_test_result": "PASS",
+  "real_dataset_outputs_read": false,
+  "model_calls": 0,
+  "NMS_calls": 0,
+  "SSH_operations": 0,
+  "original_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE"
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "rampq.gate05.matched_control_fixed_input_protocol/v1",
+  "status": "INPUT_ONLY_COMPATIBILITY_FIXTURE_NO_GPU",
+  "configuration": "r_only_G1",
+  "adapter_sha256": "d814f5351327eeae6b53bc3466a2d5e7c50c57daa6d709931a18ffd1eb0443b6",
+  "execution_helper_sha256": "d1576ea834bd48ad78df3bf920b315726c1f0da8fe388eb7c3450dda8d93e0ca",
+  "build_contract_sha256": "4d2ee7d283abf6cd75b6d76e58870f79f11392fa06eaef37936fab6d7bafca34",
+  "matched_auditor_sha256": "97e031e6ed16f18634483fa3f0f1fa98903f39e12551b94390feab64a8a66d30",
+  "child_guard_sha256": "349411d8349f46d815030f2a59bcb9b20e5a727c801f178a4b65bd06d650c0c6",
+  "child_guard_required_before_GPU": true,
+  "member_spec_sha256": "08911dfd54fe1d7c26e904b68ee2391c6811059c5209b9031b854b2cfcaea36f",
+  "member_manifest_sha256": "001e6683964042937a99bc359e7dfcc151ef0e39a1b41ba1d3734a31981039b0",
+  "source_graph_sha256": "2aade19ee4d42501f7ba7a2956ea91ebcffec7934e1a21c58d02741a2d92926a",
+  "parent_spec_sha256": "4c84b8dfd32dacb9d900b1d758d822bd00ca61265bd9e956ec9d8110db709da9",
+  "parent_manifest_sha256": "93ee4e2e9be6cc372d1d87edc3b4d12adc1ccd99bea65e0cdbadc19235a71fd9",
+  "executions": 2,
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "nvtx_range": "RAMPQ_MATCHED_QDQ_FIXED_IMAGE",
+  "supervision": {
+    "max_seconds": 300,
+    "private_process_group": true
+  },
+  "dataset_evaluation_run": false,
+  "new_CPU_model_executions": 0,
+  "new_builds": 0,
+  "new_tolerances_defined": false,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "expected_boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "monitor_build_script": "run_fixed.py",
+  "original_image_shape": [
+    1080,
+    1920
+  ],
+  "fixed_image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "engine_sha256": "7a5a04ec5243e52ec20a1f34802bce3a785cdcaa71b2569e0a47c4b91b57c357",
+  "build_result_sha256": "775842db2e08ea83c129f55a2d1a67eef46f3434118fa5f39a420673cea173f4",
+  "build_request_sha256": "7ecd7ee2b7feb4064ad0fcb6bec5b13da4db133d8f64a482762a640d98fbf8a2",
+  "engine_layers_sha256": "b18dc32f723b5ed79968861256d1501ffc788fe02d27b75e6e0e341e8a7533c1",
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "precision_audit_sha256": "4a0f6e263dea3c1bb52cac3b7a91542bf40128c441139d16e9e1d7c35324b3e7",
+  "diagnostic_formats_only_allowed": true,
+  "input_sha256": "24240ec755e9a3c8b851b0702fbbbb14edcc55b52dad91633a7fc708cc4dbe94",
+  "input_file": "preprocessed_input.npy",
+  "cpu_reference": {
+    "file": "cpu_expected_outputs.npz",
+    "sha256": "e8bb85a8fb94e649a5f935c9b96f537c8c235de7b34fb331bc4d769ea7192d8d",
+    "output_npz_keys": {
+      "output0": "main_output",
+      "/model.10/m/m.0/attn/pe/conv/Conv_output_0": "pe_output"
+    }
+  }
+}

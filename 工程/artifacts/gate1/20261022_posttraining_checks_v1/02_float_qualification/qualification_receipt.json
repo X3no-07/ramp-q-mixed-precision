@@ -1,0 +1,68 @@
+{
+  "schema": "rampq.gate1.float_qualification_attempt/v1",
+  "status": "COMPLETE_DEBUG_FLOAT_QUALIFICATION_REQUIRES_REVIEW",
+  "phase": "COMPLETE",
+  "started_at_utc": "2026-10-22T06:50:22.147008+00:00",
+  "runner_sha256": "b981869ad658e0619454cdbe2361c8a34bd029adf2a8bbb7f85590853c736f34",
+  "inference_started": true,
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "accepted_float_baseline_ready": false,
+  "scientific_gate_pass": false,
+  "official_visdrone_ap": false,
+  "limits": [
+    "The 109 debug images were previously used for engineering work and are not independent Selection or Holdout evidence.",
+    "FP32 reference weights are the saved fp16 EMA checkpoint converted to float; original full-precision training weights are not recovered.",
+    "Both PyTorch models are unfused and use one fixed preprocessing/postprocessing contract; this is not TensorRT or Orin validation.",
+    "Same-backend dtype tolerances are fixed before execution; failure is retained without relaxing thresholds.",
+    "Project ignore-aware target matching is not official VisDrone AP and has not been certified against a MATLAB/Octave oracle.",
+    "Finite output, target hits, or a dtype guard PASS do not automatically accept a scientific float baseline.",
+    "The original Gate0.5 FAILED_UNCHANGED numerical guard is a separate artifact and is never replaced by this check."
+  ],
+  "input_validation": {
+    "epochs": 30,
+    "best_training_epoch_one_based": 29,
+    "last_training_epoch_one_based": 30,
+    "checkpoint_selection_uses_debug": false,
+    "receipt": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\attempt_receipt.json",
+      "bytes": 29483,
+      "sha256": "1eefc98de40dd7ab7ce10fbd4fa385a52611ad4847124a410ae4b5cae7ca97e1"
+    },
+    "contract": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\training_contract_v3\\contract.json",
+      "bytes": 6024,
+      "sha256": "6dfc1b1c8b2d89948c5804cfda8f22c92cbd721b3dfaf0cffdc314b2b2bd4fc0"
+    },
+    "split_plan_manifest": {
+      "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\split_plan_v1\\manifest.json",
+      "bytes": 1840,
+      "sha256": "c757d7665ec5b3336433ec22ce50fc9104e7f8c2352fd919e2481e470508232d"
+    },
+    "checkpoint_identities": {
+      "best.pt": {
+        "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\run\\weights\\best.pt",
+        "bytes": 5486993,
+        "sha256": "cddd14b3ebba294e4c3200bfb50fc1db1a9459c425d8e51d583c0881d71cfcfa",
+        "training_epoch_zero_based": 28,
+        "training_epoch_one_based": 29,
+        "epoch_provenance": "on_model_save callback before framework final stripping; final serialized epoch may be -1"
+      },
+      "last.pt": {
+        "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\run\\weights\\last.pt",
+        "bytes": 5486993,
+        "sha256": "120e04905d024b78272bde21f55ed1801ed48a5acd7f744892317e1c28c7e49e",
+        "training_epoch_zero_based": 29,
+        "training_epoch_one_based": 30,
+        "epoch_provenance": "on_model_save callback before framework final stripping; final serialized epoch may be -1"
+      }
+    },
+    "debug_image_count": 109
+  },
+  "images_completed": 109,
+  "same_backend_dtype_guard": "FAIL_FIXED_TOLERANCES",
+  "raw_finite_and_shape": true,
+  "debug_project_matching_complete": true,
+  "finished_at_utc": "2026-10-22T06:51:25.570600+00:00",
+  "elapsed_seconds": 63.42199999996228
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "rampq.gate05.deployment_comparability_interpretation_policy/v1",
+  "status": "ROOT_SCOPE_DECISION_FROZEN_BEFORE_NEW150_IMAGE_MODEL_OUTPUTS",
+  "author_role": "Root engineering adjudication; not new human approval or independent preregistration",
+  "basis": {
+    "original_gate_question": "On the actual deployed family, does a target hit by native FP16 disappear in q_all and return for the same target under the predeclared G1 restoration?",
+    "acceptance_gap_audit_sha256": "f75df2d8f6bc4628d804ec0f71021ae8c0687f79fc883cce593f96c5ede1fd7c",
+    "dataset_draft_sha256": "a848a52ad4acb5db7e5b8ad1223ff27a90ff02cf4e4123e85561f9deb7285f5e",
+    "original_target_matching_source_sha256": "f3c4d80658b79ae685e569b37c5ea89af9e6e9dd4a63ce86aff2806a7fcc5adb",
+    "draft_is_not_a_frozen_execution_contract": true,
+    "new150_image_model_outputs_have_been_read": false,
+    "new150_image_model_inference_executions": 0,
+    "historical_Gate0_holdout_results_are_already_known": true
+  },
+  "primary_scope": "Conditional existence of same-target recovery in the authenticated deployed G1-restoration configuration, including its compiler realization. This is not identification of a pure G1 arithmetic mechanism.",
+  "required_source_and_native_controls": [
+    "All six trained source weights/biases and nonquantized source node op/attribute/initializer identities are authenticated. Only predefined QDQ masks and authenticated semantics-preserving code-Clip rewrites differ.",
+    "Every remaining quantizer retains its frozen scale/zero-point/axis/range. No calibration, selection, image/label, group or threshold changes.",
+    "All88 weighted source operations are covered by unchanged actual precision, fusion and weight-attribution rules. INT8 input/weight formats require named arithmetic evidence or the separately authenticated own-runtime/SASS evidence branch.",
+    "Record actual nonquantized floating input/output formats, reported compute attributes, source-to-native fusion and implementation differences wherever inspector provides them. Do not infer exact compute arithmetic solely from IO formats or names.",
+    "q_all versus G1 restoration shares the frozen NONE/INT8+FP16/TF32-off build policy, device/runtime and full-graph input/output contract; source masks, actual formats and complete source lineage identify the tested deployment interventions."
+  ],
+  "floating_metadata_classes": {
+    "MATCHED_REPORTED_FLOAT_METADATA": "Same relevant reported floating formats and accounted source operation; no stronger bitwise arithmetic equivalence implied.",
+    "DOCUMENTED_DEPLOYMENT_REALIZATION_DIFFERENCE": "An authenticated same-source graph with the predefined quantization/restoration treatment realizes different floating boundaries, pointwise partition, implementation or fusion. Retain the exact difference and classify NOT_PURE_ARITHMETIC_CONTROL. This limits mechanism attribution; it is not automatically failure of the deployed-configuration existence question.",
+    "UNAUTHENTICATED_SOURCE_RANGE_POLICY_OR_FUSION": "Extra nonquantized source edits, changed remaining quantizers, undisclosed policy changes, unknown weighted source attribution or unaccounted mixed-group fusion are engineering gaps. No primary eligibility PASS.",
+    "MAPPING_UNAVAILABLE": "Preserve missing metadata. Constant/shape folding may be accounted statically, but unknown weighted computation, output semantics or input provenance cannot be waived."
+  },
+  "explicit_known_controls_and_limits": [
+    "FP16 control INT8 enablement is false; quantized members enable it. All use FP16 true, NONE constraints, TF32 false, same workspace/timing/bindings. Do not claim all flags identical or isolate the sole effect of bit width from this compiler policy difference.",
+    "The FP16 control has FP16 DFL Softmax/decode while q_all and inspected restorations realize FP32 there. Record this baseline deployment difference; do not describe all F-minus-Q misses as uniquely caused by integer rounding.",
+    "q_all and inspected G1 restoration share FP32 DFL/decode, but unchanged source model.6 SiLU/residual partitions can still differ in reported floating formats. Record those differences, rather than assigning every such difference to a proven local G1 mechanism.",
+    "Different native layer counts, weighted-operation fusion partitions, tactic names, pointwise partitions or floating epilogues do not by themselves invalidate the broad deployed-configuration existence comparison. They do prevent a pure G1 arithmetic-cause claim.",
+    "No additional bridge engine has been built under this policy. Earlier bridge ideas were unexecuted proposals. A later bridge is a separately frozen diagnostic and cannot replace the first150-image result after observing it."
+  ],
+  "adjudication": {
+    "primary_positive": "Only if all engineering/reference/input/evaluator controls hold and at least one target belongs to (F minus Q) intersect R_G1. Label local conditional deployed recovery existence, not superiority or pure module causality.",
+    "primary_negative": "Valid complete results with no added miss or no G1 same-target rescue are scientific nonreproduction; do not substitute a combined group.",
+    "engineering_gap": "Incomplete precision/arithmetic/source/fusion/reference/output/input/matching evidence remains INCONCLUSIVE.",
+    "net_benefit": "Always disclose collateral losses and net recovery. Nonzero existence with negative net does not imply useful recovery.",
+    "auxiliary_bidirectional": "Requires engineering eligibility and same-target q_only damage/rescue overlap; report as weak deployment support only."
+  },
+  "protected_history": {
+    "original_complete_PyTorch_ORT_guard": "FAILED_UNCHANGED",
+    "old_named_tactic_gaps_unchanged": true,
+    "draft_strict_float_match_result_retained_separately": true,
+    "previous_failed_builds_and_raw_outputs_retained": true,
+    "no_tolerance_confidence_or_matching_change": true
+  },
+  "execution_authorization": "Interpretation policy only. Exact engine/input/evaluator/reference identities and budgets must still be frozen in the final dataset execution contracts before model outputs.",
+  "gate05_current_status": "INCOMPLETE"
+}

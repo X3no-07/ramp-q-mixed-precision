@@ -1,0 +1,116 @@
+{
+  "schema": "rampq.gate1.float_training_contract/v1",
+  "status": "FROZEN_NOT_STARTED",
+  "frozen_at_utc": "2026-10-22T03:38:03.654923+00:00",
+  "runner_sha256": "d4d71eafbaa69168977c1259f921ae5568b828268f5032275d07076f9aabf895",
+  "weights": {
+    "path": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_preparation\\weights\\yolo11n_official_v8.3.0.pt",
+    "bytes": 5613764,
+    "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1"
+  },
+  "split_plan": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\split_plan_v1",
+  "split_plan_manifest_sha256": "c757d7665ec5b3336433ec22ce50fc9104e7f8c2352fd919e2481e470508232d",
+  "split_assignment_sha256": "50113cde0843076f9524a55b75d54392fced1c5e1092bb9d28d84649272ea025",
+  "source_manifest_sha256": "e657bc24d4cdf16b868bf91111647a933bec95d90385b7fc8ceab483020f8048",
+  "counts": {
+    "calibration_pool": 689,
+    "training_val": 414,
+    "train": 4534,
+    "debug": 109,
+    "quarantine": 725,
+    "selection": 548
+  },
+  "fixed_args": {
+    "task": "detect",
+    "mode": "train",
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "amp": false,
+    "cache": false,
+    "plots": false,
+    "val": true,
+    "device": "0",
+    "seed": 20261022,
+    "deterministic": true,
+    "optimizer": "SGD",
+    "lr0": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "patience": 0,
+    "close_mosaic": 10,
+    "save": true,
+    "save_period": -1,
+    "resume": false,
+    "pretrained": true,
+    "fraction": 1.0,
+    "time": null,
+    "exist_ok": false,
+    "verbose": true,
+    "single_cls": false
+  },
+  "framework_defaults_sha256": "af5e9b0f337612a025943ccf735a9aeada59d033eeb0969386d5a67e21dacd67",
+  "environment_sha256": "9e22e6a47d25150274f5e2050f5153e95460d856483ccf2e54ce35eba5e11832",
+  "environment_fingerprint": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "python_executable_sha256": "0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14",
+    "packages": {
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "ultralytics": "8.4.142",
+      "numpy": "2.5.3",
+      "Pillow": "11.3.0"
+    },
+    "torch_cuda": "12.8",
+    "cudnn": 91002,
+    "gpu": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+        "total_memory": 8546484224
+      }
+    ],
+    "framework_source_sha256": {
+      "engine/trainer.py": "4b929f223830328ffed7331508917c6a65eab3408b5628e7c561274cd750e43e",
+      "engine/model.py": "c30a08164d3784f6e605e7fa5885a76976033fcedf83bb734a52de2a57854ecd",
+      "utils/metrics.py": "974116d855398c48cd4cb30919b5ee424f8eaf555198086d7d5dc3068bc71ce2",
+      "utils/torch_utils.py": "ce1736f99a8bb11957c6c1c56f6dc8ac149e243b9104cdfc6c00c5b668bca8f0",
+      "models/yolo/detect/train.py": "76d6b181259edc09b03f7cea1f9d59bd4eda2f7964146bbb2e76d4f7201dcf5f",
+      "models/yolo/detect/val.py": "10e7944ede74be2c40c176fea65b81956cbe3837fdff1e4a361f2b57f6483e60",
+      "cfg/default.yaml": "6c9c8b6f477fa9257b4a9391be218e2cfe557e6493e8a303e8751e0b21b3c7a1",
+      "cfg/__init__.py": "b02d9534b6d5fcfa50b38634fca3c53f80bb05d35b48d9df8064d8c869aaf451",
+      "data/dataset.py": "c78379de8080bde83bb6588a1690475f6fe325658246bbeaf2b5697b6014132d",
+      "data/augment.py": "83e653664fa459beb66b9f245d90ca50ea25bc3c83caabfa9fab541d4abcb4b3",
+      "nn/tasks.py": "2371b1bc9b1a17782c55259cf760fcd603f0bd012feb55737e7809dafe89c807"
+    }
+  },
+  "checkpoint_policy": {
+    "selection_data_role": "training_val",
+    "selection_metric": "Ultralytics builtin ignore-unaware mAP50-95",
+    "ties": "later epoch",
+    "scientific_acceptance": false,
+    "official_visdrone_ap": false
+  },
+  "recovery_policy": {
+    "external_restarts": 0,
+    "framework_source_modified": false,
+    "custom_trainer_guard": "Abort before a rebuilt pipeline if batch differs from 4; abort on any nonfinite loss or fitness before default NaN recovery.",
+    "default_framework_behavior": "First-epoch memory error may halve batch up to 3 times; NaN recovery may reload last.pt up to 3 times. Guards prevent accepting those altered attempts.",
+    "if_triggered": "Fail this attempt, preserve receipts/checkpoints, require a new reviewed contract; no automatic restart."
+  },
+  "training_started": false,
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "limits": [
+    "Builtin training_val validation is ignore-unaware and is only a checkpoint-selection proxy.",
+    "Fitness uses builtin mAP50-95; tied best fitness saves the later epoch.",
+    "No Selection detector inference and no Holdout access are authorized by this runner.",
+    "A completed run is not automatically an accepted scientific baseline or official VisDrone AP.",
+    "Filename/pixel grouping does not establish true camera or scene identity.",
+    "Framework checkpoint serialization is fp16 EMA; training uses amp=False, and no quantization is applied.",
+    "Ordinary YOLO training loss does not mask ignored regions as negative samples; ignored annotations are only omitted from YOLO positive labels.",
+    "Thirty epochs is the fixed first candidate-training budget, not evidence of sufficient convergence or a final research method.",
+    "Float qualification of preprocessing, box restoration, ignore-aware target hits, and FP32/FP16 numerics remains a separate pending step."
+  ]
+}

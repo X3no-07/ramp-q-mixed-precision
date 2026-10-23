@@ -1,0 +1,98 @@
+{
+  "tensorrt": "8.5.2.2",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "results": [
+    {
+      "variant": "conv_add_tap",
+      "command": [
+        "/usr/src/tensorrt/bin/trtexec",
+        "--onnx=/home/nvidia/rampq/gate05_pe_repro_20261018_v1/conv_add_tap.onnx",
+        "--saveEngine=/home/nvidia/rampq/gate05_pe_repro_20261018_v1/tap_retry180/conv_add_tap.engine",
+        "--int8",
+        "--fp16",
+        "--noTF32",
+        "--memPoolSize=workspace:1024",
+        "--profilingVerbosity=detailed",
+        "--buildOnly"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "max_seconds": 180,
+      "seconds": 145.51,
+      "convolutions": [
+        {
+          "Name": "model.10.m.0.attn.pe.conv.weight + rampq_model_10_m_0_attn_pe_conv_WeightQ + /model.10/m/m.0/attn/pe/conv/Conv",
+          "LayerType": "CudaDepthwiseConvolution",
+          "Inputs": [
+            {
+              "Name": "rampq_model_10_m_0_attn_pe_conv_a_q",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                128,
+                20,
+                20
+              ],
+              "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+            }
+          ],
+          "Outputs": [
+            {
+              "Name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                128,
+                20,
+                20
+              ],
+              "Format/Datatype": "Row major linear FP32"
+            }
+          ],
+          "ParameterType": "Convolution",
+          "Kernel": [
+            3,
+            3
+          ],
+          "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+          "PrePadding": [
+            1,
+            1
+          ],
+          "PostPadding": [
+            1,
+            1
+          ],
+          "Stride": [
+            1,
+            1
+          ],
+          "Dilation": [
+            1,
+            1
+          ],
+          "OutMaps": 128,
+          "Groups": 128,
+          "Weights": {
+            "Type": "Int8",
+            "Count": 1152
+          },
+          "Bias": {
+            "Type": "Float",
+            "Count": 128
+          },
+          "HasSparseWeights": 0,
+          "HasDynamicFilter": 0,
+          "HasDynamicBias": 0,
+          "HasResidual": 0,
+          "ConvXAsActInputIdx": -1,
+          "BiasAsActInputIdx": -1,
+          "ResAsActInputIdx": -1,
+          "Activation": "NONE",
+          "HasBias": 1,
+          "TacticValue": "0xfffffffffffffffb"
+        }
+      ]
+    }
+  ]
+}

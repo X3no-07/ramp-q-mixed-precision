@@ -1,0 +1,94 @@
+FILES_SHA256_OK
+RESULT_DIR: /home/nvidia/rampq/jetson_trt_fp16_20261016_v1/results/build_20261016T090736_185856Z
+TensorRT: 8.5.2.2
+POWER_MODE_QUERY: {'command': ['/usr/sbin/nvpmodel', '-q'], 'returncode': 0, 'output': 'NV Power Mode: 15W\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\n'}
+Building one 1x3x640x640 engine; progress below is elapsed time, not percent.
+BUILD_RUNNING_SECONDS: 20
+BUILD_RUNNING_SECONDS: 40
+BUILD_RUNNING_SECONDS: 60
+BUILD_RUNNING_SECONDS: 80
+BUILD_RUNNING_SECONDS: 100
+BUILD_RUNNING_SECONDS: 120
+BUILD_RUNNING_SECONDS: 140
+BUILD_RUNNING_SECONDS: 160
+BUILD_RUNNING_SECONDS: 180
+BUILD_RUNNING_SECONDS: 200
+BUILD_RUNNING_SECONDS: 220
+BUILD_RUNNING_SECONDS: 240
+BUILD_RUNNING_SECONDS: 260
+BUILD_RUNNING_SECONDS: 280
+BUILD_RUNNING_SECONDS: 300
+BUILD_RUNNING_SECONDS: 320
+BUILD_RUNNING_SECONDS: 340
+BUILD_RUNNING_SECONDS: 360
+BUILD_RUNNING_SECONDS: 380
+BUILD_RUNNING_SECONDS: 400
+BUILD_RUNNING_SECONDS: 420
+BUILD_RUNNING_SECONDS: 440
+BUILD_RUNNING_SECONDS: 460
+BUILD_RUNNING_SECONDS: 480
+BUILD_RUNNING_SECONDS: 500
+BUILD_RUNNING_SECONDS: 520
+BUILD_RUNNING_SECONDS: 540
+BUILD_RUNNING_SECONDS: 560
+BUILD_RUNNING_SECONDS: 580
+BUILD_RUNNING_SECONDS: 600
+BUILD_RUNNING_SECONDS: 620
+BUILD_RUNNING_SECONDS: 640
+BUILD_RUNNING_SECONDS: 660
+BUILD_RUNNING_SECONDS: 680
+BUILD_RUNNING_SECONDS: 700
+BUILD_RUNNING_SECONDS: 720
+BUILD_RUNNING_SECONDS: 740
+BUILD_RUNNING_SECONDS: 760
+BUILD_RUNNING_SECONDS: 780
+BUILD_WARNINGS_OR_ERRORS_LAST_12:
+[10/16/2026-17:07:40] [W] [TRT] onnx2trt_utils.cpp:375: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[10/16/2026-17:20:53] [W] [TRT] TensorRT encountered issues when converting weights between types and that could affect accuracy.
+[10/16/2026-17:20:53] [W] [TRT] If this is not the desired behavior, please modify the weights or retrain with regularization to adjust the magnitude of the weights.
+[10/16/2026-17:20:53] [W] [TRT] Check verbose logs for the list of affected weights.
+[10/16/2026-17:20:53] [W] [TRT] - 72 weights are affected by this issue: Detected subnormal FP16 values.
+/home/nvidia/rampq/jetson_trt_fp16_20261016_v1/build_fp16.py:108: DeprecationWarning: Use get_tensor_name instead.
+  bindings = [{"name": engine.get_binding_name(i), "input": bool(engine.binding_is_input(i)),
+/home/nvidia/rampq/jetson_trt_fp16_20261016_v1/build_fp16.py:108: DeprecationWarning: Use get_tensor_mode instead.
+  bindings = [{"name": engine.get_binding_name(i), "input": bool(engine.binding_is_input(i)),
+/home/nvidia/rampq/jetson_trt_fp16_20261016_v1/build_fp16.py:109: DeprecationWarning: Use get_tensor_shape instead.
+  "shape": list(engine.get_binding_shape(i)), "dtype": str(engine.get_binding_dtype(i))}
+/home/nvidia/rampq/jetson_trt_fp16_20261016_v1/build_fp16.py:109: DeprecationWarning: Use get_tensor_dtype instead.
+  "shape": list(engine.get_binding_shape(i)), "dtype": str(engine.get_binding_dtype(i))}
+{
+  "status": "BUILT_AND_DESERIALIZED",
+  "engine_sha256": "64d91db3063ac28c1552a1ba6443ae28ca45d82d988f5cd375b39fc8cc76b85c",
+  "onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+  "engine_bytes": 7607688,
+  "bindings": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "engine_layers": 192,
+  "fp16_enabled": true,
+  "layer_precision_review": "pending review of engine_layers.json",
+  "detection_inference": "not run",
+  "benchmark": "not run"
+}
+RESULT_DIR: /home/nvidia/rampq/jetson_trt_fp16_20261016_v1/results/build_20261016T090736_185856Z
+TENSORRT_FP16_BUILD_OK

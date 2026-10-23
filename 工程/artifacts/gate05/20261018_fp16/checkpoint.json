@@ -1,0 +1,79 @@
+{
+  "schema": "rampq.gate05.fp16_checkpoint/v1",
+  "client_date": "2026-10-18",
+  "status": "FP16_BUILD_AND_SINGLE_IMAGE_AUDIT_PASS",
+  "scope": "First FP16 baseline engine and one-image execution check; full Gate 0.5 remains incomplete",
+  "board_time_note": "Board reports 2026-10-16 while client date is 2026-10-18; use boot ID and monotonic elapsed time for this run.",
+  "board_boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+  "remote_monitor_pid": 3372,
+  "remote_monitor_dir": "/home/nvidia/rampq/gate05_fp16_20261018_c4d8fcff",
+  "remote_build_dir": "/home/nvidia/rampq/jetson_trt_fp16_20261016_v1/results/build_20261016T090736_185856Z",
+  "remote_smoke_dir": "/home/nvidia/rampq/gate05_fp16_smoke_20261018_c4d8fcff",
+  "gpu": "Jetson Orin NX 8GB",
+  "tensorrt": "8.5.2.2",
+  "jetson_linux": "35.3.1",
+  "requested_power_mode": "15W mode 2",
+  "power_query_limit": "Unprivileged nvpmodel reports 15W but cannot read emc_iso_cap. nvpmodel.service completed successfully; full privileged query not rerun.",
+  "source_model_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "onnx_sha256": "d8ac451f2e526d4ec7c56727fa990a88cb612974e8206cf5821a25ce5e6f6f7d",
+  "input_shape": [
+    1,
+    3,
+    640,
+    640
+  ],
+  "workspace_mib": 1024,
+  "fp16_enabled": true,
+  "tf32_enabled": false,
+  "smoke_image": "000020.jpg",
+  "smoke_image_origin": "First existing Gate 0 Selection entry; not unseen evaluation data",
+  "smoke_guard": {
+    "same_nonzero_detection_count": true,
+    "class_matched_iou_min": 0.9,
+    "confidence_abs_difference_max": 0.05
+  },
+  "pending_full_gate05": [
+    "Freeze dataset decision rules before dataset results; input lists have been staged and verified",
+    "INT8 baseline",
+    "G1 FP16 recovery",
+    "G1+G5 FP16 recovery",
+    "G1+G2 FP16 recovery",
+    "Inspect actual layer precision and group mapping",
+    "Same-image target matching across all five engines"
+  ],
+  "optional_bidirectional_requirement": "Add q_only:G1 before making a real TensorRT bidirectional attribution claim",
+  "scripts": {
+    "scripts\\jetson_monitored_build.py": "8ccf43f33cd5c08491cc7b55e7310d9a70b3c047f4edccfb1d9426428006044f",
+    "scripts\\jetson_trt_fp16_smoke.py": "d3e855ac571e14ba2a4450e9cf662179de1d47eac83a6654b61a3b5c32e6d9cf",
+    "scripts/audit_gate05_fp16.py": "b42f763dc12bde0f347f3e3c9ae43b68025805da3d4d6b4d2b114d527a251761"
+  },
+  "full_gate05_status": "INCOMPLETE",
+  "build_seconds": 804.3,
+  "engine_sha256": "64d91db3063ac28c1552a1ba6443ae28ca45d82d988f5cd375b39fc8cc76b85c",
+  "engine_bytes": 7607688,
+  "verified_remote_file_count": 16,
+  "engine_build_result": "engine_build/build_result.json",
+  "single_image_result": "smoke/smoke_result.json",
+  "precision_audit": "precision_audit.json",
+  "audit_summary": "audit_summary.json",
+  "source_convs_mapped": 88,
+  "engine_conv_layers": 85,
+  "dataset_evaluation_run": false,
+  "benchmark_run": false,
+  "connection_observation": {
+    "client_date": "2026-10-18",
+    "user_confirmed_no_cable_or_power_changes": true,
+    "symptom": "Intermittent SSH Connection reset during result retrieval; later SSH succeeded",
+    "same_boot_id_after_reconnect": true,
+    "root_cause": "not established",
+    "engine_copy": "Initial partial transfer replaced by complete copy, SHA256 verified"
+  },
+  "prepared_data": {
+    "manifest": "../data_v1/manifest.json",
+    "calibration_images": 64,
+    "evaluation_images": 150,
+    "targets": 865,
+    "image_content_overlap": 0,
+    "purpose": "Existing Holdout deployment diagnostic, not independent method confirmation"
+  }
+}

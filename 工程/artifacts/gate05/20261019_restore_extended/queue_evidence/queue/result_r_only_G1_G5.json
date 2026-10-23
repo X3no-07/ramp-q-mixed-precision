@@ -1,0 +1,405 @@
+{
+  "configuration": "r_only_G1_G5",
+  "monitor_pid": 10722,
+  "monitor_process": {
+    "pid": 10722,
+    "state": "R",
+    "ppid": 5740,
+    "pgid": 10722,
+    "sid": 10722,
+    "start_ticks": 1031918,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/jetson_monitored_build.py",
+      "--root",
+      "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200",
+      "--run",
+      "/home/nvidia/rampq/gate05_restore_extended_queue_20261019/monitor_r_only_G1_G5",
+      "--max-seconds",
+      "7200",
+      "--build-script",
+      "jetson_build_precision_candidate.py"
+    ]
+  },
+  "monitor_returncode": 0,
+  "monitor_run": "/home/nvidia/rampq/gate05_restore_extended_queue_20261019/monitor_r_only_G1_G5",
+  "terminal_monitor_status": {
+    "monitor_pid": 10722,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-16T19:45:21+0800",
+    "root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200",
+    "max_seconds": 7200,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/jetson_build_precision_candidate.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 10728,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 4062.2,
+    "final_resources": {
+      "MemAvailable_kib": 5255456,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3746448,
+      "temperatures_c": {
+        "CV0-therm": 48.0,
+        "CPU-therm": 50.031,
+        "SOC2-therm": 49.218,
+        "SOC0-therm": 49.437,
+        "CV1-therm": 47.875,
+        "GPU-therm": 48.093,
+        "tj-therm": 51.187,
+        "SOC1-therm": 50.906,
+        "CV2-therm": 48.625
+      }
+    }
+  },
+  "terminal_monitor_status_sha256": "45c59d271756e53a4c5684a39c5fd0a55e821830f8e4fa17aeef9507a90b8dac",
+  "initial_ready": {
+    "resources": {
+      "MemAvailable_kib": 5225908,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3756176,
+      "temperatures_c": {
+        "CV0-therm": 47.656,
+        "CPU-therm": 49.75,
+        "SOC2-therm": 48.937,
+        "SOC0-therm": 49.0,
+        "CV1-therm": 47.718,
+        "GPU-therm": 47.687,
+        "tj-therm": 50.75,
+        "SOC1-therm": 50.75,
+        "CV2-therm": 48.468
+      }
+    },
+    "global_trtexec_empty": true,
+    "other_gpu_work_empty": true
+  },
+  "after_termination_ready": {
+    "resources": {
+      "MemAvailable_kib": 5262248,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3746448,
+      "temperatures_c": {
+        "CV0-therm": 47.937,
+        "CPU-therm": 50.0,
+        "SOC2-therm": 49.093,
+        "SOC0-therm": 49.375,
+        "CV1-therm": 47.75,
+        "GPU-therm": 48.0,
+        "tj-therm": 51.093,
+        "SOC1-therm": 51.093,
+        "CV2-therm": 48.5
+      }
+    },
+    "global_trtexec_empty": true,
+    "other_gpu_work_empty": true
+  },
+  "process_termination": {
+    "owned_processes_empty": true,
+    "global_trtexec_empty": true,
+    "tracked_process_identities": [
+      {
+        "pid": 10722,
+        "state": "S",
+        "ppid": 5740,
+        "pgid": 10722,
+        "sid": 10722,
+        "start_ticks": 1031918,
+        "argv": [
+          "/usr/bin/python3",
+          "-u",
+          "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/jetson_monitored_build.py",
+          "--root",
+          "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200",
+          "--run",
+          "/home/nvidia/rampq/gate05_restore_extended_queue_20261019/monitor_r_only_G1_G5",
+          "--max-seconds",
+          "7200",
+          "--build-script",
+          "jetson_build_precision_candidate.py"
+        ]
+      },
+      {
+        "pid": 10728,
+        "state": "R",
+        "ppid": 10722,
+        "pgid": 10728,
+        "sid": 10728,
+        "start_ticks": 1032029,
+        "argv": [
+          "/usr/bin/python3",
+          "-u",
+          "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/jetson_build_precision_candidate.py"
+        ]
+      },
+      {
+        "pid": 10726,
+        "state": "S",
+        "ppid": 10722,
+        "pgid": 10726,
+        "sid": 10726,
+        "start_ticks": 1031928,
+        "argv": [
+          "journalctl",
+          "-k",
+          "-b",
+          "-f",
+          "-n",
+          "0",
+          "-o",
+          "short-monotonic",
+          "--no-pager"
+        ]
+      },
+      {
+        "pid": 10727,
+        "state": "S",
+        "ppid": 10722,
+        "pgid": 10727,
+        "sid": 10727,
+        "start_ticks": 1031928,
+        "argv": [
+          "tegrastats",
+          "--interval",
+          "1000"
+        ]
+      },
+      {
+        "pid": 10739,
+        "state": "R",
+        "ppid": 10728,
+        "pgid": 10728,
+        "sid": 10728,
+        "start_ticks": 1032608,
+        "argv": [
+          "/usr/src/tensorrt/bin/trtexec",
+          "--onnx=/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/model.onnx",
+          "--saveEngine=/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/results/build_20261016T114522_326247Z/model.engine",
+          "--fp16",
+          "--noTF32",
+          "--memPoolSize=workspace:1024",
+          "--profilingVerbosity=detailed",
+          "--buildOnly",
+          "--avgTiming=1",
+          "--precisionConstraints=prefer",
+          "--inputIOFormats=fp32:chw",
+          "--outputIOFormats=fp32:chw,fp32:chw",
+          "--int8",
+          "--layerPrecisions=/model.0/conv/Conv:fp16,/model.1/conv/Conv:fp16,/model.2/cv1/conv/Conv:fp16,/model.2/m.0/cv1/conv/Conv:fp16,/model.2/m.0/cv2/conv/Conv:fp16,/model.2/cv2/conv/Conv:fp16,/model.13/cv1/conv/Conv:fp16,/model.13/m.0/cv1/conv/Conv:fp16,/model.13/m.0/cv2/conv/Conv:fp16,/model.13/cv2/conv/Conv:fp16,/model.16/cv1/conv/Conv:fp16,/model.16/m.0/cv1/conv/Conv:fp16,/model.16/m.0/cv2/conv/Conv:fp16,/model.16/cv2/conv/Conv:fp16",
+          "--layerOutputTypes=/model.0/conv/Conv:fp16,/model.1/conv/Conv:fp16,/model.2/cv1/conv/Conv:fp16,/model.2/m.0/cv1/conv/Conv:fp16,/model.2/m.0/cv2/conv/Conv:fp16,/model.2/cv2/conv/Conv:fp16,/model.13/cv1/conv/Conv:fp16,/model.13/m.0/cv1/conv/Conv:fp16,/model.13/m.0/cv2/conv/Conv:fp16,/model.13/cv2/conv/Conv:fp16,/model.16/cv1/conv/Conv:fp16,/model.16/m.0/cv1/conv/Conv:fp16,/model.16/m.0/cv2/conv/Conv:fp16,/model.16/cv2/conv/Conv:fp16"
+        ]
+      }
+    ],
+    "owned_private_groups": {
+      "10722": {
+        "leader_start_ticks": 1031918,
+        "sid": 10722
+      },
+      "10728": {
+        "leader_start_ticks": 1032029,
+        "sid": 10728
+      },
+      "10726": {
+        "leader_start_ticks": 1031928,
+        "sid": 10726
+      },
+      "10727": {
+        "leader_start_ticks": 1031928,
+        "sid": 10727
+      }
+    }
+  },
+  "inherited_spec_max_seconds": 1800,
+  "effective_monitor_max_seconds": 7200,
+  "native_precision_audit": "NOT_RUN",
+  "fixed_image_execution": "NOT_RUN",
+  "latest_build_sha256": "01e5b0761f2b6860d2d09b05fefbceec25409d1d2e981d6a69770f125c2ef03c",
+  "latest_build": {
+    "configuration": "r_only_G1_G5",
+    "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+    "requested_precision_constraints_mode": "prefer",
+    "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+    "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+    "diagnostic_only": true,
+    "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+    "expected_binding_contract": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "primary_output_name": "output0",
+    "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+    "engine_bytes": 7755174,
+    "bindings": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      }
+    ],
+    "engine_layers": 274,
+    "status": "BUILT_AND_DESERIALIZED",
+    "elapsed_seconds": 4060.405392928,
+    "actual_precision_audit": "PENDING",
+    "single_image_inference": "NOT_RUN",
+    "dataset_evaluation": "NOT_RUN",
+    "run_dir": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/results/build_20261016T114522_326247Z"
+  },
+  "build_result_path": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200/results/build_20261016T114522_326247Z/build_result.json",
+  "build_result_sha256": "9b939478301097542976d3639f8fd5e618b6b2e2f589ce104a705bda5581d2b0",
+  "build_result": {
+    "configuration": "r_only_G1_G5",
+    "onnx_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+    "requested_precision_constraints_mode": "prefer",
+    "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+    "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+    "diagnostic_only": true,
+    "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+    "expected_binding_contract": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT"
+      }
+    ],
+    "primary_output_name": "output0",
+    "graph_audit_sha256": "1bf6575b88434f36078d9ea18778836df4a29c801fde78129175c02c374018cc",
+    "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+    "engine_sha256": "57ebf75a03428eb9878b9ea9f6060130403f5154c750049795cb59f471d91784",
+    "engine_bytes": 7755174,
+    "bindings": [
+      {
+        "name": "images",
+        "input": true,
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      },
+      {
+        "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+        "input": false,
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      },
+      {
+        "name": "output0",
+        "input": false,
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "DataType.FLOAT",
+        "format": "TensorFormat.LINEAR"
+      }
+    ],
+    "engine_layers": 274,
+    "status": "BUILT_AND_DESERIALIZED",
+    "elapsed_seconds": 4060.405392928,
+    "actual_precision_audit": "PENDING",
+    "single_image_inference": "NOT_RUN",
+    "dataset_evaluation": "NOT_RUN"
+  }
+}

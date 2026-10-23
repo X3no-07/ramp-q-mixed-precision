@@ -1,0 +1,32 @@
+{
+  "schema": "rampq.gate05.dfl_original_launch_transport_review/v1",
+  "reviewed_client_at": "2026-10-20T12:31:53.013108+08:00",
+  "status": "READ_ONLY_TRANSPORT_REVIEW_PASSED",
+  "script": "artifacts/gate05/20261020_dfl_original_runtime/launch_native.py",
+  "script_sha256": "964644c8dddf0643c62edba46caaf9c5ae8103896a45fa326bb2e8b78739e5ed",
+  "protocol_sha256": "81200cd4900a35f0533c45c7542f6dacc353203e8338a09b47cd24465cc0f6ed",
+  "launch_blockers": [],
+  "python38_ast_passed": true,
+  "SSH_or_native_execution_run": false,
+  "checks": {
+    "fresh_original_stage_root_archive": true,
+    "only_original_none_and_original_obey_requested": true,
+    "new_original_protocol_and_runner_identity": true,
+    "old_DFL_context_name_used_only_for_process_exclusion": true,
+    "zip_hash_crc_and_member_resolved_containment": true,
+    "pure_stdlib_sealed_input_check_before_launch": true,
+    "helpers_and_pre_native_review_hashes_pinned": true,
+    "no_concurrent_recorded_builds": true,
+    "detached_stdio_monitor_and_guard_new_sessions": true,
+    "atexit_registered_before_monitor": true,
+    "guard_ownedgroup_authentication_and_complete_identity_match": true,
+    "guard_watching_or_complete_empty_required": true,
+    "unconfirmed_launch_authenticated_group_cleanup_then_monitor_finally": true,
+    "launch_success_disarms_cleanup_only_after_exclusive_receipt_write": true
+  },
+  "previous_guard_start_failure_blocker_resolved": true,
+  "limits": [
+    "Static transport review only; not an engine build or numerical validation.",
+    "A transient initial empty guard JSON may cause conservative safe abort; no automatic experiment rerun is implied."
+  ]
+}

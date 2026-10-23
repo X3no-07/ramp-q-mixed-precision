@@ -1,0 +1,39 @@
+{
+  "case": "code_clip_none",
+  "phase": "COMPLETE",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "build_seconds_not_benchmark": 50.38067820799188,
+  "status": "DFL_CONV_OUTPUT_ENGINE_SAVED",
+  "engine_sha256": "961e821b6d2965078edc8209feb2b41929012a6522df027b71a2f83834056836",
+  "engine_bytes": 27583,
+  "bindings": [
+    {
+      "name": "/model.23/dfl/Softmax_output_0",
+      "input": true,
+      "shape": [
+        1,
+        16,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    },
+    {
+      "name": "/model.23/dfl/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        1,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "format": "TensorFormat.LINEAR"
+    }
+  ],
+  "model_sha256_after": "805abb78ed4e4d5abc8041b2916dadc83370a14ef1776fcc0a03f163c16bcf81",
+  "builder_request_sha256": "928f09acd4b91da4a6f3c5d729b7a6109a6edaf2bedd66ff077a00c595e75f44",
+  "diagnostic_only": true,
+  "numerical_pass_claim": false
+}

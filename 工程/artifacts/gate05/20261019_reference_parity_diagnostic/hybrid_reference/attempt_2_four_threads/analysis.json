@@ -1,0 +1,168 @@
+{
+  "schema": "rampq.gate05.hybrid_reference_result/v1",
+  "status": "FIXED_IMAGE_CPU_OPERATOR_BACKEND_COUNTERFACTUALS_COMPLETE",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "onnx": "1.22.0",
+    "ort": "1.29.0",
+    "ultralytics": "8.4.142",
+    "numpy": "2.5.3"
+  },
+  "thread_settings": {
+    "torch": 4,
+    "full_ort": 4,
+    "independent_conv_ort": 4,
+    "silu_ort": 1
+  },
+  "original_full_ort_primary_saved_replay_byte_exact": true,
+  "input_byte_exact_with_saved_replay": true,
+  "all_88_independent_conv_sessions_byte_exact_with_full_ort_and_replay": true,
+  "all_88_original_initializer_bytes_and_conv_attributes_preserved": true,
+  "original_full_model_guard_rechecked": {
+    "boxes": {
+      "rtol": 0.005,
+      "atol": 0.5,
+      "violating_elements": 14204,
+      "passing_elements": 19396,
+      "total_elements": 33600,
+      "within_original_tolerance": false,
+      "max_abs": 96.57046508789062
+    },
+    "scores": {
+      "rtol": 0.02,
+      "atol": 0.002,
+      "violating_elements": 47,
+      "passing_elements": 83953,
+      "total_elements": 84000,
+      "within_original_tolerance": false,
+      "max_abs": 0.07295918464660645
+    },
+    "both_slices_within_original_tolerance": false
+  },
+  "silu_unique_instances": 1,
+  "silu_named_aliases": 77,
+  "cases": {
+    "ort_conv_torch_other": {
+      "vs_original_full_ort": {
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "elements": 117600,
+        "different": 83987,
+        "byte_identical": false,
+        "max_abs": 5.60099579161033e-06,
+        "mean_abs": 1.8560590020953648e-08,
+        "rmse": 3.332291428563933e-08
+      },
+      "vs_original_pytorch": {
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "elements": 117600,
+        "different": 117300,
+        "byte_identical": false,
+        "max_abs": 96.57046508789062,
+        "mean_abs": 0.5301376631693309,
+        "rmse": 2.0735793098757163
+      },
+      "original_guard_slices_counterfactual_only": {
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "violating_elements": 0,
+          "passing_elements": 33600,
+          "total_elements": 33600,
+          "within_original_tolerance": true,
+          "max_abs": 0.0
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "violating_elements": 0,
+          "passing_elements": 84000,
+          "total_elements": 84000,
+          "within_original_tolerance": true,
+          "max_abs": 5.60099579161033e-06
+        },
+        "both_slices_within_original_tolerance": true
+      },
+      "quantized_conv_calls": 88,
+      "ort_silu_calls": 0,
+      "first_activation_qdq_byte_difference_from_ort": "model.1.conv",
+      "first_conv_output_byte_difference_from_ort": "model.23.cv3.0.0.1.conv",
+      "unchanged_orthogonal_arithmetic": "All operations other than Conv (and SiLU in case 2) retain original PyTorch execution"
+    },
+    "ort_conv_and_ort_silu_torch_other": {
+      "vs_original_full_ort": {
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "elements": 117600,
+        "different": 83987,
+        "byte_identical": false,
+        "max_abs": 1.3061497838862124e-07,
+        "mean_abs": 1.8427326244280763e-08,
+        "rmse": 2.7323505966297798e-08
+      },
+      "vs_original_pytorch": {
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "elements": 117600,
+        "different": 117300,
+        "byte_identical": false,
+        "max_abs": 96.57046508789062,
+        "mean_abs": 0.5301376632502629,
+        "rmse": 2.0735793098757176
+      },
+      "original_guard_slices_counterfactual_only": {
+        "boxes": {
+          "rtol": 0.005,
+          "atol": 0.5,
+          "violating_elements": 0,
+          "passing_elements": 33600,
+          "total_elements": 33600,
+          "within_original_tolerance": true,
+          "max_abs": 0.0
+        },
+        "scores": {
+          "rtol": 0.02,
+          "atol": 0.002,
+          "violating_elements": 0,
+          "passing_elements": 84000,
+          "total_elements": 84000,
+          "within_original_tolerance": true,
+          "max_abs": 1.3061497838862124e-07
+        },
+        "both_slices_within_original_tolerance": true
+      },
+      "quantized_conv_calls": 88,
+      "ort_silu_calls": 77,
+      "first_activation_qdq_byte_difference_from_ort": "model.1.conv",
+      "first_conv_output_byte_difference_from_ort": null,
+      "unchanged_orthogonal_arithmetic": "All operations other than Conv (and SiLU in case 2) retain original PyTorch execution"
+    }
+  },
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "tolerances_changed": false,
+  "calibration_changed": false,
+  "weights_changed": false,
+  "source_graph_changed": false,
+  "deployment_reference_replaced": false,
+  "dataset_evaluation_run": false,
+  "native_execution_run": false,
+  "cuda_used": false,
+  "accuracy_pass_claim": false,
+  "performance_pass_claim": false,
+  "numerical_migration_pass_claim": false,
+  "limits": "One original fixed image only. In-memory operator backend substitutions change the reference implementation and are causal localization counterfactuals, never a guard pass or replacement deployment reference. Torch quantization and all unmodified arithmetic may still differ from ONNX runtime.",
+  "all_original_source_hashes_unchanged": true
+}

@@ -1,0 +1,71 @@
+{
+  "status": "MIXED_PROBE_INPUTS_VERIFIED_ONLY",
+  "graph_sha256": "7db239f4150de4e7a99aea9a8e56fbca7ada35eef421d59c1b157053625b6b48",
+  "commands": {
+    "compute_output_obey": [
+      "/usr/src/tensorrt/bin/trtexec",
+      "--onnx=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx",
+      "--saveEngine=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/compute_output_obey.engine",
+      "--int8",
+      "--fp16",
+      "--noTF32",
+      "--memPoolSize=workspace:1024",
+      "--avgTiming=1",
+      "--profilingVerbosity=detailed",
+      "--buildOnly",
+      "--inputIOFormats=fp32:chw",
+      "--outputIOFormats=fp32:chw",
+      "--precisionConstraints=obey",
+      "--layerPrecisions=/model.2/cv2/conv/Conv:fp16",
+      "--layerOutputTypes=/model.2/cv2/conv/Conv:fp16"
+    ],
+    "compute_only_obey": [
+      "/usr/src/tensorrt/bin/trtexec",
+      "--onnx=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx",
+      "--saveEngine=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/compute_only_obey.engine",
+      "--int8",
+      "--fp16",
+      "--noTF32",
+      "--memPoolSize=workspace:1024",
+      "--avgTiming=1",
+      "--profilingVerbosity=detailed",
+      "--buildOnly",
+      "--inputIOFormats=fp32:chw",
+      "--outputIOFormats=fp32:chw",
+      "--precisionConstraints=obey",
+      "--layerPrecisions=/model.2/cv2/conv/Conv:fp16"
+    ],
+    "compute_output_prefer": [
+      "/usr/src/tensorrt/bin/trtexec",
+      "--onnx=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx",
+      "--saveEngine=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/compute_output_prefer.engine",
+      "--int8",
+      "--fp16",
+      "--noTF32",
+      "--memPoolSize=workspace:1024",
+      "--avgTiming=1",
+      "--profilingVerbosity=detailed",
+      "--buildOnly",
+      "--inputIOFormats=fp32:chw",
+      "--outputIOFormats=fp32:chw",
+      "--precisionConstraints=prefer",
+      "--layerPrecisions=/model.2/cv2/conv/Conv:fp16",
+      "--layerOutputTypes=/model.2/cv2/conv/Conv:fp16"
+    ],
+    "global_fp16_only": [
+      "/usr/src/tensorrt/bin/trtexec",
+      "--onnx=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/model.onnx",
+      "--saveEngine=/home/nvidia/rampq/gate05_mixed_constraint_probe_20261019/results/global_fp16_only.engine",
+      "--int8",
+      "--fp16",
+      "--noTF32",
+      "--memPoolSize=workspace:1024",
+      "--avgTiming=1",
+      "--profilingVerbosity=detailed",
+      "--buildOnly",
+      "--inputIOFormats=fp32:chw",
+      "--outputIOFormats=fp32:chw"
+    ]
+  },
+  "inference_run": false
+}

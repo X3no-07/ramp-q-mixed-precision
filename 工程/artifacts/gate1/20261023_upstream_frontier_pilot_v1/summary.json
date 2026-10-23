@@ -1,0 +1,232 @@
+{
+  "schema": "rampq.gate1.upstream_frontier_probe_summary/v1",
+  "images": 3,
+  "stage": "pilot3",
+  "cuts": [
+    -1,
+    4,
+    6,
+    10,
+    22
+  ],
+  "frontiers": {
+    "-1": [
+      -1
+    ],
+    "4": [
+      4
+    ],
+    "6": [
+      4,
+      6
+    ],
+    "10": [
+      4,
+      6,
+      10
+    ],
+    "22": [
+      16,
+      19,
+      22
+    ]
+  },
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 285,
+        "max_absolute_error": 9.662109375,
+        "max_error_over_tolerance": 9.708852188760341
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.002469658851623535,
+        "max_error_over_tolerance": 0.3613380905265842
+      }
+    },
+    "native_heads_both_decode_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 248,
+        "max_absolute_error": 9.751129150390625,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0025492310523986816,
+        "max_error_over_tolerance": 0.36192498355768216
+      }
+    },
+    "reference_fp32_vs_cut_-1_source_fp32_suffix_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 248,
+        "max_absolute_error": 9.751129150390625,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0025492310523986816,
+        "max_error_over_tolerance": 0.36192498355768216
+      }
+    },
+    "reference_fp32_vs_cut_-1_source_fp16_suffix_fp32": {
+      "diagnostic_guard_pass_images": 1,
+      "diagnostic_guard_fail_images": 2,
+      "boxes": {
+        "violations": 14,
+        "max_absolute_error": 5.05584716796875,
+        "max_error_over_tolerance": 5.080306063371506
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0011956393718719482,
+        "max_error_over_tolerance": 0.2184226087951902
+      }
+    },
+    "reference_fp32_vs_cut_4_source_fp32_suffix_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 14,
+        "max_absolute_error": 1.52923583984375,
+        "max_error_over_tolerance": 1.5423865560877748
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0024457573890686035,
+        "max_error_over_tolerance": 0.3760959694771903
+      }
+    },
+    "reference_fp32_vs_cut_4_source_fp16_suffix_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 170,
+        "max_absolute_error": 8.749099731445312,
+        "max_error_over_tolerance": 8.791425638081781
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0016551017761230469,
+        "max_error_over_tolerance": 0.28549534499290874
+      }
+    },
+    "reference_fp32_vs_cut_6_source_fp32_suffix_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 12,
+        "max_absolute_error": 1.9173583984375,
+        "max_error_over_tolerance": 1.7776869726262094
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.001803070306777954,
+        "max_error_over_tolerance": 0.25715462036053555
+      }
+    },
+    "reference_fp32_vs_cut_6_source_fp16_suffix_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 190,
+        "max_absolute_error": 7.57879638671875,
+        "max_error_over_tolerance": 7.615460665116234
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0020845532417297363,
+        "max_error_over_tolerance": 0.3242056847386775
+      }
+    },
+    "reference_fp32_vs_cut_10_source_fp32_suffix_fp16": {
+      "diagnostic_guard_pass_images": 3,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.7919921875,
+        "max_error_over_tolerance": 0.9572406235629184
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0018804371356964111,
+        "max_error_over_tolerance": 0.25715462036053555
+      }
+    },
+    "reference_fp32_vs_cut_10_source_fp16_suffix_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 230,
+        "max_absolute_error": 9.092025756835938,
+        "max_error_over_tolerance": 9.136010651868862
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0021080970764160156,
+        "max_error_over_tolerance": 0.3168993936509378
+      }
+    },
+    "reference_fp32_vs_cut_22_source_fp32_suffix_fp16": {
+      "diagnostic_guard_pass_images": 3,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.2259521484375,
+        "max_error_over_tolerance": 0.1343262618680277
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.002092331647872925,
+        "max_error_over_tolerance": 0.2133783626062006
+      }
+    },
+    "reference_fp32_vs_cut_22_source_fp16_suffix_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 248,
+        "max_absolute_error": 9.699142456054688,
+        "max_error_over_tolerance": 9.746064426388767
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0017670392990112305,
+        "max_error_over_tolerance": 0.28074221430692126
+      }
+    }
+  },
+  "all_native_controls_exact": true,
+  "historical_bytes_all_equal": true,
+  "reference_head_captures_all_exact": true,
+  "reference_unified_decode_all_exact": true,
+  "frontiers_and_model_states_unchanged": true,
+  "native_manual_replay_all_exact": true,
+  "native_suffix_replay_all_exact": true,
+  "frontiers_and_states_unchanged": true,
+  "endpoint_aliases_all_exact": true,
+  "raw_tolerances": {
+    "box_rtol": 0.005,
+    "box_atol": 0.5,
+    "score_rtol": 0.02,
+    "score_atol": 0.002
+  },
+  "old_guard_replaced": false,
+  "original_guard_replaced": false,
+  "all_intervention_decode_dtype": "fp32",
+  "scientific_gate_pass": false,
+  "limits": [
+    "Post-hoc bounded arithmetic diagnosis on 109 reused, train-derived debug images; no independent test evidence.",
+    "A cut intervention replaces every DAG edge crossing that cut, not a unique operation or layer cause.",
+    "The input cut includes input rounding; cut 22 repeats the existing head endpoint and is not independent evidence.",
+    "FP16 saved EMA lifted to FP32 is not recovered original FP32 training state.",
+    "All crossed outputs use FP32 decoding; this is not an accepted deployment modification.",
+    "No Selection, Holdout, annotations, NMS, target matching, AP, quantization, TensorRT, Orin, speed or energy evidence.",
+    "Diagnostic comparisons never replace either failing frozen guard or accept Gate1."
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "configuration": "q_only_G1",
+  "onnx_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+  "requested_precision_constraints_mode": "prefer",
+  "spec_sha256": "aeddbe15cdf0509da74d2b4d7e714d6b29e74bdc4d0e30c3e2380d3204e841dc",
+  "manifest_sha256": "7d7f6900072c7914e571a94334168e81e9d45437e95a2d9dc854e69c50e17ea7",
+  "diagnostic_only": true,
+  "local_preflight_status": "LOCAL_QDQ_PREFLIGHT_FAILED",
+  "expected_binding_contract": [
+    {
+      "name": "images",
+      "input": true,
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "output0",
+      "input": false,
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT"
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "dtype": "DataType.FLOAT"
+    }
+  ],
+  "primary_output_name": "output0",
+  "graph_audit_sha256": "0b4147b89510d782437aceda70eae679fe94b0f7b1a32bf1ff48710cce87892d",
+  "module_map_sha256": "062351143f36cadb85479d3f76dd4ac9df37df3ab2f3744cdcb0f4368ab938f0",
+  "native_importer_clip_correction_required": true,
+  "parent_graph_sha256": "946fe83ea185fde114096f9d7b64b5ec9d4bc69afc87476b9c7548cf97a04b91",
+  "dataset_evaluation_run": false,
+  "command": [
+    "TensorRT Python Builder.build_serialized_network"
+  ],
+  "builder_flags": [
+    "INT8",
+    "FP16",
+    "PREFER_PRECISION_CONSTRAINTS",
+    "TF32_DISABLED"
+  ],
+  "workspace_mib": 1024,
+  "avg_timing_iterations": 1,
+  "restored_fp16_compute_and_output_constraints": [
+    "/model.3/conv/Conv",
+    "/model.4/cv1/conv/Conv",
+    "/model.4/m.0/cv1/conv/Conv",
+    "/model.4/m.0/cv2/conv/Conv",
+    "/model.4/cv2/conv/Conv",
+    "/model.5/conv/Conv",
+    "/model.6/cv1/conv/Conv",
+    "/model.6/m.0/cv1/conv/Conv",
+    "/model.6/m.0/m/m.0/cv1/conv/Conv",
+    "/model.6/m.0/m/m.0/cv2/conv/Conv",
+    "/model.6/m.0/m/m.1/cv1/conv/Conv",
+    "/model.6/m.0/m/m.1/cv2/conv/Conv",
+    "/model.6/m.0/cv2/conv/Conv",
+    "/model.6/m.0/cv3/conv/Conv",
+    "/model.6/cv2/conv/Conv",
+    "/model.7/conv/Conv",
+    "/model.8/cv1/conv/Conv",
+    "/model.8/m.0/cv1/conv/Conv",
+    "/model.8/m.0/m/m.0/cv1/conv/Conv",
+    "/model.8/m.0/m/m.0/cv2/conv/Conv",
+    "/model.8/m.0/m/m.1/cv1/conv/Conv",
+    "/model.8/m.0/m/m.1/cv2/conv/Conv",
+    "/model.8/m.0/cv2/conv/Conv",
+    "/model.8/m.0/cv3/conv/Conv",
+    "/model.8/cv2/conv/Conv",
+    "/model.9/cv1/conv/Conv",
+    "/model.9/cv2/conv/Conv",
+    "/model.10/cv1/conv/Conv",
+    "/model.10/m/m.0/attn/qkv/conv/Conv",
+    "/model.10/m/m.0/attn/pe/conv/Conv",
+    "/model.10/m/m.0/attn/proj/conv/Conv",
+    "/model.10/m/m.0/ffn/ffn.0/conv/Conv",
+    "/model.10/m/m.0/ffn/ffn.1/conv/Conv",
+    "/model.10/cv2/conv/Conv",
+    "/model.13/cv1/conv/Conv",
+    "/model.13/m.0/cv1/conv/Conv",
+    "/model.13/m.0/cv2/conv/Conv",
+    "/model.13/cv2/conv/Conv",
+    "/model.16/cv1/conv/Conv",
+    "/model.16/m.0/cv1/conv/Conv",
+    "/model.16/m.0/cv2/conv/Conv",
+    "/model.16/cv2/conv/Conv",
+    "/model.17/conv/Conv",
+    "/model.19/cv1/conv/Conv",
+    "/model.19/m.0/cv1/conv/Conv",
+    "/model.19/m.0/cv2/conv/Conv",
+    "/model.19/cv2/conv/Conv",
+    "/model.20/conv/Conv",
+    "/model.22/cv1/conv/Conv",
+    "/model.22/m.0/cv1/conv/Conv",
+    "/model.22/m.0/m/m.0/cv1/conv/Conv",
+    "/model.22/m.0/m/m.0/cv2/conv/Conv",
+    "/model.22/m.0/m/m.1/cv1/conv/Conv",
+    "/model.22/m.0/m/m.1/cv2/conv/Conv",
+    "/model.22/m.0/cv2/conv/Conv",
+    "/model.22/m.0/cv3/conv/Conv",
+    "/model.22/cv2/conv/Conv",
+    "/model.23/cv2.0/cv2.0.0/conv/Conv",
+    "/model.23/cv2.0/cv2.0.1/conv/Conv",
+    "/model.23/cv2.0/cv2.0.2/Conv",
+    "/model.23/cv2.1/cv2.1.0/conv/Conv",
+    "/model.23/cv2.1/cv2.1.1/conv/Conv",
+    "/model.23/cv2.1/cv2.1.2/Conv",
+    "/model.23/cv2.2/cv2.2.0/conv/Conv",
+    "/model.23/cv2.2/cv2.2.1/conv/Conv",
+    "/model.23/cv2.2/cv2.2.2/Conv",
+    "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+    "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+    "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+    "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+    "/model.23/cv3.0/cv3.0.2/Conv",
+    "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+    "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+    "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+    "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+    "/model.23/cv3.1/cv3.1.2/Conv",
+    "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+    "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+    "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+    "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+    "/model.23/cv3.2/cv3.2.2/Conv",
+    "/model.23/dfl/conv/Conv"
+  ],
+  "explicit_clip_importer_corrections": [
+    {
+      "name": "rampq_model_0_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_cv1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_m_0_cv1_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_m_0_cv2_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    },
+    {
+      "name": "rampq_model_2_cv2_conv_Clip",
+      "before": {
+        "alpha": 1.807675018979014e-43,
+        "beta": 1.7796490496925177e-43
+      },
+      "after": {
+        "alpha": -127.0,
+        "beta": 127.0
+      }
+    }
+  ],
+  "actual_precision_requirement": "Original complete per-source format and named-integer-tactic criteria; imported requests are not adoption proof.",
+  "limits": "One new diagnostic derivative. Original model, calibration, numerical guard and frozen engines unchanged."
+}

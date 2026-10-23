@@ -1,0 +1,18 @@
+{
+  "status": "PARSED_INT8_CLIP_ATTRIBUTES_CORRECTED_FOR_TINY_DIAGNOSTIC",
+  "model_sha256": "94a19035d8000bd546a9476db58fa3a6d58348b4e35e4d11109d0c253b9f95a6",
+  "source_graph_unchanged": true,
+  "clip_name": "rampq_model_0_conv_Clip",
+  "before": {
+    "alpha": 1.807675018979014e-43,
+    "beta": 1.7796490496925177e-43
+  },
+  "after": {
+    "alpha": -127.0,
+    "beta": 127.0
+  },
+  "reason": "Source INT8 constants are -127 and +127; imported FP32 attributes do not preserve these numeric values.",
+  "diagnostic_only": true,
+  "full_model_modified": false,
+  "original_complete_model_guard": "FAILED_UNCHANGED"
+}

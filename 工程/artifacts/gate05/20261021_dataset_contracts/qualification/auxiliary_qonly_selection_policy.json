@@ -1,0 +1,48 @@
+{
+  "schema": "rampq.gate05.auxiliary_qonly_format_eligibility_selection/v1",
+  "status": "FROZEN_BEFORE_NEW150_IMAGE_MODEL_OUTPUTS",
+  "client_at": "2026-10-21T14:41:08.305982+08:00",
+  "selection_basis": "Existing exact-source engine passes all original88actualformat and6integerarithmetic rules; newNONE qonly fails PEactualFP16. Choose by technical eligibility before new150outputs, not target counts.",
+  "new150_image_model_executions": 0,
+  "new150_image_outputs_read": false,
+  "selected_engine_sha256": "486845ca9bcc71e9ad6b721329855a1444184e721d64bcb7eb7daae593bd1476",
+  "selected_graph_sha256": "3f7d481fdf5268bea3d66c2176827dffaf3bd0628f5a2c412d48e3b6c53e9356",
+  "selected_spec_sha256": "aeddbe15cdf0509da74d2b4d7e714d6b29e74bdc4d0e30c3e2380d3204e841dc",
+  "selected_manifest_sha256": "7d7f6900072c7914e571a94334168e81e9d45437e95a2d9dc854e69c50e17ea7",
+  "selected_build_result_sha256": "07f9267d17a989af3d6484dd995b76f7fd7b1d29ee72a8c54c4084195a7df56d",
+  "selected_build_request_sha256": "0f533d7bcb29e6b4dd92eba7edf183cfad25220ebaadb50d1dbb36bbb445b53b",
+  "selected_engine_layers_sha256": "93ba2d062f1905d7487cc70e21b9920135e6c990354146f0491b39bc740227f0",
+  "selected_precision_audit_sha256": "63776e092be4a09c0610890dcad6bf1149a645925028f7498fbf6100dcf1d7ff",
+  "local_source": "artifacts/gate05/20261019_corrected_qonly_native/build_evidence",
+  "local_build": "artifacts/gate05/20261019_corrected_qonly_native/build_evidence/results/build_20261016T170532_870381Z",
+  "selected_flags": {
+    "INT8": true,
+    "FP16": true,
+    "TF32": false,
+    "PREFER_PRECISION_CONSTRAINTS": true,
+    "OBEY_PRECISION_CONSTRAINTS": false
+  },
+  "restored_explicit_compute_and_output_constraints": 82,
+  "quantized_source_convs": 6,
+  "actual_FP16_source_convs": 82,
+  "named_integer_tactics_verified": 6,
+  "selected_policy_role": "PREDECLARED_AUXILIARY_WEAK_DEPLOYMENT_CONTROL_DIFFERENT_CONSTRAINT_POLICY",
+  "core_primary_five": "FP16_NONE,q_all_NONE,r_only_G1_NONE,r_only_G1_G5_NONE,r_only_G1_G2_NONE remain exact new controlled family. No auxiliary substitute for G1 primary.",
+  "limits": [
+    "Not a newNONEfamilymember or identical buildflags.",
+    "Do not isolate pureG1 arithmetic causality or attribute anytarget solely tointegerrounding.",
+    "Allsource/remainingrange/output/inputchecks still required.",
+    "Float/fusion/constraints differences must be accounted explicitly; auxiliary weaksupport stays conditional.",
+    "Original full PyTorch/ORT guard FAILED_UNCHANGED.",
+    "Oldhistoricalsmoke is provenance only and not150dataset result."
+  ],
+  "rejected_new_NONE_control": {
+    "engine_sha256": "aefd8dc6438081939587760401e77212ded88579b209d61d991be816f8a4b5a1",
+    "precision_audit_sha256": "5a194d89bc817e9aadf48787a45dcfa50fce1798afe9227f3a43a2d3e8e1f343",
+    "reason": "PE weighted Conv is actually FP32input+Floatweights+FP32output, violates intended82FP16 mask.",
+    "preserved": true
+  },
+  "new_builds_or_CPU_runs_authorized_by_this_policy": 0,
+  "actual_execution_budget": "Still requires separately frozen dataset contracts before any new150modelcalls.",
+  "gate05_status": "INCOMPLETE"
+}

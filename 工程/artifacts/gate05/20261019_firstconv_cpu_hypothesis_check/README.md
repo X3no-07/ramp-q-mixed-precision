@@ -1,0 +1,1 @@
+CPU-only diagnostic of the saved isolated first Conv. Original graph/input/results remain unchanged. See analysis.json for exact comparisons, source hashes, and evidence limits. No new threshold, complete-model run, GPU execution, or board access.

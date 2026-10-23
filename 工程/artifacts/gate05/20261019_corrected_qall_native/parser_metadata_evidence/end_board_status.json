@@ -1,0 +1,80 @@
+{
+  "board_time": "2026-10-17T03:56:19+0800",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "terminal_monitor": {
+    "monitor_pid": 24014,
+    "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+    "board_time": "2026-10-17T03:54:46+0800",
+    "root": "/home/nvidia/rampq/gate05_corrected_qall_parser_20261019",
+    "max_seconds": 120,
+    "stop_temperature_c": 85,
+    "build_script": "/home/nvidia/rampq/gate05_corrected_qall_parser_20261019/run_parser_metadata.py",
+    "low_memory_stop": "MemAvailable < 384 MiB for 3 consecutive 2-second samples",
+    "note": "Supervision is best effort; cannot guarantee recovery from a kernel hang.",
+    "build_pid": 24019,
+    "status": "BUILD_SCRIPT_OK",
+    "reason": null,
+    "build_returncode": 0,
+    "elapsed_seconds": 9.06,
+    "final_resources": {
+      "MemAvailable_kib": 5154524,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3747216,
+      "temperatures_c": {
+        "CV0-therm": 47.375,
+        "CPU-therm": 49.281,
+        "SOC2-therm": 48.625,
+        "SOC0-therm": 48.687,
+        "CV1-therm": 47.218,
+        "GPU-therm": 47.312,
+        "tj-therm": 50.468,
+        "SOC1-therm": 50.468,
+        "CV2-therm": 47.937
+      }
+    }
+  },
+  "owned_process_checks": {
+    "monitor_pid": {
+      "pid": 24014,
+      "stat": ""
+    },
+    "build_pid": {
+      "pid": 24019,
+      "stat": ""
+    }
+  },
+  "trtexec_stdout": "",
+  "fan": {
+    "command": [
+      "systemctl",
+      "is-active",
+      "nvfancontrol.service"
+    ],
+    "returncode": 0,
+    "stdout": "active\n",
+    "stderr": ""
+  },
+  "jtop": {
+    "command": [
+      "systemctl",
+      "show",
+      "jtop.service",
+      "-p",
+      "ActiveState",
+      "-p",
+      "NRestarts"
+    ],
+    "returncode": 0,
+    "stdout": "NRestarts=0\nActiveState=active\n",
+    "stderr": ""
+  },
+  "memory": {
+    "command": [
+      "free",
+      "-m"
+    ],
+    "returncode": 0,
+    "stdout": "              total        used        free      shared  buff/cache   available\nMem:           7337        1985        3403          35        1949        5039\nSwap:          3668           9        3659\n",
+    "stderr": ""
+  }
+}

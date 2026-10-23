@@ -1,0 +1,264 @@
+{
+  "schema": "rampq.gate1.upstream_frontier_saved_array_audit/v1",
+  "status": "PASS_SAVED_UPSTREAM_FRONTIER_ARRAYS_ONLY",
+  "protocol_sha256": "1b9d696f187bb96d813c6bfdfa2d73f71cfac22839fa8199fe3347f74ce32af1",
+  "probe_manifest": {
+    "sha256": "a5e3da8beb8f232267aa924bb1dca02abbcf9fcfb030a6e0a908ed537ad6c1e6",
+    "files_verified": 227
+  },
+  "reference_head_manifest": {
+    "sha256": "5394dbde5881bf2936ac2cc7de049ed717f6d4d8554e60bac761ceb024d15408",
+    "files_verified": 228
+  },
+  "images_verified": 109,
+  "cuts": [
+    -1,
+    4,
+    6,
+    10,
+    22
+  ],
+  "derived_frontiers": {
+    "-1": [
+      -1
+    ],
+    "4": [
+      4
+    ],
+    "6": [
+      4,
+      6
+    ],
+    "10": [
+      4,
+      6,
+      10
+    ],
+    "22": [
+      16,
+      19,
+      22
+    ]
+  },
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 10849,
+        "max_absolute_error": 10.43951416015625,
+        "max_error_over_tolerance": 9.708852188760341
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.006031900644302368,
+        "max_error_over_tolerance": 0.6683826368440458
+      }
+    },
+    "native_heads_both_decode_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8992,
+        "max_absolute_error": 10.375579833984375,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.006042659282684326,
+        "max_error_over_tolerance": 0.6849108671344437
+      }
+    },
+    "reference_fp32_vs_cut_-1_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8992,
+        "max_absolute_error": 10.375579833984375,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.006042659282684326,
+        "max_error_over_tolerance": 0.6849108671344437
+      }
+    },
+    "reference_fp32_vs_cut_-1_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 34,
+      "fail_images": 75,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 274,
+        "max_absolute_error": 5.05584716796875,
+        "max_error_over_tolerance": 5.080306063371506
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.002169668674468994,
+        "max_error_over_tolerance": 0.39701979326545633
+      }
+    },
+    "reference_fp32_vs_cut_4_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 21,
+      "fail_images": 88,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 450,
+        "max_absolute_error": 8.34527587890625,
+        "max_error_over_tolerance": 6.813278041381262
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004635512828826904,
+        "max_error_over_tolerance": 0.5408448737063566
+      }
+    },
+    "reference_fp32_vs_cut_4_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 6193,
+        "max_absolute_error": 8.749099731445312,
+        "max_error_over_tolerance": 8.791425638081781
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.002975940704345703,
+        "max_error_over_tolerance": 0.5823615936889606
+      }
+    },
+    "reference_fp32_vs_cut_6_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 30,
+      "fail_images": 79,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 340,
+        "max_absolute_error": 7.0670928955078125,
+        "max_error_over_tolerance": 5.769739615567455
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004391491413116455,
+        "max_error_over_tolerance": 0.7361950576789252
+      }
+    },
+    "reference_fp32_vs_cut_6_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 7944,
+        "max_absolute_error": 9.221282958984375,
+        "max_error_over_tolerance": 7.615460665116234
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.0032635927200317383,
+        "max_error_over_tolerance": 0.57705373382879
+      }
+    },
+    "reference_fp32_vs_cut_10_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 103,
+      "fail_images": 6,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 7,
+        "max_absolute_error": 3.344390869140625,
+        "max_error_over_tolerance": 2.385735267177467
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004314124584197998,
+        "max_error_over_tolerance": 0.571361403484841
+      }
+    },
+    "reference_fp32_vs_cut_10_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8694,
+        "max_absolute_error": 10.101470947265625,
+        "max_error_over_tolerance": 9.136010651868862
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.0034378767013549805,
+        "max_error_over_tolerance": 0.48842395083115486
+      }
+    },
+    "reference_fp32_vs_cut_22_source_fp32_suffix_fp16": {
+      "images": 109,
+      "pass_images": 109,
+      "fail_images": 0,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 0,
+        "max_absolute_error": 0.26373291015625,
+        "max_error_over_tolerance": 0.1779523919574763
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.0040915608406066895,
+        "max_error_over_tolerance": 0.4807440407148357
+      }
+    },
+    "reference_fp32_vs_cut_22_source_fp16_suffix_fp32": {
+      "images": 109,
+      "pass_images": 0,
+      "fail_images": 109,
+      "boxes": {
+        "elements": 3662400,
+        "violations": 8980,
+        "max_absolute_error": 10.370834350585938,
+        "max_error_over_tolerance": 9.746064426388767
+      },
+      "scores": {
+        "elements": 9156000,
+        "violations": 0,
+        "max_absolute_error": 0.004985898733139038,
+        "max_error_over_tolerance": 0.5395663508676046
+      }
+    }
+  },
+  "scientific_gate_pass": false,
+  "old_guard_replaced": false,
+  "tolerances_changed": false,
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "limits": [
+    "Saved-array consistency only; no model, convolution, BatchNorm, image decoding, GPU, NMS, annotations, AP, Selection or Holdout computation.",
+    "The complete DAG cut frontier is independently derived from frozen module f fields. Topology-to-real-model identity remains a reviewed runner/CPU-inspector binding.",
+    "Native and suffix replay arrays are compared byte-for-byte; convolution outputs are not independently regenerated from weights by this auditor.",
+    "Saved frontier hashes and casts are checked exactly. Model-state before/after hashes remain reviewed-runner assertions, not independent checkpoint deserialization.",
+    "Nonlinear NumPy decoding checks are approximate sanity checks, separate from exact identities and unchanged fixed guards.",
+    "Cuts are broad interacting arithmetic interventions, not an additive decomposition or proof of a unique layer cause. Input casts are included explicitly.",
+    "No diagnostic contrast replaces historical failed guards, loosens their tolerances, or accepts Gate1. Reused debug images do not establish independent generalization."
+  ],
+  "created_at_utc": "2026-10-22T17:26:51.753635+00:00"
+}

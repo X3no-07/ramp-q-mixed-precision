@@ -1,0 +1,38 @@
+{
+  "schema": "rampq.gate1.native_python_partial_comparison_decision/v1",
+  "client_date": "2026-10-23",
+  "status": "MATCH_FIXED_SYNTHETIC_PARTIAL_INTERMEDIATES_ONLY",
+  "data_role": "synthetic",
+  "native_runtime": "GNU Octave 11.3.0",
+  "official_source_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+  "prefilter_cases": 20,
+  "prefilter_images": 22,
+  "prefilter_prepared_matrix_checks": 66,
+  "matching_cases": 5,
+  "categories_each": 10,
+  "matching_GT_DT_matrix_checks": 100,
+  "total_matrix_checks": 166,
+  "strictly_equal": 166,
+  "differences": 0,
+  "absolute_tolerance": 0,
+  "relative_tolerance": 0,
+  "result": {
+    "path": "artifacts/gate1/20261023_native_python_semantics_v1/comparison_result_v1.json",
+    "bytes": 45435,
+    "sha256": "273eea94106c4ed0b49e357eb1b12661f840adf67023acb67980ed910eb4fb00"
+  },
+  "interpretation": "The existing Python region prefilter and separately named official-style single-image matcher matched the pinned native source outputs for all compared matrices on these 20 fixed synthetic fixtures only.",
+  "not_established": [
+    "A complete Python AP/AR implementation or equivalence",
+    "Arbitrary-input or real-data evaluator equivalence",
+    "Cross-runtime or cross-version tie equivalence",
+    "Project IoU-first matcher equivalence",
+    "Real-data model accuracy or Gate1 scientific acceptance"
+  ],
+  "full_Python_AP_implemented": false,
+  "official_AP_equivalence_certified": false,
+  "project_IoU_first_matcher_called_or_modified": false,
+  "model_executed": false,
+  "real_data_Selection_Holdout_accessed": false,
+  "gate1_scientific_pass": false
+}

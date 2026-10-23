@@ -1,0 +1,145 @@
+{
+  "schema": "rampq.gate05.dfl_conv_output_protocol/v1",
+  "client_at": "2026-10-20T22:21:22.616862+08:00",
+  "status": "FROZEN_BEFORE_PREPARATION_AND_NATIVE",
+  "source_graph": "artifacts/gate05/20261019_corrected_qall_candidate/model.onnx",
+  "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "source_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+  "source_manifest_sha256": "f1679f4ebc7daa3e5589c28968785d48f31269cc5f83b0398bfa3bd7a91d861f",
+  "parent_dfl_spec_sha256": "934e075aa58dde1829b600d3d011f5ad51c4f1da1af78f7791944f492781b14d",
+  "parent_dfl_manifest_sha256": "3836e82ed53afb14fe16d3b9431864c0c4a45fd0d3418c7c06a4f6fcd46ed1d0",
+  "next_plan_sha256": "14d7710f373fd56a8d68ec15219e234c96a9325938e25ad703696b879160dfc8",
+  "saved_corrected_CPU_npy_sha256": "fd4bcdcee24cd53651fdd7a508423c802f3b432c759647204c7b748f22abd50d",
+  "cpu_composition_check": {
+    "cut_CPU_runs": 1,
+    "total_new_CPU_runs": 1,
+    "provider": "CPUExecutionProvider",
+    "graph_optimization": "ORT_DISABLE_ALL",
+    "threads": 4,
+    "input_shape": [
+      1,
+      16,
+      4,
+      8400
+    ],
+    "output_shape": [
+      1,
+      1,
+      4,
+      8400
+    ],
+    "old_reference_shape": [
+      1,
+      4,
+      8400
+    ],
+    "dtype": "float32",
+    "elements": 33600,
+    "required": "Exactly equal C-order raw array bytes to saved 3D corrected DFL CPU output after explicit shape/dtype/element-count correspondence; whole NPY identity is not required because shape headers differ.",
+    "expected_policy": "Save new4D expected NPY/NPZ by pure reshape of old saved CPU array, authenticate new identities separately; never silently feed old3D expected.",
+    "new_Softmax_72Conv_old_DFL_or_full_detector_runs": 0,
+    "on_failure": "Preserve; no retry/reselection/seal/native start",
+    "proves": "Same local CPU output bytes with changed shape boundary only, not complete native equivalence"
+  },
+  "source_conv_names": [
+    "/model.23/dfl/conv/Conv"
+  ],
+  "input_name": "/model.23/dfl/Softmax_output_0",
+  "input_shape": [
+    1,
+    16,
+    4,
+    8400
+  ],
+  "input_dtype": "float32",
+  "input_file": "dfl_softmax_probabilities.npy",
+  "output_name": "/model.23/dfl/conv/Conv_output_0",
+  "output_shape": [
+    1,
+    1,
+    4,
+    8400
+  ],
+  "output_dtype": "float32",
+  "graph_node_count": 6,
+  "initializer_count": 7,
+  "clip_names": [
+    "rampq_model_23_dfl_conv_Clip"
+  ],
+  "case_order": [
+    "code_clip_none",
+    "code_clip_obey"
+  ],
+  "cases": [
+    {
+      "id": "code_clip_none",
+      "variant": "code_clip",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    },
+    {
+      "id": "code_clip_obey",
+      "variant": "code_clip",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    }
+  ],
+  "per_case_max_build_seconds": 300,
+  "batch_max_seconds": 900,
+  "maximum_builds": 2,
+  "maximum_executions": 4,
+  "attempts_each": 1,
+  "common_native_settings": {
+    "int8": true,
+    "fp16": true,
+    "tf32": false,
+    "prefer": false,
+    "workspace_mib": 1024,
+    "avg_timing_iterations": 1,
+    "profiling_verbosity": "DETAILED",
+    "io_format": "FLOAT_LINEAR",
+    "repeat_executions_if_success": 2,
+    "layer_precision_or_output_type_setters_or_resets": false,
+    "clip_alpha": -127.0,
+    "clip_beta": 127.0
+  },
+  "continue_on_plain_compile_failure": true,
+  "abort_batch_on": [
+    "timeout",
+    "resource_stop",
+    "signal_or_external_interrupt",
+    "stale_input_or_protocol"
+  ],
+  "native_output_policy": "Record sole source Conv input/weight/output/tactic separately; no INT8 output requirement. External FLOAT/LINEAR output is4D[1,1,4,8400]. Preserve all parser requests/actual flags/Clip bounds. Success executes twice and saves raw; failed engine never runs.",
+  "cross_stage_policy": "Compare saved8node NONE final raw to new6node NONE after explicit4D/3D arrayshape correspondence, no oldnative rerun. Sameprobfixture/weights/scales/QDQ requests/commonsettings except OBEY. Outputcut removes Constant+Reshape and changes native output boundary, so changed outcomes cannot uniquely attribute fullmodel failure to a removed node.",
+  "protected_status": {
+    "original_complete_model_guard": "FAILED_UNCHANGED",
+    "full_model_retry_run": false,
+    "dataset_evaluation_run": false,
+    "new_tolerances_defined": false,
+    "gate05_status": "INCOMPLETE"
+  },
+  "parent_softmax_cut_checkpoint_sha256": "142eb219ccbeea141237cd1a89ecdb2c47c70b99d35159d9912ba8cea767c53f",
+  "parent_softmax_cut_spec_sha256": "45f284588d37e607478ce79e443d46a49b870ef0d65614c5ce0867130f50316b",
+  "parent_softmax_cut_manifest_sha256": "6c456b5a08d34a9a3fb87d7fced5474f2c349d632076bfc0fb5eb8dd793ddde1",
+  "parent_softmax_cut_graph_sha256": "1f8662a55675152d57d248b16c2eebec08c4d54b5b6ebc4841f0c177d6ac2298",
+  "saved_probability_fixture_sha256": "5a7c5b1c58bd4d956a042dfeab3b11133a072ce7ab8630195f51d8f38a508520",
+  "removed_node_names": [
+    "/model.23/dfl/Constant_1",
+    "/model.23/dfl/Reshape_1"
+  ],
+  "reused_fixture": {
+    "file": "dfl_softmax_probabilities.npy",
+    "source": "artifacts/gate05/20261020_dfl_softmax_cut_probe/dfl_softmax_probabilities.npy",
+    "new_generation_runs": 0
+  },
+  "limits": [
+    "This is one saved CPU probability fixture, not native upstream probability validation.",
+    "Compilation compatibility and original topology numerical error remain distinct.",
+    "No fullmodel retry, parserreset, scale/weight change, tolerance change, dataset or performance claim."
+  ]
+}

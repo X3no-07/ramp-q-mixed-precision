@@ -1,0 +1,199 @@
+{
+  "schema": "rampq.gate1.direct_mixed_prototype_delivery_review/v1",
+  "status": "PASS_DIRECT_MIXED_PROTOTYPE_METADATA_REPORT_AND_SCOPE_REVIEW_ONLY",
+  "at_utc": "2026-10-23T02:45:45.242385+00:00",
+  "issues": [],
+  "report_sha256": "be840401edd050183ef212ad774dd8800197a37fc26e38d8a1a68c39f9fa27e2",
+  "state_sha256": "602106167ccf280fcb26705081bd6911ebb78accf6da9f93c3e2817c9ca228f3",
+  "decision_sha256": "5ab46c53f60fcfa9ba804b6ba9c3907e47f95ef20bf73b60d918cb55f3e158e7",
+  "local_links_checked": 8,
+  "decision_evidence_files_hashed": 13,
+  "synthetic_tests": {
+    "runner": 12,
+    "auditor": 18,
+    "combined": 30
+  },
+  "prototype_debug_numeric_check": {
+    "images": 109,
+    "pass_images": 109,
+    "fail_images": 0,
+    "boxes": {
+      "elements": 3662400,
+      "violations": 0,
+      "max_absolute_error": 0.26373291015625,
+      "max_error_over_tolerance": 0.1779523919574763
+    },
+    "scores": {
+      "elements": 9156000,
+      "violations": 0,
+      "max_absolute_error": 0.0040915608406066895,
+      "max_error_over_tolerance": 0.4807440407148357
+    }
+  },
+  "historical_original_guard_comparison": {
+    "images": 109,
+    "pass_images": 0,
+    "fail_images": 109,
+    "boxes": {
+      "elements": 3662400,
+      "violations": 10849,
+      "max_absolute_error": 10.43951416015625,
+      "max_error_over_tolerance": 9.708852188760341
+    },
+    "scores": {
+      "elements": 9156000,
+      "violations": 0,
+      "max_absolute_error": 0.006031900644302368,
+      "max_error_over_tolerance": 0.6683826368440458
+    }
+  },
+  "source_bindings": {
+    "runner_sha256": "7974e7ef5e671d644ad2c2ee7ec675debeed686d72935a5e8bb04adc3e968073",
+    "auditor_sha256": "d9e1ac819337d01629b429492f1227222d2191d033281f8e0ce655c494952c5d",
+    "source_review_manifest_sha256": "bbc097d694e493f38cff69bf466710e64531acda68f2275215fd2888151d5971"
+  },
+  "scope_verified": [
+    "One checkpoint deserialization per attempt and109 fresh mixed forwards are recorded; no saved frontiers are inference inputs.",
+    "Body modules0..22 remain FP32 including neck; cv2/cv3 towers are FP16; DFL, geometry and sigmoid observed tensors are FP32.",
+    "Parameter/floating-buffer and observed tensor dtypes do not establish GPU kernel internal accumulation precision.",
+    "The109 raw numerical checks pass unchanged tolerances with zero box/score violations and the reported maxima.",
+    "Endpoint byte equality is implementation consistency with an earlier observed engineering endpoint, not independent effect or generalization evidence.",
+    "Pilot3 is a subset of full109; not112 independent samples.",
+    "Cut10 still fails6 images/7 elements. The prototype implements cut22 and does not change cut10 results.",
+    "Saved FP16 EMA cannot recover original pre-save FP32 training state.",
+    "The saved-array auditor does not regenerate convolutions, BatchNorm or pixels; NumPy FP64 decoder checks are approximate only.",
+    "The validation runner requires historical references and is not a self-contained deployment package.",
+    "Historical full-FP16 and Gate0.5 numerical failures remain failed, and Gate1 scientific baseline acceptance and official AP certification remain pending.",
+    "No new task scoring, sealed data scoring, quantization, backend/export, Orin/TensorRT or performance evidence is claimed."
+  ],
+  "review_scope": {
+    "model_loading": false,
+    "model_execution": false,
+    "gpu_execution": false,
+    "real_image_or_annotation_loading": false,
+    "raw_array_loading": false,
+    "large_NPZ_rehash_repeated": false,
+    "source_audit_repeated": false,
+    "prior_macro_or_preliminary_modified": false
+  },
+  "local_links": [
+    "artifacts/gate1/20261023_upstream_diagnosis_delivery/prototype_decision.json",
+    "artifacts/gate1/current_execution_state_v8.json",
+    "46_Gate1_上游边界精度对照与缓解路径.md",
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/full109_protocol.json",
+    "scripts/probe_gate1_body32_head16.py",
+    "artifacts/gate1/20261023_body32_head16_full_v1/receipt.json",
+    "artifacts/gate1/20261023_body32_head16_full_v1/summary.json",
+    "artifacts/gate1/20261023_body32_head16_full_audit_v1/recomputed_summary.json"
+  ],
+  "sources": {
+    "47_Gate1_混合精度独立推理原型验证.md": {
+      "bytes": 5715,
+      "sha256": "be840401edd050183ef212ad774dd8800197a37fc26e38d8a1a68c39f9fa27e2"
+    },
+    "artifacts/gate1/current_execution_state_v8.json": {
+      "bytes": 5188,
+      "sha256": "602106167ccf280fcb26705081bd6911ebb78accf6da9f93c3e2817c9ca228f3"
+    },
+    "artifacts/gate1/20261023_upstream_diagnosis_delivery/prototype_decision.json": {
+      "bytes": 7350,
+      "sha256": "5ab46c53f60fcfa9ba804b6ba9c3907e47f95ef20bf73b60d918cb55f3e158e7"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_v1/summary.json": {
+      "bytes": 2995,
+      "sha256": "96337181f1c63fd7dcf33ee81f56c6cc16de0de97a4f74e9190e889c036d2486"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_v1/receipt.json": {
+      "bytes": 1875,
+      "sha256": "7a6fef8a23ebacff45a911d4af41a1490be43429481131e9b88de70da93a0a77"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_v1/protocol.json": {
+      "bytes": 15234,
+      "sha256": "cd4b8064d9e7c0e5ec5a0908d791cc6040574ef1dac93f5364b27725f59b35dd"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_v1/manifest.json": {
+      "bytes": 36494,
+      "sha256": "b09ed6611e003bbfaabb7b78b71aeda279df61b89973136f940eb4febc54b8aa"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_v1/model_provenance.json": {
+      "bytes": 4958,
+      "sha256": "51461c6d88a4c3ef4482ba9c30431aca89fde704ec98e5482a06950e292ccffe"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_v1/runner_source.py": {
+      "bytes": 27679,
+      "sha256": "7974e7ef5e671d644ad2c2ee7ec675debeed686d72935a5e8bb04adc3e968073"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_audit_v1/recomputed_summary.json": {
+      "bytes": 2984,
+      "sha256": "42667fadde7a7eace36bae047128dd3475fb80c494e555b0bc1a57a32537e94d"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_audit_v1/manifest.json": {
+      "bytes": 470,
+      "sha256": "537d150d3880b68be3d8d3f73bd4fb01f09a3a62ab39455d2500929ad8da3939"
+    },
+    "artifacts/gate1/20261023_body32_head16_full_audit_v1/audit_source_identity.json": {
+      "bytes": 589,
+      "sha256": "da0b8cd067dc3b1798d588d38106ad0ace6e127ecc9bbc699fc54c9e8fcdb60d"
+    },
+    "artifacts/gate1/20261023_body32_head16_pilot_v1/summary.json": {
+      "bytes": 2984,
+      "sha256": "915dc5bdd4e05473b4fd4518468d6cfe67d88f8cef79cc09ddf82781cbd1c92a"
+    },
+    "artifacts/gate1/20261023_body32_head16_pilot_v1/receipt.json": {
+      "bytes": 1868,
+      "sha256": "b188a1f5be66d8b23def6e540bb4e0a3953eb7b118aa6ea3476572de958dcac0"
+    },
+    "artifacts/gate1/20261023_body32_head16_pilot_v1/protocol.json": {
+      "bytes": 11045,
+      "sha256": "e4272d6ac3d9fcaf4267839970370fdbfab3eaa6a65c6338a9a650e0e6aec00b"
+    },
+    "artifacts/gate1/20261023_body32_head16_pilot_v1/manifest.json": {
+      "bytes": 2362,
+      "sha256": "55e37e776b03bcd12bbdf7319f5a896b90e27c9c801b0507f7b17de714acda78"
+    },
+    "artifacts/gate1/20261023_body32_head16_pilot_audit_v1/recomputed_summary.json": {
+      "bytes": 2959,
+      "sha256": "84793792bc5e6ad7ee1a6d19cb2ad50394a163f4b1958ac03259747f78ca8952"
+    },
+    "artifacts/gate1/20261023_body32_head16_pilot_audit_v1/manifest.json": {
+      "bytes": 468,
+      "sha256": "1762111cf59af09d223762080313a41d2f079c27601d8de0400d43b2cb31bb6a"
+    },
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/protocol_preparation_receipt.json": {
+      "bytes": 1812,
+      "sha256": "5039220d17820b9c554999552b23a6d3eab1af8f3132084d96520de28d92dcfd"
+    },
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/full109_protocol.json": {
+      "bytes": 15234,
+      "sha256": "cd4b8064d9e7c0e5ec5a0908d791cc6040574ef1dac93f5364b27725f59b35dd"
+    },
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/runner_tests/result.json": {
+      "bytes": 661,
+      "sha256": "4f3b2963ce25dfb87215e39d42a68fde5e132a39b7d2e9660671b9347e54eb97"
+    },
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/independent_review/review.json": {
+      "bytes": 5106,
+      "sha256": "6605279c2ead18e492f0cb2192397887e2112226dbdc813ce183cb9d15c4b7e3"
+    },
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/independent_review/manifest.json": {
+      "bytes": 1223,
+      "sha256": "bbc097d694e493f38cff69bf466710e64531acda68f2275215fd2888151d5971"
+    },
+    "artifacts/gate1/20261023_body32_head16_prototype_preparation/independent_review/synthetic_test_results.txt": {
+      "bytes": 5074,
+      "sha256": "a03e0974f9b07a40e46286ddc2e1b2d52ba65e773cb22e7b535709eaf3ad9f19"
+    },
+    "artifacts/gate1/20261023_head_precision_full_audit_v1/recomputed_summary.json": {
+      "bytes": 5923,
+      "sha256": "b4deb0c20598d1b49a763dbdbf2bfd53c20be5ec9f109896240dd188fddb89fc"
+    },
+    "artifacts/gate1/20261023_upstream_final_review/preliminary_review.json": {
+      "bytes": 5841,
+      "sha256": "dba5148275562947b42b298d28b4836fc33829856e720c1740c08f16467c5dae"
+    },
+    "artifacts/gate1/20261023_upstream_final_review/macro_review.json": {
+      "bytes": 8078,
+      "sha256": "4496a6f827a5b38dfa2eb68983b7311130d5c2a000bea5a2190eb728ebf64bae"
+    }
+  }
+}

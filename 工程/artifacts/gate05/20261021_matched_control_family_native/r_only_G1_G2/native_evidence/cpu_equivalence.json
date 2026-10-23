@@ -1,0 +1,90 @@
+{
+  "schema": "rampq.gate05.matched_control_family_CPU_equivalence/v1",
+  "status": "MEMBER_CPU_EQUIVALENCE_AND_REFERENCE_PASSED",
+  "configuration": "r_only_G1_G2",
+  "new_CPU_model_runs": 2,
+  "source_CPU_runs": 1,
+  "candidate_CPU_runs": 1,
+  "source_graph_and_candidate_graph_file_byte_identical": false,
+  "provider": "CPUExecutionProvider",
+  "graph_optimization": "ORT_DISABLE_ALL",
+  "threads": 4,
+  "onnx": "1.22.0",
+  "onnxruntime": "1.29.0",
+  "numpy": "2.5.3",
+  "outputs": [
+    {
+      "name": "output0",
+      "expected_npz_key": "main_output",
+      "candidate": {
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "float32",
+        "elements": 117600,
+        "all_finite": true,
+        "min": 0.0,
+        "max": 644.7755126953125,
+        "raw_array_sha256": "0cab12f6908b9d98f2c8891ba89dfff2a0734076c3260e54449c5a167b0340cd"
+      },
+      "source": {
+        "shape": [
+          1,
+          14,
+          8400
+        ],
+        "dtype": "float32",
+        "elements": 117600,
+        "all_finite": true,
+        "min": 0.0,
+        "max": 644.7755126953125,
+        "raw_array_sha256": "0cab12f6908b9d98f2c8891ba89dfff2a0734076c3260e54449c5a167b0340cd"
+      },
+      "contract_valid": true,
+      "byte_exact_source": true,
+      "identity_proof_if_no_source_CPU": null
+    },
+    {
+      "name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+      "expected_npz_key": "pe_output",
+      "candidate": {
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "elements": 51200,
+        "all_finite": true,
+        "min": -3.9965851306915283,
+        "max": 4.7766337394714355,
+        "raw_array_sha256": "31542e639148016928107bcde8330f809abb2556fd2de5fb0eb7cd321fceec39"
+      },
+      "source": {
+        "shape": [
+          1,
+          128,
+          20,
+          20
+        ],
+        "dtype": "float32",
+        "elements": 51200,
+        "all_finite": true,
+        "min": -3.9965851306915283,
+        "max": 4.7766337394714355,
+        "raw_array_sha256": "31542e639148016928107bcde8330f809abb2556fd2de5fb0eb7cd321fceec39"
+      },
+      "contract_valid": true,
+      "byte_exact_source": true,
+      "identity_proof_if_no_source_CPU": null
+    }
+  ],
+  "source_raw_file": "cpu_source_outputs.npz",
+  "candidate_raw_file": "cpu_candidate_outputs.npz",
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "new_tolerances_defined": false,
+  "native_or_dataset_run": false
+}

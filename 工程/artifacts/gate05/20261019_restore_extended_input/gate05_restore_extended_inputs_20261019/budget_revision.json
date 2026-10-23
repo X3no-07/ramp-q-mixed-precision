@@ -1,0 +1,101 @@
+{
+  "schema": "rampq.gate05.extended_restore_budget_revision/v1",
+  "revision": "restore_prefer_external_7200_20261019",
+  "prepared_client_at": "2026-10-19T12:34:43.378189+08:00",
+  "status": "STAGED_NOT_BUILT_OR_EXECUTED",
+  "configuration_order": [
+    "r_only_G1",
+    "r_only_G1_G5",
+    "r_only_G1_G2"
+  ],
+  "inherited_spec_max_seconds": 1800,
+  "effective_monitor_max_seconds": 7200,
+  "maximum_attempts_per_configuration": 1,
+  "maximum_build_budget_sum_seconds": 21600,
+  "max_monitor_and_cleanup_seconds_per_configuration": 7380,
+  "original_inputs_byte_identical": true,
+  "original_manifest_spec_builder_monitor_and_SHA256SUMS_unchanged": true,
+  "scientific_criteria_changed": false,
+  "actual_precision_audit_criteria_changed": false,
+  "new_calibration_or_graph_or_tactic_parameters_added": false,
+  "original_numerical_guard": "FAILED_UNCHANGED",
+  "dataset_evaluation_run": false,
+  "time_limit_owner": "Original jetson_monitored_build.py invoked explicitly with --max-seconds 7200",
+  "budget_metadata_alone_enforces_nothing": true,
+  "inherited_spec_1800_is_not_the_effective_monitor_limit": true,
+  "precision_request_is_not_actual_adoption": true,
+  "reason": "The three unchanged prefer restore searches ended solely at their original 1800-second supervision limit, without a complete engine or kernel/thermal safety event. One longer bounded search is prepared for each, without changing model or acceptance criteria.",
+  "supporting_recent_observation": "The parent task reports that the unchanged full q_all search built in 3279.35 seconds; that result is separate evidence, not a claim that these mixed searches will build or adopt requested precision.",
+  "prior_timeouts": [
+    {
+      "configuration": "r_only_G1",
+      "evidence": "artifacts/gate05/20261019_precision_native/prefer/r_only_G1/build_evidence",
+      "receipt_sha256": "fd370ce784227e4a655b38dd3438a9f1fd6e88d2f1463c567359a6e3c45c11e3",
+      "verified_original_file_count": 26,
+      "monitor_status_sha256": "21b5d90b6baaee7af2eb8067326a56c771dca495725ac4cccdecaec5dcb0be32",
+      "monitor_status": "STOPPED_BY_MONITOR",
+      "monitor_stop_reason": "Build supervision time limit reached",
+      "monitor_elapsed_seconds": 1802.48,
+      "boot_id_of_prior_attempt": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+      "max_temperature_c": 54.343,
+      "min_available_mib": 1538.765625,
+      "no_kernel_safety_events": true,
+      "engine_present": false,
+      "limits": "Previous-attempt evidence only; not a current board status or a numerical/precision pass"
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "evidence": "artifacts/gate05/20261019_precision_native/prefer/r_only_G1_G5/build_evidence",
+      "receipt_sha256": "3bbd5f142896e5770a53d8485edeb2b73ada87ba56d43ae8e71b355a0072266b",
+      "verified_original_file_count": 26,
+      "monitor_status_sha256": "a5d26adb689238f84f78c35a35039c34880d67045916f052a571bcf73124ce08",
+      "monitor_status": "STOPPED_BY_MONITOR",
+      "monitor_stop_reason": "Build supervision time limit reached",
+      "monitor_elapsed_seconds": 1802.56,
+      "boot_id_of_prior_attempt": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+      "max_temperature_c": 54.687,
+      "min_available_mib": 1298.546875,
+      "no_kernel_safety_events": true,
+      "engine_present": false,
+      "limits": "Previous-attempt evidence only; not a current board status or a numerical/precision pass"
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "evidence": "artifacts/gate05/20261019_precision_native/prefer/r_only_G1_G2/build_evidence",
+      "receipt_sha256": "e159c08e22408d8cba38a214d3018f9e6ae841d51881b3fd594f675bae19bb8f",
+      "verified_original_file_count": 26,
+      "monitor_status_sha256": "c92fa79e1c00d799ab29ba7d3c87f60c89435c0b21ac5893eb6f871c5abc3776",
+      "monitor_status": "STOPPED_BY_MONITOR",
+      "monitor_stop_reason": "Build supervision time limit reached",
+      "monitor_elapsed_seconds": 1802.52,
+      "boot_id_of_prior_attempt": "c4d8fcff-a824-488b-b004-6ad71eeb5d95",
+      "max_temperature_c": 54.156,
+      "min_available_mib": 1004.109375,
+      "no_kernel_safety_events": true,
+      "engine_present": false,
+      "limits": "Previous-attempt evidence only; not a current board status or a numerical/precision pass"
+    }
+  ],
+  "required_pre_start": [
+    "Use current live boot UUID, not a historical UUID",
+    "Previous GPU work and descendants fully ended",
+    "Fan active, >=3 GiB MemAvailable, all temperatures <85 C",
+    "No other trtexec/build/monitor/queue/smoke and shared queue lock acquired"
+  ],
+  "required_between_items": [
+    "Terminal monitor identity and exact effective budget verified",
+    "Only ordinary build failure or pure timeout may advance",
+    "All recorded owned PID/start_ticks/private-session descendants ended",
+    "Global trtexec empty and readiness checks repeated"
+  ],
+  "whole_queue_stop": [
+    "Boot ID change",
+    "Fan failure",
+    "Temperature >=85 C",
+    "MemAvailable <384 MiB for three consecutive two-second samples",
+    "New USB/OOM/panic kernel marker",
+    "Collector failure or monitor loss",
+    "Other GPU work or descendants that cannot be confirmed ended"
+  ],
+  "limits": "Engineering build/deserialization only. Successful engines still need unchanged native precision/tactic audits and separate fixed-image execution. No automatic retry, dataset evaluation, target rescue, causal comparison, or performance claim."
+}

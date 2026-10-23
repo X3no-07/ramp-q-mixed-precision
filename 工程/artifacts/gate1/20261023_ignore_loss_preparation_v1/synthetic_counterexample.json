@@ -1,0 +1,131 @@
+{
+  "schema": "rampq.gate1.ignore_negative_synthetic_counterexample/v1",
+  "status": "PASS_SYNTHETIC_FIXED_LOGIT_GRADIENT_PROPERTIES_ONLY",
+  "device": "cpu",
+  "torch": "2.10.0+cu128",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "fixture": {
+    "invented_data_only": true,
+    "image_hw": [
+      10,
+      10
+    ],
+    "logits": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "target_scores": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "fg_mask": [
+      [
+        false,
+        true,
+        false
+      ]
+    ],
+    "anchor_centers_xy": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        2.0
+      ],
+      [
+        8.0,
+        8.0
+      ]
+    ],
+    "ignore_boxes_xyxy": [
+      [
+        [
+          0.0,
+          0.0,
+          4.0,
+          4.0
+        ]
+      ]
+    ]
+  },
+  "ordinary_loss": 4.1588830833596715,
+  "masked_loss": 2.772588722239781,
+  "denominator": 1.0,
+  "ordinary_gradient": [
+    [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ]
+  ],
+  "masked_gradient": [
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ]
+  ],
+  "keep_mask": [
+    [
+      false,
+      true,
+      true
+    ]
+  ],
+  "ignored_negative_gradient_zero": true,
+  "positive_all_class_gradient_bitexact": true,
+  "retained_background_gradient_bitexact": true,
+  "real_data_read": false,
+  "weights_loaded": false,
+  "gpu_used": false,
+  "training_run": false,
+  "training_pipeline_integrated": false,
+  "limits": [
+    "Only a fixed-logit classification primitive, not a trained-network result.",
+    "Equal retained-logit gradients do not imply equal shared-parameter gradients or future training trajectories."
+  ]
+}

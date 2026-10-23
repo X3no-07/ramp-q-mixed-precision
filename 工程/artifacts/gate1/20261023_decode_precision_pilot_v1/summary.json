@@ -1,0 +1,94 @@
+{
+  "schema": "rampq.gate1.decode_precision_probe_summary/v1",
+  "stage": "pilot3",
+  "images": 3,
+  "historical_bytes_all_equal": true,
+  "native_reconstruction_all_exact": true,
+  "comparisons": {
+    "original_fp32_vs_original_fp16": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 285,
+        "max_absolute_error": 9.662109375,
+        "max_error_over_tolerance": 9.708852188760341
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.002469658851623535,
+        "max_error_over_tolerance": 0.3613380905265842
+      }
+    },
+    "original_fp32_vs_fp16_logits_decode_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 248,
+        "max_absolute_error": 9.751129150390625,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0025492310523986816,
+        "max_error_over_tolerance": 0.36192498355768216
+      }
+    },
+    "same_fp32_logits_decode_fp32_vs_fp16": {
+      "diagnostic_guard_pass_images": 3,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.50897216796875,
+        "max_error_over_tolerance": 0.8863846569010577
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0003203153610229492,
+        "max_error_over_tolerance": 0.027391706175632816
+      }
+    },
+    "same_fp16_logits_decode_fp32_vs_fp16": {
+      "diagnostic_guard_pass_images": 3,
+      "diagnostic_guard_fail_images": 0,
+      "boxes": {
+        "violations": 0,
+        "max_absolute_error": 0.6348876953125,
+        "max_error_over_tolerance": 0.9076468738184639
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.00024318695068359375,
+        "max_error_over_tolerance": 0.017606606317140113
+      }
+    },
+    "fp32_logits_vs_fp16_logits_both_decode_fp32": {
+      "diagnostic_guard_pass_images": 0,
+      "diagnostic_guard_fail_images": 3,
+      "boxes": {
+        "violations": 248,
+        "max_absolute_error": 9.751129150390625,
+        "max_error_over_tolerance": 9.79830261905463
+      },
+      "scores": {
+        "violations": 0,
+        "max_absolute_error": 0.0025492310523986816,
+        "max_error_over_tolerance": 0.36192498355768216
+      }
+    }
+  },
+  "raw_tolerances": {
+    "box_rtol": 0.005,
+    "box_atol": 0.5,
+    "score_rtol": 0.02,
+    "score_atol": 0.002
+  },
+  "scientific_gate_pass": false,
+  "original_guard_replaced": false,
+  "limits": [
+    "Post-hoc arithmetic diagnosis on previously reused training-derived debug images; no Selection or Holdout access.",
+    "The saved fp16 EMA lifted to float32 is not original full-precision training EMA.",
+    "FP16-logit FP32 decoding changes arithmetic only and is not a validated deployment fix.",
+    "Diagnostic comparison PASS never replaces the original unchanged dtype guard or accepts Gate1.",
+    "No NMS, target matching, AP, quantization, TensorRT, Orin, speed, or energy measurement."
+  ]
+}

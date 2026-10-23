@@ -1,0 +1,30 @@
+{
+  "schema": "rampq.gate05.matched_smoke_adapter_input_compatibility/v1",
+  "status": "TWO_ACTUAL_SAVED_MEMBER_SCHEMAS_PASSED_NO_EXECUTION",
+  "adapter_sha256": "d814f5351327eeae6b53bc3466a2d5e7c50c57daa6d709931a18ffd1eb0443b6",
+  "child_guard_sha256": "349411d8349f46d815030f2a59bcb9b20e5a727c801f178a4b65bd06d650c0c6",
+  "records": [
+    {
+      "configuration": "fp16_control",
+      "status": "ACTUAL_SAVED_MEMBER_INPUTS_VALIDATED_ONLY",
+      "derived_fp16_conv_count": 88,
+      "strict_named_tactics_verified": true,
+      "strict_named_tactic_gaps": 0,
+      "fixture_protocol_sha256": "9045dafaa7026a5181fbc57e004bfcf87ee64edc90f7c675f9014b81afdc8bae",
+      "fixture_gpu_execution_authorized": false
+    },
+    {
+      "configuration": "r_only_G1",
+      "status": "ACTUAL_SAVED_MEMBER_INPUTS_VALIDATED_ONLY",
+      "derived_fp16_conv_count": 6,
+      "strict_named_tactics_verified": false,
+      "strict_named_tactic_gaps": 7,
+      "fixture_protocol_sha256": "5056d5127ce1346a449ef4c93d33d000e27fb77491f6326cee673bff6eadabfe",
+      "fixture_gpu_execution_authorized": false
+    }
+  ],
+  "forbidden_runtime_modules_imported": [],
+  "guard_handshake_or_private_session_tested": false,
+  "new_model_CPU_native_SSH_or_child_process_runs": 0,
+  "fixtures_scope": "Input-only compatibility fixtures, explicitly rejected by adapter/guard for execution. Root must freeze a separate execution protocol and reviewed profiling wrapper."
+}

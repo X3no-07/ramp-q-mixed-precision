@@ -1,0 +1,647 @@
+{
+  "schema": "rampq.gate1.float_training_attempt/v1",
+  "mode": "train",
+  "status": "RUNNING_FROZEN_FLOAT_TRAINING",
+  "phase": "TRAINING",
+  "started_at_utc": "2026-10-22T04:21:54.770308+00:00",
+  "training_started": true,
+  "runner_sha256": "99730c52afcd363250054b41bf47bc0aceb8db1bbb8f0179c0b1742f2d951ef6",
+  "limits": [
+    "Builtin training_val validation is ignore-unaware and is only a checkpoint-selection proxy.",
+    "Fitness uses builtin mAP50-95; tied best fitness saves the later epoch.",
+    "No Selection detector inference and no Holdout access are authorized by this runner.",
+    "A completed run is not automatically an accepted scientific baseline or official VisDrone AP.",
+    "Filename/pixel grouping does not establish true camera or scene identity.",
+    "Framework checkpoint serialization is fp16 EMA; training uses amp=False, and no quantization is applied.",
+    "Ordinary YOLO training loss does not mask ignored regions as negative samples; ignored annotations are only omitted from YOLO positive labels.",
+    "Thirty epochs is the fixed first candidate-training budget, not evidence of sufficient convergence or a final research method.",
+    "Float qualification of preprocessing, box restoration, ignore-aware target hits, and FP32/FP16 numerics remains a separate pending step."
+  ],
+  "contract_sha256": "6dfc1b1c8b2d89948c5804cfda8f22c92cbd721b3dfaf0cffdc314b2b2bd4fc0",
+  "contract_manifest_sha256": "f80772ea5122ff64c3c19d7ac7deeefedd4b11cfb6566807a70db778221461ca",
+  "counts": {
+    "calibration_pool": 689,
+    "training_val": 414,
+    "train": 4534,
+    "debug": 109,
+    "quarantine": 725,
+    "selection": 548
+  },
+  "selection_detector_inference": false,
+  "holdout_accessed": false,
+  "recovery_events": [],
+  "epoch_history": [
+    {
+      "epoch_zero_based": 0,
+      "epoch_one_based": 1,
+      "fitness": 0.04259,
+      "best_fitness": 0.04259,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.4426,
+        "metrics/recall(B)": 0.14039,
+        "metrics/mAP50(B)": 0.08887,
+        "metrics/mAP50-95(B)": 0.04259,
+        "val/box_loss": 1.97963,
+        "val/cls_loss": 1.75746,
+        "val/dfl_loss": 1.02394
+      },
+      "at_utc": "2026-10-22T04:30:36.420404+00:00"
+    },
+    {
+      "epoch_zero_based": 1,
+      "epoch_one_based": 2,
+      "fitness": 0.06082,
+      "best_fitness": 0.06082,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.31496,
+        "metrics/recall(B)": 0.16026,
+        "metrics/mAP50(B)": 0.11837,
+        "metrics/mAP50-95(B)": 0.06082,
+        "val/box_loss": 1.92592,
+        "val/cls_loss": 1.62135,
+        "val/dfl_loss": 1.00707
+      },
+      "at_utc": "2026-10-22T04:35:09.704542+00:00"
+    },
+    {
+      "epoch_zero_based": 2,
+      "epoch_one_based": 3,
+      "fitness": 0.06037,
+      "best_fitness": 0.06082,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.30641,
+        "metrics/recall(B)": 0.1694,
+        "metrics/mAP50(B)": 0.12232,
+        "metrics/mAP50-95(B)": 0.06037,
+        "val/box_loss": 1.96362,
+        "val/cls_loss": 1.59531,
+        "val/dfl_loss": 1.00343
+      },
+      "at_utc": "2026-10-22T04:39:50.566956+00:00"
+    },
+    {
+      "epoch_zero_based": 3,
+      "epoch_one_based": 4,
+      "fitness": 0.07085,
+      "best_fitness": 0.07085,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.2251,
+        "metrics/recall(B)": 0.18398,
+        "metrics/mAP50(B)": 0.13552,
+        "metrics/mAP50-95(B)": 0.07085,
+        "val/box_loss": 1.89086,
+        "val/cls_loss": 1.49869,
+        "val/dfl_loss": 0.9871
+      },
+      "at_utc": "2026-10-22T04:44:28.522116+00:00"
+    },
+    {
+      "epoch_zero_based": 4,
+      "epoch_one_based": 5,
+      "fitness": 0.08166,
+      "best_fitness": 0.08166,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.25281,
+        "metrics/recall(B)": 0.20213,
+        "metrics/mAP50(B)": 0.15369,
+        "metrics/mAP50-95(B)": 0.08166,
+        "val/box_loss": 1.88292,
+        "val/cls_loss": 1.48086,
+        "val/dfl_loss": 0.97714
+      },
+      "at_utc": "2026-10-22T04:49:05.753040+00:00"
+    },
+    {
+      "epoch_zero_based": 5,
+      "epoch_one_based": 6,
+      "fitness": 0.08621,
+      "best_fitness": 0.08621,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.25148,
+        "metrics/recall(B)": 0.21294,
+        "metrics/mAP50(B)": 0.16261,
+        "metrics/mAP50-95(B)": 0.08621,
+        "val/box_loss": 1.82922,
+        "val/cls_loss": 1.43288,
+        "val/dfl_loss": 0.97358
+      },
+      "at_utc": "2026-10-22T04:53:42.260144+00:00"
+    },
+    {
+      "epoch_zero_based": 6,
+      "epoch_one_based": 7,
+      "fitness": 0.09186,
+      "best_fitness": 0.09186,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.29913,
+        "metrics/recall(B)": 0.22017,
+        "metrics/mAP50(B)": 0.16985,
+        "metrics/mAP50-95(B)": 0.09186,
+        "val/box_loss": 1.80401,
+        "val/cls_loss": 1.40368,
+        "val/dfl_loss": 0.9629
+      },
+      "at_utc": "2026-10-22T04:58:14.232336+00:00"
+    },
+    {
+      "epoch_zero_based": 7,
+      "epoch_one_based": 8,
+      "fitness": 0.09715,
+      "best_fitness": 0.09715,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.27781,
+        "metrics/recall(B)": 0.22989,
+        "metrics/mAP50(B)": 0.17901,
+        "metrics/mAP50-95(B)": 0.09715,
+        "val/box_loss": 1.77322,
+        "val/cls_loss": 1.36882,
+        "val/dfl_loss": 0.96061
+      },
+      "at_utc": "2026-10-22T05:02:45.361803+00:00"
+    },
+    {
+      "epoch_zero_based": 8,
+      "epoch_one_based": 9,
+      "fitness": 0.09538,
+      "best_fitness": 0.09715,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.27131,
+        "metrics/recall(B)": 0.24062,
+        "metrics/mAP50(B)": 0.18099,
+        "metrics/mAP50-95(B)": 0.09538,
+        "val/box_loss": 1.81703,
+        "val/cls_loss": 1.37204,
+        "val/dfl_loss": 0.96737
+      },
+      "at_utc": "2026-10-22T05:07:21.024841+00:00"
+    },
+    {
+      "epoch_zero_based": 9,
+      "epoch_one_based": 10,
+      "fitness": 0.0983,
+      "best_fitness": 0.0983,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.28634,
+        "metrics/recall(B)": 0.22891,
+        "metrics/mAP50(B)": 0.18252,
+        "metrics/mAP50-95(B)": 0.0983,
+        "val/box_loss": 1.77538,
+        "val/cls_loss": 1.3527,
+        "val/dfl_loss": 0.95492
+      },
+      "at_utc": "2026-10-22T05:11:59.948064+00:00"
+    },
+    {
+      "epoch_zero_based": 10,
+      "epoch_one_based": 11,
+      "fitness": 0.10304,
+      "best_fitness": 0.10304,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.30177,
+        "metrics/recall(B)": 0.23407,
+        "metrics/mAP50(B)": 0.19201,
+        "metrics/mAP50-95(B)": 0.10304,
+        "val/box_loss": 1.78005,
+        "val/cls_loss": 1.33593,
+        "val/dfl_loss": 0.95136
+      },
+      "at_utc": "2026-10-22T05:16:38.888375+00:00"
+    },
+    {
+      "epoch_zero_based": 11,
+      "epoch_one_based": 12,
+      "fitness": 0.10914,
+      "best_fitness": 0.10914,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.29331,
+        "metrics/recall(B)": 0.24504,
+        "metrics/mAP50(B)": 0.20167,
+        "metrics/mAP50-95(B)": 0.10914,
+        "val/box_loss": 1.76069,
+        "val/cls_loss": 1.31529,
+        "val/dfl_loss": 0.95157
+      },
+      "at_utc": "2026-10-22T05:21:19.477062+00:00"
+    },
+    {
+      "epoch_zero_based": 12,
+      "epoch_one_based": 13,
+      "fitness": 0.10965,
+      "best_fitness": 0.10965,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.30652,
+        "metrics/recall(B)": 0.23913,
+        "metrics/mAP50(B)": 0.20155,
+        "metrics/mAP50-95(B)": 0.10965,
+        "val/box_loss": 1.74736,
+        "val/cls_loss": 1.29969,
+        "val/dfl_loss": 0.9494
+      },
+      "at_utc": "2026-10-22T05:25:57.640693+00:00"
+    },
+    {
+      "epoch_zero_based": 13,
+      "epoch_one_based": 14,
+      "fitness": 0.11113,
+      "best_fitness": 0.11113,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.30428,
+        "metrics/recall(B)": 0.24396,
+        "metrics/mAP50(B)": 0.20277,
+        "metrics/mAP50-95(B)": 0.11113,
+        "val/box_loss": 1.73938,
+        "val/cls_loss": 1.2899,
+        "val/dfl_loss": 0.94708
+      },
+      "at_utc": "2026-10-22T05:30:32.678278+00:00"
+    },
+    {
+      "epoch_zero_based": 14,
+      "epoch_one_based": 15,
+      "fitness": 0.11989,
+      "best_fitness": 0.11989,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.31819,
+        "metrics/recall(B)": 0.25571,
+        "metrics/mAP50(B)": 0.21713,
+        "metrics/mAP50-95(B)": 0.11989,
+        "val/box_loss": 1.71022,
+        "val/cls_loss": 1.24773,
+        "val/dfl_loss": 0.93695
+      },
+      "at_utc": "2026-10-22T05:35:07.780519+00:00"
+    },
+    {
+      "epoch_zero_based": 15,
+      "epoch_one_based": 16,
+      "fitness": 0.11615,
+      "best_fitness": 0.11989,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.3124,
+        "metrics/recall(B)": 0.24439,
+        "metrics/mAP50(B)": 0.21094,
+        "metrics/mAP50-95(B)": 0.11615,
+        "val/box_loss": 1.71613,
+        "val/cls_loss": 1.26165,
+        "val/dfl_loss": 0.93681
+      },
+      "at_utc": "2026-10-22T05:39:43.835760+00:00"
+    },
+    {
+      "epoch_zero_based": 16,
+      "epoch_one_based": 17,
+      "fitness": 0.12282,
+      "best_fitness": 0.12282,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.32973,
+        "metrics/recall(B)": 0.25767,
+        "metrics/mAP50(B)": 0.22146,
+        "metrics/mAP50-95(B)": 0.12282,
+        "val/box_loss": 1.70168,
+        "val/cls_loss": 1.25089,
+        "val/dfl_loss": 0.93238
+      },
+      "at_utc": "2026-10-22T05:44:21.991470+00:00"
+    },
+    {
+      "epoch_zero_based": 17,
+      "epoch_one_based": 18,
+      "fitness": 0.1175,
+      "best_fitness": 0.12282,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.32413,
+        "metrics/recall(B)": 0.2527,
+        "metrics/mAP50(B)": 0.21618,
+        "metrics/mAP50-95(B)": 0.1175,
+        "val/box_loss": 1.69583,
+        "val/cls_loss": 1.23827,
+        "val/dfl_loss": 0.93333
+      },
+      "at_utc": "2026-10-22T05:49:00.623917+00:00"
+    },
+    {
+      "epoch_zero_based": 18,
+      "epoch_one_based": 19,
+      "fitness": 0.12303,
+      "best_fitness": 0.12303,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.32599,
+        "metrics/recall(B)": 0.25647,
+        "metrics/mAP50(B)": 0.22177,
+        "metrics/mAP50-95(B)": 0.12303,
+        "val/box_loss": 1.68873,
+        "val/cls_loss": 1.23143,
+        "val/dfl_loss": 0.93308
+      },
+      "at_utc": "2026-10-22T05:53:37.230945+00:00"
+    },
+    {
+      "epoch_zero_based": 19,
+      "epoch_one_based": 20,
+      "fitness": 0.12458,
+      "best_fitness": 0.12458,
+      "batch": 4,
+      "metrics": {
+        "metrics/precision(B)": 0.32686,
+        "metrics/recall(B)": 0.25903,
+        "metrics/mAP50(B)": 0.22472,
+        "metrics/mAP50-95(B)": 0.12458,
+        "val/box_loss": 1.68346,
+        "val/cls_loss": 1.21529,
+        "val/dfl_loss": 0.93171
+      },
+      "at_utc": "2026-10-22T05:58:14.609328+00:00"
+    }
+  ],
+  "checkpoint_history": [
+    {
+      "epoch_zero_based": 0,
+      "best_saved_this_epoch": true,
+      "fitness": 0.04259,
+      "best_fitness": 0.04259,
+      "at_utc": "2026-10-22T04:30:36.418404+00:00"
+    },
+    {
+      "epoch_zero_based": 1,
+      "best_saved_this_epoch": true,
+      "fitness": 0.06082,
+      "best_fitness": 0.06082,
+      "at_utc": "2026-10-22T04:35:09.702508+00:00"
+    },
+    {
+      "epoch_zero_based": 2,
+      "best_saved_this_epoch": false,
+      "fitness": 0.06037,
+      "best_fitness": 0.06082,
+      "at_utc": "2026-10-22T04:39:50.565150+00:00"
+    },
+    {
+      "epoch_zero_based": 3,
+      "best_saved_this_epoch": true,
+      "fitness": 0.07085,
+      "best_fitness": 0.07085,
+      "at_utc": "2026-10-22T04:44:28.521108+00:00"
+    },
+    {
+      "epoch_zero_based": 4,
+      "best_saved_this_epoch": true,
+      "fitness": 0.08166,
+      "best_fitness": 0.08166,
+      "at_utc": "2026-10-22T04:49:05.751171+00:00"
+    },
+    {
+      "epoch_zero_based": 5,
+      "best_saved_this_epoch": true,
+      "fitness": 0.08621,
+      "best_fitness": 0.08621,
+      "at_utc": "2026-10-22T04:53:42.258144+00:00"
+    },
+    {
+      "epoch_zero_based": 6,
+      "best_saved_this_epoch": true,
+      "fitness": 0.09186,
+      "best_fitness": 0.09186,
+      "at_utc": "2026-10-22T04:58:14.230335+00:00"
+    },
+    {
+      "epoch_zero_based": 7,
+      "best_saved_this_epoch": true,
+      "fitness": 0.09715,
+      "best_fitness": 0.09715,
+      "at_utc": "2026-10-22T05:02:45.359802+00:00"
+    },
+    {
+      "epoch_zero_based": 8,
+      "best_saved_this_epoch": false,
+      "fitness": 0.09538,
+      "best_fitness": 0.09715,
+      "at_utc": "2026-10-22T05:07:21.022859+00:00"
+    },
+    {
+      "epoch_zero_based": 9,
+      "best_saved_this_epoch": true,
+      "fitness": 0.0983,
+      "best_fitness": 0.0983,
+      "at_utc": "2026-10-22T05:11:59.946062+00:00"
+    },
+    {
+      "epoch_zero_based": 10,
+      "best_saved_this_epoch": true,
+      "fitness": 0.10304,
+      "best_fitness": 0.10304,
+      "at_utc": "2026-10-22T05:16:38.887379+00:00"
+    },
+    {
+      "epoch_zero_based": 11,
+      "best_saved_this_epoch": true,
+      "fitness": 0.10914,
+      "best_fitness": 0.10914,
+      "at_utc": "2026-10-22T05:21:19.475461+00:00"
+    },
+    {
+      "epoch_zero_based": 12,
+      "best_saved_this_epoch": true,
+      "fitness": 0.10965,
+      "best_fitness": 0.10965,
+      "at_utc": "2026-10-22T05:25:57.638304+00:00"
+    },
+    {
+      "epoch_zero_based": 13,
+      "best_saved_this_epoch": true,
+      "fitness": 0.11113,
+      "best_fitness": 0.11113,
+      "at_utc": "2026-10-22T05:30:32.676317+00:00"
+    },
+    {
+      "epoch_zero_based": 14,
+      "best_saved_this_epoch": true,
+      "fitness": 0.11989,
+      "best_fitness": 0.11989,
+      "at_utc": "2026-10-22T05:35:07.778534+00:00"
+    },
+    {
+      "epoch_zero_based": 15,
+      "best_saved_this_epoch": false,
+      "fitness": 0.11615,
+      "best_fitness": 0.11989,
+      "at_utc": "2026-10-22T05:39:43.833760+00:00"
+    },
+    {
+      "epoch_zero_based": 16,
+      "best_saved_this_epoch": true,
+      "fitness": 0.12282,
+      "best_fitness": 0.12282,
+      "at_utc": "2026-10-22T05:44:21.989472+00:00"
+    },
+    {
+      "epoch_zero_based": 17,
+      "best_saved_this_epoch": false,
+      "fitness": 0.1175,
+      "best_fitness": 0.12282,
+      "at_utc": "2026-10-22T05:49:00.620835+00:00"
+    },
+    {
+      "epoch_zero_based": 18,
+      "best_saved_this_epoch": true,
+      "fitness": 0.12303,
+      "best_fitness": 0.12303,
+      "at_utc": "2026-10-22T05:53:37.228941+00:00"
+    },
+    {
+      "epoch_zero_based": 19,
+      "best_saved_this_epoch": true,
+      "fitness": 0.12458,
+      "best_fitness": 0.12458,
+      "at_utc": "2026-10-22T05:58:14.607818+00:00"
+    }
+  ],
+  "external_restarts": 0,
+  "effective_batch": 4,
+  "effective_device": "cuda:0",
+  "effective_amp": false,
+  "train_dataset_images": 4534,
+  "validation_dataset_images": 414,
+  "effective_training_args_sha256": "ede9c5f9039d3bfed4494602790fdfb6907545478f12f4618d0dd6d900bfbbe6",
+  "save_dir": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\run",
+  "checkpoint_state_checks": [
+    {
+      "epoch_zero_based": 0,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 1,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 2,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 3,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 4,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 5,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 6,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 7,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 8,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 9,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 10,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 11,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 12,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 13,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 14,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 15,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 16,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 17,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 18,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    },
+    {
+      "epoch_zero_based": 19,
+      "live_tensors": 499,
+      "ema_tensors": 499,
+      "ema_fp16_checks": 418
+    }
+  ]
+}

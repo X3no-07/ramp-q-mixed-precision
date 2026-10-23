@@ -1,0 +1,40 @@
+{
+  "schema": "rampq.gate1.effective_training_policy_review/v1",
+  "reviewed_at_utc": "2026-10-22T05:50:04.623447+00:00",
+  "scope": "Read-only review of starting arguments, frozen framework policy, split metadata and loader log. No model inference or use of Selection data.",
+  "requested_max_det": 300,
+  "effective_max_det": 902,
+  "declared_source_split_maximum_object_counts": {
+    "train": [
+      351,
+      "train/9999943_00000_d_0000049"
+    ],
+    "training_val": [
+      902,
+      "train/0000059_01886_d_0000114"
+    ]
+  },
+  "arg_differences": {
+    "max_det": {
+      "requested": 300,
+      "effective": 902
+    }
+  },
+  "effective_only_fields": [
+    "save_dir"
+  ],
+  "framework_source": "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\05_水下小目标检测_工程\\检测工程\\.venv\\Lib\\site-packages\\ultralytics\\models\\yolo\\detect\\val.py",
+  "framework_source_sha256": "10e7944ede74be2c40c176fea65b81956cbe3837fdff1e4a361f2b57f6483e60",
+  "mechanism": "DetectionValidator._check_max_det, lines 65-97: unchanged default max_det is raised to observed object count. This source behavior was pinned before training and does not change the fixed batch/epochs/optimizer/AMP contract.",
+  "startup_log_excerpts": [
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\lenovo\\Desktop\\\\07__\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\dataset\\images\\train\\0000140_00118_d_0000002.jpg: 1 duplicate labels removed",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\lenovo\\Desktop\\\\07__\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\dataset\\images\\train\\9999945_00000_d_0000114.jpg: 1 duplicate labels removed",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\lenovo\\Desktop\\\\07__\\artifacts\\gate1\\20261022_split_refinement\\float_training_v2\\dataset\\images\\train\\9999987_00000_d_0000049.jpg: 1 duplicate labels removed",
+    "WARNING Dataset images contain up to 902 objects (train=351, val=902), but max_det=300. This mismatch can cap recall and produce invalid validation metrics. Raising it may increase validation cost but cannot increase model or export capacity, which may cap recall. Setting max_det=902 to match the observed maximum."
+  ],
+  "loader_duplicate_removals_reported": 3,
+  "duplicate_policy": "The source/copy text files retain every positive label row. The Ultralytics loader removes exact float32 label duplicates during caching. Final audit independently recomputes expected 227425 raw train labels vs 227422 unique loader labels; evaluation target IDs still use original annotation physical lines.",
+  "scientific_implication": "Builtin metrics remain ignore-unaware training proxies with actual max_det=902, not official VisDrone AP. Later qualification fixes an independent explicit max_det=1000; do not inherit prediction settings implicitly.",
+  "selection_detector_inference": false,
+  "holdout_accessed": false
+}

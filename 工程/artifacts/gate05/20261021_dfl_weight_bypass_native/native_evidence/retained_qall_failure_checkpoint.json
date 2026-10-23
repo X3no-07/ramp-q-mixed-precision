@@ -1,0 +1,133 @@
+{
+  "schema": "rampq.gate05.corrected_qall_failure_checkpoint/v1",
+  "client_at": "2026-10-19T21:49:56.814182+08:00",
+  "status": "CORRECTED_QALL_DIAGNOSTIC_FAILURE_CHECKPOINT_COMPLETE",
+  "gate05_status": "INCOMPLETE",
+  "native_build_outcome": "FAILED_TENSORRT_FORMAT_SELECTION_NO_ENGINE",
+  "stage_completion_does_not_mean_build_pass": true,
+  "full_cpu_original_vs_rewrite_primary_and_auxiliary_byte_exact": true,
+  "all_88_clip_bounds_corrected_before_failed_build": true,
+  "full_native_build_attempts": 1,
+  "native_builder_api_elapsed_seconds": 10.534061375998135,
+  "native_monitor_elapsed_seconds": 13.07,
+  "failure": "optimizer.cpp::filterQDQFormats::4421 candidateRequirements empty",
+  "specific_failing_node_identified": false,
+  "native_actual_precision_audit_eligible": false,
+  "fixed_image_execution_eligible": false,
+  "original_complete_model_pytorch_ort_guard": "FAILED_UNCHANGED",
+  "native_constraint_metadata": {
+    "parse_only_attempts": 1,
+    "parsed_layers": 1275,
+    "precision_constraints": 177,
+    "output_type_constraints": 177,
+    "precision_sources": {
+      "activation_dq_INT8": 88,
+      "weight_dq_INT8": 88,
+      "shape_INT32": 1
+    },
+    "output_type_sources": {
+      "activation_q_INT8": 88,
+      "weight_q_INT8": 88,
+      "shape_INT32": 1
+    },
+    "metadata_unchanged_by_bounds_correction": true,
+    "unsupported_or_error_queries": 0,
+    "engine_or_config_build_called": false,
+    "OBEY_failure_causality_proven": false
+  },
+  "verified_archive_receipts": {
+    "build_failed": {
+      "files": 52,
+      "archive_sha256": "027433baa5b1e18fafb72cf64b70e58e1bd2aa05b295fd8f539ae8317e1c9a99",
+      "receipt_sha256": "a1d7e456d7b005a16db01f199d32535e159799d3b60fa05b4881277c8f47fdd9"
+    },
+    "parser_metadata": {
+      "files": 26,
+      "archive_sha256": "a567b474be0e563448ce96b7b5cc0f1e9bfff1036461b9512efe9b8c1ba32d78",
+      "receipt_sha256": "d844a40a9315a311b6e6eb302a236d088e9438fec8547ef802a18d59e677fbbf"
+    }
+  },
+  "all_owned_groups_exited_same_boot": true,
+  "previous_corrected_qonly_native_engine_and_local_archive_unchanged": true,
+  "new_tolerances_defined": false,
+  "calibration_or_weight_changes": false,
+  "dataset_evaluation_run": false,
+  "accuracy_causal_recovery_or_performance_pass": false,
+  "required_work_remaining_for_this_bounded_stage": [],
+  "next_step": "New separately frozen small-prefix topology x constraint-flag diagnostic; known prefix has one Conv; no full retry performed",
+  "next_probe_plan": "artifacts/gate05/20261019_corrected_qall_native/next_probe_plan.json",
+  "stage_inventory_files_before_checkpoint": 97,
+  "stage_manifest_sha256": "418622d3aef3920c2bd50a5d1c47c2815af9c832dee5ffa55a3b10e11af47849",
+  "evidence": [
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/stage_manifest.json",
+      "bytes": 16930,
+      "sha256": "418622d3aef3920c2bd50a5d1c47c2815af9c832dee5ffa55a3b10e11af47849"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/root_failed_build_audit.json",
+      "bytes": 1673,
+      "sha256": "f2a6563454332d87fc7364e87825ca57b9aeb725c73cdfa9a25d078e328fe013"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/failure_independent_review.json",
+      "bytes": 21259,
+      "sha256": "bae8fad62b264e579b89859497ff53a2b82967fddc0b5aeb02761ea6944f2480"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/failure_review_builder.json",
+      "bytes": 9447,
+      "sha256": "148e0c9b32ffd08a18bf6dfdde5c00c9ff2ff2b2a8d599f4f2d7cfc45859dd3f"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/parser_metadata_independent_review.json",
+      "bytes": 119981,
+      "sha256": "bb78f349eb8784fe1374f34e777d8948e2eefb1fabd8858f0d18fea1c3ac55aa"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/constraint_observation_limit.json",
+      "bytes": 804,
+      "sha256": "90f31f65b69ad14ee28a47e9a3000c85f4c52e9bd444035b6d18a802be90ee4d"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/next_probe_plan.json",
+      "bytes": 2905,
+      "sha256": "54280c723f23eee482576142d8252b2d79711c3334ae8509e908eebc0343d3b9"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_native/final_board_observation_after_parser.json",
+      "bytes": 1701,
+      "sha256": "3fe289e246775e1a6ff7f9a3909b40fe716f789c9b8f27f827313fc61917de2f"
+    },
+    {
+      "path": "artifacts/gate05/20261019_corrected_qall_cpu_equivalence/analysis.json",
+      "bytes": 2244,
+      "sha256": "2af9ab8e1e8b76cbafd1622d75eedd825fe6f42f2dcdcdcfe115a7110965ab87"
+    },
+    {
+      "path": "artifacts/gate05/20261019_reference_contract/reference_contract.json",
+      "bytes": 7280,
+      "sha256": "87fcbf04e88fd311784736cf77cddfdd82fc2608ed3de19882467e58707fb430"
+    },
+    {
+      "path": "artifacts/gate05/20261019_reference_contract/parser_metadata_contract.json",
+      "bytes": 1816,
+      "sha256": "7b0cccdde9f8549a4a0361bd2e8f76393bdc9caa7ec96dea080b9da7475788f9"
+    },
+    {
+      "path": "30_Gate05_全INT8修复候选验证.md",
+      "bytes": 11928,
+      "sha256": "d6ac2f218322abada9de128a7d054995ef81dc745b3585eaf78f947f6102bf2d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 24622,
+      "sha256": "fc589703969ac683d4971d220ad6a3ed67025e1143cc8018370c178c53b093ff"
+    },
+    {
+      "path": "研究状态与后续计划.md",
+      "bytes": 18673,
+      "sha256": "f1d33664da17dd7aa9ea138c82c2861b74dfc6e8436a0e1cb001e14221132c10"
+    }
+  ]
+}

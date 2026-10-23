@@ -1,0 +1,45 @@
+{
+  "schema": "rampq.gate05.sass_tool_inventory_saved_review/v1",
+  "client_at": "2026-10-21T01:56:35.549558+08:00",
+  "source_sha256": "5279f3d44a2d897813c9493c0b752eff879ec0b37dd1553991924df3aa3e91b4",
+  "source": {
+    "board_time": "2026-10-18T07:55:53.336563+08:00",
+    "tools": {
+      "cuobjdump": null,
+      "nvdisasm": null,
+      "nsys": "/usr/local/bin/nsys",
+      "ncu": null
+    },
+    "cuda_tools": [
+      "/usr/local/cuda/bin/cuobjdump",
+      "/usr/local/cuda/bin/nvdisasm",
+      "/usr/local/cuda-11.4/bin/cuobjdump",
+      "/usr/local/cuda-11.4/bin/nvdisasm"
+    ],
+    "trt_libraries": [
+      "/usr/lib/aarch64-linux-gnu/libnvinfer.so.8.5.2",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer.so",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer_plugin_static.a",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer_builder_resource.so.8.5.2",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so.8",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer.so.8",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer_static.a",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so.8.5.2",
+      "/usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so"
+    ],
+    "free_disk": 91897040896
+  },
+  "conclusion": "Explicit CUDA11.4 cuobjdump/nvdisasm paths are recorded despite missing PATH discovery. Use authenticated absolute tool paths; no installation needed for first static attempt.",
+  "limits": [
+    "Inventory proves recorded filesystem existence, not toolversion/SM87support, binarySHA/buildID, loaded module or integer arithmetic.",
+    "Do not infer NsightCompute absence system-wide from ncu missingPATH alone.",
+    "No native/CPU/SSH or disassembly executed by reviewer."
+  ],
+  "required_before_arithmetic_claim": [
+    "Toolversion/actual SM support",
+    "Actuallibrary/cubinSHA and architecture",
+    "Exact saved kernel symbol and runtime/module identity mapping",
+    "IntegerMAC operand dataflow and branch/execution path review"
+  ],
+  "old_audit_unchanged": true
+}

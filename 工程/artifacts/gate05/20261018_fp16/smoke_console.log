@@ -1,0 +1,119 @@
+SMOKE_FILES_VERIFIED
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/nvidia/rampq/gate05_fp16_smoke_20261018_c4d8fcff/.ultralytics/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+/home/nvidia/rampq/jetson_trt_fp16_smoke.py:70: DeprecationWarning: Use get_tensor_shape instead.
+  shape = tuple(engine.get_binding_shape(i))
+/home/nvidia/rampq/jetson_trt_fp16_smoke.py:71: DeprecationWarning: Use get_tensor_dtype instead.
+  dtype = engine.get_binding_dtype(i)
+/home/nvidia/rampq/jetson_trt_fp16_smoke.py:72: DeprecationWarning: Use get_tensor_format instead.
+  assert engine.get_binding_format(i) == trt.TensorFormat.LINEAR
+/home/nvidia/rampq/jetson_trt_fp16_smoke.py:75: DeprecationWarning: Use get_tensor_mode instead.
+  if engine.binding_is_input(i):
+/home/nvidia/rampq/jetson_trt_fp16_smoke.py:84: DeprecationWarning: Use get_tensor_name instead.
+  descriptions.append({'name': engine.get_binding_name(i), 'shape': shape,
+/home/nvidia/rampq/jetson_trt_fp16_smoke.py:85: DeprecationWarning: Use get_tensor_mode instead.
+  'dtype': str(dtype), 'input': engine.binding_is_input(i)})
+TENSORRT_EXECUTION_OK
+YOLO11n summary (fused): 100 layers, 2,584,102 parameters, 0 gradients, 6.3 GFLOPs
+{
+  "scope": "One fixed Selection image on Jetson; execution/parity smoke only, no dataset or performance claim",
+  "status": "PASS",
+  "execution_success": true,
+  "engine_sha256": "64d91db3063ac28c1552a1ba6443ae28ca45d82d988f5cd375b39fc8cc76b85c",
+  "weights_sha256": "62aa0728fba4cf9443a154d7db0b1b771a7373c1d302c6c24e3f2a9ac98061af",
+  "image_sha256": "494bbd9d09de29f3a992d434da03c252b4f6cf1f28099fd5a443d0c797f5ec52",
+  "image": "000020.jpg",
+  "torch": "2.0.0+nv23.05",
+  "tensorrt": "8.5.2.2",
+  "ultralytics": "8.4.50",
+  "gpu": "Orin",
+  "bindings": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "dtype": "DataType.FLOAT",
+      "input": true
+    },
+    {
+      "name": "output0",
+      "shape": [
+        1,
+        14,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "input": false
+    }
+  ],
+  "nms": {
+    "conf_thres": 0.25,
+    "iou_thres": 0.7,
+    "max_det": 1000,
+    "nc": 10
+  },
+  "parity_guard": {
+    "same_detection_count": true,
+    "minimum_class_matched_iou": 0.9,
+    "maximum_confidence_difference": 0.05
+  },
+  "matched_detections": [
+    {
+      "class_id": 0,
+      "iou": 0.9994454979896545,
+      "confidence_abs_difference": 0.003054797649383545
+    },
+    {
+      "class_id": 2,
+      "iou": 0.9985083937644958,
+      "confidence_abs_difference": 0.0007472634315490723
+    }
+  ],
+  "tensorrt_detections": [
+    [
+      2.8125,
+      2.8125,
+      245.4375,
+      284.0625,
+      0.6671474575996399,
+      0.0
+    ],
+    [
+      168.796875,
+      196.1953125,
+      245.859375,
+      285.796875,
+      0.44360047578811646,
+      2.0
+    ]
+  ],
+  "pytorch_fp32_detections": [
+    [
+      2.87127685546875,
+      2.840240478515625,
+      245.42698669433594,
+      284.1103820800781,
+      0.6640926599502563,
+      0.0
+    ],
+    [
+      168.81886291503906,
+      196.15621948242188,
+      245.83663940429688,
+      285.75421142578125,
+      0.4428532123565674,
+      2.0
+    ]
+  ],
+  "max_abs_box_output_difference": 19.7130126953125,
+  "max_abs_score_output_difference": 0.005244582891464233,
+  "first_call_ms_not_benchmark": 1310.8666559999165,
+  "board_time": "2026-10-16T17:22:29+0800",
+  "boot_id": "c4d8fcff-a824-488b-b004-6ad71eeb5d95"
+}
+TENSORRT_FP16_SINGLE_IMAGE_OK

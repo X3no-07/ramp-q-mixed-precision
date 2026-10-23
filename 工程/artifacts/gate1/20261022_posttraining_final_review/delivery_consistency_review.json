@@ -1,0 +1,80 @@
+{
+  "status": "PASS_DELIVERY_METADATA_REPORT_CONSISTENCY_REVIEW",
+  "at_utc": "2026-10-22T10:12:19.758857+00:00",
+  "source_files_reviewed": 10,
+  "local_report_links_checked": 10,
+  "decision_evidence_files_hash_checked": 10,
+  "issues": [],
+  "checked_conclusions": [
+    "Candidate training completed 30 epochs with best 29 and last 30",
+    "Actual numerical guard remains FAIL_FIXED_TOLERANCES on all 109 debug images",
+    "Engineering validity and saved-output audit PASS are explicitly distinct from numerical PASS",
+    "All target counts, raw violation partitions and final-cast-only counterfactual match frozen outputs",
+    "Selection and Holdout boundaries are preserved in wording and flags",
+    "No actual FP64/fixed-logit head arithmetic probe is claimed; it remains a future separately frozen step",
+    "Post-hoc confidence subsets do not replace the all-anchor guard",
+    "FP16 EMA precision limitation and non-official/project metric scope remain explicit"
+  ],
+  "review_scope": {
+    "new_inference": false,
+    "model_loading": false,
+    "image_loading": false,
+    "raw_array_loading": false,
+    "source_or_report_mutation": false,
+    "original_gate05_45_file_manifest_rechecked": false
+  },
+  "sources": {
+    "44_Gate1_首轮训练与浮点资格检查结果.md": {
+      "bytes": 6832,
+      "sha256": "2b3b789635e24dee97f6811d6240bab48feac676b5b0102b94dbdb486654c649"
+    },
+    "artifacts\\gate1\\current_execution_state_v5.json": {
+      "bytes": 2576,
+      "sha256": "c52bdac755dba28a6bab52fdec2b56de40738e6d1b59a271277d7977d2467ff1"
+    },
+    "artifacts\\gate1\\20261022_training_qualification_delivery\\decision.json": {
+      "bytes": 7357,
+      "sha256": "4cc6808d9ff08219007e2146fce2c325c9e3c9849cc4ab64241baf9ea79342d1"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\01_training_audit\\audit.json": {
+      "bytes": 3389,
+      "sha256": "50a1e9b1f896870e820e56ba69dd63fc14c68cd328ea577b0796660054d80997"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\qualification_receipt.json": {
+      "bytes": 4043,
+      "sha256": "8300c185e3e28cc0e0675bd2a1c7f38746e711f30614ef8ccfc8b6e5b7bcc074"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\raw_dtype_guard.json": {
+      "bytes": 173392,
+      "sha256": "b68a775b2c129fad01a099cd97f8be44c87a328e01d40cd948fab7d50c9a276e"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\matching_summary.json": {
+      "bytes": 4083,
+      "sha256": "8826bb2e91268759c7db7532d8c6f3314f057f92971362a66d2b6b025c7090f6"
+    },
+    "artifacts\\gate1\\20261022_posttraining_checks_v1\\03_qualification_output_audit\\recomputed_summary.json": {
+      "bytes": 32590,
+      "sha256": "9f55fba3c351ba9f91bd9019a4aaa88417520ac63119dafb2f45a08d4bf126f5"
+    },
+    "artifacts\\gate1\\20261022_dtype_guard_diagnostics\\raw_failure_description.json": {
+      "bytes": 30350,
+      "sha256": "18c7741d7d99f4b08f368accbce3aeae156887845f98698471eab3ed447e3480"
+    },
+    "artifacts\\gate1\\20261022_dtype_guard_diagnostics\\independent_review\\raw_array_diagnostics.json": {
+      "bytes": 68466,
+      "sha256": "3da0e2057fb915cf62e7ef853491d9463cdcd4c9c1be3e34829bd252fbb22686"
+    }
+  },
+  "local_links": [
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\current_execution_state_v5.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_training_qualification_delivery\\decision.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\39_Gate05_150图完整验收结果.md",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_posttraining_checks_v1\\01_training_audit\\audit.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\raw_dtype_guard.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_posttraining_checks_v1\\03_qualification_output_audit\\recomputed_summary.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_posttraining_checks_v1\\02_float_qualification\\matching_summary.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_dtype_guard_diagnostics\\raw_failure_description.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_dtype_guard_diagnostics\\independent_review\\raw_array_diagnostics.json",
+    "C:\\Users\\lenovo\\Desktop\\视觉边缘研究\\07_边缘小目标检测混合精度量化_工程\\artifacts\\gate1\\20261022_posttraining_final_review\\debug_qualification_review.md"
+  ]
+}

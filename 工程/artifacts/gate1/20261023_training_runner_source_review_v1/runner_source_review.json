@@ -1,0 +1,53 @@
+{
+  "schema": "rampq.gate1.synthetic_training_runner_source_review/v1",
+  "status": "BLOCKED_PENDING_PROCESS_LOCAL_EXTERNAL_INTEGRATIONS_DISABLE",
+  "scope": "READ_ONLY_ROOT_RUNNER_SYNTHETIC_CPU_ONE_EPOCH_SOURCE_REVIEW_ONLY",
+  "execution_performed": false,
+  "sources": {
+    "artifacts/gate1/20261023_training_integration_delivery_v1/prepare_training.py": {
+      "bytes": 4777,
+      "sha256": "7ae907d6e33069a06967aa8e6b90d0381cb7ea07b0cfc4dc62cd58ce0c74cf79"
+    },
+    "artifacts/gate1/20261023_training_integration_delivery_v1/run_training.py": {
+      "bytes": 10113,
+      "sha256": "ec6a9c8d80d8a58d7bccf493dda8315ca345ee217b478b8afac1145a8109b904"
+    },
+    "scripts/gate1_ignore_trainer.py": {
+      "bytes": 19878,
+      "sha256": "f68d3163b7c8a0cff42432a470b4813a57f4dca737e558d6fbdabdf03a0659bf"
+    },
+    "scripts/gate1_fp32_live_capture.py": {
+      "bytes": 15760,
+      "sha256": "99baeedf7db524fa4cd55674537fea6422de41f049fd1d8b710eb91c265e1a51"
+    },
+    "scripts/gate1_ignore_dataset.py": {
+      "bytes": 22009,
+      "sha256": "f2ae752a0f8ad0549ac33e750071659de16f3b9a572f6b071ae005afcdb7ebe7"
+    }
+  },
+  "issues": [
+    {
+      "id": "external_integrations",
+      "severity": "blocking_for_no_external_network_contract",
+      "file": "artifacts/gate1/20261023_training_integration_delivery_v1/run_training.py",
+      "detail": "The runner disables sync and common logger settings, but BaseTrainer still registers Platform integration. The reviewed platform.py on_pretrain_routine_start directly uses an inherited ULTRALYTICS_API_KEY or settings api_key, independently of sync=False. This leaves an outbound logging/upload callback route in a nominally offline smoke. No key was read or displayed during this review.",
+      "required_resolution": "Before Trainer construction, disable add_integration_callbacks in this process only or supply an equivalently explicit no-integration construction path; preserve frozen earlier inputs and bind a fresh revision."
+    }
+  ],
+  "checks_passed": [
+    "bound explicit synthetic fixture manifest hashes and local cfg dict; no checkpoint input",
+    "CPU AMPFalse random model construction; get_dataset bypasses ordinary dataset/download checks",
+    "four training images batch2 nbs2 warmup0 imply two actual optimizer opportunities",
+    "on_train_start runs after EMA and optimizer creation; capture configured before train batches",
+    "MRO CapturingTrainer -> FP32LiveCaptureMixin -> RestrictedIgnoreTrainer -> native save_model executes capture before native half serialization",
+    "criterion observations and root scalar hooks use the actual field names and store no live graph tensors",
+    "explicit validator and final_eval placeholders report SMOKE_NO_TASK_AP; sentinel fitness0 is not a metric",
+    "on_model_save checks committed capture receipt and native new synthetic compatibility checkpoint",
+    "postrun requirements check two optimizer/EMA updates, parameter changes, positives plus ignored negatives, finite state and exact restricted reconstruction"
+  ],
+  "limits": [
+    "Source review cannot certify future runtime outcome",
+    "Parent source pre-half event plus MRO and capture phase provide ordering; optional callback=None entry event in RestrictedIgnoreTrainer is not itself an MRO capture ordering event",
+    "No AP, real-data training, GPU/board deployment, old guard replacement, or scientific Gate1 acceptance is established"
+  ]
+}

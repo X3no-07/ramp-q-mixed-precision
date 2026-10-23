@@ -1,0 +1,90 @@
+{
+  "schema": "rampq.gate05.extended_restore_queue_request/v1",
+  "queue_pid": 5740,
+  "queue_process": {
+    "pid": 5740,
+    "state": "R",
+    "ppid": 5738,
+    "pgid": 5740,
+    "sid": 5740,
+    "start_ticks": 692452,
+    "argv": [
+      "/usr/bin/python3",
+      "-u",
+      "/home/nvidia/rampq/gate05_restore_extended_inputs_20261019/jetson_gate05_extended_restore_queue.py",
+      "--expected-boot-id",
+      "692c7544-b8bd-415b-939c-b11cdbd9f7f0"
+    ]
+  },
+  "queue_script_sha256": "9c919271966ad165f8fe353724edd08c6e0b8f0861c576f05410cb234fecc5ba",
+  "original_plan_sha256": "20a7152736d6e2427c0d8f7833e12b801e71579cd8fcd99cd15e270910fca296",
+  "budget_revision_sha256": "1fad7b07ea01b6213d9b1cec1fcf74114142d795d826f8d399e871b560c3d8c4",
+  "boot_id": "692c7544-b8bd-415b-939c-b11cdbd9f7f0",
+  "board_time": "2026-10-16T18:48:46+0800",
+  "bundles": [
+    {
+      "configuration": "r_only_G1",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v3_extended_7200",
+      "verified_at": "/home/nvidia/rampq/gate05_precision_r_only_G1_20261019_v3_extended_7200",
+      "manifest_sha256": "e5970f9a1767dff4cfd1d82d61ecf9db970a86a09013339bbddf192b0efb5de7",
+      "spec_sha256": "1bfb1e0bc1df7e5e74bd560c650b17a344413be676383bd4d873ff8453696aee",
+      "graph_sha256": "4f94499d817be12e1286433276ae5a697e30ba8c66916f014a4c9b5e97076c06",
+      "original_file_count": 11,
+      "inherited_spec_max_seconds": 1800,
+      "effective_monitor_max_seconds": 7200,
+      "original_numerical_failure": "FAILED_UNCHANGED",
+      "actual_precision_audit": "NOT_RUN"
+    },
+    {
+      "configuration": "r_only_G1_G5",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200",
+      "verified_at": "/home/nvidia/rampq/gate05_precision_r_only_G1_G5_20261019_v3_extended_7200",
+      "manifest_sha256": "b5309bdc4b177f3ba40a417fb3a591ec7d7ebbdf374607d045d18db7f0592aa1",
+      "spec_sha256": "b34e006423ead6c690794ef620dbabf5edd41a80ba5d485f4b5cf7eeff566b81",
+      "graph_sha256": "9e8c7221dc2100e490a3947f3058a9225fee3496cb7c78d0144e2865c7d0dbcb",
+      "original_file_count": 11,
+      "inherited_spec_max_seconds": 1800,
+      "effective_monitor_max_seconds": 7200,
+      "original_numerical_failure": "FAILED_UNCHANGED",
+      "actual_precision_audit": "NOT_RUN"
+    },
+    {
+      "configuration": "r_only_G1_G2",
+      "bundle_root": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v3_extended_7200",
+      "verified_at": "/home/nvidia/rampq/gate05_precision_r_only_G1_G2_20261019_v3_extended_7200",
+      "manifest_sha256": "08fb7fa8b9d076cb10c8e4def6960bdd0a3a2aabb3e44480bf4ab2e207348547",
+      "spec_sha256": "0a0e5df085876e5daeb86fe8390f2dcac6493c22680f52ff3764d45570e4e432",
+      "graph_sha256": "25f7afbd9c860ea86bc56ac6e803fb832231a10bec84eab95520532a0faa6225",
+      "original_file_count": 11,
+      "inherited_spec_max_seconds": 1800,
+      "effective_monitor_max_seconds": 7200,
+      "original_numerical_failure": "FAILED_UNCHANGED",
+      "actual_precision_audit": "NOT_RUN"
+    }
+  ],
+  "initial_ready": {
+    "resources": {
+      "MemAvailable_kib": 5251328,
+      "SwapTotal_kib": 3756944,
+      "SwapFree_kib": 3756944,
+      "temperatures_c": {
+        "CV0-therm": 46.25,
+        "CPU-therm": 48.75,
+        "SOC2-therm": 47.781,
+        "SOC0-therm": 47.562,
+        "CV1-therm": 46.156,
+        "GPU-therm": 46.312,
+        "tj-therm": 49.468,
+        "SOC1-therm": 49.468,
+        "CV2-therm": 46.937
+      }
+    },
+    "global_trtexec_empty": true,
+    "other_gpu_work_empty": true
+  },
+  "inherited_spec_max_seconds": 1800,
+  "effective_monitor_max_seconds": 7200,
+  "inference_run": false,
+  "dataset_evaluation_run": false,
+  "native_precision_pass_claim": false
+}

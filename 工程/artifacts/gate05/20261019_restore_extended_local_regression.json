@@ -1,0 +1,38 @@
+{
+  "status": "READ_ONLY_LOCAL_REGRESSION_PASSED",
+  "summary_script_sha256": "c7e3fda4accb537231cac46442c2a7b7bbca74e914e0ed98736eac6fd4ca4328",
+  "checks": [
+    {
+      "name": "real_first_round_timeout_receipt_verified",
+      "verified_files": 26,
+      "monitor_elapsed_seconds": 1802.48,
+      "resources": {
+        "samples": 898,
+        "min_available_mib": 1538.765625,
+        "max_swap_used_mib": 9.75,
+        "max_temperature_c": 54.343
+      }
+    },
+    {
+      "name": "old_v2_root_and_1800_monitor_rejected_as_v3",
+      "reason": "v3 monitor identity, root, build script or effective 7200 s budget differs"
+    },
+    {
+      "name": "real_q_only_G1_format_and_strict_tactic_evidence_verified",
+      "int8": 6,
+      "fp16": 82
+    },
+    {
+      "name": "real_q_only_G1_saved_fixed_image_outputs_verified",
+      "raw_outputs_sha256": "2d7c8aca669f341de921e1bcf84355b9255eee06a3895870c2f09c761659f957"
+    },
+    {
+      "name": "absent_new_v3_receipts_remain_pending",
+      "gate05": "INCOMPLETE"
+    }
+  ],
+  "native_board_access": false,
+  "inference_run": false,
+  "old_evidence_modified": false,
+  "limits": "Uses first-round real receipts/saved outputs as limited helper regression; does not fabricate or establish any v3 native result."
+}

@@ -1,0 +1,21 @@
+FIRSTCONV_BUILD_START fp32_no_tf32
+/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/jetson_firstconv_numeric_probe.py:145: DeprecationWarning: Use get_tensor_name instead.
+  name = engine.get_binding_name(i)
+/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/jetson_firstconv_numeric_probe.py:146: DeprecationWarning: Use get_tensor_shape instead.
+  shape = list(engine.get_binding_shape(i))
+/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/jetson_firstconv_numeric_probe.py:147: DeprecationWarning: Use get_tensor_dtype instead.
+  dtype = engine.get_binding_dtype(i)
+/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/jetson_firstconv_numeric_probe.py:148: DeprecationWarning: Use get_tensor_mode instead.
+  is_input = bool(engine.binding_is_input(i))
+/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/jetson_firstconv_numeric_probe.py:153: DeprecationWarning: Use get_tensor_format instead.
+  require(engine.get_binding_format(i) == trt.TensorFormat.LINEAR, 'Nonlinear binding')
+/home/nvidia/rampq/gate05_firstconv_numeric_20261019/gate05_firstconv_numeric_probe_20261019/jetson_firstconv_numeric_probe.py:157: DeprecationWarning: Use get_tensor_format instead.
+  'format': str(engine.get_binding_format(i))})
+FIRSTCONV_CASE_DONE fp32_no_tf32
+FIRSTCONV_BUILD_START fp16_no_tf32
+FIRSTCONV_CASE_DONE fp16_no_tf32
+FIRSTCONV_BUILD_START qdq_fp16_no_tf32
+FIRSTCONV_CASE_DONE qdq_fp16_no_tf32
+FIRSTCONV_BUILD_START qdq_fp32_no_tf32
+FIRSTCONV_CASE_DONE qdq_fp32_no_tf32
+FOUR_ISOLATED_FIRSTCONV_CASES_SAVED

@@ -1,0 +1,785 @@
+{
+  "schema": "rampq.gate05.dfl_local_topology_flag_comparison/v1",
+  "client_at": "2026-10-20T12:35:48.108374+08:00",
+  "status": "FOUR_SAVED_LOCAL_CASES_COMPARED",
+  "cases": {
+    "code_clip_none": {
+      "topology": "code_clip",
+      "flag": "none",
+      "stage_root": "artifacts/gate05/20261020_dfl_context_native/native_evidence",
+      "build_status": "DFL_CONTEXT_ENGINE_SAVED",
+      "builder_seconds_not_benchmark": 52.21165119999205,
+      "engine_present": true,
+      "raw_output_present": true,
+      "clip_attributes": [
+        {
+          "name": "rampq_model_23_dfl_conv_Clip",
+          "before": {
+            "alpha": 1.807675018979014e-43,
+            "beta": 7.101629281717848e-18
+          },
+          "explicit_importer_correction": true,
+          "after": {
+            "alpha": -127.0,
+            "beta": 127.0
+          }
+        }
+      ],
+      "constraint_requests": [
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        }
+      ],
+      "actual_config_flags": {
+        "DEBUG": {
+          "supported": true,
+          "enabled": false
+        },
+        "DIRECT_IO": {
+          "supported": true,
+          "enabled": false
+        },
+        "DISABLE_TIMING_CACHE": {
+          "supported": true,
+          "enabled": false
+        },
+        "ENABLE_TACTIC_HEURISTIC": {
+          "supported": true,
+          "enabled": false
+        },
+        "FP16": {
+          "supported": true,
+          "enabled": true
+        },
+        "GPU_FALLBACK": {
+          "supported": true,
+          "enabled": false
+        },
+        "INT8": {
+          "supported": true,
+          "enabled": true
+        },
+        "OBEY_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "PREFER_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "REFIT": {
+          "supported": true,
+          "enabled": false
+        },
+        "REJECT_EMPTY_ALGORITHMS": {
+          "supported": true,
+          "enabled": false
+        },
+        "SAFETY_SCOPE": {
+          "supported": true,
+          "enabled": false
+        },
+        "SPARSE_WEIGHTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "STRICT_TYPES": {
+          "supported": true,
+          "enabled": false
+        },
+        "TF32": {
+          "supported": true,
+          "enabled": false
+        }
+      },
+      "run_outcome": "DFL_CONTEXT_FIXED_INPUT_OUTPUTS_SAVED",
+      "engine_sha256": "a0b23d8fce8a25bbf6ca5de9bf638dabbc9be11db23e56ad16cb2efc3ce2a33e",
+      "cpu_difference": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": false,
+        "byte_identical": false,
+        "different_elements": 11779,
+        "max_abs": 1.9073486328125e-06,
+        "mean_abs": 7.795968226024083e-08,
+        "rms_difference": 1.664742957045647e-07,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": true,
+        "byte_identical": true,
+        "different_elements": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "actual_convolutions": [
+        {
+          "Name": "model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv",
+          "LayerType": "CaskConvolution",
+          "Inputs": [
+            {
+              "Name": "rampq_model_23_dfl_conv_a_q",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                16,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+            }
+          ],
+          "Outputs": [
+            {
+              "Name": "/model.23/dfl/conv/Conv_output_0",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                1,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Row major linear FP32"
+            }
+          ],
+          "ParameterType": "Convolution",
+          "Kernel": [
+            1,
+            1
+          ],
+          "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+          "PrePadding": [
+            0,
+            0
+          ],
+          "PostPadding": [
+            0,
+            0
+          ],
+          "Stride": [
+            1,
+            1
+          ],
+          "Dilation": [
+            1,
+            1
+          ],
+          "OutMaps": 1,
+          "Groups": 1,
+          "Weights": {
+            "Type": "Int8",
+            "Count": 16
+          },
+          "Bias": {
+            "Type": "Float",
+            "Count": 0
+          },
+          "HasSparseWeights": 0,
+          "HasDynamicFilter": 0,
+          "HasDynamicBias": 0,
+          "HasResidual": 0,
+          "ConvXAsActInputIdx": -1,
+          "BiasAsActInputIdx": -1,
+          "ResAsActInputIdx": -1,
+          "Activation": "NONE",
+          "HasBias": 0,
+          "HasReLU": 0,
+          "TacticName": "ampere_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+          "TacticValue": "0xa4ae2d82115c3e83"
+        }
+      ]
+    },
+    "code_clip_obey": {
+      "topology": "code_clip",
+      "flag": "obey",
+      "stage_root": "artifacts/gate05/20261020_dfl_context_native/native_evidence",
+      "build_status": "DFL_CONTEXT_BUILD_FAILED",
+      "builder_seconds_not_benchmark": 1.5382017600059044,
+      "engine_present": false,
+      "raw_output_present": false,
+      "clip_attributes": [
+        {
+          "name": "rampq_model_23_dfl_conv_Clip",
+          "before": {
+            "alpha": 1.807675018979014e-43,
+            "beta": 163829363245056.0
+          },
+          "explicit_importer_correction": true,
+          "after": {
+            "alpha": -127.0,
+            "beta": 127.0
+          }
+        }
+      ],
+      "constraint_requests": [
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        }
+      ],
+      "actual_config_flags": {
+        "DEBUG": {
+          "supported": true,
+          "enabled": false
+        },
+        "DIRECT_IO": {
+          "supported": true,
+          "enabled": false
+        },
+        "DISABLE_TIMING_CACHE": {
+          "supported": true,
+          "enabled": false
+        },
+        "ENABLE_TACTIC_HEURISTIC": {
+          "supported": true,
+          "enabled": false
+        },
+        "FP16": {
+          "supported": true,
+          "enabled": true
+        },
+        "GPU_FALLBACK": {
+          "supported": true,
+          "enabled": false
+        },
+        "INT8": {
+          "supported": true,
+          "enabled": true
+        },
+        "OBEY_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": true
+        },
+        "PREFER_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "REFIT": {
+          "supported": true,
+          "enabled": false
+        },
+        "REJECT_EMPTY_ALGORITHMS": {
+          "supported": true,
+          "enabled": false
+        },
+        "SAFETY_SCOPE": {
+          "supported": true,
+          "enabled": false
+        },
+        "SPARSE_WEIGHTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "STRICT_TYPES": {
+          "supported": true,
+          "enabled": false
+        },
+        "TF32": {
+          "supported": true,
+          "enabled": false
+        }
+      },
+      "run_outcome": "BUILD_FAILED_OBSERVATION",
+      "error_lines": [
+        "[10/17/2026-18:26:14] [TRT] [E] 2: [optimizer.cpp::filterQDQFormats::4421] Error Code 2: Internal Error (Assertion !n->candidateRequirements.empty() failed. All of the candidates were removed, which points to the node being incorrectly marked as an int8 node.)",
+        "[10/17/2026-18:26:14] [TRT] [E] 2: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )"
+      ]
+    },
+    "original_none": {
+      "topology": "original",
+      "flag": "none",
+      "stage_root": "artifacts/gate05/20261020_dfl_original_native/native_evidence",
+      "build_status": "DFL_ORIGINAL_ENGINE_SAVED",
+      "builder_seconds_not_benchmark": 52.32060847998946,
+      "engine_present": true,
+      "raw_output_present": true,
+      "clip_attributes": [
+        {
+          "name": "rampq_model_23_dfl_conv_Clip",
+          "before": {
+            "alpha": -0.9999907612800598,
+            "beta": 0.9999907612800598
+          },
+          "explicit_importer_correction": false,
+          "after": {
+            "alpha": -0.9999907612800598,
+            "beta": 0.9999907612800598
+          }
+        }
+      ],
+      "constraint_requests": [
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        }
+      ],
+      "actual_config_flags": {
+        "DEBUG": {
+          "supported": true,
+          "enabled": false
+        },
+        "DIRECT_IO": {
+          "supported": true,
+          "enabled": false
+        },
+        "DISABLE_TIMING_CACHE": {
+          "supported": true,
+          "enabled": false
+        },
+        "ENABLE_TACTIC_HEURISTIC": {
+          "supported": true,
+          "enabled": false
+        },
+        "FP16": {
+          "supported": true,
+          "enabled": true
+        },
+        "GPU_FALLBACK": {
+          "supported": true,
+          "enabled": false
+        },
+        "INT8": {
+          "supported": true,
+          "enabled": true
+        },
+        "OBEY_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "PREFER_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "REFIT": {
+          "supported": true,
+          "enabled": false
+        },
+        "REJECT_EMPTY_ALGORITHMS": {
+          "supported": true,
+          "enabled": false
+        },
+        "SAFETY_SCOPE": {
+          "supported": true,
+          "enabled": false
+        },
+        "SPARSE_WEIGHTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "STRICT_TYPES": {
+          "supported": true,
+          "enabled": false
+        },
+        "TF32": {
+          "supported": true,
+          "enabled": false
+        }
+      },
+      "run_outcome": "DFL_ORIGINAL_FIXED_INPUT_OUTPUTS_SAVED",
+      "engine_sha256": "583aaa40a0a5d90e87cf00fd8be7dd08dfe90eed72d5a678e369c4f0cfb8fa3e",
+      "cpu_difference": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": false,
+        "byte_identical": false,
+        "different_elements": 33566,
+        "max_abs": 11.957853466272354,
+        "mean_abs": 2.3782942463764005,
+        "rms_difference": 2.8428724297345527,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "repeat": {
+        "all_pairs_finite": true,
+        "nonfinite_pair_count": 0,
+        "numeric_equal": true,
+        "byte_identical": true,
+        "different_elements": 0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_difference": 0.0,
+        "descriptive_only_no_new_pass_criterion": true
+      },
+      "actual_convolutions": [
+        {
+          "Name": "model.23.dfl.conv.weight + rampq_model_23_dfl_conv_WeightQ + /model.23/dfl/conv/Conv",
+          "LayerType": "CaskConvolution",
+          "Inputs": [
+            {
+              "Name": "rampq_model_23_dfl_conv_a_q",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                16,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+            }
+          ],
+          "Outputs": [
+            {
+              "Name": "/model.23/dfl/conv/Conv_output_0",
+              "Location": "Device",
+              "Dimensions": [
+                1,
+                1,
+                4,
+                8400
+              ],
+              "Format/Datatype": "Row major linear FP32"
+            }
+          ],
+          "ParameterType": "Convolution",
+          "Kernel": [
+            1,
+            1
+          ],
+          "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+          "PrePadding": [
+            0,
+            0
+          ],
+          "PostPadding": [
+            0,
+            0
+          ],
+          "Stride": [
+            1,
+            1
+          ],
+          "Dilation": [
+            1,
+            1
+          ],
+          "OutMaps": 1,
+          "Groups": 1,
+          "Weights": {
+            "Type": "Int8",
+            "Count": 16
+          },
+          "Bias": {
+            "Type": "Float",
+            "Count": 0
+          },
+          "HasSparseWeights": 0,
+          "HasDynamicFilter": 0,
+          "HasDynamicBias": 0,
+          "HasResidual": 0,
+          "ConvXAsActInputIdx": -1,
+          "BiasAsActInputIdx": -1,
+          "ResAsActInputIdx": -1,
+          "Activation": "NONE",
+          "HasBias": 0,
+          "HasReLU": 0,
+          "TacticName": "ampere_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+          "TacticValue": "0xa4ae2d82115c3e83"
+        }
+      ]
+    },
+    "original_obey": {
+      "topology": "original",
+      "flag": "obey",
+      "stage_root": "artifacts/gate05/20261020_dfl_original_native/native_evidence",
+      "build_status": "DFL_ORIGINAL_BUILD_FAILED",
+      "builder_seconds_not_benchmark": 1.5088661759946262,
+      "engine_present": false,
+      "raw_output_present": false,
+      "clip_attributes": [
+        {
+          "name": "rampq_model_23_dfl_conv_Clip",
+          "before": {
+            "alpha": -0.9999907612800598,
+            "beta": 0.9999907612800598
+          },
+          "explicit_importer_correction": false,
+          "after": {
+            "alpha": -0.9999907612800598,
+            "beta": 0.9999907612800598
+          }
+        }
+      ],
+      "constraint_requests": [
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_ActivationQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightDQ",
+          "precision_is_set": true,
+          "precision": "DataType.INT8",
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": false,
+              "requested_type": null
+            }
+          ]
+        },
+        {
+          "name": "rampq_model_23_dfl_conv_WeightQ",
+          "precision_is_set": false,
+          "precision": null,
+          "outputs": [
+            {
+              "index": 0,
+              "is_set": true,
+              "requested_type": "DataType.INT8"
+            }
+          ]
+        }
+      ],
+      "actual_config_flags": {
+        "DEBUG": {
+          "supported": true,
+          "enabled": false
+        },
+        "DIRECT_IO": {
+          "supported": true,
+          "enabled": false
+        },
+        "DISABLE_TIMING_CACHE": {
+          "supported": true,
+          "enabled": false
+        },
+        "ENABLE_TACTIC_HEURISTIC": {
+          "supported": true,
+          "enabled": false
+        },
+        "FP16": {
+          "supported": true,
+          "enabled": true
+        },
+        "GPU_FALLBACK": {
+          "supported": true,
+          "enabled": false
+        },
+        "INT8": {
+          "supported": true,
+          "enabled": true
+        },
+        "OBEY_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": true
+        },
+        "PREFER_PRECISION_CONSTRAINTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "REFIT": {
+          "supported": true,
+          "enabled": false
+        },
+        "REJECT_EMPTY_ALGORITHMS": {
+          "supported": true,
+          "enabled": false
+        },
+        "SAFETY_SCOPE": {
+          "supported": true,
+          "enabled": false
+        },
+        "SPARSE_WEIGHTS": {
+          "supported": true,
+          "enabled": false
+        },
+        "STRICT_TYPES": {
+          "supported": true,
+          "enabled": false
+        },
+        "TF32": {
+          "supported": true,
+          "enabled": false
+        }
+      },
+      "run_outcome": "BUILD_FAILED_OBSERVATION",
+      "error_lines": [
+        "[10/17/2026-18:45:44] [TRT] [E] 2: [optimizer.cpp::filterQDQFormats::4421] Error Code 2: Internal Error (Assertion !n->candidateRequirements.empty() failed. All of the candidates were removed, which points to the node being incorrectly marked as an int8 node.)",
+        "[10/17/2026-18:45:44] [TRT] [E] 2: [builder.cpp::buildSerializedNetwork::751] Error Code 2: Internal Error (Assertion engine != nullptr failed. )"
+      ]
+    }
+  },
+  "raw_output_comparisons": {
+    "original_none_vs_original_obey": {
+      "status": "UNAVAILABLE_ONE_OR_BOTH_CASES_FAILED"
+    },
+    "original_none_vs_code_clip_none": {
+      "all_pairs_finite": true,
+      "numeric_equal": false,
+      "byte_identical": false,
+      "different_elements": 33566,
+      "max_abs": 11.957853466272354,
+      "mean_abs": 2.3782942499522357,
+      "rms_difference": 2.842872431892665,
+      "descriptive_only": true
+    },
+    "original_obey_vs_code_clip_obey": {
+      "status": "UNAVAILABLE_ONE_OR_BOTH_CASES_FAILED"
+    }
+  },
+  "same_fixture_and_saved_CPU_reference": true,
+  "same_Q_DQ_explicit_constraint_values": true,
+  "all_common_config_flags_equal_except_OBEY": true,
+  "original_Clip_attributes_unmodified": true,
+  "corrected_Clip_attributes_declared_correction": true,
+  "raw_trees_unchanged": true,
+  "new_CPU_or_native_inference": false,
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "gate05_status": "INCOMPLETE",
+  "limits": "Four single observations across two bounded stages on one diagnostic corrected-CPU fixture; original topology and code-Clip/import-correction derivative form a combined factor. Not a randomized/repeated study, full-model repair or unique failing-node identification."
+}

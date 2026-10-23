@@ -1,0 +1,2943 @@
+{
+  "schema": "rampq.gate05.corrected_qall_parser_metadata_independent_review/v1",
+  "reviewer": "protocol_review",
+  "status": "PARSER_METADATA_COUNTS_AND_SCOPE_VERIFIED",
+  "checks": {
+    "26_exact_receipt_entries": true,
+    "extracted_inventory_receipt_plus_self": true,
+    "archive_sha": true,
+    "receipt_sha": true,
+    "receipt_.monitored_build.lock": true,
+    "receipt_end_board_status.json": true,
+    "receipt_inventory/clip_bounds_after.json": true,
+    "receipt_inventory/clip_bounds_before.json": true,
+    "receipt_inventory/constraints_after_bounds_correction.json": true,
+    "receipt_inventory/constraints_before_bounds_correction.json": true,
+    "receipt_inventory/inspection_result.json": true,
+    "receipt_inventory/parser_result.json": true,
+    "receipt_inventory/request.json": true,
+    "receipt_inventory/source_hashes_after.json": true,
+    "receipt_jetson_collect_isolated_numeric_probe.py": true,
+    "receipt_jetson_inspect_corrected_qall_parser.py": true,
+    "receipt_jetson_monitored_build.py": true,
+    "receipt_jetson_owned_group_guard.py": true,
+    "receipt_launch.json": true,
+    "receipt_monitor/build_console.log": true,
+    "receipt_monitor/kernel.log": true,
+    "receipt_monitor/request.json": true,
+    "receipt_monitor/resources.jsonl": true,
+    "receipt_monitor/status.json": true,
+    "receipt_monitor/tegrastats.log": true,
+    "receipt_monitor_launcher.log": true,
+    "receipt_parser_metadata_contract.json": true,
+    "receipt_run_parser_metadata.py": true,
+    "receipt_supplemental_group_guard.json": true,
+    "receipt_supplemental_guard_console.log": true,
+    "zip_crc": true,
+    "zip_inventory": true,
+    "zip_bytes_.monitored_build.lock": true,
+    "zip_bytes_end_board_status.json": true,
+    "zip_bytes_inventory/clip_bounds_after.json": true,
+    "zip_bytes_inventory/clip_bounds_before.json": true,
+    "zip_bytes_inventory/constraints_after_bounds_correction.json": true,
+    "zip_bytes_inventory/constraints_before_bounds_correction.json": true,
+    "zip_bytes_inventory/inspection_result.json": true,
+    "zip_bytes_inventory/parser_result.json": true,
+    "zip_bytes_inventory/request.json": true,
+    "zip_bytes_inventory/source_hashes_after.json": true,
+    "zip_bytes_jetson_collect_isolated_numeric_probe.py": true,
+    "zip_bytes_jetson_inspect_corrected_qall_parser.py": true,
+    "zip_bytes_jetson_monitored_build.py": true,
+    "zip_bytes_jetson_owned_group_guard.py": true,
+    "zip_bytes_launch.json": true,
+    "zip_bytes_monitor/build_console.log": true,
+    "zip_bytes_monitor/kernel.log": true,
+    "zip_bytes_monitor/request.json": true,
+    "zip_bytes_monitor/resources.jsonl": true,
+    "zip_bytes_monitor/status.json": true,
+    "zip_bytes_monitor/tegrastats.log": true,
+    "zip_bytes_monitor_launcher.log": true,
+    "zip_bytes_parser_metadata_contract.json": true,
+    "zip_bytes_run_parser_metadata.py": true,
+    "zip_bytes_supplemental_group_guard.json": true,
+    "zip_bytes_supplemental_guard_console.log": true,
+    "zip_bytes_remote_receipt.json": true,
+    "output_value_query_False_rampq_model_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_2_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_2_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_2_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_2_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_2_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_2_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_2_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_2_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_2_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_2_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_2_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_2_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_2_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_2_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_2_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_2_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_3_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_3_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_3_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_3_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_4_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_4_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_4_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_4_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_4_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_4_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_4_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_4_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_4_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_4_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_4_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_4_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_4_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_4_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_4_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_4_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_5_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_5_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_5_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_5_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_1_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_1_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_1_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_1_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_1_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_1_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_m_1_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_m_1_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_cv3_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_cv3_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_m_0_cv3_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_m_0_cv3_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_6_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_6_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_6_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_6_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_7_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_7_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_7_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_7_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_1_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_1_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_1_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_1_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_1_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_1_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_m_1_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_m_1_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_cv3_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_cv3_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_m_0_cv3_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_m_0_cv3_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_8_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_8_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_8_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_8_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_9_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_9_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_9_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_9_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_9_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_9_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_9_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_9_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_attn_qkv_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_attn_qkv_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_attn_qkv_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_attn_qkv_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_attn_pe_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_attn_pe_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_attn_pe_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_attn_pe_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_attn_proj_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_attn_proj_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_attn_proj_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_attn_proj_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_ffn_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_ffn_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_ffn_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_ffn_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_ffn_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_ffn_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_m_0_ffn_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_m_0_ffn_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_10_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_10_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_10_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_10_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_13_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_13_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_13_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_13_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_13_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_13_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_13_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_13_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_13_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_13_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_13_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_13_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_13_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_13_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_13_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_13_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_16_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_16_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_16_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_16_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_16_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_16_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_16_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_16_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_16_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_16_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_16_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_16_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_16_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_16_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_16_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_16_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_17_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_17_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_17_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_17_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_19_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_19_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_19_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_19_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_19_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_19_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_19_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_19_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_19_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_19_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_19_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_19_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_19_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_19_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_19_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_19_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_20_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_20_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_20_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_20_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_1_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_1_cv1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_1_cv1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_1_cv1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_1_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_1_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_m_1_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_m_1_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_cv3_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_cv3_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_m_0_cv3_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_m_0_cv3_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_22_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_22_cv2_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_22_cv2_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_22_cv2_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_0_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_0_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_0_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_0_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_0_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_0_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_0_2_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_0_2_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_0_2_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_0_2_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_1_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_1_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_1_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_1_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_1_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_1_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_1_2_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_1_2_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_1_2_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_1_2_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_2_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_2_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_2_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_2_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_2_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_2_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_2_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_2_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_2_2_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_2_2_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv2_2_2_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv2_2_2_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_0_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_0_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_0_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_0_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_0_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_0_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_1_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_1_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_1_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_1_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_1_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_1_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_2_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_2_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_0_2_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_0_2_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_0_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_0_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_0_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_0_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_0_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_0_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_1_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_1_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_1_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_1_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_1_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_1_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_2_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_2_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_1_2_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_1_2_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_0_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_0_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_0_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_0_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_0_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_0_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_1_0_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_1_0_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_1_0_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_1_1_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_1_1_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_1_1_conv_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_2_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_2_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_cv3_2_2_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_cv3_2_2_WeightDQ": true,
+    "output_value_query_False_rampq_model_23_dfl_conv_ActivationQ_0": true,
+    "precision_value_query_False_rampq_model_23_dfl_conv_ActivationDQ": true,
+    "output_value_query_False_rampq_model_23_dfl_conv_WeightQ_0": true,
+    "precision_value_query_False_rampq_model_23_dfl_conv_WeightDQ": true,
+    "precision_value_query_False_/model.23/Shape": true,
+    "output_value_query_False_/model.23/Shape_0": true,
+    "output_value_query_True_rampq_model_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_2_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_2_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_2_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_2_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_2_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_2_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_2_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_2_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_2_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_2_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_2_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_2_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_2_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_2_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_2_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_2_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_3_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_3_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_3_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_3_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_4_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_4_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_4_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_4_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_4_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_4_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_4_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_4_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_4_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_4_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_4_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_4_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_4_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_4_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_4_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_4_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_5_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_5_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_5_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_5_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_1_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_1_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_1_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_1_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_1_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_1_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_m_1_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_m_1_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_cv3_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_cv3_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_m_0_cv3_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_m_0_cv3_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_6_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_6_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_6_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_6_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_7_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_7_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_7_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_7_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_1_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_1_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_1_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_1_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_1_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_1_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_m_1_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_m_1_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_cv3_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_cv3_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_m_0_cv3_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_m_0_cv3_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_8_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_8_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_8_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_8_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_9_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_9_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_9_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_9_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_9_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_9_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_9_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_9_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_attn_qkv_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_attn_qkv_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_attn_qkv_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_attn_qkv_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_attn_pe_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_attn_pe_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_attn_pe_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_attn_pe_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_attn_proj_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_attn_proj_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_attn_proj_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_attn_proj_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_ffn_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_ffn_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_ffn_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_ffn_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_ffn_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_ffn_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_m_0_ffn_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_m_0_ffn_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_10_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_10_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_10_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_10_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_13_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_13_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_13_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_13_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_13_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_13_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_13_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_13_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_13_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_13_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_13_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_13_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_13_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_13_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_13_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_13_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_16_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_16_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_16_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_16_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_16_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_16_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_16_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_16_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_16_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_16_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_16_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_16_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_16_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_16_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_16_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_16_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_17_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_17_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_17_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_17_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_19_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_19_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_19_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_19_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_19_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_19_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_19_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_19_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_19_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_19_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_19_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_19_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_19_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_19_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_19_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_19_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_20_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_20_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_20_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_20_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_0_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_0_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_0_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_0_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_1_cv1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_1_cv1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_1_cv1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_1_cv1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_1_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_1_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_m_1_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_m_1_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_cv3_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_cv3_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_m_0_cv3_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_m_0_cv3_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_22_cv2_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_22_cv2_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_22_cv2_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_22_cv2_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_0_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_0_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_0_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_0_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_0_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_0_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_0_2_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_0_2_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_0_2_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_0_2_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_1_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_1_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_1_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_1_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_1_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_1_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_1_2_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_1_2_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_1_2_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_1_2_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_2_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_2_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_2_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_2_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_2_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_2_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_2_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_2_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_2_2_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_2_2_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv2_2_2_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv2_2_2_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_0_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_0_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_0_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_0_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_0_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_0_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_1_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_1_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_1_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_1_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_1_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_1_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_2_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_2_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_0_2_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_0_2_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_0_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_0_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_0_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_0_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_0_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_0_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_1_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_1_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_1_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_1_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_1_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_1_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_2_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_2_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_1_2_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_1_2_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_0_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_0_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_0_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_0_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_0_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_0_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_0_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_0_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_1_0_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_1_0_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_1_0_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_1_0_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_1_1_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_1_1_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_1_1_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_1_1_conv_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_2_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_2_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_cv3_2_2_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_cv3_2_2_WeightDQ": true,
+    "output_value_query_True_rampq_model_23_dfl_conv_ActivationQ_0": true,
+    "precision_value_query_True_rampq_model_23_dfl_conv_ActivationDQ": true,
+    "output_value_query_True_rampq_model_23_dfl_conv_WeightQ_0": true,
+    "precision_value_query_True_rampq_model_23_dfl_conv_WeightDQ": true,
+    "precision_value_query_True_/model.23/Shape": true,
+    "output_value_query_True_/model.23/Shape_0": true,
+    "1275_unique_parsed_layers": true,
+    "177_precision_and177_output_constraints": true,
+    "all_queries_success": true,
+    "recomputed_count_matches_saved_summaries": true,
+    "snapshots_entire_structure_identical": true,
+    "precision_constraint_classification": true,
+    "output_constraint_classification": true,
+    "parse_succeeded_without_errors": true,
+    "88_clips_corrected_only_temp_bounds": true,
+    "result_no_build_config_inference": true,
+    "result_metadata_matches_independent": true,
+    "source_has_no_build_configuration_execution_calls": true,
+    "source_has_no_precision_attribute_setter": true,
+    "inspector_tool_pinned": true,
+    "source_snapshots_unchanged": true,
+    "frozen_sources_live_diagnostic_scope.json": true,
+    "frozen_sources_live_field_provenance.json": true,
+    "frozen_sources_live_graph_audit.json": true,
+    "frozen_sources_live_model.onnx": true,
+    "frozen_sources_live_module_map.json": true,
+    "frozen_sources_live_parent_graph_audit.json": true,
+    "frozen_sources_live_parent_manifest.json": true,
+    "frozen_sources_live_parent_reference_protocol.json": true,
+    "frozen_sources_live_parent_spec.json": true,
+    "frozen_sources_live_preflight.json": true,
+    "frozen_sources_live_preparation_attempt1.json": true,
+    "frozen_sources_live_prepare_gate05_corrected_qall_candidate.py": true,
+    "frozen_sources_live_preprocessed_input.npy": true,
+    "frozen_sources_live_README.md": true,
+    "frozen_sources_live_reference_contract.json": true,
+    "frozen_sources_live_semantic_rewrite_audit.json": true,
+    "frozen_sources_live_source_hashes_after.json": true,
+    "frozen_sources_live_source_hashes_before.json": true,
+    "frozen_sources_live_spec.json": true,
+    "monitor_terminal_success_under_budget": true,
+    "guard_complete_without_intervention": true,
+    "same_boot": true,
+    "parse_no_engine_or_smoke_artifacts": true,
+    "original_failed_attempt_still_single": true,
+    "old_failed_raw_still_unchanged_.monitored_build.lock": true,
+    "old_failed_raw_still_unchanged_README.md": true,
+    "old_failed_raw_still_unchanged_SHA256SUMS": true,
+    "old_failed_raw_still_unchanged___pycache__/jetson_build_precision_candidate.cpython-38.pyc": true,
+    "old_failed_raw_still_unchanged_analysis.json": true,
+    "old_failed_raw_still_unchanged_build_failed_end_board_status.json": true,
+    "old_failed_raw_still_unchanged_deployment_tools.json": true,
+    "old_failed_raw_still_unchanged_diagnostic_scope.json": true,
+    "old_failed_raw_still_unchanged_field_provenance.json": true,
+    "old_failed_raw_still_unchanged_graph_audit.json": true,
+    "old_failed_raw_still_unchanged_jetson_build_corrected_qall_candidate.py": true,
+    "old_failed_raw_still_unchanged_jetson_build_precision_candidate.py": true,
+    "old_failed_raw_still_unchanged_jetson_collect_isolated_numeric_probe.py": true,
+    "old_failed_raw_still_unchanged_jetson_monitored_build.py": true,
+    "old_failed_raw_still_unchanged_jetson_owned_group_guard.py": true,
+    "old_failed_raw_still_unchanged_jetson_precision_candidate_smoke.py": true,
+    "old_failed_raw_still_unchanged_latest_build.json": true,
+    "old_failed_raw_still_unchanged_launch.json": true,
+    "old_failed_raw_still_unchanged_manifest.json": true,
+    "old_failed_raw_still_unchanged_model.onnx": true,
+    "old_failed_raw_still_unchanged_module_map.json": true,
+    "old_failed_raw_still_unchanged_monitor/build_console.log": true,
+    "old_failed_raw_still_unchanged_monitor/kernel.log": true,
+    "old_failed_raw_still_unchanged_monitor/request.json": true,
+    "old_failed_raw_still_unchanged_monitor/resources.jsonl": true,
+    "old_failed_raw_still_unchanged_monitor/status.json": true,
+    "old_failed_raw_still_unchanged_monitor/tegrastats.log": true,
+    "old_failed_raw_still_unchanged_monitor_launcher.log": true,
+    "old_failed_raw_still_unchanged_native_input_check.json": true,
+    "old_failed_raw_still_unchanged_parent_graph_audit.json": true,
+    "old_failed_raw_still_unchanged_parent_manifest.json": true,
+    "old_failed_raw_still_unchanged_parent_reference_protocol.json": true,
+    "old_failed_raw_still_unchanged_parent_spec.json": true,
+    "old_failed_raw_still_unchanged_pre_native_review.json": true,
+    "old_failed_raw_still_unchanged_preflight.json": true,
+    "old_failed_raw_still_unchanged_preparation_attempt1.json": true,
+    "old_failed_raw_still_unchanged_prepare_gate05_corrected_qall_candidate.py": true,
+    "old_failed_raw_still_unchanged_preprocessed_input.npy": true,
+    "old_failed_raw_still_unchanged_reference_contract.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/build_request.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/build_result.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/environment.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/parsed_clip_attributes_after_correction.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/parsed_clip_attributes_before_correction.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/parsed_network_validation.json": true,
+    "old_failed_raw_still_unchanged_results/build_20261016T193951_660815Z/tool_hashes.json": true,
+    "old_failed_raw_still_unchanged_semantic_rewrite_audit.json": true,
+    "old_failed_raw_still_unchanged_source_hashes_after.json": true,
+    "old_failed_raw_still_unchanged_source_hashes_before.json": true,
+    "old_failed_raw_still_unchanged_spec.json": true,
+    "old_failed_raw_still_unchanged_supplemental_group_guard.json": true,
+    "old_failed_raw_still_unchanged_supplemental_guard_console.log": true,
+    "metadata_raw_unmodified_by_review": true
+  },
+  "check_count": 859,
+  "all_checks_passed": true,
+  "archive_sha256": "a567b474be0e563448ce96b7b5cc0f1e9bfff1036461b9512efe9b8c1ba32d78",
+  "receipt_sha256": "d844a40a9315a311b6e6eb302a236d088e9438fec8547ef802a18d59e677fbbf",
+  "exact_receipt_files": 26,
+  "before_recomputed": {
+    "layers": 1275,
+    "total_outputs": 1275,
+    "precision_constraints": 177,
+    "output_type_constraints": 177,
+    "query_errors": [],
+    "precision_by_layer_type_dtype": [
+      {
+        "key": [
+          "LayerType.DEQUANTIZE",
+          "DataType.INT8"
+        ],
+        "count": 176
+      },
+      {
+        "key": [
+          "LayerType.SHAPE",
+          "DataType.INT32"
+        ],
+        "count": 1
+      }
+    ],
+    "output_by_layer_type_dtype": [
+      {
+        "key": [
+          "LayerType.QUANTIZE",
+          "DataType.INT8"
+        ],
+        "count": 176
+      },
+      {
+        "key": [
+          "LayerType.SHAPE",
+          "DataType.INT32"
+        ],
+        "count": 1
+      }
+    ],
+    "precision_by_class": [
+      {
+        "key": "activation_DQ",
+        "count": 88
+      },
+      {
+        "key": "other:/model.23/Shape",
+        "count": 1
+      },
+      {
+        "key": "weight_DQ",
+        "count": 88
+      }
+    ],
+    "output_by_class": [
+      {
+        "key": "activation_Q",
+        "count": 88
+      },
+      {
+        "key": "other:/model.23/Shape",
+        "count": 1
+      },
+      {
+        "key": "weight_Q",
+        "count": 88
+      }
+    ],
+    "all_parsed_layer_types": [
+      {
+        "key": "LayerType.ACTIVATION",
+        "count": 166
+      },
+      {
+        "key": "LayerType.CONCATENATION",
+        "count": 24
+      },
+      {
+        "key": "LayerType.CONSTANT",
+        "count": 466
+      },
+      {
+        "key": "LayerType.CONVOLUTION",
+        "count": 88
+      },
+      {
+        "key": "LayerType.DEQUANTIZE",
+        "count": 176
+      },
+      {
+        "key": "LayerType.ELEMENTWISE",
+        "count": 123
+      },
+      {
+        "key": "LayerType.GATHER",
+        "count": 4
+      },
+      {
+        "key": "LayerType.MATRIX_MULTIPLY",
+        "count": 2
+      },
+      {
+        "key": "LayerType.POOLING",
+        "count": 3
+      },
+      {
+        "key": "LayerType.QUANTIZE",
+        "count": 176
+      },
+      {
+        "key": "LayerType.RESIZE",
+        "count": 2
+      },
+      {
+        "key": "LayerType.SHAPE",
+        "count": 1
+      },
+      {
+        "key": "LayerType.SHUFFLE",
+        "count": 19
+      },
+      {
+        "key": "LayerType.SLICE",
+        "count": 23
+      },
+      {
+        "key": "LayerType.SOFTMAX",
+        "count": 2
+      }
+    ],
+    "constrained_precision_layers": [
+      "rampq_model_0_conv_ActivationDQ",
+      "rampq_model_0_conv_WeightDQ",
+      "rampq_model_1_conv_ActivationDQ",
+      "rampq_model_1_conv_WeightDQ",
+      "rampq_model_2_cv1_conv_ActivationDQ",
+      "rampq_model_2_cv1_conv_WeightDQ",
+      "rampq_model_2_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_2_m_0_cv1_conv_WeightDQ",
+      "rampq_model_2_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_2_m_0_cv2_conv_WeightDQ",
+      "rampq_model_2_cv2_conv_ActivationDQ",
+      "rampq_model_2_cv2_conv_WeightDQ",
+      "rampq_model_3_conv_ActivationDQ",
+      "rampq_model_3_conv_WeightDQ",
+      "rampq_model_4_cv1_conv_ActivationDQ",
+      "rampq_model_4_cv1_conv_WeightDQ",
+      "rampq_model_4_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_4_m_0_cv1_conv_WeightDQ",
+      "rampq_model_4_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_4_m_0_cv2_conv_WeightDQ",
+      "rampq_model_4_cv2_conv_ActivationDQ",
+      "rampq_model_4_cv2_conv_WeightDQ",
+      "rampq_model_5_conv_ActivationDQ",
+      "rampq_model_5_conv_WeightDQ",
+      "rampq_model_6_cv1_conv_ActivationDQ",
+      "rampq_model_6_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_6_m_0_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_0_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_0_cv2_conv_WeightDQ",
+      "rampq_model_6_m_0_m_1_cv1_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_1_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_m_1_cv2_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_1_cv2_conv_WeightDQ",
+      "rampq_model_6_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_6_m_0_cv2_conv_WeightDQ",
+      "rampq_model_6_m_0_cv3_conv_ActivationDQ",
+      "rampq_model_6_m_0_cv3_conv_WeightDQ",
+      "rampq_model_6_cv2_conv_ActivationDQ",
+      "rampq_model_6_cv2_conv_WeightDQ",
+      "rampq_model_7_conv_ActivationDQ",
+      "rampq_model_7_conv_WeightDQ",
+      "rampq_model_8_cv1_conv_ActivationDQ",
+      "rampq_model_8_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_8_m_0_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_0_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_0_cv2_conv_WeightDQ",
+      "rampq_model_8_m_0_m_1_cv1_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_1_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_m_1_cv2_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_1_cv2_conv_WeightDQ",
+      "rampq_model_8_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_8_m_0_cv2_conv_WeightDQ",
+      "rampq_model_8_m_0_cv3_conv_ActivationDQ",
+      "rampq_model_8_m_0_cv3_conv_WeightDQ",
+      "rampq_model_8_cv2_conv_ActivationDQ",
+      "rampq_model_8_cv2_conv_WeightDQ",
+      "rampq_model_9_cv1_conv_ActivationDQ",
+      "rampq_model_9_cv1_conv_WeightDQ",
+      "rampq_model_9_cv2_conv_ActivationDQ",
+      "rampq_model_9_cv2_conv_WeightDQ",
+      "rampq_model_10_cv1_conv_ActivationDQ",
+      "rampq_model_10_cv1_conv_WeightDQ",
+      "rampq_model_10_m_0_attn_qkv_conv_ActivationDQ",
+      "rampq_model_10_m_0_attn_qkv_conv_WeightDQ",
+      "rampq_model_10_m_0_attn_pe_conv_ActivationDQ",
+      "rampq_model_10_m_0_attn_pe_conv_WeightDQ",
+      "rampq_model_10_m_0_attn_proj_conv_ActivationDQ",
+      "rampq_model_10_m_0_attn_proj_conv_WeightDQ",
+      "rampq_model_10_m_0_ffn_0_conv_ActivationDQ",
+      "rampq_model_10_m_0_ffn_0_conv_WeightDQ",
+      "rampq_model_10_m_0_ffn_1_conv_ActivationDQ",
+      "rampq_model_10_m_0_ffn_1_conv_WeightDQ",
+      "rampq_model_10_cv2_conv_ActivationDQ",
+      "rampq_model_10_cv2_conv_WeightDQ",
+      "rampq_model_13_cv1_conv_ActivationDQ",
+      "rampq_model_13_cv1_conv_WeightDQ",
+      "rampq_model_13_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_13_m_0_cv1_conv_WeightDQ",
+      "rampq_model_13_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_13_m_0_cv2_conv_WeightDQ",
+      "rampq_model_13_cv2_conv_ActivationDQ",
+      "rampq_model_13_cv2_conv_WeightDQ",
+      "rampq_model_16_cv1_conv_ActivationDQ",
+      "rampq_model_16_cv1_conv_WeightDQ",
+      "rampq_model_16_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_16_m_0_cv1_conv_WeightDQ",
+      "rampq_model_16_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_16_m_0_cv2_conv_WeightDQ",
+      "rampq_model_16_cv2_conv_ActivationDQ",
+      "rampq_model_16_cv2_conv_WeightDQ",
+      "rampq_model_17_conv_ActivationDQ",
+      "rampq_model_17_conv_WeightDQ",
+      "rampq_model_19_cv1_conv_ActivationDQ",
+      "rampq_model_19_cv1_conv_WeightDQ",
+      "rampq_model_19_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_19_m_0_cv1_conv_WeightDQ",
+      "rampq_model_19_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_19_m_0_cv2_conv_WeightDQ",
+      "rampq_model_19_cv2_conv_ActivationDQ",
+      "rampq_model_19_cv2_conv_WeightDQ",
+      "rampq_model_20_conv_ActivationDQ",
+      "rampq_model_20_conv_WeightDQ",
+      "rampq_model_22_cv1_conv_ActivationDQ",
+      "rampq_model_22_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_22_m_0_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_0_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_0_cv2_conv_WeightDQ",
+      "rampq_model_22_m_0_m_1_cv1_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_1_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_m_1_cv2_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_1_cv2_conv_WeightDQ",
+      "rampq_model_22_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_22_m_0_cv2_conv_WeightDQ",
+      "rampq_model_22_m_0_cv3_conv_ActivationDQ",
+      "rampq_model_22_m_0_cv3_conv_WeightDQ",
+      "rampq_model_22_cv2_conv_ActivationDQ",
+      "rampq_model_22_cv2_conv_WeightDQ",
+      "rampq_model_23_cv2_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv2_0_0_conv_WeightDQ",
+      "rampq_model_23_cv2_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv2_0_1_conv_WeightDQ",
+      "rampq_model_23_cv2_0_2_ActivationDQ",
+      "rampq_model_23_cv2_0_2_WeightDQ",
+      "rampq_model_23_cv2_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv2_1_0_conv_WeightDQ",
+      "rampq_model_23_cv2_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv2_1_1_conv_WeightDQ",
+      "rampq_model_23_cv2_1_2_ActivationDQ",
+      "rampq_model_23_cv2_1_2_WeightDQ",
+      "rampq_model_23_cv2_2_0_conv_ActivationDQ",
+      "rampq_model_23_cv2_2_0_conv_WeightDQ",
+      "rampq_model_23_cv2_2_1_conv_ActivationDQ",
+      "rampq_model_23_cv2_2_1_conv_WeightDQ",
+      "rampq_model_23_cv2_2_2_ActivationDQ",
+      "rampq_model_23_cv2_2_2_WeightDQ",
+      "rampq_model_23_cv3_0_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_0_0_conv_WeightDQ",
+      "rampq_model_23_cv3_0_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_0_1_conv_WeightDQ",
+      "rampq_model_23_cv3_0_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_1_0_conv_WeightDQ",
+      "rampq_model_23_cv3_0_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_1_1_conv_WeightDQ",
+      "rampq_model_23_cv3_0_2_ActivationDQ",
+      "rampq_model_23_cv3_0_2_WeightDQ",
+      "rampq_model_23_cv3_1_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_0_0_conv_WeightDQ",
+      "rampq_model_23_cv3_1_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_0_1_conv_WeightDQ",
+      "rampq_model_23_cv3_1_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_1_0_conv_WeightDQ",
+      "rampq_model_23_cv3_1_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_1_1_conv_WeightDQ",
+      "rampq_model_23_cv3_1_2_ActivationDQ",
+      "rampq_model_23_cv3_1_2_WeightDQ",
+      "rampq_model_23_cv3_2_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_0_0_conv_WeightDQ",
+      "rampq_model_23_cv3_2_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_0_1_conv_WeightDQ",
+      "rampq_model_23_cv3_2_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_1_0_conv_WeightDQ",
+      "rampq_model_23_cv3_2_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_1_1_conv_WeightDQ",
+      "rampq_model_23_cv3_2_2_ActivationDQ",
+      "rampq_model_23_cv3_2_2_WeightDQ",
+      "rampq_model_23_dfl_conv_ActivationDQ",
+      "rampq_model_23_dfl_conv_WeightDQ",
+      "/model.23/Shape"
+    ],
+    "constrained_outputs": [
+      {
+        "name": "rampq_model_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_5_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_5_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_7_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_7_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_qkv_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_qkv_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_pe_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_pe_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_proj_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_proj_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_17_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_17_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_20_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_20_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_dfl_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_dfl_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "/model.23/Shape",
+        "index": 0
+      }
+    ]
+  },
+  "after_recomputed": {
+    "layers": 1275,
+    "total_outputs": 1275,
+    "precision_constraints": 177,
+    "output_type_constraints": 177,
+    "query_errors": [],
+    "precision_by_layer_type_dtype": [
+      {
+        "key": [
+          "LayerType.DEQUANTIZE",
+          "DataType.INT8"
+        ],
+        "count": 176
+      },
+      {
+        "key": [
+          "LayerType.SHAPE",
+          "DataType.INT32"
+        ],
+        "count": 1
+      }
+    ],
+    "output_by_layer_type_dtype": [
+      {
+        "key": [
+          "LayerType.QUANTIZE",
+          "DataType.INT8"
+        ],
+        "count": 176
+      },
+      {
+        "key": [
+          "LayerType.SHAPE",
+          "DataType.INT32"
+        ],
+        "count": 1
+      }
+    ],
+    "precision_by_class": [
+      {
+        "key": "activation_DQ",
+        "count": 88
+      },
+      {
+        "key": "other:/model.23/Shape",
+        "count": 1
+      },
+      {
+        "key": "weight_DQ",
+        "count": 88
+      }
+    ],
+    "output_by_class": [
+      {
+        "key": "activation_Q",
+        "count": 88
+      },
+      {
+        "key": "other:/model.23/Shape",
+        "count": 1
+      },
+      {
+        "key": "weight_Q",
+        "count": 88
+      }
+    ],
+    "all_parsed_layer_types": [
+      {
+        "key": "LayerType.ACTIVATION",
+        "count": 166
+      },
+      {
+        "key": "LayerType.CONCATENATION",
+        "count": 24
+      },
+      {
+        "key": "LayerType.CONSTANT",
+        "count": 466
+      },
+      {
+        "key": "LayerType.CONVOLUTION",
+        "count": 88
+      },
+      {
+        "key": "LayerType.DEQUANTIZE",
+        "count": 176
+      },
+      {
+        "key": "LayerType.ELEMENTWISE",
+        "count": 123
+      },
+      {
+        "key": "LayerType.GATHER",
+        "count": 4
+      },
+      {
+        "key": "LayerType.MATRIX_MULTIPLY",
+        "count": 2
+      },
+      {
+        "key": "LayerType.POOLING",
+        "count": 3
+      },
+      {
+        "key": "LayerType.QUANTIZE",
+        "count": 176
+      },
+      {
+        "key": "LayerType.RESIZE",
+        "count": 2
+      },
+      {
+        "key": "LayerType.SHAPE",
+        "count": 1
+      },
+      {
+        "key": "LayerType.SHUFFLE",
+        "count": 19
+      },
+      {
+        "key": "LayerType.SLICE",
+        "count": 23
+      },
+      {
+        "key": "LayerType.SOFTMAX",
+        "count": 2
+      }
+    ],
+    "constrained_precision_layers": [
+      "rampq_model_0_conv_ActivationDQ",
+      "rampq_model_0_conv_WeightDQ",
+      "rampq_model_1_conv_ActivationDQ",
+      "rampq_model_1_conv_WeightDQ",
+      "rampq_model_2_cv1_conv_ActivationDQ",
+      "rampq_model_2_cv1_conv_WeightDQ",
+      "rampq_model_2_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_2_m_0_cv1_conv_WeightDQ",
+      "rampq_model_2_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_2_m_0_cv2_conv_WeightDQ",
+      "rampq_model_2_cv2_conv_ActivationDQ",
+      "rampq_model_2_cv2_conv_WeightDQ",
+      "rampq_model_3_conv_ActivationDQ",
+      "rampq_model_3_conv_WeightDQ",
+      "rampq_model_4_cv1_conv_ActivationDQ",
+      "rampq_model_4_cv1_conv_WeightDQ",
+      "rampq_model_4_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_4_m_0_cv1_conv_WeightDQ",
+      "rampq_model_4_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_4_m_0_cv2_conv_WeightDQ",
+      "rampq_model_4_cv2_conv_ActivationDQ",
+      "rampq_model_4_cv2_conv_WeightDQ",
+      "rampq_model_5_conv_ActivationDQ",
+      "rampq_model_5_conv_WeightDQ",
+      "rampq_model_6_cv1_conv_ActivationDQ",
+      "rampq_model_6_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_6_m_0_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_0_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_0_cv2_conv_WeightDQ",
+      "rampq_model_6_m_0_m_1_cv1_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_1_cv1_conv_WeightDQ",
+      "rampq_model_6_m_0_m_1_cv2_conv_ActivationDQ",
+      "rampq_model_6_m_0_m_1_cv2_conv_WeightDQ",
+      "rampq_model_6_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_6_m_0_cv2_conv_WeightDQ",
+      "rampq_model_6_m_0_cv3_conv_ActivationDQ",
+      "rampq_model_6_m_0_cv3_conv_WeightDQ",
+      "rampq_model_6_cv2_conv_ActivationDQ",
+      "rampq_model_6_cv2_conv_WeightDQ",
+      "rampq_model_7_conv_ActivationDQ",
+      "rampq_model_7_conv_WeightDQ",
+      "rampq_model_8_cv1_conv_ActivationDQ",
+      "rampq_model_8_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_8_m_0_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_0_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_0_cv2_conv_WeightDQ",
+      "rampq_model_8_m_0_m_1_cv1_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_1_cv1_conv_WeightDQ",
+      "rampq_model_8_m_0_m_1_cv2_conv_ActivationDQ",
+      "rampq_model_8_m_0_m_1_cv2_conv_WeightDQ",
+      "rampq_model_8_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_8_m_0_cv2_conv_WeightDQ",
+      "rampq_model_8_m_0_cv3_conv_ActivationDQ",
+      "rampq_model_8_m_0_cv3_conv_WeightDQ",
+      "rampq_model_8_cv2_conv_ActivationDQ",
+      "rampq_model_8_cv2_conv_WeightDQ",
+      "rampq_model_9_cv1_conv_ActivationDQ",
+      "rampq_model_9_cv1_conv_WeightDQ",
+      "rampq_model_9_cv2_conv_ActivationDQ",
+      "rampq_model_9_cv2_conv_WeightDQ",
+      "rampq_model_10_cv1_conv_ActivationDQ",
+      "rampq_model_10_cv1_conv_WeightDQ",
+      "rampq_model_10_m_0_attn_qkv_conv_ActivationDQ",
+      "rampq_model_10_m_0_attn_qkv_conv_WeightDQ",
+      "rampq_model_10_m_0_attn_pe_conv_ActivationDQ",
+      "rampq_model_10_m_0_attn_pe_conv_WeightDQ",
+      "rampq_model_10_m_0_attn_proj_conv_ActivationDQ",
+      "rampq_model_10_m_0_attn_proj_conv_WeightDQ",
+      "rampq_model_10_m_0_ffn_0_conv_ActivationDQ",
+      "rampq_model_10_m_0_ffn_0_conv_WeightDQ",
+      "rampq_model_10_m_0_ffn_1_conv_ActivationDQ",
+      "rampq_model_10_m_0_ffn_1_conv_WeightDQ",
+      "rampq_model_10_cv2_conv_ActivationDQ",
+      "rampq_model_10_cv2_conv_WeightDQ",
+      "rampq_model_13_cv1_conv_ActivationDQ",
+      "rampq_model_13_cv1_conv_WeightDQ",
+      "rampq_model_13_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_13_m_0_cv1_conv_WeightDQ",
+      "rampq_model_13_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_13_m_0_cv2_conv_WeightDQ",
+      "rampq_model_13_cv2_conv_ActivationDQ",
+      "rampq_model_13_cv2_conv_WeightDQ",
+      "rampq_model_16_cv1_conv_ActivationDQ",
+      "rampq_model_16_cv1_conv_WeightDQ",
+      "rampq_model_16_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_16_m_0_cv1_conv_WeightDQ",
+      "rampq_model_16_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_16_m_0_cv2_conv_WeightDQ",
+      "rampq_model_16_cv2_conv_ActivationDQ",
+      "rampq_model_16_cv2_conv_WeightDQ",
+      "rampq_model_17_conv_ActivationDQ",
+      "rampq_model_17_conv_WeightDQ",
+      "rampq_model_19_cv1_conv_ActivationDQ",
+      "rampq_model_19_cv1_conv_WeightDQ",
+      "rampq_model_19_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_19_m_0_cv1_conv_WeightDQ",
+      "rampq_model_19_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_19_m_0_cv2_conv_WeightDQ",
+      "rampq_model_19_cv2_conv_ActivationDQ",
+      "rampq_model_19_cv2_conv_WeightDQ",
+      "rampq_model_20_conv_ActivationDQ",
+      "rampq_model_20_conv_WeightDQ",
+      "rampq_model_22_cv1_conv_ActivationDQ",
+      "rampq_model_22_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_22_m_0_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_m_0_cv1_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_0_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_0_cv2_conv_WeightDQ",
+      "rampq_model_22_m_0_m_1_cv1_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_1_cv1_conv_WeightDQ",
+      "rampq_model_22_m_0_m_1_cv2_conv_ActivationDQ",
+      "rampq_model_22_m_0_m_1_cv2_conv_WeightDQ",
+      "rampq_model_22_m_0_cv2_conv_ActivationDQ",
+      "rampq_model_22_m_0_cv2_conv_WeightDQ",
+      "rampq_model_22_m_0_cv3_conv_ActivationDQ",
+      "rampq_model_22_m_0_cv3_conv_WeightDQ",
+      "rampq_model_22_cv2_conv_ActivationDQ",
+      "rampq_model_22_cv2_conv_WeightDQ",
+      "rampq_model_23_cv2_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv2_0_0_conv_WeightDQ",
+      "rampq_model_23_cv2_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv2_0_1_conv_WeightDQ",
+      "rampq_model_23_cv2_0_2_ActivationDQ",
+      "rampq_model_23_cv2_0_2_WeightDQ",
+      "rampq_model_23_cv2_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv2_1_0_conv_WeightDQ",
+      "rampq_model_23_cv2_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv2_1_1_conv_WeightDQ",
+      "rampq_model_23_cv2_1_2_ActivationDQ",
+      "rampq_model_23_cv2_1_2_WeightDQ",
+      "rampq_model_23_cv2_2_0_conv_ActivationDQ",
+      "rampq_model_23_cv2_2_0_conv_WeightDQ",
+      "rampq_model_23_cv2_2_1_conv_ActivationDQ",
+      "rampq_model_23_cv2_2_1_conv_WeightDQ",
+      "rampq_model_23_cv2_2_2_ActivationDQ",
+      "rampq_model_23_cv2_2_2_WeightDQ",
+      "rampq_model_23_cv3_0_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_0_0_conv_WeightDQ",
+      "rampq_model_23_cv3_0_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_0_1_conv_WeightDQ",
+      "rampq_model_23_cv3_0_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_1_0_conv_WeightDQ",
+      "rampq_model_23_cv3_0_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_0_1_1_conv_WeightDQ",
+      "rampq_model_23_cv3_0_2_ActivationDQ",
+      "rampq_model_23_cv3_0_2_WeightDQ",
+      "rampq_model_23_cv3_1_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_0_0_conv_WeightDQ",
+      "rampq_model_23_cv3_1_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_0_1_conv_WeightDQ",
+      "rampq_model_23_cv3_1_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_1_0_conv_WeightDQ",
+      "rampq_model_23_cv3_1_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_1_1_1_conv_WeightDQ",
+      "rampq_model_23_cv3_1_2_ActivationDQ",
+      "rampq_model_23_cv3_1_2_WeightDQ",
+      "rampq_model_23_cv3_2_0_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_0_0_conv_WeightDQ",
+      "rampq_model_23_cv3_2_0_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_0_1_conv_WeightDQ",
+      "rampq_model_23_cv3_2_1_0_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_1_0_conv_WeightDQ",
+      "rampq_model_23_cv3_2_1_1_conv_ActivationDQ",
+      "rampq_model_23_cv3_2_1_1_conv_WeightDQ",
+      "rampq_model_23_cv3_2_2_ActivationDQ",
+      "rampq_model_23_cv3_2_2_WeightDQ",
+      "rampq_model_23_dfl_conv_ActivationDQ",
+      "rampq_model_23_dfl_conv_WeightDQ",
+      "/model.23/Shape"
+    ],
+    "constrained_outputs": [
+      {
+        "name": "rampq_model_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_2_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_4_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_5_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_5_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_m_1_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_m_0_cv3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_6_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_7_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_7_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_m_1_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_m_0_cv3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_8_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_9_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_qkv_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_qkv_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_pe_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_pe_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_proj_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_attn_proj_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_m_0_ffn_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_10_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_13_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_16_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_17_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_17_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_19_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_20_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_20_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_m_1_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv3_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_m_0_cv3_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv2_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_22_cv2_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_0_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_1_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv2_2_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_0_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_1_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_0_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_0_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_0_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_1_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_1_1_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_2_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_cv3_2_2_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_dfl_conv_ActivationQ",
+        "index": 0
+      },
+      {
+        "name": "rampq_model_23_dfl_conv_WeightQ",
+        "index": 0
+      },
+      {
+        "name": "/model.23/Shape",
+        "index": 0
+      }
+    ]
+  },
+  "verified_mapping": {
+    "precision_is_set": {
+      "LayerType.DEQUANTIZE/DataType.INT8": 176,
+      "activation_DQ": 88,
+      "weight_DQ": 88,
+      "LayerType.SHAPE/DataType.INT32": 1,
+      "shape_layer": "/model.23/Shape"
+    },
+    "output_type_is_set": {
+      "LayerType.QUANTIZE/DataType.INT8": 176,
+      "activation_Q": 88,
+      "weight_Q": 88,
+      "LayerType.SHAPE/DataType.INT32": 1,
+      "shape_layer": "/model.23/Shape"
+    }
+  },
+  "required_correction_of_prior_zero_wording": "0 explicit precision/output setter calls describes Python source operations only. The parsed network is not constraint-free: it already reports177 precision_is_set layers and177 output_type_is_set outputs. New metadata measures parser-created states; it must not be rewritten into the old failure evidence as if recorded during that build.",
+  "bounds_effect": "All88 in-memory Clip bounds were restored, but the complete before/after metadata snapshots are identical. No new precision/output constraint state was observed from these bound setters.",
+  "interpretation": "Parser-created constraint metadata supplies a concrete reason to test OBEY-sensitive build feasibility in a future separately frozen diagnostic. It does not prove OBEY caused filterQDQFormats, identify the failing optimizer node, verify actual engine precision/tactics, or establish native numerical behavior.",
+  "next_protocol_condition": "Keep0 explicit setters distinct from177 parser-created precision/output constraints in every future factor cell. A build-flag diagnostic must record the same parsed inventory and unchanged Clip correction records. Do not clear parser-created constraints as an undocumented extra factor.",
+  "scope_and_cleanup": {
+    "monitor_elapsed_seconds": 9.06,
+    "inspection_api_elapsed_seconds": 6.9283852799999295,
+    "builder_config_created": false,
+    "full_model_build_retry": false,
+    "inference_run": false,
+    "guard_group_fully_empty": true,
+    "guard_intervention": false,
+    "old_full_attempts": 1
+  },
+  "review_limits": "Saved raw metadata, source AST and exact receipt verification only. No SSH/native operation/inference or raw edits were performed by reviewer.",
+  "retained_statuses": {
+    "original_full_pytorch_ort_guard": "FAILED_UNCHANGED",
+    "original_corrected_qall_build": "FAILED_RETAINED",
+    "gate05": "INCOMPLETE"
+  }
+}

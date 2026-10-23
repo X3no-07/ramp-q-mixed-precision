@@ -1,0 +1,185 @@
+{
+  "schema": "rampq.gate05.dfl_conv_output_probe/v1",
+  "prepared_client_at": "2026-10-20T22:27:44.285034+08:00",
+  "diagnostic_only": true,
+  "source_configuration": "q_all",
+  "source_graph_file": "source_model.onnx",
+  "source_graph_sha256": "755b27a8f135e50adbf626e2f77ccd6745302b3577a0ba2873c10792dbfa08ee",
+  "parent_spec_file": "parent_spec.json",
+  "parent_spec_sha256": "f1df4d7353a83f97705ac0f049f7732e021e74dcc8e309fdb5adb0e67f8154bb",
+  "parent_manifest_file": "parent_manifest.json",
+  "parent_manifest_sha256": "f1679f4ebc7daa3e5589c28968785d48f31269cc5f83b0398bfa3bd7a91d861f",
+  "parent_softmax_cut_spec_file": "parent_softmax_cut_spec.json",
+  "parent_softmax_cut_spec_sha256": "45f284588d37e607478ce79e443d46a49b870ef0d65614c5ce0867130f50316b",
+  "parent_softmax_cut_manifest_file": "parent_softmax_cut_manifest.json",
+  "parent_softmax_cut_manifest_sha256": "6c456b5a08d34a9a3fb87d7fced5474f2c349d632076bfc0fb5eb8dd793ddde1",
+  "parent_softmax_cut_checkpoint_file": "parent_softmax_cut_checkpoint.json",
+  "parent_softmax_cut_checkpoint_sha256": "142eb219ccbeea141237cd1a89ecdb2c47c70b99d35159d9912ba8cea767c53f",
+  "parent_dfl_spec_file": "parent_dfl_spec.json",
+  "parent_dfl_spec_sha256": "934e075aa58dde1829b600d3d011f5ad51c4f1da1af78f7791944f492781b14d",
+  "parent_dfl_manifest_file": "parent_dfl_manifest.json",
+  "parent_dfl_manifest_sha256": "3836e82ed53afb14fe16d3b9431864c0c4a45fd0d3418c7c06a4f6fcd46ed1d0",
+  "protocol_file": "protocol.json",
+  "protocol_sha256": "8f6a55f640915b84d7300d1595ebb895092ccf0374e40a27b6aaf812f406e09b",
+  "input_file": "dfl_softmax_probabilities.npy",
+  "input_file_sha256": "5a7c5b1c58bd4d956a042dfeab3b11133a072ce7ab8630195f51d8f38a508520",
+  "input_binding": {
+    "name": "/model.23/dfl/Softmax_output_0",
+    "input": true,
+    "shape": [
+      1,
+      16,
+      4,
+      8400
+    ],
+    "dtype": "DataType.FLOAT"
+  },
+  "output_bindings_in_order": [
+    {
+      "name": "/model.23/dfl/conv/Conv_output_0",
+      "input": false,
+      "shape": [
+        1,
+        1,
+        4,
+        8400
+      ],
+      "dtype": "DataType.FLOAT",
+      "role": "dfl_conv_distances_with_singleton_channel_not_decoded_boxes",
+      "kind": "primary"
+    }
+  ],
+  "conv_names": [
+    "/model.23/dfl/conv/Conv"
+  ],
+  "source_conv_names": [
+    "/model.23/dfl/conv/Conv"
+  ],
+  "clip_names": [
+    "rampq_model_23_dfl_conv_Clip"
+  ],
+  "source_activation_boundaries": [
+    {
+      "prefix": "rampq_model_23_dfl_conv",
+      "q_name": "rampq_model_23_dfl_conv_ActivationQ",
+      "clip_name": "rampq_model_23_dfl_conv_Clip",
+      "dq_name": "rampq_model_23_dfl_conv_ActivationDQ",
+      "scale_initializer": "rampq_model_23_dfl_conv_a_scale",
+      "scale": 0.007873943075537682,
+      "zero_initializer": "rampq_model_23_dfl_conv_a_zero",
+      "zero": 0,
+      "original_float_clip_bounds": [
+        -0.9999907612800598,
+        0.9999907612800598
+      ],
+      "corrected_int8_clip_bounds": [
+        -127,
+        127
+      ],
+      "all_other_nodes_and_initializers_exact_source_bytes": true
+    }
+  ],
+  "activation_scale": 0.007873943075537682,
+  "variants": {
+    "code_clip": {
+      "model_file": "model_dfl_conv_output_code_clip.onnx",
+      "model_sha256": "805abb78ed4e4d5abc8041b2916dadc83370a14ef1776fcc0a03f163c16bcf81",
+      "nodes": 6,
+      "initializers": 7,
+      "expected_output_npz_keys": {
+        "/model.23/dfl/conv/Conv_output_0": "code_clip_output"
+      },
+      "selected_node_serialized_sha256": {
+        "rampq_model_23_dfl_conv_ActivationQ": "2447af675995af25c59aa9671087cc367eba2238a0196e09f4ecf820fc546828",
+        "rampq_model_23_dfl_conv_Clip": "d4fd35cd63f63d843a8eee8a491b57ef7c40668fc194083cd88bc46d9cc0a1c0",
+        "rampq_model_23_dfl_conv_ActivationDQ": "6cdf5d318eae17034dd62c016f211454efebc5781fcf9ca160a9767f48b3909f",
+        "rampq_model_23_dfl_conv_WeightQ": "34964f50638aa400067fc00fb7d9bafc4690a5964f57236afcd4707c9bf8c573",
+        "rampq_model_23_dfl_conv_WeightDQ": "5647d10eabb4b240dc8e35a3bb2ca2f6d998521c540d8ef17722a34219e85298",
+        "/model.23/dfl/conv/Conv": "7a591ab990e69fbb77a98879ddd1206a8f32caa93998b33196b470e169e3ce84"
+      },
+      "selected_initializer_serialized_sha256": {
+        "model.23.dfl.conv.weight": "a131eefd3ebd329d085da840c8dc11d2b27a6e44099c89f184c6274e5157cee6",
+        "rampq_model_23_dfl_conv_a_scale": "2829f3607b4f5e53b4b09e474e815510edb9af7de2b67d3a0d7f8d74a6dd3515",
+        "rampq_model_23_dfl_conv_a_zero": "d5bedf7af5175093714b089c71f7b51387474a6f06375c72c0388c13fa9a475a",
+        "rampq_model_23_dfl_conv_clip_min": "8c6a1dd38e0094d87f39f6e6f675e9f5b2a94c0ae07dde04caf2a64ca5c019ea",
+        "rampq_model_23_dfl_conv_clip_max": "607b7de5a6b6ec43b4aa767d90c51fd036af6e2b63c8067e39aacef0f10fef45",
+        "rampq_model_23_dfl_conv_w_scale": "a15635bcb4d263cdbfb1aa58c992181355459ed1dcebd75d143af73eb06eb63f",
+        "rampq_model_23_dfl_conv_w_zero": "d99018865509be56fe0120daba4774c3a3c00fe693b56416b271d825f3c44f3e"
+      }
+    }
+  },
+  "cpu_expected_outputs_file": "cpu_expected_outputs.npz",
+  "cpu_expected_outputs_sha256": "711fb41fa18bef712bd069c88a552e1bc918d1d1034b6f6d32d802cbd769d0c6",
+  "cpu_diagnostic_file": "cpu_diagnostic.json",
+  "cpu_diagnostic_sha256": "8fb35450c929a1183fb227f83bcedf2f51e256fd6bbc4ff18bdbe905474cfa21",
+  "reference_shape_lineage_file": "reference_shape_lineage.json",
+  "reference_shape_lineage_sha256": "351b4f1c1250551e35ecb2709fdb1052cd79150cd45c4a07c1c3580cc3e21140",
+  "fixture_lineage_file": "fixture_lineage.json",
+  "fixture_lineage_sha256": "3eeb5d356e98b04b42487942c293f2c0713665917e46aa0a4cbfec1f24d4c553",
+  "graph_identity_audit_file": "graph_identity_audit.json",
+  "graph_identity_audit_sha256": "ea71dbce194815729c6fb56dbe639d4b74b15de4372b286da72caf13bd6d8f7c",
+  "cases": [
+    {
+      "id": "code_clip_none",
+      "variant": "code_clip",
+      "precision_constraint_flag": "none",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    },
+    {
+      "id": "code_clip_obey",
+      "variant": "code_clip",
+      "precision_constraint_flag": "obey",
+      "max_build_seconds": 300,
+      "iterations": 1,
+      "apply_native_clip_attribute_correction": true
+    }
+  ],
+  "case_order": [
+    "code_clip_none",
+    "code_clip_obey"
+  ],
+  "max_seconds": 900,
+  "max_build_seconds": 300,
+  "maximum_attempts_per_case": 1,
+  "maximum_native_builds": 2,
+  "maximum_native_inferences": 4,
+  "executions_per_successful_case": 2,
+  "native_importer_clip_attribute_correction": {
+    "variant": "code_clip",
+    "layer_names": [
+      "rampq_model_23_dfl_conv_Clip"
+    ],
+    "activation_alpha": -127.0,
+    "activation_beta": 127.0,
+    "when": "After parsing; preserve every parser layer precision/output request."
+  },
+  "native_build_policy": {
+    "int8": true,
+    "fp16": true,
+    "tf32": false,
+    "prefer": false,
+    "workspace_mib": 1024,
+    "avg_timing_iterations": 1,
+    "profiling_verbosity": "DETAILED",
+    "io_format": "FLOAT_LINEAR",
+    "repeat_executions_if_success": 2,
+    "layer_precision_or_output_type_setters_or_resets": false,
+    "clip_alpha": -127.0,
+    "clip_beta": 127.0
+  },
+  "new_CPU_execution_runs_this_stage": 1,
+  "new_probability_fixture_generation_runs": 0,
+  "new_Softmax_72Conv_old_DFL_or_full_detector_runs": 0,
+  "original_complete_model_numerical_guard": "FAILED_UNCHANGED",
+  "corrected_full_qall_failure": "FAILED_TENSORRT_FORMAT_SELECTION_NO_ENGINE_UNCHANGED",
+  "new_tolerances_defined": false,
+  "original_tolerances_changed": false,
+  "calibration_recomputed": false,
+  "weights_changed": false,
+  "dataset_evaluation_run": false,
+  "complete_detector_executions": 0,
+  "native_build_or_execution_run_by_preparer": false,
+  "limits": "New original Conv output boundary changes native format-selection context; local outcomes do not uniquely attribute full failure to removed Reshape or prove full repair."
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "rampq.gate05.dfl_next_control_plan/v1",
+  "client_at": "2026-10-20T12:21:25.423641+08:00",
+  "status": "PROPOSED_NOT_FROZEN_OR_EXECUTED",
+  "current_observation": "Corrected DFL NONE builds and executes; OBEY fails with the same optimizer source location and candidateRequirements assertion as full corrected q_all.",
+  "next_recommended_control": {
+    "topology": "Original FLOAT Clip -> Q -> DQ DFL tail",
+    "model_file": "artifacts/gate05/20261020_dfl_context_probe/model_dfl_original.onnx",
+    "model_sha256": "b60be2c2d196ed1fb4e962446f374d9e53d066476172cfa1db415194b2306d90",
+    "fixture_sha256": "cb1e437ef9c67af95ab66dfe7e8db5f28ebbfc437835502f1da1ac816e414dab",
+    "cases": [
+      "original_none",
+      "original_obey"
+    ],
+    "native_clip_attribute_correction": false,
+    "reference": "Reuse saved original/code_clip CPU outputs which are already byte-identical on this fixture; no upstream CPU rerun or input reselection needed",
+    "preserve": [
+      "Source nodes/weights/scales/IO",
+      "Same internal fixture",
+      "All parser precision and output type requests",
+      "INT8+FP16, TF32/PREFER disabled, FLOAT LINEAR IO, same workspace/timing",
+      "One new bounded build per case only after separate frozen protocol/review"
+    ],
+    "interpretation": "Together with current corrected cases, discriminate whether local OBEY failure also occurs in original Clip topology or requires the declared code-Clip+import-correction derivative. Topology and importer correction remain a combined derivative factor, not separated."
+  },
+  "secondary_option": "Only if needed later, independently freeze Softmax output before making an additional cut; logits fixture cannot feed a Softmax-removed graph directly.",
+  "not_authorized_by_plan_alone": [
+    "Reset parser constraints",
+    "Try whole-model NONE/PREFER",
+    "Retry current failed case",
+    "Change weights/scales/tolerances",
+    "Dataset inference"
+  ],
+  "original_complete_model_guard": "FAILED_UNCHANGED",
+  "full_qall_failure_resolved": false,
+  "gate05_status": "INCOMPLETE"
+}
