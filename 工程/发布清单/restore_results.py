@@ -8,12 +8,16 @@ import subprocess
 import zipfile
 
 def sha(p):
-    with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+    digest=hashlib.sha256()
+    with p.open('rb') as f:
+        for block in iter(lambda:f.read(1024*1024),b''):digest.update(block)
+    return digest.hexdigest()
 def safe_target(root,rel):
     pure=PurePosixPath(rel)
     if pure.is_absolute() or '..' in pure.parts or ':' in rel or '\\' in rel:raise ValueError('Unsafe result member')
     p=(root/Path(*pure.parts)).resolve()
-    if not p.is_relative_to(root):raise ValueError('Result escaped target root')
+    try:p.relative_to(root)
+    except ValueError:raise ValueError('Result escaped target root')
     return p
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
