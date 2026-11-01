@@ -1,0 +1,19 @@
+# Gate1: Launch of Two-Group 10-Round Development Comparison on the Full Training Set
+
+
+
+2026-10-27, at 00:54 UTC, the pilot task is initiated. This report only confirms the launch of the new task and that the training supervision information preparation phase is currently ongoing; it does not claim that model training, AP, or method validation has been completed.
+
+Execution followed the user's instruction to continue on the local RTX5060 Laptop. Both arms use the same 4530 existing training images,10 epochs each, identical initial FP32 EMA weights, data order, G1 floating-point mask, and optimization settings. Standard QAT is compared with the existing native TAL object-alignment correction. Batch size 4 and gradient accumulation 4 are used; each final partial window is normalized by its actual size and updated, for 2840 steps per arm. Epoch10 is fixed; the existing 64-image MSE quantization ranges are reused unchanged. BN/DFL and scales are frozen. AMP and EMA are disabled, with no additional augmentation or hyperparameter search.
+
+Reuses 512 previously trained teacher models, supplements 4018 members, without repeating already calibrated and baseline models. The teacher performs 8036 forward passes, two groups of training involve 90600 forward passes, two models undergo 414 image evaluations with 828 forward passes, totaling 99464; state reconstruction is saved separately in 6. The third branch directly applies the original ordinary scorer to the new ordinary QAT output without retraining or adding model inference. Unified original preprocessing, NMS, and AP sorting, with fixed endpoints at 0.25; the original full candidate threshold is only validated for the retained FP32 array of 128 images, without claiming qualification for another 286 images. A six-hour total duration across all phases, with a minimum disk space of 8 GiB, exceptions are preserved and no automatic restarts are performed.
+
+The main judgment is fixed prior to inference: the correction group must show a strict improvement in AP50–95 over standard QAT, with no reduction in detection at the fixed 0.25 threshold and no increase in false positives—all three conditions must be satisfied simultaneously. All candidates are retained; no round, threshold, or seed is selected based on development results. Any failure is reported truthfully.
+
+This round is a single-branch development trial with expanded budget, and ten rounds do not constitute sufficient convergence certification. Standard QAT uses the same G1 floating-point mask, and thus cannot be considered a complete and authentic INT8 baseline or HQOD/DetPTQ reproduction. 414 images are repeatedly used training_val development data. Selection/Holdout payload is sealed, and previous failures remain unchanged.
+
+All 12 pre-launch tests passed, covering gradient preservation at the end, equivalence of teacher rules with legacy array, native object-level gradients, ignore protection, and synthetic CUDA updates/restore operations. Post-launch, actual PID, command line, creation time, and parent-child chain have been verified. CPU progress is ongoing, with empty stderr.
+
+The supervision script will sequentially complete two training groups, three-branch development AP evaluation, and independent array audit; upon completion, it will generate an additional report for result #85, machine decision, delivery checklist, and status. Every 50 minutes, actual progress will be checked in the current conversation; if no change is observed, the system remains silent and proceeds to automatic verification and closeout; any anomaly will be clearly reported. After all executable steps in this round are completed, the scheduled checks will be deleted.
+
+Training completion, consistency in saving, full-candidate numerical qualification, development AP, independent scientific acceptance, and board-level acceptance are each recorded. However, no method is guaranteed to succeed.

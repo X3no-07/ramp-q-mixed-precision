@@ -1,56 +1,45 @@
-# RAMP-Q：目标级量化失效归因与可靠恢复
+# RAMP-Q: Object-Level Quantization Failure and Recovery
 
-研究对象是小目标检测中的混合精度量化：记录哪些具体目标在量化后消失，通过模块级破坏与恢复干预检查同一目标是否回来，并统计恢复造成的附带漏检。混合精度既是验证工具，也是后续部署候选。
+Research software and chronological reports on quantization failures, module-level precision interventions, and reliable recovery in small-object detection.
 
-整理日期：2026-10-23。目标仓库：`X3no-07/ramp-q-mixed-precision`，可见性为 private。本文件是发布副本的入口；仓库和附件的实际上传状态以 GitHub 页面为准。
+This English edition was prepared on **November 2, 2026**, from the October 29 source-and-report snapshot. Report dates describe the original experiments; translation does not add experimental evidence.
 
-## 从这里阅读
+## Start here
 
-| 入口 | 内容 |
-|---|---|
-| [方向](方向/README.md) | 研究主线、已有证据、结论边界与阶段方案 |
-| [工程](工程/README.md) | 源码、脚本、测试、报告及证据导航 |
-| [最新报告50](工程/报告/50_Gate1_合成训练管线与FP32保存接入验证.md) | 合成训练全流程与保存前 live FP32 状态捕获 |
-| [发布文件清单](工程/发布清单/included_files.jsonl) | 实际纳入发布的文件记录 |
-| [排除文件清单](工程/发布清单/excluded_files.jsonl) | 未纳入发布的文件及原因 |
-| [Release 附件索引](工程/发布清单/release_assets.json) | 筛选后的二进制、数组证据附件及校验信息 |
+- [Current status and research decisions](docs/STATUS.md)
+- [Environment and reproduction requirements](docs/REPRODUCIBILITY.md)
+- [Data and artifact availability](docs/DATA_AND_ARTIFACTS.md)
+- [Export provenance and validation](export/README.md)
 
-## 截至本次整理的结果
+## Research stages
 
-| 阶段 | 已验证结果 | 结论边界 |
+| Stage | Scope | Entry point |
 |---|---|---|
-| Gate0：RUOD-R 模拟量化 | 固定模型下存在逐目标失效、模块干预和同目标恢复信号；部分信号在原冻结 Holdout 复现 | 支持继续研究；目标级选模优于传统方法尚未成立 |
-| Gate0.5：Orin 部署配置 | 150 图、865 目标；FP16 命中722、全 INT8 命中687。新增漏检44个，G1 恢复救回40个、附带漏检3个 | 限定部署配置的恢复存在性判据通过；原 PyTorch/ORT 数值护栏仍为 `FAILED_UNCHANGED` |
-| Gate1：首轮候选训练 | 完成30轮训练及109图检查 | 全 FP32/FP16 固定全候选数值检查为 `FAIL_FIXED_TOLERANCES`，科学浮点基线未验收 |
-| Gate1：混合推理原型 | 主体 FP32、检测塔 FP16、解码 FP32；109/109 图满足原固定数值门槛 | 复用 debug 集的工程证据，不改判原全 FP16 失败，也不构成独立泛化或部署证明 |
-| Gate1：评测器 | Python AP/AR 实现与32组合成原生参考对照；220个中间矩阵 exact，161项指标符合冻结比较规则，其中28处 NaN 图样一致 | 未证明任意输入、跨版本或真实数据 AP 一致 |
-| Gate1：最新训练接入 | 4张合成训练图、2张合成 training_val 图；随机初始化 YOLO11n 完成1轮 CPU 训练、2次 SGD/EMA 更新；119项测试通过；保存前 live FP32 状态在独立 CPU 进程重建输出 exact | 合成工程链通过；真实 ignore-aware/CUDA 训练及科学 Gate1 验收仍待完成 |
+| Gate 0 | RUOD-R simulated quantization, object-level failures, and module recovery; reports 00–22 | [Mechanism screening](01_gate0_mechanism_screening/README.md) |
+| Gate 0.5 | Orin/TensorRT deployment, numerical diagnostics, and 150-image acceptance; reports 23–39 | [Deployment validation](02_gate05_orin_deployment/README.md) |
+| Gate 1 | VisDrone protocols, evaluation, baselines, and correction experiments; reports 40–90 | [VisDrone validation](03_gate1_visdrone_validation/README.md) |
+| Research roadmap | Supervision-decoupling proposal, report 91, and earlier proposals | [Research roadmap](04_research_roadmap/README.md) |
 
-Gate0.5 的限定集合净恢复为 `40−3=+37`；G1 总命中为721，相对全 INT8 增加34，二者定义不同。上述44个漏检和40个恢复包括全部尺寸目标，不能全部称为小目标；命中计数不是 mAP。原始护栏没有放宽或按置信度筛掉候选。
+Each stage uses `docs/`, `src/`, `scripts/`, `config/`, `tests/`, `artifacts/`, and `logs/`. Shared baseline files are materialized copies rather than Windows directory junctions. Reports retain their original sequence, including negative results.
 
-## 目录与版本
+## What the evidence supports
 
-```text
-方向/
-  README.md                 当前研究导航
-  06_原始方向/              原方向资料，保留各自日期与语境
-  08_历史快照/              2026-10-19 方向快照
-工程/
-  README.md                 当前工程导航
-  src/ scripts/ tests/      实现、运行入口和测试
-  config/ splits/           配置及划分定义
-  报告/                     00—50 的相对链接阅读副本
-  历史入口/                 旧 README 与研究状态入口
-  历史/09_离线工程快照/    2026-10-19 离线工具与证据快照
-  发布清单/                 纳入、排除及 Release 附件索引
+- **Gate 0:** the simulations exhibit object-level failure and recovery under module precision interventions. General superiority over conventional module-selection methods has not been established.
+- **Gate 0.5:** the selected real deployment configurations satisfy a limited same-target recovery existence criterion. The original full-model PyTorch/ORT numerical guardrail remains `FAILED_UNCHANGED`.
+- **Gate 1:** the three-arm experiment in report 90 completed training and saved-artifact audits, but intervention-guided correction failed both predefined joint criteria. Report 91 proposes a new hypothesis and has not established its effectiveness.
+
+Implementation readiness, artifact integrity, scientific acceptance, and measured device performance are distinct claims.
+
+## Repository checks
+
+With Python 3.12, run from the repository root:
+
+```bash
+python tools/check_repository.py
 ```
 
-工程根目录同时保留原编号报告字节；优先阅读 `工程/报告/` 中适配仓库链接的展示副本。历史文档中的“尚未完成”描述其记录时点，不覆盖本页和最新报告的状态。
+This performs static syntax, link, provenance, file-scope, and sensitive-pattern checks. It does not train a model, run inference, compute AP, or validate a device. Model-related tests require the dependencies, data, and contracts described in the reproduction guide.
 
-## 发布范围与复核
+This repository contains a filtered source-and-report snapshot. Raw datasets, model weights, engines, prediction arrays, and complete historical run directories are not included. Existing historical releases are separate snapshots; see [artifact availability](docs/DATA_AND_ARTIFACTS.md).
 
-仓库组织已有研究资料和工程成果。筛选后的证据归档（filtered archive）不包含源数据集、外部下载的预训练模型、运行时或依赖包、临时 SSH 授权及凭据；具体纳入和排除范围以上述清单为准。本项目产生的权重、引擎和数值输出通过同一私有仓库的 Release 附件保存，不直接放入 Git 代码树；附件不代表全部本地运行目录原封上传。
-
-原实验 manifest 可能引用本次排除的成员。保留它们用于说明历史身份与证据关系，**不表示可以对发布包执行原 manifest 的整包完整性复核**。应先核对发布清单和附件校验值，再判断哪些原始检查具备所需成员。源码快照和历史回执也不等于在另一台设备上已经复现。
-
-下一步是冻结真实数据成员与非法 ignore/quarantine 政策，资格验证目标 CUDA 训练和 live FP32 捕获，再按独立验证、提交顺序及候选预算合同推进正式训练。独立真实数据 AP、科学 Gate1、TensorRT/Orin 后续资格和速度功耗验收仍须分别取得证据。
+Attribution and third-party licensing information are retained in [NOTICE.md](NOTICE.md).

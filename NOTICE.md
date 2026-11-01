@@ -1,7 +1,7 @@
-# 来源与许可说明
+# Attribution and licensing notice
 
-这是 X3no-07 的私人研究成果快照，没有将第三方数据、模型或依赖重新声明为自有知识产权。
+This repository is a research snapshot of source code, reports, and proposals. It does not claim ownership of third-party datasets, models, or dependencies.
 
-Ultralytics 派生或镜像代码保留其源码许可，相关组件注明 AGPL-3.0；VisDrone官方评测源码及其他依赖遵循各自原许可。未为整个混合快照擅自授予统一开源许可证。原始数据集和外部运行时不随本仓库分发。模型成果的使用还需遵守训练来源和基础模型的条款。
+The adapted Ultralytics loss block in `gate1_ignore_trainer.py` retains its original attribution and AGPL-3.0 notice. Other third-party components remain subject to their respective licenses. This English edition does not introduce a blanket license for the mixed-source snapshot.
 
-报告展示副本只调整链接，原始报告和历史manifest保留原字节。原manifest中被发布过滤移除的成员在排除清单中明确列出。本快照不将工程一致性、合成验证或权重文件存在解释成科研/部署验收通过。
+Raw datasets, external runtimes, pretrained models, and device authentication material are not distributed here. Reports retain their original negative results and scientific limitations. Export provenance, translation records, and packaging checks are documented in `export/`.
