@@ -1,6 +1,7 @@
 # Export provenance and validation
 
 - [SOURCE_FILES.jsonl](SOURCE_FILES.jsonl): pre-export source digests, exported paths, and current exported digests.
+- [ARTIFACT_AVAILABILITY.json](ARTIFACT_AVAILABILITY.json): planned versus available historical Release assets and expected checksums.
 - [EXCLUDED_SCOPE.json](EXCLUDED_SCOPE.json): excluded categories and selected operational files.
 - [REFERENCE_MAP.json](REFERENCE_MAP.json): scope of local-only evidence references redirected to the artifact guide.
 - [VALIDATION.json](VALIDATION.json): completed repository checks.

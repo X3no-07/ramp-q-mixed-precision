@@ -40,6 +40,6 @@ python tools/check_repository.py
 
 This performs static syntax, link, provenance, file-scope, and sensitive-pattern checks. It does not train a model, run inference, compute AP, or validate a device. Model-related tests require the dependencies, data, and contracts described in the reproduction guide.
 
-This repository contains a filtered source-and-report snapshot. Raw datasets, model weights, engines, prediction arrays, and complete historical run directories are not included. Existing historical releases are separate snapshots; see [artifact availability](docs/DATA_AND_ARTIFACTS.md).
+This repository contains a filtered source-and-report snapshot. Raw datasets, model weights, engines, prediction arrays, and complete historical run directories are not included. The historical October 23 release currently contains **7 of 16 planned ZIP assets** and does not cover all later reports. See [what is omitted, how to obtain inputs, and current release availability](docs/DATA_AND_ARTIFACTS.md).
 
 Attribution and third-party licensing information are retained in [NOTICE.md](NOTICE.md).

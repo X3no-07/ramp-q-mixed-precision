@@ -6,6 +6,10 @@ Host-side tooling uses Python 3.12 syntax. Dependencies are declared in [require
 
 `gate1_ignore_trainer.py` explicitly requires **Ultralytics 8.4.142**, the reviewed interface version. Keep host and device environments separate; a successful host installation does not certify Orin deployment.
 
+## Obtain omitted inputs first
+
+Check the [material-by-material availability table](DATA_AND_ARTIFACTS.md) before attempting reproduction. The historical release is incomplete (7 of 16 planned ZIP assets), and no complete public artifact set for later reports is provided. Local configuration does not download or reconstruct missing data, weights, or contracts.
+
 ## Configure your own data and model
 
 From the repository root, provide existing dataset and checkpoint paths:
