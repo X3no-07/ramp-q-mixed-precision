@@ -1,7 +1,9 @@
 # Export provenance and validation
 
 - [SOURCE_FILES.jsonl](SOURCE_FILES.jsonl): pre-export source digests, exported paths, and current exported digests.
-- [ARTIFACT_AVAILABILITY.json](ARTIFACT_AVAILABILITY.json): planned versus available historical Release assets and expected checksums.
+- [ARTIFACT_AVAILABILITY.json](ARTIFACT_AVAILABILITY.json): all 16 direct ZIP download URLs and expected/server-reported hashes.
+- [HISTORICAL_RELEASE_VERIFICATION.json](HISTORICAL_RELEASE_VERIFICATION.json): original ZIP publication completion and verification receipt.
+- [HISTORICAL_ASSEMBLY_PLAN.json](HISTORICAL_ASSEMBLY_PLAN.json): immutable transport-segment plan used for recovery, rather than a current download inventory.
 - [EXCLUDED_SCOPE.json](EXCLUDED_SCOPE.json): excluded categories and selected operational files.
 - [REFERENCE_MAP.json](REFERENCE_MAP.json): scope of local-only evidence references redirected to the artifact guide.
 - [VALIDATION.json](VALIDATION.json): completed repository checks.

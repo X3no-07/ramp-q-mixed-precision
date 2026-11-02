@@ -8,7 +8,7 @@ Host-side tooling uses Python 3.12 syntax. Dependencies are declared in [require
 
 ## Obtain omitted inputs first
 
-Check the [material-by-material availability table](DATA_AND_ARTIFACTS.md) before attempting reproduction. The historical release is incomplete (7 of 16 planned ZIP assets), and no complete public artifact set for later reports is provided. Local configuration does not download or reconstruct missing data, weights, or contracts.
+Check the [material-by-material availability table](DATA_AND_ARTIFACTS.md) before attempting reproduction. All 16 planned October 23 ZIP assets are available with verified SHA256 values. That release belongs to the original snapshot; no complete public artifact set for later reports is provided. Local configuration does not download or reconstruct missing data, weights, or contracts.
 
 ## Configure your own data and model
 
