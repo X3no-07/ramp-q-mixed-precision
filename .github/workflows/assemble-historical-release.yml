@@ -1,0 +1,38 @@
+name: Assemble historical release ZIPs
+
+on:
+  workflow_dispatch:
+    inputs:
+      parts:
+        description: Space-separated original archive part numbers whose segments are complete
+        required: true
+        default: '5'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assemble-historical-release
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    if: github.repository == 'X3no-07/ramp-q-mixed-precision'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Fetch the selected repository commit
+        env:
+          SOURCE_REPOSITORY: ${{ github.repository }}
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          git init source
+          git -C source remote add origin "https://github.com/${SOURCE_REPOSITORY}.git"
+          git -C source fetch --depth=1 origin "$SOURCE_COMMIT"
+          git -C source checkout --detach FETCH_HEAD
+      - name: Verify segments, reconstruct ZIPs, and upload original archives
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REQUESTED_PARTS: ${{ inputs.parts }}
+        run: python3 source/tools/assemble_historical_release.py --parts "$REQUESTED_PARTS"

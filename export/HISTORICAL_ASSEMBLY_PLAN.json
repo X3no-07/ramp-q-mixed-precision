@@ -1,0 +1,958 @@
+{
+  "schema": "rampq.segmented_historical_archives/v1",
+  "date": "2026-11-02",
+  "repository": "X3no-07/ramp-q-mixed-precision",
+  "release_tag": "snapshot-2026-10-23",
+  "release_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/tag/snapshot-2026-10-23",
+  "planned_archives": 16,
+  "direct_archives": 7,
+  "segmented_archives": 9,
+  "chunk_bytes": 67108864,
+  "total_archive_bytes": 10468367310,
+  "scope": "Immutable byte-segment plan for reconstructing the original October 23 ZIPs. This plan does not assert that every segment is already uploaded; the workflow checks availability and server digests at execution time.",
+  "archives": [
+    {
+      "name": "rampq-results-20261023-part001.zip",
+      "bytes": 540485082,
+      "sha256": "136cf5363a614631f1be0a81d01aafea2db5d0141356a6ca0b94abd02ac5e44c",
+      "part": 1,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part001.zip",
+      "server_digest": "sha256:136cf5363a614631f1be0a81d01aafea2db5d0141356a6ca0b94abd02ac5e44c",
+      "asset_id": 669093856
+    },
+    {
+      "name": "rampq-results-20261023-part002.zip",
+      "bytes": 602088635,
+      "sha256": "79fdd05410d79ef9669ea1e5f41909966bafd8eefcddae1258be408689356853",
+      "part": 2,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part002.zip",
+      "server_digest": "sha256:79fdd05410d79ef9669ea1e5f41909966bafd8eefcddae1258be408689356853",
+      "asset_id": 668971349
+    },
+    {
+      "name": "rampq-results-20261023-part003.zip",
+      "bytes": 667216238,
+      "sha256": "f131f1d522d4c17d1ffc64200fd50fff464c1c24bb9fd170fceeb27e04e38eda",
+      "part": 3,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part003.zip",
+      "server_digest": "sha256:f131f1d522d4c17d1ffc64200fd50fff464c1c24bb9fd170fceeb27e04e38eda",
+      "asset_id": 668971210
+    },
+    {
+      "name": "rampq-results-20261023-part004.zip",
+      "bytes": 721768499,
+      "sha256": "27162092429918786034c60eb353cf04601c400afc9692ea7a884663b1f9a940",
+      "part": 4,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part004.zip",
+      "server_digest": "sha256:27162092429918786034c60eb353cf04601c400afc9692ea7a884663b1f9a940",
+      "asset_id": 669093713
+    },
+    {
+      "name": "rampq-results-20261023-part005.zip",
+      "bytes": 722387026,
+      "sha256": "5b65e3d49373539c9ec0edca9858bcc1518e1cbc208dd2341cf57b8fa5e0584a",
+      "part": 5,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part005.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "e015ab9efac27c10167215b3a096e0125e7ce0307211fe83e805011514ade6d2"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "d5c06b0db568191b8521b43d9a043647b866e7107b77f265e4f8e0e15473182c"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "cff5a4f129a698be9ca4c1a27e2b3c03dc14928a6231df498599c987988a36d7"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "c77fcadac8810bc8f004097434b9a52bf9755459d3c9cf6ac8547093e91f6dae"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "5200ed5e85b9aace3c36bedc5d06392f3305a4616a98006c08d848ff7239dc8d"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "c1c9e3651e5fba5f97a83d11ae3fc91dac754f2844dcef7cbaf7dd38a716b2bf"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "d6d6ee3c871028497ebafcfb481c2624d8dbd1605e3f9fd8f9e1f466a9ede8d9"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "b6d8a5d82da8ca20a1ca21ce0599f818f1c71ac7c3fc85c85e2ad50c1a02e56b"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "a579d057115b0207c6c0049e4e92c500bb95fcd6b2a68044cb547fa679a87ce2"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "5e87fe49b89f0d1ddf201bb1b50eb7bde1706bffa1de7c338c37429b2b349c61"
+        },
+        {
+          "name": "rampq-results-20261023-part005.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part005.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 51298386,
+          "sha256": "52bdaf2a578975ea57036c9e96cfcbc396a3b319358ea06f581fd0e4be61e14b"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part006.zip",
+      "bytes": 708170106,
+      "sha256": "2884e945e017079a1d0d954f145d4ad9d7a2d68c6feb53b9c0a7c12f6ce66204",
+      "part": 6,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part006.zip",
+      "server_digest": "sha256:2884e945e017079a1d0d954f145d4ad9d7a2d68c6feb53b9c0a7c12f6ce66204",
+      "asset_id": 669340596
+    },
+    {
+      "name": "rampq-results-20261023-part007.zip",
+      "bytes": 711178761,
+      "sha256": "72e6862d32bdf7dffa0a278efe3dfb973df05a19393bb2eda4a61006ceaa8946",
+      "part": 7,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part007.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "8acec6cf08f8670873ffc9b19838beb53fa0b1548b58a45e103ed48521be1768"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "8bcdcc52bbae2d84c8672893191b2490ee3200688419275de58bad0360240ad9"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "e8990628910daafff71cb666f479e8ac3520b8edb10def76fe3c4bcea27a7ccd"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "e64439811a39a5db23cb97d1344e9a06116c1ca407771c3079b66bd84b0b8074"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "b8e5c79524b71e29617f62e4e5a09a76f407169a98171ae0105663622d4d3806"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "927fb288ec914899b1838e64bed2e345b0e021c1664c078f6f34194eade7c966"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "4a97a0edd6424599752ac4b353b2a24284a51052ec8617d6af706382c0770364"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "85aa06c7e250c67de9ea06878d64f05d33a3748d4f865c57d981320517b078f6"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "4e0766cbac45113239a55349d138c58c6537860c768d984b3a54c80017ed23ee"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "ec31e8ae30fe1e7d696bac69543d6ccb97a9c2480e17f2a534a0d7c9ccd40536"
+        },
+        {
+          "name": "rampq-results-20261023-part007.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part007.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 40090121,
+          "sha256": "fa373b8e4e24ff7ad31d6054ecb7644847e8b8f688da5dec18fd2479e3e050a9"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part008.zip",
+      "bytes": 712700309,
+      "sha256": "b9ae80053c12b880ca75694d7d1d0f9a259dab0b79d29db0ba775e473a2b7cfe",
+      "part": 8,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part008.zip",
+      "server_digest": "sha256:b9ae80053c12b880ca75694d7d1d0f9a259dab0b79d29db0ba775e473a2b7cfe",
+      "asset_id": 669340623
+    },
+    {
+      "name": "rampq-results-20261023-part009.zip",
+      "bytes": 714238835,
+      "sha256": "72466775f1c80797e2eb1ff624b4c0dfaf91e893313b81c6f5ed1fcc0a6d5d2a",
+      "part": 9,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part009.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "59f002c0f84d3219b5fb675784cf36155faab005d70793525e8cfeac7e5ab8cf"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "293b29b084d350c469d03591b954357fc457a82cde5553bc8034f017235fab7e"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "899fd7829488abe1b42ed1808a5dc26580122b16391b0549e0598a04be9819a6"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "ab597abb14efacdb50d28be982d4ad7571289fe95e4664a75ea03d413000e9e4"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "c7435955c70cf829a71f5916966845254777918692dd16e520a56c02ab6c05c8"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "39d70b79da75bcf08c424753e2343bc39d6b3856f78a0350e39936ef48ad7e45"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "bc3100245a1ea425edaaba395331375ac5b555a835f3dcbe568129d1fc0cae01"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "4f1abb06d91aa4e7a92eca62c400836c9af598a90c047613c5ccfd27ef4a4258"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "48bec766fc3ade9101cb53f527b4bcbe8e991dff337a07022ced08390ebf10c3"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "02f57272beecb680847ce7840b32fc1b82e8167be4e542eff2cad9ddf1b7522f"
+        },
+        {
+          "name": "rampq-results-20261023-part009.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part009.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 43150195,
+          "sha256": "4a0c5b4b285a1e77db452c26d8e5993b6de6dd3d0ece3530eb74643ffd873e79"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part010.zip",
+      "bytes": 722720116,
+      "sha256": "c4eb4055659028af7b2afc615e095b56fd97053e1a6dc2f15fe1af7eacc118f4",
+      "part": 10,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part010.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "4f55899fb57baac1c7863214843a223f1bfd55b73ec8142ba58aed6e2e3c51b2"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "6cebb90acbe76f31744fabbe06e220e3a905f54f0a7456ab3f31b96eaca2534c"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "958dcb7743a40ded82e33cbfff15e41ad92162a240f8a08306e2cdcffde21826"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "e760df1f3d0fbcc9e3c2359d18eb883bc22533088c6e0dca86334eb3bf2f5535"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "ea7a62915abd55932257765c4ebf767b1e009cc3463b60bc38eafd051fc94bc4"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "b3ff4934fbbdc9328ee6a2050220ccb93080dce1d247ec6f32c808cfd877b190"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "15ec9e1798364cd302105a2420b5df7c2fd36c7986cae2673baca5f4c751cba3"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "3ebcc8e709c1f64b9208022462600fbcf35e509750ddfe72bf31a9a2f457c42b"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "fd75359d3b590638bfab91bd8dd41d6294d82546aaf89e58c8ebeccbff5e2a51"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "70f1b0579d2eac7f26bc0b07e9a7cf743a3ed39a640927322ab49c014040bb88"
+        },
+        {
+          "name": "rampq-results-20261023-part010.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part010.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 51631476,
+          "sha256": "8f58479b9f81583f0af9ecea3ba0bbd745024bde2e19e8db013f9e46f54f2bbb"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part011.zip",
+      "bytes": 704840555,
+      "sha256": "84e5600940f98e8f815af9e7b6f8ddae4d716a5a784962310035c41cfe6cd2cb",
+      "part": 11,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part011.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "f527c181ae19fe0f2fff8876ad0df8408b59f9f71149528142943f45110ad7ef"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "8170da8fd524dbd3da85fed6521c150c7a150f56819f7f170773c459c6be78e5"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "f1902e737c8518e9c3db551465f9d010db7d10a74a8eab27f3a38501b0ba4e00"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "95d35aeaea0bfb96ae90f313d4efb92d7bc0c84369343dd9b54c38290e9dbe73"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "8ac676badb85e4d2311b26f2972eae80e6704ea9abb6ab537cbf623d5d36da34"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "74a5807dc7795ef655e92056992ce2e800d0d4e50a9929f92b27ec8422697470"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "04d103dec1483214bfd47cd2b0632b898d9400ceb8b805aef05e5778dd197635"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "fd1e7a7c9fc904ef4260fe91d92265962eba444db717347ef81d0d148d9f69a4"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "26c441ede0299b0ca862bed85301a5de829bdbea1cf5ae38141cd7391b022805"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "bb93df57ac35ea90feb29572be572734f77846e18f3d6458a448a0f3ccea2db4"
+        },
+        {
+          "name": "rampq-results-20261023-part011.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part011.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 33751915,
+          "sha256": "56a931d8324c46f57a7edd2f1dc34c9e24866e6210c83d8b274dc49bf898fb7a"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part012.zip",
+      "bytes": 720231255,
+      "sha256": "0c7a555693639fd9370af1510fb26d8fcfe5d4172e9a03f2e0f72b6296d8c43a",
+      "part": 12,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part012.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "fe4c373553e02132a0400c90e8e8a652c1771a427ea6538352c1cefc0d21ae1e"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "647b61d1d963c6a62bf29612116a42fe482d79a8f5e8dcc520ffd5b7e1a95516"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "b9a9717505b8593529a10cf124ffbd4220738cb76f7914162d96a4fcfccfa8de"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "c8218a9ac45d7f4279a75a8e656979cd828e7b8c593d6da0c176b1e2d97abd32"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "3e7331bb520960380df379907b0fda7df2e051ed6f2a037d5f77132deb55f6d8"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "5c9218e9b699671aa0dabae9a3a85aebbc9d9671fdd6fd3c866372ef9d997b61"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "fba19eaafdf2db1d766c2d7221c434a831df0ff0895881e3b3820a942e76b340"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "b300f3f37db3f20b429a38687083de43825e157430bf7ac7141113292038e3e9"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "f08a5a893d59b914801d0308c344968d6c347d605154a4a4eb79e94abe3de5f8"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "2492d6e97d7acf1626093081cd40717139eff9d9d20f50f63b50db24ea51424b"
+        },
+        {
+          "name": "rampq-results-20261023-part012.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part012.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 49142615,
+          "sha256": "b8ab07ecc9592932735fc400941c24cd892a1be195ea4b11935fd52f34cb168e"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part013.zip",
+      "bytes": 721693554,
+      "sha256": "66bbcdb6de10b74f41ab034295d035cd0daf8670d668a9c0e387e56e4cd75df8",
+      "part": 13,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part013.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "9d1991ffc210df8741b35ecce851594072ef98966fd4f06e31ffe8ec92ff498c"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "5049766931b32c4325f17b27f2631b849c1b0f6f34c25b4652803041c3e5dabc"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "f3d5cb11b6a3dfe8fd8594f5c21c863af9670c070d1716a384dd02546d499a86"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "2cb9b327133c5ad6340b5a44872c3d9a4ec61a37fd43bbc097e586e079e5644e"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "2bcce5a0c9789cc5d6db17ea486a136b43c3202650a712dcea87ab07aabf79a5"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "0e3e43fbdfbb550abac0e15ea5a2ef26591c4a2c2dc473077ed066cdc1c4939e"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "1dcbde41d7e087548ccd459e6ad3f84c0c002641e7789bec4db2bcaa9fefe0dc"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "0994eb425e417d4133ea9c76a4970a396c1fb803470e2b77f0250a83adcdb571"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "b4dc0f61cd756f9685d16f817cf6bdaa1927b9da404a173137c1bdd03d092099"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "20d7ac6db08e09ae377e423d9dede03018b1b9c25fac3cb05802aec005d5b6dc"
+        },
+        {
+          "name": "rampq-results-20261023-part013.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part013.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 50604914,
+          "sha256": "d32cef58a35dea8d41c4150f27e62789c7300418eacb39ca409f2ac58c77cf96"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part014.zip",
+      "bytes": 721595926,
+      "sha256": "ee7820938ae6083c7df2c1d23ab70e1303f1dd02e8038a88657b99deb6bc3120",
+      "part": 14,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part014.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "fb70a6540d5c5358d3b0059d51ede33e494058b87fe438ac7e97e1760dfdc42d"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "31f23f58aae39702bd4fe2a612c2a26328c346084f9ba2658ccce6c3f0b4caaa"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "aa6c435c27a64312fb5eaec59d7184626a00db73515afe8d458efd2e2800a360"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "0e313eae11b662dbb81f1818db00db3de44a0c398acdb264ee345aa5a1697d2e"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "875891eb82a1af61edf1f30152970ab6269543a13ea8fc0cce34e198f4eaabc6"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "89340605e9706361a10779cc0a6c17ed50df252afd3685089407e1115431c2de"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "5bb720cc7ffc7fa4ca9648d7b4cecb3649e2e3ff9f0fd0d552abc85378dbff4c"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "a08733a84b5198acedc2b6ad5e57f38640be5c942d2f689a72a4f7866f43dc8d"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "2a18108a90cd56d0921ca689c03418b73c495585873f7dad839f7e0f0f08fcdc"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "9023f24b96b7bcdd9dd22183ba5fbb3019ba0ae0ba121ffe6978181c2bb8428d"
+        },
+        {
+          "name": "rampq-results-20261023-part014.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part014.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 50507286,
+          "sha256": "809f24fafd56365cafd9d7e656e4455c9bd0128d1acf082371763062d2c0427d"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part015.zip",
+      "bytes": 721454838,
+      "sha256": "120514a8bea056b333209da7451c50f07922b7f7e14426856558817e7b78cd29",
+      "part": 15,
+      "download_mode": "segmented",
+      "segments": [
+        {
+          "name": "rampq-results-20261023-part015.zip.seg001-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 1,
+          "offset": 0,
+          "bytes": 67108864,
+          "sha256": "70f4bec6b64bd07809f93845abc6fca4040f11e4cf8ba4c21439dace8e8d170f"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg002-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 2,
+          "offset": 67108864,
+          "bytes": 67108864,
+          "sha256": "2033c4eba883952dd0a295aa4c1c5e7903de843f886a647283cb79d584e9ca8e"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg003-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 3,
+          "offset": 134217728,
+          "bytes": 67108864,
+          "sha256": "acf7f36dbb75841ac9528cc5b29e32e5a0572bd86c88267710d720297a06fefc"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg004-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 4,
+          "offset": 201326592,
+          "bytes": 67108864,
+          "sha256": "504b136562fe85fd7720cf25ea84bece4bec2b1bf442b49e6149793a50511749"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg005-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 5,
+          "offset": 268435456,
+          "bytes": 67108864,
+          "sha256": "05e35ab49fb59e14be11fec1f66282ede4d017e03a8adebf2388f7518313cf82"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg006-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 6,
+          "offset": 335544320,
+          "bytes": 67108864,
+          "sha256": "34539cd26cf8ecbe0a5575b8f2272352d0dae880ad5d6e1ba1c5c73aae5fbedc"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg007-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 7,
+          "offset": 402653184,
+          "bytes": 67108864,
+          "sha256": "ccaabd0f87dd2eb246591a075d37f1a57a01e7ce17decfea4dc4e73852a7b329"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg008-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 8,
+          "offset": 469762048,
+          "bytes": 67108864,
+          "sha256": "4879616a33358dfb91806195e52fc4970aaaf0500faf7b0ebc19a9def1297d3a"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg009-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 9,
+          "offset": 536870912,
+          "bytes": 67108864,
+          "sha256": "46e802867ff8bc30bf7a727a92738ef3bc49352449821eb63bc15a1b734797a9"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg010-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 10,
+          "offset": 603979776,
+          "bytes": 67108864,
+          "sha256": "6d3ef5bdc6aef7129821eb005db1c12c0887f4c41f10402bfce79d9c69306842"
+        },
+        {
+          "name": "rampq-results-20261023-part015.zip.seg011-of-011",
+          "archive": "rampq-results-20261023-part015.zip",
+          "index": 11,
+          "offset": 671088640,
+          "bytes": 50366198,
+          "sha256": "85dcc48103df92e1c3c3f73fbe95883197ffdbd9db7e30f9a41b155da48344c0"
+        }
+      ]
+    },
+    {
+      "name": "rampq-results-20261023-part016.zip",
+      "bytes": 55597575,
+      "sha256": "53bcbcef3700f3ed6836a2f0e68b824988b94dd1781462ffef3e0f376ae62d03",
+      "part": 16,
+      "download_mode": "direct",
+      "download_url": "https://github.com/X3no-07/ramp-q-mixed-precision/releases/download/snapshot-2026-10-23/rampq-results-20261023-part016.zip",
+      "server_digest": "sha256:53bcbcef3700f3ed6836a2f0e68b824988b94dd1781462ffef3e0f376ae62d03",
+      "asset_id": 668982265
+    }
+  ]
+}
