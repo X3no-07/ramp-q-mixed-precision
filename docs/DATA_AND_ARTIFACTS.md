@@ -11,11 +11,15 @@
 | Raw images, annotations, and dataset downloads | No | Obtain the matching dataset/version from its original provider under the applicable terms, or supply the existing local research copy. No verified RUOD-R download is advertised by this edition. | Model execution and historical scoring require the correct data, labels, and frozen roles. An arbitrary replacement dataset does not reproduce the reported results. |
 | External pretrained checkpoints and project-trained weights | No | Supply your own checkpoint for a new run. For an exact historical run, locate the required checkpoint in the original run records or the historical release, and verify its expected identity. | The example `best.pt` path is a placeholder. A generic pretrained checkpoint does not substitute for the reported trained model. |
 | ONNX models and TensorRT engines | No | Locate the matching historical artifact if available, or regenerate with the required weights, export procedure, platform, and precision contract. | Regeneration alone does not establish byte identity, numerical equivalence, or identical device behavior. |
-| Prediction arrays, complete run directories, large logs, calibration records, and frozen execution contracts | Not distributed as a complete set | Consult the relevant report and historical file map; the filtered October 23 archive is available in the release below, while other records remain local. | Missing inputs can prevent historical integrity checks, rescoring, or exact reproduction. Later reports do not have a complete public artifact bundle here. |
+| Prediction arrays, complete run directories, large logs, calibration records, and frozen execution contracts | Selected evidence in Git and release assets | The October 23 archive and the November 8 VisDrone prediction archive are listed below. Consult each report for other required inputs. | Prediction archives support saved-output verification. Exact model reproduction requires the matching checkpoints, data, and environment. |
 | External runtimes and environment distributions | No | Install the platform-appropriate dependencies; see [reproduction requirements](REPRODUCIBILITY.md). | Dependency declarations are not a fully validated environment lock. |
 | Credentials, private keys, device-access details, machine-specific configuration, and local caches | No | Create your own local configuration and access setup. Access credentials are not distributed. | These are not research artifacts to restore from this repository. |
 
 The omitted local records are retained in the original research collection. This documentation does not promise that every omitted item is publicly downloadable or available on request. Any further sharing requires checking ownership, permissions, intended scope, and the exact files to publish.
+
+## VisDrone held-out confirmation release
+
+The November 8 confirmation has a separate release with the verified 1,610-image prediction archive, checksum manifest, and report bundle. [Download and verify the VisDrone archive](../results/visdrone_testdev_20261108/README.md#download-and-verify).
 
 ## Historical release: all 16 planned ZIP assets are available
 

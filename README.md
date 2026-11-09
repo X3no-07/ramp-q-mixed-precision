@@ -8,6 +8,7 @@ This English edition was prepared on **November 2, 2026**, from the October 29 s
 
 - [Current status and research decisions](docs/STATUS.md)
 - [Latest VisDrone held-out confirmation](04_research_roadmap/docs/95_visdrone_held_out_confirmation.md)
+- [VisDrone prediction archive and download instructions](results/visdrone_testdev_20261108/README.md#download-and-verify)
 - [Environment and reproduction requirements](docs/REPRODUCIBILITY.md)
 - [Data and artifact availability](docs/DATA_AND_ARTIFACTS.md)
 - [Export provenance and validation](export/README.md)
