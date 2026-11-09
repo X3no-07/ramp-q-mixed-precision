@@ -1,0 +1,15 @@
+{
+  "schema": "measurement.confirmation.analysis.v1",
+  "frozen_at_utc": "2026-11-07T16:39:53.669334+00:00",
+  "scientific_scope": "VisDrone fixed1610 confirmation, not RUOD confirmation or training.",
+  "cohort": "Original full1610, fixed metadata order. Content-only preflight passed, 1610 unique bytes/pixels, no exact-byte overlap with prior roles. Scene independence remains unverified.",
+  "model_policy": "All19 configurations run in the same cloud environment. Fixed original trained checkpoints, no model, epoch, threshold or seed selection from test-dev results.",
+  "measurement": "Same F,Q,R object identities, project matching conf .25 IoU .5. Three pre-existing calibration draws, all ordered redraw-null pairs; paired whole-image bootstrap2000. G1 versus three fixed single controls and G1+G5 versus three fixed pair controls. No general random-selection claim from three controls.",
+  "tag_audit": "Reuse Report93 definitions and frozen estimate() exactly. MSE Q/R XOR, <=8/image by original quality, joint m+d bins .05 with initial R hit/class/size/availability. QAT@10 primary; losses and gains separate, all-state change descriptive. QAT@3/13 secondary, correlated.",
+  "sensitivity": "Report every preset m-only,d-only,joint+IoU,same-image comparison and prefix-cluster bootstrap. Individual intervals without multiplicity adjustment; do not replace primary with favorable sensitivity.",
+  "decision": "Positive interval supports a conditional association for this frozen model/cohort; interval crossing zero is inconclusive, not proof of no information. Report effect size, interval and matching coverage, including all negative outcomes. No inference about AP, training benefit or model novelty.",
+  "limitation": "This first confirmation reuses three fixed draws and three control sets. Expanded20-draw/100-control blueprint, new training seeds, fresh RUOD-R test and actual INT8 are not completed by this bundle.",
+  "total_forwards": 30590,
+  "qualification_forwards": 35,
+  "training_updates": 0
+}

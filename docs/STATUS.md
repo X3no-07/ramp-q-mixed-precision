@@ -1,8 +1,12 @@
 # Current status and next steps
 
-**Research snapshot: October 29, 2026. English edition: November 2, 2026.** The latest completed experimental branch is defined by report 90 and the Gate 1 v54 state record.
+**Research snapshot: October 29, 2026. English edition: November 2, 2026.** The November 8 held-out confirmation extends the measurement evidence. Report 90 and the Gate 1 v54 state record define the outcome of the correction training branch.
 
-## Latest completed experiment
+## Held-out confirmation
+
+The November 8 run completed 30,590 forwards on 1,610 VisDrone test-dev images with zero training updates. G1 net recovery exceeded the mean calibration redraw control by 33.79 percentage points. Under the fixed joint matching rule, the QAT epoch 10 changes were 17.42 points higher for losses and 14.58 points higher for gains. See [report 95 and its evidence scope](../04_research_roadmap/docs/95_visdrone_held_out_confirmation.md).
+
+## Correction training outcome
 
 | Method | AP50–95 (%) | Detections at confidence 0.25 | False positives at confidence 0.25 |
 |---|---:|---:|---:|

@@ -7,6 +7,7 @@ This English edition was prepared on **November 2, 2026**, from the October 29 s
 ## Start here
 
 - [Current status and research decisions](docs/STATUS.md)
+- [Latest VisDrone held-out confirmation](04_research_roadmap/docs/95_visdrone_held_out_confirmation.md)
 - [Environment and reproduction requirements](docs/REPRODUCIBILITY.md)
 - [Data and artifact availability](docs/DATA_AND_ARTIFACTS.md)
 - [Export provenance and validation](export/README.md)
@@ -18,7 +19,7 @@ This English edition was prepared on **November 2, 2026**, from the October 29 s
 | Gate 0 | RUOD-R simulated quantization, object-level failures, and module recovery; reports 00–22 | [Mechanism screening](01_gate0_mechanism_screening/README.md) |
 | Gate 0.5 | Orin/TensorRT deployment, numerical diagnostics, and 150-image acceptance; reports 23–39 | [Deployment validation](02_gate05_orin_deployment/README.md) |
 | Gate 1 | VisDrone protocols, evaluation, baselines, and correction experiments; reports 40–90 | [VisDrone validation](03_gate1_visdrone_validation/README.md) |
-| Research roadmap | Supervision-decoupling proposal, report 91, and earlier proposals | [Research roadmap](04_research_roadmap/README.md) |
+| Research roadmap | Supervision-decoupling proposal and held-out VisDrone confirmation | [Research roadmap](04_research_roadmap/README.md) |
 
 Each stage uses `docs/`, `src/`, `scripts/`, `config/`, `tests/`, `artifacts/`, and `logs/`. Shared baseline files are materialized copies rather than Windows directory junctions. Reports retain their original sequence, including negative results.
 
@@ -27,6 +28,7 @@ Each stage uses `docs/`, `src/`, `scripts/`, `config/`, `tests/`, `artifacts/`, 
 - **Gate 0:** the simulations exhibit object-level failure and recovery under module precision interventions. General superiority over conventional module-selection methods has not been established.
 - **Gate 0.5:** the selected real deployment configurations satisfy a limited same-target recovery existence criterion. The original full-model PyTorch/ORT numerical guardrail remains `FAILED_UNCHANGED`.
 - **Gate 1:** the three-arm experiment in report 90 completed training and saved-artifact audits, but intervention-guided correction failed both predefined joint criteria. Report 91 proposes a new hypothesis and has not established its effectiveness.
+- **Held-out confirmation:** report 95 found positive net recovery against fixed controls and a conditional association between the intervention tag and subsequent QAT detection changes on 1,610 VisDrone images.
 
 Implementation readiness, artifact integrity, scientific acceptance, and measured device performance are distinct claims.
 

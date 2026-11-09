@@ -33,6 +33,8 @@ def all_files():
                 raise ValueError('Repository must contain materialized directories: '+str(path.relative_to(ROOT)))
         for name in names:
             path=Path(current)/name
+            if path == ROOT / '.git':
+                continue
             if name.endswith('.local.json') or name.endswith('.local.txt'):
                 continue
             yield path

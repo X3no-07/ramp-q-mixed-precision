@@ -1,0 +1,3070 @@
+{
+  "measurement": {
+    "dataset": "VisDrone-testdev",
+    "method": "absmax_three_fixed_draws",
+    "cluster": "image",
+    "draws": 3,
+    "targets": 74707,
+    "images": 1610,
+    "per_draw": [
+      {
+        "A": 1479,
+        "recovered": 936,
+        "collateral": 467,
+        "net": 469,
+        "net_share": 0.31710615280594995
+      },
+      {
+        "A": 1687,
+        "recovered": 996,
+        "collateral": 479,
+        "net": 517,
+        "net_share": 0.3064611736810907
+      },
+      {
+        "A": 1484,
+        "recovered": 984,
+        "collateral": 430,
+        "net": 554,
+        "net_share": 0.37331536388140163
+      }
+    ],
+    "mean_net_share": 0.3322942301228141,
+    "mean_net_share_ci95": [
+      0.306155073018684,
+      0.3580204861609941
+    ],
+    "null_pairs": [
+      {
+        "i": 0,
+        "j": 1,
+        "recovered": 681,
+        "collateral": 889,
+        "net_share": -0.14063556457065585
+      },
+      {
+        "i": 0,
+        "j": 2,
+        "recovered": 761,
+        "collateral": 766,
+        "net_share": -0.0033806626098715348
+      },
+      {
+        "i": 1,
+        "j": 0,
+        "recovered": 889,
+        "collateral": 681,
+        "net_share": 0.12329579134558388
+      },
+      {
+        "i": 1,
+        "j": 2,
+        "recovered": 880,
+        "collateral": 677,
+        "net_share": 0.12033195020746888
+      },
+      {
+        "i": 2,
+        "j": 0,
+        "recovered": 766,
+        "collateral": 761,
+        "net_share": 0.0033692722371967657
+      },
+      {
+        "i": 2,
+        "j": 1,
+        "recovered": 677,
+        "collateral": 880,
+        "net_share": -0.13679245283018868
+      }
+    ],
+    "mean_null_net_share": -0.005635277703411085,
+    "difference_vs_null": 0.3379295078262252,
+    "difference_vs_null_ci95": [
+      0.31191469191478477,
+      0.36475368526850527
+    ],
+    "mean_null_net_share_ci95": [
+      -0.01030931176233246,
+      -0.002642663053329978
+    ],
+    "stability": {
+      "recovery_counts": [
+        936,
+        996,
+        984
+      ],
+      "all_draw_intersection": 103,
+      "common_initial_misses": 495,
+      "recoveries_on_common_misses": [
+        254,
+        207,
+        250
+      ],
+      "pairwise": [
+        {
+          "i": 0,
+          "j": 1,
+          "intersection": 272,
+          "union": 1660,
+          "jaccard": 0.163855421686747
+        },
+        {
+          "i": 0,
+          "j": 2,
+          "intersection": 265,
+          "union": 1655,
+          "jaccard": 0.16012084592145015
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "intersection": 271,
+          "union": 1709,
+          "jaccard": 0.1585722644821533
+        }
+      ]
+    }
+  },
+  "per_arm": [
+    {
+      "arm": "fp32",
+      "A": 1479,
+      "recovered": 1479,
+      "collateral": 0,
+      "net": 1479
+    },
+    {
+      "arm": "q_abs0",
+      "A": 1479,
+      "recovered": 0,
+      "collateral": 0,
+      "net": 0
+    },
+    {
+      "arm": "r_abs0",
+      "A": 1479,
+      "recovered": 936,
+      "collateral": 467,
+      "net": 469
+    },
+    {
+      "arm": "r_G1G5",
+      "A": 1479,
+      "recovered": 967,
+      "collateral": 454,
+      "net": 513
+    },
+    {
+      "arm": "r_G8",
+      "A": 1479,
+      "recovered": 184,
+      "collateral": 153,
+      "net": 31
+    },
+    {
+      "arm": "r_G3",
+      "A": 1479,
+      "recovered": 482,
+      "collateral": 424,
+      "net": 58
+    },
+    {
+      "arm": "r_G2",
+      "A": 1479,
+      "recovered": 524,
+      "collateral": 497,
+      "net": 27
+    },
+    {
+      "arm": "r_G2G8",
+      "A": 1479,
+      "recovered": 584,
+      "collateral": 512,
+      "net": 72
+    },
+    {
+      "arm": "r_G3G8",
+      "A": 1479,
+      "recovered": 526,
+      "collateral": 442,
+      "net": 84
+    },
+    {
+      "arm": "r_G4G8",
+      "A": 1479,
+      "recovered": 476,
+      "collateral": 418,
+      "net": 58
+    },
+    {
+      "arm": "q_abs1",
+      "A": 1479,
+      "recovered": 681,
+      "collateral": 889,
+      "net": -208
+    },
+    {
+      "arm": "r_abs1",
+      "A": 1479,
+      "recovered": 892,
+      "collateral": 583,
+      "net": 309
+    },
+    {
+      "arm": "q_abs2",
+      "A": 1479,
+      "recovered": 761,
+      "collateral": 766,
+      "net": -5
+    },
+    {
+      "arm": "r_abs2",
+      "A": 1479,
+      "recovered": 1022,
+      "collateral": 473,
+      "net": 549
+    },
+    {
+      "arm": "q_mse",
+      "A": 1479,
+      "recovered": 1015,
+      "collateral": 433,
+      "net": 582
+    },
+    {
+      "arm": "r_mse",
+      "A": 1479,
+      "recovered": 1087,
+      "collateral": 367,
+      "net": 720
+    },
+    {
+      "arm": "qat3",
+      "A": 1479,
+      "recovered": 1011,
+      "collateral": 681,
+      "net": 330
+    },
+    {
+      "arm": "qat10",
+      "A": 1479,
+      "recovered": 993,
+      "collateral": 749,
+      "net": 244
+    },
+    {
+      "arm": "qat13",
+      "A": 1479,
+      "recovered": 1003,
+      "collateral": 811,
+      "net": 192
+    }
+  ],
+  "module_comparisons": [
+    {
+      "candidate": "r_abs0",
+      "controls": [
+        "r_G8",
+        "r_G3",
+        "r_G2"
+      ],
+      "difference": 0.2909623619562767,
+      "ci95": [
+        0.2502927090748957,
+        0.32890111153326634
+      ]
+    },
+    {
+      "candidate": "r_G1G5",
+      "controls": [
+        "r_G2G8",
+        "r_G3G8",
+        "r_G4G8"
+      ],
+      "difference": 0.2986251972053189,
+      "ci95": [
+        0.25554697686674777,
+        0.34297610898797676
+      ]
+    }
+  ],
+  "tag_audit": [
+    {
+      "endpoint": "qat10",
+      "variant": "m",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1527,
+      "matched_exposed_images": 835,
+      "supporting_controls": 54380,
+      "exposed_rate": 0.4564505566470203,
+      "control_rate": 0.22246497569849227,
+      "risk_difference": 0.233985580948528,
+      "risk_difference_ci95": [
+        0.2050295475237546,
+        0.26298116527506166
+      ],
+      "risk_ratio": 2.051786152916267,
+      "risk_ratio_ci95": [
+        1.8866404133007597,
+        2.234954855408653
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1422.975,
+        1620.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.03152643378783437,
+          "control_mean": 0.03131547765392957,
+          "standardized_mean_difference": 0.0017201671065594718
+        },
+        "disagreement": {
+          "exposed_mean": -0.004561128637129953,
+          "control_mean": -0.0036541784880662633,
+          "standardized_mean_difference": -0.009085219877403614
+        },
+        "best_iou": {
+          "exposed_mean": 0.7217023502494193,
+          "control_mean": 0.7208305583997187,
+          "standardized_mean_difference": 0.0060210567956228015
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "d",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1499,
+      "matched_exposed_images": 823,
+      "supporting_controls": 68522,
+      "exposed_rate": 0.4543028685790527,
+      "control_rate": 0.09611032695888352,
+      "risk_difference": 0.3581925416201692,
+      "risk_difference_ci95": [
+        0.33317176789828074,
+        0.38649951735081267
+      ],
+      "risk_ratio": 4.72688922152357,
+      "risk_ratio_ci95": [
+        4.258223752915969,
+        5.331331760755237
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1393.975,
+        1586.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.033125617687765625,
+          "control_mean": 0.07576470672852503,
+          "standardized_mean_difference": -0.1975242612662441
+        },
+        "disagreement": {
+          "exposed_mean": -0.007006346695869882,
+          "control_mean": -0.008905037485545452,
+          "standardized_mean_difference": 0.017565560325091076
+        },
+        "best_iou": {
+          "exposed_mean": 0.7231113583446497,
+          "control_mean": 0.7307196549867859,
+          "standardized_mean_difference": -0.05183935501784824
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1384,
+      "matched_exposed_images": 778,
+      "supporting_controls": 44952,
+      "exposed_rate": 0.4436416184971098,
+      "control_rate": 0.283500637676072,
+      "risk_difference": 0.16014098082103784,
+      "risk_difference_ci95": [
+        0.12982883699858852,
+        0.1979005178525845
+      ],
+      "risk_ratio": 1.5648699139929803,
+      "risk_ratio_ci95": [
+        1.444802200131949,
+        1.748662636705778
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1253.975,
+        1442.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.025820765042131783,
+          "control_mean": 0.02561061090348125,
+          "standardized_mean_difference": 0.0018100542381401467
+        },
+        "disagreement": {
+          "exposed_mean": -0.006860322028206227,
+          "control_mean": -0.007479217136810604,
+          "standardized_mean_difference": 0.00614613216063233
+        },
+        "best_iou": {
+          "exposed_mean": 0.7179759231318126,
+          "control_mean": 0.7176565333117411,
+          "standardized_mean_difference": 0.0022546984826166093
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint_iou",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1267,
+      "matched_exposed_images": 744,
+      "supporting_controls": 16490,
+      "exposed_rate": 0.43172849250197315,
+      "control_rate": 0.2822315374631909,
+      "risk_difference": 0.14949695503878224,
+      "risk_difference_ci95": [
+        0.11953685144404651,
+        0.18980509107216081
+      ],
+      "risk_ratio": 1.5296961366632524,
+      "risk_ratio_ci95": [
+        1.41045992943726,
+        1.720946940451363
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1113.975,
+        1299.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.021192800910131242,
+          "control_mean": 0.020748496073104635,
+          "standardized_mean_difference": 0.003931037906970499
+        },
+        "disagreement": {
+          "exposed_mean": -0.007427210911404416,
+          "control_mean": -0.008110267493986908,
+          "standardized_mean_difference": 0.007007163938316304
+        },
+        "best_iou": {
+          "exposed_mean": 0.7157093185161678,
+          "control_mean": 0.7164807668513693,
+          "standardized_mean_difference": -0.005674307047064768
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "same_image_m",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 590,
+      "matched_exposed_images": 358,
+      "supporting_controls": 2171,
+      "exposed_rate": 0.423728813559322,
+      "control_rate": 0.1734580472240414,
+      "risk_difference": 0.2502707663352806,
+      "risk_difference_ci95": [
+        0.2014828119154288,
+        0.30054304354733186
+      ],
+      "risk_ratio": 2.4428316837444077,
+      "risk_ratio_ci95": [
+        2.0004536095587273,
+        3.044453961519651
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        521.0,
+        659.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.004388908562802915,
+          "control_mean": 0.004128741768431988,
+          "standardized_mean_difference": 0.0019567222020419445
+        },
+        "disagreement": {
+          "exposed_mean": -0.00922860111873518,
+          "control_mean": 0.0028925014648891407,
+          "standardized_mean_difference": -0.11522889640147516
+        },
+        "best_iou": {
+          "exposed_mean": 0.6698734297942136,
+          "control_mean": 0.6707048928963789,
+          "standardized_mean_difference": -0.005652127621979783
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "same_image_joint",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 290,
+      "matched_exposed_images": 197,
+      "supporting_controls": 1181,
+      "exposed_rate": 0.3758620689655172,
+      "control_rate": 0.18693516351715003,
+      "risk_difference": 0.18892690544836718,
+      "risk_difference_ci95": [
+        0.12472364486103818,
+        0.2577987108248403
+      ],
+      "risk_ratio": 2.0106547205659058,
+      "risk_ratio_ci95": [
+        1.5569048627123168,
+        2.7352058313017324
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        245.975,
+        335.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.014834796945596564,
+          "control_mean": -0.015619425797409893,
+          "standardized_mean_difference": 0.006112446807567709
+        },
+        "disagreement": {
+          "exposed_mean": 0.003045657216892417,
+          "control_mean": 0.0032584860752250186,
+          "standardized_mean_difference": -0.0037540861698116754
+        },
+        "best_iou": {
+          "exposed_mean": 0.6661246007144197,
+          "control_mean": 0.6539558209805922,
+          "standardized_mean_difference": 0.08019516926855383
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint",
+      "population": "all",
+      "cluster": "prefix",
+      "exposed_total": 1538,
+      "matched_exposed": 1384,
+      "matched_exposed_images": 778,
+      "supporting_controls": 44952,
+      "exposed_rate": 0.4436416184971098,
+      "control_rate": 0.283500637676072,
+      "risk_difference": 0.16014098082103784,
+      "risk_difference_ci95": [
+        0.13555285276742443,
+        0.20614944793177079
+      ],
+      "risk_ratio": 1.5648699139929803,
+      "risk_ratio_ci95": [
+        1.4545241994674025,
+        1.8778753398752512
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        597.9,
+        2408.149999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.025820765042131783,
+          "control_mean": 0.02561061090348125,
+          "standardized_mean_difference": 0.0018100542381401467
+        },
+        "disagreement": {
+          "exposed_mean": -0.006860322028206227,
+          "control_mean": -0.007479217136810604,
+          "standardized_mean_difference": 0.00614613216063233
+        },
+        "best_iou": {
+          "exposed_mean": 0.7179759231318126,
+          "control_mean": 0.7176565333117411,
+          "standardized_mean_difference": 0.0022546984826166093
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "m",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 765,
+      "matched_exposed_images": 544,
+      "supporting_controls": 14737,
+      "exposed_rate": 0.43790849673202614,
+      "control_rate": 0.2044719609966221,
+      "risk_difference": 0.23343653573540404,
+      "risk_difference_ci95": [
+        0.19361667729874,
+        0.2708951698066989
+      ],
+      "risk_ratio": 2.1416554846816402,
+      "risk_ratio_ci95": [
+        1.8863217464144195,
+        2.422500870825561
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        699.0,
+        825.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08999207035388822,
+          "control_mean": 0.0949959617229395,
+          "standardized_mean_difference": -0.05018482269838219
+        },
+        "disagreement": {
+          "exposed_mean": -0.04771286426001727,
+          "control_mean": 0.005337168466801199,
+          "standardized_mean_difference": -0.5469611420425289
+        },
+        "best_iou": {
+          "exposed_mean": 0.7263332839542721,
+          "control_mean": 0.7561841698210134,
+          "standardized_mean_difference": -0.2392850158348314
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "d",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 752,
+      "matched_exposed_images": 536,
+      "supporting_controls": 23377,
+      "exposed_rate": 0.4321808510638298,
+      "control_rate": 0.08796067835436293,
+      "risk_difference": 0.34422017270946687,
+      "risk_difference_ci95": [
+        0.3065385962306872,
+        0.38178123265785313
+      ],
+      "risk_ratio": 4.9133414970121505,
+      "risk_ratio_ci95": [
+        4.18285139045762,
+        5.8862887583167325
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        683.0,
+        808.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08852330218762794,
+          "control_mean": 0.3111946147038686,
+          "standardized_mean_difference": -1.4848240793307526
+        },
+        "disagreement": {
+          "exposed_mean": -0.04397066739526982,
+          "control_mean": -0.042441703251514064,
+          "standardized_mean_difference": -0.013176816127235792
+        },
+        "best_iou": {
+          "exposed_mean": 0.7275825028875728,
+          "control_mean": 0.7898683011511757,
+          "standardized_mean_difference": -0.47565244256196226
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 698,
+      "matched_exposed_images": 503,
+      "supporting_controls": 11060,
+      "exposed_rate": 0.4283667621776504,
+      "control_rate": 0.2541460632093192,
+      "risk_difference": 0.1742206989683312,
+      "risk_difference_ci95": [
+        0.12977791166089198,
+        0.2186764926754816
+      ],
+      "risk_ratio": 1.6855140574215386,
+      "risk_ratio_ci95": [
+        1.4865743148867516,
+        1.9432870580203607
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        622.95,
+        744.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08450185637760982,
+          "control_mean": 0.08980820295818387,
+          "standardized_mean_difference": -0.0555965404631433
+        },
+        "disagreement": {
+          "exposed_mean": -0.037479552042106484,
+          "control_mean": -0.03540216899584043,
+          "standardized_mean_difference": -0.019004556471454895
+        },
+        "best_iou": {
+          "exposed_mean": 0.7215708816083256,
+          "control_mean": 0.7407585766987224,
+          "standardized_mean_difference": -0.1495971300288322
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint_iou",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 643,
+      "matched_exposed_images": 477,
+      "supporting_controls": 5859,
+      "exposed_rate": 0.4152410575427683,
+      "control_rate": 0.2564998386330041,
+      "risk_difference": 0.15874121890976423,
+      "risk_difference_ci95": [
+        0.1103124260104707,
+        0.20687365623648044
+      ],
+      "risk_ratio": 1.6188745371371895,
+      "risk_ratio_ci95": [
+        1.4066578979304425,
+        1.8874934779310764
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        558.975,
+        673.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08050736418778937,
+          "control_mean": 0.08575910803238866,
+          "standardized_mean_difference": -0.05821480997803354
+        },
+        "disagreement": {
+          "exposed_mean": -0.0341079689086249,
+          "control_mean": -0.031805476445049746,
+          "standardized_mean_difference": -0.0213678197455223
+        },
+        "best_iou": {
+          "exposed_mean": 0.7192886892366769,
+          "control_mean": 0.7227099389268676,
+          "standardized_mean_difference": -0.025919906658091883
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "same_image_m",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 291,
+      "matched_exposed_images": 214,
+      "supporting_controls": 499,
+      "exposed_rate": 0.41924398625429554,
+      "control_rate": 0.1544141711667485,
+      "risk_difference": 0.26482981508754705,
+      "risk_difference_ci95": [
+        0.19569471166480687,
+        0.3344801633089288
+      ],
+      "risk_ratio": 2.715061597562591,
+      "risk_ratio_ci95": [
+        2.0386492322316254,
+        3.7601410835650557
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        248.0,
+        334.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.09103028440393533,
+          "control_mean": 0.09646171544645132,
+          "standardized_mean_difference": -0.053804603792872684
+        },
+        "disagreement": {
+          "exposed_mean": -0.06464679212020583,
+          "control_mean": 0.004494824156962485,
+          "standardized_mean_difference": -0.6313790588293542
+        },
+        "best_iou": {
+          "exposed_mean": 0.6754667820422148,
+          "control_mean": 0.7251058312961118,
+          "standardized_mean_difference": -0.41862596235780786
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "same_image_joint",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 123,
+      "matched_exposed_images": 102,
+      "supporting_controls": 164,
+      "exposed_rate": 0.37398373983739835,
+      "control_rate": 0.16151761517615176,
+      "risk_difference": 0.2124661246612466,
+      "risk_difference_ci95": [
+        0.12009949034916508,
+        0.3110169809746328
+      ],
+      "risk_ratio": 2.315436241610738,
+      "risk_ratio_ci95": [
+        1.594194343206201,
+        3.826179463459759
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        98.0,
+        149.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.07921570442556365,
+          "control_mean": 0.08612373785693295,
+          "standardized_mean_difference": -0.07587831867775127
+        },
+        "disagreement": {
+          "exposed_mean": -0.008687778459331854,
+          "control_mean": -0.005430757933706742,
+          "standardized_mean_difference": -0.04645659667104998
+        },
+        "best_iou": {
+          "exposed_mean": 0.6702521638041995,
+          "control_mean": 0.7233967388787742,
+          "standardized_mean_difference": -0.4722681625399271
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint",
+      "population": "loss",
+      "cluster": "prefix",
+      "exposed_total": 768,
+      "matched_exposed": 698,
+      "matched_exposed_images": 503,
+      "supporting_controls": 11060,
+      "exposed_rate": 0.4283667621776504,
+      "control_rate": 0.2541460632093192,
+      "risk_difference": 0.1742206989683312,
+      "risk_difference_ci95": [
+        0.14068333850575132,
+        0.21390626865652682
+      ],
+      "risk_ratio": 1.6855140574215386,
+      "risk_ratio_ci95": [
+        1.4742681100470603,
+        2.068665577531539
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        299.0,
+        1227.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08450185637760982,
+          "control_mean": 0.08980820295818387,
+          "standardized_mean_difference": -0.0555965404631433
+        },
+        "disagreement": {
+          "exposed_mean": -0.037479552042106484,
+          "control_mean": -0.03540216899584043,
+          "standardized_mean_difference": -0.019004556471454895
+        },
+        "best_iou": {
+          "exposed_mean": 0.7215708816083256,
+          "control_mean": 0.7407585766987224,
+          "standardized_mean_difference": -0.1495971300288322
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "m",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 762,
+      "matched_exposed_images": 524,
+      "supporting_controls": 39643,
+      "exposed_rate": 0.47506561679790027,
+      "control_rate": 0.24052882904092102,
+      "risk_difference": 0.23453678775697925,
+      "risk_difference_ci95": [
+        0.19392934303016748,
+        0.27368927924121567
+      ],
+      "risk_ratio": 1.9750880536531348,
+      "risk_ratio_ci95": [
+        1.7690317668923259,
+        2.21526455440611
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        693.0,
+        821.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.027169382449739377,
+          "control_mean": -0.03261571698228119,
+          "standardized_mean_difference": 0.04844263601708603
+        },
+        "disagreement": {
+          "exposed_mean": 0.03876049570868212,
+          "control_mean": -0.012680924446693047,
+          "standardized_mean_difference": 0.5556287996851033
+        },
+        "best_iou": {
+          "exposed_mean": 0.7170531845221065,
+          "control_mean": 0.6853377595318838,
+          "standardized_mean_difference": 0.20015266021721242
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "d",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 747,
+      "matched_exposed_images": 513,
+      "supporting_controls": 45145,
+      "exposed_rate": 0.47657295850066933,
+      "control_rate": 0.10431452475085072,
+      "risk_difference": 0.3722584337498186,
+      "risk_difference_ci95": [
+        0.33516617341661714,
+        0.41162104791715587
+      ],
+      "risk_ratio": 4.5686155368960994,
+      "risk_ratio_ci95": [
+        3.9565814966794135,
+        5.41923631894003
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        678.0,
+        806.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.022642867913166713,
+          "control_mean": -0.1612410373109105,
+          "standardized_mean_difference": 1.2767210861399216
+        },
+        "disagreement": {
+          "exposed_mean": 0.030205392482107032,
+          "control_mean": 0.024856103954894165,
+          "standardized_mean_difference": 0.0622870624098017
+        },
+        "best_iou": {
+          "exposed_mean": 0.7186102864620818,
+          "control_mean": 0.6711751008828752,
+          "standardized_mean_difference": 0.3168758413432427
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 686,
+      "matched_exposed_images": 482,
+      "supporting_controls": 33892,
+      "exposed_rate": 0.45918367346938777,
+      "control_rate": 0.3133687032413685,
+      "risk_difference": 0.14581497022801926,
+      "risk_difference_ci95": [
+        0.10888499317605731,
+        0.1979309717469678
+      ],
+      "risk_ratio": 1.4653144003206569,
+      "risk_ratio_ci95": [
+        1.3321369599014417,
+        1.69146027969204
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        602.0,
+        726.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03388681768696978,
+          "control_mean": -0.03970997109970015,
+          "standardized_mean_difference": 0.057763659504591516
+        },
+        "disagreement": {
+          "exposed_mean": 0.024294521338706864,
+          "control_mean": 0.02093218285969496,
+          "standardized_mean_difference": 0.04158700965827772
+        },
+        "best_iou": {
+          "exposed_mean": 0.7143180790842817,
+          "control_mean": 0.6941503725477276,
+          "standardized_mean_difference": 0.13245507978606746
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint_iou",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 624,
+      "matched_exposed_images": 452,
+      "supporting_controls": 10631,
+      "exposed_rate": 0.44871794871794873,
+      "control_rate": 0.30874673353339954,
+      "risk_difference": 0.1399712151845492,
+      "risk_difference_ci95": [
+        0.10019092008613256,
+        0.1960805939355873
+      ],
+      "risk_ratio": 1.4533528616891664,
+      "risk_ratio_ci95": [
+        1.3160489072137627,
+        1.713177618980582
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        527.0,
+        646.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03992781477501968,
+          "control_mean": -0.04624160567340118,
+          "standardized_mean_difference": 0.06494907533164333
+        },
+        "disagreement": {
+          "exposed_mean": 0.02006594196073144,
+          "control_mean": 0.01630643019116278,
+          "standardized_mean_difference": 0.048546631171702596
+        },
+        "best_iou": {
+          "exposed_mean": 0.7120209605461562,
+          "control_mean": 0.71006192447229,
+          "standardized_mean_difference": 0.014020516530133028
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "same_image_m",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 299,
+      "matched_exposed_images": 216,
+      "supporting_controls": 1672,
+      "exposed_rate": 0.4280936454849498,
+      "control_rate": 0.19199238813598873,
+      "risk_difference": 0.2361012573489611,
+      "risk_difference_ci95": [
+        0.16804946070058488,
+        0.30222991044684827
+      ],
+      "risk_ratio": 2.229742801999681,
+      "risk_ratio_ci95": [
+        1.7238140753082487,
+        2.9932560550465923
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        258.0,
+        343.02499999999986
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.07993430337622562,
+          "control_mean": -0.08573378445331929,
+          "standardized_mean_difference": 0.0592776249057237
+        },
+        "disagreement": {
+          "exposed_mean": 0.04470682891948541,
+          "control_mean": 0.0013330502829716055,
+          "standardized_mean_difference": 0.5107524097088648
+        },
+        "best_iou": {
+          "exposed_mean": 0.6644297324558579,
+          "control_mean": 0.6177594979989799,
+          "standardized_mean_difference": 0.288629577592016
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "same_image_joint",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 167,
+      "matched_exposed_images": 131,
+      "supporting_controls": 1017,
+      "exposed_rate": 0.3772455089820359,
+      "control_rate": 0.20565587277429245,
+      "risk_difference": 0.17158963620774345,
+      "risk_difference_ci95": [
+        0.08811022974639633,
+        0.26233832503713195
+      ],
+      "risk_ratio": 1.8343532032078815,
+      "risk_ratio_ci95": [
+        1.343889721860109,
+        2.7363122651486127
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        138.0,
+        198.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.08410552550040319,
+          "control_mean": -0.09055600741108755,
+          "standardized_mean_difference": 0.06376672007312385
+        },
+        "disagreement": {
+          "exposed_mean": 0.011687648762854006,
+          "control_mean": 0.009658348429108893,
+          "standardized_mean_difference": 0.04750573507383943
+        },
+        "best_iou": {
+          "exposed_mean": 0.663084539277037,
+          "control_mean": 0.6028107137861228,
+          "standardized_mean_difference": 0.3630555708797607
+        }
+      }
+    },
+    {
+      "endpoint": "qat10",
+      "variant": "joint",
+      "population": "gain",
+      "cluster": "prefix",
+      "exposed_total": 770,
+      "matched_exposed": 686,
+      "matched_exposed_images": 482,
+      "supporting_controls": 33892,
+      "exposed_rate": 0.45918367346938777,
+      "control_rate": 0.3133687032413685,
+      "risk_difference": 0.14581497022801926,
+      "risk_difference_ci95": [
+        0.10749722314793021,
+        0.225203526158396
+      ],
+      "risk_ratio": 1.4653144003206569,
+      "risk_ratio_ci95": [
+        1.322905980803641,
+        1.9312829613843365
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        297.975,
+        1176.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03388681768696978,
+          "control_mean": -0.03970997109970015,
+          "standardized_mean_difference": 0.057763659504591516
+        },
+        "disagreement": {
+          "exposed_mean": 0.024294521338706864,
+          "control_mean": 0.02093218285969496,
+          "standardized_mean_difference": 0.04158700965827772
+        },
+        "best_iou": {
+          "exposed_mean": 0.7143180790842817,
+          "control_mean": 0.6941503725477276,
+          "standardized_mean_difference": 0.13245507978606746
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "m",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1527,
+      "matched_exposed_images": 835,
+      "supporting_controls": 54380,
+      "exposed_rate": 0.4407334643091028,
+      "control_rate": 0.19357867313906624,
+      "risk_difference": 0.24715479117003658,
+      "risk_difference_ci95": [
+        0.21965487447716145,
+        0.27500908000125157
+      ],
+      "risk_ratio": 2.276766635302234,
+      "risk_ratio_ci95": [
+        2.0830682084330285,
+        2.4947798965284957
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1422.975,
+        1620.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.03152643378783437,
+          "control_mean": 0.03131547765392957,
+          "standardized_mean_difference": 0.0017201671065594718
+        },
+        "disagreement": {
+          "exposed_mean": -0.004561128637129953,
+          "control_mean": -0.0036541784880662633,
+          "standardized_mean_difference": -0.009085219877403614
+        },
+        "best_iou": {
+          "exposed_mean": 0.7217023502494193,
+          "control_mean": 0.7208305583997187,
+          "standardized_mean_difference": 0.0060210567956228015
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "d",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1499,
+      "matched_exposed_images": 823,
+      "supporting_controls": 68522,
+      "exposed_rate": 0.4429619746497665,
+      "control_rate": 0.07465046784604891,
+      "risk_difference": 0.3683115068037176,
+      "risk_difference_ci95": [
+        0.34291784906995193,
+        0.3953001451163035
+      ],
+      "risk_ratio": 5.9338137781438105,
+      "risk_ratio_ci95": [
+        5.261079053551525,
+        6.792909941906867
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1393.975,
+        1586.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.033125617687765625,
+          "control_mean": 0.07576470672852503,
+          "standardized_mean_difference": -0.1975242612662441
+        },
+        "disagreement": {
+          "exposed_mean": -0.007006346695869882,
+          "control_mean": -0.008905037485545452,
+          "standardized_mean_difference": 0.017565560325091076
+        },
+        "best_iou": {
+          "exposed_mean": 0.7231113583446497,
+          "control_mean": 0.7307196549867859,
+          "standardized_mean_difference": -0.05183935501784824
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1384,
+      "matched_exposed_images": 778,
+      "supporting_controls": 44952,
+      "exposed_rate": 0.43352601156069365,
+      "control_rate": 0.23808383365967117,
+      "risk_difference": 0.19544217790102247,
+      "risk_difference_ci95": [
+        0.16260679394114005,
+        0.22574609209490698
+      ],
+      "risk_ratio": 1.8208964669999275,
+      "risk_ratio_ci95": [
+        1.6609793015685048,
+        2.0219133774806006
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1253.975,
+        1442.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.025820765042131783,
+          "control_mean": 0.02561061090348125,
+          "standardized_mean_difference": 0.0018100542381401467
+        },
+        "disagreement": {
+          "exposed_mean": -0.006860322028206227,
+          "control_mean": -0.007479217136810604,
+          "standardized_mean_difference": 0.00614613216063233
+        },
+        "best_iou": {
+          "exposed_mean": 0.7179759231318126,
+          "control_mean": 0.7176565333117411,
+          "standardized_mean_difference": 0.0022546984826166093
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint_iou",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1267,
+      "matched_exposed_images": 744,
+      "supporting_controls": 16490,
+      "exposed_rate": 0.4143646408839779,
+      "control_rate": 0.24144394500886462,
+      "risk_difference": 0.17292069587511327,
+      "risk_difference_ci95": [
+        0.13701121482059098,
+        0.20563602629000408
+      ],
+      "risk_ratio": 1.7161939632355017,
+      "risk_ratio_ci95": [
+        1.5430453373941386,
+        1.9223814908128904
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1113.975,
+        1299.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.021192800910131242,
+          "control_mean": 0.020748496073104635,
+          "standardized_mean_difference": 0.003931037906970499
+        },
+        "disagreement": {
+          "exposed_mean": -0.007427210911404416,
+          "control_mean": -0.008110267493986908,
+          "standardized_mean_difference": 0.007007163938316304
+        },
+        "best_iou": {
+          "exposed_mean": 0.7157093185161678,
+          "control_mean": 0.7164807668513693,
+          "standardized_mean_difference": -0.005674307047064768
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "same_image_m",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 590,
+      "matched_exposed_images": 358,
+      "supporting_controls": 2171,
+      "exposed_rate": 0.4322033898305085,
+      "control_rate": 0.15869834834546862,
+      "risk_difference": 0.27350504148503985,
+      "risk_difference_ci95": [
+        0.22592715045134992,
+        0.32384875486784703
+      ],
+      "risk_ratio": 2.723427145502799,
+      "risk_ratio_ci95": [
+        2.2427798026717984,
+        3.3740917596016597
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        521.0,
+        659.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.004388908562802915,
+          "control_mean": 0.004128741768431988,
+          "standardized_mean_difference": 0.0019567222020419445
+        },
+        "disagreement": {
+          "exposed_mean": -0.00922860111873518,
+          "control_mean": 0.0028925014648891407,
+          "standardized_mean_difference": -0.11522889640147516
+        },
+        "best_iou": {
+          "exposed_mean": 0.6698734297942136,
+          "control_mean": 0.6707048928963789,
+          "standardized_mean_difference": -0.005652127621979783
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "same_image_joint",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 290,
+      "matched_exposed_images": 197,
+      "supporting_controls": 1181,
+      "exposed_rate": 0.39655172413793105,
+      "control_rate": 0.1726031238626651,
+      "risk_difference": 0.22394860027526595,
+      "risk_difference_ci95": [
+        0.1566038230026694,
+        0.2901463945069873
+      ],
+      "risk_ratio": 2.2974770981170356,
+      "risk_ratio_ci95": [
+        1.7520071869475113,
+        3.0869570787504346
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        245.975,
+        335.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.014834796945596564,
+          "control_mean": -0.015619425797409893,
+          "standardized_mean_difference": 0.006112446807567709
+        },
+        "disagreement": {
+          "exposed_mean": 0.003045657216892417,
+          "control_mean": 0.0032584860752250186,
+          "standardized_mean_difference": -0.0037540861698116754
+        },
+        "best_iou": {
+          "exposed_mean": 0.6661246007144197,
+          "control_mean": 0.6539558209805922,
+          "standardized_mean_difference": 0.08019516926855383
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint",
+      "population": "all",
+      "cluster": "prefix",
+      "exposed_total": 1538,
+      "matched_exposed": 1384,
+      "matched_exposed_images": 778,
+      "supporting_controls": 44952,
+      "exposed_rate": 0.43352601156069365,
+      "control_rate": 0.23808383365967117,
+      "risk_difference": 0.19544217790102247,
+      "risk_difference_ci95": [
+        0.1634216416898103,
+        0.248803828136632
+      ],
+      "risk_ratio": 1.8208964669999275,
+      "risk_ratio_ci95": [
+        1.6570284437103209,
+        2.2009821102794542
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        597.9,
+        2408.149999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.025820765042131783,
+          "control_mean": 0.02561061090348125,
+          "standardized_mean_difference": 0.0018100542381401467
+        },
+        "disagreement": {
+          "exposed_mean": -0.006860322028206227,
+          "control_mean": -0.007479217136810604,
+          "standardized_mean_difference": 0.00614613216063233
+        },
+        "best_iou": {
+          "exposed_mean": 0.7179759231318126,
+          "control_mean": 0.7176565333117411,
+          "standardized_mean_difference": 0.0022546984826166093
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "m",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 765,
+      "matched_exposed_images": 544,
+      "supporting_controls": 14737,
+      "exposed_rate": 0.43137254901960786,
+      "control_rate": 0.19414537024542783,
+      "risk_difference": 0.23722717877418004,
+      "risk_difference_ci95": [
+        0.19992850188483582,
+        0.27439578857689595
+      ],
+      "risk_ratio": 2.2219048977283906,
+      "risk_ratio_ci95": [
+        1.973345346330546,
+        2.511855612832371
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        699.0,
+        825.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08999207035388822,
+          "control_mean": 0.0949959617229395,
+          "standardized_mean_difference": -0.05018482269838219
+        },
+        "disagreement": {
+          "exposed_mean": -0.04771286426001727,
+          "control_mean": 0.005337168466801199,
+          "standardized_mean_difference": -0.5469611420425289
+        },
+        "best_iou": {
+          "exposed_mean": 0.7263332839542721,
+          "control_mean": 0.7561841698210134,
+          "standardized_mean_difference": -0.2392850158348314
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "d",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 752,
+      "matched_exposed_images": 536,
+      "supporting_controls": 23377,
+      "exposed_rate": 0.4308510638297872,
+      "control_rate": 0.07880775445247439,
+      "risk_difference": 0.3520433093773128,
+      "risk_difference_ci95": [
+        0.31646506066292324,
+        0.3900498747028834
+      ],
+      "risk_ratio": 5.46711509321859,
+      "risk_ratio_ci95": [
+        4.667710390509913,
+        6.678963826775758
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        683.0,
+        808.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08852330218762794,
+          "control_mean": 0.3111946147038686,
+          "standardized_mean_difference": -1.4848240793307526
+        },
+        "disagreement": {
+          "exposed_mean": -0.04397066739526982,
+          "control_mean": -0.042441703251514064,
+          "standardized_mean_difference": -0.013176816127235792
+        },
+        "best_iou": {
+          "exposed_mean": 0.7275825028875728,
+          "control_mean": 0.7898683011511757,
+          "standardized_mean_difference": -0.47565244256196226
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 698,
+      "matched_exposed_images": 503,
+      "supporting_controls": 11060,
+      "exposed_rate": 0.4197707736389685,
+      "control_rate": 0.23917420326451574,
+      "risk_difference": 0.18059657037445273,
+      "risk_difference_ci95": [
+        0.13955843169081147,
+        0.22328542189593556
+      ],
+      "risk_ratio": 1.75508381719044,
+      "risk_ratio_ci95": [
+        1.55908364926195,
+        2.0408234539295984
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        622.95,
+        744.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08450185637760982,
+          "control_mean": 0.08980820295818387,
+          "standardized_mean_difference": -0.0555965404631433
+        },
+        "disagreement": {
+          "exposed_mean": -0.037479552042106484,
+          "control_mean": -0.03540216899584043,
+          "standardized_mean_difference": -0.019004556471454895
+        },
+        "best_iou": {
+          "exposed_mean": 0.7215708816083256,
+          "control_mean": 0.7407585766987224,
+          "standardized_mean_difference": -0.1495971300288322
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint_iou",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 643,
+      "matched_exposed_images": 477,
+      "supporting_controls": 5859,
+      "exposed_rate": 0.39968895800933124,
+      "control_rate": 0.24403998326027201,
+      "risk_difference": 0.15564897474905923,
+      "risk_difference_ci95": [
+        0.10809841670527326,
+        0.19952948481527852
+      ],
+      "risk_ratio": 1.6378011204133605,
+      "risk_ratio_ci95": [
+        1.4165559200030655,
+        1.9157384203966847
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        558.975,
+        673.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08050736418778937,
+          "control_mean": 0.08575910803238866,
+          "standardized_mean_difference": -0.05821480997803354
+        },
+        "disagreement": {
+          "exposed_mean": -0.0341079689086249,
+          "control_mean": -0.031805476445049746,
+          "standardized_mean_difference": -0.0213678197455223
+        },
+        "best_iou": {
+          "exposed_mean": 0.7192886892366769,
+          "control_mean": 0.7227099389268676,
+          "standardized_mean_difference": -0.025919906658091883
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "same_image_m",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 291,
+      "matched_exposed_images": 214,
+      "supporting_controls": 499,
+      "exposed_rate": 0.41580756013745707,
+      "control_rate": 0.12952871870397645,
+      "risk_difference": 0.2862788414334806,
+      "risk_difference_ci95": [
+        0.22457712144862038,
+        0.3539218867960034
+      ],
+      "risk_ratio": 3.210157286336934,
+      "risk_ratio_ci95": [
+        2.4141937976845522,
+        4.556470176094166
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        248.0,
+        334.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.09103028440393533,
+          "control_mean": 0.09646171544645132,
+          "standardized_mean_difference": -0.053804603792872684
+        },
+        "disagreement": {
+          "exposed_mean": -0.06464679212020583,
+          "control_mean": 0.004494824156962485,
+          "standardized_mean_difference": -0.6313790588293542
+        },
+        "best_iou": {
+          "exposed_mean": 0.6754667820422148,
+          "control_mean": 0.7251058312961118,
+          "standardized_mean_difference": -0.41862596235780786
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "same_image_joint",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 123,
+      "matched_exposed_images": 102,
+      "supporting_controls": 164,
+      "exposed_rate": 0.35772357723577236,
+      "control_rate": 0.17100271002710027,
+      "risk_difference": 0.1867208672086721,
+      "risk_difference_ci95": [
+        0.0895609354413702,
+        0.2820392922794117
+      ],
+      "risk_ratio": 2.091917591125198,
+      "risk_ratio_ci95": [
+        1.3912107343457458,
+        3.340392018052298
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        98.0,
+        149.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.07921570442556365,
+          "control_mean": 0.08612373785693295,
+          "standardized_mean_difference": -0.07587831867775127
+        },
+        "disagreement": {
+          "exposed_mean": -0.008687778459331854,
+          "control_mean": -0.005430757933706742,
+          "standardized_mean_difference": -0.04645659667104998
+        },
+        "best_iou": {
+          "exposed_mean": 0.6702521638041995,
+          "control_mean": 0.7233967388787742,
+          "standardized_mean_difference": -0.4722681625399271
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint",
+      "population": "loss",
+      "cluster": "prefix",
+      "exposed_total": 768,
+      "matched_exposed": 698,
+      "matched_exposed_images": 503,
+      "supporting_controls": 11060,
+      "exposed_rate": 0.4197707736389685,
+      "control_rate": 0.23917420326451574,
+      "risk_difference": 0.18059657037445273,
+      "risk_difference_ci95": [
+        0.14154389327399658,
+        0.23404594659987762
+      ],
+      "risk_ratio": 1.75508381719044,
+      "risk_ratio_ci95": [
+        1.5885225684055855,
+        2.079269018643252
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        299.0,
+        1227.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08450185637760982,
+          "control_mean": 0.08980820295818387,
+          "standardized_mean_difference": -0.0555965404631433
+        },
+        "disagreement": {
+          "exposed_mean": -0.037479552042106484,
+          "control_mean": -0.03540216899584043,
+          "standardized_mean_difference": -0.019004556471454895
+        },
+        "best_iou": {
+          "exposed_mean": 0.7215708816083256,
+          "control_mean": 0.7407585766987224,
+          "standardized_mean_difference": -0.1495971300288322
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "m",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 762,
+      "matched_exposed_images": 524,
+      "supporting_controls": 39643,
+      "exposed_rate": 0.45013123359580054,
+      "control_rate": 0.19300974494173478,
+      "risk_difference": 0.25712148865406576,
+      "risk_difference_ci95": [
+        0.21954933198522444,
+        0.2970994754050269
+      ],
+      "risk_ratio": 2.3321684287582727,
+      "risk_ratio_ci95": [
+        2.055968066167538,
+        2.6372852478044613
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        693.0,
+        821.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.027169382449739377,
+          "control_mean": -0.03261571698228119,
+          "standardized_mean_difference": 0.04844263601708603
+        },
+        "disagreement": {
+          "exposed_mean": 0.03876049570868212,
+          "control_mean": -0.012680924446693047,
+          "standardized_mean_difference": 0.5556287996851033
+        },
+        "best_iou": {
+          "exposed_mean": 0.7170531845221065,
+          "control_mean": 0.6853377595318838,
+          "standardized_mean_difference": 0.20015266021721242
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "d",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 747,
+      "matched_exposed_images": 513,
+      "supporting_controls": 45145,
+      "exposed_rate": 0.45515394912985274,
+      "control_rate": 0.0704653546893796,
+      "risk_difference": 0.38468859444047315,
+      "risk_difference_ci95": [
+        0.34788388060107833,
+        0.4206304936123662
+      ],
+      "risk_ratio": 6.459258612068728,
+      "risk_ratio_ci95": [
+        5.426786220502182,
+        7.763917461768947
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        678.0,
+        806.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.022642867913166713,
+          "control_mean": -0.1612410373109105,
+          "standardized_mean_difference": 1.2767210861399216
+        },
+        "disagreement": {
+          "exposed_mean": 0.030205392482107032,
+          "control_mean": 0.024856103954894165,
+          "standardized_mean_difference": 0.0622870624098017
+        },
+        "best_iou": {
+          "exposed_mean": 0.7186102864620818,
+          "control_mean": 0.6711751008828752,
+          "standardized_mean_difference": 0.3168758413432427
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 686,
+      "matched_exposed_images": 482,
+      "supporting_controls": 33892,
+      "exposed_rate": 0.44752186588921283,
+      "control_rate": 0.23697439053404212,
+      "risk_difference": 0.2105474753551707,
+      "risk_difference_ci95": [
+        0.16181128220142804,
+        0.25261631128091044
+      ],
+      "risk_ratio": 1.888481978498537,
+      "risk_ratio_ci95": [
+        1.6363451930736452,
+        2.1729067599906893
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        602.0,
+        726.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03388681768696978,
+          "control_mean": -0.03970997109970015,
+          "standardized_mean_difference": 0.057763659504591516
+        },
+        "disagreement": {
+          "exposed_mean": 0.024294521338706864,
+          "control_mean": 0.02093218285969496,
+          "standardized_mean_difference": 0.04158700965827772
+        },
+        "best_iou": {
+          "exposed_mean": 0.7143180790842817,
+          "control_mean": 0.6941503725477276,
+          "standardized_mean_difference": 0.13245507978606746
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint_iou",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 624,
+      "matched_exposed_images": 452,
+      "supporting_controls": 10631,
+      "exposed_rate": 0.42948717948717946,
+      "control_rate": 0.23876886072095602,
+      "risk_difference": 0.19071831876622344,
+      "risk_difference_ci95": [
+        0.1385107449430908,
+        0.23869188367618227
+      ],
+      "risk_ratio": 1.7987570832744049,
+      "risk_ratio_ci95": [
+        1.5400554823836718,
+        2.117691927527672
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        527.0,
+        646.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03992781477501968,
+          "control_mean": -0.04624160567340118,
+          "standardized_mean_difference": 0.06494907533164333
+        },
+        "disagreement": {
+          "exposed_mean": 0.02006594196073144,
+          "control_mean": 0.01630643019116278,
+          "standardized_mean_difference": 0.048546631171702596
+        },
+        "best_iou": {
+          "exposed_mean": 0.7120209605461562,
+          "control_mean": 0.71006192447229,
+          "standardized_mean_difference": 0.014020516530133028
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "same_image_m",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 299,
+      "matched_exposed_images": 216,
+      "supporting_controls": 1672,
+      "exposed_rate": 0.44816053511705684,
+      "control_rate": 0.18708751966879383,
+      "risk_difference": 0.261073015448263,
+      "risk_difference_ci95": [
+        0.19146257280140108,
+        0.33133370364381365
+      ],
+      "risk_ratio": 2.395459279755527,
+      "risk_ratio_ci95": [
+        1.8472561291555132,
+        3.2302426642105213
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        258.0,
+        343.02499999999986
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.07993430337622562,
+          "control_mean": -0.08573378445331929,
+          "standardized_mean_difference": 0.0592776249057237
+        },
+        "disagreement": {
+          "exposed_mean": 0.04470682891948541,
+          "control_mean": 0.0013330502829716055,
+          "standardized_mean_difference": 0.5107524097088648
+        },
+        "best_iou": {
+          "exposed_mean": 0.6644297324558579,
+          "control_mean": 0.6177594979989799,
+          "standardized_mean_difference": 0.288629577592016
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "same_image_joint",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 167,
+      "matched_exposed_images": 131,
+      "supporting_controls": 1017,
+      "exposed_rate": 0.4251497005988024,
+      "control_rate": 0.17378187177748233,
+      "risk_difference": 0.2513678288213201,
+      "risk_difference_ci95": [
+        0.16289148379230664,
+        0.3414745203328331
+      ],
+      "risk_ratio": 2.44645598675092,
+      "risk_ratio_ci95": [
+        1.7264755480023002,
+        3.866796649950748
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        138.0,
+        198.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.08410552550040319,
+          "control_mean": -0.09055600741108755,
+          "standardized_mean_difference": 0.06376672007312385
+        },
+        "disagreement": {
+          "exposed_mean": 0.011687648762854006,
+          "control_mean": 0.009658348429108893,
+          "standardized_mean_difference": 0.04750573507383943
+        },
+        "best_iou": {
+          "exposed_mean": 0.663084539277037,
+          "control_mean": 0.6028107137861228,
+          "standardized_mean_difference": 0.3630555708797607
+        }
+      }
+    },
+    {
+      "endpoint": "qat3",
+      "variant": "joint",
+      "population": "gain",
+      "cluster": "prefix",
+      "exposed_total": 770,
+      "matched_exposed": 686,
+      "matched_exposed_images": 482,
+      "supporting_controls": 33892,
+      "exposed_rate": 0.44752186588921283,
+      "control_rate": 0.23697439053404212,
+      "risk_difference": 0.2105474753551707,
+      "risk_difference_ci95": [
+        0.17203478289001187,
+        0.27902099170194844
+      ],
+      "risk_ratio": 1.888481978498537,
+      "risk_ratio_ci95": [
+        1.6850546268003759,
+        2.4200471709107445
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        297.975,
+        1176.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03388681768696978,
+          "control_mean": -0.03970997109970015,
+          "standardized_mean_difference": 0.057763659504591516
+        },
+        "disagreement": {
+          "exposed_mean": 0.024294521338706864,
+          "control_mean": 0.02093218285969496,
+          "standardized_mean_difference": 0.04158700965827772
+        },
+        "best_iou": {
+          "exposed_mean": 0.7143180790842817,
+          "control_mean": 0.6941503725477276,
+          "standardized_mean_difference": 0.13245507978606746
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "m",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1527,
+      "matched_exposed_images": 835,
+      "supporting_controls": 54380,
+      "exposed_rate": 0.4636542239685658,
+      "control_rate": 0.22029694314025786,
+      "risk_difference": 0.24335728082830796,
+      "risk_difference_ci95": [
+        0.2144765361863018,
+        0.27245217618898765
+      ],
+      "risk_ratio": 2.104678427940637,
+      "risk_ratio_ci95": [
+        1.9444373046808199,
+        2.290789746800836
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1422.975,
+        1620.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.03152643378783437,
+          "control_mean": 0.03131547765392957,
+          "standardized_mean_difference": 0.0017201671065594718
+        },
+        "disagreement": {
+          "exposed_mean": -0.004561128637129953,
+          "control_mean": -0.0036541784880662633,
+          "standardized_mean_difference": -0.009085219877403614
+        },
+        "best_iou": {
+          "exposed_mean": 0.7217023502494193,
+          "control_mean": 0.7208305583997187,
+          "standardized_mean_difference": 0.0060210567956228015
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "d",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1499,
+      "matched_exposed_images": 823,
+      "supporting_controls": 68522,
+      "exposed_rate": 0.4609739826551034,
+      "control_rate": 0.10154958733808717,
+      "risk_difference": 0.35942439531701625,
+      "risk_difference_ci95": [
+        0.3324297107990968,
+        0.3857508631599766
+      ],
+      "risk_ratio": 4.539397891597444,
+      "risk_ratio_ci95": [
+        4.062803825856265,
+        5.070756559558399
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1393.975,
+        1586.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.033125617687765625,
+          "control_mean": 0.07576470672852503,
+          "standardized_mean_difference": -0.1975242612662441
+        },
+        "disagreement": {
+          "exposed_mean": -0.007006346695869882,
+          "control_mean": -0.008905037485545452,
+          "standardized_mean_difference": 0.017565560325091076
+        },
+        "best_iou": {
+          "exposed_mean": 0.7231113583446497,
+          "control_mean": 0.7307196549867859,
+          "standardized_mean_difference": -0.05183935501784824
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1384,
+      "matched_exposed_images": 778,
+      "supporting_controls": 44952,
+      "exposed_rate": 0.4523121387283237,
+      "control_rate": 0.28929236639291867,
+      "risk_difference": 0.16301977233540504,
+      "risk_difference_ci95": [
+        0.1341280464198598,
+        0.1960641354902996
+      ],
+      "risk_ratio": 1.5635121810092651,
+      "risk_ratio_ci95": [
+        1.453855832161171,
+        1.7203641468848767
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1253.975,
+        1442.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.025820765042131783,
+          "control_mean": 0.02561061090348125,
+          "standardized_mean_difference": 0.0018100542381401467
+        },
+        "disagreement": {
+          "exposed_mean": -0.006860322028206227,
+          "control_mean": -0.007479217136810604,
+          "standardized_mean_difference": 0.00614613216063233
+        },
+        "best_iou": {
+          "exposed_mean": 0.7179759231318126,
+          "control_mean": 0.7176565333117411,
+          "standardized_mean_difference": 0.0022546984826166093
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint_iou",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 1267,
+      "matched_exposed_images": 744,
+      "supporting_controls": 16490,
+      "exposed_rate": 0.4404104183109708,
+      "control_rate": 0.2859925297391259,
+      "risk_difference": 0.15441788857184485,
+      "risk_difference_ci95": [
+        0.1248915943748757,
+        0.19212487573791806
+      ],
+      "risk_ratio": 1.5399367903514836,
+      "risk_ratio_ci95": [
+        1.425862212265666,
+        1.7223079299395094
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        1113.975,
+        1299.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.021192800910131242,
+          "control_mean": 0.020748496073104635,
+          "standardized_mean_difference": 0.003931037906970499
+        },
+        "disagreement": {
+          "exposed_mean": -0.007427210911404416,
+          "control_mean": -0.008110267493986908,
+          "standardized_mean_difference": 0.007007163938316304
+        },
+        "best_iou": {
+          "exposed_mean": 0.7157093185161678,
+          "control_mean": 0.7164807668513693,
+          "standardized_mean_difference": -0.005674307047064768
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "same_image_m",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 590,
+      "matched_exposed_images": 358,
+      "supporting_controls": 2171,
+      "exposed_rate": 0.43898305084745765,
+      "control_rate": 0.18963163906899377,
+      "risk_difference": 0.24935141177846387,
+      "risk_difference_ci95": [
+        0.19951458964035343,
+        0.29926406345247025
+      ],
+      "risk_ratio": 2.314925151745075,
+      "risk_ratio_ci95": [
+        1.9477951612787807,
+        2.7927864140472685
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        521.0,
+        659.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.004388908562802915,
+          "control_mean": 0.004128741768431988,
+          "standardized_mean_difference": 0.0019567222020419445
+        },
+        "disagreement": {
+          "exposed_mean": -0.00922860111873518,
+          "control_mean": 0.0028925014648891407,
+          "standardized_mean_difference": -0.11522889640147516
+        },
+        "best_iou": {
+          "exposed_mean": 0.6698734297942136,
+          "control_mean": 0.6707048928963789,
+          "standardized_mean_difference": -0.005652127621979783
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "same_image_joint",
+      "population": "all",
+      "cluster": "image_id",
+      "exposed_total": 1538,
+      "matched_exposed": 290,
+      "matched_exposed_images": 197,
+      "supporting_controls": 1181,
+      "exposed_rate": 0.3896551724137931,
+      "control_rate": 0.20546924787061702,
+      "risk_difference": 0.1841859245431761,
+      "risk_difference_ci95": [
+        0.11476127207899794,
+        0.256302777143744
+      ],
+      "risk_ratio": 1.8964160157881975,
+      "risk_ratio_ci95": [
+        1.4843540691499335,
+        2.5345517272890707
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        245.975,
+        335.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.014834796945596564,
+          "control_mean": -0.015619425797409893,
+          "standardized_mean_difference": 0.006112446807567709
+        },
+        "disagreement": {
+          "exposed_mean": 0.003045657216892417,
+          "control_mean": 0.0032584860752250186,
+          "standardized_mean_difference": -0.0037540861698116754
+        },
+        "best_iou": {
+          "exposed_mean": 0.6661246007144197,
+          "control_mean": 0.6539558209805922,
+          "standardized_mean_difference": 0.08019516926855383
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint",
+      "population": "all",
+      "cluster": "prefix",
+      "exposed_total": 1538,
+      "matched_exposed": 1384,
+      "matched_exposed_images": 778,
+      "supporting_controls": 44952,
+      "exposed_rate": 0.4523121387283237,
+      "control_rate": 0.28929236639291867,
+      "risk_difference": 0.16301977233540504,
+      "risk_difference_ci95": [
+        0.1416841332236955,
+        0.2108489802003185
+      ],
+      "risk_ratio": 1.5635121810092651,
+      "risk_ratio_ci95": [
+        1.4723554585767336,
+        1.8619636071616013
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        597.9,
+        2408.149999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.025820765042131783,
+          "control_mean": 0.02561061090348125,
+          "standardized_mean_difference": 0.0018100542381401467
+        },
+        "disagreement": {
+          "exposed_mean": -0.006860322028206227,
+          "control_mean": -0.007479217136810604,
+          "standardized_mean_difference": 0.00614613216063233
+        },
+        "best_iou": {
+          "exposed_mean": 0.7179759231318126,
+          "control_mean": 0.7176565333117411,
+          "standardized_mean_difference": 0.0022546984826166093
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "m",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 765,
+      "matched_exposed_images": 544,
+      "supporting_controls": 14737,
+      "exposed_rate": 0.46797385620915033,
+      "control_rate": 0.20938555094526082,
+      "risk_difference": 0.25858830526388954,
+      "risk_difference_ci95": [
+        0.21755345437233078,
+        0.29728012414667426
+      ],
+      "risk_ratio": 2.234986388012474,
+      "risk_ratio_ci95": [
+        1.9933417722602895,
+        2.507497767464026
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        699.0,
+        825.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08999207035388822,
+          "control_mean": 0.0949959617229395,
+          "standardized_mean_difference": -0.05018482269838219
+        },
+        "disagreement": {
+          "exposed_mean": -0.04771286426001727,
+          "control_mean": 0.005337168466801199,
+          "standardized_mean_difference": -0.5469611420425289
+        },
+        "best_iou": {
+          "exposed_mean": 0.7263332839542721,
+          "control_mean": 0.7561841698210134,
+          "standardized_mean_difference": -0.2392850158348314
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "d",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 752,
+      "matched_exposed_images": 536,
+      "supporting_controls": 23377,
+      "exposed_rate": 0.4654255319148936,
+      "control_rate": 0.10359960850734239,
+      "risk_difference": 0.3618259234075512,
+      "risk_difference_ci95": [
+        0.32374355054875575,
+        0.400659315006747
+      ],
+      "risk_ratio": 4.492541416137761,
+      "risk_ratio_ci95": [
+        3.834846796042756,
+        5.26589773083004
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        683.0,
+        808.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08852330218762794,
+          "control_mean": 0.3111946147038686,
+          "standardized_mean_difference": -1.4848240793307526
+        },
+        "disagreement": {
+          "exposed_mean": -0.04397066739526982,
+          "control_mean": -0.042441703251514064,
+          "standardized_mean_difference": -0.013176816127235792
+        },
+        "best_iou": {
+          "exposed_mean": 0.7275825028875728,
+          "control_mean": 0.7898683011511757,
+          "standardized_mean_difference": -0.47565244256196226
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 698,
+      "matched_exposed_images": 503,
+      "supporting_controls": 11060,
+      "exposed_rate": 0.46131805157593125,
+      "control_rate": 0.2763774198788673,
+      "risk_difference": 0.18494063169706393,
+      "risk_difference_ci95": [
+        0.1422890630806717,
+        0.22804139967038567
+      ],
+      "risk_ratio": 1.6691597011728418,
+      "risk_ratio_ci95": [
+        1.49266542695731,
+        1.8974641694647996
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        622.95,
+        744.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08450185637760982,
+          "control_mean": 0.08980820295818387,
+          "standardized_mean_difference": -0.0555965404631433
+        },
+        "disagreement": {
+          "exposed_mean": -0.037479552042106484,
+          "control_mean": -0.03540216899584043,
+          "standardized_mean_difference": -0.019004556471454895
+        },
+        "best_iou": {
+          "exposed_mean": 0.7215708816083256,
+          "control_mean": 0.7407585766987224,
+          "standardized_mean_difference": -0.1495971300288322
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint_iou",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 643,
+      "matched_exposed_images": 477,
+      "supporting_controls": 5859,
+      "exposed_rate": 0.447900466562986,
+      "control_rate": 0.27931764780415475,
+      "risk_difference": 0.16858281875883124,
+      "risk_difference_ci95": [
+        0.12490954963577774,
+        0.21938227802861807
+      ],
+      "risk_ratio": 1.6035523357873689,
+      "risk_ratio_ci95": [
+        1.4260849925483836,
+        1.885171974311538
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        558.975,
+        673.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08050736418778937,
+          "control_mean": 0.08575910803238866,
+          "standardized_mean_difference": -0.05821480997803354
+        },
+        "disagreement": {
+          "exposed_mean": -0.0341079689086249,
+          "control_mean": -0.031805476445049746,
+          "standardized_mean_difference": -0.0213678197455223
+        },
+        "best_iou": {
+          "exposed_mean": 0.7192886892366769,
+          "control_mean": 0.7227099389268676,
+          "standardized_mean_difference": -0.025919906658091883
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "same_image_m",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 291,
+      "matched_exposed_images": 214,
+      "supporting_controls": 499,
+      "exposed_rate": 0.4639175257731959,
+      "control_rate": 0.1812182948780887,
+      "risk_difference": 0.2826992308951072,
+      "risk_difference_ci95": [
+        0.20957352739960314,
+        0.3509288596592823
+      ],
+      "risk_ratio": 2.5599927760344947,
+      "risk_ratio_ci95": [
+        1.9693679550568504,
+        3.4137390596657724
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        248.0,
+        334.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.09103028440393533,
+          "control_mean": 0.09646171544645132,
+          "standardized_mean_difference": -0.053804603792872684
+        },
+        "disagreement": {
+          "exposed_mean": -0.06464679212020583,
+          "control_mean": 0.004494824156962485,
+          "standardized_mean_difference": -0.6313790588293542
+        },
+        "best_iou": {
+          "exposed_mean": 0.6754667820422148,
+          "control_mean": 0.7251058312961118,
+          "standardized_mean_difference": -0.41862596235780786
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "same_image_joint",
+      "population": "loss",
+      "cluster": "image_id",
+      "exposed_total": 768,
+      "matched_exposed": 123,
+      "matched_exposed_images": 102,
+      "supporting_controls": 164,
+      "exposed_rate": 0.42276422764227645,
+      "control_rate": 0.18366592756836658,
+      "risk_difference": 0.23909830007390986,
+      "risk_difference_ci95": [
+        0.13671577150696293,
+        0.3430019236249643
+      ],
+      "risk_ratio": 2.3018108651911473,
+      "risk_ratio_ci95": [
+        1.5762640595515802,
+        3.793275862068964
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        98.0,
+        149.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.07921570442556365,
+          "control_mean": 0.08612373785693295,
+          "standardized_mean_difference": -0.07587831867775127
+        },
+        "disagreement": {
+          "exposed_mean": -0.008687778459331854,
+          "control_mean": -0.005430757933706742,
+          "standardized_mean_difference": -0.04645659667104998
+        },
+        "best_iou": {
+          "exposed_mean": 0.6702521638041995,
+          "control_mean": 0.7233967388787742,
+          "standardized_mean_difference": -0.4722681625399271
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint",
+      "population": "loss",
+      "cluster": "prefix",
+      "exposed_total": 768,
+      "matched_exposed": 698,
+      "matched_exposed_images": 503,
+      "supporting_controls": 11060,
+      "exposed_rate": 0.46131805157593125,
+      "control_rate": 0.2763774198788673,
+      "risk_difference": 0.18494063169706393,
+      "risk_difference_ci95": [
+        0.14808364313788647,
+        0.22270702726320968
+      ],
+      "risk_ratio": 1.6691597011728418,
+      "risk_ratio_ci95": [
+        1.4901482233217924,
+        1.9545708612595376
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        299.0,
+        1227.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": 0.08450185637760982,
+          "control_mean": 0.08980820295818387,
+          "standardized_mean_difference": -0.0555965404631433
+        },
+        "disagreement": {
+          "exposed_mean": -0.037479552042106484,
+          "control_mean": -0.03540216899584043,
+          "standardized_mean_difference": -0.019004556471454895
+        },
+        "best_iou": {
+          "exposed_mean": 0.7215708816083256,
+          "control_mean": 0.7407585766987224,
+          "standardized_mean_difference": -0.1495971300288322
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "m",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 762,
+      "matched_exposed_images": 524,
+      "supporting_controls": 39643,
+      "exposed_rate": 0.45931758530183725,
+      "control_rate": 0.2312512935722431,
+      "risk_difference": 0.22806629172959414,
+      "risk_difference_ci95": [
+        0.18683470030387753,
+        0.2683564229236836
+      ],
+      "risk_ratio": 1.986227096102042,
+      "risk_ratio_ci95": [
+        1.771383711407765,
+        2.2364673128500008
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        693.0,
+        821.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.027169382449739377,
+          "control_mean": -0.03261571698228119,
+          "standardized_mean_difference": 0.04844263601708603
+        },
+        "disagreement": {
+          "exposed_mean": 0.03876049570868212,
+          "control_mean": -0.012680924446693047,
+          "standardized_mean_difference": 0.5556287996851033
+        },
+        "best_iou": {
+          "exposed_mean": 0.7170531845221065,
+          "control_mean": 0.6853377595318838,
+          "standardized_mean_difference": 0.20015266021721242
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "d",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 747,
+      "matched_exposed_images": 513,
+      "supporting_controls": 45145,
+      "exposed_rate": 0.4564926372155288,
+      "control_rate": 0.09948584447425864,
+      "risk_difference": 0.3570067927412702,
+      "risk_difference_ci95": [
+        0.31829240671373893,
+        0.39566832566889953
+      ],
+      "risk_ratio": 4.588518493539485,
+      "risk_ratio_ci95": [
+        3.9442190362393474,
+        5.424331015427106
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        678.0,
+        806.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.022642867913166713,
+          "control_mean": -0.1612410373109105,
+          "standardized_mean_difference": 1.2767210861399216
+        },
+        "disagreement": {
+          "exposed_mean": 0.030205392482107032,
+          "control_mean": 0.024856103954894165,
+          "standardized_mean_difference": 0.0622870624098017
+        },
+        "best_iou": {
+          "exposed_mean": 0.7186102864620818,
+          "control_mean": 0.6711751008828752,
+          "standardized_mean_difference": 0.3168758413432427
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 686,
+      "matched_exposed_images": 482,
+      "supporting_controls": 33892,
+      "exposed_rate": 0.44314868804664725,
+      "control_rate": 0.3024332303387027,
+      "risk_difference": 0.14071545770794458,
+      "risk_difference_ci95": [
+        0.09653909716016813,
+        0.18779580974444882
+      ],
+      "risk_ratio": 1.4652777657744611,
+      "risk_ratio_ci95": [
+        1.3066257195704056,
+        1.6800368634034732
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        602.0,
+        726.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03388681768696978,
+          "control_mean": -0.03970997109970015,
+          "standardized_mean_difference": 0.057763659504591516
+        },
+        "disagreement": {
+          "exposed_mean": 0.024294521338706864,
+          "control_mean": 0.02093218285969496,
+          "standardized_mean_difference": 0.04158700965827772
+        },
+        "best_iou": {
+          "exposed_mean": 0.7143180790842817,
+          "control_mean": 0.6941503725477276,
+          "standardized_mean_difference": 0.13245507978606746
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint_iou",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 624,
+      "matched_exposed_images": 452,
+      "supporting_controls": 10631,
+      "exposed_rate": 0.4326923076923077,
+      "control_rate": 0.29287065327147604,
+      "risk_difference": 0.13982165442083166,
+      "risk_difference_ci95": [
+        0.09479560204848186,
+        0.19434250440981957
+      ],
+      "risk_ratio": 1.4774177708110077,
+      "risk_ratio_ci95": [
+        1.307711407841547,
+        1.7247480739252008
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        527.0,
+        646.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03992781477501968,
+          "control_mean": -0.04624160567340118,
+          "standardized_mean_difference": 0.06494907533164333
+        },
+        "disagreement": {
+          "exposed_mean": 0.02006594196073144,
+          "control_mean": 0.01630643019116278,
+          "standardized_mean_difference": 0.048546631171702596
+        },
+        "best_iou": {
+          "exposed_mean": 0.7120209605461562,
+          "control_mean": 0.71006192447229,
+          "standardized_mean_difference": 0.014020516530133028
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "same_image_m",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 299,
+      "matched_exposed_images": 216,
+      "supporting_controls": 1672,
+      "exposed_rate": 0.41471571906354515,
+      "control_rate": 0.19781987706081106,
+      "risk_difference": 0.2168958420027341,
+      "risk_difference_ci95": [
+        0.15036032791001103,
+        0.28664913888057747
+      ],
+      "risk_ratio": 2.096430981685723,
+      "risk_ratio_ci95": [
+        1.666738239500973,
+        2.7474650414204116
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        258.0,
+        343.02499999999986
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.07993430337622562,
+          "control_mean": -0.08573378445331929,
+          "standardized_mean_difference": 0.0592776249057237
+        },
+        "disagreement": {
+          "exposed_mean": 0.04470682891948541,
+          "control_mean": 0.0013330502829716055,
+          "standardized_mean_difference": 0.5107524097088648
+        },
+        "best_iou": {
+          "exposed_mean": 0.6644297324558579,
+          "control_mean": 0.6177594979989799,
+          "standardized_mean_difference": 0.288629577592016
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "same_image_joint",
+      "population": "gain",
+      "cluster": "image_id",
+      "exposed_total": 770,
+      "matched_exposed": 167,
+      "matched_exposed_images": 131,
+      "supporting_controls": 1017,
+      "exposed_rate": 0.3652694610778443,
+      "control_rate": 0.22152798078784341,
+      "risk_difference": 0.1437414802900009,
+      "risk_difference_ci95": [
+        0.06458406026395738,
+        0.2320320853740024
+      ],
+      "risk_ratio": 1.6488637678129772,
+      "risk_ratio_ci95": [
+        1.2349775647074985,
+        2.406697197122806
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        138.0,
+        198.0
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.08410552550040319,
+          "control_mean": -0.09055600741108755,
+          "standardized_mean_difference": 0.06376672007312385
+        },
+        "disagreement": {
+          "exposed_mean": 0.011687648762854006,
+          "control_mean": 0.009658348429108893,
+          "standardized_mean_difference": 0.04750573507383943
+        },
+        "best_iou": {
+          "exposed_mean": 0.663084539277037,
+          "control_mean": 0.6028107137861228,
+          "standardized_mean_difference": 0.3630555708797607
+        }
+      }
+    },
+    {
+      "endpoint": "qat13",
+      "variant": "joint",
+      "population": "gain",
+      "cluster": "prefix",
+      "exposed_total": 770,
+      "matched_exposed": 686,
+      "matched_exposed_images": 482,
+      "supporting_controls": 33892,
+      "exposed_rate": 0.44314868804664725,
+      "control_rate": 0.3024332303387027,
+      "risk_difference": 0.14071545770794458,
+      "risk_difference_ci95": [
+        0.10073593057221339,
+        0.22535834368055135
+      ],
+      "risk_ratio": 1.4652777657744611,
+      "risk_ratio_ci95": [
+        1.320302591561026,
+        1.9166335574755633
+      ],
+      "valid_bootstrap": 2000,
+      "bootstrap_matched_exposed_ci95": [
+        297.975,
+        1176.0249999999999
+      ],
+      "balance": {
+        "margin": {
+          "exposed_mean": -0.03388681768696978,
+          "control_mean": -0.03970997109970015,
+          "standardized_mean_difference": 0.057763659504591516
+        },
+        "disagreement": {
+          "exposed_mean": 0.024294521338706864,
+          "control_mean": 0.02093218285969496,
+          "standardized_mean_difference": 0.04158700965827772
+        },
+        "best_iou": {
+          "exposed_mean": 0.7143180790842817,
+          "control_mean": 0.6941503725477276,
+          "standardized_mean_difference": 0.13245507978606746
+        }
+      }
+    }
+  ],
+  "replayed_image_arms": 30590,
+  "raw_scores_and_saved_matches_verified": true,
+  "analysis_contract_sha256": "58dbcfd61d8d318a71370641b3703287e82ee33cfecfa1f6f233535c23381128",
+  "scope": "Fixed-model, fixed-draw VisDrone confirmation. No RUOD confirmation, training benefit, AP or actual INT8 claim."
+}
